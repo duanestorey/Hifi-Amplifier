@@ -1,0 +1,4 @@
+../Core/Src/Amplifier.cpp:11:1:Amplifier::Amplifier()	16	static
+../Core/Src/Amplifier.cpp:16:1:Amplifier::~Amplifier()	16	static
+../Core/Src/Amplifier.cpp:16:1:virtual Amplifier::~Amplifier()	16	static
+../Core/Src/Amplifier.cpp:20:6:void Amplifier::run()	16	static
