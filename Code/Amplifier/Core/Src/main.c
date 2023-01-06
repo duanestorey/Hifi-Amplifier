@@ -189,7 +189,7 @@ void SystemClock_Config(void)
     Error_Handler();
   }
   PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USB;
-  PeriphClkInit.UsbClockSelection = RCC_USBCLKSOURCE_PLL;
+  PeriphClkInit.UsbClockSelection = RCC_USBCLKSOURCE_PLL_DIV1_5;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
@@ -415,21 +415,73 @@ static void MX_GPIO_Init(void)
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, LED_PCM_Pin|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3
+  HAL_GPIO_WritePin(LED_MUTE_GPIO_Port, LED_MUTE_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, LED_PCM_Pin|LED_DOLBY_Pin|GPIO_PIN_2|LED_MUTEA3_Pin
                           |GPIO_PIN_4, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : LED_PCM_Pin PA1 PA2 PA3
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOE, LED_INPUT_1_Pin|LED_INPUT_2_Pin|LED_INPUT_3_Pin|LED_INPUT_4_Pin
+                          |LED_POWER_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, LED_5CH_Pin|LED_RUN_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : LED_MUTE_Pin */
+  GPIO_InitStruct.Pin = LED_MUTE_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(LED_MUTE_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : LED_PCM_Pin LED_DOLBY_Pin PA2 LED_MUTEA3_Pin
                            PA4 */
-  GPIO_InitStruct.Pin = LED_PCM_Pin|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3
+  GPIO_InitStruct.Pin = LED_PCM_Pin|LED_DOLBY_Pin|GPIO_PIN_2|LED_MUTEA3_Pin
                           |GPIO_PIN_4;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : SETTING_BATTERY_Pin */
+  GPIO_InitStruct.Pin = SETTING_BATTERY_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(SETTING_BATTERY_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : LED_INPUT_1_Pin LED_INPUT_2_Pin LED_INPUT_3_Pin LED_INPUT_4_Pin
+                           LED_POWER_Pin */
+  GPIO_InitStruct.Pin = LED_INPUT_1_Pin|LED_INPUT_2_Pin|LED_INPUT_3_Pin|LED_INPUT_4_Pin
+                          |LED_POWER_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : BUTTON_POWER_Pin */
+  GPIO_InitStruct.Pin = BUTTON_POWER_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(BUTTON_POWER_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : LED_5CH_Pin LED_RUN_Pin */
+  GPIO_InitStruct.Pin = LED_5CH_Pin|LED_RUN_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : BUTTON_INPUT_Pin */
+  GPIO_InitStruct.Pin = BUTTON_INPUT_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(BUTTON_INPUT_GPIO_Port, &GPIO_InitStruct);
 
 }
 

@@ -57,8 +57,34 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define LED_MUTE_Pin GPIO_PIN_3
+#define LED_MUTE_GPIO_Port GPIOC
 #define LED_PCM_Pin GPIO_PIN_0
 #define LED_PCM_GPIO_Port GPIOA
+#define LED_DOLBY_Pin GPIO_PIN_1
+#define LED_DOLBY_GPIO_Port GPIOA
+#define LED_MUTEA3_Pin GPIO_PIN_3
+#define LED_MUTEA3_GPIO_Port GPIOA
+#define SETTING_BATTERY_Pin GPIO_PIN_4
+#define SETTING_BATTERY_GPIO_Port GPIOC
+#define LED_INPUT_1_Pin GPIO_PIN_10
+#define LED_INPUT_1_GPIO_Port GPIOE
+#define LED_INPUT_2_Pin GPIO_PIN_11
+#define LED_INPUT_2_GPIO_Port GPIOE
+#define LED_INPUT_3_Pin GPIO_PIN_12
+#define LED_INPUT_3_GPIO_Port GPIOE
+#define LED_INPUT_4_Pin GPIO_PIN_13
+#define LED_INPUT_4_GPIO_Port GPIOE
+#define BUTTON_POWER_Pin GPIO_PIN_14
+#define BUTTON_POWER_GPIO_Port GPIOE
+#define LED_POWER_Pin GPIO_PIN_15
+#define LED_POWER_GPIO_Port GPIOE
+#define LED_5CH_Pin GPIO_PIN_10
+#define LED_5CH_GPIO_Port GPIOB
+#define LED_RUN_Pin GPIO_PIN_11
+#define LED_RUN_GPIO_Port GPIOB
+#define BUTTON_INPUT_Pin GPIO_PIN_3
+#define BUTTON_INPUT_GPIO_Port GPIOD
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
