@@ -1,0 +1,723 @@
+2023-01-06 18:31:18,235 [INFO] Activator:177 - 
+
+
+2023-01-06 18:31:18,236 [INFO] Activator:178 - !SESSION log4j initialized
+2023-01-06 18:31:19,276 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 
+2023-01-06 18:31:21,596 [INFO] McuFinderGlobals:44 - Set McuFinder mode to 2 (CubeIDE integrated)
+2023-01-06 18:31:22,874 [INFO] ApplicationProperties:181 - Using Application install path: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.6.1.202207061420
+2023-01-06 18:31:22,894 [INFO] DbMcusXml:77 - Set database path to: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.6.1.202207061420//db//mcu/
+2023-01-06 18:31:22,895 [INFO] ApiDb:269 - Set plugin database path to: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.6.1.202207061420//db//plugins/boardmanager/
+2023-01-06 18:31:22,906 [WARN] ApiDb:254 - Overriding images path with different value:  => /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.6.1.202207061420//db//plugins/mcufinder/images/
+2023-01-06 18:31:22,935 [INFO] ApiDb:249 - Set database path to: /Users/duane/.stmcufinder/plugins/mcufinder//mcu/
+2023-01-06 18:31:22,936 [INFO] DbMcusAds:124 - Set database path to: /Users/duane/.stmcufinder/plugins/mcufinder//mcu/
+2023-01-06 18:31:22,939 [INFO] CrossReferenceDbSqlite:201 - Set database path to: /Users/duane/.stmcufinder/plugins/mcufinder//mcu/cs/
+2023-01-06 18:31:23,063 [INFO] RulesReader:61 - Compatibility file has been processed (282 Rules)
+2023-01-06 18:31:23,125 [INFO] DbMcusXml:77 - Set database path to: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.6.1.202207061420//db//mcu/
+2023-01-06 18:31:23,126 [INFO] ApiDb:269 - Set plugin database path to: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.6.1.202207061420//db//plugins/boardmanager/
+2023-01-06 18:31:23,127 [INFO] ApiDb:256 - Set plugin images path to: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.6.1.202207061420//db//plugins/mcufinder/images/
+2023-01-06 18:31:23,127 [WARN] DbFile:40 - Overriding database path with different value: /Users/duane/.stmcufinder/plugins/mcufinder/ => /Users/duane/.stmcufinder/plugins/mcufinder
+2023-01-06 18:31:23,127 [INFO] ApiDb:249 - Set database path to: /Users/duane/.stmcufinder/plugins/mcufinder//mcu/
+2023-01-06 18:31:23,127 [WARN] DbFile:40 - Overriding database path with different value: /Users/duane/.stmcufinder/plugins/mcufinder/ => /Users/duane/.stmcufinder/plugins/mcufinder
+2023-01-06 18:31:23,127 [INFO] DbMcusAds:124 - Set database path to: /Users/duane/.stmcufinder/plugins/mcufinder//mcu/
+2023-01-06 18:31:23,129 [WARN] DbFile:40 - Overriding database path with different value: /Users/duane/.stmcufinder/plugins/mcufinder/ => /Users/duane/.stmcufinder/plugins/mcufinder
+2023-01-06 18:31:23,129 [WARN] DbFile:40 - Overriding database path with different value: /Users/duane/.stmcufinder/plugins/mcufinder/ => /Users/duane/.stmcufinder/plugins/mcufinder
+2023-01-06 18:31:23,129 [INFO] CrossReferenceDbSqlite:201 - Set database path to: /Users/duane/.stmcufinder/plugins/mcufinder//mcu/cs/
+2023-01-06 18:31:23,209 [INFO] MainPanel:242 - HeapMemory: 268435456
+2023-01-06 18:31:23,305 [INFO] DbMcusXml:77 - Set database path to: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.6.1.202207061420//db//mcu/
+2023-01-06 18:31:23,305 [INFO] ApiDb:269 - Set plugin database path to: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.6.1.202207061420//db//plugins/boardmanager/
+2023-01-06 18:31:23,305 [INFO] ApiDb:256 - Set plugin images path to: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.6.1.202207061420//db//plugins/mcufinder/images/
+2023-01-06 18:31:23,305 [WARN] DbFile:40 - Overriding database path with different value: /Users/duane/.stmcufinder/plugins/mcufinder/ => /Users/duane/.stmcufinder/plugins/mcufinder
+2023-01-06 18:31:23,305 [INFO] ApiDb:249 - Set database path to: /Users/duane/.stmcufinder/plugins/mcufinder//mcu/
+2023-01-06 18:31:23,305 [WARN] DbFile:40 - Overriding database path with different value: /Users/duane/.stmcufinder/plugins/mcufinder/ => /Users/duane/.stmcufinder/plugins/mcufinder
+2023-01-06 18:31:23,306 [INFO] DbMcusAds:124 - Set database path to: /Users/duane/.stmcufinder/plugins/mcufinder//mcu/
+2023-01-06 18:31:23,306 [WARN] DbFile:40 - Overriding database path with different value: /Users/duane/.stmcufinder/plugins/mcufinder/ => /Users/duane/.stmcufinder/plugins/mcufinder
+2023-01-06 18:31:23,306 [WARN] DbFile:40 - Overriding database path with different value: /Users/duane/.stmcufinder/plugins/mcufinder/ => /Users/duane/.stmcufinder/plugins/mcufinder
+2023-01-06 18:31:23,306 [INFO] CrossReferenceDbSqlite:201 - Set database path to: /Users/duane/.stmcufinder/plugins/mcufinder//mcu/cs/
+2023-01-06 18:31:23,321 [INFO] ApplicationProperties:181 - Using Application install path: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.6.1.202207061420
+2023-01-06 18:31:23,322 [INFO] PluginManage:193 - Search for loadable plugins [exclusion list=, ]
+2023-01-06 18:31:23,324 [INFO] PluginManage:307 - Check plugin analytics
+2023-01-06 18:31:23,561 [INFO] AnalyticsPlugin:262 - Accepted Software Licenses: 
+2023-01-06 18:31:23,567 [INFO] AnalyticsPlugin:264 - Accepted CMSIS Pack Licenses: 
+2023-01-06 18:31:23,569 [INFO] AnalyticsPlugin:266 - Accepted Firmware Licenses: 
+2023-01-06 18:31:23,586 [INFO] PluginManage:356 - Loaded plugin analytics (category:tool,tabindex:-1)
+2023-01-06 18:31:23,587 [INFO] PluginManage:307 - Check plugin cadmodel
+2023-01-06 18:31:23,597 [INFO] CADModel:65 - Init CAD model plugin
+2023-01-06 18:31:23,597 [INFO] PluginManage:356 - Loaded plugin cadmodel (category:power,tabindex:5)
+2023-01-06 18:31:23,598 [INFO] PluginManage:307 - Check plugin clock
+2023-01-06 18:31:23,607 [INFO] PluginManage:356 - Loaded plugin clock (category:base,tabindex:2)
+2023-01-06 18:31:23,608 [INFO] PluginManage:307 - Check plugin ddr
+2023-01-06 18:31:23,609 [INFO] PluginManage:356 - Loaded plugin ddr (category:tool,tabindex:6)
+2023-01-06 18:31:23,609 [INFO] PluginManage:307 - Check plugin filemanager
+2023-01-06 18:31:23,744 [INFO] PluginManage:356 - Loaded plugin filemanager (category:base,tabindex:10)
+2023-01-06 18:31:23,744 [INFO] PluginManage:307 - Check plugin ipmanager
+2023-01-06 18:31:23,750 [INFO] PluginManage:356 - Loaded plugin ipmanager (category:base,tabindex:5)
+2023-01-06 18:31:23,751 [INFO] PluginManage:307 - Check plugin lpbam
+2023-01-06 18:31:23,758 [INFO] PluginManage:356 - Loaded plugin lpbam (category:base,tabindex:0)
+2023-01-06 18:31:23,759 [INFO] PluginManage:307 - Check plugin pinoutandconfiguration
+2023-01-06 18:31:23,763 [INFO] PluginManage:356 - Loaded plugin pinoutandconfiguration (category:base,tabindex:1)
+2023-01-06 18:31:23,764 [INFO] PluginManage:307 - Check plugin pinoutconfig
+2023-01-06 18:31:23,793 [INFO] PluginManage:356 - Loaded plugin pinoutconfig (category:base,tabindex:0)
+2023-01-06 18:31:23,795 [INFO] PluginManage:307 - Check plugin power
+2023-01-06 18:31:23,806 [INFO] PluginManage:356 - Loaded plugin power (category:power,tabindex:4)
+2023-01-06 18:31:23,806 [INFO] PluginManage:307 - Check plugin projectmanager
+2023-01-06 18:31:23,830 [INFO] PluginManage:356 - Loaded plugin projectmanager (category:projectmanager,tabindex:3)
+2023-01-06 18:31:23,831 [INFO] PluginManage:307 - Check plugin thirdparty
+2023-01-06 18:31:23,974 [WARN] IntegrityCheckThread:82 - waiting for thirdparty lock release [integrity check]
+2023-01-06 18:31:23,975 [INFO] PluginManage:356 - Loaded plugin thirdparty (category:base,tabindex:-1)
+2023-01-06 18:31:23,980 [INFO] IntegrityCheckThread:84 - entering critical section [integrity check]
+2023-01-06 18:31:23,981 [INFO] PluginManage:307 - Check plugin tools
+2023-01-06 18:31:23,984 [INFO] PluginManage:356 - Loaded plugin tools (category:base,tabindex:7)
+2023-01-06 18:31:23,984 [INFO] PluginManage:307 - Check plugin tutovideos
+2023-01-06 18:31:24,001 [INFO] ThirdPartyUpdaterWithRetryManager:70 - Updater plugin not ready yet. [1/15]
+2023-01-06 18:31:24,337 [INFO] PluginManage:356 - Loaded plugin tutovideos (category:base,tabindex:-1)
+2023-01-06 18:31:24,340 [INFO] PluginManage:307 - Check plugin updater
+2023-01-06 18:31:24,394 [INFO] PluginManage:356 - Loaded plugin updater (category:base,tabindex:12)
+2023-01-06 18:31:24,396 [INFO] PluginManage:280 - PluginManage : Loaded plugins [15]
+2023-01-06 18:31:25,531 [INFO] PinOutPanel:1468 - setPackage(No Configuration,No Configuration)
+2023-01-06 18:31:25,614 [INFO] CADModel:98 - CPN selected for project level
+2023-01-06 18:31:25,635 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,636 [INFO] PluginManager:217 - loadIPPluginJar : add mdma
+2023-01-06 18:31:25,644 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,644 [INFO] PluginManager:217 - loadIPPluginJar : add freertos
+2023-01-06 18:31:25,648 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,648 [INFO] PluginManager:217 - loadIPPluginJar : add gic
+2023-01-06 18:31:25,654 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,655 [INFO] PluginManager:217 - loadIPPluginJar : add adc
+2023-01-06 18:31:25,656 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,656 [INFO] PluginManager:217 - loadIPPluginJar : add gtzc
+2023-01-06 18:31:25,657 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,657 [INFO] PluginManager:217 - loadIPPluginJar : add quadspi
+2023-01-06 18:31:25,659 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,659 [INFO] PluginManager:217 - loadIPPluginJar : add aes
+2023-01-06 18:31:25,660 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,660 [INFO] PluginManager:217 - loadIPPluginJar : add pdm2pcm
+2023-01-06 18:31:25,661 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,661 [INFO] PluginManager:217 - loadIPPluginJar : add hash
+2023-01-06 18:31:25,662 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,662 [INFO] PluginManager:217 - loadIPPluginJar : add tim
+2023-01-06 18:31:25,664 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,664 [INFO] PluginManager:217 - loadIPPluginJar : add tsc
+2023-01-06 18:31:25,665 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,665 [INFO] PluginManager:217 - loadIPPluginJar : add ts
+2023-01-06 18:31:25,667 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,667 [INFO] PluginManager:217 - loadIPPluginJar : add can
+2023-01-06 18:31:25,669 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,669 [INFO] PluginManager:217 - loadIPPluginJar : add dma3
+2023-01-06 18:31:25,671 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,671 [INFO] PluginManager:217 - loadIPPluginJar : add dfsdm
+2023-01-06 18:31:25,673 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,673 [INFO] PluginManager:217 - loadIPPluginJar : add spi
+2023-01-06 18:31:25,675 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,675 [INFO] PluginManager:217 - loadIPPluginJar : add gfxmmu
+2023-01-06 18:31:25,676 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,676 [INFO] PluginManager:217 - loadIPPluginJar : add genericplugin
+2023-01-06 18:31:25,678 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,678 [INFO] PluginManager:217 - loadIPPluginJar : add cryp
+2023-01-06 18:31:25,680 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,688 [INFO] PluginManager:217 - loadIPPluginJar : add gpio
+2023-01-06 18:31:25,691 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,691 [INFO] PluginManager:217 - loadIPPluginJar : add comp
+2023-01-06 18:31:25,692 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,692 [INFO] PluginManager:217 - loadIPPluginJar : add tracer_emb
+2023-01-06 18:31:25,694 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,694 [INFO] PluginManager:217 - loadIPPluginJar : add openamp
+2023-01-06 18:31:25,697 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,697 [INFO] PluginManager:217 - loadIPPluginJar : add stm32_wpan
+2023-01-06 18:31:25,702 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,704 [INFO] PluginManager:217 - loadIPPluginJar : add plateformsettings
+2023-01-06 18:31:25,706 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,706 [INFO] PluginManager:217 - loadIPPluginJar : add ipddr
+2023-01-06 18:31:25,708 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,708 [INFO] PluginManager:217 - loadIPPluginJar : add usart
+2023-01-06 18:31:25,709 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,709 [INFO] PluginManager:217 - loadIPPluginJar : add ltdc
+2023-01-06 18:31:25,711 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,711 [INFO] PluginManager:217 - loadIPPluginJar : add nvic
+2023-01-06 18:31:25,712 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,712 [INFO] PluginManager:217 - loadIPPluginJar : add fatfs
+2023-01-06 18:31:25,717 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,717 [INFO] PluginManager:217 - loadIPPluginJar : add linkedlist
+2023-01-06 18:31:25,721 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,721 [INFO] PluginManager:217 - loadIPPluginJar : add dma
+2023-01-06 18:31:25,723 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,723 [INFO] PluginManager:217 - loadIPPluginJar : add fmc
+2023-01-06 18:31:25,724 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,724 [INFO] PluginManager:217 - loadIPPluginJar : add i2s
+2023-01-06 18:31:25,725 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,726 [INFO] PluginManager:217 - loadIPPluginJar : add ucpd
+2023-01-06 18:31:25,727 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,727 [INFO] PluginManager:217 - loadIPPluginJar : add lorawan
+2023-01-06 18:31:25,728 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,728 [INFO] PluginManager:217 - loadIPPluginJar : add opamp
+2023-01-06 18:31:25,730 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,730 [INFO] PluginManager:217 - loadIPPluginJar : add touchsensing
+2023-01-06 18:31:25,733 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,735 [INFO] PluginManager:217 - loadIPPluginJar : add i2c
+2023-01-06 18:31:25,738 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,739 [INFO] PluginManager:217 - loadIPPluginJar : add resmgrutility
+2023-01-06 18:31:25,740 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,740 [INFO] PluginManager:217 - loadIPPluginJar : add sai
+2023-01-06 18:31:25,742 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:31:25,743 [INFO] PluginManager:217 - loadIPPluginJar : add usbx
+2023-01-06 18:31:26,090 [FATAL] Updater:301 - Updater called before beeing initialized
+2023-01-06 18:31:26,295 [FATAL] Updater:301 - Updater called before beeing initialized
+2023-01-06 18:31:26,304 [INFO] DbMcusAds:52 - JSON generation date=Thu Sep 30 08:55:09 CEST 2021 (1632984909377)
+2023-01-06 18:31:26,305 [FATAL] Updater:301 - Updater called before beeing initialized
+2023-01-06 18:31:26,361 [WARN] DetailPanel:344 - Failed to get advertising image, set to default
+2023-01-06 18:31:26,647 [FATAL] Updater:301 - Updater called before beeing initialized
+2023-01-06 18:31:26,671 [FATAL] Updater:301 - Updater called before beeing initialized
+2023-01-06 18:31:26,671 [FATAL] Updater:301 - Updater called before beeing initialized
+2023-01-06 18:31:26,672 [WARN] DetailPanel:344 - Failed to get advertising image, set to default
+2023-01-06 18:31:26,682 [FATAL] Updater:301 - Updater called before beeing initialized
+2023-01-06 18:31:26,777 [ERROR] Updater:1105 - MainUpdater not yet initialized. External WinMGr cannot be set.
+2023-01-06 18:31:26,848 [INFO] Updater:1041 - Updater Version found : 6.6.1
+2023-01-06 18:31:26,864 [INFO] ApplicationProperties:181 - Using Application install path: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.6.1.202207061420
+2023-01-06 18:31:27,006 [INFO] ThirdPartyUpdaterWithRetryManager:70 - Updater plugin not ready yet. [2/15]
+2023-01-06 18:31:27,303 [INFO] MainUpdater:2768 - connection check result : 10
+2023-01-06 18:31:27,304 [INFO] MainUpdater:280 - Updater Check For Update Now.
+2023-01-06 18:31:27,305 [INFO] MicroXplorer:481 - Change Database Version : DB.6.0.60
+2023-01-06 18:31:27,521 [INFO] CheckServerUpdateThread:119 - End of CheckServer Thread
+2023-01-06 18:31:27,526 [INFO] MainUpdater:2768 - connection check result : 10
+2023-01-06 18:31:28,806 [INFO] McuFinderGlobals:57 - Set McuFinderConnectedMode to true
+2023-01-06 18:31:28,818 [INFO] MultiScanPanel:195 - Auto-refresh data requested => check proxy status ongoing
+2023-01-06 18:31:28,822 [INFO] FinderPluginLoader:92 - Searching for filters in installed packs
+2023-01-06 18:31:29,521 [INFO] ApiDb:576 - Connected to CubeFinder SQLite database (/Users/duane/.stmcufinder/plugins/mcufinder/mcu/cube-finder-db.db)
+2023-01-06 18:31:29,619 [INFO] ApiDb:663 - CubeFinder database Data Model version=2.1
+2023-01-06 18:31:29,620 [INFO] ApiDb:664 - CubeFinder database Configuration version=3.0.35
+2023-01-06 18:31:29,620 [INFO] ApiDb:665 - CubeFinder database generation date=2022-12-20 (1671519758)
+2023-01-06 18:31:29,621 [INFO] ApiDb:666 - CubeFinder database FW Pack versions=[FP-ATR-ASTRA1_V1.1.1, STM32Cube_FW_C0_V1.0.0, STM32Cube_FW_F4_V1.27.1, STM32Cube_FW_F7_V1.17.0, STM32Cube_FW_G0_V1.6.1, STM32Cube_FW_G4_V1.5.0, STM32Cube_FW_H5_V0.5.1, STM32Cube_FW_H7_V1.11.0, STM32Cube_FW_L5_V1.5.0, STM32Cube_FW_U5_V1.1.1, STM32Cube_FW_WBA_V0.2.0, STM32Cube_FW_WB_V1.15.0, STM32Cube_FW_WB_V1.15.0RC1, STM32Cube_FW_WL_V1.3.0, X-CUBE-ALGOBUILD_V1.3.0, X-CUBE-ALS_V1.0.1, X-CUBE-AZRTOS-F4_V1.1.0, X-CUBE-AZRTOS-F7_V1.1.0, X-CUBE-AZRTOS-G0_V1.1.0, X-CUBE-AZRTOS-G4_V1.0.0, X-CUBE-AZRTOS-H7_V2.1.0, X-CUBE-AZRTOS-L4_V1.0.0, X-CUBE-AZRTOS-L5_V1.0.0, X-CUBE-AZRTOS-WL_V1.0.0, X-CUBE-BLE1_V6.2.4, X-CUBE-BLE2_V3.3.0, X-CUBE-BLEMGR_V1.3.0, X-CUBE-EEPRMA1_V4.1.0, X-CUBE-GNSS1_V6.0.0, X-CUBE-MEMS1_V9.1.0, X-CUBE-MEMS1_V9.3.0, X-CUBE-MEMS1_V9.4.0, X-CUBE-NFC4_V2.0.5, X-CUBE-NFC7_V1.0.0, X-CUBE-SFXS2LP1_V4.0.0, X-CUBE-SUBG2_V5.0.0]
+2023-01-06 18:31:30,417 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-GNSS1.6.0.0
+2023-01-06 18:31:30,521 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-F4.1.1.0
+2023-01-06 18:31:30,627 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLEMGR.1.2.0
+2023-01-06 18:31:30,740 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-F7.1.1.0
+2023-01-06 18:31:30,787 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLE1.6.2.3
+2023-01-06 18:31:30,901 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLE1.6.2.4
+2023-01-06 18:31:30,925 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC4.2.0.5
+2023-01-06 18:31:30,943 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC4.2.0.4
+2023-01-06 18:31:30,966 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOF1.3.1.0
+2023-01-06 18:31:31,001 [WARN] PackLoader:242 - Cannot read IP mode file for wolfSSL.I-CUBE-wolfSSL.5.5.1
+2023-01-06 18:31:31,012 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-NFC7.1.0.0
+2023-01-06 18:31:31,373 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-MEMS1.9.3.0
+2023-01-06 18:31:31,687 [INFO] ApiDb:239 - Found 138 in-development CPN: [B-WB1M-WPAN1, NUCLEO-C031C6, STEVAL-STWINBX1, STM320518-EVAL, STM32C0116-DK, STM32C011D6Y3TR, STM32C011D6Y6TR, STM32C011F4P3, STM32C011F4P6, STM32C011F4U3, STM32C011F4U6TR, STM32C011F6P3, STM32C011F6P6, STM32C011F6U3, STM32C011F6U6TR, STM32C011J4M3, STM32C011J4M6, STM32C011J6M3, STM32C011J6M6, STM32C0316-DK, STM32C031C4T3, STM32C031C4T6, STM32C031C4U3, STM32C031C4U6, STM32C031C6T3, STM32C031C6T6, STM32C031C6U3, STM32C031C6U6, STM32C031F4P3, STM32C031F4P6, STM32C031F6P3, STM32C031F6P6, STM32C031G4U3, STM32C031G4U6, STM32C031G6U3, STM32C031G6U6, STM32C031K4T3, STM32C031K4T6, STM32C031K4U3, STM32C031K4U6, STM32C031K6T3, STM32C031K6T6, STM32C031K6U3, STM32C031K6U6, STM32G071K8TXN, STM32G071K8UXN, STM32G081GBU6N, STM32G081KBT6N, STM32G081KBUXN, STM32G0B1CCT6N, STM32G0B1KCT6, STM32G0B1NEY6TR, STM32G0B1RCT6N, STM32G0C1CCT6, STM32G0C1CCT6N, STM32G0C1CCU6N, STM32G0C1CET6N, STM32G0C1CEU6N, STM32G0C1KCT6, STM32G0C1NEY6TR, STM32G0C1RCI6N, STM32G0C1RCT6N, STM32G0C1REI6N, STM32G0C1RET6N, STM32G0C1VCI6, STM32G0C1VEI6, STM32G471CCT6, STM32G471CCU6, STM32G471CET3, STM32G471CET6, STM32G471CEU3, STM32G471CEU6, STM32G471MCT6, STM32G471MET3, STM32G471MET6, STM32G471MEY6TR, STM32G471QCT6, STM32G471QET3, STM32G471RCT6, STM32G471RET3, STM32G471RET6, STM32G471VCH6, STM32G471VCI6, STM32G471VCT6, STM32G471VEH3, STM32G471VEH6, STM32G471VEI3, STM32G471VEI6, STM32G471VET3, STM32G471VET6, STM32G474CCT6, STM32L476VGY6PTR, STM32L4R5QGI6STR, STM32MP131AAE3, STM32MP131AAF3, STM32MP131AAG3, STM32MP131CAE3, STM32MP131CAF3, STM32MP131CAG3, STM32MP131DAE7, STM32MP131DAF7, STM32MP131DAG7, STM32MP131FAE7, STM32MP131FAF7, STM32MP131FAG7, STM32MP133AAE3, STM32MP133AAF3, STM32MP133AAG3, STM32MP133CAE3, STM32MP133CAF3, STM32MP133CAG3, STM32MP133DAE7, STM32MP133DAF7, STM32MP133DAG7, STM32MP133FAE7, STM32MP133FAF7, STM32MP133FAG7, STM32MP135AAE3, STM32MP135AAF3, STM32MP135AAG3, STM32MP135CAE3, STM32MP135CAF3, STM32MP135CAG3, STM32MP135DAE7, STM32MP135DAF7, STM32MP135DAG7, STM32MP135F-DK, STM32MP135FAE7, STM32MP135FAF7, STM32MP135FAG7, STM32U595ZJT6Q, STM32U599BJY6QTR, STM32U599NIH6Q, STM32U599NJH6Q, STM32U5A5ZJT6Q, STM32U5A9BJY6QTR, STM32U5A9NJH6Q, STM32WB1MMCH6]
+2023-01-06 18:31:31,701 [INFO] DbMcus:215 - Found 3580 MCUs, 3580 are supported
+2023-01-06 18:31:31,713 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-EEPRMA1.4.1.0
+2023-01-06 18:31:31,719 [INFO] ApiDb:418 - Load user favorites file /Users/duane/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2023-01-06 18:31:31,721 [INFO] ApiDb:422 - User favorites MCUs=[]
+2023-01-06 18:31:31,721 [INFO] DbMcus:221 - Set 0 / 0 favorites MCUs
+2023-01-06 18:31:31,750 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AI.7.2.0
+2023-01-06 18:31:31,825 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-SFXS2LP1.4.0.0
+2023-01-06 18:31:31,861 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLE2.3.3.0
+2023-01-06 18:31:31,897 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-DISPLAY.2.2.0
+2023-01-06 18:31:31,936 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOF1.3.2.0
+2023-01-06 18:31:31,995 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-H7.3.0.0
+2023-01-06 18:31:32,015 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-ISPU.1.0.0
+2023-01-06 18:31:32,022 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-ISPU.1.1.0
+2023-01-06 18:31:32,052 [WARN] PackLoader:242 - Cannot read IP mode file for RoweBots.I-CUBE-UNISONRTOS.5.5.0-4
+2023-01-06 18:31:32,166 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-H7.2.1.0
+2023-01-06 18:31:32,239 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOUCHGFX.4.21.0
+2023-01-06 18:31:32,341 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-MEMS1.9.4.0
+2023-01-06 18:31:32,568 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AI.7.3.0
+2023-01-06 18:31:32,580 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-ALGOBUILD.1.3.0
+2023-01-06 18:31:32,654 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-L5.1.1.0
+2023-01-06 18:31:32,720 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-G0.1.1.0
+2023-01-06 18:31:32,747 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-SUBG2.5.0.0
+2023-01-06 18:31:32,887 [WARN] PackLoader:242 - Cannot read IP mode file for SEGGER.I-CUBE-embOS.1.2.1
+2023-01-06 18:31:32,945 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.FP-ATR-ASTRA1.1.1.1
+2023-01-06 18:31:32,960 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-BLEMGR.1.3.0
+2023-01-06 18:31:32,988 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-G4.1.0.0
+2023-01-06 18:31:33,006 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.FP-ATR-SIGFOX1.3.2.0
+2023-01-06 18:31:33,030 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-L4.1.0.0
+2023-01-06 18:31:33,042 [WARN] PackLoader:242 - Cannot read IP mode file for emotas.I-CUBE-CANOPEN.1.1.2
+2023-01-06 18:31:33,046 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-TOUCHGFX.4.20.0
+2023-01-06 18:31:33,099 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-WL.1.0.0
+2023-01-06 18:31:33,111 [WARN] PackLoader:242 - Cannot read IP mode file for portGmbH.I-Cube-SoM-uGOAL.1.1.0
+2023-01-06 18:31:33,115 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-ALS.1.0.1
+2023-01-06 18:31:33,141 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-WB.1.1.0
+2023-01-06 18:31:33,189 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-AZRTOS-L5.1.0.0
+2023-01-06 18:31:33,199 [WARN] PackLoader:242 - Cannot read IP mode file for STMicroelectronics.X-CUBE-EEPRMA1.3.1.1
+2023-01-06 18:31:33,202 [INFO] ThirdParty:929 - Integrity check success = true
+2023-01-06 18:31:33,203 [INFO] IntegrityCheckThread:98 - exiting critical section [integrity check]
+2023-01-06 18:31:33,203 [INFO] IntegrityCheckThread:101 - End integrity checks thread
+2023-01-06 18:31:33,749 [INFO] LoadUrlFilesThread:177 - End of LoadServerUrlFiles without Thread
+2023-01-06 18:31:33,764 [INFO] DetailPanel:339 - Set advertising image to /Users/duane/STM32Cube/Repository//en.Prom_NBSTM32U50921.jpg
+2023-01-06 18:31:34,942 [INFO] MultiScanPanel:778 - Auto Refresh Data is not needed
+2023-01-06 18:31:34,959 [INFO] ApiDb:663 - CubeFinder database Data Model version=2.1
+2023-01-06 18:31:34,960 [INFO] ApiDb:664 - CubeFinder database Configuration version=3.0.35
+2023-01-06 18:31:34,960 [INFO] ApiDb:665 - CubeFinder database generation date=2022-12-20 (1671519758)
+2023-01-06 18:31:34,960 [INFO] ApiDb:666 - CubeFinder database FW Pack versions=[FP-ATR-ASTRA1_V1.1.1, STM32Cube_FW_C0_V1.0.0, STM32Cube_FW_F4_V1.27.1, STM32Cube_FW_F7_V1.17.0, STM32Cube_FW_G0_V1.6.1, STM32Cube_FW_G4_V1.5.0, STM32Cube_FW_H5_V0.5.1, STM32Cube_FW_H7_V1.11.0, STM32Cube_FW_L5_V1.5.0, STM32Cube_FW_U5_V1.1.1, STM32Cube_FW_WBA_V0.2.0, STM32Cube_FW_WB_V1.15.0, STM32Cube_FW_WB_V1.15.0RC1, STM32Cube_FW_WL_V1.3.0, X-CUBE-ALGOBUILD_V1.3.0, X-CUBE-ALS_V1.0.1, X-CUBE-AZRTOS-F4_V1.1.0, X-CUBE-AZRTOS-F7_V1.1.0, X-CUBE-AZRTOS-G0_V1.1.0, X-CUBE-AZRTOS-G4_V1.0.0, X-CUBE-AZRTOS-H7_V2.1.0, X-CUBE-AZRTOS-L4_V1.0.0, X-CUBE-AZRTOS-L5_V1.0.0, X-CUBE-AZRTOS-WL_V1.0.0, X-CUBE-BLE1_V6.2.4, X-CUBE-BLE2_V3.3.0, X-CUBE-BLEMGR_V1.3.0, X-CUBE-EEPRMA1_V4.1.0, X-CUBE-GNSS1_V6.0.0, X-CUBE-MEMS1_V9.1.0, X-CUBE-MEMS1_V9.3.0, X-CUBE-MEMS1_V9.4.0, X-CUBE-NFC4_V2.0.5, X-CUBE-NFC7_V1.0.0, X-CUBE-SFXS2LP1_V4.0.0, X-CUBE-SUBG2_V5.0.0]
+2023-01-06 18:31:35,043 [INFO] DbBoardsSqlite:227 - include board P-NUCLEO-WB55-NUCLEO as a kit item of type 'Nucleo-64'
+2023-01-06 18:31:35,044 [INFO] DbBoardsSqlite:227 - include board P-NUCLEO-WB55-USBDONGLE as a kit item of type 'Nucleo USB Dongle'
+2023-01-06 18:31:35,044 [INFO] DbBoardsSqlite:227 - include board STEVAL-IDP005V1 as a kit item of type 'Evaluation Board'
+2023-01-06 18:31:35,044 [INFO] DbBoardsSqlite:227 - include board STEVAL-IDP005V2 as a kit item of type 'Evaluation Board'
+2023-01-06 18:31:35,079 [INFO] ApiDb:239 - Found 138 in-development CPN: [B-WB1M-WPAN1, NUCLEO-C031C6, STEVAL-STWINBX1, STM320518-EVAL, STM32C0116-DK, STM32C011D6Y3TR, STM32C011D6Y6TR, STM32C011F4P3, STM32C011F4P6, STM32C011F4U3, STM32C011F4U6TR, STM32C011F6P3, STM32C011F6P6, STM32C011F6U3, STM32C011F6U6TR, STM32C011J4M3, STM32C011J4M6, STM32C011J6M3, STM32C011J6M6, STM32C0316-DK, STM32C031C4T3, STM32C031C4T6, STM32C031C4U3, STM32C031C4U6, STM32C031C6T3, STM32C031C6T6, STM32C031C6U3, STM32C031C6U6, STM32C031F4P3, STM32C031F4P6, STM32C031F6P3, STM32C031F6P6, STM32C031G4U3, STM32C031G4U6, STM32C031G6U3, STM32C031G6U6, STM32C031K4T3, STM32C031K4T6, STM32C031K4U3, STM32C031K4U6, STM32C031K6T3, STM32C031K6T6, STM32C031K6U3, STM32C031K6U6, STM32G071K8TXN, STM32G071K8UXN, STM32G081GBU6N, STM32G081KBT6N, STM32G081KBUXN, STM32G0B1CCT6N, STM32G0B1KCT6, STM32G0B1NEY6TR, STM32G0B1RCT6N, STM32G0C1CCT6, STM32G0C1CCT6N, STM32G0C1CCU6N, STM32G0C1CET6N, STM32G0C1CEU6N, STM32G0C1KCT6, STM32G0C1NEY6TR, STM32G0C1RCI6N, STM32G0C1RCT6N, STM32G0C1REI6N, STM32G0C1RET6N, STM32G0C1VCI6, STM32G0C1VEI6, STM32G471CCT6, STM32G471CCU6, STM32G471CET3, STM32G471CET6, STM32G471CEU3, STM32G471CEU6, STM32G471MCT6, STM32G471MET3, STM32G471MET6, STM32G471MEY6TR, STM32G471QCT6, STM32G471QET3, STM32G471RCT6, STM32G471RET3, STM32G471RET6, STM32G471VCH6, STM32G471VCI6, STM32G471VCT6, STM32G471VEH3, STM32G471VEH6, STM32G471VEI3, STM32G471VEI6, STM32G471VET3, STM32G471VET6, STM32G474CCT6, STM32L476VGY6PTR, STM32L4R5QGI6STR, STM32MP131AAE3, STM32MP131AAF3, STM32MP131AAG3, STM32MP131CAE3, STM32MP131CAF3, STM32MP131CAG3, STM32MP131DAE7, STM32MP131DAF7, STM32MP131DAG7, STM32MP131FAE7, STM32MP131FAF7, STM32MP131FAG7, STM32MP133AAE3, STM32MP133AAF3, STM32MP133AAG3, STM32MP133CAE3, STM32MP133CAF3, STM32MP133CAG3, STM32MP133DAE7, STM32MP133DAF7, STM32MP133DAG7, STM32MP133FAE7, STM32MP133FAF7, STM32MP133FAG7, STM32MP135AAE3, STM32MP135AAF3, STM32MP135AAG3, STM32MP135CAE3, STM32MP135CAF3, STM32MP135CAG3, STM32MP135DAE7, STM32MP135DAF7, STM32MP135DAG7, STM32MP135F-DK, STM32MP135FAE7, STM32MP135FAF7, STM32MP135FAG7, STM32U595ZJT6Q, STM32U599BJY6QTR, STM32U599NIH6Q, STM32U599NJH6Q, STM32U5A5ZJT6Q, STM32U5A9BJY6QTR, STM32U5A9NJH6Q, STM32WB1MMCH6]
+2023-01-06 18:31:35,207 [INFO] BoardInfo:879 - No configuration file found for board P-NUCLEO-WB55
+2023-01-06 18:31:35,220 [INFO] DbBoards:156 - Kit is not supported: P-NUCLEO-WB55
+2023-01-06 18:31:35,260 [INFO] BoardInfo:879 - No configuration file found for board STEVAL-BFA001V1B
+2023-01-06 18:31:35,266 [INFO] DbBoards:156 - Kit is not supported: STEVAL-BFA001V1B
+2023-01-06 18:31:35,269 [INFO] BoardInfo:879 - No configuration file found for board STEVAL-BFA001V2B
+2023-01-06 18:31:35,271 [INFO] DbBoards:156 - Kit is not supported: STEVAL-BFA001V2B
+2023-01-06 18:31:35,281 [INFO] BoardInfo:879 - No configuration file found for board STEVAL-PROTEUS1
+2023-01-06 18:31:35,282 [INFO] DbBoards:156 - Board is not supported: STEVAL-PROTEUS1
+2023-01-06 18:31:35,404 [INFO] DbBoards:160 - Found 178 boards, 174 are supported
+2023-01-06 18:31:35,423 [INFO] ApiDb:418 - Load user favorites file /Users/duane/.stm32cubeide/favorites.boards.txt: 2 item(s)
+2023-01-06 18:31:35,424 [INFO] ApiDb:422 - User favorites Boards=[STM32072B-EVAL, STM32F746G-DISCO]
+2023-01-06 18:31:35,424 [INFO] DbBoards:189 - Set 2 / 2 favorites Boards
+2023-01-06 18:31:42,913 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2023-01-06 18:31:42,915 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] SLF4J: Defaulting to no-operation (NOP) logger implementation
+2023-01-06 18:31:42,916 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2023-01-06 18:32:10,201 [INFO] MainUpdater:2768 - connection check result : 10
+2023-01-06 18:32:10,210 [INFO] MainUpdater:2768 - connection check result : 10
+2023-01-06 18:32:12,402 [INFO] MicroXplorer:451 - Change Database Path : 
+2023-01-06 18:32:12,406 [INFO] MicroXplorer:481 - Change Database Version : DB.6.0.60
+2023-01-06 18:32:12,415 [WARN] ThirdParty:827 - waiting for thirdparty lock release [close project]
+2023-01-06 18:32:12,416 [INFO] ThirdParty:829 - entering critical section [close project]
+2023-01-06 18:32:12,433 [INFO] ThirdParty:839 - exiting critical section [close project]
+2023-01-06 18:32:12,482 [INFO] PinOutPanel:1468 - setPackage(No Configuration,No Configuration)
+2023-01-06 18:32:12,523 [INFO] UtilMem:74 - Begin LoadConfig() Used Memory: 210459872 Bytes (465567744)
+2023-01-06 18:32:12,530 [INFO] MicroXplorer:451 - Change Database Path : 
+2023-01-06 18:32:12,531 [INFO] MicroXplorer:481 - Change Database Version : DB.6.0.60
+2023-01-06 18:32:12,531 [INFO] OpenFileManager:307 - Change cursor
+2023-01-06 18:32:13,102 [INFO] Mcu:1922 - Initializing MCU STM32F103VDTx STM32F103VDTx 
+2023-01-06 18:32:13,129 [INFO] Mcu:1935 - No CPN specified => set CPN to STM32F103VDT6
+2023-01-06 18:32:28,928 [INFO] Context:654 - Trying to add GPIOservice into a context  which must be forbidden
+2023-01-06 18:32:31,557 [INFO] ImportTextPane:193 - (OptionalMessage_ERROR) Unable to find key (Mcu.ThirdPartyNb) in loaded IOC file
+2023-01-06 18:32:31,559 [INFO] ImportTextPane:193 - (OptionalMessage_ERROR) Unable to find key (Mcu.PinsNb) in loaded IOC file
+2023-01-06 18:32:31,559 [INFO] ImportTextPane:193 - (OptionalMessage_ERROR) Unable to find key (Mcu.IPNb) in loaded IOC file
+2023-01-06 18:32:32,077 [WARN] ApiManager:308 - Cannot register API 'Board Extension:GNSS1A1' from pack STMicroelectronics.X-CUBE-GNSS1.6.0.0: no header file found
+2023-01-06 18:32:32,078 [WARN] ApiManager:308 - Cannot register API 'Board Support:Custom' from pack STMicroelectronics.X-CUBE-GNSS1.6.0.0: no header file found
+2023-01-06 18:32:32,078 [WARN] ApiManager:308 - Cannot register API 'Data Exchange:lib_gnss' from pack STMicroelectronics.X-CUBE-GNSS1.6.0.0: no header file found
+2023-01-06 18:32:32,977 [WARN] ApiManager:308 - Cannot register API 'Board Extension:IKS01A3' from pack STMicroelectronics.X-CUBE-MEMS1.9.4.0: no header file found
+2023-01-06 18:32:32,980 [WARN] ApiManager:308 - Cannot register API 'Board Extension:IKS01A2' from pack STMicroelectronics.X-CUBE-MEMS1.9.4.0: no header file found
+2023-01-06 18:32:32,981 [WARN] ApiManager:308 - Cannot register API 'Board Extension:IKS02A1' from pack STMicroelectronics.X-CUBE-MEMS1.9.4.0: no header file found
+2023-01-06 18:32:33,257 [WARN] ApiManager:308 - Cannot register API 'Wireless:BlueNRG-MS' from pack STMicroelectronics.X-CUBE-BLE1.6.2.3: no header file found
+2023-01-06 18:32:33,273 [WARN] ApiManager:308 - Cannot register API 'Wireless:BlueNRG-MS' from pack STMicroelectronics.X-CUBE-BLE1.6.2.4: no header file found
+2023-01-06 18:32:33,288 [INFO] RtosManager:488 - Registered RTOS mode: class=CMSIS, group=RTOS, mode=CMSIS_V1, owner=FREERTOS
+2023-01-06 18:32:33,289 [INFO] RtosManager:488 - Registered RTOS mode: class=CMSIS, group=RTOS2, mode=CMSIS_V2, owner=FREERTOS
+2023-01-06 18:32:33,290 [INFO] RtosManager:488 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V1, owner=FREERTOS
+2023-01-06 18:32:33,290 [INFO] RtosManager:488 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V2, owner=FREERTOS
+2023-01-06 18:32:33,293 [WARN] ModelIntegratedComponent:185 - Missing modes for component STMicroelectronics:FreeRTOS:0.0.1:STMicroelectronics:RTOS:FreeRTOS:Core:::10.2.0:
+2023-01-06 18:32:33,311 [WARN] ApiManager:308 - Cannot register API 'Board Extension:S2868A1' from pack STMicroelectronics.X-CUBE-SUBG2.5.0.0: no header file found
+2023-01-06 18:32:33,312 [WARN] ApiManager:308 - Cannot register API 'Board Extension:S2868A2' from pack STMicroelectronics.X-CUBE-SUBG2.5.0.0: no header file found
+2023-01-06 18:32:33,312 [WARN] ApiManager:308 - Cannot register API 'Board Extension:S2915A1' from pack STMicroelectronics.X-CUBE-SUBG2.5.0.0: no header file found
+2023-01-06 18:32:33,398 [WARN] ApiManager:308 - Cannot register API 'Board Extension:NFC04A1' from pack STMicroelectronics.X-CUBE-NFC4.2.0.5: no header file found
+2023-01-06 18:32:33,413 [WARN] ApiManager:308 - Cannot register API 'Board Extension:NFC04A1' from pack STMicroelectronics.X-CUBE-NFC4.2.0.4: no header file found
+2023-01-06 18:32:33,475 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,475 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,476 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,476 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,477 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,478 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,478 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,478 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,478 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,479 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,480 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,480 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,490 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,492 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,493 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,493 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,493 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,493 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,494 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,494 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,494 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,494 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,494 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,495 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,495 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,495 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,495 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,496 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,497 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,497 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,498 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,498 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,498 [WARN] ModelIntegratedComponent:64 - No mode defined for component null
+2023-01-06 18:32:33,508 [WARN] ApiManager:308 - Cannot register API 'Board Extension:NFC07A1' from pack STMicroelectronics.X-CUBE-NFC7.1.0.0: no header file found
+2023-01-06 18:32:33,791 [WARN] ApiManager:308 - Cannot register API 'Board Extension:IKS01A3' from pack STMicroelectronics.X-CUBE-MEMS1.9.3.0: no header file found
+2023-01-06 18:32:33,798 [WARN] ApiManager:308 - Cannot register API 'Board Extension:IKS01A2' from pack STMicroelectronics.X-CUBE-MEMS1.9.3.0: no header file found
+2023-01-06 18:32:33,800 [WARN] ApiManager:308 - Cannot register API 'Board Extension:IKS02A1' from pack STMicroelectronics.X-CUBE-MEMS1.9.3.0: no header file found
+2023-01-06 18:32:33,835 [WARN] ApiManager:308 - Cannot register API 'Board Extension:EEPRMA1' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.1.0: no header file found
+2023-01-06 18:32:33,836 [WARN] ApiManager:308 - Cannot register API 'Board Extension:EEPRMA2' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.1.0: no header file found
+2023-01-06 18:32:33,837 [WARN] ApiManager:308 - Cannot register API 'Board Extension:PGEEZ1' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.1.0: no header file found
+2023-01-06 18:32:33,838 [WARN] ApiManager:308 - Cannot register API 'Board Part:M24' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.1.0: no header file found
+2023-01-06 18:32:33,839 [WARN] ApiManager:308 - Cannot register API 'Board Part:M95' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.1.0: no header file found
+2023-01-06 18:32:33,840 [WARN] ApiManager:308 - Cannot register API 'Board Part:M95P32' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.1.0: no header file found
+2023-01-06 18:32:33,840 [WARN] ApiManager:308 - Cannot register API 'PGEEZ1:SPI' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.1.0: no header file found
+2023-01-06 18:32:33,840 [WARN] ApiManager:308 - Cannot register API 'PGEEZ1:QDSPI' from pack STMicroelectronics.X-CUBE-EEPRMA1.4.1.0: no header file found
+2023-01-06 18:32:33,848 [WARN] ApiManager:308 - Cannot register API 'Board Extension:EEPRMA1' from pack STMicroelectronics.X-CUBE-EEPRMA1.3.1.1: no header file found
+2023-01-06 18:32:33,849 [WARN] ApiManager:308 - Cannot register API 'Board Extension:EEPRMA2' from pack STMicroelectronics.X-CUBE-EEPRMA1.3.1.1: no header file found
+2023-01-06 18:32:33,851 [WARN] ApiManager:308 - Cannot register API 'Board Extension:S2868A1' from pack STMicroelectronics.X-CUBE-SFXS2LP1.4.0.0: no header file found
+2023-01-06 18:32:33,851 [WARN] ApiManager:308 - Cannot register API 'Board Extension:S2868A2' from pack STMicroelectronics.X-CUBE-SFXS2LP1.4.0.0: no header file found
+2023-01-06 18:32:33,851 [WARN] ApiManager:308 - Cannot register API 'Board Extension:S2915A1' from pack STMicroelectronics.X-CUBE-SFXS2LP1.4.0.0: no header file found
+2023-01-06 18:32:33,852 [WARN] ApiManager:308 - Cannot register API 'Wireless:BlueNRG-2' from pack STMicroelectronics.X-CUBE-BLE2.3.3.0: no header file found
+2023-01-06 18:32:33,897 [INFO] ThirdPartyModel:289 - Start build external matchings
+2023-01-06 18:32:36,174 [INFO] ThirdPartyModel:302 - End build external matchings
+2023-01-06 18:32:37,654 [INFO] UtilMem:74 - End LoadConfig() Used Memory: 238742136 Bytes (465567744)
+2023-01-06 18:32:38,385 [WARN] ThirdParty:789 - waiting for thirdparty lock release [change project]
+2023-01-06 18:32:38,387 [INFO] ThirdParty:791 - entering critical section [change project]
+2023-01-06 18:32:38,392 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ISPU 1.1.0
+2023-01-06 18:32:38,394 [INFO] ThirdParty:981 - CMSIS Pack Vendor :RoweBots I-CUBE-UNISONRTOS 5.5.0-4
+2023-01-06 18:32:38,397 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 6.0.0
+2023-01-06 18:32:38,409 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7 2.1.0
+2023-01-06 18:32:38,411 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 2.0.0
+2023-01-06 18:32:38,421 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-F4 1.1.0
+2023-01-06 18:32:38,427 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics LIBJPEG 8.0.0
+2023-01-06 18:32:38,428 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 3.0.0
+2023-01-06 18:32:38,429 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.21.0
+2023-01-06 18:32:38,430 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLEMGR 1.2.0
+2023-01-06 18:32:38,430 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-F7 1.1.0
+2023-01-06 18:32:38,435 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 9.4.0
+2023-01-06 18:32:38,436 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 2.0.0
+2023-01-06 18:32:38,436 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 7.3.0
+2023-01-06 18:32:38,437 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 6.2.3
+2023-01-06 18:32:38,437 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALGOBUILD 1.3.0
+2023-01-06 18:32:38,438 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 6.2.4
+2023-01-06 18:32:38,440 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L5 1.1.0
+2023-01-06 18:32:38,440 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics FreeRTOS 0.0.1
+2023-01-06 18:32:38,440 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-G0 1.1.0
+2023-01-06 18:32:38,441 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SUBG2 5.0.0
+2023-01-06 18:32:38,441 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics STM32_WPAN 1.0.0
+2023-01-06 18:32:38,441 [INFO] ThirdParty:981 - CMSIS Pack Vendor :SEGGER I-CUBE-embOS 1.2.1
+2023-01-06 18:32:38,442 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.0.3
+2023-01-06 18:32:38,443 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 2.0.5
+2023-01-06 18:32:38,444 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 2.0.4
+2023-01-06 18:32:38,444 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 1.0.0
+2023-01-06 18:32:38,445 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.1.0
+2023-01-06 18:32:38,445 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-ASTRA1 1.1.1
+2023-01-06 18:32:38,446 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.3.0
+2023-01-06 18:32:38,446 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOF1 3.1.0
+2023-01-06 18:32:38,451 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLEMGR 1.3.0
+2023-01-06 18:32:38,452 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-G4 1.0.0
+2023-01-06 18:32:38,461 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-SIGFOX1 3.2.0
+2023-01-06 18:32:38,480 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L4 1.0.0
+2023-01-06 18:32:38,493 [INFO] ThirdParty:981 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfSSL 5.5.1
+2023-01-06 18:32:38,496 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics HAL Drivers 0.0.0
+2023-01-06 18:32:38,497 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.16.2
+2023-01-06 18:32:38,497 [INFO] ThirdParty:981 - CMSIS Pack Vendor :emotas I-CUBE-CANOPEN 1.1.2
+2023-01-06 18:32:38,497 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.20.0
+2023-01-06 18:32:38,498 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.14.1
+2023-01-06 18:32:38,498 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC7 1.0.0
+2023-01-06 18:32:38,498 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-WL 1.0.0
+2023-01-06 18:32:38,499 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 9.3.0
+2023-01-06 18:32:38,499 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-EEPRMA1 4.1.0
+2023-01-06 18:32:38,499 [INFO] ThirdParty:981 - CMSIS Pack Vendor :portGmbH I-Cube-SoM-uGOAL 1.1.0
+2023-01-06 18:32:38,500 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALS 1.0.1
+2023-01-06 18:32:38,500 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 7.2.0
+2023-01-06 18:32:38,500 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics ThreadX 1.0.0
+2023-01-06 18:32:38,501 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-WB 1.1.0
+2023-01-06 18:32:38,501 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L5 1.0.0
+2023-01-06 18:32:38,503 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 1.0.0
+2023-01-06 18:32:38,503 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-EEPRMA1 3.1.1
+2023-01-06 18:32:38,503 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics ThreadX 0.0.2
+2023-01-06 18:32:38,504 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.1.2
+2023-01-06 18:32:38,504 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SFXS2LP1 4.0.0
+2023-01-06 18:32:38,505 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE2 3.3.0
+2023-01-06 18:32:38,505 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-DISPLAY 2.2.0
+2023-01-06 18:32:38,505 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOF1 3.2.0
+2023-01-06 18:32:38,506 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.2.0
+2023-01-06 18:32:38,506 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7 3.0.0
+2023-01-06 18:32:38,506 [INFO] ThirdParty:981 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ISPU 1.0.0
+2023-01-06 18:32:38,509 [INFO] ThirdParty:797 - exiting critical section [change project]
+2023-01-06 18:32:42,015 [INFO] PinOutPanel:1468 - setPackage(No Configuration,No Configuration)
+2023-01-06 18:32:42,032 [INFO] PinOutPanel:1468 - setPackage(STM32F103VDTx,LQFP100)
+2023-01-06 18:32:46,037 [INFO] UtilMem:74 - Before build in PCC Used Memory: 276433104 Bytes (465567744)
+2023-01-06 18:32:49,931 [INFO] UtilMem:74 - After build in PCC Used Memory: 360085520 Bytes (465567744)
+2023-01-06 18:32:50,072 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,073 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,074 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,075 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,076 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,077 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,078 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,079 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,079 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,080 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,080 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,081 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,081 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,082 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,084 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,085 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,085 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,087 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,089 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,094 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,095 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,096 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,096 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,097 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,097 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,097 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,098 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,098 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,098 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,099 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,099 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,100 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,101 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,101 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,102 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,103 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,103 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,104 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,105 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:50,106 [INFO] IPUIPlugin:79 - create IPUIPlugin
+2023-01-06 18:32:52,140 [INFO] OpenFileManager:327 - Restore cursor
+2023-01-06 18:32:55,784 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 382468216 Bytes (465567744)
+2023-01-06 18:32:56,034 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 225273656 Bytes (465567744)
+2023-01-06 18:32:57,457 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: NVIC
+2023-01-06 18:32:57,472 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: RCC
+2023-01-06 18:32:57,478 [INFO] CodeGenerator:690 - code generatio: config db path: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.6.1.202207061420//db/
+2023-01-06 18:32:58,199 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/license.tmp_save
+2023-01-06 18:32:59,255 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/license.tmp
+2023-01-06 18:32:59,292 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/stm32f1xx_it.c_save
+2023-01-06 18:32:59,694 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/stm32f1xx_it.c
+2023-01-06 18:32:59,698 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/stm32f1xx_it.h_save
+2023-01-06 18:32:59,966 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/stm32f1xx_it.h
+2023-01-06 18:33:00,647 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/stm32f1xx_hal_msp.c_save
+2023-01-06 18:33:02,679 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/stm32f1xx_hal_msp.c
+2023-01-06 18:33:02,690 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/system.tmp_save
+2023-01-06 18:33:03,166 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/system.tmp
+2023-01-06 18:33:03,181 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/stm32f1xx_hal_conf.h_save
+2023-01-06 18:33:03,793 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/stm32f1xx_hal_conf.h
+2023-01-06 18:33:04,075 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/main.h_save
+2023-01-06 18:33:04,449 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/main.h
+2023-01-06 18:33:04,457 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/main.c_save
+2023-01-06 18:33:05,013 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/main.c
+2023-01-06 18:33:07,331 [INFO] ProjectBuilder:2919 - Time for Copy HAL[1] : 85mS.
+2023-01-06 18:33:07,390 [INFO] ProjectBuilder:4117 - Project Generator version: 3.17.1
+2023-01-06 18:33:08,754 [INFO] ConfigFileManager:1394 - The Die is : DIE414
+2023-01-06 18:33:08,928 [INFO] ApiDbMcu:505 - Load IP Config File for FATFS
+2023-01-06 18:33:09,528 [INFO] ApiDbMcu:505 - Load IP Config File for FREERTOS
+2023-01-06 18:33:10,223 [INFO] ApiDbMcu:505 - Load IP Config File for USB_DEVICE
+2023-01-06 18:33:19,840 [INFO] ProjectBuilder:4285 - Time for Generating toolchain IDE Files: 12436mS.
+2023-01-06 18:33:19,861 [INFO] ProjectBuilder:2790 - Time for Copy CMSIS : 3mS.
+2023-01-06 18:33:19,872 [INFO] ProjectBuilder:2790 - Time for Copy CMSIS : 1mS.
+2023-01-06 18:33:22,206 [INFO] McuFinderGlobals:57 - Set McuFinderConnectedMode to true
+2023-01-06 18:33:22,216 [INFO] ApiDb:443 - Save user favorites file /Users/duane/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2023-01-06 18:33:22,216 [INFO] ApiDb:447 - User favorites MCUs=[]
+2023-01-06 18:34:49,272 [INFO] RtosManager:801 - Current active RTOS is FREERTOS [Cortex-M3NS]
+2023-01-06 18:34:51,093 [ERROR] RtosPanel:557 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2023-01-06 18:34:51,438 [ERROR] RtosPanel:557 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2023-01-06 18:34:57,442 [INFO] TasksAndQueuesTab:756 - Dynamic
+2023-01-06 18:34:57,456 [WARN] TasksAndQueuesTab:762 - 128 128
+2023-01-06 18:34:57,458 [WARN] TasksAndQueuesTab:774 - max value is: 768.0
+2023-01-06 18:35:51,505 [INFO] Gpio:272 - dependency for GPIO [RCC, USB]
+2023-01-06 18:35:58,078 [INFO] Gpio:272 - dependency for GPIO [RCC, USB]
+2023-01-06 18:37:54,844 [INFO] Gpio:272 - dependency for GPIO [RCC, SPI1, USB]
+2023-01-06 18:38:13,422 [INFO] Gpio:272 - dependency for GPIO [RCC, SPI1, USB]
+2023-01-06 18:38:13,608 [INFO] Gpio:272 - dependency for GPIO [RCC, SPI1, USB]
+2023-01-06 18:38:19,368 [INFO] Gpio:272 - dependency for GPIO [RCC, SPI1, USB]
+2023-01-06 18:38:19,538 [INFO] Gpio:272 - dependency for GPIO [RCC, SPI1, USB]
+2023-01-06 18:38:29,059 [INFO] Gpio:272 - dependency for GPIO [RCC, SPI1, USB]
+2023-01-06 18:38:29,304 [INFO] Gpio:272 - dependency for GPIO [RCC, SPI1, USB]
+2023-01-06 18:38:32,049 [INFO] Gpio:272 - dependency for GPIO [RCC, SPI1, USB]
+2023-01-06 18:38:32,355 [INFO] Gpio:272 - dependency for GPIO [RCC, SPI1, USB]
+2023-01-06 18:38:39,414 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 488127912 Bytes (600834048)
+2023-01-06 18:40:42,785 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 314005784 Bytes (600834048)
+2023-01-06 18:40:44,272 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 400225304 Bytes (600834048)
+2023-01-06 18:40:49,125 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 314494536 Bytes (600834048)
+2023-01-06 18:40:49,658 [INFO] ProjectBuilder:2243 - IP not ready for code generation: Clock
+2023-01-06 18:40:49,658 [INFO] ProjectBuilder:2253 - IP not ready for code generation: SPI1
+2023-01-06 18:40:59,198 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: SPI
+2023-01-06 18:40:59,200 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: SPI
+2023-01-06 18:40:59,200 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: NVIC
+2023-01-06 18:40:59,200 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: FREERTOS
+2023-01-06 18:40:59,200 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: TIM1_8F1
+2023-01-06 18:40:59,200 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: TIM1_8F1
+2023-01-06 18:40:59,201 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: USB_DEVICE
+2023-01-06 18:40:59,201 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: USB
+2023-01-06 18:40:59,202 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: GPIO
+2023-01-06 18:40:59,202 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: RCC
+2023-01-06 18:40:59,204 [INFO] CodeGenerator:690 - code generatio: config db path: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.6.1.202207061420//db/
+2023-01-06 18:40:59,437 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/license.tmp_save
+2023-01-06 18:40:59,645 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/license.tmp
+2023-01-06 18:40:59,749 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/gpio.tmp_save
+2023-01-06 18:40:59,873 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/gpio.tmp
+2023-01-06 18:41:00,156 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/usb_vars.tmp_save
+2023-01-06 18:41:00,265 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/usb_vars.tmp
+2023-01-06 18:41:00,268 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/usb_inc.tmp_save
+2023-01-06 18:41:00,348 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/usb_inc.tmp
+2023-01-06 18:41:00,350 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/usb_HalInit.tmp_save
+2023-01-06 18:41:00,596 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/usb_HalInit.tmp
+2023-01-06 18:41:00,600 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/usb_Msp.tmp_save
+2023-01-06 18:41:01,125 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/usb_Msp.tmp
+2023-01-06 18:41:01,819 [INFO] Middleware:1435 - No code input for Bsp Dependency
+2023-01-06 18:41:01,828 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_inc.tmp_save
+2023-01-06 18:41:01,922 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_inc.tmp
+2023-01-06 18:41:01,924 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_vars.tmp_save
+2023-01-06 18:41:01,998 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_vars.tmp
+2023-01-06 18:41:01,999 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_pfp.tmp_save
+2023-01-06 18:41:02,212 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_pfp.tmp
+2023-01-06 18:41:02,215 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_obj_creat.tmp_save
+2023-01-06 18:41:02,339 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_obj_creat.tmp
+2023-01-06 18:41:02,342 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelStart.tmp_save
+2023-01-06 18:41:02,452 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelStart.tmp
+2023-01-06 18:41:02,453 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_default_thread.tmp_save
+2023-01-06 18:41:02,546 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_default_thread.tmp
+2023-01-06 18:41:02,548 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_threads.tmp_save
+2023-01-06 18:41:02,870 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_threads.tmp
+2023-01-06 18:41:02,919 [INFO] Middleware:1435 - No code input for Bsp Dependency
+2023-01-06 18:41:02,954 [INFO] Middleware:1435 - No code input for Bsp Dependency
+2023-01-06 18:41:02,959 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_inc.tmp_save
+2023-01-06 18:41:03,035 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_inc.tmp
+2023-01-06 18:41:03,037 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_vars.tmp_save
+2023-01-06 18:41:03,135 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_vars.tmp
+2023-01-06 18:41:03,139 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_pfp.tmp_save
+2023-01-06 18:41:03,200 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_pfp.tmp
+2023-01-06 18:41:03,204 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_obj_creat.tmp_save
+2023-01-06 18:41:03,271 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_obj_creat.tmp
+2023-01-06 18:41:03,272 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelStart.tmp_save
+2023-01-06 18:41:03,375 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelStart.tmp
+2023-01-06 18:41:03,377 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_default_thread.tmp_save
+2023-01-06 18:41:03,446 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_default_thread.tmp
+2023-01-06 18:41:03,448 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_threads.tmp_save
+2023-01-06 18:41:03,513 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_threads.tmp
+2023-01-06 18:41:03,518 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/FreeRTOSConfig.h_save
+2023-01-06 18:41:03,664 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/FreeRTOSConfig.h
+2023-01-06 18:41:03,669 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/freertos.c_save
+2023-01-06 18:41:03,800 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/freertos.c
+2023-01-06 18:41:03,823 [INFO] Middleware:1435 - No code input for Bsp Dependency
+2023-01-06 18:41:03,838 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usb_device.c_save
+2023-01-06 18:41:04,025 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usb_device.c
+2023-01-06 18:41:04,033 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usb_device.h_save
+2023-01-06 18:41:04,138 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usb_device.h
+2023-01-06 18:41:04,144 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/Target/usbd_conf.h_save
+2023-01-06 18:41:04,228 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/Target/usbd_conf.h
+2023-01-06 18:41:04,232 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/Target/usbd_conf.c_save
+2023-01-06 18:41:04,311 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/Target/usbd_conf.c
+2023-01-06 18:41:04,314 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usbd_desc.h_save
+2023-01-06 18:41:04,385 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usbd_desc.h
+2023-01-06 18:41:04,388 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usbd_desc.c_save
+2023-01-06 18:41:04,467 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usbd_desc.c
+2023-01-06 18:41:04,469 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usbd_cdc_if.h_save
+2023-01-06 18:41:04,526 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usbd_cdc_if.h
+2023-01-06 18:41:04,528 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usbd_cdc_if.c_save
+2023-01-06 18:41:04,588 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usbd_cdc_if.c
+2023-01-06 18:41:04,613 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/stm32f1xx_it.c_save
+2023-01-06 18:41:04,755 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/stm32f1xx_it.c
+2023-01-06 18:41:04,758 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/stm32f1xx_it.h_save
+2023-01-06 18:41:04,825 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/stm32f1xx_it.h
+2023-01-06 18:41:04,937 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/stm32f1xx_hal_msp.c_save
+2023-01-06 18:41:05,094 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/stm32f1xx_hal_msp.c
+2023-01-06 18:41:05,096 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/system.tmp_save
+2023-01-06 18:41:05,175 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/system.tmp
+2023-01-06 18:41:05,180 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/stm32f1xx_hal_conf.h_save
+2023-01-06 18:41:05,266 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/stm32f1xx_hal_conf.h
+2023-01-06 18:41:05,348 [WARN] IPConfigManager:3348 - IP not found : TIM
+2023-01-06 18:41:05,349 [WARN] CodeGenerator:3567 - IP not found : null
+2023-01-06 18:41:05,358 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/main.h_save
+2023-01-06 18:41:05,433 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/main.h
+2023-01-06 18:41:05,436 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/main.c_save
+2023-01-06 18:41:05,576 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/main.c
+2023-01-06 18:41:06,264 [INFO] ProjectBuilder:2919 - Time for Copy HAL[1] : 189mS.
+2023-01-06 18:41:06,293 [INFO] ProjectBuilder:4117 - Project Generator version: 3.17.1
+2023-01-06 18:41:07,001 [INFO] ConfigFileManager:1394 - The Die is : DIE414
+2023-01-06 18:41:12,876 [INFO] ProjectBuilder:4285 - Time for Generating toolchain IDE Files: 6576mS.
+2023-01-06 18:41:12,905 [INFO] ProjectBuilder:2790 - Time for Copy CMSIS : 1mS.
+2023-01-06 18:41:12,913 [INFO] ProjectBuilder:2790 - Time for Copy CMSIS : 0mS.
+2023-01-06 18:43:07,268 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 346654696 Bytes (663748608)
+2023-01-06 18:43:08,690 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 371147488 Bytes (663748608)
+2023-01-06 18:43:10,731 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 452388840 Bytes (663748608)
+2023-01-06 18:43:11,142 [INFO] ProjectBuilder:2243 - IP not ready for code generation: Clock
+2023-01-06 18:43:11,143 [INFO] ProjectBuilder:2253 - IP not ready for code generation: SPI1
+2023-01-06 18:43:16,966 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: SPI
+2023-01-06 18:43:16,972 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: SPI
+2023-01-06 18:43:16,972 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: NVIC
+2023-01-06 18:43:16,972 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: FREERTOS
+2023-01-06 18:43:16,972 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: USART
+2023-01-06 18:43:16,972 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: TIM1_8F1
+2023-01-06 18:43:16,973 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: TIM1_8F1
+2023-01-06 18:43:16,973 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: USB_DEVICE
+2023-01-06 18:43:16,973 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: USB
+2023-01-06 18:43:16,977 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: GPIO
+2023-01-06 18:43:16,977 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: RCC
+2023-01-06 18:43:16,979 [INFO] CodeGenerator:690 - code generatio: config db path: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.6.1.202207061420//db/
+2023-01-06 18:43:17,244 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/license.tmp_save
+2023-01-06 18:43:17,339 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/license.tmp
+2023-01-06 18:43:17,387 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/gpio.tmp_save
+2023-01-06 18:43:17,456 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/gpio.tmp
+2023-01-06 18:43:17,543 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/usb_vars.tmp_save
+2023-01-06 18:43:17,599 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/usb_vars.tmp
+2023-01-06 18:43:17,602 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/usb_inc.tmp_save
+2023-01-06 18:43:17,657 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/usb_inc.tmp
+2023-01-06 18:43:17,659 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/usb_HalInit.tmp_save
+2023-01-06 18:43:17,738 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/usb_HalInit.tmp
+2023-01-06 18:43:17,739 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/usb_Msp.tmp_save
+2023-01-06 18:43:17,820 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/usb_Msp.tmp
+2023-01-06 18:43:18,292 [INFO] Middleware:1435 - No code input for Bsp Dependency
+2023-01-06 18:43:18,296 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_inc.tmp_save
+2023-01-06 18:43:18,350 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_inc.tmp
+2023-01-06 18:43:18,353 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_vars.tmp_save
+2023-01-06 18:43:18,406 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_vars.tmp
+2023-01-06 18:43:18,408 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_pfp.tmp_save
+2023-01-06 18:43:18,476 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_pfp.tmp
+2023-01-06 18:43:18,478 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_obj_creat.tmp_save
+2023-01-06 18:43:18,529 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_obj_creat.tmp
+2023-01-06 18:43:18,530 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelStart.tmp_save
+2023-01-06 18:43:18,579 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelStart.tmp
+2023-01-06 18:43:18,580 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_default_thread.tmp_save
+2023-01-06 18:43:18,637 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_default_thread.tmp
+2023-01-06 18:43:18,639 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_threads.tmp_save
+2023-01-06 18:43:18,685 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_threads.tmp
+2023-01-06 18:43:18,691 [INFO] Middleware:1435 - No code input for Bsp Dependency
+2023-01-06 18:43:18,698 [INFO] Middleware:1435 - No code input for Bsp Dependency
+2023-01-06 18:43:18,702 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_inc.tmp_save
+2023-01-06 18:43:18,762 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_inc.tmp
+2023-01-06 18:43:18,767 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_vars.tmp_save
+2023-01-06 18:43:18,818 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_vars.tmp
+2023-01-06 18:43:18,819 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_pfp.tmp_save
+2023-01-06 18:43:18,873 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_pfp.tmp
+2023-01-06 18:43:18,877 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_obj_creat.tmp_save
+2023-01-06 18:43:18,945 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_obj_creat.tmp
+2023-01-06 18:43:18,947 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelStart.tmp_save
+2023-01-06 18:43:19,027 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelStart.tmp
+2023-01-06 18:43:19,033 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_default_thread.tmp_save
+2023-01-06 18:43:19,093 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_default_thread.tmp
+2023-01-06 18:43:19,097 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_threads.tmp_save
+2023-01-06 18:43:19,146 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_threads.tmp
+2023-01-06 18:43:19,148 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/FreeRTOSConfig.h_save
+2023-01-06 18:43:19,259 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/FreeRTOSConfig.h
+2023-01-06 18:43:19,262 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/freertos.c_save
+2023-01-06 18:43:19,362 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/freertos.c
+2023-01-06 18:43:19,404 [INFO] Middleware:1435 - No code input for Bsp Dependency
+2023-01-06 18:43:19,724 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usb_device.c_save
+2023-01-06 18:43:19,879 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usb_device.c
+2023-01-06 18:43:19,883 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usb_device.h_save
+2023-01-06 18:43:19,936 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usb_device.h
+2023-01-06 18:43:19,938 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/Target/usbd_conf.h_save
+2023-01-06 18:43:20,004 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/Target/usbd_conf.h
+2023-01-06 18:43:20,006 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/Target/usbd_conf.c_save
+2023-01-06 18:43:20,072 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/Target/usbd_conf.c
+2023-01-06 18:43:20,082 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usbd_desc.h_save
+2023-01-06 18:43:20,175 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usbd_desc.h
+2023-01-06 18:43:20,187 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usbd_desc.c_save
+2023-01-06 18:43:20,266 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usbd_desc.c
+2023-01-06 18:43:20,268 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usbd_cdc_if.h_save
+2023-01-06 18:43:20,338 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usbd_cdc_if.h
+2023-01-06 18:43:20,340 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usbd_cdc_if.c_save
+2023-01-06 18:43:20,412 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/USB_DEVICE/App/usbd_cdc_if.c
+2023-01-06 18:43:20,437 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/stm32f1xx_it.c_save
+2023-01-06 18:43:20,517 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/stm32f1xx_it.c
+2023-01-06 18:43:20,520 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/stm32f1xx_it.h_save
+2023-01-06 18:43:20,581 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/stm32f1xx_it.h
+2023-01-06 18:43:20,704 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/stm32f1xx_hal_msp.c_save
+2023-01-06 18:43:20,856 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/stm32f1xx_hal_msp.c
+2023-01-06 18:43:20,858 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/system.tmp_save
+2023-01-06 18:43:20,914 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/system.tmp
+2023-01-06 18:43:20,920 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/stm32f1xx_hal_conf.h_save
+2023-01-06 18:43:20,992 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/stm32f1xx_hal_conf.h
+2023-01-06 18:43:21,078 [WARN] IPConfigManager:3348 - IP not found : TIM
+2023-01-06 18:43:21,079 [WARN] CodeGenerator:3567 - IP not found : null
+2023-01-06 18:43:21,085 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/main.h_save
+2023-01-06 18:43:21,150 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/main.h
+2023-01-06 18:43:21,153 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/main.c_save
+2023-01-06 18:43:21,301 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/main.c
+2023-01-06 18:43:21,811 [INFO] ProjectBuilder:2919 - Time for Copy HAL[1] : 86mS.
+2023-01-06 18:43:21,822 [INFO] ProjectBuilder:4117 - Project Generator version: 3.17.1
+2023-01-06 18:43:22,358 [INFO] ConfigFileManager:1394 - The Die is : DIE414
+2023-01-06 18:43:28,002 [INFO] ProjectBuilder:4285 - Time for Generating toolchain IDE Files: 6178mS.
+2023-01-06 18:43:28,023 [INFO] ProjectBuilder:2790 - Time for Copy CMSIS : 2mS.
+2023-01-06 18:43:28,034 [INFO] ProjectBuilder:2790 - Time for Copy CMSIS : 1mS.

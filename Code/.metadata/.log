@@ -1,0 +1,16 @@
+!SESSION 2023-01-06 18:30:17.747 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_CA
+Framework arguments:  -keyring /Users/duane/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/duane/.eclipse_keyring
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-01-06 18:31:18.232
+!MESSAGE Log4j initialized with config file /Users/duane/Code/Github/Hifi-Amplifier/Code/.metadata/.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-01-06 18:31:28.133
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-01-06 18:33:33.910
+!MESSAGE Indexed 'Amplifier' (17 sources, 78 headers) in 14.1 sec: 3,761 declarations; 14,285 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.011%)
