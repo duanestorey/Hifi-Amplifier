@@ -7,10 +7,11 @@
 
 #include "Amplifier.h"
 #include "main.h"
+#include "cmsis_os.h"
 
 Amplifier::Amplifier() {
 	// TODO Auto-generated constructor stub
-
+	mDolbyLED.setPortAndPin( LED_MUTE_GPIO_Port, LED_MUTE_Pin );
 }
 
 Amplifier::~Amplifier() {
@@ -18,25 +19,27 @@ Amplifier::~Amplifier() {
 }
 
 void Amplifier::run() {
-	  /*Configure GPIO pin Output Level */
-	  HAL_GPIO_WritePin(LED_MUTE_GPIO_Port, LED_MUTE_Pin, GPIO_PIN_SET );
+	for(;;) {
+		osDelay(1);
+		  /*Configure GPIO pin Output Level */
+		  HAL_GPIO_WritePin(LED_MUTE_GPIO_Port, LED_MUTE_Pin, GPIO_PIN_SET );
 
-	  HAL_Delay( 200 );
+		  osDelay( 200 );
 
-	  /*Configure GPIO pin Output Level */
-	  HAL_GPIO_WritePin(LED_MUTE_GPIO_Port, LED_MUTE_Pin, GPIO_PIN_RESET);
+		  /*Configure GPIO pin Output Level */
+		  HAL_GPIO_WritePin(LED_MUTE_GPIO_Port, LED_MUTE_Pin, GPIO_PIN_RESET);
 
-	  HAL_Delay( 200 );
+		  osDelay( 200 );
 
-	  /*Configure GPIO pin Output Level */
-	  HAL_GPIO_WritePin(LED_DOLBY_GPIO_Port, LED_DOLBY_Pin, GPIO_PIN_SET );
+		  /*Configure GPIO pin Output Level */
+		  HAL_GPIO_WritePin(LED_DOLBY_GPIO_Port, LED_DOLBY_Pin, GPIO_PIN_SET );
 
-	  HAL_Delay( 200 );
+		  osDelay( 200 );
 
-	  /*Configure GPIO pin Output Level */
-	  HAL_GPIO_WritePin(LED_DOLBY_GPIO_Port, LED_DOLBY_Pin, GPIO_PIN_RESET);
+		  /*Configure GPIO pin Output Level */
+		  HAL_GPIO_WritePin(LED_DOLBY_GPIO_Port, LED_DOLBY_Pin, GPIO_PIN_RESET);
 
-	  HAL_Delay( 200 );
-
+		  osDelay( 200 );
+	}
 }
 

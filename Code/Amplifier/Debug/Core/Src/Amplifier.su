@@ -1,4 +1,7 @@
-../Core/Src/Amplifier.cpp:11:1:Amplifier::Amplifier()	16	static
-../Core/Src/Amplifier.cpp:16:1:Amplifier::~Amplifier()	16	static
-../Core/Src/Amplifier.cpp:16:1:virtual Amplifier::~Amplifier()	16	static
-../Core/Src/Amplifier.cpp:20:6:void Amplifier::run()	16	static
+../Core/Src/Led.h:23:7:void LED::setPin(uint16_t)	16	static
+../Core/Src/Led.h:24:7:void LED::setPort(GPIO_TypeDef*)	16	static
+../Core/Src/Led.h:25:7:void LED::setPortAndPin(GPIO_TypeDef*, uint16_t)	24	static
+../Core/Src/Amplifier.cpp:12:1:Amplifier::Amplifier()	16	static
+../Core/Src/Amplifier.cpp:17:1:Amplifier::~Amplifier()	16	static
+../Core/Src/Amplifier.cpp:17:1:virtual Amplifier::~Amplifier()	16	static
+../Core/Src/Amplifier.cpp:21:6:virtual void Amplifier::run()	16	static

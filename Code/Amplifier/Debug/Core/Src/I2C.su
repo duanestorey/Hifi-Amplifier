@@ -1,0 +1,3 @@
+../Core/Src/I2C.cpp:10:1:I2C::I2C()	16	static
+../Core/Src/I2C.cpp:15:1:I2C::~I2C()	16	static
+../Core/Src/I2C.cpp:15:1:virtual I2C::~I2C()	16	static
