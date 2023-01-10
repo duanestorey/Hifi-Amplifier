@@ -10,8 +10,6 @@
 
 #include <string>
 
-#undef DAC
-
 class DAC_IC {
 public:
 	enum {
@@ -26,7 +24,7 @@ public:
 	enum {
 		FORMAT_SONY = 0,
 		FORMAT_I2S = 1
-	};
+	} FORMAT;
 public:
 	DAC_IC();
 	virtual ~DAC_IC();

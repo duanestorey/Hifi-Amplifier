@@ -1,0 +1,4 @@
+../Core/Src/UI.cpp:17:1:UI::~UI()	0	static
+../Core/Src/UI.cpp:17:1:virtual UI::~UI()	8	static
+../Core/Src/UI.cpp:21:6:virtual void UI::run()	8	static
+../Core/Src/UI.cpp:12:1:UI::UI()	0	static

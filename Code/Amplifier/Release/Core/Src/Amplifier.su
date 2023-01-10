@@ -1,0 +1,5 @@
+../Core/Src/Amplifier.cpp:23:1:virtual void Amplifier::initialize(I2C_HandleTypeDef)	104	static
+../Core/Src/Amplifier.cpp:32:6:virtual void Amplifier::run()	8	static
+../Core/Src/Amplifier.cpp:14:1:Amplifier::Amplifier()	8	static
+../Core/Src/Amplifier.cpp:18:1:Amplifier::~Amplifier()	8	static
+../Core/Src/Amplifier.cpp:18:1:virtual Amplifier::~Amplifier()	8	static

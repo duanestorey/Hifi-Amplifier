@@ -113,3 +113,63 @@ C Model Exception: C Model Status [Element DACPCM1681.cpp does not exist.]
 	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
 !SUBENTRY 1 org.eclipse.cdt.core 4 969 2023-01-11 00:02:40.197
 !MESSAGE Element DACPCM1681.cpp does not exist.
+
+!ENTRY org.eclipse.core.resources 4 568 2023-01-11 00:32:13.617
+!MESSAGE Could not write workspace metadata '/Users/duane/Code/Github/Hifi-Amplifier/Code/.metadata/.plugins/org.eclipse.core.resources/6.snap'.
+!STACK 0
+java.io.FileNotFoundException: /Users/duane/Code/Github/Hifi-Amplifier/Code/.metadata/.plugins/org.eclipse.core.resources/6.snap (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:298)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:158)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:48)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:44)
+	at org.eclipse.core.internal.resources.SaveManager.snapTree(SaveManager.java:1474)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1198)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1143)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:55)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-01-11 00:39:19.287
+!MESSAGE Indexed 'Amplifier' (42 sources, 332 headers) in 8.84 sec: 31,629 declarations; 105,208 references; 4 unresolved inclusions; 73 syntax errors; 780 unresolved names (0.57%)
+
+!ENTRY org.eclipse.core.resources 4 568 2023-01-11 00:39:21.324
+!MESSAGE Could not write metadata for '/'.
+!STACK 0
+java.io.FileNotFoundException: /Users/duane/Code/Github/Hifi-Amplifier/Code/.metadata/.plugins/org.eclipse.core.resources/.root/.markers.snap (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:298)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:158)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:48)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:44)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1765)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1202)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1143)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:55)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-01-11 00:43:00.773
+!MESSAGE Indexed 'Amplifier' (42 sources, 332 headers) in 7.46 sec: 31,629 declarations; 105,208 references; 4 unresolved inclusions; 73 syntax errors; 780 unresolved names (0.57%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-01-11 00:43:36.966
+!MESSAGE Indexed 'Amplifier' (42 sources, 431 headers) in 4.27 sec: 26,584 declarations; 86,338 references; 2 unresolved inclusions; 230 syntax errors; 19,762 unresolved names (15%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-01-11 00:46:11.388
+!MESSAGE Indexed 'Amplifier' (42 sources, 332 headers) in 4.37 sec: 31,629 declarations; 105,208 references; 4 unresolved inclusions; 73 syntax errors; 780 unresolved names (0.57%)
+
+!ENTRY org.eclipse.core.resources 4 568 2023-01-11 00:46:58.919
+!MESSAGE Could not write metadata for '/'.
+!STACK 0
+java.io.FileNotFoundException: /Users/duane/Code/Github/Hifi-Amplifier/Code/.metadata/.plugins/org.eclipse.core.resources/.root/.markers.snap (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:298)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:158)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:48)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:44)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1765)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1202)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1143)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:55)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)

@@ -13,7 +13,6 @@
 
 Amplifier::Amplifier() : mDAC( 0 ) {
 	// TODO Auto-generated constructor stub
-	mDolbyLED.setPortAndPin( LED_MUTE_GPIO_Port, LED_MUTE_Pin );
 }
 
 Amplifier::~Amplifier() {
@@ -22,6 +21,8 @@ Amplifier::~Amplifier() {
 
 void
 Amplifier::initialize( I2C_HandleTypeDef bus ) {
+	mDolbyLED.setPortAndPin( LED_MUTE_GPIO_Port, LED_MUTE_Pin );
+
 	// Take the I2C bus info and configure our internal I2C bus class
 	mBusI2C.setBusData( bus );
 

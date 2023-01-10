@@ -19,7 +19,7 @@ class I2C {
 protected:
 	I2C_HandleTypeDef mI2C;
 private:
-	uint8_t mBuffer[16];
+	uint8_t mBuffer[16] = {0};
 
 public:
 	I2C() {}

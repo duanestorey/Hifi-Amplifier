@@ -5,7 +5,7 @@
 ../Core/Src/I2C.h:25:2:I2C::I2C()	16	static
 ../Core/Src/I2C.h:29:7:void I2C::setBusData(I2C_HandleTypeDef)	16	static
 ../Core/Src/Amplifier.cpp:14:1:Amplifier::Amplifier()	16	static
-../Core/Src/Amplifier.cpp:19:1:Amplifier::~Amplifier()	16	static
-../Core/Src/Amplifier.cpp:19:1:virtual Amplifier::~Amplifier()	16	static
-../Core/Src/Amplifier.cpp:24:1:virtual void Amplifier::initialize(I2C_HandleTypeDef)	96	static
-../Core/Src/Amplifier.cpp:31:6:virtual void Amplifier::run()	16	static
+../Core/Src/Amplifier.cpp:18:1:Amplifier::~Amplifier()	16	static
+../Core/Src/Amplifier.cpp:18:1:virtual Amplifier::~Amplifier()	16	static
+../Core/Src/Amplifier.cpp:23:1:virtual void Amplifier::initialize(I2C_HandleTypeDef)	96	static
+../Core/Src/Amplifier.cpp:32:6:virtual void Amplifier::run()	16	static
