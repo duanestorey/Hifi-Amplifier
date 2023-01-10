@@ -4359,3 +4359,253 @@
 2023-01-10 22:27:53,015 [INFO] ProjectBuilder:4285 - Time for Generating toolchain IDE Files: 1962mS.
 2023-01-10 22:27:53,019 [INFO] ProjectBuilder:2790 - Time for Copy CMSIS : 0mS.
 2023-01-10 22:27:53,022 [INFO] ProjectBuilder:2790 - Time for Copy CMSIS : 0mS.
+2023-01-10 22:28:48,796 [ERROR] RtosPanel:557 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2023-01-10 22:28:50,835 [INFO] TasksAndQueuesTab:756 - Dynamic
+2023-01-10 22:28:50,836 [WARN] TasksAndQueuesTab:762 - 128 128
+2023-01-10 22:28:50,836 [WARN] TasksAndQueuesTab:774 - max value is: 768.0
+2023-01-10 22:28:53,072 [INFO] EditThreadDialog:703 - RAM SIZE (in KB): 64
+2023-01-10 22:28:53,072 [INFO] EditThreadDialog:705 - RAM SIZE (in words): 16384
+2023-01-10 22:29:05,915 [INFO] TasksAndQueuesTab:756 - Dynamic
+2023-01-10 22:29:05,915 [WARN] TasksAndQueuesTab:762 - 128 128
+2023-01-10 22:29:05,916 [WARN] TasksAndQueuesTab:774 - max value is: 768.0
+2023-01-10 22:29:05,916 [INFO] TasksAndQueuesTab:756 - Dynamic
+2023-01-10 22:29:05,916 [WARN] TasksAndQueuesTab:762 - 128 128
+2023-01-10 22:29:05,916 [WARN] TasksAndQueuesTab:774 - max value is: 768.0
+2023-01-10 22:29:12,899 [INFO] EditThreadDialog:703 - RAM SIZE (in KB): 64
+2023-01-10 22:29:12,900 [INFO] EditThreadDialog:705 - RAM SIZE (in words): 16384
+2023-01-10 22:29:40,666 [ERROR] RtosPanel:557 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2023-01-10 22:29:42,583 [INFO] TasksAndQueuesTab:756 - Dynamic
+2023-01-10 22:29:42,583 [WARN] TasksAndQueuesTab:762 - 128 128
+2023-01-10 22:29:42,583 [WARN] TasksAndQueuesTab:774 - max value is: 768.0
+2023-01-10 22:29:42,583 [INFO] TasksAndQueuesTab:756 - Dynamic
+2023-01-10 22:29:42,584 [WARN] TasksAndQueuesTab:762 - 128 128
+2023-01-10 22:29:42,584 [WARN] TasksAndQueuesTab:774 - max value is: 768.0
+2023-01-10 22:29:43,688 [INFO] EditThreadDialog:703 - RAM SIZE (in KB): 64
+2023-01-10 22:29:43,688 [INFO] EditThreadDialog:705 - RAM SIZE (in words): 16384
+2023-01-10 22:29:58,872 [INFO] TasksAndQueuesTab:756 - Dynamic
+2023-01-10 22:29:58,872 [WARN] TasksAndQueuesTab:762 - 128 128
+2023-01-10 22:29:58,872 [WARN] TasksAndQueuesTab:774 - max value is: 768.0
+2023-01-10 22:29:58,873 [INFO] TasksAndQueuesTab:756 - Dynamic
+2023-01-10 22:29:58,873 [WARN] TasksAndQueuesTab:762 - 128 128
+2023-01-10 22:29:58,873 [WARN] TasksAndQueuesTab:774 - max value is: 768.0
+2023-01-10 22:29:58,873 [INFO] TasksAndQueuesTab:756 - Dynamic
+2023-01-10 22:29:58,873 [WARN] TasksAndQueuesTab:762 - 128 128
+2023-01-10 22:29:58,873 [WARN] TasksAndQueuesTab:774 - max value is: 768.0
+2023-01-10 22:30:05,191 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 419800400 Bytes (734003200)
+2023-01-10 22:30:05,247 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 432383312 Bytes (734003200)
+2023-01-10 22:30:05,987 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 490054992 Bytes (734003200)
+2023-01-10 22:30:07,646 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: SPI
+2023-01-10 22:30:07,649 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: SPI
+2023-01-10 22:30:07,649 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: NVIC
+2023-01-10 22:30:07,649 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: FREERTOS
+2023-01-10 22:30:07,649 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: USART
+2023-01-10 22:30:07,649 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: TIM1_8F1
+2023-01-10 22:30:07,650 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: TIM1_8F1
+2023-01-10 22:30:07,650 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: SYS
+2023-01-10 22:30:07,653 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: GPIO
+2023-01-10 22:30:07,653 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: RCC
+2023-01-10 22:30:07,653 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: I2C
+2023-01-10 22:30:07,654 [INFO] CodeGenerator:690 - code generatio: config db path: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.6.1.202207061420//db/
+2023-01-10 22:30:07,668 [WARN] IP:2111 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2023-01-10 22:30:07,668 [WARN] IP:2111 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2023-01-10 22:30:07,808 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/license.tmp_save
+2023-01-10 22:30:07,867 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/license.tmp
+2023-01-10 22:30:07,911 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/gpio.tmp_save
+2023-01-10 22:30:07,961 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/gpio.tmp
+2023-01-10 22:30:08,430 [INFO] Middleware:1435 - No code input for Bsp Dependency
+2023-01-10 22:30:08,436 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_inc.tmp_save
+2023-01-10 22:30:08,478 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_inc.tmp
+2023-01-10 22:30:08,479 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelInit.tmp_save
+2023-01-10 22:30:08,523 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelInit.tmp
+2023-01-10 22:30:08,524 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelStart.tmp_save
+2023-01-10 22:30:08,563 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelStart.tmp
+2023-01-10 22:30:08,564 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_typedefs.tmp_save
+2023-01-10 22:30:08,605 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_typedefs.tmp
+2023-01-10 22:30:08,605 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_vars.tmp_save
+2023-01-10 22:30:08,647 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_vars.tmp
+2023-01-10 22:30:08,648 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_pfp.tmp_save
+2023-01-10 22:30:08,688 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_pfp.tmp
+2023-01-10 22:30:08,688 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_obj_creat.tmp_save
+2023-01-10 22:30:08,731 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_obj_creat.tmp
+2023-01-10 22:30:08,732 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_default_thread.tmp_save
+2023-01-10 22:30:08,772 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_default_thread.tmp
+2023-01-10 22:30:08,772 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_threads.tmp_save
+2023-01-10 22:30:08,813 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_threads.tmp
+2023-01-10 22:30:08,817 [INFO] Middleware:1435 - No code input for Bsp Dependency
+2023-01-10 22:30:08,818 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_inc.tmp_save
+2023-01-10 22:30:08,859 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_inc.tmp
+2023-01-10 22:30:08,862 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelInit.tmp_save
+2023-01-10 22:30:08,902 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelInit.tmp
+2023-01-10 22:30:08,903 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelStart.tmp_save
+2023-01-10 22:30:08,943 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelStart.tmp
+2023-01-10 22:30:08,944 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_typedefs.tmp_save
+2023-01-10 22:30:08,985 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_typedefs.tmp
+2023-01-10 22:30:08,986 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_vars.tmp_save
+2023-01-10 22:30:09,028 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_vars.tmp
+2023-01-10 22:30:09,029 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_pfp.tmp_save
+2023-01-10 22:30:09,075 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_pfp.tmp
+2023-01-10 22:30:09,076 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_obj_creat.tmp_save
+2023-01-10 22:30:09,126 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_obj_creat.tmp
+2023-01-10 22:30:09,128 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_default_thread.tmp_save
+2023-01-10 22:30:09,172 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_default_thread.tmp
+2023-01-10 22:30:09,173 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_threads.tmp_save
+2023-01-10 22:30:09,214 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_threads.tmp
+2023-01-10 22:30:09,215 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/FreeRTOSConfig.h_save
+2023-01-10 22:30:09,263 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/FreeRTOSConfig.h
+2023-01-10 22:30:09,264 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/freertos.c_save
+2023-01-10 22:30:09,309 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/freertos.c
+2023-01-10 22:30:09,315 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/stm32f1xx_it.c_save
+2023-01-10 22:30:09,369 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/stm32f1xx_it.c
+2023-01-10 22:30:09,370 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/stm32f1xx_it.h_save
+2023-01-10 22:30:09,410 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/stm32f1xx_it.h
+2023-01-10 22:30:09,434 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/stm32f1xx_hal_msp.c_save
+2023-01-10 22:30:09,507 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/stm32f1xx_hal_msp.c
+2023-01-10 22:30:09,508 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/system.tmp_save
+2023-01-10 22:30:09,550 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/system.tmp
+2023-01-10 22:30:09,552 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/stm32f1xx_hal_conf.h_save
+2023-01-10 22:30:09,601 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/stm32f1xx_hal_conf.h
+2023-01-10 22:30:09,635 [WARN] IPConfigManager:3348 - IP not found : TIM
+2023-01-10 22:30:09,635 [WARN] CodeGenerator:3567 - IP not found : null
+2023-01-10 22:30:09,637 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/main.h_save
+2023-01-10 22:30:09,684 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/main.h
+2023-01-10 22:30:09,685 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/main.c_save
+2023-01-10 22:30:09,784 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/main.c
+2023-01-10 22:30:10,257 [INFO] ProjectBuilder:2919 - Time for Copy HAL[1] : 50mS.
+2023-01-10 22:30:10,267 [INFO] ProjectBuilder:4117 - Project Generator version: 3.17.1
+2023-01-10 22:30:10,435 [INFO] ConfigFileManager:1394 - The Die is : DIE414
+2023-01-10 22:30:12,079 [INFO] ProjectBuilder:4285 - Time for Generating toolchain IDE Files: 1812mS.
+2023-01-10 22:30:12,086 [INFO] ProjectBuilder:2790 - Time for Copy CMSIS : 0mS.
+2023-01-10 22:30:12,092 [INFO] ProjectBuilder:2790 - Time for Copy CMSIS : 0mS.
+2023-01-10 22:30:26,925 [INFO] EditThreadDialog:703 - RAM SIZE (in KB): 64
+2023-01-10 22:30:26,929 [INFO] EditThreadDialog:705 - RAM SIZE (in words): 16384
+2023-01-10 22:30:56,914 [INFO] EditThreadDialog:703 - RAM SIZE (in KB): 64
+2023-01-10 22:30:56,915 [INFO] EditThreadDialog:705 - RAM SIZE (in words): 16384
+2023-01-10 22:31:01,717 [INFO] EditThreadDialog:703 - RAM SIZE (in KB): 64
+2023-01-10 22:31:01,718 [INFO] EditThreadDialog:705 - RAM SIZE (in words): 16384
+2023-01-10 22:31:04,882 [INFO] EditThreadDialog:703 - RAM SIZE (in KB): 64
+2023-01-10 22:31:04,883 [INFO] EditThreadDialog:705 - RAM SIZE (in words): 16384
+2023-01-10 22:31:17,715 [INFO] EditThreadDialog:703 - RAM SIZE (in KB): 64
+2023-01-10 22:31:17,716 [INFO] EditThreadDialog:705 - RAM SIZE (in words): 16384
+2023-01-10 22:31:20,688 [INFO] EditThreadDialog:703 - RAM SIZE (in KB): 64
+2023-01-10 22:31:20,689 [INFO] EditThreadDialog:705 - RAM SIZE (in words): 16384
+2023-01-10 22:31:23,062 [INFO] EditThreadDialog:703 - RAM SIZE (in KB): 64
+2023-01-10 22:31:23,063 [INFO] EditThreadDialog:705 - RAM SIZE (in words): 16384
+2023-01-10 22:31:28,536 [INFO] TasksAndQueuesTab:756 - Dynamic
+2023-01-10 22:31:28,537 [WARN] TasksAndQueuesTab:762 - 128 128
+2023-01-10 22:31:28,537 [WARN] TasksAndQueuesTab:774 - max value is: 768.0
+2023-01-10 22:31:28,537 [INFO] TasksAndQueuesTab:756 - Dynamic
+2023-01-10 22:31:28,537 [WARN] TasksAndQueuesTab:762 - 128 128
+2023-01-10 22:31:28,537 [WARN] TasksAndQueuesTab:774 - max value is: 768.0
+2023-01-10 22:31:28,537 [INFO] TasksAndQueuesTab:756 - Dynamic
+2023-01-10 22:31:28,537 [WARN] TasksAndQueuesTab:762 - 128 128
+2023-01-10 22:31:28,537 [WARN] TasksAndQueuesTab:774 - max value is: 768.0
+2023-01-10 22:31:29,664 [INFO] EditThreadDialog:703 - RAM SIZE (in KB): 64
+2023-01-10 22:31:29,665 [INFO] EditThreadDialog:705 - RAM SIZE (in words): 16384
+2023-01-10 22:31:32,791 [INFO] TasksAndQueuesTab:756 - Dynamic
+2023-01-10 22:31:32,791 [WARN] TasksAndQueuesTab:762 - 128 128
+2023-01-10 22:31:32,791 [WARN] TasksAndQueuesTab:774 - max value is: 768.0
+2023-01-10 22:31:32,792 [INFO] TasksAndQueuesTab:756 - Dynamic
+2023-01-10 22:31:32,792 [WARN] TasksAndQueuesTab:762 - 128 128
+2023-01-10 22:31:32,792 [WARN] TasksAndQueuesTab:774 - max value is: 768.0
+2023-01-10 22:31:32,792 [INFO] TasksAndQueuesTab:756 - Dynamic
+2023-01-10 22:31:32,792 [WARN] TasksAndQueuesTab:762 - 128 128
+2023-01-10 22:31:32,792 [WARN] TasksAndQueuesTab:774 - max value is: 768.0
+2023-01-10 22:31:35,258 [INFO] EditThreadDialog:703 - RAM SIZE (in KB): 64
+2023-01-10 22:31:35,258 [INFO] EditThreadDialog:705 - RAM SIZE (in words): 16384
+2023-01-10 22:31:51,273 [INFO] TasksAndQueuesTab:756 - Dynamic
+2023-01-10 22:31:51,274 [WARN] TasksAndQueuesTab:762 - 128 128
+2023-01-10 22:31:51,274 [WARN] TasksAndQueuesTab:774 - max value is: 768.0
+2023-01-10 22:31:51,274 [INFO] TasksAndQueuesTab:756 - Dynamic
+2023-01-10 22:31:51,274 [WARN] TasksAndQueuesTab:762 - 128 128
+2023-01-10 22:31:51,274 [WARN] TasksAndQueuesTab:774 - max value is: 768.0
+2023-01-10 22:31:51,274 [INFO] TasksAndQueuesTab:756 - Dynamic
+2023-01-10 22:31:51,275 [WARN] TasksAndQueuesTab:762 - 128 128
+2023-01-10 22:31:51,275 [WARN] TasksAndQueuesTab:774 - max value is: 768.0
+2023-01-10 22:31:51,275 [INFO] TasksAndQueuesTab:756 - Dynamic
+2023-01-10 22:31:51,275 [WARN] TasksAndQueuesTab:762 - 128 128
+2023-01-10 22:31:51,275 [WARN] TasksAndQueuesTab:774 - max value is: 768.0
+2023-01-10 22:31:54,902 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 359021792 Bytes (734003200)
+2023-01-10 22:31:54,972 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 373751328 Bytes (734003200)
+2023-01-10 22:31:55,193 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 393147936 Bytes (734003200)
+2023-01-10 22:31:56,619 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: SPI
+2023-01-10 22:31:56,621 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: SPI
+2023-01-10 22:31:56,621 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: NVIC
+2023-01-10 22:31:56,621 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: FREERTOS
+2023-01-10 22:31:56,622 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: USART
+2023-01-10 22:31:56,622 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: TIM1_8F1
+2023-01-10 22:31:56,622 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: TIM1_8F1
+2023-01-10 22:31:56,622 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: SYS
+2023-01-10 22:31:56,625 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: GPIO
+2023-01-10 22:31:56,625 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: RCC
+2023-01-10 22:31:56,626 [INFO] BlockDiagram:2753 - set Specific Code input for plugin: I2C
+2023-01-10 22:31:56,626 [INFO] CodeGenerator:690 - code generatio: config db path: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.6.1.202207061420//db/
+2023-01-10 22:31:56,642 [WARN] IP:2111 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2023-01-10 22:31:56,642 [WARN] IP:2111 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2023-01-10 22:31:56,761 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/license.tmp_save
+2023-01-10 22:31:56,819 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/license.tmp
+2023-01-10 22:31:56,860 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/gpio.tmp_save
+2023-01-10 22:31:56,908 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/gpio.tmp
+2023-01-10 22:31:57,380 [INFO] Middleware:1435 - No code input for Bsp Dependency
+2023-01-10 22:31:57,383 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_inc.tmp_save
+2023-01-10 22:31:57,425 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_inc.tmp
+2023-01-10 22:31:57,426 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelInit.tmp_save
+2023-01-10 22:31:57,471 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelInit.tmp
+2023-01-10 22:31:57,472 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelStart.tmp_save
+2023-01-10 22:31:57,513 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelStart.tmp
+2023-01-10 22:31:57,513 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_typedefs.tmp_save
+2023-01-10 22:31:57,556 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_typedefs.tmp
+2023-01-10 22:31:57,557 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_vars.tmp_save
+2023-01-10 22:31:57,599 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_vars.tmp
+2023-01-10 22:31:57,599 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_pfp.tmp_save
+2023-01-10 22:31:57,640 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_pfp.tmp
+2023-01-10 22:31:57,641 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_obj_creat.tmp_save
+2023-01-10 22:31:57,685 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_obj_creat.tmp
+2023-01-10 22:31:57,690 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_default_thread.tmp_save
+2023-01-10 22:31:57,731 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_default_thread.tmp
+2023-01-10 22:31:57,732 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_threads.tmp_save
+2023-01-10 22:31:57,773 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_threads.tmp
+2023-01-10 22:31:57,780 [INFO] Middleware:1435 - No code input for Bsp Dependency
+2023-01-10 22:31:57,782 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_inc.tmp_save
+2023-01-10 22:31:57,822 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_inc.tmp
+2023-01-10 22:31:57,822 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelInit.tmp_save
+2023-01-10 22:31:57,864 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelInit.tmp
+2023-01-10 22:31:57,865 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelStart.tmp_save
+2023-01-10 22:31:57,910 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_kernelStart.tmp
+2023-01-10 22:31:57,911 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_typedefs.tmp_save
+2023-01-10 22:31:57,954 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_typedefs.tmp
+2023-01-10 22:31:57,955 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_vars.tmp_save
+2023-01-10 22:31:57,998 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_vars.tmp
+2023-01-10 22:31:58,000 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_pfp.tmp_save
+2023-01-10 22:31:58,042 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_pfp.tmp
+2023-01-10 22:31:58,043 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_obj_creat.tmp_save
+2023-01-10 22:31:58,085 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_obj_creat.tmp
+2023-01-10 22:31:58,086 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_default_thread.tmp_save
+2023-01-10 22:31:58,127 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_default_thread.tmp
+2023-01-10 22:31:58,128 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_threads.tmp_save
+2023-01-10 22:31:58,169 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/rtos_threads.tmp
+2023-01-10 22:31:58,169 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/FreeRTOSConfig.h_save
+2023-01-10 22:31:58,218 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/FreeRTOSConfig.h
+2023-01-10 22:31:58,220 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/freertos.c_save
+2023-01-10 22:31:58,264 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/freertos.c
+2023-01-10 22:31:58,269 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/stm32f1xx_it.c_save
+2023-01-10 22:31:58,320 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/stm32f1xx_it.c
+2023-01-10 22:31:58,325 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/stm32f1xx_it.h_save
+2023-01-10 22:31:58,387 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/stm32f1xx_it.h
+2023-01-10 22:31:58,393 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/stm32f1xx_hal_msp.c_save
+2023-01-10 22:31:58,461 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/stm32f1xx_hal_msp.c
+2023-01-10 22:31:58,462 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/system.tmp_save
+2023-01-10 22:31:58,504 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/MXTmpFiles/system.tmp
+2023-01-10 22:31:58,506 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/stm32f1xx_hal_conf.h_save
+2023-01-10 22:31:58,552 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/stm32f1xx_hal_conf.h
+2023-01-10 22:31:58,608 [WARN] IPConfigManager:3348 - IP not found : TIM
+2023-01-10 22:31:58,608 [WARN] CodeGenerator:3567 - IP not found : null
+2023-01-10 22:31:58,610 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/main.h_save
+2023-01-10 22:31:58,656 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Inc/main.h
+2023-01-10 22:31:58,657 [INFO] CodeEngine:245 - oldGeneratedFile, /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/main.c_save
+2023-01-10 22:31:58,752 [INFO] CodeEngine:269 - Generated code: /Users/duane/Code/Github/Hifi-Amplifier/Code/Amplifier/Core/Src/main.c
+2023-01-10 22:31:59,183 [INFO] ProjectBuilder:2919 - Time for Copy HAL[1] : 40mS.
+2023-01-10 22:31:59,193 [INFO] ProjectBuilder:4117 - Project Generator version: 3.17.1
+2023-01-10 22:31:59,352 [INFO] ConfigFileManager:1394 - The Die is : DIE414
+2023-01-10 22:32:00,666 [INFO] ProjectBuilder:4285 - Time for Generating toolchain IDE Files: 1473mS.
+2023-01-10 22:32:00,669 [INFO] ProjectBuilder:2790 - Time for Copy CMSIS : 1mS.
+2023-01-10 22:32:00,674 [INFO] ProjectBuilder:2790 - Time for Copy CMSIS : 0mS.

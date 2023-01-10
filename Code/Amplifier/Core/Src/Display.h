@@ -9,11 +9,15 @@
 #define SRC_DISPLAY_H_
 
 class Display {
+protected:
+	bool mShouldUpdate;
 public:
 	Display();
 	virtual ~Display();
 
 	virtual void run();
+
+	void update();
 };
 
 #endif /* SRC_DISPLAY_H_ */

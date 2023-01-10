@@ -9,7 +9,7 @@
 #include "main.h"
 #include "cmsis_os.h"
 
-Display::Display() {
+Display::Display() : mShouldUpdate( true ) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -19,9 +19,21 @@ Display::~Display() {
 }
 
 void
+Display::update() {
+	mShouldUpdate = true;
+}
+
+void
 Display::run() {
 	for(;;) {
-		osDelay(1);
+		// Check to see if we need to update the display
+		if ( mShouldUpdate ) {
+
+			// Clear the update for the next time
+			mShouldUpdate = false;
+		}
+
+		osDelay( 5 );
 	}
 }
 

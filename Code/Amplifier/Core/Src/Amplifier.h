@@ -11,6 +11,8 @@
 #include "UI.h"
 #include "Display.h"
 #include "Led.h"
+#include "I2C.h"
+#include "DAC.h"
 
 class Amplifier {
 protected:
@@ -19,12 +21,20 @@ protected:
 
 	LED mDolbyLED;
 	LED mInputLED5CH;
+
+	I2C mBusI2C;
+
+	DAC_IC *mDAC;
 public:
 	Amplifier();
 	virtual ~Amplifier();
 
 	UI &getUI() { return mUI; }
 	Display &getDisplay() { return mDisplay; }
+
+	I2C &getI2C();
+
+	virtual void initialize( I2C_HandleTypeDef bus );
 
 	virtual void run();
 };

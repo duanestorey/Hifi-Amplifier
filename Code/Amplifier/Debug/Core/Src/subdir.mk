@@ -16,8 +16,11 @@ C_SRCS += \
 CPP_SRCS += \
 ../Core/Src/Amplifier.cpp \
 ../Core/Src/AudioCore.cpp \
+../Core/Src/DAC.cpp \
+../Core/Src/DACPCM1681.cpp \
 ../Core/Src/Display.cpp \
 ../Core/Src/I2C.cpp \
+../Core/Src/I2CDevice.cpp \
 ../Core/Src/LED.cpp \
 ../Core/Src/UI.cpp 
 
@@ -33,8 +36,11 @@ C_DEPS += \
 OBJS += \
 ./Core/Src/Amplifier.o \
 ./Core/Src/AudioCore.o \
+./Core/Src/DAC.o \
+./Core/Src/DACPCM1681.o \
 ./Core/Src/Display.o \
 ./Core/Src/I2C.o \
+./Core/Src/I2CDevice.o \
 ./Core/Src/LED.o \
 ./Core/Src/UI.o \
 ./Core/Src/freertos.o \
@@ -48,8 +54,11 @@ OBJS += \
 CPP_DEPS += \
 ./Core/Src/Amplifier.d \
 ./Core/Src/AudioCore.d \
+./Core/Src/DAC.d \
+./Core/Src/DACPCM1681.d \
 ./Core/Src/Display.d \
 ./Core/Src/I2C.d \
+./Core/Src/I2CDevice.d \
 ./Core/Src/LED.d \
 ./Core/Src/UI.d 
 
@@ -65,7 +74,7 @@ Core/Src/main.o: ../Core/Src/main.c Core/Src/subdir.mk
 clean: clean-Core-2f-Src
 
 clean-Core-2f-Src:
-	-$(RM) ./Core/Src/Amplifier.d ./Core/Src/Amplifier.o ./Core/Src/Amplifier.su ./Core/Src/AudioCore.d ./Core/Src/AudioCore.o ./Core/Src/AudioCore.su ./Core/Src/Display.d ./Core/Src/Display.o ./Core/Src/Display.su ./Core/Src/I2C.d ./Core/Src/I2C.o ./Core/Src/I2C.su ./Core/Src/LED.d ./Core/Src/LED.o ./Core/Src/LED.su ./Core/Src/UI.d ./Core/Src/UI.o ./Core/Src/UI.su ./Core/Src/freertos.d ./Core/Src/freertos.o ./Core/Src/freertos.su ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32f1xx_hal_msp.d ./Core/Src/stm32f1xx_hal_msp.o ./Core/Src/stm32f1xx_hal_msp.su ./Core/Src/stm32f1xx_it.d ./Core/Src/stm32f1xx_it.o ./Core/Src/stm32f1xx_it.su ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f1xx.d ./Core/Src/system_stm32f1xx.o ./Core/Src/system_stm32f1xx.su
+	-$(RM) ./Core/Src/Amplifier.d ./Core/Src/Amplifier.o ./Core/Src/Amplifier.su ./Core/Src/AudioCore.d ./Core/Src/AudioCore.o ./Core/Src/AudioCore.su ./Core/Src/DAC.d ./Core/Src/DAC.o ./Core/Src/DAC.su ./Core/Src/DACPCM1681.d ./Core/Src/DACPCM1681.o ./Core/Src/DACPCM1681.su ./Core/Src/Display.d ./Core/Src/Display.o ./Core/Src/Display.su ./Core/Src/I2C.d ./Core/Src/I2C.o ./Core/Src/I2C.su ./Core/Src/I2CDevice.d ./Core/Src/I2CDevice.o ./Core/Src/I2CDevice.su ./Core/Src/LED.d ./Core/Src/LED.o ./Core/Src/LED.su ./Core/Src/UI.d ./Core/Src/UI.o ./Core/Src/UI.su ./Core/Src/freertos.d ./Core/Src/freertos.o ./Core/Src/freertos.su ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32f1xx_hal_msp.d ./Core/Src/stm32f1xx_hal_msp.o ./Core/Src/stm32f1xx_hal_msp.su ./Core/Src/stm32f1xx_it.d ./Core/Src/stm32f1xx_it.o ./Core/Src/stm32f1xx_it.su ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f1xx.d ./Core/Src/system_stm32f1xx.o ./Core/Src/system_stm32f1xx.su
 
 .PHONY: clean-Core-2f-Src
 

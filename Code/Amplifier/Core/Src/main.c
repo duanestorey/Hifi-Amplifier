@@ -59,6 +59,27 @@ const osThreadAttr_t defaultTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for display */
+osThreadId_t displayHandle;
+const osThreadAttr_t display_attributes = {
+  .name = "display",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for audio */
+osThreadId_t audioHandle;
+const osThreadAttr_t audio_attributes = {
+  .name = "audio",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityAboveNormal,
+};
+/* Definitions for UI */
+osThreadId_t UIHandle;
+const osThreadAttr_t UI_attributes = {
+  .name = "UI",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -73,6 +94,9 @@ static void MX_TIM4_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_I2C1_Init(void);
 void StartDefaultTask(void *argument);
+void startDisplay(void *argument);
+void startAudio(void *argument);
+void startUI(void *argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -124,6 +148,8 @@ int main(void)
 
   // The main amplifier class
 
+  amplifier.initialize( hi2c1 );
+
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -148,6 +174,15 @@ int main(void)
   /* Create the thread(s) */
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+
+  /* creation of display */
+  displayHandle = osThreadNew(startDisplay, NULL, &display_attributes);
+
+  /* creation of audio */
+  audioHandle = osThreadNew(startAudio, NULL, &audio_attributes);
+
+  /* creation of UI */
+  UIHandle = osThreadNew(startUI, NULL, &UI_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -532,6 +567,7 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(BUTTON_INPUT_GPIO_Port, &GPIO_InitStruct);
+
 }
 
 /* USER CODE BEGIN 4 */
@@ -549,11 +585,56 @@ void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
+  amplifier.run();
+  /* USER CODE END 5 */
+}
+
+/* USER CODE BEGIN Header_startDisplay */
+/**
+* @brief Function implementing the display thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_startDisplay */
+void startDisplay(void *argument)
+{
+  /* USER CODE BEGIN startDisplay */
+  /* Infinite loop */
+  amplifier.getDisplay().run();
+  /* USER CODE END startDisplay */
+}
+
+/* USER CODE BEGIN Header_startAudio */
+/**
+* @brief Function implementing the audio thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_startAudio */
+void startAudio(void *argument)
+{
+  /* USER CODE BEGIN startAudio */
+  /* Infinite loop */
   for(;;)
   {
     osDelay(1);
   }
-  /* USER CODE END 5 */
+  /* USER CODE END startAudio */
+}
+
+/* USER CODE BEGIN Header_startUI */
+/**
+* @brief Function implementing the UI thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_startUI */
+void startUI(void *argument)
+{
+  /* USER CODE BEGIN startUI */
+  /* Infinite loop */
+	amplifier.getUI().run();
+  /* USER CODE END startUI */
 }
 
 /**

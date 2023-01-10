@@ -1,0 +1,28 @@
+/*
+ * DACPCM1681.cpp
+ *
+ *  Created on: Jan 10, 2023
+ *      Author: duane
+ */
+
+#include "DACPCM1681.h"
+
+DAC_PCM1681::DAC_PCM1681() {
+	// TODO Auto-generated constructor stub
+
+}
+
+DAC_PCM1681::~DAC_PCM1681() {
+	// TODO Auto-generated destructor stub
+}
+
+
+void
+DAC_PCM1681::setChannelVolume( int channel, int volume ) {}
+
+// sets the volume on all channels
+virtual void setVolume( int volume ) {};
+
+virtual void muteChannel( int channel, bool enable ) {}
+virtual void mute( bool enable ) {}
+

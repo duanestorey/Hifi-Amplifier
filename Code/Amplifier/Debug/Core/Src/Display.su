@@ -1,4 +1,5 @@
 ../Core/Src/Display.cpp:12:1:Display::Display()	16	static
 ../Core/Src/Display.cpp:17:1:Display::~Display()	16	static
 ../Core/Src/Display.cpp:17:1:virtual Display::~Display()	16	static
-../Core/Src/Display.cpp:22:1:virtual void Display::run()	16	static
+../Core/Src/Display.cpp:22:1:void Display::update()	16	static
+../Core/Src/Display.cpp:27:1:virtual void Display::run()	16	static

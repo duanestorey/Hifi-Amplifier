@@ -1,0 +1,23 @@
+/*
+ * DAC.h
+ *
+ *  Created on: Jan 10, 2023
+ *      Author: duane
+ */
+
+#ifndef SRC_DAC_H_
+#define SRC_DAC_H_
+
+class DAC {
+public:
+	DAC();
+	virtual ~DAC();
+
+	virtual void supportsVolume() { return false; }
+	virtual void supportsMute() { return false; }
+	virtual void channels() { return 0; }
+
+	virtual void setVolume( int channel, int volume ) {}
+};
+
+#endif /* SRC_DAC_H_ */

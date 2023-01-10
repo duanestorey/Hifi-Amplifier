@@ -1,0 +1,26 @@
+/*
+ * I2CDevice.h
+ *
+ *  Created on: Jan 10, 2023
+ *      Author: duane
+ */
+
+#ifndef SRC_I2CDEVICE_H_
+#define SRC_I2CDEVICE_H_
+
+#include "I2C.h"
+
+class I2C_Device {
+protected:
+	I2C mBus;
+	I2C_ADDR mAddr;
+public:
+	I2C_Device( I2C bus ) : mBus( bus ), mAddr( 0 ) {}
+	I2C_Device( I2C_ADDR addr );
+	virtual ~I2C_Device();
+
+	bool writeByte( uint8_t data );
+	uint8_t readByte();
+};
+
+#endif /* SRC_I2CDEVICE_H_ */
