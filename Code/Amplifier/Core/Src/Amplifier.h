@@ -13,6 +13,7 @@
 #include "Led.h"
 #include "I2C.h"
 #include "DAC.h"
+#include "DolbyDecoder.h"
 
 class Amplifier {
 protected:
@@ -25,6 +26,7 @@ protected:
 	I2C mBusI2C;
 
 	DAC_IC *mDAC;
+	DolbyDecoder *mDecoder;
 public:
 	Amplifier();
 	virtual ~Amplifier();

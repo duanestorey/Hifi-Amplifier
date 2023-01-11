@@ -10,8 +10,9 @@
 #include "cmsis_os.h"
 #include "I2CDevice.h"
 #include "DACPCM1681.h"
+#include "DolbyDecoderSTA310.h"
 
-Amplifier::Amplifier() : mDAC( 0 ) {
+Amplifier::Amplifier() : mDAC( 0 ), mDecoder( 0 ) {
 	// TODO Auto-generated constructor stub
 }
 
@@ -27,6 +28,8 @@ Amplifier::initialize( I2C_HandleTypeDef bus ) {
 	mBusI2C.setBusData( bus );
 
 	mDAC = new DAC_PCM1681( mBusI2C.makeDevice( 0 ) );
+
+	mDecoder = new DolbyDecoder_STA310( mBusI2C.makeDevice( 0 ) );
 }
 
 void Amplifier::run() {

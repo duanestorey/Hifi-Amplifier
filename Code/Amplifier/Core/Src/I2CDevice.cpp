@@ -23,13 +23,13 @@ I2C_Device::writeByte( uint8_t data ) {
 
 bool
 I2C_Device::writeRegister( uint8_t reg, uint8_t value ) {
-	uint8_t buf[2];
-	buf[0] = reg;
-	buf[1] = value;
-
-	return mBus.writeData( mAddr, buf, 2 );
+	return mBus.writeRegister( mAddr, reg, value );
 }
 
+I2C_RESULT
+I2C_Device::readRegister( uint8_t reg ) {
+	return mBus.readRegister( mAddr, reg );
+}
 
 uint8_t
 I2C_Device::readByte() {

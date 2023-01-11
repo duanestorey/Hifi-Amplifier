@@ -26,7 +26,9 @@ public:
 	virtual void setAddr( I2C_ADDR addr ) { mAddr = addr; }
 	virtual bool writeByte( uint8_t data );
 	virtual uint8_t readByte();
+
 	virtual bool writeRegister( uint8_t reg, uint8_t value );
+	virtual I2C_RESULT readRegister( uint8_t reg );
 };
 
 typedef std::shared_ptr<I2C_Device> I2C_Device_Ptr;

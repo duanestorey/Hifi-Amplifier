@@ -12,6 +12,7 @@
 #include <memory>
 
 typedef uint8_t I2C_ADDR;
+typedef uint16_t I2C_RESULT;
 
 class I2C_Device;
 
@@ -31,6 +32,9 @@ public:
 	bool writeByte( I2C_ADDR addr, uint8_t );
 
 	bool writeData( I2C_ADDR addr, uint8_t *data, uint8_t size );
+
+	bool writeRegister( I2C_ADDR addr, uint8_t reg, uint8_t value );
+	I2C_RESULT readRegister( I2C_ADDR addr, uint8_t reg );
 
 	I2C_Device * makeDevice( I2C_ADDR addr );
 };
