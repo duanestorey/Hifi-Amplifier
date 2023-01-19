@@ -8,8 +8,9 @@
 #include "Display.h"
 #include "main.h"
 #include "cmsis_os.h"
+#include <stdio.h>
 
-Display::Display() : mShouldUpdate( true ) {
+Display::Display() : mShouldUpdate( true ), mCurrentScreen( 0 ), mCurrentVolume( 50 ), mLCD( 0 ) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -20,20 +21,42 @@ Display::~Display() {
 
 void
 Display::update() {
-	mShouldUpdate = true;
+	if ( mShouldUpdate ) {
+		switch( mCurrentScreen ) {
+			case SCREEN_MAIN:
+				updateMainScreen();
+				break;
+		}
+
+		mShouldUpdate = false;
+	}
+
 }
 
 void
-Display::run() {
-	for(;;) {
-		// Check to see if we need to update the display
-		if ( mShouldUpdate ) {
+Display::initialize() {
 
-			// Clear the update for the next time
-			mShouldUpdate = false;
-		}
-
-		osDelay( 5 );
-	}
 }
 
+void
+Display::updateVolume( int volume ) {
+	if ( volume != mCurrentVolume ) {
+		mShouldUpdate = true;
+	}
+
+	mCurrentVolume = volume;
+}
+
+void
+Display::updateMainScreen() {
+	char s[50];
+
+	mLCD->setCursor( 0, 0 );
+	sprintf( s, "Volume %-3d          ", mCurrentVolume );
+	mLCD->writeString( s );
+
+	osDelay( 1 );
+	mLCD->setCursor( 0, 3 );
+	sprintf( s, "6-Ch         Digital", mCurrentVolume );
+	mLCD->writeString( s );
+}

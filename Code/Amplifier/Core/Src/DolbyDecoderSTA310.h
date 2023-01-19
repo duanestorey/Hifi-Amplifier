@@ -18,6 +18,9 @@ protected:
 	bool mMuted;
 	bool mRunning;
 	bool mPlaying;
+
+	uint8_t mIdent;
+	uint8_t mSoftwareVersion;
 public:
 public:
 	enum {
@@ -43,6 +46,8 @@ public:
 	} INT2S;
 
 	enum {
+		IDENT = 0x01,
+		SOFTVER = 0x71,
 		INT1 = 0x07,
 		INT2 = 0x08,
 		SOFT_RESET = 0x10,
@@ -83,7 +88,9 @@ public:
 	virtual void initialize();
 	virtual void mute( bool enable = true );
 	virtual void run();
-	virtual void play( bool enable );
+	virtual void play( bool enable = true );
+
+	virtual bool isInitialized() { return mInitialized; }
 private:
 	void softReset();
 	void enableAudioPLL();

@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
+#include "usb_device.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -59,13 +60,6 @@ const osThreadAttr_t defaultTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for display */
-osThreadId_t displayHandle;
-const osThreadAttr_t display_attributes = {
-  .name = "display",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
-};
 /* Definitions for audio */
 osThreadId_t audioHandle;
 const osThreadAttr_t audio_attributes = {
@@ -94,7 +88,6 @@ static void MX_TIM4_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_I2C1_Init(void);
 void StartDefaultTask(void *argument);
-void startDisplay(void *argument);
 void startAudio(void *argument);
 void startUI(void *argument);
 
@@ -175,9 +168,6 @@ int main(void)
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
-  /* creation of display */
-  displayHandle = osThreadNew(startDisplay, NULL, &display_attributes);
-
   /* creation of audio */
   audioHandle = osThreadNew(startAudio, NULL, &audio_attributes);
 
@@ -216,6 +206,7 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
 
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
@@ -242,6 +233,12 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USB;
+  PeriphClkInit.UsbClockSelection = RCC_USBCLKSOURCE_PLL;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
   }
@@ -429,16 +426,16 @@ static void MX_TIM4_Init(void)
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim4.Init.Period = 65535;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  sConfig.EncoderMode = TIM_ENCODERMODE_TI1;
+  htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
+  sConfig.EncoderMode = TIM_ENCODERMODE_TI12;
   sConfig.IC1Polarity = TIM_ICPOLARITY_RISING;
   sConfig.IC1Selection = TIM_ICSELECTION_DIRECTTI;
   sConfig.IC1Prescaler = TIM_ICPSC_DIV1;
-  sConfig.IC1Filter = 0;
+  sConfig.IC1Filter = 5;
   sConfig.IC2Polarity = TIM_ICPOLARITY_RISING;
   sConfig.IC2Selection = TIM_ICSELECTION_DIRECTTI;
   sConfig.IC2Prescaler = TIM_ICPSC_DIV1;
-  sConfig.IC2Filter = 0;
+  sConfig.IC2Filter = 5;
   if (HAL_TIM_Encoder_Init(&htim4, &sConfig) != HAL_OK)
   {
     Error_Handler();
@@ -509,7 +506,7 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, LED_PCM_Pin|LED_DOLBY_Pin|GPIO_PIN_2|LED_MUTEA3_Pin
-                          |GPIO_PIN_4, GPIO_PIN_RESET);
+                          |GPIO_PIN_4|USB_PULLUP_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOE, LED_INPUT_1_Pin|LED_INPUT_2_Pin|LED_INPUT_3_Pin|LED_INPUT_4_Pin
@@ -526,9 +523,9 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(LED_MUTE_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : LED_PCM_Pin LED_DOLBY_Pin PA2 LED_MUTEA3_Pin
-                           PA4 */
+                           PA4 USB_PULLUP_Pin */
   GPIO_InitStruct.Pin = LED_PCM_Pin|LED_DOLBY_Pin|GPIO_PIN_2|LED_MUTEA3_Pin
-                          |GPIO_PIN_4;
+                          |GPIO_PIN_4|USB_PULLUP_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -568,6 +565,17 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : DOLBY_IRQ_Pin */
+  GPIO_InitStruct.Pin = DOLBY_IRQ_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(DOLBY_IRQ_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PWM_BACKLIGHT_Pin */
+  GPIO_InitStruct.Pin = PWM_BACKLIGHT_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+  HAL_GPIO_Init(PWM_BACKLIGHT_GPIO_Port, &GPIO_InitStruct);
+
 }
 
 /* USER CODE BEGIN 4 */
@@ -583,25 +591,16 @@ static void MX_GPIO_Init(void)
 /* USER CODE END Header_StartDefaultTask */
 void StartDefaultTask(void *argument)
 {
+  /* init code for USB_DEVICE */
+  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
-  amplifier.run();
-  /* USER CODE END 5 */
-}
 
-/* USER CODE BEGIN Header_startDisplay */
-/**
-* @brief Function implementing the display thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_startDisplay */
-void startDisplay(void *argument)
-{
-  /* USER CODE BEGIN startDisplay */
-  /* Infinite loop */
-  amplifier.getDisplay().run();
-  /* USER CODE END startDisplay */
+	// Star the volume control timer
+	HAL_TIM_Encoder_Start_IT( &htim4, TIM_CHANNEL_ALL );
+
+	amplifier.run();
+  /* USER CODE END 5 */
 }
 
 /* USER CODE BEGIN Header_startAudio */
@@ -615,10 +614,7 @@ void startAudio(void *argument)
 {
   /* USER CODE BEGIN startAudio */
   /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
+	amplifier.getAudio().run();
   /* USER CODE END startAudio */
 }
 

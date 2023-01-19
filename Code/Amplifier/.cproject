@@ -21,7 +21,7 @@
 							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_cpuid.1735741100" name="CPU" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_cpuid" useByScannerDiscovery="false" value="0" valueType="string"/>
 							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_coreid.1853392906" name="Core" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_coreid" useByScannerDiscovery="false" value="0" valueType="string"/>
 							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_board.1780461838" name="Board" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_board" useByScannerDiscovery="false" value="genericBoard" valueType="string"/>
-							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.defaults.326353508" name="Defaults" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.defaults" useByScannerDiscovery="false" value="com.st.stm32cube.ide.common.services.build.inputs.revA.1.0.5 || Debug || true || Executable || com.st.stm32cube.ide.mcu.gnu.managedbuild.option.toolchain.value.workspace || STM32F103VDTx || 0 || 0 || arm-none-eabi- || ${gnu_tools_for_stm32_compiler_path} || ../Middlewares/Third_Party/FreeRTOS/Source/include | ../Drivers/CMSIS/Device/ST/STM32F1xx/Include | ../Drivers/CMSIS/Include | ../Core/Inc | ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy | ../Drivers/STM32F1xx_HAL_Driver/Inc | ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 | ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 ||  ||  || STM32F103xE | USE_HAL_DRIVER ||  || Drivers | Core/Startup | Middlewares | Core ||  ||  || ${workspace_loc:/${ProjName}/STM32F103VDTX_FLASH.ld} || true || NonSecure ||  || secure_nsclib.o ||  || None || " valueType="string"/>
+							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.defaults.326353508" name="Defaults" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.defaults" useByScannerDiscovery="false" value="com.st.stm32cube.ide.common.services.build.inputs.revA.1.0.5 || Debug || true || Executable || com.st.stm32cube.ide.mcu.gnu.managedbuild.option.toolchain.value.workspace || STM32F103VDTx || 0 || 0 || arm-none-eabi- || ${gnu_tools_for_stm32_compiler_path} || ../Middlewares/Third_Party/FreeRTOS/Source/include | ../Drivers/CMSIS/Device/ST/STM32F1xx/Include | ../Drivers/CMSIS/Include | ../Core/Inc | ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy | ../Drivers/STM32F1xx_HAL_Driver/Inc | ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 | ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 | ../USB_DEVICE/App | ../USB_DEVICE/Target | ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc | ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc ||  ||  || STM32F103xE | USE_HAL_DRIVER ||  || Drivers | Core/Startup | Middlewares | Core | USB_DEVICE ||  ||  || ${workspace_loc:/${ProjName}/STM32F103VDTX_FLASH.ld} || true || NonSecure ||  || secure_nsclib.o ||  || None || " valueType="string"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.targetplatform.1761701979" isAbstract="false" osList="all" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.targetplatform"/>
 							<builder buildPath="${workspace_loc:/Amplifier}/Debug" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.builder.714327269" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.builder"/>
 							<tool id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.1569151050" name="MCU GCC Assembler" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler">
@@ -48,6 +48,10 @@
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/FreeRTOS/Source/include"/>
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2"/>
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3"/>
+									<listOptionValue builtIn="false" value="../USB_DEVICE/App"/>
+									<listOptionValue builtIn="false" value="../USB_DEVICE/Target"/>
+									<listOptionValue builtIn="false" value="../Middlewares/ST/STM32_USB_Device_Library/Core/Inc"/>
+									<listOptionValue builtIn="false" value="../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.754124059" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>
@@ -68,6 +72,10 @@
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/FreeRTOS/Source/include"/>
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2"/>
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3"/>
+									<listOptionValue builtIn="false" value="../USB_DEVICE/App"/>
+									<listOptionValue builtIn="false" value="../USB_DEVICE/Target"/>
+									<listOptionValue builtIn="false" value="../Middlewares/ST/STM32_USB_Device_Library/Core/Inc"/>
+									<listOptionValue builtIn="false" value="../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp.1769660144" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp"/>
 							</tool>
@@ -98,6 +106,7 @@
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="USB_DEVICE"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -123,7 +132,7 @@
 							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_cpuid.620077613" name="CPU" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_cpuid" useByScannerDiscovery="false" value="0" valueType="string"/>
 							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_coreid.1460993182" name="Core" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_coreid" useByScannerDiscovery="false" value="0" valueType="string"/>
 							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_board.285114272" name="Board" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.target_board" useByScannerDiscovery="false" value="genericBoard" valueType="string"/>
-							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.defaults.1919202821" name="Defaults" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.defaults" useByScannerDiscovery="false" value="com.st.stm32cube.ide.common.services.build.inputs.revA.1.0.5 || Release || false || Executable || com.st.stm32cube.ide.mcu.gnu.managedbuild.option.toolchain.value.workspace || STM32F103VDTx || 0 || 0 || arm-none-eabi- || ${gnu_tools_for_stm32_compiler_path} || ../Middlewares/Third_Party/FreeRTOS/Source/include | ../Drivers/CMSIS/Device/ST/STM32F1xx/Include | ../Drivers/CMSIS/Include | ../Core/Inc | ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy | ../Drivers/STM32F1xx_HAL_Driver/Inc | ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 | ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 ||  ||  || STM32F103xE | USE_HAL_DRIVER ||  || Drivers | Core/Startup | Middlewares | Core ||  ||  || ${workspace_loc:/${ProjName}/STM32F103VDTX_FLASH.ld} || true || NonSecure ||  || secure_nsclib.o ||  || None || " valueType="string"/>
+							<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.defaults.1919202821" name="Defaults" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.option.defaults" useByScannerDiscovery="false" value="com.st.stm32cube.ide.common.services.build.inputs.revA.1.0.5 || Release || false || Executable || com.st.stm32cube.ide.mcu.gnu.managedbuild.option.toolchain.value.workspace || STM32F103VDTx || 0 || 0 || arm-none-eabi- || ${gnu_tools_for_stm32_compiler_path} || ../Middlewares/Third_Party/FreeRTOS/Source/include | ../Drivers/CMSIS/Device/ST/STM32F1xx/Include | ../Drivers/CMSIS/Include | ../Core/Inc | ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy | ../Drivers/STM32F1xx_HAL_Driver/Inc | ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 | ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 | ../USB_DEVICE/App | ../USB_DEVICE/Target | ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc | ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc ||  ||  || STM32F103xE | USE_HAL_DRIVER ||  || Drivers | Core/Startup | Middlewares | Core | USB_DEVICE ||  ||  || ${workspace_loc:/${ProjName}/STM32F103VDTX_FLASH.ld} || true || NonSecure ||  || secure_nsclib.o ||  || None || " valueType="string"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.targetplatform.639185617" isAbstract="false" osList="all" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.targetplatform"/>
 							<builder buildPath="${workspace_loc:/Amplifier}/Release" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.builder.1093632304" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.builder"/>
 							<tool id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.1802947370" name="MCU GCC Assembler" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler">
@@ -146,6 +155,10 @@
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/FreeRTOS/Source/include"/>
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2"/>
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3"/>
+									<listOptionValue builtIn="false" value="../USB_DEVICE/App"/>
+									<listOptionValue builtIn="false" value="../USB_DEVICE/Target"/>
+									<listOptionValue builtIn="false" value="../Middlewares/ST/STM32_USB_Device_Library/Core/Inc"/>
+									<listOptionValue builtIn="false" value="../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.343887834" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>
@@ -165,6 +178,10 @@
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/FreeRTOS/Source/include"/>
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2"/>
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3"/>
+									<listOptionValue builtIn="false" value="../USB_DEVICE/App"/>
+									<listOptionValue builtIn="false" value="../USB_DEVICE/Target"/>
+									<listOptionValue builtIn="false" value="../Middlewares/ST/STM32_USB_Device_Library/Core/Inc"/>
+									<listOptionValue builtIn="false" value="../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp.83331767" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp"/>
 							</tool>
@@ -195,6 +212,7 @@
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="USB_DEVICE"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

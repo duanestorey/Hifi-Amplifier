@@ -14,9 +14,10 @@ public:
 	virtual ~DolbyDecoder();
 
 	virtual void initialize() = 0;
+	virtual bool isInitialized() = 0;
 
 	virtual void mute( bool enable = true ) = 0;
-	virtual void play( bool enable ) = 0;
+	virtual void play( bool enable = true ) = 0;
 	virtual void run() = 0;
 };
 

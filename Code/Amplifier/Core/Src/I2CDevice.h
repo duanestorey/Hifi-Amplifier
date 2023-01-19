@@ -27,6 +27,8 @@ public:
 	virtual bool writeByte( uint8_t data );
 	virtual uint8_t readByte();
 
+	virtual bool writeData( uint8_t *data, uint8_t size );
+
 	virtual bool writeRegister( uint8_t reg, uint8_t value );
 	virtual I2C_RESULT readRegister( uint8_t reg );
 };

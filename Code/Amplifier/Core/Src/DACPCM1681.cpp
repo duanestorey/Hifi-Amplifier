@@ -56,6 +56,8 @@ DAC_PCM1681::init() {
 
 	// set digital attenuation range of 0-63db in 0.5db increments
 	mDevice->writeRegister( PCM1681_REG_DAMS, 0 );
+
+	setFormat( FORMAT_I2S );
 }
 
 void
@@ -93,7 +95,12 @@ DAC_PCM1681::setChannelVolume( int channel, int volume ) {
 
 void
 DAC_PCM1681::setVolume( int volume ) {
-
+	setChannelVolume( FRONT_LEFT, volume );
+	setChannelVolume( FRONT_RIGHT, volume );
+	setChannelVolume( REAR_LEFT, volume );
+	setChannelVolume( REAR_RIGHT, volume );
+	setChannelVolume( CENTER, volume );
+	setChannelVolume( SUBWOOFER, volume );
 }
 
 void

@@ -9,7 +9,7 @@
 #include "cmsis_os.h"
 
 DolbyDecoder_STA310::DolbyDecoder_STA310( I2C_Device *device ) :
-	mDevice( device ), mInitialized( false ), mMuted( false ), mRunning( false ), mPlaying( false ) {
+	mDevice( device ), mInitialized( false ), mMuted( false ), mRunning( false ), mPlaying( false ), mIdent( 0 ), mSoftwareVersion( 0 ) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -61,6 +61,9 @@ DolbyDecoder_STA310::initialize() {
 
 	if ( mInitialized ) {
 		// perform startup routine
+		mIdent = mDevice->readRegister( DolbyDecoder_STA310::IDENT );
+		mSoftwareVersion = mDevice->readRegister( DolbyDecoder_STA310::SOFTVER );
+
 		// Enable the AUDIO PLL
 		enableAudioPLL();
 		configureAudioPLL();
@@ -200,7 +203,6 @@ DolbyDecoder_STA310::softReset() {
 			mInitialized = true;
 		} else {
 			attempts++;
-
 			// if it's not ready, let's wait 5ms and try again
 			osDelay( 5 );
 		}

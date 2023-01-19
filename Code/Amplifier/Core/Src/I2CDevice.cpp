@@ -26,6 +26,11 @@ I2C_Device::writeRegister( uint8_t reg, uint8_t value ) {
 	return mBus.writeRegister( mAddr, reg, value );
 }
 
+bool
+I2C_Device::writeData( uint8_t *data, uint8_t size ) {
+	return mBus.writeData( mAddr, data, size );
+}
+
 I2C_RESULT
 I2C_Device::readRegister( uint8_t reg ) {
 	return mBus.readRegister( mAddr, reg );

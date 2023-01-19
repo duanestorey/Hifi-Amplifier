@@ -8,11 +8,14 @@
 #ifndef SRC_UI_H_
 #define SRC_UI_H_
 
-class UI {
-public:
-	UI();
-	virtual ~UI();
+#include "Runnable.h"
 
+class Amplifier;
+
+class UI : public Runnable {
+public:
+	UI( Amplifier *amp );
+	virtual ~UI();
 	virtual void run();
 };
 

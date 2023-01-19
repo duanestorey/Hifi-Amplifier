@@ -85,8 +85,14 @@ void Error_Handler(void);
 #define LED_RUN_GPIO_Port GPIOB
 #define BUTTON_VOLUME_Pin GPIO_PIN_10
 #define BUTTON_VOLUME_GPIO_Port GPIOD
+#define USB_PULLUP_Pin GPIO_PIN_15
+#define USB_PULLUP_GPIO_Port GPIOA
+#define DOLBY_IRQ_Pin GPIO_PIN_11
+#define DOLBY_IRQ_GPIO_Port GPIOC
 #define BUTTON_INPUT_Pin GPIO_PIN_3
 #define BUTTON_INPUT_GPIO_Port GPIOD
+#define PWM_BACKLIGHT_Pin GPIO_PIN_9
+#define PWM_BACKLIGHT_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

@@ -11,7 +11,7 @@
 ../Core/Src/DACPCM1681.cpp:37:1:virtual bool DAC_PCM1681::supportsFormat(uint8_t)	16	static
 ../Core/Src/DACPCM1681.cpp:42:1:virtual void DAC_PCM1681::setFormat(uint8_t)	24	static
 ../Core/Src/DACPCM1681.cpp:54:1:virtual void DAC_PCM1681::init()	16	static
-../Core/Src/DACPCM1681.cpp:62:1:virtual void DAC_PCM1681::setChannelVolume(int, int)	32	static
-../Core/Src/DACPCM1681.cpp:95:1:virtual void DAC_PCM1681::setVolume(int)	16	static
-../Core/Src/DACPCM1681.cpp:100:1:virtual void DAC_PCM1681::muteChannel(int, bool)	32	static
-../Core/Src/DACPCM1681.cpp:114:1:virtual void DAC_PCM1681::mute(bool)	16	static
+../Core/Src/DACPCM1681.cpp:64:1:virtual void DAC_PCM1681::setChannelVolume(int, int)	32	static
+../Core/Src/DACPCM1681.cpp:97:1:virtual void DAC_PCM1681::setVolume(int)	16	static
+../Core/Src/DACPCM1681.cpp:107:1:virtual void DAC_PCM1681::muteChannel(int, bool)	32	static
+../Core/Src/DACPCM1681.cpp:121:1:virtual void DAC_PCM1681::mute(bool)	16	static

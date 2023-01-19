@@ -9,7 +9,7 @@
 #include "main.h"
 #include "cmsis_os.h"
 
-UI::UI() {
+UI::UI( Amplifier *amp ) : Runnable( amp ) {
 	// TODO Auto-generated constructor stub
 
 }
