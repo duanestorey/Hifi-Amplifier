@@ -5,8 +5,8 @@
  *      Author: duane
  */
 
-#include "LED.h"
 #include "main.h"
+#include "LED.h"
 
 LED::LED() : mPort( 0 ), mPin( 0 ), mCurrentState( 0 ) {
 	// TODO Auto-generated constructor stub

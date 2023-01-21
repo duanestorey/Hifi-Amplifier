@@ -9,6 +9,7 @@
 #define SRC_DISPLAY_H_
 
 #include "LCD.h"
+#include <string>
 
 class Display {
 protected:
@@ -16,6 +17,9 @@ protected:
 	int mCurrentScreen;
 	int mCurrentVolume;
 	LCD *mLCD;
+
+	uint32_t mSamplingRate;
+	std::string mAlgorithm;
 public:
 	enum {
 		SCREEN_MAIN = 0
@@ -27,6 +31,9 @@ public:
 	void update();
 	void initialize();
 	void updateVolume( int volume );
+
+	void setSamplingRate( uint32_t samplingRate );
+	void setAlgorithm( const std::string algorithm );
 private:
 	void updateMainScreen();
 };

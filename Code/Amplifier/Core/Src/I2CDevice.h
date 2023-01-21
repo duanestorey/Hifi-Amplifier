@@ -31,6 +31,7 @@ public:
 
 	virtual bool writeRegister( uint8_t reg, uint8_t value );
 	virtual I2C_RESULT readRegister( uint8_t reg );
+	virtual I2C_RESULT readRegister16( uint8_t reg );
 };
 
 typedef std::shared_ptr<I2C_Device> I2C_Device_Ptr;

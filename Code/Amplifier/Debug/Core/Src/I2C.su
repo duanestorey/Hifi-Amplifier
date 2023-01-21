@@ -9,4 +9,5 @@
 ../Core/Src/I2C.cpp:40:1:bool I2C::writeData(I2C_ADDR, uint8_t*, uint8_t)	40	static
 ../Core/Src/I2C.cpp:46:1:bool I2C::writeRegister(I2C_ADDR, uint8_t, uint8_t)	40	static
 ../Core/Src/I2C.cpp:52:1:I2C_RESULT I2C::readRegister(I2C_ADDR, uint8_t)	48	static
-../Core/Src/I2C.cpp:62:1:I2C_Device* I2C::makeDevice(I2C_ADDR)	200	static
+../Core/Src/I2C.cpp:62:1:I2C_RESULT I2C::readRegister16(I2C_ADDR, uint8_t)	48	static
+../Core/Src/I2C.cpp:74:1:I2C_Device* I2C::makeDevice(I2C_ADDR)	200	static

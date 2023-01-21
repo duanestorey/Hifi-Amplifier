@@ -260,7 +260,6 @@ void
 LCD::initialize() {
 	osDelay( 1000 );
 
-
 	sendCommand( 0x30 );
 	osDelay( 10 );
 	sendCommand( 0x30 );

@@ -10,6 +10,7 @@
 
 #include "DolbyDecoder.h"
 #include "I2CDevice.h"
+#include "DecoderEvents.h"
 
 class DolbyDecoder_STA310 : public DolbyDecoder {
 protected:
@@ -18,6 +19,8 @@ protected:
 	bool mMuted;
 	bool mRunning;
 	bool mPlaying;
+
+	DecoderEvents *mEventHandler;
 
 	uint8_t mIdent;
 	uint8_t mSoftwareVersion;
@@ -48,9 +51,13 @@ public:
 	enum {
 		IDENT = 0x01,
 		SOFTVER = 0x71,
+		FREQ = 0x05,
 		INT1 = 0x07,
 		INT2 = 0x08,
+		ERROR = 0x0f,
 		SOFT_RESET = 0x10,
+		INT1_RES = 0x09,
+		INT2_RES = 0x0a,
 		SIN_SETUP = 0x0c,
 		CAN_SETUP = 0x0d,
 		PLL_CTRL = 0x12,
@@ -62,12 +69,16 @@ public:
 		PCM_CONF = 0x55,
 		SOFT_MUTE = 0x73,
 		BREAKPOINT = 0x2b,
+		HDR_ERROR = 0x42,
 		CLOCK_CMD = 0x3a,
+		HEAD_4 = 0x42,
+		HEAD_3 = 0x43,
 		PACKET_LOCK = 0x4f,
 		ID_EN = 0x50,
 		ID = 0x51,
 		ID_EXT = 0x52,
 		SYNC_LOCK = 0x53,
+		SPDIF_CONF = 0x60,
 		AC3_DECODE_LFE = 0x68,
 		AC3_COMP_MOD = 0x69,
 		AC3_HDR = 0x6a,
@@ -77,6 +88,8 @@ public:
 		AC3_DUALMODE = 0x6e,
 		AC3_DOWNMIX = 0x6f,
 		RUN = 0x72,
+		DOLBY_STATUS_1 = 0x76,
+		AC3_STATUS_1 = 0x77,
 		ENABLE_PLL = 0xb5,
 		AUTODETECT_ENA = 0xe0,
 		AUTODETECT_SENS = 0xe1
@@ -85,12 +98,16 @@ public:
 	DolbyDecoder_STA310( I2C_Device *device  );
 	virtual ~DolbyDecoder_STA310();
 
+	virtual void setEventHandler( DecoderEvents *handler ) { mEventHandler = handler; }
+
 	virtual void initialize();
 	virtual void mute( bool enable = true );
 	virtual void run();
 	virtual void play( bool enable = true );
 
 	virtual bool isInitialized() { return mInitialized; }
+	virtual void checkForInterrupt();
+	virtual void checkFormat();
 private:
 	void softReset();
 	void enableAudioPLL();

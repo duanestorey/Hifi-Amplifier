@@ -16,26 +16,49 @@
 #include "DolbyDecoder.h"
 #include "Audio.h"
 #include "LCD.h"
+#include "Encoder.h"
+#include "DecoderEvents.h"
 
-class Amplifier {
+#include <string>
+
+class Amplifier : public DecoderEvents {
+public:
+	enum {
+		INPUT_STEREO_1 = 0,
+		INPUT_STEREO_2 = 1,
+		INPUT_STEREO_3 = 2,
+		INPUT_STEREO_4 = 3,
+		INPUT_6CH = 5
+	};
+
+	enum {
+		STATUS_MUTE = 0,
+		STATUS_PCM = 1,
+		STATUS_DOLBY = 2,
+		STATUS_RUN = 3
+	};
 protected:
 	UI mUI;
 	Display mDisplay;
 	Audio mAudio;
-
-	LED mDolbyLED;
-	LED mInputLED5CH;
 
 	I2C mBusI2C;
 
 	DAC_IC *mDAC;
 	DolbyDecoder *mDecoder;
 
+	Encoder *mVolumeEncoder;
+
 	LCD *mLCD;
 
 	int mLastVolumeTimer;
 	int mCurrentVolume;
 
+	//LED mStatusLEDs[ 4 ];
+	//LED mInputLEDs[ 5 ];
+
+	std::string mDecoderAlgorithm;
+	uint32_t mSamplingFrequency;
 
 public:
 	Amplifier();
@@ -49,7 +72,8 @@ public:
 	virtual void initialize( I2C_HandleTypeDef bus );
 	virtual void run();
 
-
+	virtual void onSamplingRateChange( uint32_t samplingRate );
+	virtual void onAlgorithmChange( const std::string &algorithm );
 };
 
 #endif /* SRC_AMPLIFIER_H_ */

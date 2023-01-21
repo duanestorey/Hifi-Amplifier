@@ -19,7 +19,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
-#include "usb_device.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -45,6 +44,8 @@
 /* Private variables ---------------------------------------------------------*/
 I2C_HandleTypeDef hi2c1;
 
+RTC_HandleTypeDef hrtc;
+
 SPI_HandleTypeDef hspi1;
 SPI_HandleTypeDef hspi2;
 
@@ -57,22 +58,15 @@ UART_HandleTypeDef huart3;
 osThreadId_t defaultTaskHandle;
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
-  .stack_size = 128 * 4,
+  .stack_size = 1024 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for audio */
 osThreadId_t audioHandle;
 const osThreadAttr_t audio_attributes = {
   .name = "audio",
-  .stack_size = 128 * 4,
+  .stack_size = 1024 * 4,
   .priority = (osPriority_t) osPriorityAboveNormal,
-};
-/* Definitions for UI */
-osThreadId_t UIHandle;
-const osThreadAttr_t UI_attributes = {
-  .name = "UI",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
 };
 /* USER CODE BEGIN PV */
 
@@ -87,9 +81,9 @@ static void MX_TIM3_Init(void);
 static void MX_TIM4_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_I2C1_Init(void);
+static void MX_RTC_Init(void);
 void StartDefaultTask(void *argument);
 void startAudio(void *argument);
-void startUI(void *argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -137,11 +131,10 @@ int main(void)
   MX_TIM4_Init();
   MX_USART3_UART_Init();
   MX_I2C1_Init();
+  MX_RTC_Init();
   /* USER CODE BEGIN 2 */
 
   // The main amplifier class
-
-  amplifier.initialize( hi2c1 );
 
   /* USER CODE END 2 */
 
@@ -170,9 +163,6 @@ int main(void)
 
   /* creation of audio */
   audioHandle = osThreadNew(startAudio, NULL, &audio_attributes);
-
-  /* creation of UI */
-  UIHandle = osThreadNew(startUI, NULL, &UI_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -211,13 +201,13 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
-  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
-  RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_LSE;
+  RCC_OscInitStruct.LSEState = RCC_LSE_ON;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL3;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI_DIV2;
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL8;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -236,8 +226,8 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USB;
-  PeriphClkInit.UsbClockSelection = RCC_USBCLKSOURCE_PLL;
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_RTC;
+  PeriphClkInit.RTCClockSelection = RCC_RTCCLKSOURCE_LSE;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
@@ -275,6 +265,64 @@ static void MX_I2C1_Init(void)
   /* USER CODE BEGIN I2C1_Init 2 */
 
   /* USER CODE END I2C1_Init 2 */
+
+}
+
+/**
+  * @brief RTC Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_RTC_Init(void)
+{
+
+  /* USER CODE BEGIN RTC_Init 0 */
+
+  /* USER CODE END RTC_Init 0 */
+
+  RTC_TimeTypeDef sTime = {0};
+  RTC_DateTypeDef DateToUpdate = {0};
+
+  /* USER CODE BEGIN RTC_Init 1 */
+
+  /* USER CODE END RTC_Init 1 */
+
+  /** Initialize RTC Only
+  */
+  hrtc.Instance = RTC;
+  hrtc.Init.AsynchPrediv = RTC_AUTO_1_SECOND;
+  hrtc.Init.OutPut = RTC_OUTPUTSOURCE_ALARM;
+  if (HAL_RTC_Init(&hrtc) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /* USER CODE BEGIN Check_RTC_BKUP */
+
+  /* USER CODE END Check_RTC_BKUP */
+
+  /** Initialize RTC and set the Time and Date
+  */
+  sTime.Hours = 0x0;
+  sTime.Minutes = 0x0;
+  sTime.Seconds = 0x0;
+
+  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BCD) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  DateToUpdate.WeekDay = RTC_WEEKDAY_MONDAY;
+  DateToUpdate.Month = RTC_MONTH_JANUARY;
+  DateToUpdate.Date = 0x1;
+  DateToUpdate.Year = 0x0;
+
+  if (HAL_RTC_SetDate(&hrtc, &DateToUpdate, RTC_FORMAT_BCD) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN RTC_Init 2 */
+
+  /* USER CODE END RTC_Init 2 */
 
 }
 
@@ -448,6 +496,9 @@ static void MX_TIM4_Init(void)
   }
   /* USER CODE BEGIN TIM4_Init 2 */
 
+	// Star the volume control timer
+	HAL_TIM_Encoder_Start_IT( &htim4, TIM_CHANNEL_ALL );
+
   /* USER CODE END TIM4_Init 2 */
 
 }
@@ -502,7 +553,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LED_MUTE_GPIO_Port, LED_MUTE_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, LED_MUTE_Pin|DECODER_RESET_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, LED_PCM_Pin|LED_DOLBY_Pin|GPIO_PIN_2|LED_MUTEA3_Pin
@@ -513,14 +564,14 @@ static void MX_GPIO_Init(void)
                           |LED_POWER_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, LED_5CH_Pin|LED_RUN_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, LED_INPUT_6CH_Pin|LED_RUN_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : LED_MUTE_Pin */
-  GPIO_InitStruct.Pin = LED_MUTE_Pin;
+  /*Configure GPIO pins : LED_MUTE_Pin DECODER_RESET_Pin */
+  GPIO_InitStruct.Pin = LED_MUTE_Pin|DECODER_RESET_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LED_MUTE_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pins : LED_PCM_Pin LED_DOLBY_Pin PA2 LED_MUTEA3_Pin
                            PA4 USB_PULLUP_Pin */
@@ -531,11 +582,11 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : SETTING_BATTERY_Pin */
-  GPIO_InitStruct.Pin = SETTING_BATTERY_Pin;
+  /*Configure GPIO pins : SETTING_BATTERY_Pin DECODER_IRQ_Pin */
+  GPIO_InitStruct.Pin = SETTING_BATTERY_Pin|DECODER_IRQ_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(SETTING_BATTERY_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pins : LED_INPUT_1_Pin LED_INPUT_2_Pin LED_INPUT_3_Pin LED_INPUT_4_Pin
                            LED_POWER_Pin */
@@ -552,8 +603,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(BUTTON_POWER_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : LED_5CH_Pin LED_RUN_Pin */
-  GPIO_InitStruct.Pin = LED_5CH_Pin|LED_RUN_Pin;
+  /*Configure GPIO pins : LED_INPUT_6CH_Pin LED_RUN_Pin */
+  GPIO_InitStruct.Pin = LED_INPUT_6CH_Pin|LED_RUN_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -564,12 +615,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : DOLBY_IRQ_Pin */
-  GPIO_InitStruct.Pin = DOLBY_IRQ_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(DOLBY_IRQ_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PWM_BACKLIGHT_Pin */
   GPIO_InitStruct.Pin = PWM_BACKLIGHT_Pin;
@@ -591,13 +636,10 @@ static void MX_GPIO_Init(void)
 /* USER CODE END Header_StartDefaultTask */
 void StartDefaultTask(void *argument)
 {
-  /* init code for USB_DEVICE */
-  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
 
-	// Star the volume control timer
-	HAL_TIM_Encoder_Start_IT( &htim4, TIM_CHANNEL_ALL );
+	amplifier.initialize( hi2c1 );
 
 	amplifier.run();
   /* USER CODE END 5 */
@@ -616,21 +658,6 @@ void startAudio(void *argument)
   /* Infinite loop */
 	amplifier.getAudio().run();
   /* USER CODE END startAudio */
-}
-
-/* USER CODE BEGIN Header_startUI */
-/**
-* @brief Function implementing the UI thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_startUI */
-void startUI(void *argument)
-{
-  /* USER CODE BEGIN startUI */
-  /* Infinite loop */
-	amplifier.getUI().run();
-  /* USER CODE END startUI */
 }
 
 /**

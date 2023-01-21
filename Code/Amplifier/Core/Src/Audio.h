@@ -19,6 +19,7 @@ protected:
 	DolbyDecoder *mDecoder;
 	DAC_IC *mDAC;
 	bool mHasBeenInitialized;
+	uint32_t mTick;
 public:
 	Audio( Amplifier *amp );
 	virtual ~Audio();
@@ -26,6 +27,9 @@ public:
 	virtual void run();
 	virtual void setDecoder( DolbyDecoder *decoder ) { mDecoder = decoder; }
 	virtual void setDAC( DAC_IC *dac ) { mDAC = dac; }
+	virtual void start();
+private:
+	void checkFormat();
 };
 
 #endif /* AUDIO_H_ */

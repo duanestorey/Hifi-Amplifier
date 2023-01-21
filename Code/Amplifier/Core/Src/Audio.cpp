@@ -8,7 +8,7 @@
 #include "Audio.h"
 #include "cmsis_os.h"
 
-Audio::Audio( Amplifier *amp ) : Runnable( amp ), mDecoder( 0 ), mDAC( 0 ), mHasBeenInitialized( false ) {
+Audio::Audio( Amplifier *amp ) : Runnable( amp ), mDecoder( 0 ), mDAC( 0 ), mHasBeenInitialized( false ), mTick( 0 ) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -44,19 +44,43 @@ Audio::run() {
 					// The datasheet says the DAC needs about 5ms to be responsive, so let's wait 10
 					osDelay( 10 );
 
-					// Let's set a reasonable volume at first
-					mDAC->setVolume( 25 );
+					mDAC->init();
 
 					// Time to unleash the KRAKEN!  Let's start decoding...
 					mDecoder->play();
 
+					mDecoder->mute( false );
+
 					mHasBeenInitialized = true;
+
+				//	mDAC->enable( true );
 				}
 			}
 		}
 
+		if ( mDecoder && mHasBeenInitialized ) {
+			mDecoder->checkForInterrupt();
+
+			if ( mTick % 5000 == 0 ) {
+				mDecoder->checkFormat();
+			}
+		}
+
+		mTick = mTick + 1;
+
+
 		osDelay(1);
 	}
+}
+
+void
+Audio::start() {
+//	mHasBeenInitialized = true;
+}
+
+void
+Audio::checkFormat() {
+
 }
 
 

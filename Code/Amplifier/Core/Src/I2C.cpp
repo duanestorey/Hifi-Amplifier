@@ -58,6 +58,18 @@ I2C::readRegister( I2C_ADDR addr, uint8_t reg ) {
 	}
 }
 
+I2C_RESULT
+I2C::readRegister16( I2C_ADDR addr, uint8_t reg ) {
+	int ret =  HAL_I2C_Mem_Read( &mI2C, addr, reg, 1, mBuffer, 2, HAL_MAX_DELAY );
+	if ( ret == HAL_OK ) {
+		uint16_t result = 0;
+		result = ( (int16_t) mBuffer[0] ) << 8 | mBuffer[1];
+		return result;
+	} else {
+		return I2C_ERROR;
+	}
+}
+
 I2C_Device *
 I2C::makeDevice( I2C_ADDR addr ) {
 	return new I2C_Device( mI2C, addr );

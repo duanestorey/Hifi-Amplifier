@@ -36,6 +36,11 @@ I2C_Device::readRegister( uint8_t reg ) {
 	return mBus.readRegister( mAddr, reg );
 }
 
+I2C_RESULT
+I2C_Device::readRegister16( uint8_t reg ) {
+	return mBus.readRegister16( mAddr, reg );
+}
+
 uint8_t
 I2C_Device::readByte() {
 	return mBus.readByte( mAddr );

@@ -8,6 +8,8 @@
 #ifndef SRC_DOLBYDECODER_H_
 #define SRC_DOLBYDECODER_H_
 
+#include "DecoderEvents.h"
+
 class DolbyDecoder {
 public:
 	DolbyDecoder();
@@ -19,6 +21,10 @@ public:
 	virtual void mute( bool enable = true ) = 0;
 	virtual void play( bool enable = true ) = 0;
 	virtual void run() = 0;
+	virtual void checkForInterrupt() = 0;
+	virtual void checkFormat() = 0;
+
+	virtual void setEventHandler( DecoderEvents *handler ) = 0;
 };
 
 #endif /* SRC_DOLBYDECODER_H_ */
