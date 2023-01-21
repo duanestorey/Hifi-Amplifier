@@ -85,8 +85,8 @@ DolbyDecoder_STA310::initialize() {
 		// First, mute the output
 		mute();
 
-		mDevice->writeRegister( 0x4e, 255 );
-		mDevice->writeRegister( 0x63, 255 );
+		mDevice->writeRegister( 0x4e, 0 );
+		mDevice->writeRegister( 0x63, 0 );
 		mDevice->writeRegister( 0x67, 0 );
 
 		mute();
@@ -175,7 +175,7 @@ DolbyDecoder_STA310::configureSPDIF() {
 	//mDevice->writeRegister( DolbyDecoder_STA310::CAN_SETUP, 0 );
 
 	// Set up the PLL PCMCLK, PCMCLK FROM SPDIF, SYS CLOCK FROM PLL/2
-	mDevice->writeRegister( DolbyDecoder_STA310::PLL_CTRL, 26 );
+	mDevice->writeRegister( DolbyDecoder_STA310::PLL_CTRL, 30 );
 	// 30 works
 	// 26 was audio PLL and it sort of worked
 	// 16 + 8 + 2

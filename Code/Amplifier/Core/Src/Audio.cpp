@@ -62,7 +62,7 @@ Audio::run() {
 			mDecoder->checkForInterrupt();
 
 			if ( mTick % 5000 == 0 ) {
-				mDecoder->checkFormat();
+		//		mDecoder->checkFormat();
 			}
 		}
 

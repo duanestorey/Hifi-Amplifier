@@ -66,7 +66,7 @@ osThreadId_t audioHandle;
 const osThreadAttr_t audio_attributes = {
   .name = "audio",
   .stack_size = 1024 * 4,
-  .priority = (osPriority_t) osPriorityAboveNormal,
+  .priority = (osPriority_t) osPriorityNormal,
 };
 /* USER CODE BEGIN PV */
 

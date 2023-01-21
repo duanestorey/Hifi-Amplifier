@@ -1,6 +1,7 @@
 #MicroXplorer Configuration settings - do not modify
-FREERTOS.IPParameters=Tasks01,configUSE_NEWLIB_REENTRANT,configMINIMAL_STACK_SIZE,configTOTAL_HEAP_SIZE
-FREERTOS.Tasks01=defaultTask,24,1024,StartDefaultTask,Default,NULL,Dynamic,NULL,NULL;audio,32,1024,startAudio,Default,NULL,Dynamic,NULL,NULL
+FREERTOS.FootprintOK=true
+FREERTOS.IPParameters=Tasks01,configUSE_NEWLIB_REENTRANT,configMINIMAL_STACK_SIZE,configTOTAL_HEAP_SIZE,FootprintOK
+FREERTOS.Tasks01=defaultTask,24,1024,StartDefaultTask,Default,NULL,Dynamic,NULL,NULL;audio,24,1024,startAudio,Default,NULL,Dynamic,NULL,NULL
 FREERTOS.configMINIMAL_STACK_SIZE=256
 FREERTOS.configTOTAL_HEAP_SIZE=9000
 FREERTOS.configUSE_NEWLIB_REENTRANT=1
