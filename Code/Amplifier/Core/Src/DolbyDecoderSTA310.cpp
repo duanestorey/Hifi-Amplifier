@@ -85,8 +85,8 @@ DolbyDecoder_STA310::initialize() {
 		// First, mute the output
 		mute();
 
-		mDevice->writeRegister( 0x4e, 0 );
-		mDevice->writeRegister( 0x63, 0 );
+		mDevice->writeRegister( 0x4e, 255 );
+		mDevice->writeRegister( 0x63, 255 );
 		mDevice->writeRegister( 0x67, 0 );
 
 		mute();
@@ -150,14 +150,14 @@ DolbyDecoder_STA310::configureSync() {
 void
 DolbyDecoder_STA310::configureDecoder() {
 	// Set for SPDIF data format
-	mDevice->writeRegister( DolbyDecoder_STA310::STREAM_SEL, 5 );
+	//mDevice->writeRegister( DolbyDecoder_STA310::STREAM_SEL, 5 );
 
 	// Set for Dolby Digital
 	mDevice->writeRegister( DolbyDecoder_STA310::DECODE_SEL, 0 );
 	//mDevice->writeRegister( DolbyDecoder_STA310::DECODE_SEL, 0 );
 
 	// Beep
-	//mDevice->writeRegister( DolbyDecoder_STA310::DECODE_SEL, 7 );
+	mDevice->writeRegister( DolbyDecoder_STA310::DECODE_SEL, 7 );
 
 	if ( mEventHandler ) {
 		mEventHandler->onAlgorithmChange( std::string( "AC3" ) );
@@ -175,7 +175,7 @@ DolbyDecoder_STA310::configureSPDIF() {
 	//mDevice->writeRegister( DolbyDecoder_STA310::CAN_SETUP, 0 );
 
 	// Set up the PLL PCMCLK, PCMCLK FROM SPDIF, SYS CLOCK FROM PLL/2
-	mDevice->writeRegister( DolbyDecoder_STA310::PLL_CTRL, 30 );
+	mDevice->writeRegister( DolbyDecoder_STA310::PLL_CTRL, 26 );
 	// 30 works
 	// 26 was audio PLL and it sort of worked
 	// 16 + 8 + 2
@@ -187,10 +187,10 @@ DolbyDecoder_STA310::configureSPDIF() {
 
 
 	// Enable auto detection on the stream
-	mDevice->writeRegister( DolbyDecoder_STA310::AUTODETECT_ENA, 1 );
+	//mDevice->writeRegister( DolbyDecoder_STA310::AUTODETECT_ENA, 1 );
 
 	// Set SPDIF auto-detection sensitivity
-	mDevice->writeRegister( DolbyDecoder_STA310::AUTODETECT_SENS, 0 );
+	//mDevice->writeRegister( DolbyDecoder_STA310::AUTODETECT_SENS, 0 );
 }
 
 void
@@ -202,10 +202,10 @@ DolbyDecoder_STA310::configureAC3() {
 	mDevice->writeRegister( DolbyDecoder_STA310::AC3_COMP_MOD, 2 );
 
 	// Full dynamic range for loud sounds
-	mDevice->writeRegister( DolbyDecoder_STA310::AC3_HDR, 0 );
+	mDevice->writeRegister( DolbyDecoder_STA310::AC3_HDR, 255 );
 
 	// Don't boost low signals
-	mDevice->writeRegister( DolbyDecoder_STA310::AC3_LDR, 0 );
+	mDevice->writeRegister( DolbyDecoder_STA310::AC3_LDR, 255 );
 
 	// Mute audio output if stream errors are detected
 	mDevice->writeRegister( DolbyDecoder_STA310::AC3_RPC, 0 );
