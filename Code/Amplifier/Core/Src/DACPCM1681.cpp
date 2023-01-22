@@ -11,6 +11,7 @@
 #define PCM1681_REG_MUTE	7
 #define PCM1681_REG_ENABLE	8
 #define PCM1681_REG_FORMAT	9
+#define PCM1681_REG_OVER	12
 #define PCM1681_REG_DAMS	13
 
 DAC_PCM1681::DAC_PCM1681( I2C_Device *device ) : mDevice( device ), mEnabled( true ) {
@@ -50,10 +51,11 @@ DAC_PCM1681::setFormat( uint8_t format ) {
 	//mDevice->writeRegister( PCM1681_REG_FORMAT, value );
 	uint8_t data[2];
 	data[0] = PCM1681_REG_FORMAT;
-	data[1] = value;
+	data[1] = 4;
 	//mDevice->writeData( data, 2 );
 	mDevice->writeRegister( PCM1681_REG_FORMAT, 4 );
-	// mDevice->writeRegister( PCM1681_REG_FORMAT, 4 ); works
+	mDevice->writeRegister( PCM1681_REG_OVER, 1 );
+//	mDevice->writeData( data, 2 );
 }
 
 void

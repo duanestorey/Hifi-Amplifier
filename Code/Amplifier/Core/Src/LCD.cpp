@@ -9,7 +9,7 @@
 #include "cmsis_os.h"
 #include <stdio.h>
 
-#define LCD_DELAY 1
+#define LCD_DELAY 2
 
 
 void

@@ -17,7 +17,8 @@ public:
 	Runnable( Amplifier *amplifier );
 	virtual ~Runnable();
 
-	virtual void run() = 0;
+	virtual void tick() = 0;
+	virtual void preTick() = 0;
 };
 
 #endif /* SRC_RUNNABLE_H_ */

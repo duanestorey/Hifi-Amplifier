@@ -24,7 +24,9 @@ public:
 	Audio( Amplifier *amp );
 	virtual ~Audio();
 
-	virtual void run();
+	virtual void tick();
+	virtual void preTick();
+
 	virtual void setDecoder( DolbyDecoder *decoder ) { mDecoder = decoder; }
 	virtual void setDAC( DAC_IC *dac ) { mDAC = dac; }
 	virtual void start();

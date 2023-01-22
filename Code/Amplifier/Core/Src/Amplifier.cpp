@@ -14,7 +14,7 @@
 //#include "usbd_cdc_if.h"
 #include "Debug.h"
 
-Amplifier::Amplifier() : mUI( this ), mAudio( this ), mDAC( 0 ), mDecoder( 0 ), mLastVolumeTimer( 0 ), mCurrentVolume( 50 ), mSamplingFrequency( 0 ) {
+Amplifier::Amplifier() : mAudio( this ), mDAC( 0 ), mDecoder( 0 ), mLastVolumeTimer( 0 ), mCurrentVolume( 50 ), mSamplingFrequency( 0 ) {
 	// TODO Auto-generated constructor stub
 }
 
@@ -33,9 +33,11 @@ Amplifier::onAlgorithmChange( const std::string &algorithm ) {
 }
 
 void
-Amplifier::initialize( I2C_HandleTypeDef bus ) {
+Amplifier::initialize( I2C_HandleTypeDef bus, osMutexId_t mutex ) {
 	// Take the I2C bus info and configure our internal I2C bus class
-	mBusI2C.setBusData( bus );
+	mBusI2C.setBusData( bus, mutex );
+
+	mMutex = mutex;
 
 	mDAC = new DAC_PCM1681( mBusI2C.makeDevice( 0x4c << 1 ) );
 	mDecoder = new DolbyDecoder_STA310( mBusI2C.makeDevice( 0x60 << 1 ) );
@@ -51,7 +53,6 @@ Amplifier::initialize( I2C_HandleTypeDef bus ) {
 
 	mVolumeEncoder = new Encoder();
 
-	mAudio.start();
 /*
 
 	.
@@ -70,12 +71,16 @@ Amplifier::initialize( I2C_HandleTypeDef bus ) {
 
 }
 
-void Amplifier::run() {
+void
+Amplifier::preTick() {
+
 	mLCD->initialize();
+
 	mDisplay.updateVolume( mCurrentVolume );
 	mDisplay.update();
+}
 
-	while ( true ) {
+void Amplifier::tick() {
 		uint32_t currentCount = (uint32_t)TIM4->CNT;
 		ENCODER_VALUE encoderChange = mVolumeEncoder->checkEncoder( currentCount );
 		if ( encoderChange == Encoder::ENCODER_INCREASE ) {
@@ -86,11 +91,7 @@ void Amplifier::run() {
 
 		if ( encoderChange != Encoder::ENCODER_NOCHANGE ) {
 			mDisplay.updateVolume( mCurrentVolume );
+			mDisplay.update();
 		}
-
-		mDisplay.update();
-
-		osDelay( 1 );
-	}
 }
 

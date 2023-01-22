@@ -18,6 +18,7 @@
 #include "LCD.h"
 #include "Encoder.h"
 #include "DecoderEvents.h"
+#include "cmsis_os.h"
 
 #include <string>
 
@@ -38,11 +39,11 @@ public:
 		STATUS_RUN = 3
 	};
 protected:
-	UI mUI;
 	Display mDisplay;
 	Audio mAudio;
 
 	I2C mBusI2C;
+	osMutexId_t mMutex;
 
 	DAC_IC *mDAC;
 	DolbyDecoder *mDecoder;
@@ -64,13 +65,13 @@ public:
 	Amplifier();
 	virtual ~Amplifier();
 
-	UI &getUI() { return mUI; }
 	Display &getDisplay() { return mDisplay; }
 	Audio &getAudio() { return mAudio; }
 	I2C &getI2C();
 
-	virtual void initialize( I2C_HandleTypeDef bus );
-	virtual void run();
+	virtual void initialize( I2C_HandleTypeDef bus, osMutexId_t mutex );
+	virtual void tick();
+	virtual void preTick();
 
 	virtual void onSamplingRateChange( uint32_t samplingRate );
 	virtual void onAlgorithmChange( const std::string &algorithm );
