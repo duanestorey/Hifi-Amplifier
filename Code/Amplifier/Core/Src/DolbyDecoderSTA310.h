@@ -78,6 +78,7 @@ public:
 		ID = 0x51,
 		ID_EXT = 0x52,
 		SYNC_LOCK = 0x53,
+		OCFG = 0x66,
 		SPDIF_CONF = 0x60,
 		AC3_DECODE_LFE = 0x68,
 		AC3_COMP_MOD = 0x69,

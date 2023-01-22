@@ -6,7 +6,6 @@
  */
 
 #include "LCD.h"
-#include "cmsis_os.h"
 #include <stdio.h>
 
 #define LCD_DELAY 2
@@ -24,7 +23,7 @@ LCD::sendCommand( uint8_t command ) {
 	data_t[3] = data_l|0x08;	// en=0, rs=0
 
 	mLCD->writeData( data_t, 4 );
-	osDelay( LCD_DELAY );
+	HAL_Delay( LCD_DELAY );
 }
 
 void
@@ -41,7 +40,7 @@ LCD::enableBacklight( bool enable  ) {
 void
 LCD::clearDisplay() {
 	sendCommand( 0x01 );
-	osDelay( LCD_DELAY );
+	HAL_Delay( LCD_DELAY );
 }
 
 void
@@ -70,13 +69,13 @@ LCD::setCursor( uint8_t x, uint8_t y ) {
 void
 LCD::reset() {
 	sendCommand( 0x30 );
-	osDelay( 10 );
+	HAL_Delay( 10 );
 	sendCommand( 0x30 );
-	osDelay( 5 );
+	HAL_Delay( 5 );
 	sendCommand( 0x30 );
-	osDelay( 10 );
+	HAL_Delay( 10 );
 //	sendCommand( 0x20 );
-	osDelay( 10 );
+	HAL_Delay( 10 );
 }
 
 void
@@ -98,7 +97,7 @@ LCD::sendData( char data ) {
 	data_t[3] = data_l|0x09;	// en=0, rs=0
 
 	mLCD->writeData( data_t, 4 );
-	osDelay( LCD_DELAY );
+	HAL_Delay( LCD_DELAY );
 }
 
 /*
@@ -258,37 +257,37 @@ LCD::update() {
 
 void
 LCD::initialize() {
-	osDelay( 1000 );
+	HAL_Delay( 500 );
 
 	sendCommand( 0x30 );
-	osDelay( 10 );
+	HAL_Delay( 10 );
 	sendCommand( 0x30 );
-	osDelay( 5 );
+	HAL_Delay( 5 );
 	sendCommand( 0x30 );
-	osDelay( 10 );
+	HAL_Delay( 10 );
 	sendCommand( 0x20 );
-	osDelay( 10 );
+	HAL_Delay( 10 );
 
 
 	enableBacklight( false );
 
-	osDelay( 250 );
+	HAL_Delay( 250 );
 
 	sendCommand( 0x28 );
-	osDelay( 5 );
+	HAL_Delay( 5 );
 	sendCommand( 0x08 );
-	osDelay( 5 );
+	HAL_Delay( 5 );
 	sendCommand( 0x01 );
-	osDelay( 5 );
+	HAL_Delay( 5 );
 
 	sendCommand( 0x06 );
-	osDelay( 5 );
+	HAL_Delay( 5 );
 	sendCommand( 0x0c );
-	osDelay( 5 );
+	HAL_Delay( 5 );
 	sendCommand( 0x01 );
-	osDelay( 5 );
+	HAL_Delay( 5 );
 
-	osDelay( 250 );
+	HAL_Delay( 250 );
 
 	enableBacklight( true );
 

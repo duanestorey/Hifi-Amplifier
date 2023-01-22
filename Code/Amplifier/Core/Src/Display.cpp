@@ -7,7 +7,6 @@
 
 #include "Display.h"
 #include "main.h"
-#include "cmsis_os.h"
 #include <stdio.h>
 #include "Debug.h"
 

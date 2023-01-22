@@ -32,15 +32,6 @@ Core/Src/Amplifier.o: ../Core/Src/Amplifier.cpp ../Core/Src/Amplifier.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
  ../Core/Src/Led.h ../Core/Src/DAC.h ../Core/Src/DolbyDecoder.h \
  ../Core/Src/DecoderEvents.h ../Core/Src/Audio.h ../Core/Src/Encoder.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
- ../Core/Inc/FreeRTOSConfig.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
  ../Core/Src/DACPCM1681.h ../Core/Src/DolbyDecoderSTA310.h \
  ../Core/Src/Debug.h
 ../Core/Src/Amplifier.h:
@@ -86,15 +77,6 @@ Core/Src/Amplifier.o: ../Core/Src/Amplifier.cpp ../Core/Src/Amplifier.h \
 ../Core/Src/DecoderEvents.h:
 ../Core/Src/Audio.h:
 ../Core/Src/Encoder.h:
-../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:
-../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
-../Core/Inc/FreeRTOSConfig.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h:
-../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
 ../Core/Src/DACPCM1681.h:
 ../Core/Src/DolbyDecoderSTA310.h:
 ../Core/Src/Debug.h:

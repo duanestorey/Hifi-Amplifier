@@ -18,7 +18,6 @@
 #include "LCD.h"
 #include "Encoder.h"
 #include "DecoderEvents.h"
-#include "cmsis_os.h"
 
 #include <string>
 
@@ -43,7 +42,6 @@ protected:
 	Audio mAudio;
 
 	I2C mBusI2C;
-	osMutexId_t mMutex;
 
 	DAC_IC *mDAC;
 	DolbyDecoder *mDecoder;
@@ -69,7 +67,7 @@ public:
 	Audio &getAudio() { return mAudio; }
 	I2C &getI2C();
 
-	virtual void initialize( I2C_HandleTypeDef bus, osMutexId_t mutex );
+	virtual void initialize( I2C_HandleTypeDef bus );
 	virtual void tick();
 	virtual void preTick();
 

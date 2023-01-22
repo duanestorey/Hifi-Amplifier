@@ -117,6 +117,9 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   // The main amplifier class
+  amplifier.initialize( hi2c1 );
+  amplifier.preTick();
+  amplifier.getAudio().preTick();
 
   /* USER CODE END 2 */
 
@@ -127,6 +130,9 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
+	  amplifier.tick();
+	  amplifier.getAudio().tick();
 
   }
   /* USER CODE END 3 */
@@ -194,7 +200,7 @@ static void MX_I2C1_Init(void)
 
   /* USER CODE END I2C1_Init 1 */
   hi2c1.Instance = I2C1;
-  hi2c1.Init.ClockSpeed = 100000;
+  hi2c1.Init.ClockSpeed = 50000;
   hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
   hi2c1.Init.OwnAddress1 = 0;
   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;

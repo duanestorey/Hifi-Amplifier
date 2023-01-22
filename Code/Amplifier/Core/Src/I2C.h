@@ -15,23 +15,20 @@
 typedef uint8_t I2C_ADDR;
 typedef uint16_t I2C_RESULT;
 
-typedef void * osMutexId_t;
-
 class I2C_Device;
 
 class I2C {
 protected:
 	I2C_HandleTypeDef mI2C;
-	osMutexId_t mMutex;
 private:
 	uint8_t mBuffer[16] = {0};
 
 public:
 	I2C() {}
-	I2C( I2C_HandleTypeDef bus, osMutexId_t mutex );
+	I2C( I2C_HandleTypeDef bus );
 	virtual ~I2C();
 
-	void setBusData( I2C_HandleTypeDef bus, osMutexId_t mutex  ) { mI2C = bus; mMutex = mutex; }
+	void setBusData( I2C_HandleTypeDef bus ) { mI2C = bus; }
 	uint8_t readByte( I2C_ADDR addr );
 	bool writeByte( I2C_ADDR addr, uint8_t );
 

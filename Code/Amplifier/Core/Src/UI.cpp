@@ -7,7 +7,7 @@
 
 #include "UI.h"
 #include "main.h"
-#include "cmsis_os.h"
+
 
 UI::UI( Amplifier *amp ) : Runnable( amp ) {
 	// TODO Auto-generated constructor stub
@@ -20,6 +20,6 @@ UI::~UI() {
 
 void UI::run() {
 	for(;;) {
-		osDelay(1);
+		HAL_Delay(1);
 	}
 }

@@ -7,7 +7,6 @@
 
 #include "Amplifier.h"
 #include "main.h"
-#include "cmsis_os.h"
 #include "I2CDevice.h"
 #include "DACPCM1681.h"
 #include "DolbyDecoderSTA310.h"
@@ -33,14 +32,12 @@ Amplifier::onAlgorithmChange( const std::string &algorithm ) {
 }
 
 void
-Amplifier::initialize( I2C_HandleTypeDef bus, osMutexId_t mutex ) {
+Amplifier::initialize( I2C_HandleTypeDef bus ) {
 	// Take the I2C bus info and configure our internal I2C bus class
-	mBusI2C.setBusData( bus, mutex );
-
-	mMutex = mutex;
-
+	mBusI2C.setBusData( bus );
 	mDAC = new DAC_PCM1681( mBusI2C.makeDevice( 0x4c << 1 ) );
-	mDecoder = new DolbyDecoder_STA310( mBusI2C.makeDevice( 0x60 << 1 ) );
+	//mDecoder = new DolbyDecoder_STA310( mBusI2C.makeDevice( 0x60 << 1 ) );
+	mDecoder = new DolbyDecoder_STA310( mBusI2C.makeDevice( 0x5c << 1 ) );
 
 	mDecoder->setEventHandler( this );
 
