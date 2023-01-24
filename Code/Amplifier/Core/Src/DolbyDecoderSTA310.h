@@ -109,6 +109,10 @@ public:
 	virtual bool isInitialized() { return mInitialized; }
 	virtual void checkForInterrupt();
 	virtual void checkFormat();
+
+	virtual void reset();
+
+	virtual void setInformation( const std::string info ) { if ( mEventHandler ) mEventHandler->onInformation( info ); }
 private:
 	void softReset();
 	void enableAudioPLL();

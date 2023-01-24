@@ -1,8 +1,6 @@
-../Core/Src/main.c:614:6:void startAudio(void*)	8	static
-../Core/Src/main.c:215:6:void SystemClock_Config()	80	static,ignoring_inline_asm
-../Core/Src/main.c:644:6:void Error_Handler()	0	static,ignoring_inline_asm
-../Core/Src/main.c:653:1:c)	8	static
-../Core/Src/main.c:117:5:int main()	168	static,ignoring_inline_asm
-../Core/Src/main.c:584:6:void StartDefaultTask(void*)	0	static
-../Core/Src/main.c:599:6:void startDisplay(void*)	0	static
-../Core/Src/main.c:632:6:void startUI(void*)	0	static
+../Core/Src/main.c:195:6:void SystemClock_Config()	80	static,ignoring_inline_asm
+../Core/Src/main.c:591:6:void Error_Handler()	0	static,ignoring_inline_asm
+../Core/Src/main.c:601:1:c)	8	static
+../Core/Src/main.c:99:5:int main()	88	static,ignoring_inline_asm
+../Core/Src/main.c:551:6:void StartDefaultTask(void*)	8	static
+../Core/Src/main.c:573:6:void startAudio(void*)	8	static

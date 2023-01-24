@@ -13,8 +13,15 @@
 //#include "usbd_cdc_if.h"
 #include "Debug.h"
 
-Amplifier::Amplifier() : mAudio( this ), mDAC( 0 ), mDecoder( 0 ), mLastVolumeTimer( 0 ), mCurrentVolume( 50 ), mSamplingFrequency( 0 ) {
+Amplifier::Amplifier() :
+	mAudio( this ),
+	mDAC( 0 ),
+	mDecoder( 0 ),
+	mLastVolumeTimer( 0 ),
+	mCurrentVolume( 80 ),
+	mSamplingFrequency( 0 ) {
 	// TODO Auto-generated constructor stub
+	mBusI2C = new I2C_Bitbang( 48000000 );
 }
 
 Amplifier::~Amplifier() {
@@ -32,12 +39,13 @@ Amplifier::onAlgorithmChange( const std::string &algorithm ) {
 }
 
 void
-Amplifier::initialize( I2C_HandleTypeDef bus ) {
+Amplifier::initialize() {
+	DEBUG_STR( "Initializing amplifier" );
 	// Take the I2C bus info and configure our internal I2C bus class
-	mBusI2C.setBusData( bus );
-	mDAC = new DAC_PCM1681( mBusI2C.makeDevice( 0x4c << 1 ) );
+	//mBusI2C.setBusData( bus );
+	mDAC = new DAC_PCM1681( mBusI2C->makeDevice( 0x4c << 1 ) );
 	//mDecoder = new DolbyDecoder_STA310( mBusI2C.makeDevice( 0x60 << 1 ) );
-	mDecoder = new DolbyDecoder_STA310( mBusI2C.makeDevice( 0x5c << 1 ) );
+	mDecoder = new DolbyDecoder_STA310( mBusI2C->makeDevice( 0x5c << 1 ) );
 
 	mDecoder->setEventHandler( this );
 
@@ -45,14 +53,11 @@ Amplifier::initialize( I2C_HandleTypeDef bus ) {
 	mAudio.setDecoder( mDecoder );
 	mAudio.setDAC( mDAC );
 
-	mLCD = new LCD( mBusI2C.makeDevice( LCD_I2C_ADDR ) );
+	mLCD = new LCD( mBusI2C->makeDevice( LCD_I2C_ADDR ) );
 	mDisplay.setLCD( mLCD );
 
 	mVolumeEncoder = new Encoder();
 
-/*
-
-	.
 	mInputLEDs[ INPUT_STEREO_1 ].setPortAndPin( LED_INPUT_1_GPIO_Port, LED_INPUT_1_Pin );
 	mInputLEDs[ INPUT_STEREO_2 ].setPortAndPin( LED_INPUT_2_GPIO_Port, LED_INPUT_2_Pin );
 	mInputLEDs[ INPUT_STEREO_3 ].setPortAndPin( LED_INPUT_3_GPIO_Port, LED_INPUT_3_Pin );
@@ -63,9 +68,12 @@ Amplifier::initialize( I2C_HandleTypeDef bus ) {
 	mStatusLEDs[ STATUS_PCM ].setPortAndPin( LED_PCM_GPIO_Port, LED_PCM_Pin );
 	mStatusLEDs[ STATUS_MUTE ].setPortAndPin( LED_MUTE_GPIO_Port, LED_MUTE_Pin );
 	mStatusLEDs[ STATUS_RUN ].setPortAndPin( LED_RUN_GPIO_Port, LED_RUN_Pin );
-	*/
+}
 
-
+void
+Amplifier::onInformation( const std::string &info ) {
+	mDisplay.setInitString( info );
+//	mDisplay.update();
 }
 
 void
@@ -73,22 +81,33 @@ Amplifier::preTick() {
 
 	mLCD->initialize();
 
+	mStatusLEDs[ STATUS_RUN ].enable();
+
+//	mDisplay.setInitString( "LCD Initializing" );
+
+	mDisplay.setScreen( Display::SCREEN_MAIN );
 	mDisplay.updateVolume( mCurrentVolume );
 	mDisplay.update();
+
+	mAudio.setVolume( mCurrentVolume );
+
+//	mDisplay.setInitString( "LCD Done Init" );
 }
 
 void Amplifier::tick() {
 		uint32_t currentCount = (uint32_t)TIM4->CNT;
 		ENCODER_VALUE encoderChange = mVolumeEncoder->checkEncoder( currentCount );
 		if ( encoderChange == Encoder::ENCODER_INCREASE ) {
-			mCurrentVolume++;
+			if ( mCurrentVolume < 100) mCurrentVolume++;
 		} else if ( encoderChange == Encoder::ENCODER_DECREASE ) {
-			mCurrentVolume--;
+			if ( mCurrentVolume > 0 ) mCurrentVolume--;
 		}
 
 		if ( encoderChange != Encoder::ENCODER_NOCHANGE ) {
 			mDisplay.updateVolume( mCurrentVolume );
-			mDisplay.update();
+			mAudio.setVolume( mCurrentVolume );
 		}
+
+		mDisplay.update();
 }
 

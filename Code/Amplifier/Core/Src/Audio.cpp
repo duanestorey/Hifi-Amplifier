@@ -7,6 +7,8 @@
 
 #include "Audio.h"
 #include "main.h"
+#include "cmsis_os.h"
+#include "Debug.h"
 
 Audio::Audio( Amplifier *amp ) : Runnable( amp ), mDecoder( 0 ), mDAC( 0 ), mHasBeenInitialized( false ), mTick( 0 ) {
 	// TODO Auto-generated constructor stub
@@ -19,15 +21,28 @@ Audio::~Audio() {
 
 void
 Audio::preTick() {
+	//if ( mEventHandler ) mEventHandler->onInformation( "Starting audio setup" );
 	if ( !mHasBeenInitialized ) {
 		// Let's run the audio init.. we'll put this in the for loop in case for some reason we need to initialize again
 		if ( mDAC && mDecoder ) {
 			// We have a valid DAC and a valid decoder.. for now both are required
 
+			 DEBUG_STR( "In main loop" );
+			//if ( mEventHandler ) mEventHandler->onInformation( "Setting up Dolby Decoder" );
 			// Initialize the Dolby Decoder
+			mDecoder->setInformation( "Init Decoder" );
 			mDecoder->initialize();
 
+			osDelay( 250 );
+
+			mDecoder->setInformation( "Init DAC" );
+			 DEBUG_STR( "Initializing DAC" );
+			mDAC->init();
+
 			if ( mDecoder->isInitialized() ) {
+
+				 DEBUG_STR( "Decoding is initialized" );
+			//	if ( mEventHandler ) mEventHandler->onInformation( "Decoder Initialized" );
 				// This means the startup of the decoder was successful
 
 				// Let's mute the output on the decoder
@@ -35,39 +50,61 @@ Audio::preTick() {
 
 				// Decoder should be sending a clock signal to the DAC chip, so it should be responsive
 				// The datasheet says the DAC needs about 5ms to be responsive, so let's wait 10
-				HAL_Delay( 10 );
-
-				//mDAC->init();
-
-				HAL_Delay( 10 );
+				mDecoder->setInformation( "ready run" );
+				osDelay( 10 );
 
 				// Time to unleash the KRAKEN!  Let's start decoding...
 
 				// Now let's pull the Decoder out of the IDLE state
 
-				HAL_Delay( 50 );
-
-				mDecoder->play();
-
-				HAL_Delay( 50 );
+				 DEBUG_STR( "...disabling mute" );
 
 				mDecoder->mute( false );
-
+				mDecoder->play();
 				mDecoder->run();
+
+				osDelay( 50 );
+
+
+
+				mDecoder->setInformation( "Running" );
+
+				 DEBUG_STR( "...setting run" );
+
+
+				osDelay( 50 );
 
 				mHasBeenInitialized = true;
 
+				mDecoder->setInformation( "Setting Volume" );
+
+				 DEBUG_STR( "...setting dac volume" );
+
+				//mDAC->setVolume( 127 );
+
+				 DEBUG_STR( "Playing" );
+
+				mDecoder->setInformation( "Playing" );
+
 				mDAC->enable( true );
+
+				mDecoder->reset();
 			}
 		}
 	}
 }
 
 void
+Audio::setVolume( int volume ) {
+	int ourVol = (127*volume)/100;
+	if ( ourVol > 127 ) ourVol = 127;
+	mDAC->setVolume( volume );
+}
+
+void
 Audio::tick() {
 	// We need to start setting up the audio interfaces
 	// First we'll configure the Dolby Decoder
-	for(;;) {
 		if ( mDecoder && mHasBeenInitialized ) {
 			mDecoder->checkForInterrupt();
 
@@ -77,9 +114,6 @@ Audio::tick() {
 		}
 
 		mTick = mTick + 1;
-
-		HAL_Delay(1);
-	}
 }
 
 void

@@ -30,6 +30,7 @@ public:
 	virtual void setDecoder( DolbyDecoder *decoder ) { mDecoder = decoder; }
 	virtual void setDAC( DAC_IC *dac ) { mDAC = dac; }
 	virtual void start();
+	virtual void setVolume( int volume );
 private:
 	void checkFormat();
 };

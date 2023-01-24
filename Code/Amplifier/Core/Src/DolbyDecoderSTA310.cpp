@@ -6,6 +6,8 @@
  */
 
 #include "DolbyDecoderSTA310.h"
+#include "cmsis_os.h"
+#include "Debug.h"
 
 DolbyDecoder_STA310::DolbyDecoder_STA310( I2C_Device *device ) :
 	mDevice( device ), mInitialized( false ), mMuted( false ), mRunning( false ), mPlaying( false ), mEventHandler( 0 ), mIdent( 0 ), mSoftwareVersion( 0 ) {
@@ -33,6 +35,7 @@ DolbyDecoder_STA310::mute( bool enable ) {
 void
 DolbyDecoder_STA310::play( bool enable ) {
 	if ( enable ) {
+		 DEBUG_STR( "Setting play to 1" );
 		mDevice->writeRegister( DolbyDecoder_STA310::PLAY, 1 );
 	} else {
 		mDevice->writeRegister( DolbyDecoder_STA310::PLAY, 0 );
@@ -43,7 +46,9 @@ DolbyDecoder_STA310::play( bool enable ) {
 
 void
 DolbyDecoder_STA310::run() {
+	 DEBUG_STR( "Attemping to run" );
 	if ( !mRunning ) {
+		 DEBUG_STR( "....Writing run" );
 		mDevice->writeRegister( DolbyDecoder_STA310::RUN, 1 );
 		mRunning = true;
 		// We are now running, the only way to stop is to do a reset of the chip
@@ -58,56 +63,77 @@ DolbyDecoder_STA310::enableAudioPLL() {
 void
 DolbyDecoder_STA310::initialize() {
 	HAL_GPIO_WritePin( DECODER_RESET_GPIO_Port, DECODER_RESET_Pin, GPIO_PIN_RESET );
-	HAL_Delay( 100 );
+	osDelay( 100 );
 	HAL_GPIO_WritePin( DECODER_RESET_GPIO_Port, DECODER_RESET_Pin, GPIO_PIN_SET );
-	HAL_Delay( 1000 );
+	osDelay( 500 );
 
+	 DEBUG_STR( "Performing soft reset" );
 	softReset();
 
 	if ( mInitialized ) {
+		 DEBUG_STR( "Initialized" );
 		// perform startup routine
 		mIdent = mDevice->readRegister( DolbyDecoder_STA310::IDENT );
 		mSoftwareVersion = mDevice->readRegister( DolbyDecoder_STA310::SOFTVER );
 
 		// Enable the AUDIO PLL
-		enableAudioPLL();
+		 DEBUG_STR( "Configuring PLL" );
+
 		configureAudioPLL();
 
+		 DEBUG_STR( "Configuring the rest" );
 		configureInterrupts();
 		configureSync();
 		configurePCMOUT();
-		configureSPDIF();
 		configureDecoder();
+		configureSPDIF();
+
 		configureAC3();
+
+		 DEBUG_STR( "Muting" );
+
+		//mDevice->writeRegister( DolbyDecoder_STA310::DECODE_SEL, 0 );
+					//mDevice->writeRegister( DolbyDecoder_STA310::STREAM_SEL, 5 );
 
 		//write_host_reg (0x4E,20); ..... write_host_reg (0x63,20); ..... write_host_reg (0x67,0);
 
-		mDevice->writeRegister( DolbyDecoder_STA310::OCFG, 64 + 3 );
+		// Output config, bass output on front left and right, boost of 12dB
+		//mDevice->writeRegister( DolbyDecoder_STA310::OCFG, 64 + 2 );
 
-		int volume = 20;
+
+		 DEBUG_STR( "Setting volume" );
+		int volume = 0;
+		int muteVal;
 		mDevice->writeRegister( 0x4e, volume );
 		mDevice->writeRegister( 0x63, volume );
 		mDevice->writeRegister( 0x67, 0 );
 
-		mute();
+		muteVal = mDevice->readRegister( DolbyDecoder_STA310::MUTE );
+		mDevice->writeRegister( DolbyDecoder_STA310::MUTE , muteVal );
 
-		while ( mDevice->readRegister( 0x67 ) == 4 ) HAL_Delay( 1 );
+		while ( mDevice->readRegister( 0x67 ) != 4 ) osDelay( 1 );
 
 		mDevice->writeRegister( 0x4e, volume );
 		mDevice->writeRegister( 0x63, volume );
 		mDevice->writeRegister( 0x67, 1 );
 
-		mute();
+		muteVal = mDevice->readRegister( DolbyDecoder_STA310::MUTE );
+		mDevice->writeRegister( DolbyDecoder_STA310::MUTE , muteVal );
 
-		while ( mDevice->readRegister( 0x67 ) == 4 ) HAL_Delay( 1 );
+
+		while ( mDevice->readRegister( 0x67 ) != 4 ) osDelay( 1 );
 
 		mDevice->writeRegister( 0x4e, volume );
 		mDevice->writeRegister( 0x63, volume );
 		mDevice->writeRegister( 0x67, 2 );
 
-		while ( mDevice->readRegister( 0x67 ) == 4 ) HAL_Delay( 1 );
+		muteVal = mDevice->readRegister( DolbyDecoder_STA310::MUTE );
+		mDevice->writeRegister( DolbyDecoder_STA310::MUTE , muteVal );
 
-		mute();
+
+		while ( mDevice->readRegister( 0x67 ) != 4 ) osDelay( 1 );
+
+
 
 		// Let's start the clocks
 		// First, mute the output
@@ -146,6 +172,7 @@ DolbyDecoder_STA310::configurePCMOUT() {
 
 	int BIT24 = 3;
 	int RPAD = 32;
+	// BIT24 | RPAD  works with PCM5102
 	mDevice->writeRegister( DolbyDecoder_STA310::PCM_CONF, BIT24 | RPAD );
 	//mDevice->writeRegister( DolbyDecoder_STA310::PCM_CONF, BIT24 | RPAD ); works
 	//mDevice->writeRegister( DolbyDecoder_STA310::PCM_CONF, 3 );
@@ -187,10 +214,10 @@ DolbyDecoder_STA310::configureDecoder() {
 
 	// Set for Dolby Digital
 	//mDevice->writeRegister( DolbyDecoder_STA310::DECODE_SEL, 0 );
-	//mDevice->writeRegister( DolbyDecoder_STA310::DECODE_SEL, 0 );
+	mDevice->writeRegister( DolbyDecoder_STA310::DECODE_SEL, 2 );
 
 	// Beep
-	mDevice->writeRegister( DolbyDecoder_STA310::DECODE_SEL, 7 );
+	//mDevice->writeRegister( DolbyDecoder_STA310::DECODE_SEL, 7 );
 
 	if ( mEventHandler ) {
 		mEventHandler->onAlgorithmChange( std::string( "AC3" ) );
@@ -207,7 +234,8 @@ DolbyDecoder_STA310::configureSPDIF() {
 	mDevice->writeRegister( DolbyDecoder_STA310::CAN_SETUP, 0 );
 	//mDevice->writeRegister( DolbyDecoder_STA310::CAN_SETUP, 0 );
 
-	mDevice->writeRegister( DolbyDecoder_STA310::PLL_CTRL, 30 );
+	// PLL sounds like shit at 30 on PCM5102
+	mDevice->writeRegister( DolbyDecoder_STA310::PLL_CTRL, 22 );
 	// Set up the PLL PCMCLK, PCMCLK FROM SPDIF, SYS CLOCK FROM PLL/2
 	//mDevice->writeRegister( DolbyDecoder_STA310::PLL_CTRL, 30 );
 	// 30 works
@@ -221,10 +249,10 @@ DolbyDecoder_STA310::configureSPDIF() {
 
 
 	// Enable auto detection on the stream
-	//mDevice->writeRegister( DolbyDecoder_STA310::AUTODETECT_ENA, 1 );
+	mDevice->writeRegister( DolbyDecoder_STA310::AUTODETECT_ENA, 1 );
 
 	// Set SPDIF auto-detection sensitivity
-	//mDevice->writeRegister( DolbyDecoder_STA310::AUTODETECT_SENS, 0 );
+	mDevice->writeRegister( DolbyDecoder_STA310::AUTODETECT_SENS, 0 );
 }
 
 void
@@ -233,13 +261,13 @@ DolbyDecoder_STA310::configureAC3() {
 	mDevice->writeRegister( DolbyDecoder_STA310::AC3_DECODE_LFE, 1 );
 
 	// Configure for line out or spreakers
-	mDevice->writeRegister( DolbyDecoder_STA310::AC3_COMP_MOD, 2 );
+	mDevice->writeRegister( DolbyDecoder_STA310::AC3_COMP_MOD, 3 );
 
 	// Full dynamic range for loud sounds
-	mDevice->writeRegister( DolbyDecoder_STA310::AC3_HDR, 255 );
+	mDevice->writeRegister( DolbyDecoder_STA310::AC3_HDR, 0 );
 
 	// Don't boost low signals
-	mDevice->writeRegister( DolbyDecoder_STA310::AC3_LDR, 255 );
+	mDevice->writeRegister( DolbyDecoder_STA310::AC3_LDR, 0 );
 
 	// Mute audio output if stream errors are detected
 	mDevice->writeRegister( DolbyDecoder_STA310::AC3_RPC, 0 );
@@ -251,7 +279,10 @@ DolbyDecoder_STA310::configureAC3() {
 	mDevice->writeRegister( DolbyDecoder_STA310::AC3_DUALMODE, 0 );
 
 	// Set for a 5.1 downmix - this is useful to change if certain speakers are missing
-	mDevice->writeRegister( DolbyDecoder_STA310::AC3_DOWNMIX, 7 );
+	mDevice->writeRegister( DolbyDecoder_STA310::AC3_DOWNMIX, 2 );
+
+	mDevice->writeRegister( DolbyDecoder_STA310::OCFG, 4 + 64 );
+	//mDevice->writeRegister( DolbyDecoder_STA310::OCFG, 64 + 2 );
 }
 
 void
@@ -260,12 +291,24 @@ DolbyDecoder_STA310::configureAudioPLL() {
 }
 
 void
+DolbyDecoder_STA310::reset() {
+	softReset();
+
+	mDevice->writeRegister( DolbyDecoder_STA310::DECODE_SEL, 0 );
+	mDevice->writeRegister( DolbyDecoder_STA310::STREAM_SEL, 5 );
+
+	mute( false );
+	play();
+	run();
+}
+
+void
 DolbyDecoder_STA310::softReset() {
 	mInitialized = false;
 	mRunning = false;
 
 	// Perform soft mute on incoming framers
-	mDevice->writeRegister( DolbyDecoder_STA310::SOFT_MUTE, 1 );
+	//mDevice->writeRegister( DolbyDecoder_STA310::SOFT_MUTE, 1 );
 
 	// Perform soft reset
 	mDevice->writeRegister( DolbyDecoder_STA310::SOFT_RESET, 1 );
@@ -283,10 +326,12 @@ DolbyDecoder_STA310::softReset() {
 		if ( result == 1 ) {
 			// Device is ready
 			mInitialized = true;
+
+			enableAudioPLL();
 		} else {
 			attempts++;
 			// if it's not ready, let's wait 5ms and try again
-			HAL_Delay( 10 );
+			osDelay( 250 );
 		}
 	}
 
@@ -363,8 +408,8 @@ DolbyDecoder_STA310::checkForInterrupt() {
 
 			configureInterrupts();
 
-			//mDevice->writeRegister( DolbyDecoder_STA310::DECODE_SEL, decodeSel );
-			//mDevice->writeRegister( DolbyDecoder_STA310::STREAM_SEL, streamSel );
+			mDevice->writeRegister( DolbyDecoder_STA310::DECODE_SEL, decodeSel );
+			mDevice->writeRegister( DolbyDecoder_STA310::STREAM_SEL, streamSel );
 
 			enableAudioPLL();
 
@@ -392,8 +437,8 @@ DolbyDecoder_STA310::checkForInterrupt() {
 			}
 
 			mute( false );
-			run();
 			play();
+			run();
 		}
 		i = 2;
 	}
@@ -408,5 +453,29 @@ DolbyDecoder_STA310::checkFormat() {
 	 I2C_RESULT head3 = mDevice->readRegister( DolbyDecoder_STA310::HEAD_3 );
 	 I2C_RESULT freq = mDevice->readRegister( 0x05 );
 	 I2C_RESULT spdif_status = mDevice->readRegister( 0x61 );
+	 I2C_RESULT run = mDevice->readRegister( DolbyDecoder_STA310::RUN );
+	 if ( run ) {
+		 HAL_GPIO_WritePin( LED_DOLBY_GPIO_Port, LED_DOLBY_Pin, GPIO_PIN_SET  );
+	 } else {
+		 HAL_GPIO_WritePin( LED_DOLBY_GPIO_Port, LED_DOLBY_Pin, GPIO_PIN_RESET  );
+	 }
+
+	 I2C_RESULT mute = mDevice->readRegister( DolbyDecoder_STA310::MUTE );
+	 if ( mute ) {
+		 HAL_GPIO_WritePin( LED_PCM_GPIO_Port, LED_PCM_Pin, GPIO_PIN_SET  );
+	 } else {
+		 HAL_GPIO_WritePin( LED_PCM_GPIO_Port, LED_PCM_Pin, GPIO_PIN_RESET  );
+	 }
+
+	 I2C_RESULT play = mDevice->readRegister( DolbyDecoder_STA310::PLAY );
+	 	 if ( play ) {
+	 		 HAL_GPIO_WritePin( LED_MUTE_GPIO_Port, LED_MUTE_Pin, GPIO_PIN_SET  );
+	 	 } else {
+	 		 HAL_GPIO_WritePin( LED_MUTE_GPIO_Port, LED_MUTE_Pin, GPIO_PIN_RESET  );
+	 	 }
+
+	//	mStatusLEDs[ STATUS_DOLBY ].setPortAndPin( LED_DOLBY_GPIO_Port, LED_DOLBY_Pin );
+	//	mStatusLEDs[ STATUS_PCM ].setPortAndPin( LED_PCM_GPIO_Port, LED_PCM_Pin );
+	//	mStatusLEDs[ STATUS_MUTE ].setPortAndPin( LED_MUTE_GPIO_Port, LED_MUTE_Pin );
 	// I2C_RESULT spdif_status2 = mDevice->readRegister( 0x7f );
 }

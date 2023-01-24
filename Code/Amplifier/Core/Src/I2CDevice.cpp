@@ -17,32 +17,18 @@ I2C_Device::~I2C_Device() {
 }
 
 bool
-I2C_Device::writeByte( uint8_t data ) {
-	return mBus.writeByte( mAddr, data );
-}
-
-bool
 I2C_Device::writeRegister( uint8_t reg, uint8_t value ) {
-	return mBus.writeRegister( mAddr, reg, value );
+	return mBus->writeRegister( mAddr, reg, value );
 }
 
 bool
 I2C_Device::writeData( uint8_t *data, uint8_t size ) {
-	return mBus.writeData( mAddr, data, size );
+	return mBus->writeData( mAddr, data, size );
 }
 
 I2C_RESULT
 I2C_Device::readRegister( uint8_t reg ) {
-	return mBus.readRegister( mAddr, reg );
+	return mBus->readRegister( mAddr, reg );
 }
 
-I2C_RESULT
-I2C_Device::readRegister16( uint8_t reg ) {
-	return mBus.readRegister16( mAddr, reg );
-}
-
-uint8_t
-I2C_Device::readByte() {
-	return mBus.readByte( mAddr );
-}
 

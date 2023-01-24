@@ -1,7 +1,4 @@
-../Core/Src/I2C.cpp:17:1:I2C::~I2C()	0	static
-../Core/Src/I2C.cpp:17:1:virtual I2C::~I2C()	8	static
-../Core/Src/I2C.cpp:12:1:I2C::I2C(I2C_HandleTypeDef)	16	static
-../Core/Src/I2C.cpp:22:1:uint8_t I2C::readByte(I2C_ADDR)	16	static
-../Core/Src/I2C.cpp:32:1:bool I2C::writeByte(I2C_ADDR, uint8_t)	24	static
-../Core/Src/I2C.cpp:38:1:bool I2C::writeData(I2C_ADDR, uint8_t*, uint8_t)	16	static
-../Core/Src/I2C.cpp:44:1:I2C_Device* I2C::makeDevice(I2C_ADDR)	192	static
+../Core/Src/I2C.cpp:16:1:I2C::I2C()	0	static
+../Core/Src/I2C.cpp:21:1:I2C::~I2C()	0	static
+../Core/Src/I2C.cpp:21:1:virtual I2C::~I2C()	8	static
+../Core/Src/I2C.cpp:26:1:I2C_Device* I2C::makeDevice(I2C_ADDR)	16	static

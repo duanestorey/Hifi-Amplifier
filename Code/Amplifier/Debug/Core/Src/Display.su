@@ -3,8 +3,11 @@
 ../Core/Src/Display.cpp:18:1:Display::~Display()	16	static
 ../Core/Src/Display.cpp:18:1:virtual Display::~Display()	16	static
 ../Core/Src/Display.cpp:23:1:void Display::update()	16	static
-../Core/Src/Display.cpp:38:1:void Display::setSamplingRate(uint32_t)	16	static
-../Core/Src/Display.cpp:48:1:void Display::setAlgorithm(std::string)	16	static
-../Core/Src/Display.cpp:57:1:void Display::initialize()	16	static
-../Core/Src/Display.cpp:62:1:void Display::updateVolume(int)	16	static
-../Core/Src/Display.cpp:72:1:void Display::updateMainScreen()	88	static
+../Core/Src/Display.cpp:40:1:void Display::setScreen(int)	16	static
+../Core/Src/Display.cpp:48:1:void Display::setInitString(std::string)	16	static
+../Core/Src/Display.cpp:55:1:void Display::setSamplingRate(uint32_t)	16	static
+../Core/Src/Display.cpp:65:1:void Display::setAlgorithm(std::string)	16	static
+../Core/Src/Display.cpp:74:1:void Display::initialize()	16	static
+../Core/Src/Display.cpp:80:1:void Display::updateVolume(int)	16	static
+../Core/Src/Display.cpp:90:1:void Display::updateInitScreen()	72	static
+../Core/Src/Display.cpp:104:1:void Display::updateMainScreen()	88	static

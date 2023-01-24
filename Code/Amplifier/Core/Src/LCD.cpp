@@ -7,6 +7,7 @@
 
 #include "LCD.h"
 #include <stdio.h>
+#include "cmsis_os.h"
 
 #define LCD_DELAY 2
 
@@ -23,7 +24,7 @@ LCD::sendCommand( uint8_t command ) {
 	data_t[3] = data_l|0x08;	// en=0, rs=0
 
 	mLCD->writeData( data_t, 4 );
-	HAL_Delay( LCD_DELAY );
+	osDelay( LCD_DELAY );
 }
 
 void
@@ -39,8 +40,9 @@ LCD::enableBacklight( bool enable  ) {
 
 void
 LCD::clearDisplay() {
+	//reset();
 	sendCommand( 0x01 );
-	HAL_Delay( LCD_DELAY );
+	//osDelay( LCD_DELAY );
 }
 
 void
@@ -69,13 +71,13 @@ LCD::setCursor( uint8_t x, uint8_t y ) {
 void
 LCD::reset() {
 	sendCommand( 0x30 );
-	HAL_Delay( 10 );
+	osDelay( 10 );
 	sendCommand( 0x30 );
-	HAL_Delay( 5 );
+	osDelay( 5 );
 	sendCommand( 0x30 );
-	HAL_Delay( 10 );
-//	sendCommand( 0x20 );
-	HAL_Delay( 10 );
+	osDelay( 10 );
+	sendCommand( 0x20 );
+	osDelay( 10 );
 }
 
 void
@@ -97,145 +99,8 @@ LCD::sendData( char data ) {
 	data_t[3] = data_l|0x09;	// en=0, rs=0
 
 	mLCD->writeData( data_t, 4 );
-	HAL_Delay( LCD_DELAY );
+	osDelay( LCD_DELAY );
 }
-
-/*
- *
- * static void lcd_send_cmd(char cmd)
-{
-	char data_u, data_l;
-	uint8_t data_t[4];
-	data_u = (cmd&0xF0);
-	data_l = ((cmd<<4)&0xF0);
-	data_t[0] = data_u|0x0C;	// en=1, rs=0
-	data_t[1] = data_u|0x08;	// en=0, rs=0
-	data_t[2] = data_l|0x0C;	// en=1, rs=0
-	data_t[3] = data_l|0x08;	// en=0, rs=0
-	HAL_I2C_Master_Transmit(&hi2c1, LCD_I2C_ADDR, (uint8_t *) data_t, 4, 100);
-	HAL_Delay(2);
-}
-
-static void lcd_send_data(char data)
-{
-	char data_u, data_l;
-	uint8_t data_t[4];
-	data_u = (data&0xF0);
-	data_l = ((data<<4)&0xF0);
-
-	data_t[0] = data_u|0x0D;  //en=1, rs=1
-	data_t[1] = data_u|0x09;  //en=0, rs=1
-	data_t[2] = data_l|0x0D;  //en=1, rs=1
-	data_t[3] = data_l|0x09;  //en=0, rs=1
-
-	HAL_I2C_Master_Transmit (&hi2c1, LCD_I2C_ADDR, (uint8_t *) data_t, 4, 100);
-	HAL_Delay(1);
-}
-
-void lcd_disable_backlight() {
-	uint8_t data;
-	data = 0;
-	HAL_I2C_Master_Transmit (&hi2c1, LCD_I2C_ADDR, (uint8_t *) &data, 1, 100);
-
-}
-
-void lcd_enable_backlight() {
-	uint8_t data;
-	data = 0x08;
-	HAL_I2C_Master_Transmit (&hi2c1, LCD_I2C_ADDR, (uint8_t *) &data, 1, 100);
-}
-
-
-void lcd_set_cursor(int a, int b)
-{
-	int i=0;
-	switch(b){
-	case 0:lcd_send_cmd(0x80);break;
-	case 1:lcd_send_cmd(0xC0);break;
-	case 2:lcd_send_cmd(0x94);break;
-	case 3:lcd_send_cmd(0xd4);break;}
-	for(i=0;i<a;i++)
-	lcd_send_cmd(0x14);
-}
-
-void lcd_send_string (char *str)
-{
-	while (*str) lcd_send_data (*str++);
-}
-
-void lcd_clear_display() {
-	lcd_send_cmd (0x01);  // clear display
-	HAL_Delay(1);
-}
-
-void lcd_enable_display( int enable ) {
-	if ( enable ) {
-		lcd_send_cmd (0x0C);
-	} else {
-		lcd_send_cmd (0x08);
-	}
-}
-
-static void lcd_init(void)
-{
-	HAL_Delay( 1000 );
-
-	// 4 bit initialisation
-	lcd_send_cmd (0x30);
-	HAL_Delay(10);  // wait for >4.1ms
-	lcd_send_cmd (0x30);
-	HAL_Delay(5);  // wait for >100us
-	lcd_send_cmd (0x30);
-	HAL_Delay(10);
-	lcd_send_cmd (0x20);  // 4bit mode
-	HAL_Delay(10);
-
-	lcd_disable_backlight();
-
-	lcd_send_cmd (0x28); // Function set --> DL=0 (4 bit mode), N = 1 (2 line display) F = 0 (5x8 characters)
-	HAL_Delay(5);
-
-	lcd_send_cmd (0x08); //Display on/off control --> D=0,C=0, B=0  ---> display off
-	HAL_Delay(5);
-
-	lcd_send_cmd (0x01);  // clear display
-	HAL_Delay(5);
-
-
-	lcd_disable_backlight();
-
-	HAL_Delay( 500 );
-
-	lcd_send_cmd (0x06); //Entry mode set --> I/D = 1 (increment cursor) & S = 0 (no shift)
-	HAL_Delay(5);
-
-
-	lcd_send_cmd (0x0C); //Display on/off control --> D = 1, C and B = 0. (Cursor and blink, last two bits)
-
-	lcd_send_cmd (0x01);  // clear display
-	HAL_Delay(5);
-
-	lcd_set_cursor( 0, 0 );
-	lcd_send_string( "Volume 25       5.0W" );
-
-	lcd_set_cursor( 0, 2 );
-	lcd_send_string( "Media             " );
-
-	lcd_set_cursor( 0, 2 );
-	//lcd_send_string( "Stereo           PCM" );
-
-	lcd_set_cursor( 0, 3 );
-	lcd_send_string( "Dolby Digital    AC3" );
-
-	//lcd_enable_display( 0 );
-
-	HAL_Delay( 500 );
-
-	lcd_enable_backlight();
-
-}
- *
- */
 
 LCD::LCD( I2C_Device *lcd ) : mLCD( lcd ), mCount( 0 ) {
 	// TODO Auto-generated constructor stub
@@ -257,53 +122,33 @@ LCD::update() {
 
 void
 LCD::initialize() {
-	HAL_Delay( 500 );
+	osDelay( 500 );
 
 	sendCommand( 0x30 );
-	HAL_Delay( 10 );
+	osDelay( 10 );
 	sendCommand( 0x30 );
-	HAL_Delay( 5 );
+	osDelay( 5 );
 	sendCommand( 0x30 );
-	HAL_Delay( 10 );
+	osDelay( 10 );
 	sendCommand( 0x20 );
-	HAL_Delay( 10 );
-
+	osDelay( 10 );
 
 	enableBacklight( false );
 
-	HAL_Delay( 250 );
-
 	sendCommand( 0x28 );
-	HAL_Delay( 5 );
+	osDelay( 5 );
 	sendCommand( 0x08 );
-	HAL_Delay( 5 );
+	osDelay( 5 );
 	sendCommand( 0x01 );
-	HAL_Delay( 5 );
+	osDelay( 5 );
 
 	sendCommand( 0x06 );
-	HAL_Delay( 5 );
+	osDelay( 5 );
 	sendCommand( 0x0c );
-	HAL_Delay( 5 );
+	osDelay( 5 );
 	sendCommand( 0x01 );
-	HAL_Delay( 5 );
-
-	HAL_Delay( 250 );
+	osDelay( 5 );
 
 	enableBacklight( true );
-
-
-/*
- *
- * 	lcd_send_cmd (0x30);
-	HAL_Delay(10);  // wait for >4.1ms
-	lcd_send_cmd (0x30);
-	HAL_Delay(5);  // wait for >100us
-	lcd_send_cmd (0x30);
-	HAL_Delay(10);
-	lcd_send_cmd (0x20);  // 4bit mode
-	HAL_Delay(10);
- *
- *
- */
 }
 

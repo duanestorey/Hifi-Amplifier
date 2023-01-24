@@ -93,6 +93,10 @@ void Error_Handler(void);
 #define DECODER_IRQ_GPIO_Port GPIOC
 #define BUTTON_INPUT_Pin GPIO_PIN_3
 #define BUTTON_INPUT_GPIO_Port GPIOD
+#define SCL_Pin GPIO_PIN_6
+#define SCL_GPIO_Port GPIOB
+#define SDA_Pin GPIO_PIN_7
+#define SDA_GPIO_Port GPIOB
 #define PWM_BACKLIGHT_Pin GPIO_PIN_9
 #define PWM_BACKLIGHT_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */

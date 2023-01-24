@@ -20,6 +20,6 @@ UI::~UI() {
 
 void UI::run() {
 	for(;;) {
-		HAL_Delay(1);
+	//	HAL_Delay(1);
 	}
 }

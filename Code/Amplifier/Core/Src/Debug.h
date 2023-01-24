@@ -9,6 +9,9 @@
 #define SRC_DEBUG_H_
 
 #include <string>
+#include "main.h"
+
+extern UART_HandleTypeDef DEBUG_UART;
 
 //#define DEBUG_STR(x) ( Debug::writeDebugString( std::string(__PRETTY_FUNCTION__) + std::string( ":" )+ std::to_string( __LINE__ ) + " => " + x) );
 #define DEBUG_STR(x)

@@ -7,6 +7,8 @@
 
 #include "DACPCM1681.h"
 #include "I2CDevice.h"
+#include "cmsis_os.h"
+#include "Debug.h"
 
 #define PCM1681_REG_MUTE	7
 #define PCM1681_REG_ENABLE	8
@@ -41,6 +43,7 @@ DAC_PCM1681::supportsFormat( uint8_t format ) {
 
 void
 DAC_PCM1681::setFormat( uint8_t format ) {
+	 DEBUG_STR( "Setting format" );
 	uint8_t value = 0;
 	if ( format == FORMAT_SONY ) {
 		value = 5;
@@ -53,7 +56,9 @@ DAC_PCM1681::setFormat( uint8_t format ) {
 	data[0] = PCM1681_REG_FORMAT;
 	data[1] = 4;
 	//mDevice->writeData( data, 2 );
+	osDelay( 5 );
 	mDevice->writeRegister( PCM1681_REG_FORMAT, 4 );
+	osDelay( 5 );
 	mDevice->writeRegister( PCM1681_REG_OVER, 1 );
 //	mDevice->writeData( data, 2 );
 }
@@ -101,7 +106,7 @@ DAC_PCM1681::setChannelVolume( int channel, int volume ) {
 	}
 
 	uint8_t volumeLevel = volume + 128;
-//	mDevice->writeRegister( reg, volumeLevel );
+	mDevice->writeRegister( reg, volumeLevel );
 }
 
 void

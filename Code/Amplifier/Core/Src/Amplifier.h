@@ -11,7 +11,7 @@
 #include "UI.h"
 #include "Display.h"
 #include "Led.h"
-#include "I2C.h"
+#include "I2CBitbang.h"
 #include "DAC.h"
 #include "DolbyDecoder.h"
 #include "Audio.h"
@@ -41,7 +41,7 @@ protected:
 	Display mDisplay;
 	Audio mAudio;
 
-	I2C mBusI2C;
+	I2C_Bitbang *mBusI2C;
 
 	DAC_IC *mDAC;
 	DolbyDecoder *mDecoder;
@@ -53,8 +53,8 @@ protected:
 	int mLastVolumeTimer;
 	int mCurrentVolume;
 
-	//LED mStatusLEDs[ 4 ];
-	//LED mInputLEDs[ 5 ];
+	LED mStatusLEDs[ 4 ];
+	LED mInputLEDs[ 5 ];
 
 	std::string mDecoderAlgorithm;
 	uint32_t mSamplingFrequency;
@@ -67,12 +67,13 @@ public:
 	Audio &getAudio() { return mAudio; }
 	I2C &getI2C();
 
-	virtual void initialize( I2C_HandleTypeDef bus );
+	virtual void initialize();
 	virtual void tick();
 	virtual void preTick();
 
 	virtual void onSamplingRateChange( uint32_t samplingRate );
 	virtual void onAlgorithmChange( const std::string &algorithm );
+	virtual void onInformation( const std::string &info );
 };
 
 #endif /* SRC_AMPLIFIER_H_ */

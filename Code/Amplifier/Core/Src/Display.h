@@ -20,9 +20,11 @@ protected:
 
 	uint32_t mSamplingRate;
 	std::string mAlgorithm;
+	std::string mInitString;
 public:
 	enum {
-		SCREEN_MAIN = 0
+		INIT_SCREEN = 0,
+		SCREEN_MAIN = 1
 	};
 
 	Display();
@@ -34,8 +36,11 @@ public:
 
 	void setSamplingRate( uint32_t samplingRate );
 	void setAlgorithm( const std::string algorithm );
+	void setInitString( const std::string initString );
+	void setScreen( int screen );
 private:
 	void updateMainScreen();
+	void updateInitScreen();
 };
 
 #endif /* SRC_DISPLAY_H_ */

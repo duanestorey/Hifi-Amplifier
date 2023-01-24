@@ -9,8 +9,9 @@
 #define SRC_I2C_H_
 
 #include "main.h"
-//#include "cmsis_os.h"
+#include "cmsis_os.h"
 #include <memory>
+
 
 typedef uint8_t I2C_ADDR;
 typedef uint16_t I2C_RESULT;
@@ -18,25 +19,13 @@ typedef uint16_t I2C_RESULT;
 class I2C_Device;
 
 class I2C {
-protected:
-	I2C_HandleTypeDef mI2C;
-private:
-	uint8_t mBuffer[16] = {0};
-
 public:
-	I2C() {}
-	I2C( I2C_HandleTypeDef bus );
+	I2C();
 	virtual ~I2C();
+	virtual bool writeData( I2C_ADDR addr, uint8_t *data, uint8_t size ) = 0;
+	virtual bool writeRegister( I2C_ADDR addr, uint8_t reg, uint8_t value ) = 0;
+	virtual I2C_RESULT readRegister( I2C_ADDR addr, uint8_t reg ) = 0;
 
-	void setBusData( I2C_HandleTypeDef bus ) { mI2C = bus; }
-	uint8_t readByte( I2C_ADDR addr );
-	bool writeByte( I2C_ADDR addr, uint8_t );
-
-	bool writeData( I2C_ADDR addr, uint8_t *data, uint8_t size );
-
-	bool writeRegister( I2C_ADDR addr, uint8_t reg, uint8_t value );
-	I2C_RESULT readRegister( I2C_ADDR addr, uint8_t reg );
-	I2C_RESULT readRegister16( I2C_ADDR addr, uint8_t reg );
 
 	I2C_Device * makeDevice( I2C_ADDR addr );
 };

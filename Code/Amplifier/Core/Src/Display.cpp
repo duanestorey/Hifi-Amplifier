@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include "Debug.h"
 
-Display::Display() : mShouldUpdate( true ), mCurrentScreen( SCREEN_MAIN ), mCurrentVolume( 50 ), mLCD( 0 ) {
+Display::Display() : mShouldUpdate( true ), mCurrentScreen( INIT_SCREEN ), mCurrentVolume( 50 ), mLCD( 0 ) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -23,6 +23,9 @@ void
 Display::update() {
 	if ( mShouldUpdate ) {
 		switch( mCurrentScreen ) {
+			case INIT_SCREEN:
+				updateInitScreen();
+			break;
 			case SCREEN_MAIN:
 				updateMainScreen();
 				break;
@@ -31,6 +34,20 @@ Display::update() {
 		mShouldUpdate = false;
 	}
 
+}
+
+void
+Display::setScreen( int screen ) {
+	mCurrentScreen = screen;
+	mLCD->clearDisplay();
+
+	mShouldUpdate = true;
+}
+
+void
+Display::setInitString( const std::string initString ) {
+	mInitString = initString;
+	mShouldUpdate = true;
 }
 
 
@@ -56,6 +73,7 @@ Display::setAlgorithm( const std::string algorithm ) {
 void
 Display::initialize() {
 	DEBUG_STR( "Initializing" );
+	mLCD->initialize();
 }
 
 void
@@ -69,6 +87,20 @@ Display::updateVolume( int volume ) {
 }
 
 void
+Display::updateInitScreen() {
+	char s[50];
+
+	mLCD->setCursor( 0, 1 );
+	sprintf( s, "Initializing", mCurrentVolume );
+	mLCD->writeString( s );
+
+	mLCD->setCursor( 0, 1 );
+	sprintf( s, "%-20s", mInitString.c_str() );
+	mLCD->writeString( s );
+
+}
+
+void
 Display::updateMainScreen() {
 	//DEBUG_STR( "Updating main screen" );
 
@@ -78,15 +110,24 @@ Display::updateMainScreen() {
 	sprintf( s, "Volume %-3d          ", mCurrentVolume );
 	mLCD->writeString( s );
 
+//	mLCD->setCursor( 0, 1 );
+//	sprintf( s, "                     ", mCurrentVolume );
+//	mLCD->writeString( s );
+
 	mLCD->setCursor( 0, 1 );
-	sprintf( s, "                     ", mCurrentVolume );
-	mLCD->writeString( s );
+		sprintf( s, "%s", mInitString.c_str() );
+		mLCD->writeString( s );
 
 	if ( mAlgorithm.length() && mSamplingRate ) {
 		mLCD->setCursor( 0, 2 );
 		int intPart = mSamplingRate / 1000;
 		int fracPart = ( mSamplingRate - ( intPart * 1000 ) ) / 100;
-		sprintf( s, "%-5s        %d.%dkHz", mAlgorithm.c_str(), intPart, fracPart );
+		if ( fracPart == 0 ) {
+			sprintf( s, "%-5s        %4dkHz", mAlgorithm.c_str(), intPart );
+		} else {
+			sprintf( s, "%-5s        %d.%dkHz", mAlgorithm.c_str(), intPart, fracPart );
+		}
+
 		mLCD->writeString( s );
 	}
 
