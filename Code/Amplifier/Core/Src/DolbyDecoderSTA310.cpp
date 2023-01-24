@@ -79,81 +79,18 @@ DolbyDecoder_STA310::initialize() {
 		// Enable the AUDIO PLL
 		 DEBUG_STR( "Configuring PLL" );
 
-		configureAudioPLL();
+		 configureAudioPLL();
 
 		 DEBUG_STR( "Configuring the rest" );
-		configureInterrupts();
-		configureSync();
-		configurePCMOUT();
-		configureDecoder();
-		configureSPDIF();
-
-		configureAC3();
+		 configureInterrupts();
+		 configureSync();
+		 configureSPDIF();
+		 configurePCMOUT();
+		 configureDecoder();
+		 configureAC3();
 
 		 DEBUG_STR( "Muting" );
 
-		//mDevice->writeRegister( DolbyDecoder_STA310::DECODE_SEL, 0 );
-					//mDevice->writeRegister( DolbyDecoder_STA310::STREAM_SEL, 5 );
-
-		//write_host_reg (0x4E,20); ..... write_host_reg (0x63,20); ..... write_host_reg (0x67,0);
-
-		// Output config, bass output on front left and right, boost of 12dB
-		//mDevice->writeRegister( DolbyDecoder_STA310::OCFG, 64 + 2 );
-
-
-		 DEBUG_STR( "Setting volume" );
-		int volume = 0;
-		int muteVal;
-		mDevice->writeRegister( 0x4e, volume );
-		mDevice->writeRegister( 0x63, volume );
-		mDevice->writeRegister( 0x67, 0 );
-
-		muteVal = mDevice->readRegister( DolbyDecoder_STA310::MUTE );
-		mDevice->writeRegister( DolbyDecoder_STA310::MUTE , muteVal );
-
-		while ( mDevice->readRegister( 0x67 ) != 4 ) osDelay( 1 );
-
-		mDevice->writeRegister( 0x4e, volume );
-		mDevice->writeRegister( 0x63, volume );
-		mDevice->writeRegister( 0x67, 1 );
-
-		muteVal = mDevice->readRegister( DolbyDecoder_STA310::MUTE );
-		mDevice->writeRegister( DolbyDecoder_STA310::MUTE , muteVal );
-
-
-		while ( mDevice->readRegister( 0x67 ) != 4 ) osDelay( 1 );
-
-		mDevice->writeRegister( 0x4e, volume );
-		mDevice->writeRegister( 0x63, volume );
-		mDevice->writeRegister( 0x67, 2 );
-
-		muteVal = mDevice->readRegister( DolbyDecoder_STA310::MUTE );
-		mDevice->writeRegister( DolbyDecoder_STA310::MUTE , muteVal );
-
-
-		while ( mDevice->readRegister( 0x67 ) != 4 ) osDelay( 1 );
-
-
-
-		// Let's start the clocks
-		// First, mute the output
-		//mDevice->writeRegister( 102, 0 );
-		//mDevice->writeRegister( 0x4e, 20 );
-		//mDevice->writeRegister( 0x63, 20 );
-		//mDevice->writeRegister( 0x67, 0 );
-
-		/*
-		mDevice->readRegister( 114 );
-		mDevice->readRegister( 20 );
-		mDevice->readRegister( 20 );
-		mDevice->readRegister( 20 );
-		*/
-
-		// Next, exit idle mode.  Since we are muted, the DAC clock will be started, but it will receive 0s
-	//	run();
-
-		// To start actual decoding and DAC playing, we need to run play().  But we need to configure the DAC first
-	//	play();
 	}
 }
 
@@ -162,24 +99,11 @@ DolbyDecoder_STA310::configurePCMOUT() {
 	// Set SPDIF configuration register
 	mDevice->writeRegister( DolbyDecoder_STA310::SPDIF_CONF, 1 );
 
-	// Set PCM clock divider to support 384*Fs as 32 bits //
+	// Set PCM clock divider to support 256*Fs as 24 bits //
 	mDevice->writeRegister( DolbyDecoder_STA310::PCM_DIV, 1 );
-	//mDevice->writeRegister( DolbyDecoder_STA310::PCM_DIV, 2 );
 
-	// Set for 24 bit data ??
-	int SONY = 8;
-	int I2S = 0;
-
-	int BIT24 = 3;
-	int RPAD = 32;
 	// BIT24 | RPAD  works with PCM5102
-	mDevice->writeRegister( DolbyDecoder_STA310::PCM_CONF, BIT24 | RPAD );
-	//mDevice->writeRegister( DolbyDecoder_STA310::PCM_CONF, BIT24 | RPAD ); works
-	//mDevice->writeRegister( DolbyDecoder_STA310::PCM_CONF, 3 );
-	//mDevice->writeRegister( DolbyDecoder_STA310::PCM_CONF, 35 + 8 );
-	//mDevice->writeRegister( DolbyDecoder_STA310::PCM_CONF, 35 );
-	//mDevice->writeRegister( DolbyDecoder_STA310::PCM_CONF, 3 );
-	//mDevice->writeRegister( DolbyDecoder_STA310::PCM_CONF, 3 );
+	mDevice->writeRegister( DolbyDecoder_STA310::PCM_CONF, 35 );
 }
 
 void
@@ -204,7 +128,6 @@ DolbyDecoder_STA310::configureSync() {
 
 	// Should be ignored if the ID_EN is set to 0, but also set ID extended to 0
 	mDevice->writeRegister( DolbyDecoder_STA310::ID_EXT, 0 );
-
 }
 
 void
@@ -213,7 +136,6 @@ DolbyDecoder_STA310::configureDecoder() {
 	mDevice->writeRegister( DolbyDecoder_STA310::STREAM_SEL, 5 );
 
 	// Set for Dolby Digital
-	//mDevice->writeRegister( DolbyDecoder_STA310::DECODE_SEL, 0 );
 	mDevice->writeRegister( DolbyDecoder_STA310::DECODE_SEL, 2 );
 
 	// Beep
@@ -232,21 +154,6 @@ DolbyDecoder_STA310::configureSPDIF() {
 
 	// Must be set to 2 for SPDIF
 	mDevice->writeRegister( DolbyDecoder_STA310::CAN_SETUP, 0 );
-	//mDevice->writeRegister( DolbyDecoder_STA310::CAN_SETUP, 0 );
-
-	// PLL sounds like shit at 30 on PCM5102
-	mDevice->writeRegister( DolbyDecoder_STA310::PLL_CTRL, 22 );
-	// Set up the PLL PCMCLK, PCMCLK FROM SPDIF, SYS CLOCK FROM PLL/2
-	//mDevice->writeRegister( DolbyDecoder_STA310::PLL_CTRL, 30 );
-	// 30 works
-	// 26 was audio PLL and it sort of worked
-	// 16 + 8 + 2
-	//mDevice->writeRegister( DolbyDecoder_STA310::PLL_CTRL, 30 );
-	// 4 + 2 + 16
-	//mDevice->writeRegister( DolbyDecoder_STA310::PLL_CTRL, 30 );
-	// 11 110 = PLL/2 - SPDIF
-	// 32 + 16 + 8 + 4
-
 
 	// Enable auto detection on the stream
 	mDevice->writeRegister( DolbyDecoder_STA310::AUTODETECT_ENA, 1 );
@@ -287,7 +194,8 @@ DolbyDecoder_STA310::configureAC3() {
 
 void
 DolbyDecoder_STA310::configureAudioPLL() {
-	// Our DAC supports 384*FS, so nothing to do here
+	// PLL sounds like shit at 30 on PCM5102
+	mDevice->writeRegister( DolbyDecoder_STA310::PLL_CTRL, 22 );
 }
 
 void
@@ -296,6 +204,11 @@ DolbyDecoder_STA310::reset() {
 
 	mDevice->writeRegister( DolbyDecoder_STA310::DECODE_SEL, 0 );
 	mDevice->writeRegister( DolbyDecoder_STA310::STREAM_SEL, 5 );
+
+	configureAC3();
+
+	// this may cause issues
+	configureInterrupts();
 
 	mute( false );
 	play();
@@ -346,30 +259,22 @@ void
 DolbyDecoder_STA310::checkForInterrupt() {
 	if ( !HAL_GPIO_ReadPin ( DECODER_IRQ_GPIO_Port, DECODER_IRQ_Pin ) ) {
 		// IRQ
-		int i;
-		i = 1;
 		I2C_RESULT int1 = mDevice->readRegister( DolbyDecoder_STA310::INT1_RES );
 		I2C_RESULT int2 = mDevice->readRegister( DolbyDecoder_STA310::INT2_RES );
 		if ( int1 & ERR ) {
 			// SYN
 			I2C_RESULT errorReg = mDevice->readRegister( DolbyDecoder_STA310::ERROR );
-
-			i = 3;
 		}
 		if ( int1 & HDR ) {
 			 I2C_RESULT ac3Status = mDevice->readRegister( DolbyDecoder_STA310::AC3_STATUS_1 );
 			 I2C_RESULT head3 = mDevice->readRegister( DolbyDecoder_STA310::HEAD_3 );
 			 I2C_RESULT head4 = mDevice->readRegister( DolbyDecoder_STA310::HEAD_4 );
-
-			 i = 2;
 		}
 		if ( int1 & SFR ) {
 			I2C_RESULT freq = mDevice->readRegister( DolbyDecoder_STA310::FREQ );
-			i = 1;
 		}
 
 		if ( ( int2 & LCK ) > 0 || ( int2 & RST ) > 0 ) {
-			 i = 3;
 			 mRunning = false;
 
 			 I2C_RESULT decodeSel = mDevice->readRegister( DolbyDecoder_STA310::DECODE_SEL );
@@ -402,8 +307,7 @@ DolbyDecoder_STA310::checkForInterrupt() {
 			softReset();
 
 			if ( !mInitialized ) {
-				int a;
-				a = 5;
+
 			}
 
 			configureInterrupts();
@@ -440,19 +344,18 @@ DolbyDecoder_STA310::checkForInterrupt() {
 			play();
 			run();
 		}
-		i = 2;
 	}
 }
 
 void
 DolbyDecoder_STA310::checkFormat() {
+	/*
 	 I2C_RESULT decodeSel = mDevice->readRegister( DolbyDecoder_STA310::DECODE_SEL );
 	 I2C_RESULT streamSel = mDevice->readRegister( DolbyDecoder_STA310::STREAM_SEL );
-	// I2C_RESULT dolbyStatus1 = mDevice->readRegister( DolbyDecoder_STA310::DOLBY_STATUS_1 );
-	// I2C_RESULT ac3Status = mDevice->readRegister( DolbyDecoder_STA310::AC3_STATUS_1 );
 	 I2C_RESULT head3 = mDevice->readRegister( DolbyDecoder_STA310::HEAD_3 );
 	 I2C_RESULT freq = mDevice->readRegister( 0x05 );
 	 I2C_RESULT spdif_status = mDevice->readRegister( 0x61 );
+	 */
 	 I2C_RESULT run = mDevice->readRegister( DolbyDecoder_STA310::RUN );
 	 if ( run ) {
 		 HAL_GPIO_WritePin( LED_DOLBY_GPIO_Port, LED_DOLBY_Pin, GPIO_PIN_SET  );
@@ -468,14 +371,10 @@ DolbyDecoder_STA310::checkFormat() {
 	 }
 
 	 I2C_RESULT play = mDevice->readRegister( DolbyDecoder_STA310::PLAY );
-	 	 if ( play ) {
+	 if ( play ) {
 	 		 HAL_GPIO_WritePin( LED_MUTE_GPIO_Port, LED_MUTE_Pin, GPIO_PIN_SET  );
-	 	 } else {
+	 } else {
 	 		 HAL_GPIO_WritePin( LED_MUTE_GPIO_Port, LED_MUTE_Pin, GPIO_PIN_RESET  );
-	 	 }
+	 }
 
-	//	mStatusLEDs[ STATUS_DOLBY ].setPortAndPin( LED_DOLBY_GPIO_Port, LED_DOLBY_Pin );
-	//	mStatusLEDs[ STATUS_PCM ].setPortAndPin( LED_PCM_GPIO_Port, LED_PCM_Pin );
-	//	mStatusLEDs[ STATUS_MUTE ].setPortAndPin( LED_MUTE_GPIO_Port, LED_MUTE_Pin );
-	// I2C_RESULT spdif_status2 = mDevice->readRegister( 0x7f );
 }

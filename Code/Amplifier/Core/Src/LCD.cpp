@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include "cmsis_os.h"
 
-#define LCD_DELAY 2
+#define LCD_DELAY 3
 
 
 void
@@ -36,13 +36,23 @@ LCD::enableBacklight( bool enable  ) {
 	} else {
 		mLCD->writeData( &value, 1 );
 	}
+
+	value = ~value;
+	if ( enable ) {
+			value = 0x08;
+			mLCD->writeData( &value, 1 );
+		} else {
+			mLCD->writeData( &value, 1 );
+		}
+
+	osDelay( 50 );
 }
 
 void
 LCD::clearDisplay() {
-	//reset();
+	////reset();
 	sendCommand( 0x01 );
-	//osDelay( LCD_DELAY );
+	osDelay( 2000 );
 }
 
 void
@@ -78,6 +88,8 @@ LCD::reset() {
 	osDelay( 10 );
 	sendCommand( 0x20 );
 	osDelay( 10 );
+
+	osDelay( 50 );
 }
 
 void
@@ -124,31 +136,36 @@ void
 LCD::initialize() {
 	osDelay( 500 );
 
-	sendCommand( 0x30 );
-	osDelay( 10 );
+	//enableBacklight( false );
+
+	//osDelay( 2000 );
+
 	sendCommand( 0x30 );
 	osDelay( 5 );
+	sendCommand( 0x30 );
+	osDelay( 1 );
 	sendCommand( 0x30 );
 	osDelay( 10 );
 	sendCommand( 0x20 );
 	osDelay( 10 );
 
-	enableBacklight( false );
-
 	sendCommand( 0x28 );
-	osDelay( 5 );
+	osDelay( 1 );
 	sendCommand( 0x08 );
-	osDelay( 5 );
+	osDelay( 1 );
 	sendCommand( 0x01 );
-	osDelay( 5 );
+	osDelay( 1 );
 
 	sendCommand( 0x06 );
-	osDelay( 5 );
+	osDelay( 1 );
+	/*
 	sendCommand( 0x0c );
 	osDelay( 5 );
 	sendCommand( 0x01 );
 	osDelay( 5 );
 
 	enableBacklight( true );
+	osDelay( 2000 );
+	*/
 }
 

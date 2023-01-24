@@ -51,29 +51,15 @@ DAC_PCM1681::setFormat( uint8_t format ) {
 		value = 4;
 	}
 
-	//mDevice->writeRegister( PCM1681_REG_FORMAT, value );
-	uint8_t data[2];
-	data[0] = PCM1681_REG_FORMAT;
-	data[1] = 4;
-	//mDevice->writeData( data, 2 );
-	osDelay( 5 );
-	mDevice->writeRegister( PCM1681_REG_FORMAT, 4 );
-	osDelay( 5 );
+	mDevice->writeRegister( PCM1681_REG_FORMAT, value );
 	mDevice->writeRegister( PCM1681_REG_OVER, 1 );
-//	mDevice->writeData( data, 2 );
 }
 
 void
 DAC_PCM1681::init() {
 	// do setup
+	setFormat( FORMAT_I2S );
 
-	// set digital attenuation range of 0-63db in 0.5db increments
-//	mDevice->writeRegister( PCM1681_REG_DAMS, 0 );
-
-	setFormat( FORMAT_SONY );
-
-	// Let's set a reasonable volume at first
-	//setVolume( 127 );
 }
 
 void
@@ -130,7 +116,7 @@ DAC_PCM1681::muteChannel( int channel, bool enable ) {
 		mMuteStatus = mMuteStatus & ~mask;
 	}
 
-	//mDevice->writeRegister( PCM1681_REG_MUTE, mMuteStatus );
+	mDevice->writeRegister( PCM1681_REG_MUTE, mMuteStatus );
 }
 
 void
@@ -141,6 +127,6 @@ DAC_PCM1681::mute( bool enable ) {
 		 mMuteStatus = 0;
 	 }
 
-	// mDevice->writeRegister( PCM1681_REG_MUTE, mMuteStatus );
+	mDevice->writeRegister( PCM1681_REG_MUTE, mMuteStatus );
 }
 

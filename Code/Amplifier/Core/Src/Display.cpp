@@ -39,8 +39,7 @@ Display::update() {
 void
 Display::setScreen( int screen ) {
 	mCurrentScreen = screen;
-	mLCD->clearDisplay();
-
+	//mLCD->clearDisplay();
 	mShouldUpdate = true;
 }
 
