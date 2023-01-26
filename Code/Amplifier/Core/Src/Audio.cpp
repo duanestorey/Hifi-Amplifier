@@ -10,7 +10,14 @@
 #include "cmsis_os.h"
 #include "Debug.h"
 
-Audio::Audio( Amplifier *amp ) : Runnable( amp ), mDecoder( 0 ), mDAC( 0 ), mHasBeenInitialized( false ), mTick( 0 ) {
+Audio::Audio( Amplifier *amp ) :
+	Runnable( amp ),
+	mDecoder( 0 ),
+	mDAC( 0 ),
+	mHasBeenInitialized( false ),
+	mTick( 0 ),
+	mCurrentVolume( 0 ),
+	mLastVolume( 0 ) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -36,7 +43,7 @@ Audio::preTick() {
 			osDelay( 250 );
 
 			mDecoder->setInformation( "Init DAC" );
-			 DEBUG_STR( "Initializing DAC" );
+			DEBUG_STR( "Initializing DAC" );
 			mDAC->init();
 
 			if ( mDecoder->isInitialized() ) {
@@ -59,18 +66,20 @@ Audio::preTick() {
 
 				 DEBUG_STR( "...disabling mute" );
 
-				mDecoder->mute( false );
+
+
+				mDAC->setVolume( mCurrentVolume );
+
+				mDecoder->mute( true );
 				mDecoder->play();
 				mDecoder->run();
 
 				osDelay( 50 );
-
-
+				//mDecoder->mute( false );
 
 				mDecoder->setInformation( "Running" );
 
-				 DEBUG_STR( "...setting run" );
-
+				DEBUG_STR( "...setting run" );
 
 				osDelay( 50 );
 
@@ -88,6 +97,11 @@ Audio::preTick() {
 
 				mDAC->enable( true );
 
+				mDecoder->mute( false );
+
+
+				mLastVolume = mCurrentVolume;
+
 				mDecoder->reset();
 			}
 		}
@@ -98,7 +112,8 @@ void
 Audio::setVolume( int volume ) {
 	int ourVol = (127*volume)/100;
 	if ( ourVol > 127 ) ourVol = 127;
-	mDAC->setVolume( volume );
+
+	mCurrentVolume = ourVol;
 }
 
 void
@@ -107,6 +122,11 @@ Audio::tick() {
 	// First we'll configure the Dolby Decoder
 		if ( mDecoder && mHasBeenInitialized ) {
 			mDecoder->checkForInterrupt();
+
+			if ( mLastVolume != mCurrentVolume ) {
+				mDAC->setVolume( mCurrentVolume );
+				mLastVolume = mCurrentVolume;
+			}
 
 			if ( mTick % 5000 == 0 ) {
 				mDecoder->checkFormat();

@@ -52,6 +52,9 @@ DolbyDecoder_STA310::run() {
 		mDevice->writeRegister( DolbyDecoder_STA310::RUN, 1 );
 		mRunning = true;
 		// We are now running, the only way to stop is to do a reset of the chip
+	} else {
+		int i = 1;
+
 	}
 }
 
@@ -107,8 +110,13 @@ DolbyDecoder_STA310::configurePCMOUT() {
 }
 
 void
-DolbyDecoder_STA310::configureInterrupts() {
-	mDevice->writeRegister( DolbyDecoder_STA310::INT1, DolbyDecoder_STA310::ERR | DolbyDecoder_STA310::SFR );
+DolbyDecoder_STA310::configureInterrupts( bool enableHDR ) {
+	if ( enableHDR ) {
+		mDevice->writeRegister( DolbyDecoder_STA310::INT1, DolbyDecoder_STA310::ERR | DolbyDecoder_STA310::SFR );
+	} else {
+		mDevice->writeRegister( DolbyDecoder_STA310::INT1, DolbyDecoder_STA310::HDR | DolbyDecoder_STA310::ERR | DolbyDecoder_STA310::SFR );
+	}
+
 	mDevice->writeRegister( DolbyDecoder_STA310::INT2, DolbyDecoder_STA310::RST | DolbyDecoder_STA310::LCK );
 }
 
@@ -188,7 +196,8 @@ DolbyDecoder_STA310::configureAC3() {
 	// Set for a 5.1 downmix - this is useful to change if certain speakers are missing
 	mDevice->writeRegister( DolbyDecoder_STA310::AC3_DOWNMIX, 2 );
 
-	mDevice->writeRegister( DolbyDecoder_STA310::OCFG, 4 + 64 );
+	// OCFG of 4 + 64, Volume of 65 is right
+	mDevice->writeRegister( DolbyDecoder_STA310::OCFG, 2 + 64 );
 	//mDevice->writeRegister( DolbyDecoder_STA310::OCFG, 64 + 2 );
 }
 
@@ -201,6 +210,8 @@ DolbyDecoder_STA310::configureAudioPLL() {
 void
 DolbyDecoder_STA310::reset() {
 	softReset();
+
+	enableAudioPLL();
 
 	mDevice->writeRegister( DolbyDecoder_STA310::DECODE_SEL, 0 );
 	mDevice->writeRegister( DolbyDecoder_STA310::STREAM_SEL, 5 );
@@ -221,7 +232,7 @@ DolbyDecoder_STA310::softReset() {
 	mRunning = false;
 
 	// Perform soft mute on incoming framers
-	//mDevice->writeRegister( DolbyDecoder_STA310::SOFT_MUTE, 1 );
+	mDevice->writeRegister( DolbyDecoder_STA310::SOFT_MUTE, 1 );
 
 	// Perform soft reset
 	mDevice->writeRegister( DolbyDecoder_STA310::SOFT_RESET, 1 );
@@ -266,7 +277,6 @@ DolbyDecoder_STA310::checkForInterrupt() {
 			I2C_RESULT errorReg = mDevice->readRegister( DolbyDecoder_STA310::ERROR );
 		}
 		if ( int1 & HDR ) {
-			 I2C_RESULT ac3Status = mDevice->readRegister( DolbyDecoder_STA310::AC3_STATUS_1 );
 			 I2C_RESULT head3 = mDevice->readRegister( DolbyDecoder_STA310::HEAD_3 );
 			 I2C_RESULT head4 = mDevice->readRegister( DolbyDecoder_STA310::HEAD_4 );
 		}
@@ -279,6 +289,7 @@ DolbyDecoder_STA310::checkForInterrupt() {
 
 			 I2C_RESULT decodeSel = mDevice->readRegister( DolbyDecoder_STA310::DECODE_SEL );
 			 I2C_RESULT streamSel = mDevice->readRegister( DolbyDecoder_STA310::STREAM_SEL );
+			 I2C_RESULT head3 = mDevice->readRegister( DolbyDecoder_STA310::HEAD_3 );
 			 I2C_RESULT freq = mDevice->readRegister( 0x05 );
 
 			 if ( mEventHandler ) {
@@ -349,6 +360,9 @@ DolbyDecoder_STA310::checkForInterrupt() {
 
 void
 DolbyDecoder_STA310::checkFormat() {
+	 I2C_RESULT decodeSel = mDevice->readRegister( DolbyDecoder_STA310::DECODE_SEL );
+		 I2C_RESULT streamSel = mDevice->readRegister( DolbyDecoder_STA310::STREAM_SEL );
+		 I2C_RESULT head3 = mDevice->readRegister( DolbyDecoder_STA310::HEAD_3 );
 	/*
 	 I2C_RESULT decodeSel = mDevice->readRegister( DolbyDecoder_STA310::DECODE_SEL );
 	 I2C_RESULT streamSel = mDevice->readRegister( DolbyDecoder_STA310::STREAM_SEL );

@@ -25,6 +25,7 @@
 
 #include "Amplifier.h"
 #include "Debug.h"
+#include "Delay.h"
 
 /* USER CODE END Includes */
 
@@ -130,6 +131,8 @@ int main(void)
   DEBUG_UART = huart3;
 
   DEBUG_STR( "Starting" );
+
+  DWT_Delay_Init();
 
   // The main amplifier class
   amplifier.initialize();

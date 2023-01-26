@@ -1,20 +1,16 @@
-#ifndef DWT_STM32_DELAY_H
-#define DWT_STM32_DELAY_H
+/*
+ * Delay.h
+ *
+ *  Created on: Jan. 26, 2023
+ *      Author: duane
+ */
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
+#ifndef SRC_DELAY_H_
+#define SRC_DELAY_H_
 
 #include "stm32f1xx_hal.h"
-uint32_t DWT_Delay_Init(void);
+extern uint32_t DWT_Delay_Init(void);
 
-
-
-/**
- * @brief  This function provides a delay (in microseconds)
- * @param  microseconds: delay in microseconds
- */
 __STATIC_INLINE void DWT_Delay_us(volatile uint32_t microseconds)
 {
   uint32_t clk_cycle_start = DWT->CYCCNT;
@@ -27,8 +23,4 @@ __STATIC_INLINE void DWT_Delay_us(volatile uint32_t microseconds)
 }
 
 
-#ifdef __cplusplus
-}
-#endif
-
-#endif
+#endif /* SRC_DELAY_H_ */

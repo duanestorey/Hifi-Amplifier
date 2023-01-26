@@ -20,6 +20,8 @@ protected:
 	DAC_IC *mDAC;
 	bool mHasBeenInitialized;
 	uint32_t mTick;
+	int mCurrentVolume;
+	int mLastVolume;
 public:
 	Audio( Amplifier *amp );
 	virtual ~Audio();

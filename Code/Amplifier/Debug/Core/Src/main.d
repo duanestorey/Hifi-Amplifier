@@ -38,7 +38,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Src/Display.h ../Core/Src/LCD.h ../Core/Src/I2CDevice.h \
  ../Core/Src/I2C.h ../Core/Src/Led.h ../Core/Src/I2CBitbang.h \
  ../Core/Src/DAC.h ../Core/Src/DolbyDecoder.h ../Core/Src/DecoderEvents.h \
- ../Core/Src/Audio.h ../Core/Src/Encoder.h ../Core/Src/Debug.h
+ ../Core/Src/Audio.h ../Core/Src/Encoder.h ../Core/Src/Debug.h \
+ ../Core/Src/Delay.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
@@ -90,3 +91,4 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Src/Audio.h:
 ../Core/Src/Encoder.h:
 ../Core/Src/Debug.h:
+../Core/Src/Delay.h:

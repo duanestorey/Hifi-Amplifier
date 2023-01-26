@@ -3,14 +3,14 @@
 ../Core/Src/Led.h:23:7:void LED::setPin(uint16_t)	16	static
 ../Core/Src/Led.h:24:7:void LED::setPort(GPIO_TypeDef*)	16	static
 ../Core/Src/Led.h:25:7:void LED::setPortAndPin(GPIO_TypeDef*, uint16_t)	24	static
-../Core/Src/Audio.h:30:15:virtual void Audio::setDecoder(DolbyDecoder*)	16	static
-../Core/Src/Audio.h:31:15:virtual void Audio::setDAC(DAC_IC*)	16	static
+../Core/Src/Audio.h:32:15:virtual void Audio::setDecoder(DolbyDecoder*)	16	static
+../Core/Src/Audio.h:33:15:virtual void Audio::setDAC(DAC_IC*)	16	static
 ../Core/Src/Amplifier.cpp:16:1:Amplifier::Amplifier()	24	static
 ../Core/Src/Amplifier.cpp:27:1:Amplifier::~Amplifier()	24	static
 ../Core/Src/Amplifier.cpp:27:1:virtual Amplifier::~Amplifier()	16	static
 ../Core/Src/Amplifier.cpp:32:1:virtual void Amplifier::onSamplingRateChange(uint32_t)	16	static
 ../Core/Src/Amplifier.cpp:37:1:virtual void Amplifier::onAlgorithmChange(const string&)	48	static
 ../Core/Src/Amplifier.cpp:42:1:virtual void Amplifier::initialize()	24	static
-../Core/Src/Amplifier.cpp:74:1:virtual void Amplifier::onInformation(const string&)	48	static
-../Core/Src/Amplifier.cpp:80:1:virtual void Amplifier::preTick()	16	static
-../Core/Src/Amplifier.cpp:97:6:virtual void Amplifier::tick()	24	static
+../Core/Src/Amplifier.cpp:78:1:virtual void Amplifier::onInformation(const string&)	48	static
+../Core/Src/Amplifier.cpp:84:1:virtual void Amplifier::preTick()	16	static
+../Core/Src/Amplifier.cpp:99:6:virtual void Amplifier::tick()	24	static

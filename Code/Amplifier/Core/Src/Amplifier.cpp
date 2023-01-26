@@ -18,7 +18,7 @@ Amplifier::Amplifier() :
 	mDAC( 0 ),
 	mDecoder( 0 ),
 	mLastVolumeTimer( 0 ),
-	mCurrentVolume( 100 ),
+	mCurrentVolume( 57 ),
 	mSamplingFrequency( 0 ) {
 	// TODO Auto-generated constructor stub
 	mBusI2C = new I2C_Bitbang( 48000000 );
@@ -49,9 +49,6 @@ Amplifier::initialize() {
 
 	mDecoder->setEventHandler( this );
 
-	// Configure the audio thread
-	mAudio.setDecoder( mDecoder );
-	mAudio.setDAC( mDAC );
 
 	mLCD = new LCD( mBusI2C->makeDevice( LCD_I2C_ADDR ) );
 	mDisplay.setLCD( mLCD );
@@ -68,6 +65,13 @@ Amplifier::initialize() {
 	mStatusLEDs[ STATUS_PCM ].setPortAndPin( LED_PCM_GPIO_Port, LED_PCM_Pin );
 	mStatusLEDs[ STATUS_MUTE ].setPortAndPin( LED_MUTE_GPIO_Port, LED_MUTE_Pin );
 	mStatusLEDs[ STATUS_RUN ].setPortAndPin( LED_RUN_GPIO_Port, LED_RUN_Pin );
+
+	// Configure the audio thread
+	mAudio.setDecoder( mDecoder );
+	mAudio.setDAC( mDAC );
+
+	mAudio.setVolume( mCurrentVolume );
+
 }
 
 void
@@ -88,8 +92,6 @@ Amplifier::preTick() {
 	mDisplay.setScreen( Display::SCREEN_MAIN );
 	mDisplay.updateVolume( mCurrentVolume );
 	mDisplay.update();
-
-	mAudio.setVolume( mCurrentVolume );
 
 //	mDisplay.setInitString( "LCD Done Init" );
 }

@@ -26,6 +26,7 @@ public:
 	virtual bool writeData( uint8_t *data, uint8_t size );
 	virtual bool writeRegister( uint8_t reg, uint8_t value );
 	virtual I2C_RESULT readRegister( uint8_t reg );
+	virtual void waitForBus();
 
 };
 

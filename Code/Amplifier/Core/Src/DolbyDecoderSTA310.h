@@ -117,7 +117,7 @@ private:
 	void softReset();
 	void enableAudioPLL();
 	void configureAudioPLL();
-	void configureInterrupts();
+	void configureInterrupts( bool enableHDR = false );
 	void configureSync();
 	void configureSPDIF();
 	void configurePCMOUT();

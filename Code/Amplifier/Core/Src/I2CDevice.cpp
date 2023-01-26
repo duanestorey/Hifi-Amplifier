@@ -31,4 +31,23 @@ I2C_Device::readRegister( uint8_t reg ) {
 	return mBus->readRegister( mAddr, reg );
 }
 
+void
+I2C_Device::waitForBus() {
+	int attempts = 0;
+	while ( !mBus->isBusReady() ) {
+		osDelay(25);
+
+		attempts++;
+
+		if ( attempts == 20 ) {
+			mBus->tryToClearBus();
+		}
+
+		if ( attempts > 100 ) {
+			int i;
+			i = 1;
+		}
+	}
+}
+
 
