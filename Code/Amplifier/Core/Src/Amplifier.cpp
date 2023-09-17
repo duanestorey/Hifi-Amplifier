@@ -18,7 +18,7 @@ Amplifier::Amplifier() :
 	mDAC( 0 ),
 	mDecoder( 0 ),
 	mLastVolumeTimer( 0 ),
-	mCurrentVolume( 57 ),
+	mCurrentVolume( 65 ),
 	mSamplingFrequency( 0 ) {
 	// TODO Auto-generated constructor stub
 	mBusI2C = new I2C_Bitbang( 48000000 );

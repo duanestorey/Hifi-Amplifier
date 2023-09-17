@@ -106,7 +106,11 @@ DolbyDecoder_STA310::configurePCMOUT() {
 	mDevice->writeRegister( DolbyDecoder_STA310::PCM_DIV, 1 );
 
 	// BIT24 | RPAD  works with PCM5102
-	mDevice->writeRegister( DolbyDecoder_STA310::PCM_CONF, 35 );
+	// BIT24 = 3
+	// RPAD = 5
+	//mDevice->writeRegister( DolbyDecoder_STA310::PCM_CONF, 35 + 1 );
+	// Switch to Sony mode to match DAC at power on
+	mDevice->writeRegister( DolbyDecoder_STA310::PCM_CONF, 3 + 8 + 32 );
 }
 
 void
@@ -114,7 +118,7 @@ DolbyDecoder_STA310::configureInterrupts( bool enableHDR ) {
 	if ( enableHDR ) {
 		mDevice->writeRegister( DolbyDecoder_STA310::INT1, DolbyDecoder_STA310::ERR | DolbyDecoder_STA310::SFR );
 	} else {
-		mDevice->writeRegister( DolbyDecoder_STA310::INT1, DolbyDecoder_STA310::HDR | DolbyDecoder_STA310::ERR | DolbyDecoder_STA310::SFR );
+		mDevice->writeRegister( DolbyDecoder_STA310::INT1, DolbyDecoder_STA310::ERR | DolbyDecoder_STA310::SFR );
 	}
 
 	mDevice->writeRegister( DolbyDecoder_STA310::INT2, DolbyDecoder_STA310::RST | DolbyDecoder_STA310::LCK );
@@ -144,7 +148,7 @@ DolbyDecoder_STA310::configureDecoder() {
 	mDevice->writeRegister( DolbyDecoder_STA310::STREAM_SEL, 5 );
 
 	// Set for Dolby Digital
-	mDevice->writeRegister( DolbyDecoder_STA310::DECODE_SEL, 2 );
+	mDevice->writeRegister( DolbyDecoder_STA310::DECODE_SEL, 0 );
 
 	// Beep
 	//mDevice->writeRegister( DolbyDecoder_STA310::DECODE_SEL, 7 );
@@ -251,6 +255,8 @@ DolbyDecoder_STA310::softReset() {
 			// Device is ready
 			mInitialized = true;
 
+			mute( true );
+
 			enableAudioPLL();
 		} else {
 			attempts++;
@@ -275,6 +281,11 @@ DolbyDecoder_STA310::checkForInterrupt() {
 		if ( int1 & ERR ) {
 			// SYN
 			I2C_RESULT errorReg = mDevice->readRegister( DolbyDecoder_STA310::ERROR );
+			int i;
+			i = 2;
+			if ( errorReg == 0 ) {
+
+			}
 		}
 		if ( int1 & HDR ) {
 			 I2C_RESULT head3 = mDevice->readRegister( DolbyDecoder_STA310::HEAD_3 );
@@ -379,16 +390,16 @@ DolbyDecoder_STA310::checkFormat() {
 
 	 I2C_RESULT mute = mDevice->readRegister( DolbyDecoder_STA310::MUTE );
 	 if ( mute ) {
-		 HAL_GPIO_WritePin( LED_PCM_GPIO_Port, LED_PCM_Pin, GPIO_PIN_SET  );
+		 HAL_GPIO_WritePin( LED_MUTE_GPIO_Port, LED_MUTE_Pin, GPIO_PIN_SET  );
 	 } else {
-		 HAL_GPIO_WritePin( LED_PCM_GPIO_Port, LED_PCM_Pin, GPIO_PIN_RESET  );
+		 HAL_GPIO_WritePin( LED_MUTE_GPIO_Port, LED_MUTE_Pin, GPIO_PIN_RESET  );
 	 }
 
 	 I2C_RESULT play = mDevice->readRegister( DolbyDecoder_STA310::PLAY );
 	 if ( play ) {
-	 		 HAL_GPIO_WritePin( LED_MUTE_GPIO_Port, LED_MUTE_Pin, GPIO_PIN_SET  );
+	 		 HAL_GPIO_WritePin( LED_PCM_GPIO_Port, LED_PCM_Pin, GPIO_PIN_SET  );
 	 } else {
-	 		 HAL_GPIO_WritePin( LED_MUTE_GPIO_Port, LED_MUTE_Pin, GPIO_PIN_RESET  );
+	 		 HAL_GPIO_WritePin( LED_PCM_GPIO_Port, LED_PCM_Pin, GPIO_PIN_RESET  );
 	 }
 
 }

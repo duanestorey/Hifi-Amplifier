@@ -58,7 +58,7 @@ DAC_PCM1681::setFormat( uint8_t format ) {
 void
 DAC_PCM1681::init() {
 	// do setup
-	setFormat( FORMAT_I2S );
+	setFormat( FORMAT_SONY );
 
 }
 

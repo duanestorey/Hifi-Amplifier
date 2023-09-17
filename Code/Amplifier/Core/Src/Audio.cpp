@@ -38,13 +38,12 @@ Audio::preTick() {
 			//if ( mEventHandler ) mEventHandler->onInformation( "Setting up Dolby Decoder" );
 			// Initialize the Dolby Decoder
 			mDecoder->setInformation( "Init Decoder" );
-			mDecoder->initialize();
 
-			osDelay( 250 );
+			mDecoder->initialize();
 
 			mDecoder->setInformation( "Init DAC" );
 			DEBUG_STR( "Initializing DAC" );
-			mDAC->init();
+
 
 			if ( mDecoder->isInitialized() ) {
 
@@ -53,12 +52,16 @@ Audio::preTick() {
 				// This means the startup of the decoder was successful
 
 				// Let's mute the output on the decoder
-				//mDecoder->mute( true );
+				mDecoder->mute( true );
+
+				mDAC->init();
+				mDAC->setVolume( 0 );
 
 				// Decoder should be sending a clock signal to the DAC chip, so it should be responsive
 				// The datasheet says the DAC needs about 5ms to be responsive, so let's wait 10
 				mDecoder->setInformation( "ready run" );
-				osDelay( 10 );
+
+
 
 				// Time to unleash the KRAKEN!  Let's start decoding...
 
@@ -67,15 +70,13 @@ Audio::preTick() {
 				 DEBUG_STR( "...disabling mute" );
 
 
-
 				mDAC->setVolume( mCurrentVolume );
 
-				mDecoder->mute( true );
 				mDecoder->play();
 				mDecoder->run();
 
 				osDelay( 50 );
-				//mDecoder->mute( false );
+				mDecoder->mute( false );
 
 				mDecoder->setInformation( "Running" );
 

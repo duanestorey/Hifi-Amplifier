@@ -31,6 +31,7 @@ public:
 		LCD_RW_BIT = 2,
 		LCD_EN_BIT = 4
 	};
+	
 	enum {
 		LCD_COMMAND_CLEAR = 1,
 		LCD_COMMAND_HOME = 2,
