@@ -1,0 +1,18 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /Users/duane/Code/Github/ESP32-Hifi-Amplifier/build/bootloader/esp-idf/esptool_py && /Users/duane/.espressif/python_env/idf5.2_py3.9_env/bin/python /Users/duane/Code/Github/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/duane/Code/Github/ESP32-Hifi-Amplifier/build/bootloader/bootloader.bin
+Bootloader binary size 0x6910 bytes. 0x6f0 bytes (6%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Completed 'bootloader'
+[4/10] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/main.cpp.obj
+[5/10] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/amplifier.cpp.obj
+[6/10] Linking C static library esp-idf/main/libmain.a
+[7/10] Generating ld/sections.ld
+[8/10] Linking CXX executable hifi-amp.elf
+[9/10] Generating binary image from built executable
+esptool.py v4.7.dev1
+Creating esp32 image...
+Merged 26 ELF sections
+Successfully created esp32 image.
+Generated /Users/duane/Code/Github/ESP32-Hifi-Amplifier/build/hifi-amp.bin
+[10/10] cd /Users/duane/Code/Github/ESP32-Hifi-Amplifier/build/esp-idf/esptool_py && /Users/duane/.espressif/python_env/idf5.2_py3.9_env/bin/python /Users/duane/Code/Github/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/duane/Code/Github/ESP32-Hifi-Amplifier/build/partition_table/partition-table.bin /Users/duane/Code/Github/ESP32-Hifi-Amplifier/build/hifi-amp.bin
+hifi-amp.bin binary size 0xf8a30 bytes. Smallest app partition is 0x2625a0 bytes. 0x169b70 bytes (59%) free.

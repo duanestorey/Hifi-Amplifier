@@ -1,0 +1,143 @@
+re bootloader[0m
+[0;32mI (37) boot: chip revision: v3.0[0m
+[0;32ښ�j%�(50) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (55) boot: Enabling RNG early entropy source...[0m
+[0;ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7136
+load:0x40078000,len:15780
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3884
+entry 0x40080650
+[0;32mI (31) boot: ESP-IDF v5.2-dev-2590-g62ee4135e0 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Sep  8 2023 19:10:08[0m
+[0;32mI (33) boot: Multicore bootloader[0m
+[0;32mI (37) boot: chip revision: v3.0[0m
+[0;32mI (41) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (46) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (50) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (55) boot: Enabling RNG early entropy source...[0m
+[0;32mI (60) boot: Partition Table:[0m
+[0;32mI (64) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (71) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (78) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (86) boot:  2 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (93) boot:  3 factory          factory app      00 00 00010000 001e8480[0m
+[0;32mI (101) boot: End of partition table[0m
+[0;32mI (105) boot: Defaulting to factory image[0m
+[0;32mI (110) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=36240h (221760) map[0m
+[0;32mI (164) esp_image: segment 1: paddr=00046268 vaddr=3ffbdb60 size=05568h ( 21864) load[0m
+[0;32mI (169) esp_image: segment 2: paddr=0004b7d8 vaddr=40080000 size=04840h ( 18496) load[0m
+[0;32mI (175) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=d6448h (877640) map[0m
+[0;32mI (359) esp_image: segment 4: paddr=00126470 vaddr=40084840 size=1b458h (111704) load[0m
+[0;32mI (404) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (404) boot: Disabling RNG early entropy source...[0m
+[0;32mI (416) cpu_start: Multicore app[0m
+[0;32mI (416) cpu_start: Pro cpu up.[0m
+[0;32mI (416) cpu_start: Starting app cpu, entry point is 0x40081360[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (436) cpu_start: Pro cpu start user code[0m
+[0;32mI (436) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (436) cpu_start: Application information:[0m
+[0;32mI (441) cpu_start: Project name:     hifi-amp[0m
+[0;32mI (446) cpu_start: App version:      1ec94e2-dirty[0m
+[0;32mI (452) cpu_start: Compile time:     Sep  8 2023 19:10:03[0m
+[0;32mI (458) cpu_start: ELF file SHA256:  8a101fb3a...[0m
+[0;32mI (463) cpu_start: ESP-IDF:          v5.2-dev-2590-g62ee4135e0[0m
+[0;32mI (469) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (474) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (479) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (484) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (491) heap_init: At 3FFAFF10 len 000000F0 (0 KiB): DRAM[0m
+[0;32mI (497) heap_init: At 3FFB6388 len 00001C78 (7 KiB): DRAM[0m
+[0;32mI (503) heap_init: At 3FFB9A20 len 00004108 (16 KiB): DRAM[0m
+[0;32mI (509) heap_init: At 3FFCA948 len 000156B8 (85 KiB): DRAM[0m
+[0;32mI (515) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (522) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (528) heap_init: At 4009FC98 len 00000368 (0 KiB): IRAM[0m
+[0;32mI (536) spi_flash: detected chip: generic[0m
+[0;32mI (539) spi_flash: flash io: dio[0m
+[0;32mI (544) coexist: coex firmware version: 80b0d89[0m
+[0;32mI (549) app_start: Starting scheduler on CPU0[0m
+[0;32m[0;32mI (553) app_start: Starting scheduler on CPU1[0m
+I (553) main_task: Started on CPU0[0m
+[0;32mI (563) main_task: Calling app_main()[0m
+[0;32mI (563) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (573) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (583) gpio: GPIO[27]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (593) gpio: GPIO[19]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (603) gpio: GPIO[12]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (608) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (618) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (628) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (638) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (653) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 60000 and ID 1 futureTime 60095 currentTime 100[0m
+[0;32mI (663) void Amplifier::handleAudioThread(): Starting Audio Thread on Core[0m
+[0;32mI (663) void Amplifier::handleDisplayThread(): Starting Display Thread[0m
+[0;32mI (668) void Amplifier::handleRadioThread(): Starting Radio Thread on Core 0[0m
+[0;32mI (668) main_task: Returned from app_main()[0m
+[0;32mI (668) void Amplifier::handleTimerThread(): Starting Timer Thread on Core 0[0m
+I (723) wifi:wifi driver task: 3ffd7f2c, prio:23, stack:6656, core=0
+I (738) wifi:wifi firmware version: 341633f
+I (738) wifi:wifi certification version: v7.0
+I (738) wifi:config NVS flash: enabled
+I (743) wifi:config nano formating: disabled
+I (743) wifi:Init data frame dynamic rx buffer num: 32
+I (748) wifi:Init management frame dynamic rx buffer num: 32
+I (753) wifi:Init management short buffer num: 32
+I (758) wifi:Init dynamic tx buffer num: 32
+I (763) wifi:Init static rx buffer size: 1600
+I (768) wifi:Init static rx buffer num: 10
+I (773) wifi:Init dynamic rx buffer num: 32
+[0;32mI (778) wifi_init: rx ba win: 6[0m
+[0;32mI (778) wifi_init: tcpip mbox: 32[0m
+[0;32mI (783) wifi_init: udp mbox: 6[0m
+[0;32mI (788) wifi_init: tcp mbox: 6[0m
+[0;32mI (788) wifi_init: tcp tx win: 5744[0m
+[0;32mI (793) wifi_init: tcp rx win: 5744[0m
+[0;32mI (798) wifi_init: tcp mss: 1440[0m
+[0;32mI (803) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (808) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (813) phy_init: phy_version 4771,450c73b,Aug 16 2023,11:03:10[0m
+I (898) wifi:mode : sta (b0:a7:32:f1:9f:88)
+I (898) wifi:enable tsf
+[0;32mI (903) BTDM_INIT: BT controller compile version [714174d][0m
+[0;32mI (903) BTDM_INIT: Bluetooth MAC: b0:a7:32:f1:9f:8a[0m
+[0;32mI (913) void Amplifier::attemptWifiConnect(): Attempting to connect Wifi[0m
+[0;32mI (918) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (918) void Amplifier::handleWifiCallback(int32_t): Wifi Starting Up[0m
+I (1153) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+I (1158) wifi:state: init -> auth (b0)
+I (1163) wifi:state: auth -> assoc (0)
+[0;32mI (1188) NimBLE: Failed to restore IRKs from store; status=8
+[0m
+I (1223) wifi:state: assoc -> run (10)
+W (1228) wifi:[ADDBA]rx delba, code:39, delete tid:0
+W (1228) wifi:[ADDBA]rx delba, code:39, delete tid:0
+W (1228) wifi:[ADDBA]rx delba, code:39, delete tid:5
+I (1238) wifi:<ba-add>idx:0 (ifx:0, 26:5a:4c:99:c4:26), tid:5, ssn:5, winSize:64
+I (1248) wifi:connected with The Grey Havens, aid = 2, channel 1, BW20, bssid = 26:5a:4c:99:c4:26
+I (1248) wifi:security: WPA2-PSK, phy: bgn, rssi: -47
+I (1258) wifi:pm start, type: 1
+
+[0;32mI (1263) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (1263) void Amplifier::handleWifiCallback(int32_t): Wifi Connection Established[0m
+I (1298) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (2263) esp_netif_handlers: sta ip: 192.168.1.184, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (2263) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (2268) void Amplifier::handleWifiCallback(int32_t): Wifi Received IP Address[0m
+[0;32mI (2278) void Amplifier::updateTimeFromNTP(): Attemping To Update Time From NTP Server[0m
+I (4213) wifi:<ba-add>idx:1 (ifx:0, 26:5a:4c:99:c4:26), tid:0, ssn:3, winSize:64
+[0;32mI (4263) void NTP_Callback(timeval*): Received NTP Callback[0m
+[0;32mI (4268) void Amplifier::handleRadioThread(): The current date/time is: Fri Sep  8 19:56:20 2023[0m
+[0;32mI (60658) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (60658) void Amplifier::handleRadioThread(): In Periodic Timer Event[0m
+[0;32mI (120658) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (120658) void Amplifier::handleRadioThread(): In Periodic Timer Event[0m
+[0;32mI (180658) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (180658) void Amplifier::handleRadioThread(): In Periodic Timer Event[0m

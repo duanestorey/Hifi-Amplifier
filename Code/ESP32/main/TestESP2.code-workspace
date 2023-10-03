@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../../Documents/PlatformIO/Projects/TestESP2"
+		},
+		{
+			"name": "Barf",
+			"path": "../../../../Documents/PlatformIO/Projects/Barf"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"task.h": "c"
+		}
+	}
+}

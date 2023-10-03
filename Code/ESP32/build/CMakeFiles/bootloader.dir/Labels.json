@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/duane/Code/Github/ESP32-Hifi-Amplifier/build/CMakeFiles/bootloader"
+		},
+		{
+			"file" : "/Users/duane/Code/Github/ESP32-Hifi-Amplifier/build/CMakeFiles/bootloader.rule"
+		},
+		{
+			"file" : "/Users/duane/Code/Github/ESP32-Hifi-Amplifier/build/CMakeFiles/bootloader-complete.rule"
+		},
+		{
+			"file" : "/Users/duane/Code/Github/ESP32-Hifi-Amplifier/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+		},
+		{
+			"file" : "/Users/duane/Code/Github/ESP32-Hifi-Amplifier/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+		},
+		{
+			"file" : "/Users/duane/Code/Github/ESP32-Hifi-Amplifier/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+		},
+		{
+			"file" : "/Users/duane/Code/Github/ESP32-Hifi-Amplifier/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+		},
+		{
+			"file" : "/Users/duane/Code/Github/ESP32-Hifi-Amplifier/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+		},
+		{
+			"file" : "/Users/duane/Code/Github/ESP32-Hifi-Amplifier/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+		},
+		{
+			"file" : "/Users/duane/Code/Github/ESP32-Hifi-Amplifier/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"bootloader"
+		],
+		"name" : "bootloader"
+	}
+}

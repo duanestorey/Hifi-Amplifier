@@ -1,0 +1,33 @@
+[0;33m--- idf_monitor on /dev/cu.usbserial-0001 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x4008128c: call_start_cpu1 at /Users/duane/Code/Github/esp-idf/components/esp_system/port/cpu_start.c:178
+[0m
+[0;33m0x400818fa: panic_abort at /Users/duane/Code/Github/esp-idf/components/esp_system/panic.c:452
+[0m
+[0;33m0x40091f8d: esp_system_abort at /Users/duane/Code/Github/esp-idf/components/esp_system/port/esp_system_chip.c:93
+[0m
+[0;33m0x40096bed: __assert_func at /Users/duane/Code/Github/esp-idf/components/newlib/assert.c:81
+[0m
+[0;33m0x4019d3ea: xQueueSemaphoreTake at /Users/duane/Code/Github/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1657 (discriminator 1)
+[0m
+[0;33m0x400faf6d: i2c_master_cmd_begin at /Users/duane/Code/Github/esp-idf/components/driver/i2c/i2c.c:1492 (discriminator 2)
+[0m
+[0;33m0x400fb0e1: i2c_master_write_to_device at /Users/duane/Code/Github/esp-idf/components/driver/i2c/i2c.c:992
+[0m
+[0;33m0x400d873d: I2CBUS::writeBytes(unsigned char, unsigned char*, unsigned char) at /Users/duane/Code/Github/ESP32-Hifi-Amplifier/main/i2c-bus.cpp:35
+[0m
+[0;33m0x400d87c9: LCD::write8Bits(unsigned char) at /Users/duane/Code/Github/ESP32-Hifi-Amplifier/main/lcd.cpp:126
+[0m
+[0;33m0x400d8818: LCD::write4Bits(unsigned char) at /Users/duane/Code/Github/ESP32-Hifi-Amplifier/main/lcd.cpp:119
+[0m
+[0;33m0x400d88bb: LCD::begin() at /Users/duane/Code/Github/ESP32-Hifi-Amplifier/main/lcd.cpp:95
+[0m
+[0;33m0x400d8915: LCD::initialize() at /Users/duane/Code/Github/ESP32-Hifi-Amplifier/main/lcd.cpp:80
+[0m
+[0;33m0x400d7bf5: Amplifier::handleDisplayThread() at /Users/duane/Code/Github/ESP32-Hifi-Amplifier/main/amplifier.cpp:60
+[0m
+[0;33m0x400d7ab9: startDisplayThread(void*) at /Users/duane/Code/Github/ESP32-Hifi-Amplifier/main/main.cpp:20
+[0m
+[0m
