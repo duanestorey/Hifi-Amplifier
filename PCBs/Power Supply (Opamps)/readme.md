@@ -1,12 +1,14 @@
 <img src="screenshot.png" width="50%">
 
+# Analog Power Supply for Operation Amplifier
+
+This board produces a +/- 6V supply to be used with the DAC filter and the phono RIAA/pre-amplifier PCBs
+
 ## Version History
 
-This is the main plus/minus voltages for the op amp filter circuits 
+- 1.0: Initial Release
 
-Versions:
+## Speciality Components
 
-- 1.0.1 - Fabricated
-    - Screwed up and made design for LM317 instead of LM337, will correct in 1.0.2
-    - Can't really use it as it only has working postive rail
-- 1.0.2
+* LM317 & LM337 variable voltage regulators
+* Myrra 44091 1.5VA +/- 6V transformer
