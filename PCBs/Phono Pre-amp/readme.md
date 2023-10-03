@@ -1,11 +1,13 @@
 <img src="screenshot.png" width="50%">
 
-# Updates
+# Phone Pre-amp
 
-## Versions
+## Version History
 
-* 1.0.4 - Minor changes
-  - Made zone cutouts for ground plane
-  - Added 10u 1206 capacitors for local power storage
-* 1.0.1 - In Process
-  * Need to add decoupling capacitors on the voltages
+- 1.0: Initial Release
+
+## Speciality Components
+
+* OPA2134 Burr Brown operation amplifiers
+* Various C0G and thin film resistors
+* Nichicon Muse ES 25V 10uF
