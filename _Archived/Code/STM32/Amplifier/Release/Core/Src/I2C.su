@@ -1,0 +1,4 @@
+../Core/Src/I2C.cpp:16:1:I2C::I2C()	0	static
+../Core/Src/I2C.cpp:21:1:I2C::~I2C()	0	static
+../Core/Src/I2C.cpp:21:1:virtual I2C::~I2C()	8	static
+../Core/Src/I2C.cpp:26:1:I2C_Device* I2C::makeDevice(I2C_ADDR)	16	static

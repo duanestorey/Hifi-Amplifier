@@ -1,0 +1,7 @@
+../Core/Src/I2CDevice.h:25:15:virtual void I2C_Device::setAddr(I2C_ADDR)	0	static
+../Core/Src/I2CDevice.cpp:15:1:I2C_Device::~I2C_Device()	0	static
+../Core/Src/I2CDevice.cpp:20:1:virtual bool I2C_Device::writeRegister(uint8_t, uint8_t)	8	static
+../Core/Src/I2CDevice.cpp:25:1:virtual bool I2C_Device::writeData(uint8_t*, uint8_t)	8	static
+../Core/Src/I2CDevice.cpp:30:1:virtual I2C_RESULT I2C_Device::readRegister(uint8_t)	4	static
+../Core/Src/I2CDevice.cpp:15:1:virtual I2C_Device::~I2C_Device()	8	static
+../Core/Src/I2CDevice.cpp:10:1:I2C_Device::I2C_Device(I2C_ADDR)	0	static

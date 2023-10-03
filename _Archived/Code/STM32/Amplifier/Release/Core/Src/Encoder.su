@@ -1,0 +1,5 @@
+../Core/Src/Encoder.h:29:24:virtual ENCODER_VALUE Encoder::getLastValue() const	0	static
+../Core/Src/Encoder.cpp:15:1:Encoder::~Encoder()	0	static
+../Core/Src/Encoder.cpp:20:1:virtual ENCODER_VALUE Encoder::checkEncoder(uint32_t)	0	static
+../Core/Src/Encoder.cpp:15:1:virtual Encoder::~Encoder()	8	static
+../Core/Src/Encoder.cpp:10:1:Encoder::Encoder()	0	static

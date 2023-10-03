@@ -1,0 +1,15 @@
+../Core/Src/I2CBitbang.cpp:57:1:I2C_Bitbang::~I2C_Bitbang()	8	static
+../Core/Src/I2CBitbang.cpp:57:1:virtual I2C_Bitbang::~I2C_Bitbang()	8	static
+../Core/Src/I2CBitbang.h:14:22:void DWT_Delay_us(uint32_t)	16	static
+../Core/Src/I2CBitbang.cpp:16:10:uint32_t DWT_Delay_Init()	0	static,ignoring_inline_asm
+../Core/Src/I2CBitbang.cpp:46:1:I2C_Bitbang::I2C_Bitbang(uint32_t, uint8_t)	16	static
+../Core/Src/I2CBitbang.cpp:62:1:void I2C_Bitbang::start()	8	static
+../Core/Src/I2CBitbang.cpp:73:1:void I2C_Bitbang::stop()	8	static
+../Core/Src/I2CBitbang.cpp:83:1:void I2C_Bitbang::writeBit(uint8_t)	8	static
+../Core/Src/I2CBitbang.cpp:92:1:uint8_t I2C_Bitbang::readBit()	16	static
+../Core/Src/I2CBitbang.cpp:104:1:uint8_t I2C_Bitbang::readByte(bool)	32	static
+../Core/Src/I2CBitbang.cpp:135:1:void I2C_Bitbang::writeByte(uint8_t)	24	static
+../Core/Src/I2CBitbang.cpp:150:1:virtual bool I2C_Bitbang::writeRegister(I2C_ADDR, uint8_t, uint8_t)	24	static
+../Core/Src/I2CBitbang.cpp:161:1:virtual I2C_RESULT I2C_Bitbang::readRegister(I2C_ADDR, uint8_t)	16	static
+../Core/Src/I2CBitbang.cpp:174:1:virtual bool I2C_Bitbang::writeData(I2C_ADDR, uint8_t*, uint8_t)	24	static
+../Core/Src/I2CBitbang.cpp:185:1:void I2C_Bitbang::delay()	8	static,ignoring_inline_asm

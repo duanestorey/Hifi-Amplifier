@@ -1,0 +1,9 @@
+../Core/Src/Amplifier.cpp:32:1:virtual void Amplifier::onSamplingRateChange(uint32_t)	0	static
+../Core/Src/Amplifier.cpp:37:1:virtual void Amplifier::onAlgorithmChange(const string&)	32	static
+../Core/Src/Amplifier.cpp:74:1:virtual void Amplifier::onInformation(const string&)	32	static
+../Core/Src/Amplifier.cpp:80:1:virtual void Amplifier::preTick()	16	static
+../Core/Src/Amplifier.cpp:95:6:virtual void Amplifier::tick()	16	static
+../Core/Src/Amplifier.cpp:42:1:virtual void Amplifier::initialize()	16	static
+../Core/Src/Amplifier.cpp:16:1:Amplifier::Amplifier()	16	static
+../Core/Src/Amplifier.cpp:27:1:Amplifier::~Amplifier()	16	static
+../Core/Src/Amplifier.cpp:27:1:virtual Amplifier::~Amplifier()	8	static

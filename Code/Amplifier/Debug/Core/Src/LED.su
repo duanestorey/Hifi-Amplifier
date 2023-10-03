@@ -1,7 +1,0 @@
-../Core/Src/LED.h:27:15:virtual void LED::enable()	16	static
-../Core/Src/LED.h:28:15:virtual void LED::disable()	16	static
-../Core/Src/LED.cpp:11:1:LED::LED()	16	static
-../Core/Src/LED.cpp:16:1:LED::LED(GPIO_TypeDef*, uint16_t)	24	static
-../Core/Src/LED.cpp:20:1:LED::~LED()	16	static
-../Core/Src/LED.cpp:20:1:virtual LED::~LED()	16	static
-../Core/Src/LED.cpp:25:1:virtual void LED::setState(bool)	16	static

@@ -1,3 +1,0 @@
-../Core/Src/AudioCore.cpp:16:1:AudioCore::~AudioCore()	0	static
-../Core/Src/AudioCore.cpp:16:1:virtual AudioCore::~AudioCore()	8	static
-../Core/Src/AudioCore.cpp:11:1:AudioCore::AudioCore()	0	static

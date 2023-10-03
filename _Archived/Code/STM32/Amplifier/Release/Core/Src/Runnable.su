@@ -1,0 +1,3 @@
+../Core/Src/Runnable.cpp:11:1:Runnable::Runnable(Amplifier*)	0	static
+../Core/Src/Runnable.cpp:16:1:Runnable::~Runnable()	0	static
+../Core/Src/Runnable.cpp:16:1:virtual Runnable::~Runnable()	8	static

@@ -1,0 +1,11 @@
+Designator,Footprint,Quantity,Value,LCSC Part #
+"C1, C2",C_Rect_L13.0mm_W6.0mm_P10.00mm_FKS3_FKP3_MKS4,2,100N,
+"D1, D3",Diode_Bridge_19.0x19.0x6.8mm_P12.7mm,2,D_Bridge_+A-A,
+D2,LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder,1,YELLOW,
+D4,LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder,1,BLUE,
+"H1, H3",MountingHole_3mm,2,MountingHole,
+"H2, H4",MountingHole_3.2mm_M3,2,MountingHole,
+J1,JST_VH_B3P-VH_1x03_P3.96mm_Vertical,1,Conn_01x03_Male,
+"J2, J3",JST_VH_B2P-VH-B_1x02_P3.96mm_Vertical,2,Conn_01x02_Male,
+"R1, R3",R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,2,9.1K,
+"R2, R4",R_Axial_DIN0411_L9.9mm_D3.6mm_P15.24mm_Horizontal,2,10R,

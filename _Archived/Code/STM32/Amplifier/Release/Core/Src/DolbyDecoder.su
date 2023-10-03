@@ -1,0 +1,3 @@
+../Core/Src/DolbyDecoder.cpp:10:1:DolbyDecoder::DolbyDecoder()	0	static
+../Core/Src/DolbyDecoder.cpp:15:1:DolbyDecoder::~DolbyDecoder()	0	static
+../Core/Src/DolbyDecoder.cpp:15:1:virtual DolbyDecoder::~DolbyDecoder()	8	static

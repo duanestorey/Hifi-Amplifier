@@ -1,0 +1,5 @@
+Designator,Footprint,Quantity,Value,LCSC Part #
+"H1, H10, H2, H3, H4, H5, H6, H7, H8, H9",MountingHole_4.3mm_M4_DIN965_Pad,10,MountingHole_Pad,
+"J1, J2, J3, J4, J5",JST_VH_B2P-VH-B_1x02_P3.96mm_Vertical,5,Conn_01x02_Male,
+"L1, L2, L3, L4, L5",L_Axial_L26.0mm_D10.0mm_P30.48mm_Horizontal_Fastron_77A,5,0.7u,
+"R1, R2, R3, R4, R5",R_Axial_Power_L25.0mm_W6.4mm_P27.94mm,5,10R,

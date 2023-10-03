@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/Users/duane/Code/Github/pcb/HiFi Amplifier/PowerAmplifier/v1.1.0/PowerAmp.kicad_sch</source>
+    <date>Saturday, December 17, 2022 at 01:47:15 pm</date>
+    <tool>Eeschema (6.0.8-1)-1</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>PowerAmp.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1">
+      <value>1000U 50V</value>
+      <footprint>Capacitor_THT:CP_Radial_D12.5mm_P5.00mm</footprint>
+      <libsource lib="Device" part="C_Polarized_Small" description="Polarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fdc886c0-31da-4fe9-add1-d3334adcebd6</tstamps>
+    </comp>
+    <comp ref="C2">
+      <value>22U 50V</value>
+      <footprint>Capacitor_THT:CP_Radial_D5.0mm_P2.00mm</footprint>
+      <libsource lib="Device" part="C_Polarized_Small" description="Polarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>87f26e5e-0587-4556-b4d9-de01181b3b24</tstamps>
+    </comp>
+    <comp ref="C3">
+      <value>4.7U X7R 50V</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W4.4mm_P5.00mm</footprint>
+      <libsource lib="Device" part="C_Polarized_Small" description="Polarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bdbb774b-fee6-4bbb-9560-513f1d132349</tstamps>
+    </comp>
+    <comp ref="C4">
+      <value>1000U 50V</value>
+      <footprint>Capacitor_THT:CP_Radial_D12.5mm_P5.00mm</footprint>
+      <libsource lib="Device" part="C_Polarized_Small" description="Polarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>dae4767f-551b-44f7-9617-ad2905b23a55</tstamps>
+    </comp>
+    <comp ref="C5">
+      <value>22U 50V</value>
+      <footprint>Capacitor_THT:CP_Radial_D5.0mm_P2.00mm</footprint>
+      <libsource lib="Device" part="C_Polarized_Small" description="Polarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>db411701-a1cc-4146-848d-a5f40e445d30</tstamps>
+    </comp>
+    <comp ref="C6">
+      <value>4.7U X74 50V</value>
+      <footprint>Capacitor_THT:C_Disc_D6.0mm_W4.4mm_P5.00mm</footprint>
+      <libsource lib="Device" part="C_Polarized_Small" description="Polarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1093be96-d432-4fe1-9f26-82e6cabe5c18</tstamps>
+    </comp>
+    <comp ref="Cc1">
+      <value>680P</value>
+      <footprint>Capacitor_THT:C_Disc_D11.0mm_W5.0mm_P10.00mm</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f69c2c66-10c3-479d-bca4-cf7f0a33bede</tstamps>
+    </comp>
+    <comp ref="Cf1">
+      <value>47P</value>
+      <footprint>Capacitor_THT:C_Disc_D9.0mm_W5.0mm_P7.50mm</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>76d08118-fd4b-438c-a4cd-6a9b88e79ef7</tstamps>
+    </comp>
+    <comp ref="Ci1">
+      <value>470U</value>
+      <footprint>Capacitor_THT:CP_Radial_D12.5mm_P5.00mm</footprint>
+      <libsource lib="Device" part="C_Polarized_Small" description="Polarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1cb93e9c-e954-4446-809e-c46cb4825004</tstamps>
+    </comp>
+    <comp ref="Cin1">
+      <value>4.7U PP 250V</value>
+      <footprint>Capacitor_THT:C_Rect_L31.5mm_W20.0mm_P27.50mm_MKS4</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>dd4d2528-0bb7-4ef4-9946-a1019fd67734</tstamps>
+    </comp>
+    <comp ref="CSn1">
+      <value> 220N PP 100V</value>
+      <footprint>Capacitor_THT:C_Rect_L18.0mm_W7.0mm_P15.00mm_FKS3_FKP3</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9a4c2dcb-23b6-4427-b713-86c09c003ab1</tstamps>
+    </comp>
+    <comp ref="D1">
+      <value>LED</value>
+      <footprint>LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>73567fb9-af71-4feb-be7a-74a243650c77</tstamps>
+    </comp>
+    <comp ref="D2">
+      <value>LED</value>
+      <footprint>LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bb65938f-efe2-4e5f-8ded-a927c929545d</tstamps>
+    </comp>
+    <comp ref="H1">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3mm</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7ffe8f21-2ad2-4061-9f55-c668595cea3b</tstamps>
+    </comp>
+    <comp ref="H2">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3mm</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>14211922-300f-43ff-b369-d1f3a3d07358</tstamps>
+    </comp>
+    <comp ref="H3">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3mm</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6d6a5d3d-171c-4f15-81f6-afe2401e139a</tstamps>
+    </comp>
+    <comp ref="H4">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3mm</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>55a41e46-3a19-40c5-9bb8-f97676aa932d</tstamps>
+    </comp>
+    <comp ref="J1">
+      <value>Conn_01x02_Male</value>
+      <footprint>Connector_JST:JST_VH_B2P-VH_1x02_P3.96mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>806c4e37-12d3-43b9-9249-d717ca61dd7f</tstamps>
+    </comp>
+    <comp ref="J2">
+      <value>Conn_01x03_Male</value>
+      <footprint>Connector_JST:JST_VH_B3P-VH-B_1x03_P3.96mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x03_Male" description="Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0b34203e-46dd-4dff-aa49-b6f6ef436026</tstamps>
+    </comp>
+    <comp ref="J3">
+      <value>Conn_01x02_Male</value>
+      <footprint>Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>30fa3e9c-a608-491b-ac8f-17c9e872eb5f</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>3K</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>603a19ad-25c8-4778-bd66-e256072dbec1</tstamps>
+    </comp>
+    <comp ref="R2">
+      <value>3K</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0b5df3f8-8164-4663-8fa9-1d0338cc3d74</tstamps>
+    </comp>
+    <comp ref="R3">
+      <value>1K</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>38fd4ce8-8ef6-43b6-a650-247d6e7daf02</tstamps>
+    </comp>
+    <comp ref="RB1">
+      <value>1K</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ca7a6f78-0dc6-4c70-aa91-679153228559</tstamps>
+    </comp>
+    <comp ref="Rf1">
+      <value>20K</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2c2ff3c1-6a4e-44d4-9da6-7d6e589de470</tstamps>
+    </comp>
+    <comp ref="Rf2">
+      <value>20K</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5c885087-de24-4be0-a894-064945bd2ae1</tstamps>
+    </comp>
+    <comp ref="Rin1">
+      <value>20K</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>75d0443b-40b4-48e6-9a47-3fd24692744c</tstamps>
+    </comp>
+    <comp ref="Rmute1">
+      <value>20K</value>
+      <footprint>Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bf62d936-4923-40e3-8d14-5ccffc8b67bd</tstamps>
+    </comp>
+    <comp ref="RSn1">
+      <value>4R7</value>
+      <footprint>Resistor_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P12.70mm_Horizontal</footprint>
+      <libsource lib="Device" part="R_Small" description="Resistor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1fc94940-07fa-475c-8caa-bf73bedd2035</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>LM3886</value>
+      <footprint>Package_TO_SOT_THT:TO-220-11_P3.4x5.08mm_StaggerOdd_Lead4.85mm_Vertical</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/lm3886.pdf</datasheet>
+      <libsource lib="Amplifier_Audio" part="LM3886" description="Overture Audio Power Amplifier Series High-Performance 68W Audio Power Amplifier w/Mute, TO-220-11"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="File: PowerAmp.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b01a72d4-df75-42de-94b0-5dc3fef1af67</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Amplifier_Audio" part="LM3886">
+      <description>Overture Audio Power Amplifier Series High-Performance 68W Audio Power Amplifier w/Mute, TO-220-11</description>
+      <docs>http://www.ti.com/lit/ds/symlink/lm3886.pdf</docs>
+      <footprints>
+        <fp>TO?220*StaggerOdd*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LM3886</field>
+        <field name="Footprint">Package_TO_SOT_THT:TO-220-11_P3.4x5.08mm_StaggerOdd_Lead4.85mm_Vertical</field>
+        <field name="Datasheet">http://www.ti.com/lit/ds/symlink/lm3886.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="V+" type="power_in"/>
+        <pin num="2" name="NC" type="no_connect"/>
+        <pin num="3" name="" type="output"/>
+        <pin num="4" name="V-" type="power_in"/>
+        <pin num="5" name="V+" type="passive"/>
+        <pin num="6" name="NC" type="no_connect"/>
+        <pin num="7" name="GND" type="power_in"/>
+        <pin num="8" name="MUTE" type="input"/>
+        <pin num="9" name="-" type="input"/>
+        <pin num="10" name="+" type="input"/>
+        <pin num="11" name="NC" type="no_connect"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x02_Male">
+      <description>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x02_Male</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x03_Male">
+      <description>Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x03_Male</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C_Polarized_Small">
+      <description>Polarized capacitor, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>CP_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Polarized_Small</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C_Small">
+      <description>Unpolarized capacitor, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Small</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="LED">
+      <description>Light emitting diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>LED*</fp>
+        <fp>LED_SMD:*</fp>
+        <fp>LED_THT:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R_Small">
+      <description>Resistor, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_Small</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Mechanical" part="MountingHole">
+      <description>Mounting Hole without connection</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>MountingHole*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">MountingHole</field>
+        <field name="Datasheet">~</field>
+      </fields>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Amplifier_Audio">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Amplifier_Audio.kicad_sym</uri>
+    </library>
+    <library logical="Connector">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Connector.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Device.kicad_sym</uri>
+    </library>
+    <library logical="Mechanical">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Mechanical.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="CH1-IN">
+      <node ref="Cin1" pin="1" pintype="passive"/>
+      <node ref="J3" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="Rin1" pin="2" pintype="passive"/>
+    </net>
+    <net code="2" name="CH1-OUT">
+      <node ref="J1" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="RSn1" pin="2" pintype="passive"/>
+      <node ref="Rf1" pin="1" pintype="passive"/>
+      <node ref="Rf2" pin="1" pintype="passive"/>
+      <node ref="U1" pin="3" pintype="output"/>
+    </net>
+    <net code="3" name="Net-(CSn1-Pad2)">
+      <node ref="CSn1" pin="2" pintype="passive"/>
+      <node ref="RSn1" pin="1" pintype="passive"/>
+    </net>
+    <net code="4" name="Net-(Cc1-Pad1)">
+      <node ref="Cc1" pin="1" pintype="passive"/>
+      <node ref="RB1" pin="2" pintype="passive"/>
+      <node ref="U1" pin="10" pinfunction="+" pintype="input"/>
+    </net>
+    <net code="5" name="Net-(Cf1-Pad1)">
+      <node ref="Cf1" pin="1" pintype="passive"/>
+      <node ref="Rf2" pin="2" pintype="passive"/>
+    </net>
+    <net code="6" name="Net-(Cf1-Pad2)">
+      <node ref="Cf1" pin="2" pintype="passive"/>
+      <node ref="R3" pin="1" pintype="passive"/>
+      <node ref="Rf1" pin="2" pintype="passive"/>
+      <node ref="U1" pin="9" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="7" name="Net-(Ci1-Pad1)">
+      <node ref="Ci1" pin="1" pintype="passive"/>
+      <node ref="R3" pin="2" pintype="passive"/>
+    </net>
+    <net code="8" name="Net-(Cin1-Pad2)">
+      <node ref="Cin1" pin="2" pintype="passive"/>
+      <node ref="RB1" pin="1" pintype="passive"/>
+    </net>
+    <net code="9" name="Net-(D1-Pad2)">
+      <node ref="D1" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+    </net>
+    <net code="10" name="Net-(D2-Pad2)">
+      <node ref="D2" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="R2" pin="1" pintype="passive"/>
+    </net>
+    <net code="11" name="Net-(Rmute1-Pad1)">
+      <node ref="Rmute1" pin="1" pintype="passive"/>
+      <node ref="U1" pin="8" pinfunction="MUTE" pintype="input"/>
+    </net>
+    <net code="12" name="PGND">
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="C6" pin="1" pintype="passive"/>
+      <node ref="CSn1" pin="1" pintype="passive"/>
+      <node ref="D2" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J2" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="U1" pin="7" pinfunction="GND" pintype="power_in"/>
+    </net>
+    <net code="13" name="SIGGND">
+      <node ref="Cc1" pin="2" pintype="passive"/>
+      <node ref="Ci1" pin="2" pintype="passive"/>
+      <node ref="J3" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="Rin1" pin="1" pintype="passive"/>
+    </net>
+    <net code="14" name="VM">
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="C5" pin="2" pintype="passive"/>
+      <node ref="C6" pin="2" pintype="passive"/>
+      <node ref="D1" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="J2" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="Rmute1" pin="2" pintype="passive"/>
+      <node ref="U1" pin="4" pinfunction="V-" pintype="power_in"/>
+    </net>
+    <net code="15" name="VP">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="J2" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="V+" pintype="power_in"/>
+      <node ref="U1" pin="5" pinfunction="V+" pintype="passive"/>
+    </net>
+    <net code="16" name="unconnected-(U1-Pad2)">
+      <node ref="U1" pin="2" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="17" name="unconnected-(U1-Pad6)">
+      <node ref="U1" pin="6" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="18" name="unconnected-(U1-Pad11)">
+      <node ref="U1" pin="11" pinfunction="NC" pintype="no_connect"/>
+    </net>
+  </nets>
+</export>

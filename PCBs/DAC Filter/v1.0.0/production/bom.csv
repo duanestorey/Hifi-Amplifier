@@ -1,0 +1,13 @@
+Designator,Footprint,Quantity,Value,LCSC Part #
+"CA1, CA2, CA5, CB3, CB4, CB6",C_1206_3216Metric_Pad1.33x1.80mm_HandSolder,6,470P,
+"CA3, CA4, CA6, CB1, CB2, CB5",C_1206_3216Metric_Pad1.33x1.80mm_HandSolder,6,47P,
+"CF1, CF11, CF4, CF5, CF6, CF7",C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,6,0.1u,
+"CF10, CF12, CF2, CF3, CF8, CF9",C_1206_3216Metric_Pad1.33x1.80mm_HandSolder,6,10u,
+D1,LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder,1,YELLOW,
+"H1, H2, H3, H4",MountingHole_3.2mm_M3,4,MountingHole,
+"J10, J11, J12, J13, J14, J2, J3, J5, J6, J7, J8, J9",JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical,12,Conn_01x02_Male,
+J4,JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical,1,Conn_01x03_Male,
+"RA1, RA3, RA5, RB2, RB4, RB6",R_1206_3216Metric_Pad1.30x1.75mm_HandSolder,6,7.5K,
+"RA2, RA4, RA6, RB1, RB3, RB5",R_1206_3216Metric_Pad1.30x1.75mm_HandSolder,6,130K,
+RA7,R_0603_1608Metric,1,7.5K,
+"U1, U2, U3",DIP-8_W7.62mm_Socket,3,OPA2134,
