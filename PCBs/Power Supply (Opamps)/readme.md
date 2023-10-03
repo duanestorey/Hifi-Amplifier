@@ -1,3 +1,5 @@
+<img src="screenshot.png" width="50%">
+
 ## Version History
 
 This is the main plus/minus voltages for the op amp filter circuits 
