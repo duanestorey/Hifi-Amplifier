@@ -12,7 +12,7 @@ set up as active filters, one for each channel.
 ## Speciality Components
 
 * OPA2134 Burr Brown operation op-amps or equivalents
-* 470pF and 47pF C0G 1206 capacitors
+* 300pF and 30pF C0G 1206 capacitors
 * 7.5K and 130K thin film 1206 capacitors
 
 ## Filter Design
