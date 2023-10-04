@@ -2,6 +2,8 @@
 
 # Phone Pre-amp
 
+This is a phone pre-amp with adjustable gain from about 40dB up to 60dB. It is based almost entirely on the ESP Project 6 Hifi Phono Pre-amp.  All resistors are thin-film 1206, and all capacitors are either Nichicon Muse ES bipolar electrolytics or C0G surface mount.
+
 ## Power Connections
 
 ### Input 
