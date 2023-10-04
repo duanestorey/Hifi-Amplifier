@@ -1,13 +1,56 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2709
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;\f2\froman\fcharset0 Times-Roman;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
 \paperw11900\paperh16840\margl1440\margr1440\vieww24000\viewh12260\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 * Main PSU\
+\f0\fs24 \cf0 * Generic\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 50V 0.1uF X7R 603 - ORDERING	\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 100V 0.1uF X7R 805
+\f1\b  - YES\
+
+\f0\b0 25V 10uF X7R 805 - ORDERING\
+50V 0.1uF X7R 1206 - ORDERING\
+50V 10uF X7R 1206
+\f1\b  - YES
+\f0\b0 \
+603 1K
+\f1\b  - YES
+\f0\b0 \
+\
+* Main PSU\
 1206 0.036R \
 612 0.050R\
+\
+* Channel Amp\
+1k resistor\
+1.2k resistor - ORDERED\
+38.6k resistor 
+\f1\b \
+
+\f0\b0 20k resistor  
+\f1\b - YES\
+
+\f0\b0 10U 1206\
+100N 805\
+1000U 12x5P 50V\
+47U 6.3x2.5 50V\
+4.7U X7R 50V\
+200N WIMA 18x7\
+680p silver mica\
+47p silver mica\
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 47uF 50V - Mute Red
+\f0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
 \
 
 \f1\b * Channel Selector
@@ -17,13 +60,33 @@
 
 \f1\b * DAC filter 
 \f0\b0 \
-7.5k 1206\
-130k 1206\
+7.5k 1206
+\f1\b  - YES
+\f0\b0 \
+130k 1206
+\f1\b  - YES
+\f0\b0 \
 470p 1206 C0G\
 47P 1206 C0G\
+300p 1206 C0G
+\f1\b  - YES
+\f0\b0 \
+30p 1206 C0G
+\f1\b  - YES\
+Future Multiple feedback - \
+3.6k 1206, - ordered \
+1.2pF 1206 C0G - ordered
+\f0\b0 \
+\
 \
 
-\f1\b * Dolby Decoder
+\f1\b * Dolby Decoder\
+75R 603 1 - YES\
+47R 603 6 - YES\
+4.7K 603 13\
+430R 603 1 - ORDERED\
+160R 603 2- ORDERED\
+330R 603 1 - - ORDERED
 \f0\b0 \
 47U/22U/10U 1206\
 0.1U 603\
@@ -31,12 +94,25 @@
 10U 1206\
 10N 603\
 100N 803\
-470P 805\
-5.6N 805\
-150P 805\
-4.7N 805\
-22R 805\
-47R 805\
+470P 805
+\f1\b  - YES
+\f0\b0 \
+5.6N 805
+\f1\b  - YES
+\f0\b0 \
+150P 805
+\f1\b  - YES
+\f0\b0 \
+4.7N 805
+\f1\b  - YES
+\f0\b0 \
+22R 805
+\f1\b  - - ORDERED
+\f0\b0 \
+47R 805
+\f1\b  - - ORDERED\
+27MHz -  - YES
+\f0\b0 \
 \
 \
 
@@ -45,16 +121,39 @@
 1uf bipolar 5x11\
 22uf bipolar 5x11\
 10uf bipolar 5x11\
-180k 805\
-4.7k 805\
-750R 805\
-100k 805\
-2.7K 805\
-2.2K 805\
-100K 805\
+180k 805
+\f1\b  - ORDERED
+\f0\b0 \
+4.7k 805
+\f1\b  - ORDERED
+\f0\b0 \
+750R 805
+\f1\b  - ORDERED
+\f0\b0 \
+100k 805
+\f1\b  - ORDERED
+\f0\b0 \
+2.7K 805
+\f1\b  - ORDERED
+\f0\b0 \
+2.2K 805
+\f1\b  - ORDERED
+\f0\b0 \
+100K 805
+\f1\b  - ORDERED
+\f0\b0 \
+47K 805 - 
+\f1\b  - ORDERED
+\f0\b0 \
+0.1uf 1206 C0G 
+\f1\b  - ORDERED\
+220U 16V - 6.3x2.5 - ORDERED, NOUSER
+\f0\b0 \
 \
 
 \f1\b Rectifier\
 
-\f0\b0 100nF Wima 13x6 220VAC\
+\f0\b0 100nF Wima 13x6 220VAC
+\f1\b  - YES
+\f0\b0 \
  }

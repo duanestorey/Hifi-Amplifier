@@ -19,8 +19,8 @@ set up as active filters, one for each channel.
 
 Texas Instruments recommends a simple first order active Sallen Key filter to reduce the level of post-DAC noise in the audio stream.
 
-I used an online filter designer, setting a 1dB drop at 24kHz, with a stopband of -18dB at 100kHz.  These were chosen iteratively to try and keep the passband
-relatively flat, and the gain as large as possible while still being a second order filter.  The final design has a 3dB corner frequency of 34.2kHz.
+I used an online filter designer, setting a 0.2dB drop at 24kHz, with a stopband of -11.5dB at 100kHz.  These were chosen iteratively to try and keep the passband
+relatively flat, and the gain as large as possible while still being a second order filter.  The final design has a 3dB corner frequency of 53.7kHz.
 
 <img src="filter1.png" width="50%">
 <img src="filter2.png" width="50%">
