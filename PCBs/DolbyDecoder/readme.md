@@ -20,6 +20,7 @@ This PCB decoders a SPDIF Dolby Digital 5.1 or PCM stream.  It is based on the S
 ### Output
 
 1. 2-pin GND, 5V digital
+2. 4-pin GND, 3V3, AGND, 5VA combined digital/analog
 
 ## Version History
 
