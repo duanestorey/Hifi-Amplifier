@@ -7,6 +7,9 @@ This PCB decoders a SPDIF Dolby Digital 5.1 or PCM stream.  It is based on the S
 ## Version History
 
 - 1.0: Initial Release
+- 1.1: 
+    * Routed I2S_D0 from Dolby Digital (which is two channel Dolby) to the DAC I2S_D4 pin
+    * Re-annotated geographically 
 
 ## Speciality Components
 

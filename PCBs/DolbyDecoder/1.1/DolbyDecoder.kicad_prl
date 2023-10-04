@@ -64,11 +64,11 @@
       35,
       36
     ],
-    "visible_layers": "ffcffff_ffffffff",
+    "visible_layers": "ffcfffc_ffffffff",
     "zone_display_mode": 0
   },
   "meta": {
-    "filename": "DAC Filter.kicad_prl",
+    "filename": "DolbyDecoder.kicad_prl",
     "version": 3
   },
   "project": {

@@ -1050,6 +1050,9 @@
     )
   )
 
+  (junction (at 116.84 114.173) (diameter 0) (color 0 0 0 0)
+    (uuid 00650801-8b3c-4506-b916-b6660c36623b)
+  )
   (junction (at 137.287 88.519) (diameter 0) (color 0 0 0 0)
     (uuid 0d32a0b5-ccbe-4313-acad-dd60cfa8c52d)
   )
@@ -1160,9 +1163,6 @@
   )
   (junction (at 203.835 69.977) (diameter 0) (color 0 0 0 0)
     (uuid da6fa1dc-bfd2-4e13-89ac-61b0f9fc676e)
-  )
-  (junction (at 117.856 114.173) (diameter 0) (color 0 0 0 0)
-    (uuid de5ce911-448f-44f7-9185-b118bb39dd91)
   )
   (junction (at 224.409 42.799) (diameter 0) (color 0 0 0 0)
     (uuid e54fc2b2-602a-4366-9c80-d054ce80703d)
@@ -1585,10 +1585,6 @@
     (stroke (width 0) (type default))
     (uuid 7827e667-3c58-47b8-aeeb-6f47c4ed6c7a)
   )
-  (wire (pts (xy 127.762 114.173) (xy 117.856 114.173))
-    (stroke (width 0) (type default))
-    (uuid 7883443f-8a95-41a0-b2d3-0d6f37c57465)
-  )
   (wire (pts (xy 125.095 88.519) (xy 128.397 88.519))
     (stroke (width 0) (type default))
     (uuid 7a331b75-9f1b-450e-b0be-82e2630b6ede)
@@ -1605,6 +1601,10 @@
     (stroke (width 0) (type default))
     (uuid 7c38b7cc-385e-4565-851b-260905451cd1)
   )
+  (wire (pts (xy 116.84 108.839) (xy 117.856 108.839))
+    (stroke (width 0) (type default))
+    (uuid 7c5e6bf0-a3c1-486b-98d4-a4be1386cf73)
+  )
   (wire (pts (xy 108.712 147.574) (xy 108.712 148.336))
     (stroke (width 0) (type default))
     (uuid 7c8ea4a2-44f8-4290-b8a8-fb1fadee9002)
@@ -1616,6 +1616,10 @@
   (wire (pts (xy 280.924 136.271) (xy 280.924 138.557))
     (stroke (width 0) (type default))
     (uuid 7e89eea4-c0e6-4e88-a8a3-a8d57e4ff7d4)
+  )
+  (wire (pts (xy 200.914 136.779) (xy 196.469 136.779))
+    (stroke (width 0) (type default))
+    (uuid 7f1d38c4-e9d1-4948-b9a8-c95109cd70d4)
   )
   (wire (pts (xy 127.762 111.379) (xy 127.762 114.173))
     (stroke (width 0) (type default))
@@ -1712,6 +1716,10 @@
   (wire (pts (xy 250.698 51.816) (xy 255.27 51.816))
     (stroke (width 0) (type default))
     (uuid 9d90e53d-2fcd-4e10-b7f9-4862beb0c0f6)
+  )
+  (wire (pts (xy 116.84 114.173) (xy 127.762 114.173))
+    (stroke (width 0) (type default))
+    (uuid 9ec376ca-59a7-4ea7-a10e-23a731d05add)
   )
   (wire (pts (xy 82.677 52.959) (xy 66.929 52.959))
     (stroke (width 0) (type default))
@@ -1841,10 +1849,6 @@
     (stroke (width 0) (type default))
     (uuid d0babb1f-9796-4b64-9a06-2ae286a6690b)
   )
-  (wire (pts (xy 117.856 114.173) (xy 113.03 114.173))
-    (stroke (width 0) (type default))
-    (uuid d19e8172-645c-43ed-84d7-8e17837ee6aa)
-  )
   (wire (pts (xy 259.08 70.866) (xy 264.922 70.866))
     (stroke (width 0) (type default))
     (uuid d270bb6b-c350-4b8d-ad43-74e641ae28d5)
@@ -1864,6 +1868,10 @@
   (wire (pts (xy 117.856 108.839) (xy 117.856 108.585))
     (stroke (width 0) (type default))
     (uuid daed54af-601b-4eb3-9735-8af2aae4919d)
+  )
+  (wire (pts (xy 116.84 114.173) (xy 113.03 114.173))
+    (stroke (width 0) (type default))
+    (uuid dbe35401-3ebd-4203-b52a-efdab28d0bea)
   )
   (wire (pts (xy 224.409 45.466) (xy 224.409 42.799))
     (stroke (width 0) (type default))
@@ -1909,7 +1917,7 @@
     (stroke (width 0) (type default))
     (uuid f038664e-f469-4186-b19b-8a3e4cb27cd6)
   )
-  (wire (pts (xy 117.856 113.919) (xy 117.856 114.173))
+  (wire (pts (xy 116.84 113.919) (xy 116.84 114.173))
     (stroke (width 0) (type default))
     (uuid f86fc0be-35cb-4e80-86f3-86597bd8b19d)
   )
@@ -2098,6 +2106,13 @@
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 1dff37f6-a324-44c3-a41a-8cf0bddecfd7)
     (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 209.7981 141.7796 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+  )
+  (global_label "I2S_D4" (shape input) (at 200.914 136.779 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid 1ec7954f-fa56-4b75-8fdb-e40732099756)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 210.3701 136.779 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -2717,13 +2732,6 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "GND" (shape input) (at 306.197 230.378 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid b0d7bb67-5f1b-4cde-9042-01c7972e6fdf)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 312.4806 230.2986 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
   (global_label "GND" (shape input) (at 169.799 154.559 270) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid b487e340-4da3-46ee-90f5-7444d2816c6a)
@@ -2876,6 +2884,13 @@
     (uuid d6a01cc3-dd9a-4fe3-b89e-373e7762643d)
     (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 250.9044 88.4526 90)
       (effects (font (size 1.27 1.27)) (justify right) hide)
+    )
+  )
+  (global_label "I2S_D4" (shape input) (at 306.197 230.378 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid d79183e8-f813-45c3-930e-1450b4f04da7)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 315.6531 230.378 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
   (global_label "PCMCLK" (shape input) (at 334.01 213.868 0) (fields_autoplaced)
@@ -3036,10 +3051,10 @@
   (symbol (lib_id "Device:C_Small") (at 133.477 45.212 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 03003044-f68a-48f2-929c-a2b654978614)
-    (property "Reference" "C7" (at 135.89 43.9482 0)
+    (property "Reference" "C22" (at 135.89 43.9482 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "47U" (at 135.89 46.4882 0)
+    (property "Value" "10U" (at 135.89 46.4882 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" (at 133.477 45.212 0)
@@ -3053,7 +3068,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C7") (unit 1)
+          (reference "C22") (unit 1)
         )
       )
     )
@@ -3062,7 +3077,7 @@
   (symbol (lib_id "Device:C_Small") (at 216.154 48.006 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 032786b0-55ba-4606-ab0d-90448f7c300a)
-    (property "Reference" "C15" (at 218.821 46.7422 0)
+    (property "Reference" "C10" (at 218.821 46.7422 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "0.1U" (at 218.821 49.2822 0)
@@ -3079,7 +3094,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C15") (unit 1)
+          (reference "C10") (unit 1)
         )
       )
     )
@@ -3088,7 +3103,7 @@
   (symbol (lib_id "Device:C_Small") (at 34.798 64.77 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 03a4cd3b-c4c4-47b8-9cea-4615e7f43847)
-    (property "Reference" "C18" (at 37.211 63.5062 0)
+    (property "Reference" "C30" (at 37.211 63.5062 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10U" (at 37.211 66.0462 0)
@@ -3105,7 +3120,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C18") (unit 1)
+          (reference "C30") (unit 1)
         )
       )
     )
@@ -3114,7 +3129,7 @@
   (symbol (lib_id "Connector:Conn_01x04_Male") (at 193.675 210.566 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 05476d2a-1af4-499f-beb9-edb178a338d8)
-    (property "Reference" "J10" (at 194.31 202.819 0)
+    (property "Reference" "J9" (at 194.31 202.819 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x04_Male" (at 194.31 205.359 0)
@@ -3133,7 +3148,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "J10") (unit 1)
+          (reference "J9") (unit 1)
         )
       )
     )
@@ -3142,7 +3157,7 @@
   (symbol (lib_id "Regulator_Linear:AMS1117-2.5") (at 117.856 40.64 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 062e5064-1410-46bf-a9a2-5cb364ac35ea)
-    (property "Reference" "U1" (at 117.856 33.909 0)
+    (property "Reference" "U2" (at 117.856 33.909 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "AMS1117-2.5" (at 117.856 36.449 0)
@@ -3160,7 +3175,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "U1") (unit 1)
+          (reference "U2") (unit 1)
         )
       )
     )
@@ -3169,10 +3184,10 @@
   (symbol (lib_id "Device:C_Small") (at 28.575 34.29 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 06fac646-668b-4243-ba6e-3b18b12fd3f5)
-    (property "Reference" "C1" (at 30.988 33.0262 0)
+    (property "Reference" "C18" (at 30.988 33.0262 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "47U" (at 30.988 35.5662 0)
+    (property "Value" "10U" (at 30.988 35.5662 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" (at 28.575 34.29 0)
@@ -3186,7 +3201,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C1") (unit 1)
+          (reference "C18") (unit 1)
         )
       )
     )
@@ -3221,7 +3236,7 @@
   (symbol (lib_id "Connector:Conn_01x02_Male") (at 130.81 177.546 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1110f21e-10ca-4e60-9b62-0140fc3318d7)
-    (property "Reference" "J6" (at 131.445 171.958 0)
+    (property "Reference" "J4" (at 131.445 171.958 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x02_Male" (at 131.445 174.498 0)
@@ -3238,7 +3253,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "J6") (unit 1)
+          (reference "J4") (unit 1)
         )
       )
     )
@@ -3247,7 +3262,7 @@
   (symbol (lib_id "Connector:Conn_01x02_Male") (at 129.413 192.024 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 11bf22f7-87de-46b8-bc3d-fed66da313a0)
-    (property "Reference" "J8" (at 130.048 186.817 0)
+    (property "Reference" "J2" (at 130.048 186.817 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x02_Male" (at 130.048 189.357 0)
@@ -3264,7 +3279,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "J8") (unit 1)
+          (reference "J2") (unit 1)
         )
       )
     )
@@ -3273,7 +3288,7 @@
   (symbol (lib_id "Device:R_Small") (at 195.834 141.859 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 12f9631a-756b-4918-8fdd-249d28a926ad)
-    (property "Reference" "R30" (at 195.834 135.89 90)
+    (property "Reference" "R17" (at 195.834 135.89 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "47R" (at 195.834 138.43 90)
@@ -3290,7 +3305,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R30") (unit 1)
+          (reference "R17") (unit 1)
         )
       )
     )
@@ -3299,7 +3314,7 @@
   (symbol (lib_id "Device:C_Small") (at 94.742 103.251 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1691aec7-d972-40f9-aef1-dfbdc630a60e)
-    (property "Reference" "C25" (at 97.409 101.9872 0)
+    (property "Reference" "C13" (at 97.409 101.9872 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "0.1U" (at 97.409 104.5272 0)
@@ -3316,7 +3331,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C25") (unit 1)
+          (reference "C13") (unit 1)
         )
       )
     )
@@ -3325,7 +3340,7 @@
   (symbol (lib_id "Device:R_Small") (at 67.183 134.493 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1b05ae7f-8e9e-4b11-a5f2-d0fc3c4d2ed3)
-    (property "Reference" "R27" (at 69.215 133.2229 0)
+    (property "Reference" "R34" (at 69.215 133.2229 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "160R" (at 69.215 135.7629 0)
@@ -3342,7 +3357,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R27") (unit 1)
+          (reference "R34") (unit 1)
         )
       )
     )
@@ -3351,7 +3366,7 @@
   (symbol (lib_id "Device:C_Small") (at 255.27 47.879 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1b9d4c69-eb6b-4863-8f80-7cdf8d057275)
-    (property "Reference" "C14" (at 257.937 46.6152 0)
+    (property "Reference" "C7" (at 257.937 46.6152 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "0.1U" (at 257.937 49.1552 0)
@@ -3368,7 +3383,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C14") (unit 1)
+          (reference "C7") (unit 1)
         )
       )
     )
@@ -3403,7 +3418,7 @@
   (symbol (lib_id "Connector_Generic:Conn_01x02") (at 278.765 111.76 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 206dbf96-0ebd-4418-a854-9d1099657657)
-    (property "Reference" "J3" (at 281.432 111.7599 0)
+    (property "Reference" "J10" (at 281.432 111.7599 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "Conn_01x02" (at 281.432 114.2999 0)
@@ -3420,7 +3435,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "J3") (unit 1)
+          (reference "J10") (unit 1)
         )
       )
     )
@@ -3429,7 +3444,7 @@
   (symbol (lib_id "Device:R_Small") (at 135.509 68.199 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 20b2507e-e84f-4f46-8249-69d7bf6217b5)
-    (property "Reference" "R5" (at 135.509 62.23 90)
+    (property "Reference" "R1" (at 135.509 62.23 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "4.7K" (at 135.509 64.77 90)
@@ -3446,7 +3461,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R5") (unit 1)
+          (reference "R1") (unit 1)
         )
       )
     )
@@ -3455,7 +3470,7 @@
   (symbol (lib_id "Device:R_Small") (at 267.716 104.267 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 21b86c78-22b7-44c4-84b8-41828f0959a7)
-    (property "Reference" "R16" (at 269.748 102.9969 0)
+    (property "Reference" "R25" (at 269.748 102.9969 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "4.7K" (at 269.748 105.5369 0)
@@ -3472,7 +3487,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R16") (unit 1)
+          (reference "R25") (unit 1)
         )
       )
     )
@@ -3481,7 +3496,7 @@
   (symbol (lib_id "Device:R_Small") (at 195.58 144.399 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 22d463c7-9910-4e16-b8bb-e5327470e062)
-    (property "Reference" "R31" (at 195.58 138.43 90)
+    (property "Reference" "R15" (at 195.58 138.43 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "47R" (at 195.58 140.97 90)
@@ -3498,7 +3513,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R31") (unit 1)
+          (reference "R15") (unit 1)
         )
       )
     )
@@ -3533,7 +3548,7 @@
   (symbol (lib_id "Device:C_Small") (at 270.51 75.819 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2b5eace4-9765-41bb-92d3-b0ff0655b137)
-    (property "Reference" "C19" (at 273.177 74.5552 0)
+    (property "Reference" "C23" (at 273.177 74.5552 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "0.1U" (at 273.177 77.0952 0)
@@ -3550,7 +3565,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C19") (unit 1)
+          (reference "C23") (unit 1)
         )
       )
     )
@@ -3559,7 +3574,7 @@
   (symbol (lib_id "Device:R_Small") (at 56.769 135.382 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2daaded4-ecb1-4e8f-bdd4-0ce650887bd1)
-    (property "Reference" "R28" (at 58.801 134.1119 0)
+    (property "Reference" "R29" (at 58.801 134.1119 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "160R" (at 58.801 136.6519 0)
@@ -3576,7 +3591,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R28") (unit 1)
+          (reference "R29") (unit 1)
         )
       )
     )
@@ -3585,7 +3600,7 @@
   (symbol (lib_id "Device:C_Small") (at 46.355 34.417 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2f93ac86-f25a-4fa0-8d35-7f6b29ec2992)
-    (property "Reference" "C3" (at 48.768 33.1532 0)
+    (property "Reference" "C32" (at 48.768 33.1532 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10U" (at 48.768 35.6932 0)
@@ -3602,7 +3617,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C3") (unit 1)
+          (reference "C32") (unit 1)
         )
       )
     )
@@ -3611,7 +3626,7 @@
   (symbol (lib_id "Device:LED") (at 44.069 180.594 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 3b6a0daf-d3b6-4c51-8370-c07afbd9d60d)
-    (property "Reference" "D4" (at 47.498 180.9114 90)
+    (property "Reference" "D3" (at 47.498 180.9114 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "YELLOW" (at 47.498 183.4514 90)
@@ -3628,7 +3643,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "D4") (unit 1)
+          (reference "D3") (unit 1)
         )
       )
     )
@@ -3637,7 +3652,7 @@
   (symbol (lib_id "Connector:Conn_01x03_Male") (at 100.711 89.281 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 41151793-b433-4abc-b090-1a1ccb15df09)
-    (property "Reference" "J2" (at 101.346 81.915 0)
+    (property "Reference" "J5" (at 101.346 81.915 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x03_Male" (at 101.346 84.455 0)
@@ -3655,7 +3670,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "J2") (unit 1)
+          (reference "J5") (unit 1)
         )
       )
     )
@@ -3664,7 +3679,7 @@
   (symbol (lib_id "Connector:Conn_01x04_Male") (at 301.117 225.298 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 425b4bfc-2195-480d-876d-eab8a2e1e7b0)
-    (property "Reference" "J13" (at 301.752 217.17 0)
+    (property "Reference" "J6" (at 301.752 217.17 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x04_Male" (at 301.752 219.71 0)
@@ -3683,7 +3698,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "J13") (unit 1)
+          (reference "J6") (unit 1)
         )
       )
     )
@@ -3692,7 +3707,7 @@
   (symbol (lib_id "Device:C_Small") (at 250.698 47.879 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 44614d67-b5cb-4bdd-a242-b4f9d40d05a3)
-    (property "Reference" "C13" (at 253.365 46.6152 0)
+    (property "Reference" "C24" (at 253.365 46.6152 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "0.1U" (at 253.365 49.1552 0)
@@ -3709,7 +3724,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C13") (unit 1)
+          (reference "C24") (unit 1)
         )
       )
     )
@@ -3718,7 +3733,7 @@
   (symbol (lib_id "Device:C_Small") (at 219.583 215.9 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 48bd04b9-aea9-4c08-924d-92f4936c91e8)
-    (property "Reference" "C34" (at 221.996 214.6362 0)
+    (property "Reference" "C35" (at 221.996 214.6362 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10U" (at 221.996 217.1762 0)
@@ -3735,7 +3750,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C34") (unit 1)
+          (reference "C35") (unit 1)
         )
       )
     )
@@ -3744,7 +3759,7 @@
   (symbol (lib_id "Device:C_Small") (at 240.665 47.752 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4d182653-692d-4cf1-8ba1-67c8b27ef0b3)
-    (property "Reference" "C9" (at 243.332 46.4882 0)
+    (property "Reference" "C5" (at 243.332 46.4882 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "0.1U" (at 243.332 49.0282 0)
@@ -3761,7 +3776,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C9") (unit 1)
+          (reference "C5") (unit 1)
         )
       )
     )
@@ -3796,7 +3811,7 @@
   (symbol (lib_id "Device:R_Small") (at 128.27 40.64 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 4f262328-6e2b-4747-856e-f2b7c79981a7)
-    (property "Reference" "R1" (at 128.27 34.671 90)
+    (property "Reference" "R27" (at 128.27 34.671 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "22R" (at 128.27 37.211 90)
@@ -3813,7 +3828,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R1") (unit 1)
+          (reference "R27") (unit 1)
         )
       )
     )
@@ -3822,7 +3837,7 @@
   (symbol (lib_id "Device:R_Small") (at 280.924 133.731 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 57650f4d-5a16-49db-bb5e-c9b1336ea3db)
-    (property "Reference" "R24" (at 283.083 132.4609 0)
+    (property "Reference" "R30" (at 283.083 132.4609 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "4.7K" (at 283.083 135.0009 0)
@@ -3839,7 +3854,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R24") (unit 1)
+          (reference "R30") (unit 1)
         )
       )
     )
@@ -3848,7 +3863,7 @@
   (symbol (lib_id "Device:C_Small") (at 54.61 82.423 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 583f3049-9a9e-47a8-85f0-456c82018851)
-    (property "Reference" "C23" (at 52.705 85.979 90)
+    (property "Reference" "C19" (at 52.705 85.979 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10N" (at 53.34 79.375 90)
@@ -3865,7 +3880,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C23") (unit 1)
+          (reference "C19") (unit 1)
         )
       )
     )
@@ -3874,7 +3889,7 @@
   (symbol (lib_id "Audio:SPA130") (at 167.259 153.289 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 5a77a750-0b3e-4eee-8f8b-ff050af3b087)
-    (property "Reference" "U3" (at 167.894 95.504 0)
+    (property "Reference" "U1" (at 167.894 95.504 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "SPA130" (at 167.894 98.044 0)
@@ -3969,7 +3984,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "U3") (unit 1)
+          (reference "U1") (unit 1)
         )
       )
     )
@@ -3978,7 +3993,7 @@
   (symbol (lib_id "Mechanical:MountingHole") (at 72.644 175.895 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6036df8b-b870-4378-b583-312e975e8478)
-    (property "Reference" "H2" (at 75.692 174.6249 0)
+    (property "Reference" "H4" (at 75.692 174.6249 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "MountingHole" (at 75.692 177.1649 0)
@@ -3993,7 +4008,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "H2") (unit 1)
+          (reference "H4") (unit 1)
         )
       )
     )
@@ -4002,7 +4017,7 @@
   (symbol (lib_id "Device:C_Small") (at 82.55 127 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 630bbd0e-51c7-4b91-877b-b90ae2870e0e)
-    (property "Reference" "C29" (at 84.963 125.7362 0)
+    (property "Reference" "C11" (at 84.963 125.7362 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "5.6N" (at 84.963 128.2762 0)
@@ -4019,7 +4034,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C29") (unit 1)
+          (reference "C11") (unit 1)
         )
       )
     )
@@ -4028,7 +4043,7 @@
   (symbol (lib_id "Device:R_Small") (at 201.168 134.239 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 647402ce-263c-41b2-a0ac-b65617f36524)
-    (property "Reference" "R26" (at 201.168 128.27 90)
+    (property "Reference" "R20" (at 201.168 128.27 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "47R" (at 201.168 130.81 90)
@@ -4045,7 +4060,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R26") (unit 1)
+          (reference "R20") (unit 1)
         )
       )
     )
@@ -4054,7 +4069,7 @@
   (symbol (lib_id "Device:C_Small") (at 95.25 127.127 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6602001d-3b59-406d-ba7e-4d19c09ac02f)
-    (property "Reference" "C30" (at 97.663 125.8632 0)
+    (property "Reference" "C16" (at 97.663 125.8632 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "470P" (at 97.663 128.4032 0)
@@ -4071,7 +4086,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C30") (unit 1)
+          (reference "C16") (unit 1)
         )
       )
     )
@@ -4103,10 +4118,36 @@
     )
   )
 
+  (symbol (lib_id "Device:R_Small") (at 193.929 136.779 90) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 74b25b22-e0f2-47a4-a4f9-8bb4ad5aeb18)
+    (property "Reference" "R26" (at 193.929 130.81 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "47R" (at 193.929 133.35 90)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (at 193.929 136.779 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 193.929 136.779 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 2176ea93-52b6-4ba8-a208-9da602ffcb3f))
+    (pin "2" (uuid 64c3c63c-ab72-4600-b713-b221c1d31eda))
+    (instances
+      (project "DolbyDecoder"
+        (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
+          (reference "R26") (unit 1)
+        )
+      )
+    )
+  )
+
   (symbol (lib_id "Device:C_Small") (at 245.999 47.752 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 76123af7-d0b0-48ad-9f46-ea62d898638c)
-    (property "Reference" "C10" (at 248.666 46.4882 0)
+    (property "Reference" "C25" (at 248.666 46.4882 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "0.1U" (at 248.666 49.0282 0)
@@ -4123,7 +4164,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C10") (unit 1)
+          (reference "C25") (unit 1)
         )
       )
     )
@@ -4132,7 +4173,7 @@
   (symbol (lib_id "Device:R_Small") (at 77.724 43.688 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 775108f9-b035-474f-8918-a0b1f86aaefb)
-    (property "Reference" "R2" (at 77.724 37.719 90)
+    (property "Reference" "R32" (at 77.724 37.719 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "22R" (at 77.724 40.259 90)
@@ -4149,7 +4190,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R2") (unit 1)
+          (reference "R32") (unit 1)
         )
       )
     )
@@ -4186,7 +4227,7 @@
   (symbol (lib_id "Device:C_Small") (at 75.438 126.873 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7b3619a5-6d2a-4360-8f52-f44ee3c70b40)
-    (property "Reference" "C28" (at 77.851 125.6092 0)
+    (property "Reference" "C12" (at 77.851 125.6092 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "470P" (at 77.851 128.1492 0)
@@ -4203,7 +4244,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C28") (unit 1)
+          (reference "C12") (unit 1)
         )
       )
     )
@@ -4212,7 +4253,7 @@
   (symbol (lib_id "Connector:Conn_01x03_Male") (at 99.568 76.073 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7d93dc7b-9fd8-4f57-81ac-3706c09946cd)
-    (property "Reference" "J1" (at 100.203 68.707 0)
+    (property "Reference" "J7" (at 100.203 68.707 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x03_Male" (at 100.203 71.247 0)
@@ -4230,7 +4271,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "J1") (unit 1)
+          (reference "J7") (unit 1)
         )
       )
     )
@@ -4239,10 +4280,10 @@
   (symbol (lib_id "Device:C_Small") (at 20.193 34.544 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7ec9039b-033d-4d56-9d79-b85d705d5bf5)
-    (property "Reference" "C4" (at 22.606 33.2802 0)
+    (property "Reference" "C17" (at 22.606 33.2802 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "47U" (at 22.606 35.8202 0)
+    (property "Value" "10U" (at 22.606 35.8202 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" (at 20.193 34.544 0)
@@ -4256,7 +4297,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C4") (unit 1)
+          (reference "C17") (unit 1)
         )
       )
     )
@@ -4265,7 +4306,7 @@
   (symbol (lib_id "Device:C_Small") (at 120.396 108.839 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7f67a6ca-7930-4a0b-808e-d38979880c94)
-    (property "Reference" "C26" (at 120.4023 101.727 90)
+    (property "Reference" "C3" (at 120.4023 101.727 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "100N" (at 120.4023 104.267 90)
@@ -4282,7 +4323,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C26") (unit 1)
+          (reference "C3") (unit 1)
         )
       )
     )
@@ -4291,7 +4332,7 @@
   (symbol (lib_id "Device:C_Small") (at 250.825 76.073 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 808abfb9-b457-4339-8574-9f6c2da3f229)
-    (property "Reference" "C21" (at 253.492 74.8092 0)
+    (property "Reference" "C6" (at 253.492 74.8092 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "0.1U" (at 253.492 77.3492 0)
@@ -4308,7 +4349,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C21") (unit 1)
+          (reference "C6") (unit 1)
         )
       )
     )
@@ -4317,7 +4358,7 @@
   (symbol (lib_id "Device:C_Small") (at 133.604 111.379 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 83f6c2b5-ba4b-48dc-b594-c66465e76a81)
-    (property "Reference" "C27" (at 133.6103 104.267 90)
+    (property "Reference" "C4" (at 133.6103 104.267 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "100N" (at 133.6103 106.807 90)
@@ -4334,7 +4375,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C27") (unit 1)
+          (reference "C4") (unit 1)
         )
       )
     )
@@ -4343,7 +4384,7 @@
   (symbol (lib_id "Connector:Conn_01x02_Male") (at 267.716 161.036 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 862ff063-79cc-40b9-b8a6-87ae45033acd)
-    (property "Reference" "J5" (at 269.494 158.4959 0)
+    (property "Reference" "J13" (at 269.494 158.4959 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "Conn_01x02_Male" (at 269.494 161.0359 0)
@@ -4360,7 +4401,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "J5") (unit 1)
+          (reference "J13") (unit 1)
         )
       )
     )
@@ -4369,7 +4410,7 @@
   (symbol (lib_id "Device:R_Small") (at 135.509 78.359 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 87444969-d6aa-42f4-8668-156201654072)
-    (property "Reference" "R10" (at 135.509 72.39 90)
+    (property "Reference" "R9" (at 135.509 72.39 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "4.7K" (at 135.509 74.93 90)
@@ -4386,7 +4427,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R10") (unit 1)
+          (reference "R9") (unit 1)
         )
       )
     )
@@ -4395,7 +4436,7 @@
   (symbol (lib_id "Device:R_Small") (at 135.509 65.659 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8a99be47-12be-4dd1-b08d-10965b804c9b)
-    (property "Reference" "R4" (at 135.509 59.69 90)
+    (property "Reference" "R2" (at 135.509 59.69 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "4.7K" (at 135.509 62.23 90)
@@ -4412,7 +4453,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R4") (unit 1)
+          (reference "R2") (unit 1)
         )
       )
     )
@@ -4421,7 +4462,7 @@
   (symbol (lib_id "Connector:Conn_01x06_Male") (at 328.93 218.948 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 8f8ff043-c0be-40e1-a206-df8faad1bddf)
-    (property "Reference" "J12" (at 329.565 208.28 0)
+    (property "Reference" "J3" (at 329.565 208.28 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x06_Male" (at 329.565 210.82 0)
@@ -4442,7 +4483,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "J12") (unit 1)
+          (reference "J3") (unit 1)
         )
       )
     )
@@ -4499,7 +4540,7 @@
   (symbol (lib_id "Device:C_Small") (at 195.58 44.958 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 96677e67-d86e-44d3-aec6-9114763375ea)
-    (property "Reference" "C6" (at 197.993 43.6942 0)
+    (property "Reference" "C2" (at 197.993 43.6942 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10U" (at 197.993 46.2342 0)
@@ -4516,7 +4557,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C6") (unit 1)
+          (reference "C2") (unit 1)
         )
       )
     )
@@ -4525,7 +4566,7 @@
   (symbol (lib_id "Device:C_Small") (at 86.106 103.251 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 98e493f9-0e12-43e4-afc3-00bb714476db)
-    (property "Reference" "C24" (at 88.519 101.9872 0)
+    (property "Reference" "C14" (at 88.519 101.9872 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10U" (at 88.519 104.5272 0)
@@ -4542,7 +4583,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C24") (unit 1)
+          (reference "C14") (unit 1)
         )
       )
     )
@@ -4551,7 +4592,7 @@
   (symbol (lib_id "Device:R_Small") (at 82.55 132.08 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 99d844fb-5a65-4823-8a35-2ff609449aa2)
-    (property "Reference" "R22" (at 84.582 130.8099 0)
+    (property "Reference" "R14" (at 84.582 130.8099 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1K" (at 84.582 133.3499 0)
@@ -4568,7 +4609,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R22") (unit 1)
+          (reference "R14") (unit 1)
         )
       )
     )
@@ -4577,7 +4618,7 @@
   (symbol (lib_id "Device:C_Small") (at 235.839 47.752 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9a2446be-7513-4140-985f-53257afba563)
-    (property "Reference" "C8" (at 238.506 46.4882 0)
+    (property "Reference" "C28" (at 238.506 46.4882 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "0.1U" (at 238.506 49.0282 0)
@@ -4594,7 +4635,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C8") (unit 1)
+          (reference "C28") (unit 1)
         )
       )
     )
@@ -4603,7 +4644,7 @@
   (symbol (lib_id "Device:C_Small") (at 224.409 48.006 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9c0f4469-5d6b-4421-9876-0e8bfb05886d)
-    (property "Reference" "C16" (at 227.076 46.7422 0)
+    (property "Reference" "C27" (at 227.076 46.7422 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "0.1U" (at 227.076 49.2822 0)
@@ -4620,7 +4661,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C16") (unit 1)
+          (reference "C27") (unit 1)
         )
       )
     )
@@ -4629,7 +4670,7 @@
   (symbol (lib_id "Device:R_Small") (at 246.888 131.064 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 9ccd7907-3fb4-4ab8-a8dd-7084d664d074)
-    (property "Reference" "R20" (at 248.92 129.7939 0)
+    (property "Reference" "R31" (at 248.92 129.7939 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "4.7K" (at 248.92 132.3339 0)
@@ -4646,7 +4687,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R20") (unit 1)
+          (reference "R31") (unit 1)
         )
       )
     )
@@ -4655,7 +4696,7 @@
   (symbol (lib_id "Connector:Conn_01x02_Male") (at 112.776 202.819 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ad41ede9-0f61-47a6-b0dc-29cc37986a74)
-    (property "Reference" "J9" (at 113.411 197.612 0)
+    (property "Reference" "J1" (at 113.411 197.612 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x02_Male" (at 113.411 200.152 0)
@@ -4672,7 +4713,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "J9") (unit 1)
+          (reference "J1") (unit 1)
         )
       )
     )
@@ -4681,7 +4722,7 @@
   (symbol (lib_id "Device:R_Small") (at 130.937 88.519 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid af9fac5e-0411-4909-a595-b5143becfb92)
-    (property "Reference" "R14" (at 131.064 90.805 90)
+    (property "Reference" "R5" (at 131.064 90.805 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "4.7K" (at 130.937 85.09 90)
@@ -4698,7 +4739,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R14") (unit 1)
+          (reference "R5") (unit 1)
         )
       )
     )
@@ -4707,7 +4748,7 @@
   (symbol (lib_id "Device:R_Small") (at 206.375 80.137 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b0d7090c-829a-400f-8359-c78fd919896c)
-    (property "Reference" "R11" (at 206.375 74.168 90)
+    (property "Reference" "R6" (at 206.375 74.168 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10K" (at 206.375 76.708 90)
@@ -4724,7 +4765,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R11") (unit 1)
+          (reference "R6") (unit 1)
         )
       )
     )
@@ -4733,7 +4774,7 @@
   (symbol (lib_id "Mechanical:MountingHole") (at 76.5654 191.5453 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b1179ccc-1ce8-46dd-a6f0-cb7e35cd68e0)
-    (property "Reference" "H4" (at 79.6134 190.2752 0)
+    (property "Reference" "H2" (at 79.6134 190.2752 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "MountingHole" (at 79.6134 192.8152 0)
@@ -4748,7 +4789,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "H4") (unit 1)
+          (reference "H2") (unit 1)
         )
       )
     )
@@ -4757,7 +4798,7 @@
   (symbol (lib_id "Connector:Conn_01x04_Male") (at 270.002 141.097 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b280d67e-9e3c-4765-aed5-e5680cd0d4ec)
-    (property "Reference" "J4" (at 270.637 132.842 0)
+    (property "Reference" "J11" (at 270.637 132.842 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x04_Male" (at 270.637 135.382 0)
@@ -4776,7 +4817,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "J4") (unit 1)
+          (reference "J11") (unit 1)
         )
       )
     )
@@ -4785,7 +4826,7 @@
   (symbol (lib_id "Connector:Conn_01x03_Male") (at 301.117 215.011 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b36131c0-db79-4a85-a6b1-0b9324c3dfea)
-    (property "Reference" "J11" (at 301.752 207.645 0)
+    (property "Reference" "J8" (at 301.752 207.645 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "Conn_01x03_Male" (at 301.752 210.185 0)
@@ -4803,7 +4844,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "J11") (unit 1)
+          (reference "J8") (unit 1)
         )
       )
     )
@@ -4812,7 +4853,7 @@
   (symbol (lib_id "Device:R_Small") (at 102.362 132.334 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b4ad9fae-5f8f-42b9-ae36-e9035c8b793c)
-    (property "Reference" "R23" (at 104.394 131.0639 0)
+    (property "Reference" "R16" (at 104.394 131.0639 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1K" (at 104.394 133.6039 0)
@@ -4829,7 +4870,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R23") (unit 1)
+          (reference "R16") (unit 1)
         )
       )
     )
@@ -4838,7 +4879,7 @@
   (symbol (lib_id "Device:C_Small") (at 102.362 127.254 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b7cd1b97-665a-4433-9ecf-d306ebe83637)
-    (property "Reference" "C31" (at 104.775 125.9902 0)
+    (property "Reference" "C15" (at 104.775 125.9902 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "5.6N" (at 104.775 128.5302 0)
@@ -4855,25 +4896,25 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C31") (unit 1)
+          (reference "C15") (unit 1)
         )
       )
     )
   )
 
-  (symbol (lib_id "Device:R_Small") (at 117.856 111.379 0) (unit 1)
+  (symbol (lib_id "Device:R_Small") (at 116.84 111.379 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid b9592d42-1e35-4cd7-894d-7bdd4a68a7ed)
-    (property "Reference" "R18" (at 119.888 110.1089 0)
+    (property "Reference" "R4" (at 118.872 110.1089 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "75R" (at 119.888 112.6489 0)
+    (property "Value" "75R" (at 118.872 112.6489 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 117.856 111.379 0)
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (at 116.84 111.379 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 117.856 111.379 0)
+    (property "Datasheet" "~" (at 116.84 111.379 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 9d31eef0-bba1-4446-a2a0-a8aa0addd5bb))
@@ -4881,7 +4922,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R18") (unit 1)
+          (reference "R4") (unit 1)
         )
       )
     )
@@ -4890,7 +4931,7 @@
   (symbol (lib_id "Device:C_Small") (at 227.711 216.027 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ba6ae2b8-5845-4215-9a2f-2dbd802a567a)
-    (property "Reference" "C35" (at 230.124 214.7632 0)
+    (property "Reference" "C34" (at 230.124 214.7632 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10U" (at 230.124 217.3032 0)
@@ -4907,7 +4948,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C35") (unit 1)
+          (reference "C34") (unit 1)
         )
       )
     )
@@ -4916,7 +4957,7 @@
   (symbol (lib_id "Regulator_Linear:AMS1117-2.5") (at 66.929 43.688 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid ba78f78c-ae19-411f-84fe-3ae36c89db70)
-    (property "Reference" "U2" (at 66.929 36.957 0)
+    (property "Reference" "U3" (at 66.929 36.957 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "AMS1117-2.5" (at 66.929 39.497 0)
@@ -4934,7 +4975,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "U2") (unit 1)
+          (reference "U3") (unit 1)
         )
       )
     )
@@ -4943,7 +4984,7 @@
   (symbol (lib_id "Device:R_Small") (at 135.509 80.899 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid bef29353-4a68-4d04-b03c-909fab1f8dd3)
-    (property "Reference" "R12" (at 135.509 74.93 90)
+    (property "Reference" "R8" (at 135.509 74.93 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "4.7K" (at 135.509 77.47 90)
@@ -4960,7 +5001,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R12") (unit 1)
+          (reference "R8") (unit 1)
         )
       )
     )
@@ -4969,7 +5010,7 @@
   (symbol (lib_id "Device:LED") (at 67.183 140.843 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid bfb81686-fd05-4c32-b1f1-ae63f7c2633f)
-    (property "Reference" "D2" (at 70.612 141.1604 90)
+    (property "Reference" "D4" (at 70.612 141.1604 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "YELLOW" (at 70.612 143.7004 90)
@@ -4986,7 +5027,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "D2") (unit 1)
+          (reference "D4") (unit 1)
         )
       )
     )
@@ -4995,7 +5036,7 @@
   (symbol (lib_id "Device:R_Small") (at 252.73 104.521 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c342a7aa-4c9a-488b-a319-37651dffcf5b)
-    (property "Reference" "R17" (at 254.762 103.2509 0)
+    (property "Reference" "R24" (at 254.762 103.2509 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "4.7K" (at 254.762 105.7909 0)
@@ -5012,7 +5053,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R17") (unit 1)
+          (reference "R24") (unit 1)
         )
       )
     )
@@ -5021,7 +5062,7 @@
   (symbol (lib_id "Device:R_Small") (at 135.509 75.819 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c670384e-f163-40e7-9f41-70030caca0c9)
-    (property "Reference" "R9" (at 135.509 69.85 90)
+    (property "Reference" "R10" (at 135.509 69.85 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "4.7K" (at 135.509 72.39 90)
@@ -5038,7 +5079,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R9") (unit 1)
+          (reference "R10") (unit 1)
         )
       )
     )
@@ -5047,7 +5088,7 @@
   (symbol (lib_id "Device:R_Small") (at 289.052 88.646 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid cf614f50-4482-4277-b78e-1994125c8475)
-    (property "Reference" "R15" (at 291.084 87.3759 0)
+    (property "Reference" "R22" (at 291.084 87.3759 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10K" (at 291.084 89.9159 0)
@@ -5064,7 +5105,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R15") (unit 1)
+          (reference "R22") (unit 1)
         )
       )
     )
@@ -5073,7 +5114,7 @@
   (symbol (lib_id "Device:R_Small") (at 206.375 69.977 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid cf6b47cd-42e5-4a74-aca4-1f0b8dff49c8)
-    (property "Reference" "R6" (at 206.375 64.008 90)
+    (property "Reference" "R7" (at 206.375 64.008 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "10K" (at 206.375 66.548 90)
@@ -5090,7 +5131,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R6") (unit 1)
+          (reference "R7") (unit 1)
         )
       )
     )
@@ -5099,7 +5140,7 @@
   (symbol (lib_id "Connector:Conn_01x02_Male") (at 264.668 177.8 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d4d5caee-aad2-462e-918c-476184ae06db)
-    (property "Reference" "J7" (at 266.446 175.2599 0)
+    (property "Reference" "J12" (at 266.446 175.2599 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "Conn_01x02_Male" (at 266.446 177.7999 0)
@@ -5116,7 +5157,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "J7") (unit 1)
+          (reference "J12") (unit 1)
         )
       )
     )
@@ -5125,7 +5166,7 @@
   (symbol (lib_id "Device:C_Small") (at 53.848 47.879 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid d9f39c95-6e50-48b4-8ae1-24b1e6b7211d)
-    (property "Reference" "C11" (at 56.261 46.6152 0)
+    (property "Reference" "C31" (at 56.261 46.6152 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10U" (at 56.261 49.1552 0)
@@ -5142,7 +5183,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C11") (unit 1)
+          (reference "C31") (unit 1)
         )
       )
     )
@@ -5151,7 +5192,7 @@
   (symbol (lib_id "Device:C_Small") (at 108.712 151.638 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid db354e6d-61c4-407d-8f90-f3309f1018d3)
-    (property "Reference" "C32" (at 111.125 150.3742 0)
+    (property "Reference" "C9" (at 111.125 150.3742 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "150P" (at 111.125 152.9142 0)
@@ -5168,7 +5209,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C32") (unit 1)
+          (reference "C9") (unit 1)
         )
       )
     )
@@ -5177,7 +5218,7 @@
   (symbol (lib_id "Device:R_Small") (at 135.509 70.739 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid def1e875-ed1c-46c0-b3e9-7e3c68852b42)
-    (property "Reference" "R7" (at 135.509 64.77 90)
+    (property "Reference" "R12" (at 135.509 64.77 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "4.7K" (at 135.509 67.31 90)
@@ -5194,7 +5235,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R7") (unit 1)
+          (reference "R12") (unit 1)
         )
       )
     )
@@ -5229,7 +5270,7 @@
   (symbol (lib_id "Device:R_Small") (at 298.069 88.392 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e273f64a-4dca-4864-a672-0dbc5cf3fc30)
-    (property "Reference" "R13" (at 300.101 87.1219 0)
+    (property "Reference" "R23" (at 300.101 87.1219 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10K" (at 300.101 89.6619 0)
@@ -5246,7 +5287,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R13") (unit 1)
+          (reference "R23") (unit 1)
         )
       )
     )
@@ -5255,7 +5296,7 @@
   (symbol (lib_id "Device:C_Small") (at 38.227 34.29 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e64d30ce-b159-4267-8b54-ab07e7d462cb)
-    (property "Reference" "C2" (at 40.64 33.0262 0)
+    (property "Reference" "C1" (at 40.64 33.0262 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10U" (at 40.64 35.5662 0)
@@ -5272,7 +5313,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C2") (unit 1)
+          (reference "C1") (unit 1)
         )
       )
     )
@@ -5281,7 +5322,7 @@
   (symbol (lib_id "Device:LED") (at 56.769 141.732 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e69c7aea-1242-4519-b768-a708f3bf6b72)
-    (property "Reference" "D3" (at 60.198 142.0494 90)
+    (property "Reference" "D2" (at 60.198 142.0494 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "ORANGE" (at 60.198 144.5894 90)
@@ -5298,7 +5339,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "D3") (unit 1)
+          (reference "D2") (unit 1)
         )
       )
     )
@@ -5307,7 +5348,7 @@
   (symbol (lib_id "Device:R_Small") (at 135.509 73.279 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e7a63610-c9dc-4d1a-b974-8b9f1287dff5)
-    (property "Reference" "R8" (at 135.509 67.31 90)
+    (property "Reference" "R11" (at 135.509 67.31 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "4.7K" (at 135.509 69.85 90)
@@ -5324,7 +5365,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R8") (unit 1)
+          (reference "R11") (unit 1)
         )
       )
     )
@@ -5333,7 +5374,7 @@
   (symbol (lib_id "Device:C_Small") (at 230.251 47.879 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid eb58114d-09f3-4783-9fff-d6405d588812)
-    (property "Reference" "C12" (at 232.918 46.6152 0)
+    (property "Reference" "C29" (at 232.918 46.6152 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "0.1U" (at 232.918 49.1552 0)
@@ -5350,7 +5391,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C12") (unit 1)
+          (reference "C29") (unit 1)
         )
       )
     )
@@ -5359,7 +5400,7 @@
   (symbol (lib_id "Device:C_Small") (at 259.08 76.073 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f2d099ae-b5b0-4898-a9f0-09b94464cc50)
-    (property "Reference" "C22" (at 261.747 74.8092 0)
+    (property "Reference" "C26" (at 261.747 74.8092 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "0.1U" (at 261.747 77.3492 0)
@@ -5376,7 +5417,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C22") (unit 1)
+          (reference "C26") (unit 1)
         )
       )
     )
@@ -5385,7 +5426,7 @@
   (symbol (lib_id "Device:R_Small") (at 115.824 151.892 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f4e58712-c113-42af-bf28-0950e682921d)
-    (property "Reference" "R32" (at 117.856 150.6219 0)
+    (property "Reference" "R13" (at 117.856 150.6219 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "330R" (at 117.856 153.1619 0)
@@ -5402,7 +5443,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R32") (unit 1)
+          (reference "R13") (unit 1)
         )
       )
     )
@@ -5411,7 +5452,7 @@
   (symbol (lib_id "Device:C_Small") (at 115.824 157.099 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid f9f6818f-05d4-4955-a3ce-d5ad4da9ea7c)
-    (property "Reference" "C33" (at 118.237 155.8352 0)
+    (property "Reference" "C8" (at 118.237 155.8352 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "4.7N" (at 118.237 158.3752 0)
@@ -5428,7 +5469,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C33") (unit 1)
+          (reference "C8") (unit 1)
         )
       )
     )
@@ -5437,10 +5478,10 @@
   (symbol (lib_id "Device:C_Small") (at 82.677 48.26 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid fa6900bc-9846-458e-ad7d-f69afb065fe2)
-    (property "Reference" "C17" (at 85.09 46.9962 0)
+    (property "Reference" "C33" (at 85.09 46.9962 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "47U" (at 85.09 49.5362 0)
+    (property "Value" "10U" (at 85.09 49.5362 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" (at 82.677 48.26 0)
@@ -5454,7 +5495,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C17") (unit 1)
+          (reference "C33") (unit 1)
         )
       )
     )
@@ -5463,7 +5504,7 @@
   (symbol (lib_id "Device:C_Small") (at 104.775 44.831 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid fb19a610-f705-4b53-b268-254e2099ce39)
-    (property "Reference" "C5" (at 107.188 43.5672 0)
+    (property "Reference" "C21" (at 107.188 43.5672 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "10U" (at 107.188 46.1072 0)
@@ -5480,7 +5521,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "C5") (unit 1)
+          (reference "C21") (unit 1)
         )
       )
     )
@@ -5489,7 +5530,7 @@
   (symbol (lib_id "Device:R_Small") (at 46.355 134.112 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid fbc46159-06eb-449a-972a-158463213e6e)
-    (property "Reference" "R25" (at 48.387 132.8419 0)
+    (property "Reference" "R28" (at 48.387 132.8419 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "430R" (at 48.387 135.3819 0)
@@ -5506,7 +5547,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R25") (unit 1)
+          (reference "R28") (unit 1)
         )
       )
     )
@@ -5515,7 +5556,7 @@
   (symbol (lib_id "Device:R_Small") (at 195.453 139.319 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid fe378873-1686-4f76-b3b2-a2a6b57a8f67)
-    (property "Reference" "R29" (at 195.453 133.35 90)
+    (property "Reference" "R18" (at 195.453 133.35 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Value" "47R" (at 195.453 135.89 90)
@@ -5532,7 +5573,7 @@
     (instances
       (project "DolbyDecoder"
         (path "/17b7dae5-7011-481c-8808-ba65f9ce03ce"
-          (reference "R29") (unit 1)
+          (reference "R18") (unit 1)
         )
       )
     )
