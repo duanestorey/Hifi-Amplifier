@@ -2,7 +2,7 @@
 
 # Dolby Digital Decoder
 
-This PCB decoders a SPDIF Dolby Digital 5.1 or PCM stream.  It is based on the STA310 set-top box Dolby Digital Decoding IC.
+This PCB decodes a SPDIF Dolby Digital 5.1 or PCM stream.  It is based on the STA310 set-top box Dolby Digital Decoding IC.
 
 ## Speciality Components
 
