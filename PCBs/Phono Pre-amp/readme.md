@@ -2,6 +2,12 @@
 
 # Phone Pre-amp
 
+## Power Connections
+
+### Input 
+
+1. 3-pin V-, AGND, V+
+
 ## Version History
 
 - 1.0: Initial Release
