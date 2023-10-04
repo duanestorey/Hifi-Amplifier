@@ -304,7 +304,7 @@ Amplifier::setupWifi() {
     memset( &wifi_config, 0, sizeof( wifi_config ) );
 
     strcpy( (char*)wifi_config.sta.ssid, (char*)"The Grey Havens" );
-    strcpy( (char*)wifi_config.sta.password, (char*)"brazil1234!" );
+    strcpy( (char*)wifi_config.sta.password, (char*)"password" );
 
     esp_wifi_set_mode(WIFI_MODE_STA);
     esp_wifi_set_config( WIFI_IF_STA, &wifi_config );
