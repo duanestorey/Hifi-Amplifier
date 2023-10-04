@@ -2,7 +2,7 @@
 
 # Analog Power Supply for Operation Amplifier
 
-This board produces a +/- 6V supply to be used with the DAC filter and the phono RIAA/pre-amplifier PCBs
+This board produces a +/- 6.5V supply to be used with the DAC filter and the phono RIAA/pre-amplifier PCBs
 
 ## Version History
 
