@@ -4,6 +4,24 @@
 
 This PCB decoders a SPDIF Dolby Digital 5.1 or PCM stream.  It is based on the STA310 set-top box Dolby Digital Decoding IC.
 
+## Speciality Components
+
+* STA310 Dolby Digital Decoding IC
+* 27 MHz Clock
+* 2.5V 3-pin regulators
+
+## Power Connections
+
+### Input 
+
+1. 3-pin GND, 3V3, 5V digital
+2. 3-pin AGND, 3V3A, 5VA analog
+
+### Output
+
+1. 2-pin GND, 5V digital
+2. 4-pin GND, 3V3, AGND, 5VA combined digital/analog
+
 ## Version History
 
 - 1.0: 
@@ -12,9 +30,4 @@ This PCB decoders a SPDIF Dolby Digital 5.1 or PCM stream.  It is based on the S
     * Routed I2S_D0 from Dolby Digital (which is two channel Dolby) to the DAC I2S_D4 pin
     * Re-annotated geographically 
 
-## Speciality Components
-
-* STA310 Dolby Digital Decoding IC
-* 27 MHz Clock
-* 2.5V 3-pin regulators
 

@@ -5,6 +5,12 @@
 The output from the DAC board contains some residual noise that needs to be filtered out, which is the purpose of this board.  It utilizes three dual op-amps 
 set up as active filters, one for each channel. 
 
+## Power Connections
+
+### Input 
+
+1. 3-pin V-, AGND, V+
+
 ## Version History
 
 - 1.0: Initial Release
