@@ -11,4 +11,4 @@ This board produces a +/- 6.5V supply to be used with the DAC filter and the pho
 ## Speciality Components
 
 * LM317 & LM337 variable voltage regulators
-* Myrra 44091 1.5VA +/- 6V transformer
+* Myrra 44091 1.5VA with dual 6V secondaries
