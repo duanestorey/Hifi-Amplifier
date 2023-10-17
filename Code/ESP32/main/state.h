@@ -7,7 +7,7 @@
 
 class AmplifierState {
 public:
-    AmplifierState() :mAudioType( AUDIO_DOLBY ), mState( STATE_INIT ), mInput( INPUT_UNDEFINED ), mCurrentVolume( 20 ), mSamplingRate( 48000 ), mConnected( false ) {}
+    AmplifierState() : mAudioType( AUDIO_DOLBY ), mState( STATE_INIT ), mInput( INPUT_6CH ), mCurrentVolume( 20 ), mSamplingRate( 48000 ), mConnected( false ) {}
 
     enum {
         INPUT_UNDEFINED = 0,
@@ -33,9 +33,10 @@ public:
         STATE_UPDATING,
         STATE_ERROR_MINOR,
         STATE_ERROR_MAJOR
-    } mState;
+    } ;
 
     // Volume goes from 0-79
+    uint8_t mState;
     uint8_t mInput;
     uint8_t mCurrentVolume;
     uint32_t mSamplingRate;

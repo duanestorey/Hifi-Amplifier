@@ -3,4 +3,4 @@ source "/Users/duane/Code/Github/esp-idf/components/esp_app_format/Kconfig.projb
 source "/Users/duane/Code/Github/esp-idf/components/esp_rom/Kconfig.projbuild"
 source "/Users/duane/Code/Github/esp-idf/components/esptool_py/Kconfig.projbuild"
 source "/Users/duane/Code/Github/esp-idf/components/partition_table/Kconfig.projbuild"
-source "/Users/duane/Code/Github/ESP32-Hifi-Amplifier/main/Kconfig.projbuild"
+source "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/Kconfig.projbuild"

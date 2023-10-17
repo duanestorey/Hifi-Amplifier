@@ -1,4 +1,4 @@
-# Install script for directory: /Users/duane/Code/Github/ESP32-Hifi-Amplifier/main
+# Install script for directory: /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -3866,7 +3866,7 @@
     (property "Reference" "C19" (at 52.705 85.979 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "10N" (at 53.34 79.375 90)
+    (property "Value" "100N" (at 53.34 79.375 90)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (at 54.61 82.423 0)

@@ -1,0 +1,440 @@
+[1/9] Performing build step for 'bootloader'
+[1/1] cd /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader/esp-idf/esptool_py && /Users/duane/.espressif/python_env/idf5.2_py3.9_env/bin/python /Users/duane/Code/Github/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader/bootloader.bin
+Bootloader binary size 0x6910 bytes. 0x6f0 bytes (6%) free.
+[2/9] No install step for 'bootloader'
+[3/9] Completed 'bootloader'
+[4/9] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/dac-pcm1681.cpp.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/dac-pcm1681.cpp.obj 
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++ -DESP_PLATFORM -DIDF_VER=\"v5.2-dev-2708-g3640dc86bb-dirty\" -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -DUNITY_INCLUDE_CONFIG_H -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/config -I/Users/duane/Code/Github/esp-idf/components/newlib/platform_include -I/Users/duane/Code/Github/esp-idf/components/freertos/config/include -I/Users/duane/Code/Github/esp-idf/components/freertos/config/include/freertos -I/Users/duane/Code/Github/esp-idf/components/freertos/config/xtensa/include -I/Users/duane/Code/Github/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/Users/duane/Code/Github/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/Users/duane/Code/Github/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/Users/duane/Code/Github/esp-idf/components/freertos/esp_additions/include -I/Users/duane/Code/Github/esp-idf/components/esp_hw_support/include -I/Users/duane/Code/Github/esp-idf/components/esp_hw_support/include/soc -I/Users/duane/Code/Github/esp-idf/components/esp_hw_support/include/soc/esp32 -I/Users/duane/Code/Github/esp-idf/components/esp_hw_support/port/esp32/. -I/Users/duane/Code/Github/esp-idf/components/esp_hw_support/port/esp32/private_include -I/Users/duane/Code/Github/esp-idf/components/heap/include -I/Users/duane/Code/Github/esp-idf/components/log/include -I/Users/duane/Code/Github/esp-idf/components/soc/include -I/Users/duane/Code/Github/esp-idf/components/soc/esp32 -I/Users/duane/Code/Github/esp-idf/components/soc/esp32/include -I/Users/duane/Code/Github/esp-idf/components/hal/esp32/include -I/Users/duane/Code/Github/esp-idf/components/hal/include -I/Users/duane/Code/Github/esp-idf/components/hal/platform_port/include -I/Users/duane/Code/Github/esp-idf/components/esp_rom/include -I/Users/duane/Code/Github/esp-idf/components/esp_rom/include/esp32 -I/Users/duane/Code/Github/esp-idf/components/esp_rom/esp32 -I/Users/duane/Code/Github/esp-idf/components/esp_common/include -I/Users/duane/Code/Github/esp-idf/components/esp_system/include -I/Users/duane/Code/Github/esp-idf/components/esp_system/port/soc -I/Users/duane/Code/Github/esp-idf/components/esp_system/port/include/private -I/Users/duane/Code/Github/esp-idf/components/xtensa/esp32/include -I/Users/duane/Code/Github/esp-idf/components/xtensa/include -I/Users/duane/Code/Github/esp-idf/components/xtensa/deprecated_include -I/Users/duane/Code/Github/esp-idf/components/lwip/include -I/Users/duane/Code/Github/esp-idf/components/lwip/include/apps -I/Users/duane/Code/Github/esp-idf/components/lwip/include/apps/sntp -I/Users/duane/Code/Github/esp-idf/components/lwip/lwip/src/include -I/Users/duane/Code/Github/esp-idf/components/lwip/port/include -I/Users/duane/Code/Github/esp-idf/components/lwip/port/freertos/include -I/Users/duane/Code/Github/esp-idf/components/lwip/port/esp32xx/include -I/Users/duane/Code/Github/esp-idf/components/lwip/port/esp32xx/include/arch -I/Users/duane/Code/Github/esp-idf/components/lwip/port/esp32xx/include/sys -I/Users/duane/Code/Github/esp-idf/components/esp_ringbuf/include -I/Users/duane/Code/Github/esp-idf/components/efuse/include -I/Users/duane/Code/Github/esp-idf/components/efuse/esp32/include -I/Users/duane/Code/Github/esp-idf/components/driver/include -I/Users/duane/Code/Github/esp-idf/components/driver/deprecated -I/Users/duane/Code/Github/esp-idf/components/driver/analog_comparator/include -I/Users/duane/Code/Github/esp-idf/components/driver/dac/include -I/Users/duane/Code/Github/esp-idf/components/driver/gpio/include -I/Users/duane/Code/Github/esp-idf/components/driver/gptimer/include -I/Users/duane/Code/Github/esp-idf/components/driver/i2c/include -I/Users/duane/Code/Github/esp-idf/components/driver/i2s/include -I/Users/duane/Code/Github/esp-idf/components/driver/ledc/include -I/Users/duane/Code/Github/esp-idf/components/driver/mcpwm/include -I/Users/duane/Code/Github/esp-idf/components/driver/parlio/include -I/Users/duane/Code/Github/esp-idf/components/driver/pcnt/include -I/Users/duane/Code/Github/esp-idf/components/driver/rmt/include -I/Users/duane/Code/Github/esp-idf/components/driver/sdio_slave/include -I/Users/duane/Code/Github/esp-idf/components/driver/sdmmc/include -I/Users/duane/Code/Github/esp-idf/components/driver/sigma_delta/include -I/Users/duane/Code/Github/esp-idf/components/driver/spi/include -I/Users/duane/Code/Github/esp-idf/components/driver/temperature_sensor/include -I/Users/duane/Code/Github/esp-idf/components/driver/touch_sensor/include -I/Users/duane/Code/Github/esp-idf/components/driver/twai/include -I/Users/duane/Code/Github/esp-idf/components/driver/uart/include -I/Users/duane/Code/Github/esp-idf/components/driver/usb_serial_jtag/include -I/Users/duane/Code/Github/esp-idf/components/driver/touch_sensor/esp32/include -I/Users/duane/Code/Github/esp-idf/components/esp_pm/include -I/Users/duane/Code/Github/esp-idf/components/mbedtls/port/include -I/Users/duane/Code/Github/esp-idf/components/mbedtls/mbedtls/include -I/Users/duane/Code/Github/esp-idf/components/mbedtls/mbedtls/library -I/Users/duane/Code/Github/esp-idf/components/mbedtls/esp_crt_bundle/include -I/Users/duane/Code/Github/esp-idf/components/esp_bootloader_format/include -I/Users/duane/Code/Github/esp-idf/components/esp_app_format/include -I/Users/duane/Code/Github/esp-idf/components/bootloader_support/include -I/Users/duane/Code/Github/esp-idf/components/bootloader_support/bootloader_flash/include -I/Users/duane/Code/Github/esp-idf/components/esp_partition/include -I/Users/duane/Code/Github/esp-idf/components/app_update/include -I/Users/duane/Code/Github/esp-idf/components/esp_mm/include -I/Users/duane/Code/Github/esp-idf/components/spi_flash/include -I/Users/duane/Code/Github/esp-idf/components/pthread/include -I/Users/duane/Code/Github/esp-idf/components/esp_timer/include -I/Users/duane/Code/Github/esp-idf/components/app_trace/include -I/Users/duane/Code/Github/esp-idf/components/esp_event/include -I/Users/duane/Code/Github/esp-idf/components/nvs_flash/include -I/Users/duane/Code/Github/esp-idf/components/esp_phy/include -I/Users/duane/Code/Github/esp-idf/components/esp_phy/esp32/include -I/Users/duane/Code/Github/esp-idf/components/vfs/include -I/Users/duane/Code/Github/esp-idf/components/esp_netif/include -I/Users/duane/Code/Github/esp-idf/components/wpa_supplicant/include -I/Users/duane/Code/Github/esp-idf/components/wpa_supplicant/port/include -I/Users/duane/Code/Github/esp-idf/components/wpa_supplicant/esp_supplicant/include -I/Users/duane/Code/Github/esp-idf/components/esp_coex/include -I/Users/duane/Code/Github/esp-idf/components/esp_wifi/include -I/Users/duane/Code/Github/esp-idf/components/esp_wifi/wifi_apps/include -I/Users/duane/Code/Github/esp-idf/components/bt/include/esp32/include -I/Users/duane/Code/Github/esp-idf/components/bt/common/osi/include -I/Users/duane/Code/Github/esp-idf/components/bt/common/api/include/api -I/Users/duane/Code/Github/esp-idf/components/bt/common/btc/profile/esp/blufi/include -I/Users/duane/Code/Github/esp-idf/components/bt/common/btc/profile/esp/include -I/Users/duane/Code/Github/esp-idf/components/bt/host/nimble/nimble/nimble/host/include -I/Users/duane/Code/Github/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/ans/include -I/Users/duane/Code/Github/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/bas/include -I/Users/duane/Code/Github/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/dis/include -I/Users/duane/Code/Github/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gap/include -I/Users/duane/Code/Github/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/gatt/include -I/Users/duane/Code/Github/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/hr/include -I/Users/duane/Code/Github/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/htp/include -I/Users/duane/Code/Github/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/ias/include -I/Users/duane/Code/Github/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/ipss/include -I/Users/duane/Code/Github/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/lls/include -I/Users/duane/Code/Github/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/prox/include -I/Users/duane/Code/Github/esp-idf/components/bt/host/nimble/nimble/nimble/host/services/tps/include -I/Users/duane/Code/Github/esp-idf/components/bt/host/nimble/nimble/nimble/host/util/include -I/Users/duane/Code/Github/esp-idf/components/bt/host/nimble/nimble/nimble/host/store/ram/include -I/Users/duane/Code/Github/esp-idf/components/bt/host/nimble/nimble/nimble/host/store/config/include -I/Users/duane/Code/Github/esp-idf/components/bt/porting/include -I/Users/duane/Code/Github/esp-idf/components/bt/host/nimble/nimble/porting/nimble/include -I/Users/duane/Code/Github/esp-idf/components/bt/host/nimble/port/include -I/Users/duane/Code/Github/esp-idf/components/bt/host/nimble/nimble/nimble/transport/include -I/Users/duane/Code/Github/esp-idf/components/bt/host/nimble/nimble/porting/npl/freertos/include -I/Users/duane/Code/Github/esp-idf/components/bt/host/nimble/nimble/nimble/include -I/Users/duane/Code/Github/esp-idf/components/bt/host/nimble/esp-hci/include -I/Users/duane/Code/Github/esp-idf/components/unity/include -I/Users/duane/Code/Github/esp-idf/components/unity/unity/src -I/Users/duane/Code/Github/esp-idf/components/cmock/CMock/src -I/Users/duane/Code/Github/esp-idf/components/console -I/Users/duane/Code/Github/esp-idf/components/http_parser -I/Users/duane/Code/Github/esp-idf/components/esp-tls -I/Users/duane/Code/Github/esp-idf/components/esp-tls/esp-tls-crypto -I/Users/duane/Code/Github/esp-idf/components/esp_adc/include -I/Users/duane/Code/Github/esp-idf/components/esp_adc/interface -I/Users/duane/Code/Github/esp-idf/components/esp_adc/esp32/include -I/Users/duane/Code/Github/esp-idf/components/esp_adc/deprecated/include -I/Users/duane/Code/Github/esp-idf/components/esp_eth/include -I/Users/duane/Code/Github/esp-idf/components/esp_gdbstub/include -I/Users/duane/Code/Github/esp-idf/components/esp_hid/include -I/Users/duane/Code/Github/esp-idf/components/tcp_transport/include -I/Users/duane/Code/Github/esp-idf/components/esp_http_client/include -I/Users/duane/Code/Github/esp-idf/components/esp_http_server/include -I/Users/duane/Code/Github/esp-idf/components/esp_https_ota/include -I/Users/duane/Code/Github/esp-idf/components/esp_psram/include -I/Users/duane/Code/Github/esp-idf/components/esp_lcd/include -I/Users/duane/Code/Github/esp-idf/components/esp_lcd/interface -I/Users/duane/Code/Github/esp-idf/components/protobuf-c/protobuf-c -I/Users/duane/Code/Github/esp-idf/components/protocomm/include/common -I/Users/duane/Code/Github/esp-idf/components/protocomm/include/security -I/Users/duane/Code/Github/esp-idf/components/protocomm/include/transports -I/Users/duane/Code/Github/esp-idf/components/esp_local_ctrl/include -I/Users/duane/Code/Github/esp-idf/components/espcoredump/include -I/Users/duane/Code/Github/esp-idf/components/espcoredump/include/port/xtensa -I/Users/duane/Code/Github/esp-idf/components/wear_levelling/include -I/Users/duane/Code/Github/esp-idf/components/sdmmc/include -I/Users/duane/Code/Github/esp-idf/components/fatfs/diskio -I/Users/duane/Code/Github/esp-idf/components/fatfs/src -I/Users/duane/Code/Github/esp-idf/components/fatfs/vfs -I/Users/duane/Code/Github/esp-idf/components/idf_test/include -I/Users/duane/Code/Github/esp-idf/components/idf_test/include/esp32 -I/Users/duane/Code/Github/esp-idf/components/ieee802154/include -I/Users/duane/Code/Github/esp-idf/components/json/cJSON -I/Users/duane/Code/Github/esp-idf/components/mqtt/esp-mqtt/include -I/Users/duane/Code/Github/esp-idf/components/nvs_sec_provider/include -I/Users/duane/Code/Github/esp-idf/components/perfmon/include -I/Users/duane/Code/Github/esp-idf/components/spiffs/include -I/Users/duane/Code/Github/esp-idf/components/wifi_provisioning/include -I/Users/duane/Code/Github/esp-idf-lib/components/esp_idf_lib_helpers -I/Users/duane/Code/Github/esp-idf-lib/components/i2cdev -I/Users/duane/Code/Github/esp-idf-lib/components/ads111x -I/Users/duane/Code/Github/esp-idf-lib/components/ads130e08 -I/Users/duane/Code/Github/esp-idf-lib/components/aht -I/Users/duane/Code/Github/esp-idf-lib/components/am2320 -I/Users/duane/Code/Github/esp-idf-lib/components/bh1750 -I/Users/duane/Code/Github/esp-idf-lib/components/bh1900nux -I/Users/duane/Code/Github/esp-idf-lib/components/bme680 -I/Users/duane/Code/Github/esp-idf-lib/components/bmp180 -I/Users/duane/Code/Github/esp-idf-lib/components/bmp280 -I/Users/duane/Code/Github/esp-idf-lib/components/button -I/Users/duane/Code/Github/esp-idf-lib/components/calibration -I/Users/duane/Code/Github/esp-idf-lib/components/ccs811 -I/Users/duane/Code/Github/esp-idf-lib/components/lib8tion -I/Users/duane/Code/Github/esp-idf-lib/components/color -I/Users/duane/Code/Github/esp-idf-lib/components/dht -I/Users/duane/Code/Github/esp-idf-lib/components/dps310/include -I/Users/duane/Code/Github/esp-idf-lib/components/ds1302 -I/Users/duane/Code/Github/esp-idf-lib/components/ds1307 -I/Users/duane/Code/Github/esp-idf-lib/components/onewire -I/Users/duane/Code/Github/esp-idf-lib/components/ds18x20 -I/Users/duane/Code/Github/esp-idf-lib/components/ds3231 -I/Users/duane/Code/Github/esp-idf-lib/components/ds3502 -I/Users/duane/Code/Github/esp-idf-lib/components/encoder -I/Users/duane/Code/Github/esp-idf-lib/components/example -I/Users/duane/Code/Github/esp-idf-lib/components/framebuffer -I/Users/duane/Code/Github/esp-idf-lib/components/hd44780 -I/Users/duane/Code/Github/esp-idf-lib/components/hdc1000 -I/Users/duane/Code/Github/esp-idf-lib/components/hmc5883l -I/Users/duane/Code/Github/esp-idf-lib/components/ht16k33 -I/Users/duane/Code/Github/esp-idf-lib/components/hts221 -I/Users/duane/Code/Github/esp-idf-lib/components/hx711 -I/Users/duane/Code/Github/esp-idf-lib/components/icm42670 -I/Users/duane/Code/Github/esp-idf-lib/components/ina219 -I/Users/duane/Code/Github/esp-idf-lib/components/ina260 -I/Users/duane/Code/Github/esp-idf-lib/components/ina3221 -I/Users/duane/Code/Github/esp-idf-lib/components/l3gx -I/Users/duane/Code/Github/esp-idf-lib/components/lc709203f -I/Users/duane/Code/Github/esp-idf-lib/components/led_strip -I/Users/duane/Code/Github/esp-idf-lib/components/led_strip_spi -I/Users/duane/Code/Github/esp-idf-lib/components/lm75 -I/Users/duane/Code/Github/esp-idf-lib/components/ls7366r -I/Users/duane/Code/Github/esp-idf-lib/components/lsm303 -I/Users/duane/Code/Github/esp-idf-lib/components/max1704x -I/Users/duane/Code/Github/esp-idf-lib/components/max31725 -I/Users/duane/Code/Github/esp-idf-lib/components/max31855 -I/Users/duane/Code/Github/esp-idf-lib/components/max31865 -I/Users/duane/Code/Github/esp-idf-lib/components/max7219 -I/Users/duane/Code/Github/esp-idf-lib/components/mcp23008 -I/Users/duane/Code/Github/esp-idf-lib/components/mcp23x17 -I/Users/duane/Code/Github/esp-idf-lib/components/mcp342x -I/Users/duane/Code/Github/esp-idf-lib/components/mcp4725 -I/Users/duane/Code/Github/esp-idf-lib/components/mcp960x -I/Users/duane/Code/Github/esp-idf-lib/components/mcp9808 -I/Users/duane/Code/Github/esp-idf-lib/components/mhz19b -I/Users/duane/Code/Github/esp-idf-lib/components/mpu6050 -I/Users/duane/Code/Github/esp-idf-lib/components/ms5611 -I/Users/duane/Code/Github/esp-idf-lib/components/noise -I/Users/duane/Code/Github/esp-idf-lib/components/pca9557 -I/Users/duane/Code/Github/esp-idf-lib/components/pca9685 -I/Users/duane/Code/Github/esp-idf-lib/components/pcf8563 -I/Users/duane/Code/Github/esp-idf-lib/components/pcf8574 -I/Users/duane/Code/Github/esp-idf-lib/components/pcf8575 -I/Users/duane/Code/Github/esp-idf-lib/components/pcf8591 -I/Users/duane/Code/Github/esp-idf-lib/components/qmc5883l -I/Users/duane/Code/Github/esp-idf-lib/components/rda5807m -I/Users/duane/Code/Github/esp-idf-lib/components/scd30 -I/Users/duane/Code/Github/esp-idf-lib/components/scd4x -I/Users/duane/Code/Github/esp-idf-lib/components/sfa3x -I/Users/duane/Code/Github/esp-idf-lib/components/sgm58031 -I/Users/duane/Code/Github/esp-idf-lib/components/sgp40 -I/Users/duane/Code/Github/esp-idf-lib/components/sht3x -I/Users/duane/Code/Github/esp-idf-lib/components/sht4x -I/Users/duane/Code/Github/esp-idf-lib/components/si7021 -I/Users/duane/Code/Github/esp-idf-lib/components/sts21 -I/Users/duane/Code/Github/esp-idf-lib/components/sts3x -I/Users/duane/Code/Github/esp-idf-lib/components/tca6424a -I/Users/duane/Code/Github/esp-idf-lib/components/tca9548 -I/Users/duane/Code/Github/esp-idf-lib/components/tca95x5 -I/Users/duane/Code/Github/esp-idf-lib/components/tda74xx -I/Users/duane/Code/Github/esp-idf-lib/components/tsl2561 -I/Users/duane/Code/Github/esp-idf-lib/components/tsl2591 -I/Users/duane/Code/Github/esp-idf-lib/components/tsl4531 -I/Users/duane/Code/Github/esp-idf-lib/components/tsys01 -I/Users/duane/Code/Github/esp-idf-lib/components/ultrasonic -I/Users/duane/Code/Github/esp-idf-lib/components/veml7700 -I/Users/duane/Code/Github/esp-idf-lib/components/wiegand -mlongcalls -Wno-frame-address  -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Os -freorder-blocks -fmacro-prefix-map=/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32=. -fmacro-prefix-map=/Users/duane/Code/Github/esp-idf=/IDF -Wno-address -Wno-use-after-free -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu++2b -fno-exceptions -fno-rtti -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/dac-pcm1681.cpp.obj -MF esp-idf/main/CMakeFiles/__idf_main.dir/dac-pcm1681.cpp.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/dac-pcm1681.cpp.obj -c /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp
+In file included from /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:2:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp: In member function 'virtual void DAC_PCM1681::init()':
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:53: error: no match for 'operator<<' (operand types are 'std::basic_ostream<char>' and 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'})
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                     ^~ ~
+      |                                                        |
+      |                                                        std::stringstream {aka std::__cxx11::basic_stringstream<char>}
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:53: note: candidate: 'operator<<(int, int)' (built-in)
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:53: note:   no known conversion for argument 2 from 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'} to 'int'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+In file included from /Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/istream:39,
+                 from /Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/sstream:38,
+                 from /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:5:
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:108:7: note: candidate: 'std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(__ostream_type& (*)(__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]'
+  108 |       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+      |       ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:108:36: note:   no known conversion for argument 1 from 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'} to 'std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&)' {aka 'std::basic_ostream<char>& (*)(std::basic_ostream<char>&)'}
+  108 |       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+      |                  ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:117:7: note: candidate: 'std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(__ios_type& (*)(__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>; __ios_type = std::basic_ios<char>]'
+  117 |       operator<<(__ios_type& (*__pf)(__ios_type&))
+      |       ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:117:32: note:   no known conversion for argument 1 from 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'} to 'std::basic_ostream<char>::__ios_type& (*)(std::basic_ostream<char>::__ios_type&)' {aka 'std::basic_ios<char>& (*)(std::basic_ios<char>&)'}
+  117 |       operator<<(__ios_type& (*__pf)(__ios_type&))
+      |                  ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:127:7: note: candidate: 'std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]'
+  127 |       operator<<(ios_base& (*__pf) (ios_base&))
+      |       ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:127:30: note:   no known conversion for argument 1 from 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'} to 'std::ios_base& (*)(std::ios_base&)'
+  127 |       operator<<(ios_base& (*__pf) (ios_base&))
+      |                  ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:166:7: note: candidate: 'std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]'
+  166 |       operator<<(long __n)
+      |       ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:166:23: note:   no known conversion for argument 1 from 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'} to 'long int'
+  166 |       operator<<(long __n)
+      |                  ~~~~~^~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:170:7: note: candidate: 'std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]'
+  170 |       operator<<(unsigned long __n)
+      |       ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:170:32: note:   no known conversion for argument 1 from 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'} to 'long unsigned int'
+  170 |       operator<<(unsigned long __n)
+      |                  ~~~~~~~~~~~~~~^~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:174:7: note: candidate: 'std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]'
+  174 |       operator<<(bool __n)
+      |       ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:174:23: note:   no known conversion for argument 1 from 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'} to 'bool'
+  174 |       operator<<(bool __n)
+      |                  ~~~~~^~~
+In file included from /Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:833:
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/bits/ostream.tcc:91:5: note: candidate: 'std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char; _Traits = std::char_traits<char>]'
+   91 |     basic_ostream<_CharT, _Traits>::
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/bits/ostream.tcc:92:22: note:   no known conversion for argument 1 from 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'} to 'short int'
+   92 |     operator<<(short __n)
+      |                ~~~~~~^~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:181:7: note: candidate: 'std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]'
+  181 |       operator<<(unsigned short __n)
+      |       ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:181:33: note:   no known conversion for argument 1 from 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'} to 'short unsigned int'
+  181 |       operator<<(unsigned short __n)
+      |                  ~~~~~~~~~~~~~~~^~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/bits/ostream.tcc:105:5: note: candidate: 'std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char; _Traits = std::char_traits<char>]'
+  105 |     basic_ostream<_CharT, _Traits>::
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/bits/ostream.tcc:106:20: note:   no known conversion for argument 1 from 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'} to 'int'
+  106 |     operator<<(int __n)
+      |                ~~~~^~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:192:7: note: candidate: 'std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]'
+  192 |       operator<<(unsigned int __n)
+      |       ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:192:31: note:   no known conversion for argument 1 from 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'} to 'unsigned int'
+  192 |       operator<<(unsigned int __n)
+      |                  ~~~~~~~~~~~~~^~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:201:7: note: candidate: 'std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]'
+  201 |       operator<<(long long __n)
+      |       ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:201:28: note:   no known conversion for argument 1 from 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'} to 'long long int'
+  201 |       operator<<(long long __n)
+      |                  ~~~~~~~~~~^~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:205:7: note: candidate: 'std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]'
+  205 |       operator<<(unsigned long long __n)
+      |       ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:205:37: note:   no known conversion for argument 1 from 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'} to 'long long unsigned int'
+  205 |       operator<<(unsigned long long __n)
+      |                  ~~~~~~~~~~~~~~~~~~~^~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:220:7: note: candidate: 'std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]'
+  220 |       operator<<(double __f)
+      |       ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:220:25: note:   no known conversion for argument 1 from 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'} to 'double'
+  220 |       operator<<(double __f)
+      |                  ~~~~~~~^~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:224:7: note: candidate: 'std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]'
+  224 |       operator<<(float __f)
+      |       ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:224:24: note:   no known conversion for argument 1 from 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'} to 'float'
+  224 |       operator<<(float __f)
+      |                  ~~~~~~^~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:232:7: note: candidate: 'std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]'
+  232 |       operator<<(long double __f)
+      |       ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:232:30: note:   no known conversion for argument 1 from 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'} to 'long double'
+  232 |       operator<<(long double __f)
+      |                  ~~~~~~~~~~~~^~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:245:7: note: candidate: 'std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]'
+  245 |       operator<<(const void* __p)
+      |       ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:245:30: note:   no known conversion for argument 1 from 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'} to 'const void*'
+  245 |       operator<<(const void* __p)
+      |                  ~~~~~~~~~~~~^~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:250:7: note: candidate: 'std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::nullptr_t) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>; std::nullptr_t = std::nullptr_t]'
+  250 |       operator<<(nullptr_t)
+      |       ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:250:18: note:   no known conversion for argument 1 from 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'} to 'std::nullptr_t'
+  250 |       operator<<(nullptr_t)
+      |                  ^~~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:257:7: note: candidate: 'std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const volatile void*) [with _CharT = char; _Traits = std::char_traits<char>; __ostream_type = std::basic_ostream<char>]'
+  257 |       operator<<(const volatile void* __p)
+      |       ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:257:39: note:   no known conversion for argument 1 from 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'} to 'const volatile void*'
+  257 |       operator<<(const volatile void* __p)
+      |                  ~~~~~~~~~~~~~~~~~~~~~^~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/bits/ostream.tcc:119:5: note: candidate: 'std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; __streambuf_type = std::basic_streambuf<char>]'
+  119 |     basic_ostream<_CharT, _Traits>::
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/bits/ostream.tcc:120:34: note:   no known conversion for argument 1 from 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'} to 'std::basic_ostream<char>::__streambuf_type*' {aka 'std::basic_streambuf<char>*'}
+  120 |     operator<<(__streambuf_type* __sbin)
+      |                ~~~~~~~~~~~~~~~~~~^~~~~~
+In file included from /Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/bits/basic_string.h:47,
+                 from /Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/string:53,
+                 from /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac.h:4,
+                 from /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.h:4,
+                 from /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:1:
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/string_view:672:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, basic_string_view<_CharT, _Traits>)'
+  672 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/string_view:672:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   'std::__cxx11::basic_stringstream<char>' is not derived from 'std::basic_string_view<_CharT, _Traits>'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/bits/basic_string.h:3883:5: note: candidate: 'template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const __cxx11::basic_string<_CharT, _Traits, _Allocator>&)'
+ 3883 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/bits/basic_string.h:3883:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'} is not derived from 'const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+In file included from /Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/bits/ios_base.h:46,
+                 from /Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ios:42,
+                 from /Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/istream:38:
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/system_error:279:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const error_code&)'
+  279 |     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/system_error:279:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   cannot convert 's' (type 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'}) to type 'const std::error_code&'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:507:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, _CharT)'
+  507 |     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:507:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   deduced conflicting types for parameter '_CharT' ('char' and 'std::__cxx11::basic_stringstream<char>')
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:517:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, char)'
+  517 |     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:517:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   cannot convert 's' (type 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'}) to type 'char'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:523:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, char)'
+  523 |     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:523:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   cannot convert 's' (type 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'}) to type 'char'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:534:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, signed char)'
+  534 |     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:534:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   cannot convert 's' (type 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'}) to type 'signed char'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:539:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, unsigned char)'
+  539 |     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:539:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   cannot convert 's' (type 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'}) to type 'unsigned char'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:548:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, wchar_t)' (deleted)
+  548 |     operator<<(basic_ostream<char, _Traits>&, wchar_t) = delete;
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:548:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   cannot convert 's' (type 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'}) to type 'wchar_t'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:553:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, char8_t)' (deleted)
+  553 |     operator<<(basic_ostream<char, _Traits>&, char8_t) = delete;
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:553:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   cannot convert 's' (type 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'}) to type 'char8_t'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:558:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, char16_t)' (deleted)
+  558 |     operator<<(basic_ostream<char, _Traits>&, char16_t) = delete;
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:558:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   cannot convert 's' (type 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'}) to type 'char16_t'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:562:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, char32_t)' (deleted)
+  562 |     operator<<(basic_ostream<char, _Traits>&, char32_t) = delete;
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:562:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   cannot convert 's' (type 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'}) to type 'char32_t'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:568:5: note: candidate: 'template<class _Traits> std::basic_ostream<wchar_t, _Traits>& std::operator<<(basic_ostream<wchar_t, _Traits>&, char8_t)' (deleted)
+  568 |     operator<<(basic_ostream<wchar_t, _Traits>&, char8_t) = delete;
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:568:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   mismatched types 'wchar_t' and 'char'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:573:5: note: candidate: 'template<class _Traits> std::basic_ostream<wchar_t, _Traits>& std::operator<<(basic_ostream<wchar_t, _Traits>&, char16_t)' (deleted)
+  573 |     operator<<(basic_ostream<wchar_t, _Traits>&, char16_t) = delete;
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:573:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   mismatched types 'wchar_t' and 'char'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:577:5: note: candidate: 'template<class _Traits> std::basic_ostream<wchar_t, _Traits>& std::operator<<(basic_ostream<wchar_t, _Traits>&, char32_t)' (deleted)
+  577 |     operator<<(basic_ostream<wchar_t, _Traits>&, char32_t) = delete;
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:577:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   mismatched types 'wchar_t' and 'char'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:598:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const _CharT*)'
+  598 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:598:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   mismatched types 'const _CharT*' and 'std::__cxx11::basic_stringstream<char>'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/bits/ostream.tcc:302:5: note: candidate: 'template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(basic_ostream<_CharT, _Traits>&, const char*)'
+  302 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/bits/ostream.tcc:302:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   cannot convert 's' (type 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'}) to type 'const char*'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:615:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const char*)'
+  615 |     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:615:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   cannot convert 's' (type 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'}) to type 'const char*'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:628:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const signed char*)'
+  628 |     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:628:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   cannot convert 's' (type 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'}) to type 'const signed char*'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:633:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const unsigned char*)'
+  633 |     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:633:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   cannot convert 's' (type 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'}) to type 'const unsigned char*'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:642:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const wchar_t*)' (deleted)
+  642 |     operator<<(basic_ostream<char, _Traits>&, const wchar_t*) = delete;
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:642:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   cannot convert 's' (type 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'}) to type 'const wchar_t*'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:647:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const char8_t*)' (deleted)
+  647 |     operator<<(basic_ostream<char, _Traits>&, const char8_t*) = delete;
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:647:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   cannot convert 's' (type 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'}) to type 'const char8_t*'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:652:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const char16_t*)' (deleted)
+  652 |     operator<<(basic_ostream<char, _Traits>&, const char16_t*) = delete;
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:652:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   cannot convert 's' (type 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'}) to type 'const char16_t*'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:656:5: note: candidate: 'template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(basic_ostream<char, _Traits>&, const char32_t*)' (deleted)
+  656 |     operator<<(basic_ostream<char, _Traits>&, const char32_t*) = delete;
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:656:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   cannot convert 's' (type 'std::stringstream' {aka 'std::__cxx11::basic_stringstream<char>'}) to type 'const char32_t*'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:662:5: note: candidate: 'template<class _Traits> std::basic_ostream<wchar_t, _Traits>& std::operator<<(basic_ostream<wchar_t, _Traits>&, const char8_t*)' (deleted)
+  662 |     operator<<(basic_ostream<wchar_t, _Traits>&, const char8_t*) = delete;
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:662:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   mismatched types 'wchar_t' and 'char'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:667:5: note: candidate: 'template<class _Traits> std::basic_ostream<wchar_t, _Traits>& std::operator<<(basic_ostream<wchar_t, _Traits>&, const char16_t*)' (deleted)
+  667 |     operator<<(basic_ostream<wchar_t, _Traits>&, const char16_t*) = delete;
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:667:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   mismatched types 'wchar_t' and 'char'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:671:5: note: candidate: 'template<class _Traits> std::basic_ostream<wchar_t, _Traits>& std::operator<<(basic_ostream<wchar_t, _Traits>&, const char32_t*)' (deleted)
+  671 |     operator<<(basic_ostream<wchar_t, _Traits>&, const char32_t*) = delete;
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:671:5: note:   template argument deduction/substitution failed:
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:56: note:   mismatched types 'wchar_t' and 'char'
+   38 |         AMP_DEBUG_SI( "Temperature is " << f << " " << s );
+      |                                                        ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/debug.h:8:53: note: in definition of macro 'AMP_DEBUG_SI'
+    8 | #define AMP_DEBUG_SI(x) { std::stringstream s; s << x; ESP_LOGI( __PRETTY_FUNCTION__, "%s", s.str().c_str() ); }
+      |                                                     ^
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:754:5: note: candidate: 'template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&)'
+  754 |     operator<<(_Ostream&& __os, const _Tp& __x)
+      |     ^~~~~~~~
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:754:5: note:   template argument deduction/substitution failed:
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream: In substitution of 'template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&) [with _Ostream = std::basic_ostream<char>&; _Tp = std::__cxx11::basic_stringstream<char>]':
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:2:   required from here
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:754:5: error: template constraint failure for 'template<class _Os, class _Tp>  requires (__derived_from_ios_base<_Os>) && requires(_Os& __os, const _Tp& __t) {__os << __t;} using __rvalue_stream_insertion_t = _Os&&'
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:754:5: note: constraints not satisfied
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream: In substitution of 'template<class _Os, class _Tp>  requires (__derived_from_ios_base<_Os>) && requires(_Os& __os, const _Tp& __t) {__os << __t;} using __rvalue_stream_insertion_t = _Os&& [with _Os = std::basic_ostream<char>&; _Tp = std::__cxx11::basic_stringstream<char>]':
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:754:5:   required by substitution of 'template<class _Ostream, class _Tp> _Ostream&& std::operator<<(_Ostream&&, const _Tp&) [with _Ostream = std::basic_ostream<char>&; _Tp = std::__cxx11::basic_stringstream<char>]'
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp:38:2:   required from here
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:721:13:   required for the satisfaction of '__derived_from_ios_base<_Os>' [with _Os = std::basic_ostream<char, std::char_traits<char> >&]
+/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/12.2.0/ostream:721:39: note: the expression 'is_class_v<_Tp> [with _Tp = std::basic_ostream<char, std::char_traits<char> >&]' evaluated to 'false'
+  721 |     concept __derived_from_ios_base = is_class_v<_Tp>
+      |                                       ^~~~~~~~~~~~~~~
+ninja: build stopped: subcommand failed.

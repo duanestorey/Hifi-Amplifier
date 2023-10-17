@@ -1,6 +1,7 @@
 #include "lcd.h"
 #include "rom/ets_sys.h"
 #include "debug.h"
+#include <string.h>
 
 LCD::LCD( uint8_t addr, I2CBUS *bus ) : mAddr( addr ), mI2C( bus ), mBacklight( BACKLIGHT_ON ) {
 	mRowOffsets[0] = 0;
@@ -56,13 +57,17 @@ LCD::setCursor( uint8_t x, uint8_t y ) {
 }
 
 void 
-LCD::writeString( char *string ) {
-	if ( string == 0 ) return;
+LCD::writeString( std::string s ) {
+	if ( s.length() == 0 ) return;
 
-	const uint8_t *buffer = (const uint8_t *)string;
+	char data[ 32 ];
+	strcpy( data, s.c_str() );
 
-	while ( buffer ) {
-		sendData( *buffer++, LCD_RS_BIT );
+	uint8_t *buffer = (uint8_t *)data;
+
+	while ( *buffer ) {
+		sendData( *buffer, LCD_RS_BIT );
+		buffer++;
 	}
 }
 
@@ -141,6 +146,16 @@ LCD::sendData( uint8_t data, uint8_t mode ) {
 void 
 LCD::command( uint8_t data ) {
 	sendData( data, 0 );
+}
+
+void 
+LCD::writeLine( uint8_t line, std::string s ) {
+	char data[ 30 ] = {0};
+
+	setCursor( 0, line );
+	sprintf( data, "%-20s", s.c_str() );
+
+	writeString( data );
 }
 
 void 

@@ -125,13 +125,103 @@ Amplifier::handleDisplayThread() {
 
             switch( msg.mMessageType ) {
                 case Message::MSG_DISPLAY_SHOULD_UPDATE:
-                    // need to update the display
+                    updateDisplay();
                     break;
                 default:
                     break;
             }
         } 
     } 
+}
+
+void
+Amplifier::updateDisplay() {
+    AmplifierState state = getCurrentState();
+    char s[32];
+    char d[12];
+
+    sprintf( d, "Volume %d", state.mCurrentVolume );
+
+    if ( state.mConnected ) {
+        sprintf( s, "%-12s%8s", d, "Wifi" );
+    } else {
+        sprintf( s, "%-20s", d );
+    }
+    mLCD->writeLine( 0, std::string( s ) );
+
+    switch( state.mState ) {
+        case AmplifierState::STATE_INIT:
+            sprintf( s, "Initialising" );
+            break;
+        case AmplifierState::STATE_PLAYING:
+            sprintf( s, "Playing" );
+            break;
+        case AmplifierState::STATE_MUTED:
+            sprintf( s, "Muted" );
+            break;
+        case AmplifierState::STATE_SLEEPING:
+            sprintf( s, "Sleeping" );
+            break;
+        case AmplifierState::STATE_UPDATING:
+            sprintf( s, "Updating" );
+            break;
+        case AmplifierState::STATE_ERROR_MINOR:
+            sprintf( s, "Minor Error" );
+            break;
+        case AmplifierState::STATE_ERROR_MAJOR:
+            sprintf( s, "Major Error" );
+            break;
+    }
+    mLCD->writeLine( 1, std::string( s ) );
+
+    char rate[12] = {0};
+    sprintf( rate, "%lukHz", state.mSamplingRate / 1000 );
+
+    switch( state.mAudioType ) {
+        case AmplifierState::AUDIO_ANALOG:
+            sprintf( s, "%-10s%10s", "Analog", rate );
+            break;
+        case AmplifierState::AUDIO_DOLBY:
+            sprintf( s, "%-10s%10s", "AC3", rate );
+            break;
+        case AmplifierState::AUDIO_DTS:
+            sprintf( s, "%-10s%10s", "DTS", rate );
+            break;
+        case AmplifierState::AUDIO_PCM:
+            sprintf( s, "%-10s%10s", "PCM", rate );
+            break;
+    }
+    mLCD->writeLine( 2, std::string( s ) );
+
+    switch( state.mInput ) {
+        case AmplifierState::INPUT_STEREO_1:
+            mLCD->writeLine( 3, "TV" );
+            break;
+        case AmplifierState::INPUT_STEREO_2:
+            mLCD->writeLine( 3, "Streamer" );
+            break;
+        case AmplifierState::INPUT_STEREO_3:
+            mLCD->writeLine( 3, "Game" );
+            break;
+        case AmplifierState::INPUT_STEREO_4:
+            mLCD->writeLine( 3, "Vinyl" );
+            break;
+        case AmplifierState::INPUT_6CH:
+            mLCD->writeLine( 3, "Digital" );
+            break;
+    }
+   
+   
+}
+
+void 
+Amplifier::changeAmplifierState( uint8_t newState ) {
+    {
+        ScopedLock lock( mStateMutex );
+        mState.mState = newState;
+    }
+
+    asyncUpdateDisplay();
 }
 
 void 
@@ -227,6 +317,9 @@ Amplifier::handleAudioThread() {
     mChannelSel->mute( false );
 
     gpio_set_level( PIN_LED_ACTIVE, 1 );
+
+    // Set to playing status
+    changeAmplifierState( AmplifierState::STATE_PLAYING );
 
     Message msg;
     while( true ) {

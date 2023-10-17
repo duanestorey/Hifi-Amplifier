@@ -1,4 +1,4 @@
-/* * Data converted from /Users/duane/Code/Github/ESP32-Hifi-Amplifier/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 .section .rodata.embedded

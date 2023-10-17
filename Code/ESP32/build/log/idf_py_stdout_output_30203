@@ -1,0 +1,183 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7136
+load:0x40078000,len:15780
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3884
+entry 0x40080650
+[0;32mI (31) boot: ESP-IDF v5.2-dev-2708-g3640dc86bb-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 17 2023 15:02:44[0m
+[0;32mI (33) boot: Multicore bootloader[0m
+[0;32mI (38) boot: chip revision: v3.0[0m
+[0;32mI (41) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (46) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (51) boot.esp32: SPI Flash Size : 8MB[0m
+[0;32mI (55) boot: Enabling RNG early entropy source...[0m
+[0;32mI (61) boot: Partition Table:[0m
+[0;32mI (64) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (71) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (79) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (86) boot:  2 phy_init         RF data          01 01 0000f000 00002000[0m
+[0;32mI (94) boot:  3 factory          factory app      00 00 00020000 002625a0[0m
+[0;32mI (101) boot: End of partition table[0m
+[0;32mI (106) boot: Defaulting to factory image[0m
+[0;32mI (110) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=32e14h (208404) map[0m
+[0;32mI (194) esp_image: segment 1: paddr=00052e3c vaddr=3ffbdb60 size=04f5ch ( 20316) load[0m
+[0;32mI (202) esp_image: segment 2: paddr=00057da0 vaddr=40080000 size=08278h ( 33400) load[0m
+[0;32mI (216) esp_image: segment 3: paddr=00060020 vaddr=400d0020 size=b2050h (729168) map[0m
+[0;32mI (480) esp_image: segment 4: paddr=00112078 vaddr=40088278 size=0773ch ( 30524) load[0m
+[0;32mI (501) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (501) boot: Disabling RNG early entropy source...[0m
+[0;32mI (513) cpu_start: Multicore app[0m
+[0;32mI (513) cpu_start: Pro cpu up.[0m
+[0;32mI (513) cpu_start: Starting app cpu, entry point is 0x40081120[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (531) cpu_start: Pro cpu start user code[0m
+[0;32mI (531) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (531) cpu_start: Application information:[0m
+[0;32mI (536) cpu_start: Project name:     hifi-amp[0m
+[0;32mI (541) cpu_start: App version:      1e02a5b-dirty[0m
+[0;32mI (546) cpu_start: Compile time:     Oct 17 2023 15:02:43[0m
+[0;32mI (553) cpu_start: ELF file SHA256:  a26340b22...[0m
+[0;32mI (558) cpu_start: ESP-IDF:          v5.2-dev-2708-g3640dc86bb-dirty[0m
+[0;32mI (565) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (570) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (574) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (579) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (587) heap_init: At 3FFAE6E0 len 0000F480 (61 KiB): DRAM[0m
+[0;32mI (593) heap_init: At 3FFC81A8 len 00017E58 (95 KiB): DRAM[0m
+[0;32mI (599) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (605) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (612) heap_init: At 4008F9B4 len 0001064C (65 KiB): IRAM[0m
+[0;32mI (620) spi_flash: detected chip: generic[0m
+[0;32mI (622) spi_flash: flash io: dio[0m
+[0;33mW (626) spi_flash: Detected size(16384k) larger than the size in the binary image header(8192k). Using the size in the binary image header.[0m
+[0;33mW (640) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (651) coexist: coex firmware version: 80b0d89[0m
+[0;32mI (656) app_start: Starting scheduler on CPU0[0m
+[0;32mI (661[0;32mI (662) app_start: Starting scheduler on CPU1[0m
+) main_task: Started on CPU0[0m
+[0;32mI (671) main_task: Calling app_main()[0m
+[0;32mI (674) I2CBUS::I2CBUS(): Stargting I2C bus[0m
+-> found device with address 0x27
+-> found device with address 0x48
+
+...scan completed!
+[0;32mI (739) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (740) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (747) gpio: GPIO[23]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (756) gpio: GPIO[27]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (766) gpio: GPIO[19]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (775) gpio: GPIO[12]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (784) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (793) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (803) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (812) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (821) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 1| Intr:2 [0m
+[0;32mI (834) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 15000 and ID 1 futureTime 15169 currentTime 173[0m
+[0;32mI (844) void Amplifier::handleTimerThread(): Starting Timer Thread on Core 0[0m
+[0;32mI (851) void Amplifier::handleDisplayThread(): Starting Display Thread[0m
+[0;32mI (858) void LCD::begin(): Beginning LCD Setup[0m
+[0;32mI (864) void Amplifier::handleAudioThread(): Starting Audio Thread[0m
+[0;32mI (870) void Amplifier::handleAudioThread(): Decoder set into active mode[0m
+[0;32mI (871) void Amplifier::handleAmplifierThread(): Starting Amplifier Thread on Core 0[0m
+[0;33mW (879) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+[0;32mI (871) void Amplifier::handleRadioThread(): Starting Radio Thread on Core 0[0m
+[0;33mW (897) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+I (909) wifi:[0;33mW (916) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+wifi driver task: 3ffd0100, prio:23, stack:6656, core=0[0;33mW (927) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+
+[0;33mW (942) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+[0;33mW (956) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+I (960) wifi:[0;32mI (963) void Amplifier::handleAudioThread(): Starting DAC initialization[0m
+wifi firmware version: 341633f[0;32mI (971) virtual void DAC_PCM1681::init(): Starting PCM1681 DAC[0m
+
+I (980) wifi:wifi certification version: v7.0
+[0;33mW (981) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (984) wifi:config NVS flash: enabled
+[0;33mW (995) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (998) wifi:config nano formating: disabled
+[0;32mI (1009) virtual void DAC_PCM1681::init(): Trying to write from temperature sensor[0m
+I (1013) wifi:Init data frame dynamic rx buffer num: 32
+[0;32mI (1024) virtual float TMP100::readTemperature(): Temperature is 28.25[0m
+I (1026) wifi:Init management frame dynamic rx buffer num: 32
+[0;32mI (1034) virtual void DAC_PCM1681::init(): This temperature is 28.25[0m
+I (1039) wifi:Init management short buffer num: 32
+[0;33mW (1047) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (1050) wifi:Init dynamic tx buffer num: 32
+[0;33mW (1062) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (1065) wifi:Init static rx buffer size: 1600
+[0;33mW (1076) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (1080) wifi:Init static rx buffer num: 10
+[0;33mW (1091) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (1094) wifi:Init dynamic rx buffer num: 32
+[0;33mW (1106) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+[0;32mI (1111) wifi_init: rx ba win: 6[0m
+[0;33mW (1121) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+[0;32mI (1125) wifi_init: tcpip mbox: 32[0m
+[0;33mW (1135) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+[0;32mI (1139) wifi_init: udp mbox: 6[0m
+[0;33mW (1150) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+[0;32mI (1154) wifi_init: tcp mbox: 6[0m
+[0;33mW (1164) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+[0;32mI (1168) wifi_init: tcp tx win: 5744[0m
+[0;32mI (1182) wifi_init: tcp rx win: 5744[0m
+[0;32mI (1186) wifi_init: tcp mss: 1440[0m
+[0;32mI (1190) wifi_init: LWIP IRAM OP enabled[0m
+[0;32mI (1199) phy_init: phy_version 4771,450c73b,Aug 16 2023,11:03:10[0m
+I (1283) wifi:mode : sta (c4:de:e2:1b:1a:b8)
+I (1284) wifi:enable tsf
+[0;32mI (1285) void Amplifier::attemptWifiConnect(): Attempting to connect Wifi[0m
+[0;32mI (1291) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (1294) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+I (1299) wifi:[0;32mI (1302) void Amplifier::handleWifiCallback(int32_t): Wifi Starting Up[0m
+new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+I (1316) wifi:state: init -> auth (b0)
+I (1324) wifi:state: auth -> assoc (0)
+[0;32mI (1364) void LCD::begin(): LCD Backlight Setup[0m
+[0;32mI (1399) void LCD::begin(): LCD Setup Done[0m
+[0;32mI (1399) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1399) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (1401) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (1557) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+I (2326) wifi:state: assoc -> init (2700)
+I (2328) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+[0;32mI (2330) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (2333) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (2341) void Amplifier::handleWifiCallback(int32_t): Wifi Disconnected[0m
+[0;32mI (2348) void Amplifier::handleWifiCallback(int32_t): Setting Reconnection Timer[0m
+[0;32mI (2357) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 10000 and ID 2 futureTime 11695 currentTime 1696[0m
+[0;32mI (2370) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (12371) void Timer::processTick(): Dispatching timer event 2[0m
+[0;32mI (12372) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (12375) void Amplifier::handleRadioThread(): In Reconnection Timer Event[0m
+[0;32mI (12382) void Amplifier::attemptWifiConnect(): Attempting to connect Wifi[0m
+I (12405) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+I (12407) wifi:state: init -> auth (b0)
+I (12414) wifi:state: auth -> assoc (0)
+I (12427) wifi:state: assoc -> run (10)
+I (12454) wifi:connected with The Grey Havens, aid = 1, channel 1, BW20, bssid = 62:22:32:15:cf:15
+I (12455) wifi:security: WPA2-PSK, phy: bgn, rssi: -51
+I (12462) wifi:pm start, type: 1
+
+[0;32mI (12467) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (12468) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+I (12470) wifi:[0;32mI (12476) void Amplifier::handleWifiCallback(int32_t): Wifi Connection Established[0m
+AP's beacon interval = 102400 us, DTIM period = 1[0;32mI (12486) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+
+I (12529) wifi:<ba-add>idx:0 (ifx:0, 62:22:32:15:cf:15), tid:0, ssn:0, winSize:64
+[0;32mI (13471) esp_netif_handlers: sta ip: 192.168.1.196, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (13472) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (13477) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (13485) void Amplifier::handleWifiCallback(int32_t): Wifi Received IP Address[0m
+[0;32mI (13493) void Amplifier::updateTimeFromNTP(): Attemping To Update Time From NTP Server[0m
+[0;32mI (15832) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (15833) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15837) void Amplifier::handleAmplifierThread(): In Periodic Timer Event[0m
+[0;32mI (17504) void NTP_Callback(timeval*): Received NTP Callback[0m
+[0;32mI (17514) void Amplifier::handleRadioThread(): The current date/time is: Tue Oct 17 20:14:32 2023[0m

@@ -1,17 +1,15 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2709
+{\rtf1\ansi\ansicpg1252\cocoartf2757
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;\f2\froman\fcharset0 Times-Roman;
 }
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
-{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
 \paperw11900\paperh16840\margl1440\margr1440\vieww24000\viewh12260\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 * Generic\
 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 50V 0.1uF X7R 603 - ORDERING	\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 100V 0.1uF X7R 805
+50V 0.1uF X7R 603 - ORDERING	\
+100V 0.1uF X7R 805
 \f1\b  - YES\
 
 \f0\b0 25V 10uF X7R 805 - ORDERING\
@@ -26,6 +24,8 @@
 * Main PSU\
 1206 0.036R \
 612 0.050R\
+2512 - 1.2K\
+2512 - R050\
 \
 * Channel Amp\
 1k resistor\
@@ -47,8 +47,8 @@
 \pard\pardeftab720\partightenfactor0
 
 \f2 \cf0 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 47uF 50V - Mute Red
-\f0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+47uF 50V - Mute Red
+\f0 \kerning1\expnd0\expndtw0 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf0 \
 \
@@ -66,8 +66,6 @@
 130k 1206
 \f1\b  - YES
 \f0\b0 \
-470p 1206 C0G\
-47P 1206 C0G\
 300p 1206 C0G
 \f1\b  - YES
 \f0\b0 \
@@ -75,7 +73,11 @@
 \f1\b  - YES\
 Future Multiple feedback - \
 3.6k 1206, - ordered \
-1.2pF 1206 C0G - ordered
+1.2nF 1206 C0G - ordered ? \
+1k 1206 - ordered\
+18k 1206 - ordered\
+2.2nF 1206 C0G - ordered\
+220pF 2106 C0G
 \f0\b0 \
 \
 \
@@ -83,7 +85,7 @@ Future Multiple feedback - \
 \f1\b * Dolby Decoder\
 75R 603 1 - YES\
 47R 603 6 - YES\
-4.7K 603 13\
+4.7K 603 13 - YES\
 430R 603 1 - ORDERED\
 160R 603 2- ORDERED\
 330R 603 1 - - ORDERED
@@ -128,7 +130,7 @@ Future Multiple feedback - \
 \f1\b  - ORDERED
 \f0\b0 \
 750R 805
-\f1\b  - ORDERED
+\f1\b  - ORDERED	
 \f0\b0 \
 100k 805
 \f1\b  - ORDERED

@@ -70,11 +70,15 @@ private:
     void updateInput( uint8_t input, bool doActualUpdate = true );
     void updateConnectedStatus( bool connected, bool doActualUpdate = true );
 
+    void updateDisplay();
+
     void setupPWM();
     void handlePowerButtonPress();
     void handleInputButtonPress();
     void handleVolumeButtonPress();
     void handleDecoderIRQ();
+
+    void changeAmplifierState( uint8_t newState );
 
     Mutex mStateMutex;
 

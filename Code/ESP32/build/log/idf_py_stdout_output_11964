@@ -1,0 +1,272 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7136
+load:0x40078000,len:15780
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3884
+entry 0x40080650
+[0;32mI (31) boot: ESP-IDF v5.2-dev-2708-g3640dc86bb-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 17 2023 15:02:44[0m
+[0;32mI (33) boot: Multicore bootloader[0m
+[0;32mI (38) boot: chip revision: v3.0[0m
+[0;32mI (41) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (46) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (51) boot.esp32: SPI Flash Size : 8MB[0m
+[0;32mI (55) boot: Enabling RNG early entropy source...[0m
+[0;32mI (61) boot: Partition Table:[0m
+[0;32mI (64) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (71) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (79) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (86) boot:  2 phy_init         RF data          01 01 0000f000 00002000[0m
+[0;32mI (94) boot:  3 factory          factory app      00 00 00020000 002625a0[0m
+[0;32mI (101) boot: End of partition table[0m
+[0;32mI (106) boot: Defaulting to factory image[0m
+[0;32mI (110) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=32d94h (208276) map[0m
+[0;32mI (194) esp_image: segment 1: paddr=00052dbc vaddr=3ffbdb60 size=04f5ch ( 20316) load[0m
+[0;32mI (202) esp_image: segment 2: paddr=00057d20 vaddr=40080000 size=082f8h ( 33528) load[0m
+[0;32mI (216) esp_image: segment 3: paddr=00060020 vaddr=400d0020 size=b1b0ch (727820) map[0m
+[0;32mI (479) esp_image: segment 4: paddr=00111b34 vaddr=400882f8 size=076bch ( 30396) load[0m
+[0;32mI (501) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (501) boot: Disabling RNG early entropy source...[0m
+[0;32mI (512) cpu_start: Multicore app[0m
+[0;32mI (513) cpu_start: Pro cpu up.[0m
+[0;32mI (513) cpu_start: Starting app cpu, entry point is 0x40081120[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (531) cpu_start: Pro cpu start user code[0m
+[0;32mI (531) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (531) cpu_start: Application information:[0m
+[0;32mI (535) cpu_start: Project name:     hifi-amp[0m
+[0;32mI (540) cpu_start: App version:      1e02a5b-dirty[0m
+[0;32mI (546) cpu_start: Compile time:     Oct 17 2023 15:02:43[0m
+[0;32mI (552) cpu_start: ELF file SHA256:  50009f948...[0m
+[0;32mI (557) cpu_start: ESP-IDF:          v5.2-dev-2708-g3640dc86bb-dirty[0m
+[0;32mI (564) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (569) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (574) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (579) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (586) heap_init: At 3FFAE6E0 len 0000F480 (61 KiB): DRAM[0m
+[0;32mI (592) heap_init: At 3FFC81A8 len 00017E58 (95 KiB): DRAM[0m
+[0;32mI (598) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (605) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (611) heap_init: At 4008F9B4 len 0001064C (65 KiB): IRAM[0m
+[0;32mI (619) spi_flash: detected chip: generic[0m
+[0;32mI (622) spi_flash: flash io: dio[0m
+[0;33mW (626) spi_flash: Detected size(16384k) larger than the size in the binary image header(8192k). Using the size in the binary image header.[0m
+[0;33mW (640) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (650) coexist: coex firmware version: 80b0d89[0m
+[0;32mI (656) app_start: Starting scheduler on CPU0[0m
+[0;32mI (66[0;32mI (661) app_start: Starting scheduler on CPU1[0m
+0) main_task: Started on CPU0[0m
+[0;32mI (670) main_task: Calling app_main()[0m
+[0;32mI (673) I2CBUS::I2CBUS(): Stargting I2C bus[0m
+
+-> no devices found
+
+...scan completed!
+[0;32mI (743) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (744) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (752) gpio: GPIO[23]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (761) gpio: GPIO[27]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (770) gpio: GPIO[19]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (780) gpio: GPIO[12]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (789) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (798) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (807) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (817) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (826) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 1| Intr:2 [0m
+[0;32mI (838) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 15000 and ID 1 futureTime 15175 currentTime 178[0m
+[0;32mI (849) void Amplifier::handleTimerThread(): Starting Timer Thread on Core 0[0m
+[0;32mI (856) void Amplifier::handleDisplayThread(): Starting Display Thread[0m
+[0;32mI (863) void LCD::begin(): Beginning LCD Setup[0m
+[0;32mI (868) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (878) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (887) void Amplifier::handleAudioThread(): Starting Audio Thread[0m
+[0;32mI (894) void Amplifier::handleAudioThread(): Decoder set into active mode[0m
+[0;32mI (902) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (911) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 263[0m
+[0;32mI (921) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (930) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 263[0m
+[0;32mI (940) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (950) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 263[0m
+[0;32mI (960) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (969) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 263[0m
+[0;32mI (979) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (988) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 263[0m
+[0;32mI (998) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (1008) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 263[0m
+[0;32mI (1018) void Amplifier::handleAudioThread(): Starting DAC initialization[0m
+[0;32mI (1025) virtual void DAC_PCM1681::init(): Starting PCM1681 DAC[0m
+[0;33mW (1032) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+[0;33mW (1043) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+[0;32mI (1053) virtual void DAC_PCM1681::init(): Trying to write from temperature sensor[0m
+[0;33mW (1062) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 144[0m
+[0;32mI (1072) virtual void DAC_PCM1681::init(): Trying to read from temperature sensor[0m
+[0;33mW (1081) bool I2CBUS::readRegisterByte(uint8_t, uint8_t, uint8_t&): Issue while sending I2C data to address 144[0m
+[0;33mW (1092) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+[0;33mW (1102) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+[0;33mW (1113) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+[0;33mW (1124) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+[0;33mW (1135) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+[0;33mW (1145) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+[0;33mW (1156) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+[0;32mI (1166) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (1175) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 263[0m
+[0;32mI (1185) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (1195) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 263[0m
+[0;32mI (1205) void Amplifier::handleAmplifierThread(): Starting Amplifier Thread on Core 0[0m
+[0;32mI (1207) void Amplifier::handleRadioThread(): Starting Radio Thread on Core 1[0m
+I (1226) wifi:wifi driver task: 3ffcfedc, prio:23, stack:6656, core=0
+I (1246) wifi:wifi firmware version: 341633f
+I (1246) wifi:wifi certification version: v7.0
+I (1246) wifi:config NVS flash: enabled
+I (1247) wifi:config nano formating: disabled
+I (1251) wifi:Init data frame dynamic rx buffer num: 32
+I (1256) wifi:Init management frame dynamic rx buffer num: 32
+I (1261) wifi:Init management short buffer num: 32
+I (1266) wifi:Init dynamic tx buffer num: 32
+I (1270) wifi:Init static rx buffer size: 1600
+I (1274) wifi:Init static rx buffer num: 10
+I (1278) wifi:Init dynamic rx buffer num: 32
+[0;32mI (1283) wifi_init: rx ba win: 6[0m
+[0;32mI (1286) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1290) wifi_init: udp mbox: 6[0m
+[0;32mI (1294) wifi_init: tcp mbox: 6[0m
+[0;32mI (1297) wifi_init: tcp tx win: 5744[0m
+[0;32mI (1302) wifi_init: tcp rx win: 5744[0m
+[0;32mI (1306) wifi_init: tcp mss: 1440[0m
+[0;32mI (1310) wifi_init: LWIP IRAM OP enabled[0m
+[0;32mI (1319) phy_init: phy_version 4771,450c73b,Aug 16 2023,11:03:10[0m
+[0;32mI (1387) void LCD::begin(): LCD Backlight Setup[0m
+[0;32mI (1387) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (1391) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (1401) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+I (1403) wifi:mode : sta (c4:de:e2:1b:1a:b8)
+[0;33mW (1410) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+I (1414) wifi:enable tsf
+[0;32mI (1424) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;32mI (1429) void Amplifier::attemptWifiConnect(): Attempting to connect Wifi[0m
+[0;33mW (1436) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+I (1457) wifi:[0;32mI (1458) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+[0;33mW (1464) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+I (1469) wifi:state: init -> auth (b0)[0;32mI (1446) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+
+[0;32mI (1478) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;32mI (1489) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+I (1504) wifi:[0;33mW (1500) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+state: auth -> assoc (0)[0;32mI (1518) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+
+[0;33mW (1530) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+I (1539) wifi:state: assoc -> run (10)
+[0;32mI (1544) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+W (1546) wifi:[ADDBA]rx delba, code:39, delete tid:0
+[0;33mW (1553) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (1568) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+I (1574) wifi:connected with The Grey Havens, aid = 1, channel 1, BW20, bssid = 62:22:32:15:cf:15
+[0;33mW (1577) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+I (1585) wifi:security: WPA2-PSK, phy: bgn, rssi: -46
+[0;32mI (1595) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+I (1605) wifi:pm start, type: 1
+[0;33mW (1610) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+
+[0;32mI (1623) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;32mI (1506) void Amplifier::handleWifiCallback(int32_t): Wifi Starting Up[0m
+[0;33mW (1633) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (1640) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+I (1656) wifi:[0;32mI (1649) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+AP's beacon interval = 102400 us, DTIM period = 1
+[0;33mW (1668) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (1657) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+I (1683) wifi:[0;32mI (1682) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+<ba-add>idx:0 (ifx:0, 62:22:32:15:cf:15), tid:0, ssn:1, winSize:64
+[0;33mW (1701) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (1690) void Amplifier::handleWifiCallback(int32_t): Wifi Connection Established[0m
+[0;32mI (1717) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (1735) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (1744) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (1754) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (1764) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (1773) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (1783) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (1793) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (1803) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (1812) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (1822) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (1831) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (1841) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (1851) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (1861) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (1870) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (1880) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (1890) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (1900) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (1909) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (1919) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (1929) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (1939) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (1948) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (1958) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (1968) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (1978) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (1987) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (1997) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (2006) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (2016) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (2026) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (2036) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (2045) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (2055) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (2065) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (2085) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (2087) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (2094) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (2104) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (2114) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (2123) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (2133) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (2143) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (2153) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (2162) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (2172) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Attemping to write I2C bytes[0m
+[0;33mW (2181) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 39 263[0m
+[0;32mI (2202) void LCD::begin(): LCD Setup Done[0m
+[0;32mI (2202) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (2202) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2204) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (2213) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (2631) esp_netif_handlers: sta ip: 192.168.1.196, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (2632) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (2637) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (2645) void Amplifier::handleWifiCallback(int32_t): Wifi Received IP Address[0m
+[0;32mI (2653) void Amplifier::updateTimeFromNTP(): Attemping To Update Time From NTP Server[0m
+[0;32mI (5143) void NTP_Callback(timeval*): Received NTP Callback[0m
+[0;32mI (5148) void Amplifier::handleRadioThread(): The current date/time is: Tue Oct 17 16:55:55 2023[0m
+[0;32mI (15841) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (15842) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15846) void Amplifier::handleAmplifierThread(): In Periodic Timer Event[0m
+[0;32mI (30854) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (30855) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (30859) void Amplifier::handleAmplifierThread(): In Periodic Timer Event[0m
+[0;32mI (45847) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (45848) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (45852) void Amplifier::handleAmplifierThread(): In Periodic Timer Event[0m
+[0;32mI (60853) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (60854) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (60858) void Amplifier::handleAmplifierThread(): In Periodic Timer Event[0m
+[0;32mI (75843) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (75844) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (75848) void Amplifier::handleAmplifierThread(): In Periodic Timer Event[0m
+[0;32mI (90837) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (90838) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (90842) void Amplifier::handleAmplifierThread(): In Periodic Timer Event[0m
+[0;32mI (105847) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (105848) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (105852) void Amplifier::handleAmplifierThread(): In Periodic Timer Event[0m
+[0;32mI (120836) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (120837) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (120841) void Amplifier::handleAmplifierThread(): In Periodic Timer Event[0m

@@ -5,6 +5,8 @@
 #define LCD_NOBACKLIGHT     0x00
 #define LCD_I2C_ADDR		(0x27 << 1 )
 
+#include <string>
+
 #include "i2c-bus.h"
 
 class LCD {
@@ -36,11 +38,13 @@ public:
 	void enableBacklight( bool enable = true );
 	void clearDisplay();
 	void setCursor( uint8_t x, uint8_t y );
-	void writeString( char *string );
+	void writeString( std::string s );
 	void reset();
 	void home();
 	void update();
 	void begin();
+
+	void writeLine( uint8_t line, std::string s );
 protected:
     uint8_t mAddr;
     I2CBUS *mI2C;
