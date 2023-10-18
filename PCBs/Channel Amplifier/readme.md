@@ -7,6 +7,8 @@ The LM3886 has a somewhat mythical status ever since a $3,000 gaincard was relea
 ## Version History
 
 - 1.0: Initial Release
+- 1.1: Improved layout
+- 1.2: Changed erroneous capacitor size
 
 ## Speciality Components
 
