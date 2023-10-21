@@ -164,7 +164,11 @@ Amplifier::updateDisplay() {
     mLCD->writeLine( 1, std::string( s ) );
 
     char rate[12] = {0};
-    sprintf( rate, "%lukHz", state.mSamplingRate / 1000 );
+    if ( state.mAudioType == AmplifierState::AUDIO_ANALOG ) {
+        strcpy( rate, "" );
+    } else {
+        sprintf( rate, "%lukHz", state.mSamplingRate / 1000 );
+    }
 
     switch( state.mAudioType ) {
         case AmplifierState::AUDIO_ANALOG:
@@ -182,23 +186,39 @@ Amplifier::updateDisplay() {
     }
     mLCD->writeLine( 2, std::string( s ) );
 
+    char input[24];
+    char audioType[10];
+    switch( state.mSpeakerConfig ) {
+        case AmplifierState::AUDIO_2_CH:
+            strcpy( audioType, "Stereo" );
+            break;
+        case AmplifierState::AUDIO_2_DOT_1:
+            strcpy( audioType, "2.1" );
+            break;
+        case AmplifierState::AUDIO_5_DOT_1:
+            strcpy( audioType, "5.1" );
+            break;
+    }
+
     switch( state.mInput ) {
         case AmplifierState::INPUT_STEREO_1:
-            mLCD->writeLine( 3, "TV" );
+            sprintf( input, "%-12s%8s", "TV", audioType );
             break;
         case AmplifierState::INPUT_STEREO_2:
-            mLCD->writeLine( 3, "Streamer" );
+            sprintf( input, "%-12s%8s", "Streamer", audioType );
             break;
         case AmplifierState::INPUT_STEREO_3:
-            mLCD->writeLine( 3, "Game" );
+            sprintf( input, "%-12s%8s", "Game", audioType );
             break;
         case AmplifierState::INPUT_STEREO_4:
-            mLCD->writeLine( 3, "Vinyl" );
+            sprintf( input, "%12s%-8s", "Vinyl", audioType );
             break;
         case AmplifierState::INPUT_6CH:
             mLCD->writeLine( 3, "SPDIF" );
             break;
     }
+
+    mLCD->writeLine( 3, input );
 }
 
 void 
@@ -662,10 +682,6 @@ Amplifier::_handleVolumeButtonISR() {
 
 void 
 Amplifier::_handleInputButtonEncoderISR() {
-   // mVolumeEncoder.process();
-
-
-
     ENCODER_DIR direction = mInputEncoder.process();
     switch( direction ) {
         case ENCODER_FORWARD:
@@ -677,8 +693,6 @@ Amplifier::_handleInputButtonEncoderISR() {
         default:
             break;
     }
-
-    //mAmplifierQueue.addFromISR( Message::MSG_VOLUME_POWER_PRESS );
 }
 
 void 

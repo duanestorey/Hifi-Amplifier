@@ -7,7 +7,7 @@
 
 class AmplifierState {
 public:
-    AmplifierState() : mAudioType( AUDIO_ANALOG ), mState( STATE_INIT ), mInput( INPUT_STEREO_1 ), mCurrentVolume( 47 ), mSamplingRate( 48000 ), mConnected( false ) {}
+    AmplifierState() : mAudioType( AUDIO_ANALOG ), mState( STATE_INIT ), mInput( INPUT_STEREO_1 ), mSpeakerConfig( AUDIO_5_DOT_1 ), mCurrentVolume( 46 ), mSamplingRate( 48000 ), mConnected( false ) {}
 
     enum {
         INPUT_UNDEFINED = 0,
@@ -35,9 +35,16 @@ public:
         STATE_ERROR_MAJOR
     } ;
 
+    enum {
+        AUDIO_2_CH,
+        AUDIO_2_DOT_1,
+        AUDIO_5_DOT_1,
+    };
+
     // Volume goes from 0-79
     uint8_t mState;
     uint8_t mInput;
+    uint8_t mSpeakerConfig;
     uint8_t mCurrentVolume;
     uint32_t mSamplingRate;
     bool mConnected;
