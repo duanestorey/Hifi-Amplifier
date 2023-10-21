@@ -25,14 +25,6 @@ DAC_PCM1681::init() {
     // Set wide volume range, 0-63, 0.5db
     mI2C->writeRegisterByte( mAddress, PCM1681_REG_DAMS, 128 );
 
-	u_int8_t addr = 0x48;
-
-	AMP_DEBUG_I( "Trying to write from temperature sensor" );
-
-
-	TMP100 tmp( addr, mI2C );
-	AMP_DEBUG_SI( "This temperature is " << tmp.readTemperature() );
-
 	/*
 
 	mI2C->writeRegisterByte( addr, 1, 0x60);

@@ -1,7 +1,7 @@
 #ifndef __I2CBUS_H__
 #define __I2CBUS_H__
 
-#define I2C_MS_TO_WAIT      5
+#define I2C_MS_TO_WAIT      150
 
 #include "mutex.h"
 

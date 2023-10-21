@@ -1,0 +1,482 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7136
+load:0x40078000,len:15780
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3884
+entry 0x40080650
+[0;32mI (31) boot: ESP-IDF v5.2-dev-2708-g3640dc86bb-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 17 2023 21:03:35[0m
+[0;32mI (33) boot: Multicore bootloader[0m
+[0;32mI (38) boot: chip revision: v3.0[0m
+[0;32mI (41) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (46) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (51) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (55) boot: Enabling RNG early entropy source...[0m
+[0;32mI (61) boot: Partition Table:[0m
+[0;32mI (64) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (71) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (79) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (86) boot:  2 phy_init         RF data          01 01 0000f000 00002000[0m
+[0;32mI (94) boot:  3 factory          factory app      00 00 00020000 002625a0[0m
+[0;32mI (101) boot: End of partition table[0m
+[0;32mI (106) boot: Defaulting to factory image[0m
+[0;32mI (110) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=32dd4h (208340) map[0m
+[0;32mI (162) esp_image: segment 1: paddr=00052dfc vaddr=3ffbdb60 size=04f5ch ( 20316) load[0m
+[0;32mI (167) esp_image: segment 2: paddr=00057d60 vaddr=40080000 size=082b8h ( 33464) load[0m
+[0;32mI (176) esp_image: segment 3: paddr=00060020 vaddr=400d0020 size=b216ch (729452) map[0m
+[0;32mI (327) esp_image: segment 4: paddr=00112194 vaddr=400882b8 size=076fch ( 30460) load[0m
+[0;32mI (343) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (344) boot: Disabling RNG early entropy source...[0m
+[0;32mI (355) cpu_start: Multicore app[0m
+[0;32mI (355) cpu_start: Pro cpu up.[0m
+[0;32mI (355) cpu_start: Starting app cpu, entry point is 0x40081120[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (373) cpu_start: Pro cpu start user code[0m
+[0;32mI (373) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (373) cpu_start: Application information:[0m
+[0;32mI (378) cpu_start: Project name:     hifi-amp[0m
+[0;32mI (383) cpu_start: App version:      5af0bcc-dirty[0m
+[0;32mI (389) cpu_start: Compile time:     Oct 17 2023 21:03:34[0m
+[0;32mI (395) cpu_start: ELF file SHA256:  ebf4f0b96...[0m
+[0;32mI (400) cpu_start: ESP-IDF:          v5.2-dev-2708-g3640dc86bb-dirty[0m
+[0;32mI (407) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (412) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (417) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (422) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (429) heap_init: At 3FFAE6E0 len 0000F480 (61 KiB): DRAM[0m
+[0;32mI (435) heap_init: At 3FFC81A8 len 00017E58 (95 KiB): DRAM[0m
+[0;32mI (441) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (447) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (454) heap_init: At 4008F9B4 len 0001064C (65 KiB): IRAM[0m
+[0;32mI (462) spi_flash: detected chip: generic[0m
+[0;32mI (464) spi_flash: flash io: dio[0m
+[0;33mW (469) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (480) coexist: coex firmware version: 80b0d89[0m
+[0;32mI (485) app_start: Starting scheduler on CPU0[0m
+[0;32mI (490[0;32mI (491) app_start: Starting scheduler on CPU1[0m
+) main_task: Started on CPU0[0m
+[0;32mI (500) main_task: Calling app_main()[0m
+[0;32mI (503) I2CBUS::I2CBUS(): Stargting I2C bus[0m
+-> found device with address 0x27
+-> found device with address 0x48
+
+...scan completed!
+[0;32mI (571) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (572) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (579) gpio: GPIO[23]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (588) gpio: GPIO[27]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (597) gpio: GPIO[19]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (607) gpio: GPIO[12]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (616) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (625) gpio: GPIO[13]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (635) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (644) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (653) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (662) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (672) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 1| Intr:2 [0m
+[0;32mI (684) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 15000 and ID 1 futureTime 15191 currentTime 194[0m
+[0;32mI (695) void Amplifier::handleTimerThread(): Starting Timer Thread on Core 0[0m
+[0;32mI (702) void Amplifier::handleDisplayThread(): Starting Display Thread[0m
+[0;32mI (709) void LCD::begin(): Beginning LCD Setup[0m
+[0;32mI (714) void Amplifier::handleAudioThread(): Starting Audio Thread[0m
+[0;32mI (721) void Amplifier::handleAudioThread(): Decoder set into active mode[0m
+[0;32mI (722) void Amplifier::handleAmplifierThread(): Starting Amplifier Thread on Core 0[0m
+[0;33mW (729) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+[0;32mI (722) void Amplifier::handleRadioThread(): Starting Radio Thread on Core 0[0m
+[0;33mW (748) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+I (760) wifi:wifi driver task: 3ffd0098, prio:23, stack:6656, core=0
+[0;33mW (766) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+[0;33mW (785) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+I (790) wifi:wifi firmware version: 341633f
+[0;33mW (793) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+I (796) wifi:wifi certification version: v7.0
+[0;33mW (808) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+I (810) wifi:config NVS flash: enabled
+[0;32mI (821) void Amplifier::handleAudioThread(): Starting DAC initialization[0m
+I (824) wifi:[0;32mI (832) virtual void DAC_PCM1681::init(): Starting PCM1681 DAC[0m
+config nano formating: disabled
+[0;33mW (840) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (843) wifi:Init data frame dynamic rx buffer num: 32
+[0;33mW (853) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (858) wifi:Init management frame dynamic rx buffer num: 32
+[0;33mW (869) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (874) wifi:Init management short buffer num: 32
+[0;33mW (885) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (889) wifi:Init dynamic tx buffer num: 32
+[0;33mW (900) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (904) wifi:Init static rx buffer size: 1600
+[0;33mW (914) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (918) wifi:Init static rx buffer num: 10
+[0;33mW (929) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (932) wifi:Init dynamic rx buffer num: 32
+[0;33mW (943) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+[0;32mI (948) wifi_init: rx ba win: 6[0m
+[0;33mW (959) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+[0;32mI (962) wifi_init: tcpip mbox: 32[0m
+[0;33mW (973) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+[0;32mI (977) wifi_init: udp mbox: 6[0m
+[0;33mW (987) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+[0;32mI (991) wifi_init: tcp mbox: 6[0m
+[0;32mI (1004) wifi_init: tcp tx win: 5744[0m
+[0;32mI (1008) wifi_init: tcp rx win: 5744[0m
+[0;32mI (1012) wifi_init: tcp mss: 1440[0m
+[0;32mI (1016) wifi_init: LWIP IRAM OP enabled[0m
+[0;32mI (1025) phy_init: phy_version 4771,450c73b,Aug 16 2023,11:03:10[0m
+I (1108) wifi:mode : sta (c4:de:e2:1b:1a:b8)
+I (1109) wifi:enable tsf
+[0;32mI (1110) void Amplifier::attemptWifiConnect(): Attempting to connect Wifi[0m
+[0;32mI (1117) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (1120) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+I (1125) wifi:[0;32mI (1127) void Amplifier::handleWifiCallback(int32_t): Wifi Starting Up[0m
+new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+I (1142) wifi:state: init -> auth (b0)
+[0;32mI (1214) void LCD::begin(): LCD Backlight Setup[0m
+[0;32mI (1252) void LCD::begin(): LCD Setup Done[0m
+[0;32mI (1252) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1254) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (1263) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (1397) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (2556) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2558) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388606[0m
+[0;32mI (2581) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2582) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388606[0m
+[0;32mI (2586) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2595) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388605[0m
+[0;32mI (2603) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2611) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388605[0m
+[0;32mI (2619) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2627) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388604[0m
+[0;32mI (2635) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2643) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388604[0m
+[0;32mI (2651) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2659) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388603[0m
+[0;32mI (2667) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2675) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388603[0m
+I (3104) wifi:state: auth -> assoc (0)
+I (3168) wifi:state: assoc -> run (10)
+I (3188) wifi:connected with The Grey Havens, aid = 5, channel 1, BW20, bssid = 26:5a:4c:99:c4:26
+I (3189) wifi:security: WPA3-SAE, phy: bgn, rssi: -57
+I (3196) wifi:pm start, type: 1
+
+[0;32mI (3201) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (3202) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (3210) void Amplifier::handleWifiCallback(int32_t): Wifi Connection Established[0m
+[0;32mI (3219) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+I (3236) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (4195) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4196) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388602[0m
+[0;32mI (4205) esp_netif_handlers: sta ip: 192.168.1.196, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (4209) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (4217) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (4224) void Amplifier::handleWifiCallback(int32_t): Wifi Received IP Address[0m
+[0;32mI (4232) void Amplifier::updateTimeFromNTP(): Attemping To Update Time From NTP Server[0m
+[0;32mI (4247) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4250) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388602[0m
+[0;32mI (4257) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4266) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388601[0m
+[0;32mI (4273) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4282) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388601[0m
+I (5173) wifi:<ba-add>idx:0 (ifx:0, 26:5a:4c:99:c4:26), tid:0, ssn:1, winSize:64
+[0;32mI (5199) void NTP_Callback(timeval*): Received NTP Callback[0m
+I (5199) wifi:<ba-add>idx:1 (ifx:0, 26:5a:4c:99:c4:26), tid:5, ssn:5, winSize:64
+[0;32mI (5204) void Amplifier::handleRadioThread(): The current date/time is: Tue Oct 17 23:42:30 2023[0m
+[0;32mI (5929) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5930) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388600[0m
+[0;32mI (6776) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6777) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388600[0m
+[0;32mI (6799) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6799) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388599[0m
+[0;32mI (6804) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6812) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6821) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388599[0m
+[0;32mI (8473) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (8474) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388598[0m
+[0;32mI (8730) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (8731) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388598[0m
+[0;32mI (8744) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (8744) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388597[0m
+[0;32mI (8751) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (8759) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (8768) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388597[0m
+[0;32mI (11011) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11012) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388596[0m
+[0;32mI (11031) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11032) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388596[0m
+[0;32mI (11040) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11045) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388595[0m
+[0;32mI (11052) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11061) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388595[0m
+[0;32mI (11096) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11096) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388594[0m
+[0;32mI (11128) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11129) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388594[0m
+[0;32mI (11145) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11145) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388593[0m
+[0;32mI (11152) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11160) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388593[0m
+[0;32mI (11195) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11195) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388592[0m
+[0;32mI (11212) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11212) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388592[0m
+[0;32mI (11223) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11227) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388591[0m
+[0;32mI (11234) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11243) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388591[0m
+[0;32mI (12109) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12110) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388590[0m
+[0;32mI (12130) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12130) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388590[0m
+[0;32mI (12138) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12144) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388589[0m
+[0;32mI (12151) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12160) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388589[0m
+[0;32mI (12177) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12178) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388588[0m
+[0;32mI (12187) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12192) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388588[0m
+[0;32mI (12200) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12208) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388587[0m
+[0;32mI (12216) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12225) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388587[0m
+[0;32mI (12246) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12246) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388586[0m
+[0;32mI (12254) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12260) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388586[0m
+[0;32mI (12267) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12276) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388585[0m
+[0;32mI (12283) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12292) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388585[0m
+[0;32mI (13385) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13386) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388584[0m
+[0;32mI (13408) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13408) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388584[0m
+[0;32mI (13417) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13422) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388583[0m
+[0;32mI (13429) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13437) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13446) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388583[0m
+[0;32mI (14190) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (14191) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388582[0m
+[0;32mI (14208) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (14209) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388582[0m
+[0;32mI (14218) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (14222) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388581[0m
+[0;32mI (14230) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (14239) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388581[0m
+[0;32mI (15688) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (15689) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15695) virtual float TMP100::readTemperature(): Temperature is 28.25[0m
+[0;32mI (15701) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.25[0m
+[0;32mI (16210) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16211) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388581[0m
+[0;32mI (16324) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16325) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388582[0m
+[0;32mI (16356) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16357) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388582[0m
+[0;32mI (16361) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16370) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388583[0m
+[0;32mI (17777) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17778) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388583[0m
+[0;32mI (18339) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18340) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388584[0m
+[0;32mI (18359) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18359) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388584[0m
+[0;32mI (18364) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18372) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18381) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388585[0m
+[0;32mI (18704) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18705) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388585[0m
+[0;32mI (18728) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18729) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388586[0m
+[0;32mI (18741) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18742) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388586[0m
+[0;32mI (18749) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18758) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388587[0m
+[0;32mI (18855) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18856) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388587[0m
+[0;32mI (18867) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18869) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388588[0m
+[0;32mI (18876) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18885) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388588[0m
+[0;32mI (18893) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18901) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388589[0m
+[0;32mI (18974) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18974) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388589[0m
+[0;32mI (18993) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18993) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388590[0m
+[0;32mI (19004) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19007) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388590[0m
+[0;32mI (19014) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19023) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388591[0m
+[0;32mI (19142) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19143) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388591[0m
+[0;32mI (19185) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19185) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388592[0m
+[0;32mI (19201) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19201) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388592[0m
+[0;32mI (19206) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19215) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388593[0m
+[0;32mI (19890) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19891) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388592[0m
+[0;32mI (19914) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19914) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388592[0m
+[0;32mI (19926) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19928) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388591[0m
+[0;32mI (19935) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19944) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388591[0m
+[0;32mI (20507) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20508) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388590[0m
+[0;32mI (20543) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20544) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388590[0m
+[0;32mI (20558) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20559) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388589[0m
+[0;32mI (20565) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20574) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388589[0m
+[0;32mI (21159) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21160) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388588[0m
+[0;32mI (21174) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21174) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388588[0m
+[0;32mI (21186) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21189) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388587[0m
+[0;32mI (21197) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21205) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388587[0m
+[0;32mI (21722) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21723) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388586[0m
+[0;32mI (21747) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21747) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388586[0m
+[0;32mI (21762) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21762) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388585[0m
+[0;32mI (21768) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21777) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388585[0m
+[0;32mI (23589) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23590) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388584[0m
+[0;32mI (23607) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23608) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388584[0m
+[0;32mI (23617) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23622) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388583[0m
+[0;32mI (23629) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23638) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388583[0m
+[0;32mI (24184) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24185) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388582[0m
+[0;32mI (24205) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24205) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388582[0m
+[0;32mI (24220) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24220) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388581[0m
+[0;32mI (24226) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24235) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388581[0m
+[0;32mI (24716) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24717) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388580[0m
+[0;32mI (24741) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24741) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388580[0m
+[0;32mI (24752) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24755) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388579[0m
+[0;32mI (24762) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24771) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24779) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388579[0m
+[0;32mI (25189) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25190) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388578[0m
+[0;32mI (25216) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25216) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388578[0m
+[0;32mI (25234) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25234) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388577[0m
+[0;32mI (25243) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25248) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388577[0m
+[0;32mI (26234) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26235) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388576[0m
+[0;32mI (26277) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26277) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388576[0m
+[0;32mI (26282) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26290) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26299) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388575[0m
+[0;32mI (26307) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26315) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388575[0m
+[0;32mI (26502) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26503) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388574[0m
+[0;32mI (26907) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26908) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388574[0m
+[0;32mI (26922) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26922) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388573[0m
+[0;32mI (26931) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26937) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388573[0m
+[0;32mI (27960) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27961) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388572[0m
+[0;32mI (27975) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27975) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388572[0m
+[0;32mI (27981) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27990) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388571[0m
+[0;32mI (27998) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28006) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388571[0m
+[0;32mI (28014) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28023) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388570[0m
+[0;32mI (28030) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28039) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388570[0m
+[0;32mI (28046) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28055) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388569[0m
+[0;32mI (28063) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28071) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388569[0m
+[0;32mI (28079) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28088) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388568[0m
+[0;32mI (28095) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28104) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388568[0m
+[0;32mI (28111) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28120) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388567[0m
+[0;32mI (28128) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28138) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388567[0m
+[0;32mI (28144) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28153) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388566[0m
+[0;32mI (28160) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28169) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388566[0m
+[0;32mI (28176) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28185) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388565[0m
+[0;32mI (28192) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28201) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388565[0m
+[0;32mI (28209) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28217) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388564[0m
+[0;32mI (28225) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28235) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388564[0m
+[0;32mI (28241) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28250) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388563[0m
+[0;32mI (28257) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28266) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388563[0m
+[0;32mI (28274) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28282) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388562[0m
+[0;32mI (28290) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28299) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388562[0m
+[0;32mI (28306) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28315) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388561[0m
+[0;32mI (28322) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28331) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388561[0m
+[0;32mI (29085) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (29086) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388560[0m
+[0;32mI (29105) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (29105) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388560[0m
+[0;32mI (29110) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (29118) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388559[0m
+[0;32mI (29126) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (29135) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388559[0m
+[0;32mI (29160) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (29161) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388558[0m
+[0;32mI (29189) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (29189) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388558[0m
+[0;32mI (29197) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (29203) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388557[0m
+[0;32mI (29210) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (29219) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388557[0m
+[0;32mI (29251) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (29252) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388556[0m
+[0;32mI (29373) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (29374) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388557[0m
+[0;32mI (29378) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (29387) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388556[0m
+[0;32mI (29394) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (29403) ENCODER_DIR Encoder::process(uint8_t): Encoder data, level 8388557[0m
+[0;32mI (30689) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (30690) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (30696) virtual float TMP100::readTemperature(): Temperature is 28.25[0m
+[0;32mI (30702) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.25[0m

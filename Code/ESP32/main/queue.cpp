@@ -1,7 +1,7 @@
 #include "queue.h"
 
-Queue::Queue() {
-    mQueueHandle = xQueueCreate( 50, sizeof( Message ) );
+Queue::Queue(  uint8_t queueSize ) {
+    mQueueHandle = xQueueCreate( queueSize, sizeof( Message ) );
 }
 
 Queue::~Queue() {

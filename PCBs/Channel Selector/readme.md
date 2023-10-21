@@ -8,6 +8,7 @@ can be created.  It is based on the AX2358 IC.
 ## Version History
 
 - 1.0: Initial Release
+- 1.2: Did an initial build.  Seems like there is digital noise on the output, likely from the I2C signals sharing the audio ground.  This design now has a digital and analog ground on the board - it'll use the digital ground for the AX2358 IC, but use the analog ground for the channel outputs.
 
 ## Speciality Components
 

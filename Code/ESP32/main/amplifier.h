@@ -13,6 +13,9 @@
 #include "dac.h"
 #include "channelsel.h"
 
+#include "tmp100.h"
+#include "encoder.h"
+
 class Amplifier {
 public:
     Amplifier();
@@ -28,6 +31,7 @@ public:
     void _handlePowerButtonISR();
     void _handleVolumeButtonISR();
     void _handleInputButtonISR();
+    void _handleInputButtonEncoderISR();
 
     AmplifierState getCurrentState();
 protected:
@@ -55,6 +59,15 @@ protected:
     DAC *mDAC;
     ChannelSel *mChannelSel;
 
+    TMP100 *mMicroprocessorTemp;
+
+    Encoder mVolumeEncoder;
+    Encoder mInputEncoder;
+
+    uint32_t mAudioTimerID;
+    bool mPendingVolumeChange;
+    uint32_t mPendingVolume;
+
 private:
     void configurePins();
     void configureOnePin( PIN pin, gpio_int_type_t interrupts, gpio_mode_t mode, gpio_pulldown_t pulldown, gpio_pullup_t pullup );
@@ -66,7 +79,6 @@ private:
     void updateTimeFromNTP();
     void handleWifiCallback( int32_t event_id );
 
-    void updateVolume( uint8_t volume, bool doActualUpdate = true );
     void updateInput( uint8_t input, bool doActualUpdate = true );
     void updateConnectedStatus( bool connected, bool doActualUpdate = true );
 
@@ -75,7 +87,7 @@ private:
     void setupPWM();
     void handlePowerButtonPress();
     void handleInputButtonPress();
-    void handleVolumeButtonPress();
+    void handleVolumeButtonPress( uint8_t param );
     void handleDecoderIRQ();
 
     void changeAmplifierState( uint8_t newState );

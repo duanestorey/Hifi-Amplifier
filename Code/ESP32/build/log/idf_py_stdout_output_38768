@@ -1,0 +1,638 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7136
+load:0x40078000,len:15780
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3884
+entry 0x40080650
+[0;32mI (31) boot: ESP-IDF v5.2-dev-2708-g3640dc86bb-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 17 2023 21:03:35[0m
+[0;32mI (33) boot: Multicore bootloader[0m
+[0;32mI (38) boot: chip revision: v3.0[0m
+[0;32mI (41) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (46) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (51) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (55) boot: Enabling RNG early entropy source...[0m
+[0;32mI (61) boot: Partition Table:[0m
+[0;32mI (64) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (71) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (79) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (86) boot:  2 phy_init         RF data          01 01 0000f000 00002000[0m
+[0;32mI (94) boot:  3 factory          factory app      00 00 00020000 002625a0[0m
+[0;32mI (101) boot: End of partition table[0m
+[0;32mI (106) boot: Defaulting to factory image[0m
+[0;32mI (110) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=32de4h (208356) map[0m
+[0;32mI (162) esp_image: segment 1: paddr=00052e0c vaddr=3ffbdb60 size=04f5ch ( 20316) load[0m
+[0;32mI (167) esp_image: segment 2: paddr=00057d70 vaddr=40080000 size=082a8h ( 33448) load[0m
+[0;32mI (176) esp_image: segment 3: paddr=00060020 vaddr=400d0020 size=b2044h (729156) map[0m
+[0;32mI (327) esp_image: segment 4: paddr=0011206c vaddr=400882a8 size=0770ch ( 30476) load[0m
+[0;32mI (343) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (343) boot: Disabling RNG early entropy source...[0m
+[0;32mI (355) cpu_start: Multicore app[0m
+[0;32mI (355) cpu_start: Pro cpu up.[0m
+[0;32mI (355) cpu_start: Starting app cpu, entry point is 0x40081120[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (373) cpu_start: Pro cpu start user code[0m
+[0;32mI (373) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (373) cpu_start: Application information:[0m
+[0;32mI (378) cpu_start: Project name:     hifi-amp[0m
+[0;32mI (383) cpu_start: App version:      5af0bcc-dirty[0m
+[0;32mI (389) cpu_start: Compile time:     Oct 17 2023 21:03:34[0m
+[0;32mI (395) cpu_start: ELF file SHA256:  843b6ffa0...[0m
+[0;32mI (400) cpu_start: ESP-IDF:          v5.2-dev-2708-g3640dc86bb-dirty[0m
+[0;32mI (407) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (412) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (417) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (421) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (429) heap_init: At 3FFAE6E0 len 0000F480 (61 KiB): DRAM[0m
+[0;32mI (435) heap_init: At 3FFC81A8 len 00017E58 (95 KiB): DRAM[0m
+[0;32mI (441) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (447) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (454) heap_init: At 4008F9B4 len 0001064C (65 KiB): IRAM[0m
+[0;32mI (462) spi_flash: detected chip: generic[0m
+[0;32mI (464) spi_flash: flash io: dio[0m
+[0;33mW (469) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (480) coexist: coex firmware version: 80b0d89[0m
+[0;32mI (485) app_start: Starting scheduler on CPU0[0m
+[0;32mI (490)[0;32mI (491) app_start: Starting scheduler on CPU1[0m
+ main_task: Started on CPU0[0m
+[0;32mI (499) main_task: Calling app_main()[0m
+[0;32mI (503) I2CBUS::I2CBUS(): Stargting I2C bus[0m
+-> found device with address 0x27
+-> found device with address 0x48
+
+...scan completed!
+[0;32mI (568) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (569) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (576) gpio: GPIO[23]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (586) gpio: GPIO[27]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (595) gpio: GPIO[19]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (604) gpio: GPIO[12]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (613) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (623) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (632) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (641) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (650) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 1| Intr:2 [0m
+[0;32mI (663) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 15000 and ID 1 futureTime 15170 currentTime 173[0m
+[0;32mI (674) void Amplifier::handleTimerThread(): Starting Timer Thread on Core 0[0m
+[0;32mI (681) void Amplifier::handleDisplayThread(): Starting Display Thread[0m
+[0;32mI (687) void LCD::begin(): Beginning LCD Setup[0m
+[0;32mI (693) void Amplifier::handleAudioThread(): Starting Audio Thread[0m
+[0;32mI (699) void Amplifier::handleAudioThread(): Decoder set into active mode[0m
+[0;33mW (707) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+[0;33mW (718) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+[0;33mW (728) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+[0;33mW (739) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+[0;32mI (740) void Amplifier::handleRadioThread(): Starting Radio Thread on Core 1[0m
+[0;33mW (750) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+[0;32mI (750) void Amplifier::handleAmplifierThread(): Starting Amplifier Thread on Core 0[0m
+[0;33mW (769) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+I (761) wifi:wifi driver task: 3ffd02c0, prio:23, stack:6656, core=0[0;32mI (786) void Amplifier::handleAudioThread(): Starting DAC initialization[0m
+
+[0;32mI (799) virtual void DAC_PCM1681::init(): Starting PCM1681 DAC[0m
+[0;33mW (807) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+[0;33mW (817) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (818) wifi:wifi firmware version: 341633f
+[0;33mW (828) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (831) wifi:wifi certification version: v7.0
+[0;33mW (842) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (845) wifi:config NVS flash: enabled
+[0;33mW (857) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (859) wifi:config nano formating: disabled
+[0;33mW (871) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (874) wifi:Init data frame dynamic rx buffer num: 32
+[0;33mW (885) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (889) wifi:Init management frame dynamic rx buffer num: 32
+[0;33mW (901) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (905) wifi:Init management short buffer num: 32
+[0;33mW (917) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (920) wifi:Init dynamic tx buffer num: 32
+[0;33mW (932) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+I (935) wifi:Init static rx buffer size: 1600
+[0;33mW (946) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+I (950) wifi:Init static rx buffer num: 10
+I (964) wifi:Init dynamic rx buffer num: 32
+[0;32mI (969) wifi_init: rx ba win: 6[0m
+[0;32mI (971) wifi_init: tcpip mbox: 32[0m
+[0;32mI (975) wifi_init: udp mbox: 6[0m
+[0;32mI (979) wifi_init: tcp mbox: 6[0m
+[0;32mI (983) wifi_init: tcp tx win: 5744[0m
+[0;32mI (987) wifi_init: tcp rx win: 5744[0m
+[0;32mI (991) wifi_init: tcp mss: 1440[0m
+[0;32mI (995) wifi_init: LWIP IRAM OP enabled[0m
+[0;32mI (1003) phy_init: phy_version 4771,450c73b,Aug 16 2023,11:03:10[0m
+I (1087) wifi:mode : sta (c4:de:e2:1b:1a:b8)
+I (1088) wifi:enable tsf
+[0;32mI (1089) void Amplifier::attemptWifiConnect(): Attempting to connect Wifi[0m
+[0;32mI (1096) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (1098) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (1106) void Amplifier::handleWifiCallback(int32_t): Wifi Starting Up[0m
+I (1107) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+I (1120) wifi:state: init -> auth (b0)
+[0;32mI (1193) void LCD::begin(): LCD Backlight Setup[0m
+[0;32mI (1231) void LCD::begin(): LCD Setup Done[0m
+[0;32mI (1231) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (1233) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1241) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (1377) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+I (3057) wifi:state: auth -> assoc (0)
+I (3069) wifi:Association refused temporarily, comeback time 1024 (TUs)
+I (4118) wifi:state: assoc -> assoc (0)
+I (5118) wifi:state: assoc -> init (200)
+I (5120) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+[0;32mI (5122) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (5125) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (5133) void Amplifier::handleWifiCallback(int32_t): Wifi Disconnected[0m
+[0;32mI (5140) void Amplifier::handleWifiCallback(int32_t): Setting Reconnection Timer[0m
+[0;32mI (5149) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 10000 and ID 2 futureTime 14659 currentTime 4659[0m
+[0;32mI (5162) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (15162) void Timer::processTick(): Dispatching timer event 2[0m
+[0;32mI (15163) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (15166) void Amplifier::handleRadioThread(): In Reconnection Timer Event[0m
+[0;32mI (15174) void Amplifier::attemptWifiConnect(): Attempting to connect Wifi[0m
+I (15194) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+I (15197) wifi:state: init -> auth (b0)
+[0;32mI (15663) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (15664) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15669) virtual float TMP100::readTemperature(): Temperature is 28.375[0m
+[0;32mI (15675) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.375[0m
+I (17180) wifi:state: auth -> assoc (0)
+I (17192) wifi:state: assoc -> run (10)
+I (17238) wifi:connected with The Grey Havens, aid = 3, channel 1, BW20, bssid = 62:22:32:15:cf:15
+I (17239) wifi:security: WPA3-SAE, phy: bgn, rssi: -61
+I (17247) wifi:pm start, type: 1
+
+[0;32mI (17251) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (17252) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (17260) void Amplifier::handleWifiCallback(int32_t): Wifi Connection Established[0m
+[0;32mI (17268) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+I (17276) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+I (17292) wifi:<ba-add>idx:0 (ifx:0, 62:22:32:15:cf:15), tid:0, ssn:1, winSize:64
+[0;32mI (18254) esp_netif_handlers: sta ip: 192.168.1.196, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (18255) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (18260) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (18268) void Amplifier::handleWifiCallback(int32_t): Wifi Received IP Address[0m
+[0;32mI (18276) void Amplifier::updateTimeFromNTP(): Attemping To Update Time From NTP Server[0m
+[0;32mI (20991) void NTP_Callback(timeval*): Received NTP Callback[0m
+[0;32mI (20998) void Amplifier::handleRadioThread(): The current date/time is: Tue Oct 17 21:14:07 2023[0m
+[0;32mI (30664) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (30665) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (30672) virtual float TMP100::readTemperature(): Temperature is 28.375[0m
+[0;32mI (30677) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.375[0m
+[0;32mI (45665) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (45666) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (45672) virtual float TMP100::readTemperature(): Temperature is 30.9375[0m
+[0;32mI (45678) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 30.9375[0m
+[0;32mI (60666) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (60667) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (60673) virtual float TMP100::readTemperature(): Temperature is 31.375[0m
+[0;32mI (60679) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 31.375[0m
+[0;32mI (75667) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (75668) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (75674) virtual float TMP100::readTemperature(): Temperature is 29.5[0m
+[0;32mI (75680) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 29.5[0m
+[0;32mI (90668) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (90669) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (90675) virtual float TMP100::readTemperature(): Temperature is 29[0m
+[0;32mI (90680) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 29[0m
+[0;32mI (105669) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (105670) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (105677) virtual float TMP100::readTemperature(): Temperature is 28.8125[0m
+[0;32mI (105683) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.8125[0m
+[0;32mI (120671) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (120672) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (120679) virtual float TMP100::readTemperature(): Temperature is 28.6875[0m
+[0;32mI (120684) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.6875[0m
+[0;32mI (135672) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (135674) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (135679) virtual float TMP100::readTemperature(): Temperature is 28.625[0m
+[0;32mI (135685) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.625[0m
+[0;32mI (150674) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (150675) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150681) virtual float TMP100::readTemperature(): Temperature is 28.5625[0m
+[0;32mI (150687) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.5625[0m
+[0;32mI (165675) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (165677) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (165682) virtual float TMP100::readTemperature(): Temperature is 28.5[0m
+[0;32mI (165688) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.5[0m
+[0;32mI (180677) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (180678) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (180684) virtual float TMP100::readTemperature(): Temperature is 28.5[0m
+[0;32mI (180690) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.5[0m
+[0;32mI (195678) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (195680) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195685) virtual float TMP100::readTemperature(): Temperature is 28.4375[0m
+[0;32mI (195691) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.4375[0m
+[0;32mI (210660) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (210661) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (210667) virtual float TMP100::readTemperature(): Temperature is 28.4375[0m
+[0;32mI (210673) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.4375[0m
+[0;32mI (225661) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (225662) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (225668) virtual float TMP100::readTemperature(): Temperature is 28.375[0m
+[0;32mI (225674) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.375[0m
+[0;32mI (240662) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (240663) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (240669) virtual float TMP100::readTemperature(): Temperature is 28.375[0m
+[0;32mI (240675) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.375[0m
+[0;32mI (255663) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (255664) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (255671) virtual float TMP100::readTemperature(): Temperature is 28.375[0m
+[0;32mI (255676) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.375[0m
+[0;32mI (270664) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (270665) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (270671) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (270677) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (285665) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (285666) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (285673) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (285678) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (300666) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (300667) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (300674) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (300679) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (315669) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (315670) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (315676) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (315682) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (330670) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (330671) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (330677) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (330683) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (345672) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (345673) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (345680) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (345684) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (360673) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (360674) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (360681) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (360686) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (375675) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (375676) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (375682) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (375687) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (390676) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (390677) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (390683) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (390689) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (405677) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (405679) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (405685) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (405691) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (420679) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (420680) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (420686) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (420692) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (435660) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (435661) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (435667) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (435673) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (450661) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (450662) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (450668) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (450674) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (465663) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (465664) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (465670) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (465676) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (480664) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (480665) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (480671) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (480677) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (495666) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (495667) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (495673) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (495679) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (510667) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (510669) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (510674) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (510680) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (525669) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (525670) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (525676) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (525682) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (540670) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (540671) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (540677) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (540683) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (555672) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (555673) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (555679) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (555685) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (570673) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (570675) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (570680) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (570686) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (585675) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (585676) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (585682) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (585688) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (600676) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (600677) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (600683) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (600689) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (615678) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (615679) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (615685) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (615691) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (630679) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (630680) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (630686) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (630692) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (645661) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (645662) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (645668) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (645674) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (660662) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (660664) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (660670) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (660675) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (675664) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (675665) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (675671) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (675677) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (690665) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (690666) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (690673) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (690678) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (705666) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (705667) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (705673) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (705679) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (720667) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (720668) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (720674) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (720680) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (735668) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (735669) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (735675) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (735681) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (750669) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (750670) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (750676) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (750682) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (765670) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (765671) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (765677) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (765683) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (780671) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (780672) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (780678) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (780685) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (795672) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (795673) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (795680) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (795685) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (810673) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (810674) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (810680) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (810687) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (825674) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (825675) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (825682) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (825687) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (840676) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (840677) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (840684) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (840689) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (855677) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (855678) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (855684) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (855690) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (870678) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (870679) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (870686) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (870691) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (885679) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (885680) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (885686) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (885692) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (900660) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (900661) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (900667) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (900673) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (915661) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (915663) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (915669) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (915674) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (930663) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (930664) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (930670) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (930676) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (945664) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (945665) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (945671) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (945677) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (960666) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (960667) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (960673) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (960679) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (975667) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (975669) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (975674) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (975680) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (990669) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (990670) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (990676) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (990682) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1005670) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1005672) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1005678) virtual float TMP100::readTemperature(): Temperature is 28.25[0m
+[0;32mI (1005683) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.25[0m
+[0;32mI (1020672) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1020673) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1020680) virtual float TMP100::readTemperature(): Temperature is 28.25[0m
+[0;32mI (1020685) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.25[0m
+[0;32mI (1035674) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1035676) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1035682) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1035688) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1050676) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1050677) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1050684) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1050689) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1065677) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1065678) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1065685) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1065691) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1080679) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1080680) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1080686) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1080692) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1095661) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1095662) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1095669) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1095675) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1110662) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1110663) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1110670) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1110675) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1125663) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1125664) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1125671) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1125676) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1140665) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1140666) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1140673) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1140678) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1155667) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1155668) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1155674) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1155680) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1170668) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1170669) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1170676) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1170681) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1185670) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1185671) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1185677) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1185683) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1200671) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1200672) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1200679) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1200684) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1215673) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1215674) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1215681) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1215686) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1230674) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1230675) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1230682) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1230687) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1245675) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1245677) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1245683) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1245689) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1260677) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1260678) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1260684) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1260690) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1275678) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1275680) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1275686) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1275692) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1290660) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1290661) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1290668) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1290673) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1305662) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1305663) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1305670) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1305675) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1320663) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1320664) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1320671) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1320676) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1335664) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1335665) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1335672) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1335677) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1350665) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1350667) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1350673) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1350679) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1365667) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1365668) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1365675) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1365680) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1380668) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1380669) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1380676) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1380681) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1395670) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1395671) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1395678) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1395683) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1410671) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1410672) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1410679) virtual float TMP100::readTemperature(): Temperature is 28.375[0m
+[0;32mI (1410684) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.375[0m
+[0;32mI (1425673) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1425674) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1425681) virtual float TMP100::readTemperature(): Temperature is 28.375[0m
+[0;32mI (1425686) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.375[0m
+[0;32mI (1440674) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1440676) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1440682) virtual float TMP100::readTemperature(): Temperature is 28.375[0m
+[0;32mI (1440687) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.375[0m
+[0;32mI (1455676) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1455677) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1455684) virtual float TMP100::readTemperature(): Temperature is 28.375[0m
+[0;32mI (1455690) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.375[0m
+[0;32mI (1470678) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1470680) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1470686) virtual float TMP100::readTemperature(): Temperature is 28.375[0m
+[0;32mI (1470692) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.375[0m
+[0;32mI (1485660) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1485661) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1485667) virtual float TMP100::readTemperature(): Temperature is 28.375[0m
+[0;32mI (1485673) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.375[0m
+[0;32mI (1500662) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1500663) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1500670) virtual float TMP100::readTemperature(): Temperature is 28.375[0m
+[0;32mI (1500675) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.375[0m
+[0;32mI (1515663) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1515664) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1515671) virtual float TMP100::readTemperature(): Temperature is 28.375[0m
+[0;32mI (1515676) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.375[0m
+[0;32mI (1530664) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1530665) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1530672) virtual float TMP100::readTemperature(): Temperature is 28.375[0m
+[0;32mI (1530677) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.375[0m
+[0;32mI (1545665) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1545666) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1545673) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1545678) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1560666) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1560667) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1560674) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1560679) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1575667) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1575668) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1575675) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1575680) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1590668) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1590669) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1590676) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (1590683) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;32mI (1605669) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1605670) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1605677) virtual float TMP100::readTemperature(): Temperature is 28.25[0m
+[0;32mI (1605682) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.25[0m
+[0;32mI (1620670) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1620671) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1620678) virtual float TMP100::readTemperature(): Temperature is 28.25[0m
+[0;32mI (1620683) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.25[0m
+[0;32mI (1635671) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1635672) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1635679) virtual float TMP100::readTemperature(): Temperature is 28.1875[0m
+[0;32mI (1635684) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.1875[0m
+[0;32mI (1650672) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1650674) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1650680) virtual float TMP100::readTemperature(): Temperature is 28.1875[0m
+[0;32mI (1650687) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.1875[0m
+[0;32mI (1665674) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1665675) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1665682) virtual float TMP100::readTemperature(): Temperature is 28.125[0m
+[0;32mI (1665687) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.125[0m
+[0;32mI (1680675) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1680676) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1680683) virtual float TMP100::readTemperature(): Temperature is 28.125[0m
+[0;32mI (1680689) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.125[0m
+[0;32mI (1695676) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1695677) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1695684) virtual float TMP100::readTemperature(): Temperature is 28.0625[0m
+[0;32mI (1695689) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.0625[0m
+[0;32mI (1710678) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1710679) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1710686) virtual float TMP100::readTemperature(): Temperature is 28.0625[0m
+[0;32mI (1710692) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.0625[0m
+[0;32mI (1725679) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (1725680) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1725687) virtual float TMP100::readTemperature(): Temperature is 28[0m
+[0;32mI (1725692) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28[0m

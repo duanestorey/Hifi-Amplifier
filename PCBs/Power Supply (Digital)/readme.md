@@ -5,6 +5,7 @@
 ## Version History
 
 - 1.0: Initial Release
+- 1.1: Reduced capacitance, added additional connectors
 
 ## Speciality Components
 

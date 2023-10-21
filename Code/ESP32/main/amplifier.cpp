@@ -26,8 +26,8 @@
 #include "dac-pcm1681.h"
 #include "channelsel-ax2358.h"
 
-Amplifier::Amplifier() : mWifiEnabled( false ), mWifiConnectionAttempts( 0 ), mUpdatingFromNTP( false ), mPoweredOn( true ), mTimerID( 0 ), mReconnectTimerID( 0 ), mLCD( 0 ),
-    mDAC( 0 ), mChannelSel( 0 ) {
+Amplifier::Amplifier() : mWifiEnabled( false ), mWifiConnectionAttempts( 0 ), mUpdatingFromNTP( false ), mPoweredOn( true ), mDisplayQueue( 3 ), mTimerID( 0 ), mReconnectTimerID( 0 ), mLCD( 0 ),
+    mDAC( 0 ), mChannelSel( 0 ), mMicroprocessorTemp( 0 ), mVolumeEncoder( 15, 13, true ), mInputEncoder( 4, 16, false ), mAudioTimerID( 0 ), mPendingVolumeChange( false ), mPendingVolume( 0 ) {
 }
 
 void 
@@ -40,20 +40,6 @@ Amplifier::getCurrentState() {
     ScopedLock lock( mStateMutex );
     AmplifierState stateCopy = mState;
     return stateCopy;
-}
-
-void 
-Amplifier::updateVolume( uint8_t volume, bool doActualUpdate  ) {
-    {
-        ScopedLock lock( mStateMutex );
-        mState.mCurrentVolume = volume;
-    }
-
-    mChannelSel->setVolume( volume );
-
-    if ( doActualUpdate ) {
-        asyncUpdateDisplay();
-    }
 }
 
 void 
@@ -93,14 +79,17 @@ void
 Amplifier::init() {
     nvs_flash_init(); 
 
-
     configurePins();
 
     mTimerID = mTimer.setTimer( 15000, mAmplifierQueue, true );
 
     mLCD = new LCD( 0x27, &mI2C );
+    mMicroprocessorTemp = new TMP100( 0x48, &mI2C );
+    mChannelSel = new ChannelSel_AX2358( 0x4a, &mI2C );
+
     mDAC = new DAC_PCM1681( 0x4c, &mI2C ); 
-    mChannelSel = new ChannelSel_AX2358( 0x94, &mI2C );
+   
+    mAudioTimerID = mTimer.setTimer( 200, mAudioQueue, true );
 }
 
 void 
@@ -138,9 +127,9 @@ void
 Amplifier::updateDisplay() {
     AmplifierState state = getCurrentState();
     char s[32];
-    char d[12];
+    char d[14];
 
-    sprintf( d, "Volume %d", state.mCurrentVolume );
+    sprintf( d, "Vol %ddB", ( state.mCurrentVolume - 79 ) );
 
     if ( state.mConnected ) {
         sprintf( s, "%-12s%8s", d, "Wifi" );
@@ -151,7 +140,7 @@ Amplifier::updateDisplay() {
 
     switch( state.mState ) {
         case AmplifierState::STATE_INIT:
-            sprintf( s, "Initialising" );
+            sprintf( s, "Starting" );
             break;
         case AmplifierState::STATE_PLAYING:
             sprintf( s, "Playing" );
@@ -207,11 +196,9 @@ Amplifier::updateDisplay() {
             mLCD->writeLine( 3, "Vinyl" );
             break;
         case AmplifierState::INPUT_6CH:
-            mLCD->writeLine( 3, "Digital" );
+            mLCD->writeLine( 3, "SPDIF" );
             break;
     }
-   
-   
 }
 
 void 
@@ -252,7 +239,7 @@ Amplifier::handleAmplifierThread() {
                     break;
                 case Message::MSG_TIMER:
                     if ( msg.mParam == mTimerID ) {
-                        AMP_DEBUG_I( "In Periodic Timer Event" );
+                        AMP_DEBUG_SI( "In Periodic Timer Event, Temp is " << mMicroprocessorTemp->readTemperature() );
                     }
                     break;
                 case Message::MSG_DECODER_IRQ:
@@ -262,11 +249,108 @@ Amplifier::handleAmplifierThread() {
                     handlePowerButtonPress();
                     break;
                 case Message::MSG_VOLUME_POWER_PRESS:
-                    handleVolumeButtonPress();
+                    handleVolumeButtonPress( msg.mParam );
                     break;
                 case Message::MSG_INPUT_POWER_PRESS:
                     handleInputButtonPress();
                     break;        
+                case Message::MSG_VOLUME_UP:
+                    {
+                        ScopedLock lock( mStateMutex );
+
+                        if ( mState.mCurrentVolume < 79 ) {
+                            mState.mCurrentVolume++;
+
+                            asyncUpdateDisplay();
+
+                            mAudioQueue.add( Message::MSG_VOLUME_SET, mState.mCurrentVolume );
+                        }
+                    }
+                    break;
+                case Message::MSG_VOLUME_DOWN:
+                    {
+                        ScopedLock lock( mStateMutex );
+
+                        if ( mState.mCurrentVolume > 0 ) {
+                            mState.mCurrentVolume--;
+
+                            asyncUpdateDisplay();
+
+                            mAudioQueue.add( Message::MSG_VOLUME_SET, mState.mCurrentVolume );
+                        }
+                    }  
+                    break;
+                case Message::MSG_INPUT_UP:
+                    {
+                        ScopedLock lock( mStateMutex );
+
+                        switch( mState.mInput ) {
+                            case AmplifierState::INPUT_STEREO_1:
+                                mState.mInput = AmplifierState::INPUT_STEREO_2;
+                                mState.mAudioType = AmplifierState::AUDIO_ANALOG;
+                                break;
+                            case AmplifierState::INPUT_STEREO_2:
+                                mState.mInput = AmplifierState::INPUT_STEREO_3;
+                                mState.mAudioType = AmplifierState::AUDIO_ANALOG;
+                                break;
+                            case AmplifierState::INPUT_STEREO_3:
+                                mState.mInput = AmplifierState::INPUT_STEREO_4;
+                                mState.mAudioType = AmplifierState::AUDIO_ANALOG;
+                                break;
+                            case AmplifierState::INPUT_STEREO_4:
+                                mState.mInput = AmplifierState::INPUT_6CH;
+                                mState.mAudioType = AmplifierState::AUDIO_DOLBY;
+                                break;
+                            case AmplifierState::INPUT_6CH:
+                                mState.mInput = AmplifierState::INPUT_STEREO_1;
+                                mState.mAudioType = AmplifierState::AUDIO_ANALOG;
+                                break;
+                            default:
+                                break;
+                        }
+
+                        asyncUpdateDisplay();
+
+                        mAudioQueue.add( Message::MSG_INPUT_SET, mState.mInput );
+                    }
+                    break;
+                case Message::MSG_INPUT_DOWN:
+                    {
+                        ScopedLock lock( mStateMutex );
+                        
+                        switch( mState.mInput ) {
+                            case AmplifierState::INPUT_STEREO_1:
+                                mState.mInput = AmplifierState::INPUT_6CH;
+                                mState.mAudioType = AmplifierState::AUDIO_DOLBY;
+                                break;
+                            case AmplifierState::INPUT_STEREO_2:
+                                mState.mInput = AmplifierState::INPUT_STEREO_1;
+                                mState.mAudioType = AmplifierState::AUDIO_ANALOG;
+                                break;
+                            case AmplifierState::INPUT_STEREO_3:
+                                mState.mInput = AmplifierState::INPUT_STEREO_2;
+                                mState.mAudioType = AmplifierState::AUDIO_ANALOG;
+                                break;
+                            case AmplifierState::INPUT_STEREO_4:
+                                mState.mInput = AmplifierState::INPUT_STEREO_3;
+                                mState.mAudioType = AmplifierState::AUDIO_ANALOG;
+                                break;
+                            case AmplifierState::INPUT_6CH:
+                                mState.mInput = AmplifierState::INPUT_STEREO_4;
+                                mState.mAudioType = AmplifierState::AUDIO_ANALOG;
+                                break;
+                            default:
+                                break;
+                        }
+
+                        asyncUpdateDisplay();
+
+                        mAudioQueue.add( Message::MSG_INPUT_SET, mState.mInput );
+                    }       
+                    break;
+                case Message::MSG_INPUT_BUTTON_PRESS:
+                    AMP_DEBUG_I( "Input Button Pressed" );
+                    break;               
                 default:
                     break;
             }
@@ -290,8 +374,10 @@ Amplifier::handleInputButtonPress() {
 }
 
 void 
-Amplifier::handleVolumeButtonPress() {
-    AMP_DEBUG_I( "Volume button pressed" );
+Amplifier::handleVolumeButtonPress(  uint8_t param ) {
+  //  AMP_DEBUG_I( "Volume button pressed" );
+
+    AMP_DEBUG_SI( "Volume encoder is " << gpio_get_level( GPIO_NUM_13 ) << " " << gpio_get_level( GPIO_NUM_15 ) << " " << mVolumeEncoder.level() )
 }
 
 void 
@@ -303,7 +389,7 @@ Amplifier::handleAudioThread() {
 
     // Channel Selector is now muted - need to umuted when audio is ready to go
     mChannelSel->init();
-    mChannelSel->setInput( ChannelSel::INPUT_STEREO_1 );
+    
 
     AMP_DEBUG_I( "Starting DAC initialization" );
     mDAC->init();
@@ -313,10 +399,21 @@ Amplifier::handleAudioThread() {
     mDAC->setVolume( 50 );
 
     // Initial volume, 0-79
-    updateVolume( 20 );
+    AmplifierState state = getCurrentState();
+    mChannelSel->setVolume( state.mCurrentVolume );
+    mChannelSel->setInput( state.mInput );
+
+    asyncUpdateDisplay();
+    
     mChannelSel->mute( false );
 
+    AMP_DEBUG_I( "Channel selector un-muted" );
+
     gpio_set_level( PIN_LED_ACTIVE, 1 );
+
+    // Activate power
+    vTaskDelay( 2000 / portTICK_PERIOD_MS );
+    gpio_set_level( PIN_RELAY, 1 );
 
     // Set to playing status
     changeAmplifierState( AmplifierState::STATE_PLAYING );
@@ -324,7 +421,34 @@ Amplifier::handleAudioThread() {
     Message msg;
     while( true ) {
         while ( mAudioQueue.waitForMessage( msg, 10 ) ) {
-            AMP_DEBUG_I( "Processing Audio Queue Message" );
+  //          AMP_DEBUG_I( "Processing Audio Queue Message" );
+
+            switch( msg.mMessageType ) {
+                case Message::MSG_VOLUME_SET:
+                    AMP_DEBUG_SI( "Setting pending audio volume to " << msg.mParam );
+                    mPendingVolumeChange = true;
+                    mPendingVolume = msg.mParam;
+                    
+                    break;
+                case Message::MSG_INPUT_SET:
+                    AMP_DEBUG_SI( "Setting audio input to " << msg.mParam );
+                    mChannelSel->setInput( msg.mParam );
+
+                    break;
+                case Message::MSG_TIMER: 
+                    if ( mPendingVolumeChange ) {
+                        AMP_DEBUG_SI( "Actually setting pending audio volume to " << mPendingVolume );
+                        bool result = mChannelSel->setVolume( mPendingVolume );
+                        if ( result ) {
+                            // if it failed, we will try again shortly
+                            mPendingVolumeChange = false;
+                        }
+                    }
+                    
+                    break;
+                default:
+                    break;
+            }
         } 
     } 
 }
@@ -397,7 +521,7 @@ Amplifier::setupWifi() {
     memset( &wifi_config, 0, sizeof( wifi_config ) );
 
     strcpy( (char*)wifi_config.sta.ssid, (char*)"The Grey Havens" );
-    strcpy( (char*)wifi_config.sta.password, (char*)"password" );
+    strcpy( (char*)wifi_config.sta.password, (char*)"brazil1234!" );
 
     esp_wifi_set_mode(WIFI_MODE_STA);
     esp_wifi_set_config( WIFI_IF_STA, &wifi_config );
@@ -506,6 +630,11 @@ Input_Button_ISR( void *arg ) {
     (( Amplifier * )arg)->_handleInputButtonISR();
 }
 
+void
+Input_Button_Encoder_ISR( void *arg ) {
+    (( Amplifier * )arg)->_handleInputButtonEncoderISR();
+}
+
 void 
 Amplifier::_handleDecoderISR() {
     mAmplifierQueue.addFromISR( Message::MSG_DECODER_IRQ );
@@ -518,12 +647,47 @@ Amplifier::_handlePowerButtonISR() {
 
 void 
 Amplifier::_handleVolumeButtonISR() {
-    mAmplifierQueue.addFromISR( Message::MSG_VOLUME_POWER_PRESS );
+    ENCODER_DIR direction = mVolumeEncoder.process();
+    switch( direction ) {
+        case ENCODER_FORWARD:
+            mAmplifierQueue.addFromISR( Message::MSG_VOLUME_UP );
+            break;
+        case ENCODER_BACKWARD:
+            mAmplifierQueue.addFromISR( Message::MSG_VOLUME_DOWN );
+            break;
+        default:
+            break;
+    }
+}
+
+void 
+Amplifier::_handleInputButtonEncoderISR() {
+   // mVolumeEncoder.process();
+
+
+
+    ENCODER_DIR direction = mInputEncoder.process();
+    switch( direction ) {
+        case ENCODER_FORWARD:
+            mAmplifierQueue.addFromISR( Message::MSG_INPUT_UP );
+            break;
+        case ENCODER_BACKWARD:
+            mAmplifierQueue.addFromISR( Message::MSG_INPUT_DOWN );
+            break;
+        default:
+            break;
+    }
+
+    //mAmplifierQueue.addFromISR( Message::MSG_VOLUME_POWER_PRESS );
 }
 
 void 
 Amplifier::_handleInputButtonISR() {
-    mAmplifierQueue.addFromISR( Message::MSG_INPUT_POWER_PRESS );
+
+    mAmplifierQueue.addFromISR( Message::MSG_INPUT_BUTTON_PRESS );
+   //  mAmplifierQueue.addFromISR( Message::MSG_INPUT_POWER_PRESS );
+
+
 }
 
 void 
@@ -564,28 +728,40 @@ Amplifier::configurePins() {
     gpio_install_isr_service( 0 );
 
     // Configure LEDs
-    configureOnePin( PIN_LED_ACTIVE, GPIO_INTR_DISABLE, GPIO_MODE_OUTPUT, GPIO_PULLDOWN_DISABLE, GPIO_PULLUP_DISABLE );
+    configureOnePin( PIN_LED_ACTIVE, GPIO_INTR_DISABLE, GPIO_MODE_OUTPUT, GPIO_PULLDOWN_ENABLE, GPIO_PULLUP_DISABLE );
     gpio_set_level( PIN_LED_ACTIVE, 0 );
     
     // The standby power LED indicator
-    configureOnePin( PIN_LED_FRONT_STANDBY, GPIO_INTR_DISABLE, GPIO_MODE_OUTPUT, GPIO_PULLDOWN_DISABLE, GPIO_PULLUP_DISABLE );
+    configureOnePin( PIN_LED_FRONT_STANDBY, GPIO_INTR_DISABLE, GPIO_MODE_OUTPUT, GPIO_PULLDOWN_ENABLE, GPIO_PULLUP_DISABLE );
     gpio_set_level( PIN_LED_FRONT_STANDBY, 1 );
 
-    configureOnePin( PIN_LED_FRONT_POWER, GPIO_INTR_DISABLE, GPIO_MODE_OUTPUT, GPIO_PULLDOWN_DISABLE, GPIO_PULLUP_DISABLE );
+    configureOnePin( PIN_LED_FRONT_POWER, GPIO_INTR_DISABLE, GPIO_MODE_OUTPUT, GPIO_PULLDOWN_ENABLE, GPIO_PULLUP_DISABLE );
 
-    configureOnePin( PIN_LED_CONNECTED, GPIO_INTR_DISABLE, GPIO_MODE_OUTPUT, GPIO_PULLDOWN_DISABLE, GPIO_PULLUP_DISABLE );
+    configureOnePin( PIN_LED_CONNECTED, GPIO_INTR_DISABLE, GPIO_MODE_OUTPUT, GPIO_PULLDOWN_ENABLE, GPIO_PULLUP_DISABLE );
     gpio_set_level( PIN_LED_CONNECTED, 0 );
 
     // Configure Output Triggers
-    configureOnePin( PIN_RELAY, GPIO_INTR_DISABLE, GPIO_MODE_OUTPUT, GPIO_PULLDOWN_DISABLE, GPIO_PULLUP_DISABLE );
+    configureOnePin( PIN_RELAY, GPIO_INTR_DISABLE, GPIO_MODE_OUTPUT, GPIO_PULLDOWN_ENABLE, GPIO_PULLUP_DISABLE );
     gpio_set_level( PIN_RELAY, 0 );
 
     // Configure Buttons
     configureOnePin( PIN_BUTTON_VOLUME, GPIO_INTR_POSEDGE, GPIO_MODE_INPUT, GPIO_PULLDOWN_ENABLE, GPIO_PULLUP_DISABLE );
     gpio_isr_handler_add( PIN_BUTTON_VOLUME, Volume_Button_ISR, this );
 
-    configureOnePin( PIN_BUTTON_INPUT, GPIO_INTR_POSEDGE, GPIO_MODE_INPUT, GPIO_PULLDOWN_ENABLE, GPIO_PULLUP_DISABLE );
+    configureOnePin( GPIO_NUM_15, GPIO_INTR_ANYEDGE, GPIO_MODE_INPUT, GPIO_PULLDOWN_DISABLE, GPIO_PULLUP_ENABLE );
+    gpio_isr_handler_add( GPIO_NUM_15, Volume_Button_ISR, this );
+
+    configureOnePin( GPIO_NUM_13, GPIO_INTR_ANYEDGE, GPIO_MODE_INPUT, GPIO_PULLDOWN_DISABLE, GPIO_PULLUP_ENABLE );
+    gpio_isr_handler_add( GPIO_NUM_13, Volume_Button_ISR, this );
+
+    configureOnePin( PIN_BUTTON_INPUT, GPIO_INTR_NEGEDGE, GPIO_MODE_INPUT, GPIO_PULLDOWN_DISABLE, GPIO_PULLUP_ENABLE );
     gpio_isr_handler_add( PIN_BUTTON_INPUT, Input_Button_ISR, this );
+
+    configureOnePin( GPIO_NUM_4, GPIO_INTR_ANYEDGE, GPIO_MODE_INPUT, GPIO_PULLDOWN_DISABLE, GPIO_PULLUP_ENABLE );
+    gpio_isr_handler_add( GPIO_NUM_4, Input_Button_Encoder_ISR, this );
+
+    configureOnePin( GPIO_NUM_16, GPIO_INTR_ANYEDGE, GPIO_MODE_INPUT, GPIO_PULLDOWN_DISABLE, GPIO_PULLUP_ENABLE );
+    gpio_isr_handler_add( GPIO_NUM_16, Input_Button_Encoder_ISR, this );
 
     configureOnePin( PIN_BUTTON_POWER, GPIO_INTR_POSEDGE, GPIO_MODE_INPUT, GPIO_PULLDOWN_ENABLE, GPIO_PULLUP_DISABLE );
     gpio_isr_handler_add( PIN_BUTTON_POWER, Power_Button_ISR, this );

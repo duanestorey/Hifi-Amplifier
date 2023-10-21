@@ -91,7 +91,7 @@ extern "C" void app_main(void)
         "Amplifier Thread",
         10000,
         (void *)amp,
-        2,
+        3,
         NULL
     );   
 

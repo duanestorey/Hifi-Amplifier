@@ -7,7 +7,7 @@
 
 class AmplifierState {
 public:
-    AmplifierState() : mAudioType( AUDIO_DOLBY ), mState( STATE_INIT ), mInput( INPUT_6CH ), mCurrentVolume( 20 ), mSamplingRate( 48000 ), mConnected( false ) {}
+    AmplifierState() : mAudioType( AUDIO_ANALOG ), mState( STATE_INIT ), mInput( INPUT_STEREO_1 ), mCurrentVolume( 47 ), mSamplingRate( 48000 ), mConnected( false ) {}
 
     enum {
         INPUT_UNDEFINED = 0,

@@ -26,8 +26,8 @@ public:
 
     virtual void init() = 0;
     virtual void setInput( uint8_t input ) = 0;
-    virtual void setVolume( uint8_t volume ) = 0;
-    virtual void setChannelVolume( uint8_t channel, uint8_t volume ) = 0;
+    virtual bool setVolume( uint8_t volume ) = 0;
+    virtual bool setChannelVolume( uint8_t channel, uint8_t volume ) = 0;
     virtual void mute( bool mute ) = 0;
 };
 

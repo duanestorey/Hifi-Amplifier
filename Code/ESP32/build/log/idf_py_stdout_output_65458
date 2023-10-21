@@ -1,0 +1,1494 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7136
+load:0x40078000,len:15780
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3884
+entry 0x40080650
+[0;32mI (31) boot: ESP-IDF v5.2-dev-2708-g3640dc86bb-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 17 2023 21:03:35[0m
+[0;32mI (33) boot: Multicore bootloader[0m
+[0;32mI (38) boot: chip revision: v3.0[0m
+[0;32mI (41) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (46) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (51) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (55) boot: Enabling RNG early entropy source...[0m
+[0;32mI (61) boot: Partition Table:[0m
+[0;32mI (64) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (71) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (79) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (86) boot:  2 phy_init         RF data          01 01 0000f000 00002000[0m
+[0;32mI (94) boot:  3 factory          factory app      00 00 00020000 002625a0[0m
+[0;32mI (101) boot: End of partition table[0m
+[0;32mI (106) boot: Defaulting to factory image[0m
+[0;32mI (110) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=32df4h (208372) map[0m
+[0;32mI (162) esp_image: segment 1: paddr=00052e1c vaddr=3ffbdb60 size=04f5ch ( 20316) load[0m
+[0;32mI (167) esp_image: segment 2: paddr=00057d80 vaddr=40080000 size=08298h ( 33432) load[0m
+[0;32mI (176) esp_image: segment 3: paddr=00060020 vaddr=400d0020 size=b2288h (729736) map[0m
+[0;32mI (327) esp_image: segment 4: paddr=001122b0 vaddr=40088298 size=0771ch ( 30492) load[0m
+[0;32mI (343) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (344) boot: Disabling RNG early entropy source...[0m
+[0;32mI (355) cpu_start: Multicore app[0m
+[0;32mI (355) cpu_start: Pro cpu up.[0m
+[0;32mI (356) cpu_start: Starting app cpu, entry point is 0x40081120[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (373) cpu_start: Pro cpu start user code[0m
+[0;32mI (373) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (373) cpu_start: Application information:[0m
+[0;32mI (378) cpu_start: Project name:     hifi-amp[0m
+[0;32mI (383) cpu_start: App version:      5af0bcc-dirty[0m
+[0;32mI (389) cpu_start: Compile time:     Oct 17 2023 21:03:34[0m
+[0;32mI (395) cpu_start: ELF file SHA256:  c29cd03f3...[0m
+[0;32mI (400) cpu_start: ESP-IDF:          v5.2-dev-2708-g3640dc86bb-dirty[0m
+[0;32mI (407) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (412) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (417) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (422) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (429) heap_init: At 3FFAE6E0 len 0000F480 (61 KiB): DRAM[0m
+[0;32mI (435) heap_init: At 3FFC81A8 len 00017E58 (95 KiB): DRAM[0m
+[0;32mI (441) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (447) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (454) heap_init: At 4008F9B4 len 0001064C (65 KiB): IRAM[0m
+[0;32mI (462) spi_flash: detected chip: generic[0m
+[0;32mI (465) spi_flash: flash io: dio[0m
+[0;33mW (469) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (480) coexist: coex firmware version: 80b0d89[0m
+[0;32mI (485) app_start: Starting scheduler on CPU0[0m
+[0;32mI (490[0;32mI (491) app_start: Starting scheduler on CPU1[0m
+) main_task: Started on CPU0[0m
+[0;32mI (500) main_task: Calling app_main()[0m
+[0;32mI (503) I2CBUS::I2CBUS(): Stargting I2C bus[0m
+-> found device with address 0x27
+-> found device with address 0x48
+
+...scan completed!
+[0;32mI (565) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (566) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (573) gpio: GPIO[23]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (583) gpio: GPIO[27]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (592) gpio: GPIO[19]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (601) gpio: GPIO[12]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (610) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (620) gpio: GPIO[13]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (629) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (638) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (648) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (657) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (666) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 1| Intr:2 [0m
+[0;32mI (678) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 15000 and ID 1 futureTime 15185 currentTime 188[0m
+[0;32mI (689) void Amplifier::handleTimerThread(): Starting Timer Thread on Core 0[0m
+[0;32mI (696) void Amplifier::handleDisplayThread(): Starting Display Thread[0m
+[0;32mI (703) void LCD::begin(): Beginning LCD Setup[0m
+[0;32mI (708) void Amplifier::handleAudioThread(): Starting Audio Thread[0m
+[0;32mI (715) void Amplifier::handleAudioThread(): Decoder set into active mode[0m
+[0;32mI (716) void Amplifier::handleAmplifierThread(): Starting Amplifier Thread on Core 0[0m
+[0;33mW (723) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 -1[0m
+[0;32mI (716) void Amplifier::handleRadioThread(): Starting Radio Thread on Core 0[0m
+[0;33mW (742) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 -1[0m
+I (754) wifi:wifi driver task: 3ffbd860, prio:23, stack:6656, core=0
+[0;33mW (761) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 -1[0m
+[0;33mW (778) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 -1[0m
+I (784) wifi:wifi firmware version: 341633f
+[0;33mW (787) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 -1[0m
+I (790) wifi:wifi certification version: v7.0
+[0;33mW (802) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 -1[0m
+I (804) wifi:config NVS flash: enabled
+[0;32mI (815) void Amplifier::handleAudioThread(): Starting DAC initialization[0m
+I (818) wifi:[0;32mI (825) virtual void DAC_PCM1681::init(): Starting PCM1681 DAC[0m
+config nano formating: disabled
+[0;33mW (834) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (836) wifi:Init data frame dynamic rx buffer num: 32
+[0;33mW (847) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (851) wifi:Init management frame dynamic rx buffer num: 32
+[0;33mW (863) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (867) wifi:Init management short buffer num: 32
+[0;33mW (879) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (882) wifi:Init dynamic tx buffer num: 32
+[0;33mW (894) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (897) wifi:Init static rx buffer size: 1600
+[0;33mW (908) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (912) wifi:Init static rx buffer num: 10
+[0;33mW (923) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (926) wifi:Init dynamic rx buffer num: 32
+[0;33mW (937) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+[0;32mI (942) wifi_init: rx ba win: 6[0m
+[0;33mW (952) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+[0;32mI (956) wifi_init: tcpip mbox: 32[0m
+[0;33mW (967) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 -1[0m
+[0;32mI (970) wifi_init: udp mbox: 6[0m
+[0;33mW (981) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 -1[0m
+[0;32mI (984) wifi_init: tcp mbox: 6[0m
+[0;32mI (998) wifi_init: tcp tx win: 5744[0m
+[0;32mI (1002) wifi_init: tcp rx win: 5744[0m
+[0;32mI (1006) wifi_init: tcp mss: 1440[0m
+[0;32mI (1010) wifi_init: LWIP IRAM OP enabled[0m
+[0;32mI (1019) phy_init: phy_version 4771,450c73b,Aug 16 2023,11:03:10[0m
+I (1104) wifi:mode : sta (c4:de:e2:1b:1a:b8)
+I (1105) wifi:enable tsf
+[0;32mI (1106) void Amplifier::attemptWifiConnect(): Attempting to connect Wifi[0m
+[0;32mI (1112) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (1115) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (1123) void Amplifier::handleWifiCallback(int32_t): Wifi Starting Up[0m
+I (1124) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+I (1138) wifi:state: init -> auth (b0)
+[0;32mI (1208) void LCD::begin(): LCD Backlight Setup[0m
+[0;32mI (1243) void LCD::begin(): LCD Setup Done[0m
+[0;32mI (1243) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1245) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (1254) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (2885) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2886) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777214[0m
+[0;32mI (2965) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2966) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777213[0m
+[0;32mI (2987) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2988) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777212[0m
+[0;32mI (2994) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3003) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777212[0m
+[0;32mI (3011) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3020) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777212[0m
+[0;32mI (3029) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3037) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777211[0m
+[0;32mI (3046) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3054) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777211[0m
+[0;32mI (3063) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3072) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777211[0m
+[0;32mI (3080) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3089) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777211[0m
+I (3094) wifi:[0;32mI (3098) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+state: auth -> assoc (0)
+[0;32mI (3108) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777211[0m
+[0;32mI (3118) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3127) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3127) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (3136) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777211[0m
+[0;32mI (3127) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (3152) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3161) void Amplifier::handleAudioThread(): Setting audio volume to 19[0m
+[0;32mI (3169) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777211[0m
+[0;33mW (3183) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+I (3195) wifi:[0;32mI (3184) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+state: assoc -> run (10)
+[0;32mI (3205) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777211[0m
+[0;32mI (3216) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3224) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777211[0m
+[0;32mI (3233) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3242) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777211[0m
+[0;32mI (3250) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3259) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777211[0m
+[0;32mI (3267) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3276) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777211[0m
+[0;32mI (3285) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3293) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777211[0m
+[0;32mI (3302) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3311) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777211[0m
+I (4213) wifi:connected with The Grey Havens, aid = 3, channel 1, BW20, bssid = 26:5a:4c:99:c4:26
+I (4214) wifi:security: WPA3-SAE, phy: bgn, rssi: -51
+I (4222) wifi:pm start, type: 1
+
+I (4224) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (4231) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (4233) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (4241) void Amplifier::handleWifiCallback(int32_t): Wifi Connection Established[0m
+[0;32mI (4249) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (5232) esp_netif_handlers: sta ip: 192.168.1.196, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (5237) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (5242) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+I (5243) wifi:[0;32mI (5250) void Amplifier::handleWifiCallback(int32_t): Wifi Received IP Address[0m
+<ba-add>idx:0 (ifx:0, 26:5a:4c:99:c4:26), tid:5, ssn:5, winSize:64[0;32mI (5259) void Amplifier::updateTimeFromNTP(): Attemping To Update Time From NTP Server[0m
+
+I (8250) wifi:<ba-add>idx:1 (ifx:0, 26:5a:4c:99:c4:26), tid:0, ssn:0, winSize:64
+[0;32mI (8314) void NTP_Callback(timeval*): Received NTP Callback[0m
+[0;32mI (8318) void Amplifier::handleRadioThread(): The current date/time is: Wed Oct 18 20:00:33 2023[0m
+[0;32mI (10010) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10011) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777212[0m
+[0;32mI (10017) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10026) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777212[0m
+[0;32mI (10034) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10043) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777212[0m
+[0;32mI (10051) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10060) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777212[0m
+[0;32mI (10069) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10078) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777212[0m
+[0;32mI (10086) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10095) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777213[0m
+[0;32mI (10104) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10112) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777214[0m
+[0;32mI (10121) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10130) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777215[0m
+[0;32mI (10139) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10147) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777215[0m
+[0;32mI (10156) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10165) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777215[0m
+[0;32mI (10174) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10182) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777215[0m
+[0;32mI (10191) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10200) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777215[0m
+[0;32mI (10208) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10217) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777215[0m
+[0;32mI (10226) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10235) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777215[0m
+[0;32mI (10243) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10253) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777215[0m
+[0;32mI (10261) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10270) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777215[0m
+[0;32mI (10278) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10287) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777215[0m
+[0;32mI (10296) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10304) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777215[0m
+[0;32mI (10313) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10322) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777215[0m
+[0;32mI (10331) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10339) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777215[0m
+[0;32mI (10348) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10357) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777215[0m
+[0;32mI (10366) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10374) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777215[0m
+[0;32mI (13035) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13035) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (13035) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13035) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (13050) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777216[0m
+[0;32mI (13057) void Amplifier::handleAudioThread(): Setting audio volume to 20[0m
+[0;32mI (13066) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (13078) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (13082) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777216[0m
+[0;32mI (13102) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13110) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777216[0m
+[0;32mI (13119) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13128) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777216[0m
+[0;32mI (13136) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13145) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777217[0m
+[0;32mI (13154) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13162) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777218[0m
+[0;32mI (13171) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13180) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777220[0m
+[0;32mI (13189) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13197) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777220[0m
+[0;32mI (13206) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13215) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777220[0m
+[0;32mI (13224) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13232) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13233) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (13241) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777219[0m
+[0;32mI (13233) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (13258) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13266) void Amplifier::handleAudioThread(): Setting audio volume to 21[0m
+[0;32mI (13275) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777219[0m
+[0;33mW (13287) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (13291) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13310) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777219[0m
+[0;32mI (13318) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13328) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777219[0m
+[0;32mI (13336) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13345) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777219[0m
+[0;32mI (13353) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13362) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777219[0m
+[0;32mI (13371) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13379) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777219[0m
+[0;32mI (13388) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13397) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777219[0m
+[0;32mI (13406) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13414) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777219[0m
+[0;32mI (13423) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13432) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777219[0m
+[0;32mI (13441) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13449) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777219[0m
+[0;32mI (13458) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13467) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777219[0m
+[0;32mI (13475) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13484) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777219[0m
+[0;32mI (13493) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13502) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777219[0m
+[0;32mI (13510) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13519) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777219[0m
+[0;32mI (14087) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (14088) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777220[0m
+[0;32mI (14093) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (14102) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777220[0m
+[0;32mI (14111) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (14120) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777220[0m
+[0;32mI (14128) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (14137) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777220[0m
+[0;32mI (14146) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (14155) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777220[0m
+[0;32mI (14181) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (14182) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777221[0m
+[0;32mI (14188) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (14196) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777221[0m
+[0;32mI (14205) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (14214) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777222[0m
+[0;32mI (14222) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (14231) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777222[0m
+[0;32mI (14240) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (14248) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777223[0m
+[0;32mI (15081) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15081) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (15081) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15081) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (15096) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777224[0m
+[0;32mI (15112) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15104) void Amplifier::handleAudioThread(): Setting audio volume to 22[0m
+[0;32mI (15121) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777224[0m
+[0;33mW (15133) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (15137) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15156) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777226[0m
+[0;32mI (15165) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15174) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777227[0m
+[0;32mI (15182) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15191) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777227[0m
+[0;32mI (15200) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15209) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777227[0m
+[0;32mI (15217) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15226) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777227[0m
+[0;32mI (15235) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15243) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777227[0m
+[0;32mI (15252) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15261) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777227[0m
+[0;32mI (15270) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15278) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777227[0m
+[0;32mI (15287) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15296) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777227[0m
+[0;32mI (15304) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15313) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777227[0m
+[0;32mI (15322) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15331) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777227[0m
+[0;32mI (15339) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15348) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777227[0m
+[0;32mI (15357) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15366) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777227[0m
+[0;32mI (15374) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15383) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777227[0m
+[0;32mI (15392) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15400) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777227[0m
+[0;32mI (15409) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15418) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777227[0m
+[0;32mI (15427) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15435) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777227[0m
+[0;32mI (15680) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (15681) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15687) virtual float TMP100::readTemperature(): Temperature is 25.4375[0m
+[0;32mI (15692) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 25.4375[0m
+[0;32mI (15957) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15957) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (15957) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15957) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (15972) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777228[0m
+[0;32mI (15980) void Amplifier::handleAudioThread(): Setting audio volume to 23[0m
+[0;33mW (15997) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 -1[0m
+[0;32mI (16031) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16032) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777229[0m
+[0;32mI (16060) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16060) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777230[0m
+[0;32mI (16066) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16075) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777230[0m
+[0;32mI (16084) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16092) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777230[0m
+[0;32mI (16101) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16110) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777232[0m
+[0;32mI (16119) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16127) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16127) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (16136) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777232[0m
+[0;32mI (16127) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (16153) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16161) void Amplifier::handleAudioThread(): Setting audio volume to 24[0m
+[0;32mI (16169) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777232[0m
+[0;33mW (16182) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (16186) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16205) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777231[0m
+[0;32mI (16213) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16222) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777231[0m
+[0;32mI (16231) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16240) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777231[0m
+[0;32mI (16800) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16801) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777232[0m
+[0;32mI (16885) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16886) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777233[0m
+[0;32mI (16897) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16900) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777234[0m
+[0;32mI (16918) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16919) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777235[0m
+[0;32mI (16926) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16935) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777236[0m
+[0;32mI (16944) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16952) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (16952) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16952) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (16969) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777236[0m
+[0;32mI (16977) void Amplifier::handleAudioThread(): Setting audio volume to 25[0m
+[0;32mI (16986) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (16998) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (17002) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777236[0m
+[0;32mI (17021) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17030) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777236[0m
+[0;32mI (17039) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17047) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777236[0m
+[0;32mI (17056) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17065) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777236[0m
+[0;32mI (17073) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17082) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777236[0m
+[0;32mI (17091) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17100) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777236[0m
+[0;32mI (17108) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17117) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777236[0m
+[0;32mI (17126) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17134) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777236[0m
+[0;32mI (17143) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17152) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777236[0m
+[0;32mI (17587) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17588) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777237[0m
+[0;32mI (17598) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17602) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777238[0m
+[0;32mI (17620) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17620) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777239[0m
+[0;32mI (17628) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17637) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777239[0m
+[0;32mI (17646) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17654) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777239[0m
+[0;32mI (17663) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17672) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777239[0m
+[0;32mI (17681) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17689) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777239[0m
+[0;32mI (17698) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17707) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777239[0m
+[0;32mI (17716) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17724) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777239[0m
+[0;32mI (17733) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17742) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777239[0m
+[0;32mI (17751) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17759) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777239[0m
+[0;32mI (17768) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17777) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777239[0m
+[0;32mI (17785) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17794) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777239[0m
+[0;32mI (17803) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17812) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777239[0m
+[0;32mI (17820) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17829) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777239[0m
+[0;32mI (17838) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17846) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777239[0m
+[0;32mI (17855) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17864) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777239[0m
+[0;32mI (17873) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (17881) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777239[0m
+[0;32mI (18226) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18226) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (18226) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18226) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (18241) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777240[0m
+[0;32mI (18248) void Amplifier::handleAudioThread(): Setting audio volume to 26[0m
+[0;32mI (18257) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (18270) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (18273) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777240[0m
+[0;32mI (18293) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18301) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777240[0m
+[0;32mI (18310) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18319) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777240[0m
+[0;32mI (18327) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18336) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777240[0m
+[0;32mI (18345) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18354) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777241[0m
+[0;32mI (18362) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18371) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777243[0m
+[0;32mI (18380) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18388) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777244[0m
+[0;32mI (18397) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18406) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777244[0m
+[0;32mI (18415) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18423) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777244[0m
+[0;32mI (18432) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18441) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777244[0m
+[0;32mI (18450) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18458) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777244[0m
+[0;32mI (18467) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18476) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777244[0m
+[0;32mI (18484) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18493) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777244[0m
+[0;32mI (18502) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18511) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777244[0m
+[0;32mI (18519) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18528) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777244[0m
+[0;32mI (18537) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18545) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777244[0m
+[0;32mI (18554) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18563) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777244[0m
+[0;32mI (18572) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18580) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777244[0m
+[0;32mI (18589) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18598) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777244[0m
+[0;32mI (18607) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18615) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (18615) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (18624) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777244[0m
+[0;32mI (18615) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (18649) void Amplifier::handleAudioThread(): Setting audio volume to 27[0m
+[0;33mW (18657) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 -1[0m
+[0;32mI (19238) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19239) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777245[0m
+[0;32mI (19248) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19253) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777246[0m
+[0;32mI (19262) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19271) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777248[0m
+[0;32mI (19279) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19288) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777248[0m
+[0;32mI (19297) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19305) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (19305) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19305) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (19322) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777248[0m
+[0;32mI (19330) void Amplifier::handleAudioThread(): Setting audio volume to 28[0m
+[0;32mI (19339) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19355) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777248[0m
+[0;32mI (19364) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (19351) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (19373) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777247[0m
+[0;32mI (19392) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19401) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777247[0m
+[0;32mI (19409) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19418) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777247[0m
+[0;32mI (19427) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19435) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777247[0m
+[0;32mI (19444) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19453) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777247[0m
+[0;32mI (19981) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19982) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777248[0m
+[0;32mI (19987) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (19996) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777248[0m
+[0;32mI (20005) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20013) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777248[0m
+[0;32mI (20022) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20031) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777248[0m
+[0;32mI (20040) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20048) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777250[0m
+[0;32mI (20057) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20066) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777250[0m
+[0;32mI (20074) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20083) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777251[0m
+[0;32mI (20092) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20101) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777251[0m
+[0;32mI (20109) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20118) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777251[0m
+[0;32mI (20127) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20136) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777251[0m
+[0;32mI (20144) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20153) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777251[0m
+[0;32mI (20162) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20170) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777251[0m
+[0;32mI (20179) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20188) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777251[0m
+[0;32mI (20736) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20736) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (20736) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20736) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (20750) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777252[0m
+[0;32mI (20742) void Amplifier::handleAudioThread(): Setting audio volume to 29[0m
+[0;32mI (20767) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (20779) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (20783) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777253[0m
+[0;32mI (20803) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20811) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777255[0m
+[0;32mI (20820) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20829) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777256[0m
+[0;32mI (20837) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20846) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777256[0m
+[0;32mI (20855) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20864) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777256[0m
+[0;32mI (20872) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20881) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777255[0m
+[0;32mI (20890) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20899) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777255[0m
+[0;32mI (20907) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20916) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777255[0m
+[0;32mI (20925) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20933) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777255[0m
+[0;32mI (20942) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20951) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777255[0m
+[0;32mI (20959) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20968) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777255[0m
+[0;32mI (20977) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20986) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777255[0m
+[0;32mI (20994) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21003) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777255[0m
+[0;32mI (21012) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21021) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777255[0m
+[0;32mI (21029) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21038) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777255[0m
+[0;32mI (21047) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21055) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777255[0m
+[0;32mI (21064) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21073) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777255[0m
+[0;32mI (21082) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21090) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777255[0m
+[0;32mI (21099) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21108) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777255[0m
+[0;32mI (21486) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21487) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777256[0m
+[0;32mI (21493) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21501) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777256[0m
+[0;32mI (21542) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21543) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777257[0m
+[0;32mI (21548) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21557) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777258[0m
+[0;32mI (21566) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21575) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777259[0m
+[0;32mI (21583) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21592) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777260[0m
+[0;32mI (21601) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21610) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777260[0m
+[0;32mI (21618) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21627) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777260[0m
+[0;32mI (21636) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21644) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21644) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (21653) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777260[0m
+[0;32mI (21644) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (21670) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21679) void Amplifier::handleAudioThread(): Setting audio volume to 30[0m
+[0;32mI (21687) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777259[0m
+[0;33mW (21699) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (21703) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21722) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777259[0m
+[0;32mI (21731) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21739) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777259[0m
+[0;32mI (21748) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21757) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777259[0m
+[0;32mI (21765) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21774) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777259[0m
+[0;32mI (22326) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22327) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777260[0m
+[0;32mI (22333) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22341) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777260[0m
+[0;32mI (22350) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22359) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777260[0m
+[0;32mI (22367) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22376) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777260[0m
+[0;32mI (22385) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22394) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777262[0m
+[0;32mI (22402) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22411) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777263[0m
+[0;32mI (22420) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22429) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777264[0m
+[0;32mI (22437) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22446) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777264[0m
+[0;32mI (22455) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22463) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777264[0m
+[0;32mI (22472) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22481) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777264[0m
+[0;32mI (22490) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22498) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777263[0m
+[0;32mI (22507) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22516) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777263[0m
+[0;32mI (22525) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22533) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777263[0m
+[0;32mI (22542) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22551) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777263[0m
+[0;32mI (22559) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22568) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777263[0m
+[0;32mI (22577) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22586) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777263[0m
+[0;32mI (22594) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22603) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777263[0m
+[0;32mI (22612) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22620) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777263[0m
+[0;32mI (22629) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22638) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777263[0m
+[0;32mI (22647) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22655) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777263[0m
+[0;32mI (22664) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22673) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777263[0m
+[0;32mI (22682) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22690) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777263[0m
+[0;32mI (22699) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22708) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777263[0m
+[0;32mI (22716) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22725) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777263[0m
+[0;32mI (22734) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22743) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777263[0m
+[0;32mI (23134) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23135) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777264[0m
+[0;32mI (23191) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23192) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777265[0m
+[0;32mI (23198) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23206) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777266[0m
+[0;32mI (23215) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23224) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777267[0m
+[0;32mI (23232) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23241) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777268[0m
+[0;32mI (23250) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23259) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777268[0m
+[0;32mI (23267) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23276) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777268[0m
+[0;32mI (23285) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23293) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777268[0m
+[0;32mI (23302) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23311) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777267[0m
+[0;32mI (23320) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23328) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777267[0m
+[0;32mI (23337) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23346) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777267[0m
+[0;32mI (23355) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23363) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777267[0m
+[0;32mI (23372) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23381) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777267[0m
+[0;32mI (23389) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23398) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777267[0m
+[0;32mI (23407) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23416) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777267[0m
+[0;32mI (23424) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23433) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777267[0m
+[0;32mI (23442) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23450) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777267[0m
+[0;32mI (23459) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23468) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777267[0m
+[0;32mI (23477) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23485) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777267[0m
+[0;32mI (23494) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23503) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777267[0m
+[0;32mI (25063) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25064) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777268[0m
+[0;32mI (25148) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25149) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777269[0m
+[0;32mI (25161) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25163) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777270[0m
+[0;32mI (25172) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25181) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777270[0m
+[0;32mI (25189) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25198) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777272[0m
+[0;32mI (25207) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25215) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25215) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (25224) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777272[0m
+[0;32mI (25215) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (25241) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25249) void Amplifier::handleAudioThread(): Setting audio volume to 31[0m
+[0;32mI (25258) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777272[0m
+[0;33mW (25270) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (25274) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25293) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777272[0m
+[0;32mI (25302) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25310) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777272[0m
+[0;32mI (25319) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25328) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777272[0m
+[0;32mI (25337) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25345) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777272[0m
+[0;32mI (25354) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25363) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777272[0m
+[0;32mI (25371) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25380) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777272[0m
+[0;32mI (25613) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25614) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777271[0m
+[0;32mI (25745) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25746) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777272[0m
+[0;32mI (25850) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25851) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777271[0m
+[0;32mI (25882) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25882) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777272[0m
+[0;32mI (25896) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25897) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777271[0m
+[0;32mI (26900) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26901) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777272[0m
+[0;32mI (27016) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27017) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777273[0m
+[0;32mI (27028) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27031) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777274[0m
+[0;32mI (27046) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27049) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777275[0m
+[0;32mI (27057) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27066) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777276[0m
+[0;32mI (27075) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27083) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27083) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (27092) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777276[0m
+[0;32mI (27083) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (27109) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27117) void Amplifier::handleAudioThread(): Setting audio volume to 32[0m
+[0;32mI (27126) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777276[0m
+[0;33mW (27139) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (27142) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27161) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777276[0m
+[0;32mI (27170) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27178) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777276[0m
+[0;32mI (27187) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27196) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777276[0m
+[0;32mI (27205) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27213) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777276[0m
+[0;32mI (27222) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27231) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777276[0m
+[0;32mI (27239) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27248) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777276[0m
+[0;32mI (27257) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27266) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777276[0m
+[0;32mI (27274) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27283) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777276[0m
+[0;32mI (27292) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27300) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777276[0m
+[0;32mI (27309) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27318) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777276[0m
+[0;32mI (27327) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27335) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777276[0m
+[0;32mI (28664) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28665) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777277[0m
+[0;32mI (28682) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28682) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777278[0m
+[0;32mI (28690) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28699) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777278[0m
+[0;32mI (28708) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28716) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777280[0m
+[0;32mI (28725) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28734) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28734) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (28743) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777280[0m
+[0;32mI (28734) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (28759) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28775) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777280[0m
+[0;32mI (28785) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28751) void Amplifier::handleAudioThread(): Setting audio volume to 33[0m
+[0;32mI (28793) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777280[0m
+[0;33mW (28806) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (28809) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28829) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777280[0m
+[0;32mI (30683) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (30684) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (30690) virtual float TMP100::readTemperature(): Temperature is 25.4375[0m
+[0;32mI (30696) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 25.4375[0m
+[0;32mI (33586) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (33587) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777281[0m
+[0;32mI (33592) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (33601) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777281[0m
+[0;32mI (33610) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (33619) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777282[0m
+[0;32mI (33627) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (33636) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777283[0m
+[0;32mI (33645) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (33654) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777284[0m
+[0;32mI (33662) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (33671) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (33671) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (33680) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777284[0m
+[0;32mI (33671) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (33705) void Amplifier::handleAudioThread(): Setting audio volume to 34[0m
+[0;33mW (33713) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 -1[0m
+[0;32mI (34831) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (34832) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777285[0m
+[0;32mI (34851) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (34851) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777286[0m
+[0;32mI (34857) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (34866) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777286[0m
+[0;32mI (34875) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (34883) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (34892) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (34901) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (34901) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (34909) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (34926) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (34918) void Amplifier::handleAudioThread(): Setting audio volume to 35[0m
+[0;32mI (34935) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (34901) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (34951) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (34943) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 -1[0m
+[0;32mI (34968) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (34987) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (34996) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35004) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35013) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35022) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35031) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35039) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35048) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35057) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35065) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35074) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35083) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35092) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35100) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35109) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35118) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35126) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35135) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35144) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35153) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35161) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35170) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35179) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35187) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35196) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35205) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35214) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35222) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35231) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35240) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35249) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35257) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35266) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35275) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35283) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35292) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35301) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35310) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35318) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35327) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35336) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35345) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35353) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35362) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35409) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35410) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777288[0m
+[0;32mI (35481) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35482) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777289[0m
+[0;32mI (35487) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35496) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777289[0m
+[0;32mI (35505) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35514) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777290[0m
+[0;32mI (35522) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35531) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777291[0m
+[0;32mI (35540) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35548) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777291[0m
+[0;32mI (36287) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36287) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (36287) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36287) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (36302) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777292[0m
+[0;32mI (36293) void Amplifier::handleAudioThread(): Setting audio volume to 36[0m
+[0;32mI (36318) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (36331) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (36335) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777292[0m
+[0;32mI (36353) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36362) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777294[0m
+[0;32mI (36371) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36380) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777296[0m
+[0;32mI (36389) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36397) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777296[0m
+[0;32mI (36406) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36415) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777296[0m
+[0;32mI (36423) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36432) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777296[0m
+[0;32mI (36441) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36450) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777295[0m
+[0;32mI (36458) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36467) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777295[0m
+[0;32mI (36476) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36484) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777295[0m
+[0;32mI (36493) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36502) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777295[0m
+[0;32mI (36511) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36519) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777295[0m
+[0;32mI (36528) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36537) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777295[0m
+[0;32mI (36546) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36554) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777295[0m
+[0;32mI (36563) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36572) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777295[0m
+[0;32mI (36580) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36589) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777295[0m
+[0;32mI (36598) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36607) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777295[0m
+[0;32mI (36615) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36624) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777295[0m
+[0;32mI (36633) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36641) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36641) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (36650) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777295[0m
+[0;32mI (36667) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36641) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (36676) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777295[0m
+[0;32mI (36683) void Amplifier::handleAudioThread(): Setting audio volume to 37[0m
+[0;32mI (36692) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (36705) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (36709) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777295[0m
+[0;32mI (37370) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (37371) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777296[0m
+[0;32mI (37377) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (37385) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777296[0m
+[0;32mI (37395) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (37403) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777296[0m
+[0;32mI (37411) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (37420) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777296[0m
+[0;32mI (37429) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (37438) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777297[0m
+[0;32mI (37446) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (37455) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777298[0m
+[0;32mI (37464) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (37472) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777299[0m
+[0;32mI (37481) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (37490) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777299[0m
+[0;32mI (37499) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (37507) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777299[0m
+[0;32mI (41103) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (41103) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (41103) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (41103) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (41118) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777300[0m
+[0;32mI (41126) void Amplifier::handleAudioThread(): Setting audio volume to 38[0m
+[0;33mW (41142) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 -1[0m
+[0;32mI (41289) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (41290) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777301[0m
+[0;32mI (41313) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (41313) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777302[0m
+[0;32mI (41319) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (41328) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777302[0m
+[0;32mI (41342) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (41345) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777303[0m
+[0;32mI (41354) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (41363) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777303[0m
+[0;32mI (42985) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (42985) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (42985) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (42985) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (42999) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777304[0m
+[0;32mI (43016) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (42991) void Amplifier::handleAudioThread(): Setting audio volume to 39[0m
+[0;32mI (43025) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777304[0m
+[0;33mW (43037) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (43041) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (43060) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777305[0m
+[0;32mI (43069) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (43078) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777306[0m
+[0;32mI (43086) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (43095) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777306[0m
+[0;32mI (43104) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (43113) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777306[0m
+[0;32mI (43121) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (43130) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777306[0m
+[0;32mI (43139) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (43147) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777306[0m
+[0;32mI (43156) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (43165) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777306[0m
+[0;32mI (43174) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (43182) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777306[0m
+[0;32mI (43191) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (43200) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777306[0m
+[0;32mI (43208) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (43217) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777307[0m
+[0;32mI (43226) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (43235) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777307[0m
+[0;32mI (43243) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (43252) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777307[0m
+[0;32mI (43261) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (43270) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777307[0m
+[0;32mI (43278) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (43287) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777307[0m
+[0;32mI (44435) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (44435) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (44435) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (44435) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (44449) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777308[0m
+[0;32mI (44441) void Amplifier::handleAudioThread(): Setting audio volume to 40[0m
+[0;33mW (44475) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 -1[0m
+[0;32mI (44476) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (44493) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777310[0m
+[0;32mI (44501) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (44510) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777311[0m
+[0;32mI (44519) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (44528) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777312[0m
+[0;32mI (44536) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (44545) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777312[0m
+[0;32mI (44554) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (44562) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (44562) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (44563) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (44579) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777312[0m
+[0;32mI (44588) void Amplifier::handleAudioThread(): Setting audio volume to 41[0m
+[0;32mI (44596) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (44608) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (44612) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777311[0m
+[0;32mI (44631) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (44640) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777311[0m
+[0;32mI (44649) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (44657) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777311[0m
+[0;32mI (44666) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (44675) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777311[0m
+[0;32mI (44683) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (44692) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777311[0m
+[0;32mI (45640) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (45641) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777312[0m
+[0;32mI (45647) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (45655) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777312[0m
+[0;32mI (45664) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (45673) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777312[0m
+[0;32mI (45681) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (45688) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (45690) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777312[0m
+[0;32mI (45705) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (45714) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777313[0m
+[0;32mI (45723) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (45731) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777314[0m
+[0;32mI (45740) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (45751) virtual float TMP100::readTemperature(): Temperature is 25.4375[0m
+[0;32mI (45756) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 25.4375[0m
+[0;32mI (45765) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (45774) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777316[0m
+[0;32mI (45783) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (45791) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777316[0m
+[0;32mI (45800) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (45809) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777316[0m
+[0;32mI (45818) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (45826) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (45826) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (45835) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777316[0m
+[0;32mI (45826) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (45852) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (45860) void Amplifier::handleAudioThread(): Setting audio volume to 42[0m
+[0;32mI (45869) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777316[0m
+[0;33mW (45881) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (45884) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (45904) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777316[0m
+[0;32mI (59336) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (59337) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777317[0m
+[0;32mI (59343) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (59352) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777318[0m
+[0;32mI (59360) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (59369) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777319[0m
+[0;32mI (59377) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (59386) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777320[0m
+[0;32mI (59395) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (59403) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (59404) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (59412) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777320[0m
+[0;32mI (59404) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (59438) void Amplifier::handleAudioThread(): Setting audio volume to 43[0m
+[0;33mW (59445) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 -1[0m
+[0;32mI (60679) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (60680) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (60686) virtual float TMP100::readTemperature(): Temperature is 25.4375[0m
+[0;32mI (60692) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 25.4375[0m
+[0;32mI (61716) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (61717) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777321[0m
+[0;32mI (61722) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (61731) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777321[0m
+[0;32mI (61742) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (61749) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777322[0m
+[0;32mI (61757) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (61766) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777322[0m
+[0;32mI (61775) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (61784) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777323[0m
+[0;32mI (61792) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (61801) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777323[0m
+[0;32mI (61810) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (61818) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777323[0m
+[0;32mI (61827) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (61836) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777323[0m
+[0;32mI (61845) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (61853) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777323[0m
+[0;32mI (61862) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (61871) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777323[0m
+[0;32mI (61880) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (61888) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777323[0m
+[0;32mI (61897) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (61906) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777323[0m
+[0;32mI (61914) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (61923) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777323[0m
+[0;32mI (61932) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (61941) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777323[0m
+[0;32mI (61949) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (61958) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777323[0m
+[0;32mI (61967) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (61975) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777323[0m
+[0;32mI (61984) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (61993) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777323[0m
+[0;32mI (62002) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (62010) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777323[0m
+[0;32mI (62019) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (62028) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777323[0m
+[0;32mI (62037) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (62045) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777323[0m
+[0;32mI (63254) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (63254) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (63254) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (63254) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (63269) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777324[0m
+[0;32mI (63277) void Amplifier::handleAudioThread(): Setting audio volume to 44[0m
+[0;33mW (63293) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 -1[0m
+[0;32mI (63527) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (63528) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777325[0m
+[0;32mI (63735) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (63736) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777326[0m
+[0;32mI (63742) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (63750) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777326[0m
+[0;32mI (63759) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (63768) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777326[0m
+[0;32mI (63776) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (63785) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777326[0m
+[0;32mI (63794) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (63803) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777326[0m
+[0;32mI (63811) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (63820) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777326[0m
+[0;32mI (63829) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (63837) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777327[0m
+[0;32mI (63846) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (63855) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777327[0m
+[0;32mI (63864) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (63872) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777327[0m
+[0;32mI (63881) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (63890) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777327[0m
+[0;32mI (63899) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (63907) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777327[0m
+[0;32mI (63916) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (63925) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777327[0m
+[0;32mI (63933) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (63942) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777327[0m
+[0;32mI (63951) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (63960) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777327[0m
+[0;32mI (63968) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (63977) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777327[0m
+[0;32mI (63986) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (63994) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777327[0m
+[0;32mI (64003) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (64012) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777327[0m
+[0;32mI (64021) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (64029) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777327[0m
+[0;32mI (64038) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (64047) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777327[0m
+[0;32mI (64056) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (64064) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777327[0m
+[0;32mI (64073) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (64082) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777327[0m
+[0;32mI (67070) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (67070) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (67070) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (67070) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (67084) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777328[0m
+[0;32mI (67076) void Amplifier::handleAudioThread(): Setting audio volume to 45[0m
+[0;32mI (67101) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (67114) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (67117) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777328[0m
+[0;32mI (67137) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (67145) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777329[0m
+[0;32mI (67154) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (67163) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777330[0m
+[0;32mI (67171) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (67180) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777331[0m
+[0;32mI (67189) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (67198) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777331[0m
+[0;32mI (67206) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (67215) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777331[0m
+[0;32mI (67224) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (67232) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777331[0m
+[0;32mI (67241) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (67250) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777331[0m
+[0;32mI (67259) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (67267) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777331[0m
+[0;32mI (67276) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (67285) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777331[0m
+[0;32mI (67294) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (67302) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777331[0m
+[0;32mI (67311) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (67320) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777331[0m
+[0;32mI (67328) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (67337) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777331[0m
+[0;32mI (67346) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (67355) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777331[0m
+[0;32mI (67363) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (67372) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777331[0m
+[0;32mI (67381) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (67390) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777331[0m
+[0;32mI (67398) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (67407) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777331[0m
+[0;32mI (67416) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (67424) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777331[0m
+[0;32mI (67433) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (67442) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777331[0m
+[0;32mI (69750) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (69750) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (69750) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (69756) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777332[0m
+[0;32mI (69750) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (69773) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (69782) void Amplifier::handleAudioThread(): Setting audio volume to 46[0m
+[0;32mI (69790) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777332[0m
+[0;33mW (69802) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (69831) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (69832) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777333[0m
+[0;32mI (69838) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (69847) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777333[0m
+[0;32mI (69855) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (69864) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777334[0m
+[0;32mI (69873) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (69881) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777334[0m
+[0;32mI (69890) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (69899) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777335[0m
+[0;32mI (69908) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (69916) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777335[0m
+[0;32mI (69925) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (69934) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777335[0m
+[0;32mI (69943) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (69951) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777335[0m
+[0;32mI (69960) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (69969) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777335[0m
+[0;32mI (69977) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (69986) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777335[0m
+[0;32mI (69995) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (70004) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777335[0m
+[0;32mI (70012) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (70021) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777335[0m
+[0;32mI (70030) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (70039) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777335[0m
+[0;32mI (70047) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (70056) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777335[0m
+[0;32mI (70065) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (70073) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777335[0m
+[0;32mI (70082) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (70091) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777335[0m
+[0;32mI (70100) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (70108) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777335[0m
+[0;32mI (70117) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (70126) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777335[0m
+[0;32mI (75672) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (75672) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (75672) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (75687) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777336[0m
+[0;32mI (75682) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (75672) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (75702) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (75710) void Amplifier::handleAudioThread(): Setting audio volume to 47[0m
+[0;32mI (75721) virtual float TMP100::readTemperature(): Temperature is 25.4375[0m
+[0;33mW (75731) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (75734) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 25.4375[0m
+[0;32mI (75753) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (75761) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777338[0m
+[0;32mI (75770) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (75779) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777339[0m
+[0;32mI (75788) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (75797) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777339[0m
+[0;32mI (75805) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (75814) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777339[0m
+[0;32mI (77782) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (77782) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (77782) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (77782) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (77797) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777340[0m
+[0;32mI (77788) void Amplifier::handleAudioThread(): Setting audio volume to 48[0m
+[0;33mW (77822) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 -1[0m
+[0;32mI (77971) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (77972) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777341[0m
+[0;32mI (77978) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (77986) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777341[0m
+[0;32mI (77995) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (78004) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777342[0m
+[0;32mI (78012) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (78021) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777343[0m
+[0;32mI (78030) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (78038) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777343[0m
+[0;32mI (78047) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (78057) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777343[0m
+[0;32mI (78065) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (78073) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777343[0m
+[0;32mI (78082) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (78091) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777343[0m
+[0;32mI (78100) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (78108) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777343[0m
+[0;32mI (78117) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (78126) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777343[0m
+[0;32mI (78135) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (78143) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777343[0m
+[0;32mI (78152) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (78161) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777343[0m
+[0;32mI (78169) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (78178) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777343[0m
+[0;32mI (78187) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (78196) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777343[0m
+[0;32mI (78204) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (78213) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777343[0m
+[0;32mI (78222) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (78230) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777343[0m
+[0;32mI (78239) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (78248) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777343[0m
+[0;32mI (78257) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (78265) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777343[0m
+[0;32mI (83348) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83348) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (83348) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83362) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777344[0m
+[0;32mI (83354) void Amplifier::handleAudioThread(): Setting audio volume to 49[0m
+[0;32mI (83371) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83348) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (83387) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777344[0m
+[0;33mW (83379) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 -1[0m
+[0;32mI (83404) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83423) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777344[0m
+[0;32mI (83454) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83455) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777345[0m
+[0;32mI (83460) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83469) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777345[0m
+[0;32mI (83478) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83486) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777346[0m
+[0;32mI (83495) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83504) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777347[0m
+[0;32mI (83513) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83521) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777348[0m
+[0;32mI (83530) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83539) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777348[0m
+[0;32mI (83548) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83556) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777348[0m
+[0;32mI (83565) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83574) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777348[0m
+[0;32mI (83582) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83591) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777347[0m
+[0;32mI (83600) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83609) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777347[0m
+[0;32mI (83617) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83626) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777347[0m
+[0;32mI (83635) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83644) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777347[0m
+[0;32mI (83652) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83661) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777347[0m
+[0;32mI (83670) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83678) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83678) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (83687) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777347[0m
+[0;32mI (83678) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (83704) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83712) void Amplifier::handleAudioThread(): Setting audio volume to 50[0m
+[0;32mI (83721) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777347[0m
+[0;33mW (83733) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (83737) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83756) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777347[0m
+[0;32mI (83765) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83773) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777347[0m
+[0;32mI (83782) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83791) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777347[0m
+[0;32mI (83799) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (83808) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777347[0m
+[0;32mI (84397) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (84398) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777348[0m
+[0;32mI (84475) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (84475) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 0 16777349[0m
+[0;32mI (84496) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (84497) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 0 16777350[0m
+[0;32mI (84527) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (84527) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777351[0m
+[0;32mI (84533) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (84542) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777352[0m
+[0;32mI (84550) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (84559) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (84559) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (84559) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (84576) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777352[0m
+[0;32mI (84593) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (84584) void Amplifier::handleAudioThread(): Setting audio volume to 51[0m
+[0;32mI (84601) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 0 1 16777352[0m
+[0;33mW (84614) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (84617) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (84637) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777351[0m
+[0;32mI (84645) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (84654) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777351[0m
+[0;32mI (84663) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (84672) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777351[0m
+[0;32mI (84680) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (84689) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777351[0m
+[0;32mI (84698) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (84707) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777351[0m
+[0;32mI (84715) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (84724) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777351[0m
+[0;32mI (84733) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (84741) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777351[0m
+[0;32mI (84750) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (84759) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777351[0m
+[0;32mI (84767) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (84776) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777351[0m
+[0;32mI (84785) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (84794) void Amplifier::handleVolumeButtonPress(uint8_t): Volume encoder is 1 1 16777351[0m

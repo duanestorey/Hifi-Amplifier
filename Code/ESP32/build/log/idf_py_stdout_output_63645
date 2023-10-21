@@ -1,0 +1,1322 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7136
+load:0x40078000,len:15780
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3884
+entry 0x40080650
+[0;32mI (31) boot: ESP-IDF v5.2-dev-2708-g3640dc86bb-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 17 2023 21:03:35[0m
+[0;32mI (33) boot: Multicore bootloader[0m
+[0;32mI (38) boot: chip revision: v3.0[0m
+[0;32mI (41) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (46) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (51) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (55) boot: Enabling RNG early entropy source...[0m
+[0;32mI (61) boot: Partition Table:[0m
+[0;32mI (64) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (71) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (79) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (86) boot:  2 phy_init         RF data          01 01 0000f000 00002000[0m
+[0;32mI (94) boot:  3 factory          factory app      00 00 00020000 002625a0[0m
+[0;32mI (101) boot: End of partition table[0m
+[0;32mI (106) boot: Defaulting to factory image[0m
+[0;32mI (110) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=32db4h (208308) map[0m
+[0;32mI (162) esp_image: segment 1: paddr=00052ddc vaddr=3ffbdb60 size=04f5ch ( 20316) load[0m
+[0;32mI (167) esp_image: segment 2: paddr=00057d40 vaddr=40080000 size=082d8h ( 33496) load[0m
+[0;32mI (176) esp_image: segment 3: paddr=00060020 vaddr=400d0020 size=b2234h (729652) map[0m
+[0;32mI (327) esp_image: segment 4: paddr=0011225c vaddr=400882d8 size=076dch ( 30428) load[0m
+[0;32mI (343) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (344) boot: Disabling RNG early entropy source...[0m
+[0;32mI (355) cpu_start: Multicore app[0m
+[0;32mI (355) cpu_start: Pro cpu up.[0m
+[0;32mI (356) cpu_start: Starting app cpu, entry point is 0x40081120[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (373) cpu_start: Pro cpu start user code[0m
+[0;32mI (373) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (373) cpu_start: Application information:[0m
+[0;32mI (378) cpu_start: Project name:     hifi-amp[0m
+[0;32mI (383) cpu_start: App version:      5af0bcc-dirty[0m
+[0;32mI (389) cpu_start: Compile time:     Oct 17 2023 21:03:34[0m
+[0;32mI (395) cpu_start: ELF file SHA256:  871ffd925...[0m
+[0;32mI (400) cpu_start: ESP-IDF:          v5.2-dev-2708-g3640dc86bb-dirty[0m
+[0;32mI (407) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (412) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (417) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (422) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (429) heap_init: At 3FFAE6E0 len 0000F480 (61 KiB): DRAM[0m
+[0;32mI (435) heap_init: At 3FFC81A8 len 00017E58 (95 KiB): DRAM[0m
+[0;32mI (441) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (447) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (454) heap_init: At 4008F9B4 len 0001064C (65 KiB): IRAM[0m
+[0;32mI (462) spi_flash: detected chip: generic[0m
+[0;32mI (465) spi_flash: flash io: dio[0m
+[0;33mW (469) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (480) coexist: coex firmware version: 80b0d89[0m
+[0;32mI (485) app_start: Starting scheduler on CPU0[0m
+[0;32mI (490[0;32mI (491) app_start: Starting scheduler on CPU1[0m
+) main_task: Started on CPU0[0m
+[0;32mI (500) main_task: Calling app_main()[0m
+[0;32mI (503) I2CBUS::I2CBUS(): Stargting I2C bus[0m
+-> found device with address 0x27
+-> found device with address 0x48
+-> found device with address 0x4a
+
+...scan completed!
+[0;32mI (579) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (580) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (588) gpio: GPIO[23]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (597) gpio: GPIO[27]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (606) gpio: GPIO[19]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (615) gpio: GPIO[12]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (625) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (634) gpio: GPIO[13]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (643) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (653) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (662) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (671) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (680) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 1| Intr:2 [0m
+[0;32mI (693) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 15000 and ID 1 futureTime 15200 currentTime 203[0m
+[0;32mI (704) void Amplifier::handleTimerThread(): Starting Timer Thread on Core 0[0m
+[0;32mI (710) void Amplifier::handleDisplayThread(): Starting Display Thread[0m
+[0;32mI (717) void LCD::begin(): Beginning LCD Setup[0m
+[0;32mI (723) void Amplifier::handleAudioThread(): Starting Audio Thread[0m
+[0;32mI (729) void Amplifier::handleAudioThread(): Decoder set into active mode[0m
+[0;32mI (730) void Amplifier::handleAmplifierThread(): Starting Amplifier Thread on Core 0[0m
+[0;32mI (741) void Amplifier::handleAudioThread(): Starting DAC initialization[0m
+[0;32mI (730) void Amplifier::handleRadioThread(): Starting Radio Thread on Core 0[0m
+[0;32mI (753) virtual void DAC_PCM1681::init(): Starting PCM1681 DAC[0m
+I (765) wifi:wifi driver task: 3ffcf998, prio:23, stack:6656, core=0
+[0;33mW (768) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+[0;33mW (787) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (792) wifi:wifi firmware version: 341633f
+[0;33mW (795) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (798) wifi:wifi certification version: v7.0
+[0;33mW (809) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (813) wifi:config NVS flash: enabled
+[0;33mW (824) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (827) wifi:config nano formating: disabled
+[0;33mW (838) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (842) wifi:Init data frame dynamic rx buffer num: 32
+[0;33mW (853) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (857) wifi:Init management frame dynamic rx buffer num: 32
+[0;33mW (868) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (873) wifi:Init management short buffer num: 32
+[0;33mW (884) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (888) wifi:Init dynamic tx buffer num: 32
+I (903) wifi:Init static rx buffer size: 1600
+I (906) wifi:Init static rx buffer num: 10
+I (910) wifi:Init dynamic rx buffer num: 32
+[0;32mI (916) wifi_init: rx ba win: 6[0m
+[0;32mI (918) wifi_init: tcpip mbox: 32[0m
+[0;32mI (922) wifi_init: udp mbox: 6[0m
+[0;32mI (926) wifi_init: tcp mbox: 6[0m
+[0;32mI (929) wifi_init: tcp tx win: 5744[0m
+[0;32mI (933) wifi_init: tcp rx win: 5744[0m
+[0;32mI (938) wifi_init: tcp mss: 1440[0m
+[0;32mI (941) wifi_init: LWIP IRAM OP enabled[0m
+[0;32mI (950) phy_init: phy_version 4771,450c73b,Aug 16 2023,11:03:10[0m
+I (1036) wifi:mode : sta (c4:de:e2:1b:1a:b8)
+I (1037) wifi:enable tsf
+[0;32mI (1038) void Amplifier::attemptWifiConnect(): Attempting to connect Wifi[0m
+[0;32mI (1044) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (1047) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+I (1051) wifi:[0;32mI (1055) void Amplifier::handleWifiCallback(int32_t): Wifi Starting Up[0m
+new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+I (1069) wifi:state: init -> auth (b0)
+[0;32mI (1223) void LCD::begin(): LCD Backlight Setup[0m
+[0;32mI (1268) void LCD::begin(): LCD Setup Done[0m
+[0;32mI (1268) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1270) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (1279) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+I (5148) wifi:state: auth -> init (200)
+I (5150) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+[0;32mI (5152) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (5155) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (5163) void Amplifier::handleWifiCallback(int32_t): Wifi Disconnected[0m
+[0;32mI (5170) void Amplifier::handleWifiCallback(int32_t): Setting Reconnection Timer[0m
+[0;32mI (5179) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 10000 and ID 2 futureTime 14688 currentTime 4689[0m
+[0;32mI (5192) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (5699) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5699) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5704) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (5705) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (5721) void Amplifier::handleAudioThread(): Setting audio volume to 21[0m
+[0;32mI (5758) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5772) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5787) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5795) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5795) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5801) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (5809) void Amplifier::handleAudioThread(): Setting audio volume to 22[0m
+[0;32mI (5880) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5890) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5890) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5896) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5905) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5913) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5921) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5930) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5938) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5947) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5948) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (5955) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5972) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5980) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5988) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5997) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6005) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6014) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6022) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6022) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (6031) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6047) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6039) void Amplifier::handleAudioThread(): Setting audio volume to 23[0m
+[0;32mI (6063) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (6065) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6071) void Amplifier::handleAudioThread(): Setting audio volume to 22[0m
+[0;32mI (6087) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (6089) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6094) void Amplifier::handleAudioThread(): Setting audio volume to 23[0m
+[0;32mI (6110) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (6112) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6118) void Amplifier::handleAudioThread(): Setting audio volume to 22[0m
+[0;32mI (6134) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (6136) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6141) void Amplifier::handleAudioThread(): Setting audio volume to 23[0m
+[0;32mI (6158) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (6159) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6165) void Amplifier::handleAudioThread(): Setting audio volume to 22[0m
+[0;32mI (6181) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (6183) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6188) void Amplifier::handleAudioThread(): Setting audio volume to 23[0m
+[0;32mI (6204) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6204) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (6204) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (6222) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6228) void Amplifier::handleAudioThread(): Setting audio volume to 22[0m
+[0;32mI (6244) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (6246) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6252) void Amplifier::handleAudioThread(): Setting audio volume to 23[0m
+[0;32mI (6268) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (6270) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6275) void Amplifier::handleAudioThread(): Setting audio volume to 22[0m
+[0;32mI (6292) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (6293) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6299) void Amplifier::handleAudioThread(): Setting audio volume to 23[0m
+[0;32mI (6315) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (6322) void Amplifier::handleAudioThread(): Setting audio volume to 22[0m
+[0;32mI (6330) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (6337) void Amplifier::handleAudioThread(): Setting audio volume to 23[0m
+[0;32mI (6346) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (6352) void Amplifier::handleAudioThread(): Setting audio volume to 22[0m
+[0;32mI (6361) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (6368) void Amplifier::handleAudioThread(): Setting audio volume to 23[0m
+[0;32mI (6462) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (6695) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (6928) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (7608) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (7608) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (7613) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (7622) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (7630) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (7630) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (7630) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (7655) void Amplifier::handleAudioThread(): Setting audio volume to 22[0m
+[0;32mI (7663) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (7670) void Amplifier::handleAudioThread(): Setting audio volume to 23[0m
+[0;32mI (7705) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (7723) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (7723) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (7728) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (7740) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (7873) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (12598) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12598) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12604) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (12604) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (12620) void Amplifier::handleAudioThread(): Setting audio volume to 24[0m
+[0;32mI (12688) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12689) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12694) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12725) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12750) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12750) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12756) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12764) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12773) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12781) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12790) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12798) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12807) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15192) void Timer::processTick(): Dispatching timer event 2[0m
+[0;32mI (15193) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (15196) void Amplifier::handleRadioThread(): In Reconnection Timer Event[0m
+[0;32mI (15203) void Amplifier::attemptWifiConnect(): Attempting to connect Wifi[0m
+I (15224) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+I (15227) wifi:state: init -> auth (b0)
+[0;32mI (15693) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (15694) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15700) virtual float TMP100::readTemperature(): Temperature is 25.75[0m
+[0;32mI (15705) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 25.75[0m
+I (17221) wifi:state: auth -> assoc (0)
+I (17282) wifi:state: assoc -> run (10)
+I (17298) wifi:connected with The Grey Havens, aid = 3, channel 1, BW20, bssid = 26:5a:4c:99:c4:26
+I (17299) wifi:security: WPA3-SAE, phy: bgn, rssi: -45
+I (17307) wifi:pm start, type: 1
+
+I (17309) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (17317) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (17318) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (17326) void Amplifier::handleWifiCallback(int32_t): Wifi Connection Established[0m
+[0;32mI (17334) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (18319) esp_netif_handlers: sta ip: 192.168.1.196, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (18320) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (18325) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (18333) void Amplifier::handleWifiCallback(int32_t): Wifi Received IP Address[0m
+[0;32mI (18341) void Amplifier::updateTimeFromNTP(): Attemping To Update Time From NTP Server[0m
+I (18548) wifi:<ba-add>idx:0 (ifx:0, 26:5a:4c:99:c4:26), tid:0, ssn:0, winSize:64
+[0;32mI (18588) void NTP_Callback(timeval*): Received NTP Callback[0m
+[0;32mI (18593) void Amplifier::handleRadioThread(): The current date/time is: Wed Oct 18 18:46:14 2023[0m
+I (19373) wifi:<ba-add>idx:1 (ifx:0, 26:5a:4c:99:c4:26), tid:5, ssn:5, winSize:64
+[0;32mI (20820) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20820) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20826) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (20826) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (20843) void Amplifier::handleAudioThread(): Setting audio volume to 25[0m
+[0;32mI (20901) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20948) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20984) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20984) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20990) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (20999) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21007) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21016) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21024) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21033) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21041) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21050) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21058) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21067) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (21075) void Amplifier::handleAudioThread(): Setting audio volume to 26[0m
+[0;32mI (21077) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (21100) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21101) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (21107) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (21115) void Amplifier::handleAudioThread(): Setting audio volume to 25[0m
+[0;32mI (21330) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (30061) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (30061) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (30067) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (30067) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (30083) void Amplifier::handleAudioThread(): Setting audio volume to 26[0m
+[0;32mI (30695) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (30696) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (30703) virtual float TMP100::readTemperature(): Temperature is 25.8125[0m
+[0;32mI (30708) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 25.8125[0m
+[0;32mI (32342) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (32375) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (32396) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (32415) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (32415) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (32421) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (32421) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (32437) void Amplifier::handleAudioThread(): Setting audio volume to 27[0m
+[0;32mI (34281) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (34297) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (34320) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35953) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35953) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35959) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (35959) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (35976) void Amplifier::handleAudioThread(): Setting audio volume to 28[0m
+[0;32mI (36060) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36098) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36098) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36104) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36128) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (37320) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (37320) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (37326) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (37326) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (37342) void Amplifier::handleAudioThread(): Setting audio volume to 29[0m
+[0;32mI (37427) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (37459) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (37459) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (37465) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (37474) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (37482) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (37491) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (37499) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (37508) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38548) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38548) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38554) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (38554) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (38570) void Amplifier::handleAudioThread(): Setting audio volume to 30[0m
+[0;32mI (38658) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38658) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38664) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38673) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38681) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38690) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38698) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38707) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38715) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38724) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38732) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38741) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38749) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38758) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38766) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38775) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38783) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38792) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38800) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (45697) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (45698) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (45705) virtual float TMP100::readTemperature(): Temperature is 25.8125[0m
+[0;32mI (45710) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 25.8125[0m
+[0;32mI (60699) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (60700) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (60707) virtual float TMP100::readTemperature(): Temperature is 25.8125[0m
+[0;32mI (60712) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 25.8125[0m
+[0;32mI (75700) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (75701) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (75708) virtual float TMP100::readTemperature(): Temperature is 25.875[0m
+[0;32mI (75713) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 25.875[0m
+[0;32mI (90702) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (90703) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (90710) virtual float TMP100::readTemperature(): Temperature is 25.875[0m
+[0;32mI (90715) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 25.875[0m
+[0;32mI (103869) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (103869) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (103875) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (103884) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (103892) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (103901) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (103910) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (103918) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (103927) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (103935) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (103944) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (103975) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (103975) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (103981) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (103990) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (103998) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (104007) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (104015) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (104024) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (104033) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (104033) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (104050) void Amplifier::handleAudioThread(): Setting audio volume to 29[0m
+[0;32mI (104076) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (104125) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (105158) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (105158) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (105164) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (105164) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (105181) void Amplifier::handleAudioThread(): Setting audio volume to 30[0m
+[0;32mI (105397) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (105411) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (105438) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (105438) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (105444) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (105475) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (105475) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (105481) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (105481) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (105489) void Amplifier::handleAudioThread(): Setting audio volume to 31[0m
+[0;32mI (105512) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (105513) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (105522) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (105531) void Amplifier::handleAudioThread(): Setting audio volume to 30[0m
+[0;32mI (105703) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (105705) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (105712) virtual float TMP100::readTemperature(): Temperature is 25.875[0m
+[0;32mI (105716) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 25.875[0m
+[0;32mI (105737) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (106024) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (106024) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (106030) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (106030) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (106047) void Amplifier::handleAudioThread(): Setting audio volume to 31[0m
+[0;32mI (106120) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (106131) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (106131) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (106137) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (106146) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (106154) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (106163) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (106171) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (106180) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (106189) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (106197) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (106206) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (106215) void Amplifier::handleAudioThread(): Setting audio volume to 32[0m
+[0;32mI (106281) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (106881) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (106894) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (106918) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (106922) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (106924) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (106933) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (106933) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (106949) void Amplifier::handleAudioThread(): Setting audio volume to 33[0m
+[0;32mI (107522) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (107536) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (107563) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (107567) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (107569) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (107577) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (107577) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (107594) void Amplifier::handleAudioThread(): Setting audio volume to 34[0m
+[0;32mI (108196) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (108208) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (108234) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (108238) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (108240) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (108248) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (108257) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (108265) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (108274) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (108283) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (108283) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (108291) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (108283) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (108308) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (108316) void Amplifier::handleAudioThread(): Setting audio volume to 35[0m
+[0;32mI (108325) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (108337) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (108351) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (108360) void Amplifier::handleAudioThread(): Setting audio volume to 34[0m
+[0;32mI (108368) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (108376) void Amplifier::handleAudioThread(): Setting audio volume to 35[0m
+[0;32mI (108383) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (108390) void Amplifier::handleAudioThread(): Setting audio volume to 34[0m
+[0;32mI (108399) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (108406) void Amplifier::handleAudioThread(): Setting audio volume to 35[0m
+[0;32mI (108543) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (108781) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (109020) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (120705) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (120706) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (120713) virtual float TMP100::readTemperature(): Temperature is 25.875[0m
+[0;32mI (120718) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 25.875[0m
+[0;32mI (135708) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (135708) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (135715) virtual float TMP100::readTemperature(): Temperature is 25.875[0m
+[0;32mI (135720) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 25.875[0m
+[0;32mI (147567) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (147567) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (147573) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (147582) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (147590) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (147599) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (147608) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (147616) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (147625) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (147633) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (147642) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (147651) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (147659) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (147668) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (147676) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (147685) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (147693) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (147702) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (147711) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (147719) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150038) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150038) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150044) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150053) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150062) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150070) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150079) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150087) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150096) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150105) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150113) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150122) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150130) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150139) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150147) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150156) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150165) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150173) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150182) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150190) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150199) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150208) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150216) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150225) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150234) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (150233) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (150242) void Amplifier::handleAudioThread(): Setting audio volume to 36[0m
+[0;32mI (150459) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150459) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150465) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150691) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (150692) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150699) virtual float TMP100::readTemperature(): Temperature is 25.875[0m
+[0;32mI (150704) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 25.875[0m
+[0;32mI (150875) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150878) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150881) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150900) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150974) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150991) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150991) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150997) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (150997) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (151013) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (151013) void Amplifier::handleAudioThread(): Setting audio volume to 37[0m
+[0;32mI (151030) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152240) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152258) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152258) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152264) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (152264) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (152274) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152281) void Amplifier::handleAudioThread(): Setting audio volume to 38[0m
+[0;32mI (152288) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (152301) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (152305) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152324) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152332) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152341) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152350) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152359) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152367) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152375) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152375) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (152387) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152393) void Amplifier::handleAudioThread(): Setting audio volume to 39[0m
+[0;32mI (152465) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152475) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152476) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152483) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (152488) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152491) void Amplifier::handleAudioThread(): Setting audio volume to 40[0m
+[0;32mI (152499) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (152512) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (152523) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (152544) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152559) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152559) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152565) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152574) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152583) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152583) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (152592) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152600) void Amplifier::handleAudioThread(): Setting audio volume to 41[0m
+[0;32mI (152616) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (152618) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152624) void Amplifier::handleAudioThread(): Setting audio volume to 40[0m
+[0;32mI (152632) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (152644) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (152648) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152659) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (152667) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152684) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152676) void Amplifier::handleAudioThread(): Setting audio volume to 41[0m
+[0;32mI (152692) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (152705) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (152708) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152728) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152736) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152745) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152753) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152762) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152781) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152781) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152788) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152782) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (152796) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152782) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (152813) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152822) void Amplifier::handleAudioThread(): Setting audio volume to 42[0m
+[0;32mI (152830) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (152843) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (152846) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152857) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (152873) void Amplifier::handleAudioThread(): Setting audio volume to 43[0m
+[0;32mI (152875) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (152886) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (152899) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152900) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (152909) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152917) void Amplifier::handleAudioThread(): Setting audio volume to 42[0m
+[0;32mI (152925) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (152938) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (152941) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (152952) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (152969) void Amplifier::handleAudioThread(): Setting audio volume to 43[0m
+[0;32mI (152970) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (152981) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (152995) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (153003) void Amplifier::handleAudioThread(): Setting audio volume to 44[0m
+[0;32mI (153052) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (153140) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (153289) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (153527) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (153808) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (153952) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (153952) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (153958) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (153967) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (153975) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (153984) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (153992) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154001) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154010) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154018) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154027) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154035) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154044) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154053) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154061) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154070) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154078) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154087) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154087) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (154096) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154112) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154121) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154087) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (154130) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154146) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154139) void Amplifier::handleAudioThread(): Setting audio volume to 45[0m
+[0;32mI (154155) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (154167) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (154171) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154182) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (154190) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154207) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154199) void Amplifier::handleAudioThread(): Setting audio volume to 46[0m
+[0;32mI (154215) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (154228) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (154232) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154242) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (154259) void Amplifier::handleAudioThread(): Setting audio volume to 47[0m
+[0;32mI (154267) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (154274) void Amplifier::handleAudioThread(): Setting audio volume to 48[0m
+[0;32mI (154283) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154359) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154360) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (154604) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (154789) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154814) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154822) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154822) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154829) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (154831) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154839) void Amplifier::handleAudioThread(): Setting audio volume to 49[0m
+[0;32mI (154846) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154848) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (154862) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154878) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154887) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154896) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154904) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154913) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154921) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154930) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154939) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154947) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154947) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (154956) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154964) void Amplifier::handleAudioThread(): Setting audio volume to 50[0m
+[0;32mI (154981) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (154982) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (154989) void Amplifier::handleAudioThread(): Setting audio volume to 49[0m
+[0;32mI (155005) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (155006) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155012) void Amplifier::handleAudioThread(): Setting audio volume to 50[0m
+[0;32mI (155029) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (155030) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155044) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155036) void Amplifier::handleAudioThread(): Setting audio volume to 49[0m
+[0;32mI (155053) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (155066) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (155069) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155080) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (155088) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155097) void Amplifier::handleAudioThread(): Setting audio volume to 50[0m
+[0;32mI (155115) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155115) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (155121) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155125) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (155138) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155130) void Amplifier::handleAudioThread(): Setting audio volume to 51[0m
+[0;32mI (155154) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (155167) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (155171) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155190) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155198) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155207) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155216) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155224) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155233) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155241) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155250) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155259) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155267) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155276) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155276) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (155293) void Amplifier::handleAudioThread(): Setting audio volume to 52[0m
+[0;32mI (155294) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (155305) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (155318) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155319) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (155336) void Amplifier::handleAudioThread(): Setting audio volume to 51[0m
+[0;32mI (155338) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (155350) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (155362) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155363) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (155379) void Amplifier::handleAudioThread(): Setting audio volume to 52[0m
+[0;32mI (155381) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155395) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (155395) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (155392) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (155422) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (155423) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (155439) void Amplifier::handleAudioThread(): Setting audio volume to 51[0m
+[0;32mI (155448) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (155455) void Amplifier::handleAudioThread(): Setting audio volume to 52[0m
+[0;32mI (155463) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (155471) void Amplifier::handleAudioThread(): Setting audio volume to 51[0m
+[0;32mI (155479) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (155486) void Amplifier::handleAudioThread(): Setting audio volume to 52[0m
+[0;32mI (155494) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (155501) void Amplifier::handleAudioThread(): Setting audio volume to 51[0m
+[0;32mI (155510) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (155517) void Amplifier::handleAudioThread(): Setting audio volume to 52[0m
+[0;32mI (155647) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (155886) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (156124) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (156523) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (156523) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (156529) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (156538) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (156546) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (156555) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (156563) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (156601) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (156672) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (156685) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (156685) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (156691) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (156691) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (156704) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (156708) void Amplifier::handleAudioThread(): Setting audio volume to 53[0m
+[0;32mI (156716) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (156729) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (156988) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (156988) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (156994) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (157003) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (157011) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (157020) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (157029) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (157037) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (157046) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (157075) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (157075) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (157144) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (157676) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (157689) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (157748) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (157759) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (157759) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (157765) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (157765) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (157781) void Amplifier::handleAudioThread(): Setting audio volume to 54[0m
+[0;32mI (157787) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (157794) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (157799) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (159520) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (159538) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (159538) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (159544) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (159553) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (159561) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (159561) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (159569) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (159561) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (159586) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (159578) void Amplifier::handleAudioThread(): Setting audio volume to 55[0m
+[0;32mI (159603) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (159616) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (159630) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (159638) void Amplifier::handleAudioThread(): Setting audio volume to 54[0m
+[0;32mI (159646) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (159653) void Amplifier::handleAudioThread(): Setting audio volume to 55[0m
+[0;32mI (159835) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (160075) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (165695) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (165695) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (165702) virtual float TMP100::readTemperature(): Temperature is 25.875[0m
+[0;32mI (165707) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 25.875[0m
+[0;32mI (173117) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (173216) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (173216) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (173222) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (173222) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (173239) void Amplifier::handleAudioThread(): Setting audio volume to 56[0m
+[0;32mI (173276) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (173277) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (173282) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (173299) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (173300) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (173308) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (173317) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (173325) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (173334) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (173343) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (173351) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (173360) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (174425) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (174443) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (174443) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (174449) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (174449) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (174466) void Amplifier::handleAudioThread(): Setting audio volume to 57[0m
+[0;32mI (174470) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (174478) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (175385) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (177188) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (177204) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (177204) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (177210) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (177210) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (177220) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (177226) void Amplifier::handleAudioThread(): Setting audio volume to 58[0m
+[0;32mI (177234) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (177247) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (177251) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (177270) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (177278) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (177287) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (177296) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (177304) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (177313) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (179919) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (179953) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (179961) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (179961) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (179968) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (179972) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (179984) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (179968) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (179993) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (180002) void Amplifier::handleAudioThread(): Setting audio volume to 59[0m
+[0;32mI (180010) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (180026) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (180022) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (180034) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (180101) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (180697) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (180698) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (180705) virtual float TMP100::readTemperature(): Temperature is 25.875[0m
+[0;32mI (180710) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 25.875[0m
+[0;32mI (186178) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (186225) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (186244) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (186244) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (186250) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (186250) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (186264) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (186274) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (186268) void Amplifier::handleAudioThread(): Setting audio volume to 60[0m
+[0;32mI (186283) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (186296) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (188163) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (188163) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (188169) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (188178) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (188186) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (188195) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (188204) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (188215) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (188235) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (188235) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (188241) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (188241) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (188257) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (188258) void Amplifier::handleAudioThread(): Setting audio volume to 61[0m
+[0;32mI (188266) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (188278) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (188282) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (189690) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (189735) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (189746) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (189746) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (189752) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (189760) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (189769) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (189769) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (189777) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (189769) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (189794) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (189786) void Amplifier::handleAudioThread(): Setting audio volume to 62[0m
+[0;32mI (189811) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (189824) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (189827) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (189838) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (189846) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (189855) void Amplifier::handleAudioThread(): Setting audio volume to 61[0m
+[0;32mI (189863) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (189876) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (189879) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (189890) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (189898) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (189906) void Amplifier::handleAudioThread(): Setting audio volume to 62[0m
+[0;32mI (189915) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (189927) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (189931) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (189950) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (189969) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (189969) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (189986) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (189986) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (189993) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (190002) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (190010) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (190019) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (190027) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (190036) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (190045) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (190049) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (190053) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (190070) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (190079) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (190087) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (190096) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (190104) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (190104) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (190113) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (190122) void Amplifier::handleAudioThread(): Setting audio volume to 61[0m
+[0;32mI (190129) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (190142) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (190146) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (190165) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (190174) void Amplifier::handleAudioThread(): Setting audio volume to 62[0m
+[0;32mI (190306) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (190544) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (190782) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (191336) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (191346) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (191346) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (191353) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (191358) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (191353) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (191370) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (191378) void Amplifier::handleAudioThread(): Setting audio volume to 63[0m
+[0;32mI (191520) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (192509) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (192590) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (192604) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (192604) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (192610) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (192610) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (192621) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (192627) void Amplifier::handleAudioThread(): Setting audio volume to 64[0m
+[0;32mI (192637) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (192647) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (192651) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (192670) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (192678) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (192687) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (192723) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (192723) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (192729) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (192738) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (192746) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (192755) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (192763) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (192772) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (192781) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (192789) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (192798) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (193782) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (193782) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (193788) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (193797) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (193805) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (193814) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (193823) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (193831) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (193840) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (193848) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (193857) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (193866) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (193874) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (193883) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (193891) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (193900) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (193908) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (193917) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (193926) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (193934) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (193934) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (193951) void Amplifier::handleAudioThread(): Setting audio volume to 65[0m
+[0;32mI (194996) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195061) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195061) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195067) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195075) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195084) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195092) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195101) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195110) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195118) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195127) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195135) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195144) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195153) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195161) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195170) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195178) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195178) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (195187) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195179) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (195204) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195212) void Amplifier::handleAudioThread(): Setting audio volume to 66[0m
+[0;32mI (195220) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (195233) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (195237) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195247) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (195264) void Amplifier::handleAudioThread(): Setting audio volume to 65[0m
+[0;32mI (195266) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (195276) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (195290) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195291) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (195299) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195308) void Amplifier::handleAudioThread(): Setting audio volume to 66[0m
+[0;32mI (195316) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (195328) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (195332) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195343) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (195359) void Amplifier::handleAudioThread(): Setting audio volume to 65[0m
+[0;32mI (195361) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (195372) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (195385) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195389) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (195403) void Amplifier::handleAudioThread(): Setting audio volume to 66[0m
+[0;32mI (195404) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (195415) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (195428) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195429) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (195445) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195445) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (195454) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195446) void Amplifier::handleAudioThread(): Setting audio volume to 65[0m
+[0;32mI (195471) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (195484) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (195487) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195498) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (195506) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195515) void Amplifier::handleAudioThread(): Setting audio volume to 66[0m
+[0;32mI (195532) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (195539) void Amplifier::handleAudioThread(): Setting audio volume to 65[0m
+[0;32mI (195547) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (195554) void Amplifier::handleAudioThread(): Setting audio volume to 66[0m
+[0;32mI (195562) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (195570) void Amplifier::handleAudioThread(): Setting audio volume to 65[0m
+[0;32mI (195578) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (195584) void Amplifier::handleAudioThread(): Setting audio volume to 66[0m
+[0;32mI (195704) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (195705) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195712) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (195712) virtual float TMP100::readTemperature(): Temperature is 25.875[0m
+[0;32mI (195725) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 25.875[0m
+[0;32mI (195957) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (196195) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (196505) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (196572) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (196572) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (196578) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (196586) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (196578) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (196595) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (196603) void Amplifier::handleAudioThread(): Setting audio volume to 65[0m
+[0;32mI (196611) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (196624) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (196628) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (197450) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (197552) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (197552) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (197558) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (197570) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (197575) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (197584) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (197584) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (197593) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (197600) void Amplifier::handleAudioThread(): Setting audio volume to 66[0m
+[0;32mI (197611) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (197621) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (197638) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198326) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198373) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198373) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198379) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198398) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198398) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198415) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198415) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198422) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198431) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198439) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198448) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198456) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198465) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198474) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198474) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (198482) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198474) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (198499) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198508) void Amplifier::handleAudioThread(): Setting audio volume to 65[0m
+[0;32mI (198516) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (198528) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (198532) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198543) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (198551) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198559) void Amplifier::handleAudioThread(): Setting audio volume to 66[0m
+[0;32mI (198568) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198584) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (198580) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (198592) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198603) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (198620) void Amplifier::handleAudioThread(): Setting audio volume to 67[0m
+[0;32mI (198621) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (198632) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (198646) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198646) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (198663) void Amplifier::handleAudioThread(): Setting audio volume to 68[0m
+[0;32mI (198665) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (198676) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (198689) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198690) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (198706) void Amplifier::handleAudioThread(): Setting audio volume to 67[0m
+[0;32mI (198708) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (198719) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (198732) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198733) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (198741) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (198740) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (198750) void Amplifier::handleAudioThread(): Setting audio volume to 68[0m
+[0;32mI (198775) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (198782) void Amplifier::handleAudioThread(): Setting audio volume to 67[0m
+[0;32mI (198790) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (198798) void Amplifier::handleAudioThread(): Setting audio volume to 68[0m
+[0;32mI (198806) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (198813) void Amplifier::handleAudioThread(): Setting audio volume to 67[0m
+[0;32mI (198821) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (198828) void Amplifier::handleAudioThread(): Setting audio volume to 68[0m
+[0;32mI (198837) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (198844) void Amplifier::handleAudioThread(): Setting audio volume to 67[0m
+[0;32mI (199011) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (199250) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (199422) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (199423) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (199429) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (199474) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (199474) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (199480) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (199486) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (199491) void Amplifier::handleAudioThread(): Setting audio volume to 66[0m
+[0;32mI (199504) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (199491) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (199516) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (199596) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (199759) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (200323) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (200515) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (200529) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (200529) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (200535) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (200535) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (200547) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (200552) void Amplifier::handleAudioThread(): Setting audio volume to 67[0m
+[0;32mI (201299) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (201374) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (201374) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (201380) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (201380) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (201389) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (201397) void Amplifier::handleAudioThread(): Setting audio volume to 66[0m
+[0;32mI (201408) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (201418) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (202417) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (202461) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (202474) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (202474) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (202480) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (202489) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (202497) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (202497) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (202497) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (202514) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (202522) void Amplifier::handleAudioThread(): Setting audio volume to 67[0m
+[0;32mI (202531) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (202543) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (202557) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (202565) void Amplifier::handleAudioThread(): Setting audio volume to 66[0m
+[0;32mI (202574) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (202581) void Amplifier::handleAudioThread(): Setting audio volume to 67[0m
+[0;32mI (202748) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (202988) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (203214) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (203278) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (203278) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (203284) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (203289) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (203284) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (203303) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (203293) void Amplifier::handleAudioThread(): Setting audio volume to 66[0m
+[0;32mI (203317) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (203330) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (203433) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (204373) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (204440) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (204440) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (204446) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (204455) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (204463) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (204472) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (204472) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (204472) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (204481) void Amplifier::handleAudioThread(): Setting audio volume to 67[0m
+[0;32mI (205119) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (205119) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (205125) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (205176) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (205176) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (205182) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (205188) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (205182) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (205206) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (205207) void Amplifier::handleAudioThread(): Setting audio volume to 66[0m
+[0;32mI (206110) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (206193) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (206210) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (206210) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (206216) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (206216) void Amplifier::handleAudioThread(): Processing Audio Queue Message[0m
+[0;32mI (206232) void Amplifier::handleAudioThread(): Setting audio volume to 67[0m
+[0;32mI (206234) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;33mW (206245) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 74 263[0m
+[0;32mI (206248) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (206267) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (210706) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (210707) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (210714) virtual float TMP100::readTemperature(): Temperature is 25.875[0m
+[0;32mI (210719) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 25.875[0m

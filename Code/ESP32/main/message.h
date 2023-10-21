@@ -15,13 +15,18 @@ public:
         MSG_WIFI_CONNECTED,
         MSG_VOLUME_UP,
         MSG_VOLUME_DOWN,
+        MSG_VOLUME_SET,
         MSG_DISPLAY_DONE_INIT,
         MSG_DISPLAY_SHOULD_UPDATE,
         MSG_WIFI_UPDATE,
         MSG_DECODER_IRQ,
         MSG_BUTTON_POWER_PRESS,
         MSG_VOLUME_POWER_PRESS,
-        MSG_INPUT_POWER_PRESS
+        MSG_INPUT_POWER_PRESS,
+        MSG_INPUT_UP,
+        MSG_INPUT_DOWN,
+        MSG_INPUT_SET,
+        MSG_INPUT_BUTTON_PRESS
     };
 
     Message( MessageType t ) : mMessageType( t ), mParam( 0 ) {}

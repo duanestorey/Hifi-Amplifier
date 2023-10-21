@@ -1,0 +1,44 @@
+[0;33m--- idf_monitor on /dev/cu.usbserial-A50285BI 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x40081120: call_start_cpu1 at /Users/duane/Code/Github/esp-idf/components/esp_system/port/cpu_start.c:178
+[0m
+[0;33m0x40082297: lock_acquire_generic at /Users/duane/Code/Github/esp-idf/components/newlib/locks.c:130
+[0m
+[0;33m0x4008178e: panic_abort at /Users/duane/Code/Github/esp-idf/components/esp_system/panic.c:452
+[0m
+[0;33m0x40089489: esp_system_abort at /Users/duane/Code/Github/esp-idf/components/esp_system/port/esp_system_chip.c:93
+[0m
+[0;33m0x4008dea6: abort at /Users/duane/Code/Github/esp-idf/components/newlib/abort.c:38
+[0m
+[0;33m0x40082297: lock_acquire_generic at /Users/duane/Code/Github/esp-idf/components/newlib/locks.c:130
+[0m
+[0;33m0x400823c5: _lock_acquire_recursive at /Users/duane/Code/Github/esp-idf/components/newlib/locks.c:158
+[0m
+[0;33m0x40082452: __retarget_lock_acquire_recursive at /Users/duane/Code/Github/esp-idf/components/newlib/locks.c:314
+[0m
+[0;33m0x4015da5a: _vfprintf_r at /Users/brnomac003/.gitlab-runner/builds/qR2TxTby/0/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/vfprintf.c:849 (discriminator 2)
+[0m
+[0;33m0x40160bc9: vprintf at /Users/brnomac003/.gitlab-runner/builds/qR2TxTby/0/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/vprintf.c:34 (discriminator 5)
+[0m
+[0;33m0x4017dce1: esp_log_writev at /Users/duane/Code/Github/esp-idf/components/log/log.c:215
+[0m
+[0;33m0x4008b951: esp_log_write at /Users/duane/Code/Github/esp-idf/components/log/log.c:225
+[0m
+[0;33m0x400d81f8: Volume_Button_ISR(void*) at /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/amplifier.cpp:505
+[0m
+[0;33m0x400830c1: gpio_isr_loop at /Users/duane/Code/Github/esp-idf/components/driver/gpio/gpio.c:469
+[0m
+[0;33m0x4008315b: gpio_intr_service at /Users/duane/Code/Github/esp-idf/components/driver/gpio/gpio.c:491
+[0m
+[0;33m0x40082eb5: _xt_lowint1 at /Users/duane/Code/Github/esp-idf/components/xtensa/xtensa_vectors.S:1236
+[0m
+[0;33m0x400885fb: xt_utils_wait_for_intr at /Users/duane/Code/Github/esp-idf/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at /Users/duane/Code/Github/esp-idf/components/esp_hw_support/cpu.c:132
+[0m
+[0;33m0x400d2fda: esp_vApplicationIdleHook at /Users/duane/Code/Github/esp-idf/components/esp_system/freertos_hooks.c:59
+[0m
+[0;33m0x4017c8c7: prvIdleTask at /Users/duane/Code/Github/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:4058
+[0m
+[0m

@@ -1,0 +1,719 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7136
+load:0x40078000,len:15780
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3884
+entry 0x40080650
+[0;32mI (31) boot: ESP-IDF v5.2-dev-2708-g3640dc86bb-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 17 2023 21:03:35[0m
+[0;32mI (33) boot: Multicore bootloader[0m
+[0;32mI (38) boot: chip revision: v3.0[0m
+[0;32mI (41) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (46) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (51) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (55) boot: Enabling RNG early entropy source...[0m
+[0;32mI (61) boot: Partition Table:[0m
+[0;32mI (64) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (71) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (79) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (86) boot:  2 phy_init         RF data          01 01 0000f000 00002000[0m
+[0;32mI (94) boot:  3 factory          factory app      00 00 00020000 002625a0[0m
+[0;32mI (101) boot: End of partition table[0m
+[0;32mI (106) boot: Defaulting to factory image[0m
+[0;32mI (110) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=32e24h (208420) map[0m
+[0;32mI (162) esp_image: segment 1: paddr=00052e4c vaddr=3ffbdb60 size=04f5ch ( 20316) load[0m
+[0;32mI (167) esp_image: segment 2: paddr=00057db0 vaddr=40080000 size=08268h ( 33384) load[0m
+[0;32mI (176) esp_image: segment 3: paddr=00060020 vaddr=400d0020 size=b2180h (729472) map[0m
+[0;32mI (327) esp_image: segment 4: paddr=001121a8 vaddr=40088268 size=0774ch ( 30540) load[0m
+[0;32mI (343) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (344) boot: Disabling RNG early entropy source...[0m
+[0;32mI (355) cpu_start: Multicore app[0m
+[0;32mI (355) cpu_start: Pro cpu up.[0m
+[0;32mI (355) cpu_start: Starting app cpu, entry point is 0x40081120[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (373) cpu_start: Pro cpu start user code[0m
+[0;32mI (373) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (373) cpu_start: Application information:[0m
+[0;32mI (378) cpu_start: Project name:     hifi-amp[0m
+[0;32mI (383) cpu_start: App version:      5af0bcc-dirty[0m
+[0;32mI (389) cpu_start: Compile time:     Oct 17 2023 21:03:34[0m
+[0;32mI (395) cpu_start: ELF file SHA256:  2406ed72d...[0m
+[0;32mI (400) cpu_start: ESP-IDF:          v5.2-dev-2708-g3640dc86bb-dirty[0m
+[0;32mI (407) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (412) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (417) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (422) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (429) heap_init: At 3FFAE6E0 len 0000F480 (61 KiB): DRAM[0m
+[0;32mI (435) heap_init: At 3FFC81A8 len 00017E58 (95 KiB): DRAM[0m
+[0;32mI (441) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (447) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (454) heap_init: At 4008F9B4 len 0001064C (65 KiB): IRAM[0m
+[0;32mI (462) spi_flash: detected chip: generic[0m
+[0;32mI (464) spi_flash: flash io: dio[0m
+[0;33mW (469) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (480) coexist: coex firmware version: 80b0d89[0m
+[0;32mI (485) app_start: Starting scheduler on CPU0[0m
+[0;32mI (490[0;32mI (491) app_start: Starting scheduler on CPU1[0m
+) main_task: Started on CPU0[0m
+[0;32mI (500) main_task: Calling app_main()[0m
+[0;32mI (503) I2CBUS::I2CBUS(): Stargting I2C bus[0m
+-> found device with address 0x27
+-> found device with address 0x48
+
+...scan completed!
+[0;32mI (571) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (572) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (579) gpio: GPIO[23]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (588) gpio: GPIO[27]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (598) gpio: GPIO[19]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (607) gpio: GPIO[12]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (616) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (625) gpio: GPIO[13]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (635) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (644) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (653) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (663) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (672) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 1| Intr:2 [0m
+[0;32mI (684) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 15000 and ID 1 futureTime 15191 currentTime 194[0m
+[0;32mI (695) void Amplifier::handleTimerThread(): Starting Timer Thread on Core 0[0m
+[0;32mI (702) void Amplifier::handleDisplayThread(): Starting Display Thread[0m
+[0;32mI (709) void LCD::begin(): Beginning LCD Setup[0m
+[0;32mI (714) void Amplifier::handleAudioThread(): Starting Audio Thread[0m
+[0;32mI (715) void Amplifier::handleAmplifierThread(): Starting Amplifier Thread on Core 0[0m
+[0;32mI (721) void Amplifier::handleAudioThread(): Decoder set into active mode[0m
+[0;32mI (715) void Amplifier::handleRadioThread(): Starting Radio Thread on Core 0[0m
+[0;33mW (737) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+I (749) wifi:wifi driver task: 3ffd0098, prio:23, stack:6656, core=0
+[0;33mW (756) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+[0;33mW (775) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+I (780) wifi:wifi firmware version: 341633f
+[0;33mW (783) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+I (786) wifi:wifi certification version: v7.0
+[0;33mW (797) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+I (800) wifi:config NVS flash: enabled
+[0;33mW (812) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+I (814) wifi:config nano formating: disabled
+[0;32mI (825) void Amplifier::handleAudioThread(): Starting DAC initialization[0m
+I (829) wifi:[0;32mI (836) virtual void DAC_PCM1681::init(): Starting PCM1681 DAC[0m
+Init data frame dynamic rx buffer num: 32
+[0;33mW (844) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (847) wifi:Init management frame dynamic rx buffer num: 32
+[0;33mW (858) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (863) wifi:Init management short buffer num: 32
+[0;33mW (874) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (878) wifi:Init dynamic tx buffer num: 32
+[0;33mW (889) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (893) wifi:Init static rx buffer size: 1600
+[0;33mW (904) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (908) wifi:Init static rx buffer num: 10
+[0;33mW (919) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+I (922) wifi:Init dynamic rx buffer num: 32
+[0;33mW (933) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+[0;32mI (938) wifi_init: rx ba win: 6[0m
+[0;33mW (948) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+[0;32mI (952) wifi_init: tcpip mbox: 32[0m
+[0;33mW (962) bool I2CBUS::writeRegisterByte(uint8_t, uint8_t, uint8_t): Issue while sending I2C data to address 76[0m
+[0;32mI (966) wifi_init: udp mbox: 6[0m
+[0;33mW (977) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+[0;32mI (980) wifi_init: tcp mbox: 6[0m
+[0;33mW (991) bool I2CBUS::writeBytes(uint8_t, uint8_t*, uint8_t): Issue while sending I2C data to address 148 -1[0m
+[0;32mI (995) wifi_init: tcp tx win: 5744[0m
+[0;32mI (1008) wifi_init: tcp rx win: 5744[0m
+[0;32mI (1012) wifi_init: tcp mss: 1440[0m
+[0;32mI (1016) wifi_init: LWIP IRAM OP enabled[0m
+[0;32mI (1026) phy_init: phy_version 4771,450c73b,Aug 16 2023,11:03:10[0m
+I (1110) wifi:mode : sta (c4:de:e2:1b:1a:b8)
+I (1111) wifi:enable tsf
+[0;32mI (1112) void Amplifier::attemptWifiConnect(): Attempting to connect Wifi[0m
+[0;32mI (1118) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (1121) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+I (1127) wifi:[0;32mI (1129) void Amplifier::handleWifiCallback(int32_t): Wifi Starting Up[0m
+new:<1,1>, old:<1,0>, ap:<255,255>, sta:<1,1>, prof:1
+I (1144) wifi:state: init -> auth (b0)
+[0;32mI (1215) void LCD::begin(): LCD Backlight Setup[0m
+[0;32mI (1253) void LCD::begin(): LCD Setup Done[0m
+[0;32mI (1253) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (1255) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1263) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (1395) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+I (3183) wifi:state: auth -> assoc (0)
+I (3196) wifi:state: assoc -> run (10)
+I (3220) wifi:connected with The Grey Havens, aid = 1, channel 1, 40U, bssid = 26:5a:4c:1e:e1:21
+I (3221) wifi:security: WPA3-SAE, phy: bgn, rssi: -87
+I (3229) wifi:pm start, type: 1
+
+[0;32mI (3233) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (3234) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (3242) void Amplifier::handleWifiCallback(int32_t): Wifi Connection Established[0m
+[0;32mI (3250) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+I (3409) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (3609) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3609) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (3614) ENCODER_DIR Encoder::process(): Encoder data, level 16777214[0m
+[0;32mI (3640) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3640) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (3646) ENCODER_DIR Encoder::process(): Encoder data, level 16777213[0m
+[0;32mI (3652) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3660) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (3668) ENCODER_DIR Encoder::process(): Encoder data, level 16777213[0m
+[0;32mI (3675) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3683) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (3709) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3709) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (3714) ENCODER_DIR Encoder::process(): Encoder data, level 16777212[0m
+[0;32mI (3725) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3729) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (3737) ENCODER_DIR Encoder::process(): Encoder data, level 16777212[0m
+[0;32mI (3744) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3752) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (3760) ENCODER_DIR Encoder::process(): Encoder data, level 16777211[0m
+[0;32mI (3767) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3775) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+I (3957) wifi:<ba-add>idx:0 (ifx:0, 26:5a:4c:1e:e1:21), tid:0, ssn:1, winSize:64
+[0;32mI (4587) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4588) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (4593) ENCODER_DIR Encoder::process(): Encoder data, level 16777210[0m
+[0;32mI (4601) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4608) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (4616) ENCODER_DIR Encoder::process(): Encoder data, level 16777211[0m
+[0;32mI (4622) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4631) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (4638) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4647) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (4654) ENCODER_DIR Encoder::process(): Encoder data, level 16777210[0m
+[0;32mI (4661) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4670) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (4677) ENCODER_DIR Encoder::process(): Encoder data, level 16777211[0m
+[0;32mI (4684) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4693) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (4700) ENCODER_DIR Encoder::process(): Encoder data, level 16777210[0m
+[0;32mI (4707) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4716) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (4723) ENCODER_DIR Encoder::process(): Encoder data, level 16777211[0m
+[0;32mI (4730) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4739) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (4747) ENCODER_DIR Encoder::process(): Encoder data, level 16777211[0m
+[0;32mI (4753) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4762) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (4769) ENCODER_DIR Encoder::process(): Encoder data, level 16777211[0m
+[0;32mI (4776) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4785) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (4792) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4801) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (4808) ENCODER_DIR Encoder::process(): Encoder data, level 16777211[0m
+[0;32mI (4815) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4824) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (4831) ENCODER_DIR Encoder::process(): Encoder data, level 16777211[0m
+[0;32mI (4838) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4847) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (4854) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4862) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (4870) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4878) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (4886) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4894) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (4902) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4910) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (4918) ENCODER_DIR Encoder::process(): Encoder data, level 16777210[0m
+[0;32mI (4925) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4933) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (4941) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4949) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (4957) ENCODER_DIR Encoder::process(): Encoder data, level 16777209[0m
+[0;32mI (4964) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4972) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (4980) ENCODER_DIR Encoder::process(): Encoder data, level 16777209[0m
+[0;32mI (4987) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4995) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (5002) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5011) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (5018) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5027) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (5034) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5043) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (5087) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5087) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (5093) ENCODER_DIR Encoder::process(): Encoder data, level 16777208[0m
+[0;32mI (5101) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5107) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (5115) ENCODER_DIR Encoder::process(): Encoder data, level 16777209[0m
+[0;32mI (5122) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5130) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (5138) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5146) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (5193) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5193) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (5198) ENCODER_DIR Encoder::process(): Encoder data, level 16777208[0m
+[0;32mI (5210) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5213) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (5221) ENCODER_DIR Encoder::process(): Encoder data, level 16777208[0m
+[0;32mI (5228) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5236) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (5238) esp_netif_handlers: sta ip: 192.168.1.196, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (5244) ENCODER_DIR Encoder::process(): Encoder data, level 16777207[0m
+[0;32mI (5252) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (5260) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5268) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (5275) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (5284) void Amplifier::handleWifiCallback(int32_t): Wifi Received IP Address[0m
+[0;32mI (5299) void Amplifier::updateTimeFromNTP(): Attemping To Update Time From NTP Server[0m
+[0;32mI (6615) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6615) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (6621) ENCODER_DIR Encoder::process(): Encoder data, level 16777206[0m
+[0;32mI (6630) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6635) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (6643) ENCODER_DIR Encoder::process(): Encoder data, level 16777207[0m
+[0;32mI (6650) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6658) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (6666) ENCODER_DIR Encoder::process(): Encoder data, level 16777206[0m
+[0;32mI (6673) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6681) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (6690) ENCODER_DIR Encoder::process(): Encoder data, level 16777207[0m
+[0;32mI (6696) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6704) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (6712) ENCODER_DIR Encoder::process(): Encoder data, level 16777206[0m
+[0;32mI (6719) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6727) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (6735) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6743) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (6751) ENCODER_DIR Encoder::process(): Encoder data, level 16777207[0m
+[0;32mI (6758) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6766) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (6774) ENCODER_DIR Encoder::process(): Encoder data, level 16777206[0m
+[0;32mI (6781) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6789) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (6797) ENCODER_DIR Encoder::process(): Encoder data, level 16777207[0m
+[0;32mI (6804) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6812) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (6820) ENCODER_DIR Encoder::process(): Encoder data, level 16777206[0m
+[0;32mI (6827) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6835) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (6843) ENCODER_DIR Encoder::process(): Encoder data, level 16777207[0m
+[0;32mI (6850) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6858) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (6866) ENCODER_DIR Encoder::process(): Encoder data, level 16777206[0m
+[0;32mI (6873) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6881) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (6889) ENCODER_DIR Encoder::process(): Encoder data, level 16777207[0m
+[0;32mI (6896) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6904) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (6912) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6920) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (6928) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6936) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (6944) ENCODER_DIR Encoder::process(): Encoder data, level 16777206[0m
+[0;32mI (6951) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6959) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (6967) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6975) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (6982) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6991) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (6998) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (7007) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (7014) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (7023) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (7030) ENCODER_DIR Encoder::process(): Encoder data, level 16777207[0m
+[0;32mI (7037) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (7046) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (7053) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (7062) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (7069) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (7077) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (7085) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (7093) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (7101) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (7109) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (8716) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (8716) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (8722) ENCODER_DIR Encoder::process(): Encoder data, level 16777206[0m
+[0;32mI (8745) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (8745) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (8750) ENCODER_DIR Encoder::process(): Encoder data, level 16777206[0m
+[0;32mI (8757) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (8765) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (8773) ENCODER_DIR Encoder::process(): Encoder data, level 16777205[0m
+[0;32mI (8780) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (8788) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (8827) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (8827) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (8832) ENCODER_DIR Encoder::process(): Encoder data, level 16777204[0m
+[0;32mI (8885) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (8885) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (8890) ENCODER_DIR Encoder::process(): Encoder data, level 16777204[0m
+[0;32mI (8897) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (8905) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (8913) ENCODER_DIR Encoder::process(): Encoder data, level 16777203[0m
+[0;32mI (8920) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (8928) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (8965) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (8965) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (8970) ENCODER_DIR Encoder::process(): Encoder data, level 16777202[0m
+[0;32mI (9026) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (9026) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (9031) ENCODER_DIR Encoder::process(): Encoder data, level 16777201[0m
+[0;32mI (9038) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (9046) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (9054) ENCODER_DIR Encoder::process(): Encoder data, level 16777201[0m
+[0;32mI (9061) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (9069) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10142) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10142) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10148) ENCODER_DIR Encoder::process(): Encoder data, level 16777200[0m
+[0;32mI (10170) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10170) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10175) ENCODER_DIR Encoder::process(): Encoder data, level 16777200[0m
+[0;32mI (10182) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10190) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10198) ENCODER_DIR Encoder::process(): Encoder data, level 16777199[0m
+[0;32mI (10205) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10214) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10221) ENCODER_DIR Encoder::process(): Encoder data, level 16777198[0m
+[0;32mI (10229) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10237) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10245) ENCODER_DIR Encoder::process(): Encoder data, level 16777199[0m
+[0;32mI (10252) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10260) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10268) ENCODER_DIR Encoder::process(): Encoder data, level 16777198[0m
+[0;32mI (10275) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10284) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10291) ENCODER_DIR Encoder::process(): Encoder data, level 16777199[0m
+[0;32mI (10298) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10307) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10314) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10323) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10331) ENCODER_DIR Encoder::process(): Encoder data, level 16777198[0m
+[0;32mI (10338) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10346) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10354) ENCODER_DIR Encoder::process(): Encoder data, level 16777199[0m
+[0;32mI (10361) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10369) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10377) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10385) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10393) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10401) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10409) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10417) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10425) ENCODER_DIR Encoder::process(): Encoder data, level 16777198[0m
+[0;32mI (10432) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10441) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10448) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10457) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10465) ENCODER_DIR Encoder::process(): Encoder data, level 16777197[0m
+[0;32mI (10472) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10480) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10488) ENCODER_DIR Encoder::process(): Encoder data, level 16777197[0m
+[0;32mI (10495) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10503) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10511) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10519) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10527) ENCODER_DIR Encoder::process(): Encoder data, level 16777196[0m
+[0;32mI (10534) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10543) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10550) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10559) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10567) ENCODER_DIR Encoder::process(): Encoder data, level 16777196[0m
+[0;32mI (10574) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10582) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10590) ENCODER_DIR Encoder::process(): Encoder data, level 16777195[0m
+[0;32mI (10597) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10605) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10613) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (10621) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (10709) void NTP_Callback(timeval*): Received NTP Callback[0m
+[0;32mI (10715) void Amplifier::handleRadioThread(): The current date/time is: Tue Oct 17 23:12:57 2023[0m
+[0;32mI (11722) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11722) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (11727) ENCODER_DIR Encoder::process(): Encoder data, level 16777194[0m
+[0;32mI (11734) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11742) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (11750) ENCODER_DIR Encoder::process(): Encoder data, level 16777195[0m
+[0;32mI (11757) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11766) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (11773) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11782) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (11808) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11808) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (11813) ENCODER_DIR Encoder::process(): Encoder data, level 16777194[0m
+[0;32mI (11831) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11831) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (11839) ENCODER_DIR Encoder::process(): Encoder data, level 16777193[0m
+[0;32mI (11845) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11854) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (11862) ENCODER_DIR Encoder::process(): Encoder data, level 16777193[0m
+[0;32mI (11869) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11877) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (11885) ENCODER_DIR Encoder::process(): Encoder data, level 16777192[0m
+[0;32mI (11892) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11900) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (11908) ENCODER_DIR Encoder::process(): Encoder data, level 16777193[0m
+[0;32mI (11915) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11924) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (11931) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11940) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (11947) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (11956) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (12044) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12044) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (12050) ENCODER_DIR Encoder::process(): Encoder data, level 16777192[0m
+[0;32mI (12063) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12065) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (12072) ENCODER_DIR Encoder::process(): Encoder data, level 16777192[0m
+[0;32mI (12080) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12088) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (12096) ENCODER_DIR Encoder::process(): Encoder data, level 16777191[0m
+[0;32mI (12103) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (12111) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13041) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13041) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13046) ENCODER_DIR Encoder::process(): Encoder data, level 16777190[0m
+[0;32mI (13053) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13062) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13070) ENCODER_DIR Encoder::process(): Encoder data, level 16777191[0m
+[0;32mI (13077) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13085) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13093) ENCODER_DIR Encoder::process(): Encoder data, level 16777190[0m
+[0;32mI (13100) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13108) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13116) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13124) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13132) ENCODER_DIR Encoder::process(): Encoder data, level 16777190[0m
+[0;32mI (13139) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13148) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13155) ENCODER_DIR Encoder::process(): Encoder data, level 16777189[0m
+[0;32mI (13162) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13171) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13178) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13187) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13195) ENCODER_DIR Encoder::process(): Encoder data, level 16777189[0m
+[0;32mI (13202) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13210) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13218) ENCODER_DIR Encoder::process(): Encoder data, level 16777189[0m
+[0;32mI (13225) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13233) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13241) ENCODER_DIR Encoder::process(): Encoder data, level 16777188[0m
+[0;32mI (13248) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13257) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13264) ENCODER_DIR Encoder::process(): Encoder data, level 16777189[0m
+[0;32mI (13272) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13280) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13288) ENCODER_DIR Encoder::process(): Encoder data, level 16777189[0m
+[0;32mI (13295) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13303) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13311) ENCODER_DIR Encoder::process(): Encoder data, level 16777190[0m
+[0;32mI (13318) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13326) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13334) ENCODER_DIR Encoder::process(): Encoder data, level 16777191[0m
+[0;32mI (13341) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13350) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13358) ENCODER_DIR Encoder::process(): Encoder data, level 16777190[0m
+[0;32mI (13365) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13373) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13381) ENCODER_DIR Encoder::process(): Encoder data, level 16777191[0m
+[0;32mI (13388) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13396) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13404) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13412) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13420) ENCODER_DIR Encoder::process(): Encoder data, level 16777190[0m
+[0;32mI (13427) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13436) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13443) ENCODER_DIR Encoder::process(): Encoder data, level 16777190[0m
+[0;32mI (13450) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13459) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13467) ENCODER_DIR Encoder::process(): Encoder data, level 16777189[0m
+[0;32mI (13474) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13482) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13490) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13498) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13506) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13514) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13522) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13530) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13538) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13546) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13554) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13562) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13570) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13578) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13586) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13595) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13602) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13611) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13618) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13627) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13634) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13643) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (13650) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13659) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (14941) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (14941) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (14946) ENCODER_DIR Encoder::process(): Encoder data, level 16777188[0m
+[0;32mI (14972) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (14972) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (14977) ENCODER_DIR Encoder::process(): Encoder data, level 16777187[0m
+[0;32mI (14984) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (14992) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (15000) ENCODER_DIR Encoder::process(): Encoder data, level 16777187[0m
+[0;32mI (15007) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15016) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (15668) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15668) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (15674) ENCODER_DIR Encoder::process(): Encoder data, level 16777186[0m
+[0;32mI (15682) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (15687) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15698) virtual float TMP100::readTemperature(): Temperature is 27.5[0m
+[0;32mI (15703) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 27.5[0m
+[0;32mI (15722) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15722) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (15728) ENCODER_DIR Encoder::process(): Encoder data, level 16777185[0m
+[0;32mI (15735) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15743) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (15751) ENCODER_DIR Encoder::process(): Encoder data, level 16777185[0m
+[0;32mI (15758) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15766) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (16303) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16303) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (16308) ENCODER_DIR Encoder::process(): Encoder data, level 16777184[0m
+[0;32mI (16723) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16723) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (16728) ENCODER_DIR Encoder::process(): Encoder data, level 16777183[0m
+[0;32mI (16735) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16744) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (16751) ENCODER_DIR Encoder::process(): Encoder data, level 16777183[0m
+[0;32mI (16759) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16767) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (22350) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22350) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (22356) ENCODER_DIR Encoder::process(): Encoder data, level 16777182[0m
+[0;32mI (22830) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22830) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (22836) ENCODER_DIR Encoder::process(): Encoder data, level 16777181[0m
+[0;32mI (22842) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22851) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (22858) ENCODER_DIR Encoder::process(): Encoder data, level 16777181[0m
+[0;32mI (22866) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22874) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (23107) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23107) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (23113) ENCODER_DIR Encoder::process(): Encoder data, level 16777180[0m
+[0;32mI (23167) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23167) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (23172) ENCODER_DIR Encoder::process(): Encoder data, level 16777179[0m
+[0;32mI (23179) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23187) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (23195) ENCODER_DIR Encoder::process(): Encoder data, level 16777179[0m
+[0;32mI (23202) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23211) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24096) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24097) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24102) ENCODER_DIR Encoder::process(): Encoder data, level 16777178[0m
+[0;32mI (24146) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24146) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24152) ENCODER_DIR Encoder::process(): Encoder data, level 16777177[0m
+[0;32mI (24160) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24167) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24175) ENCODER_DIR Encoder::process(): Encoder data, level 16777177[0m
+[0;32mI (24182) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24190) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24576) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24576) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24582) ENCODER_DIR Encoder::process(): Encoder data, level 16777176[0m
+[0;32mI (24588) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24597) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24604) ENCODER_DIR Encoder::process(): Encoder data, level 16777177[0m
+[0;32mI (24612) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24620) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24628) ENCODER_DIR Encoder::process(): Encoder data, level 16777177[0m
+[0;32mI (24635) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24643) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24651) ENCODER_DIR Encoder::process(): Encoder data, level 16777177[0m
+[0;32mI (24658) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24666) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24674) ENCODER_DIR Encoder::process(): Encoder data, level 16777177[0m
+[0;32mI (24681) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24690) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24697) ENCODER_DIR Encoder::process(): Encoder data, level 16777177[0m
+[0;32mI (24705) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24713) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24721) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24729) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24737) ENCODER_DIR Encoder::process(): Encoder data, level 16777177[0m
+[0;32mI (24744) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24752) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24760) ENCODER_DIR Encoder::process(): Encoder data, level 16777177[0m
+[0;32mI (24767) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24776) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24783) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24792) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24799) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24808) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24816) ENCODER_DIR Encoder::process(): Encoder data, level 16777176[0m
+[0;32mI (24823) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24831) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24839) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24847) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24855) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24863) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24871) ENCODER_DIR Encoder::process(): Encoder data, level 16777175[0m
+[0;32mI (24878) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24886) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24894) ENCODER_DIR Encoder::process(): Encoder data, level 16777175[0m
+[0;32mI (24901) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24910) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24917) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24926) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24933) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24942) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (24949) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24958) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (26298) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26298) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (26304) ENCODER_DIR Encoder::process(): Encoder data, level 16777174[0m
+[0;32mI (26313) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26319) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (26327) ENCODER_DIR Encoder::process(): Encoder data, level 16777175[0m
+[0;32mI (26334) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26342) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (26350) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26358) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (26467) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26467) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (26472) ENCODER_DIR Encoder::process(): Encoder data, level 16777174[0m
+[0;32mI (26497) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26497) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (26503) ENCODER_DIR Encoder::process(): Encoder data, level 16777173[0m
+[0;32mI (26509) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26518) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (26525) ENCODER_DIR Encoder::process(): Encoder data, level 16777173[0m
+[0;32mI (26533) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26541) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (26618) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26618) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (26623) ENCODER_DIR Encoder::process(): Encoder data, level 16777172[0m
+[0;32mI (26639) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26639) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (26646) ENCODER_DIR Encoder::process(): Encoder data, level 16777172[0m
+[0;32mI (26653) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26662) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (26669) ENCODER_DIR Encoder::process(): Encoder data, level 16777171[0m
+[0;32mI (26676) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26685) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (26781) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (26781) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (26786) ENCODER_DIR Encoder::process(): Encoder data, level 16777170[0m
+[0;32mI (27144) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27144) void Amplifier::handleVolumeButtonPress(): Volume button pressed[0m
+[0;32mI (27149) ENCODER_DIR Encoder::process(): Encoder data, level 16777171[0m
+[0;32mI (30687) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (30688) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (30694) virtual float TMP100::readTemperature(): Temperature is 27.5[0m
+[0;32mI (30700) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 27.5[0m
+[0;32mI (45688) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (45689) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (45696) virtual float TMP100::readTemperature(): Temperature is 27.5[0m
+[0;32mI (45701) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 27.5[0m

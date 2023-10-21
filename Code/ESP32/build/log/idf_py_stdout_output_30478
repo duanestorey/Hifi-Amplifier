@@ -335,4 +335,21 @@ I (1460) wifi:AP's beacon interval = 102400 us, DTIM period = 1
 [0;32mI (15831) void Timer::processTick(): Dispatching timer event 1[0m
 [0;32mI (15832) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
 [0;32mI (15836) void Amplifier::handleAmplifierThread(): In Periodic Timer Event[0m
-[0;32mI (30832) void Timer::processTick(): Disp
+[0;32mI (30832) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (30833) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (30837) void Amplifier::handleAmplifierThread(): In Periodic Timer Event[0m
+[0;32mI (45833) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (45834) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (45838) void Amplifier::handleAmplifierThread(): In Periodic Timer Event[0m
+[0;32mI (60834) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (60835) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (60839) void Amplifier::handleAmplifierThread(): In Periodic Timer Event[0m
+[0;32mI (75835) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (75836) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (75840) void Amplifier::handleAmplifierThread(): In Periodic Timer Event[0m
+[0;32mI (90836) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (90837) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (90841) void Amplifier::handleAmplifierThread(): In Periodic Timer Event[0m
+[0;32mI (105837) void Timer::processTick(): Dispatching timer event 1[0m
+[0;32mI (105838) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (105842) void Amplifier::handleAmplifierThread(): In Periodic Timer Event[0m

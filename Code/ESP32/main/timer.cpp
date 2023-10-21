@@ -78,7 +78,7 @@ Timer::processTick() {
     for ( std::list<TimerInfo>::iterator i = toDispatch.begin(); i != toDispatch.end(); i++ ) {
         TimerInfo &timerInfo = *i;
 
-        AMP_DEBUG_SI( "Dispatching timer event " << timerInfo.mEventID );
+     //   AMP_DEBUG_SI( "Dispatching timer event " << timerInfo.mEventID );
 
         timerInfo.mQueue->add( Message::MSG_TIMER, timerInfo.mEventID );
     }

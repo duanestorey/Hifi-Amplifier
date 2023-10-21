@@ -12,7 +12,7 @@
 
 class Queue {
 public:
-    Queue();
+    Queue( uint8_t queueSize = MESSAGE_QUEUE_SIZE );
     virtual ~Queue();
 
     void add( Message msg );

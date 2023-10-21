@@ -1,0 +1,96 @@
+[0;33m--- idf_monitor on /dev/cu.usbserial-A50285BI 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x40081120: call_start_cpu1 at /Users/duane/Code/Github/esp-idf/components/esp_system/port/cpu_start.c:178
+[0m
+[0;33m0x40089758: vListInsert at /Users/duane/Code/Github/esp-idf/components/freertos/FreeRTOS-Kernel/list.c:171 (discriminator 1)
+[0m
+[0;33m0x400d30f7: uart_hal_write_txfifo at /Users/duane/Code/Github/esp-idf/components/hal/uart_hal_iram.c:27
+[0m
+[0;33m0x40089755: vListInsert at /Users/duane/Code/Github/esp-idf/components/freertos/FreeRTOS-Kernel/list.c:171 (discriminator 1)
+[0m
+[0;33m0x4017cf72: vTaskPlaceOnEventList at /Users/duane/Code/Github/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:3511
+[0m
+[0;33m0x4017c477: xQueueGenericSend at /Users/duane/Code/Github/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c:1041
+[0m
+[0;33m0x400d86ae: Queue::add(Message) at /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/queue.cpp:13
+[0m
+[0;33m0x400d74f1: Queue::add(Message::MessageType, unsigned long) at /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/queue.h:19
+[0m
+[0;33m0x400d7947: Amplifier::_handleVolumeButtonISR() at /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/amplifier.cpp:578
+[0m
+[0;33m0x400d795d: Volume_Button_ISR(void*) at /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/amplifier.cpp:541
+[0m
+[0;33m0x400830c1: gpio_isr_loop at /Users/duane/Code/Github/esp-idf/components/driver/gpio/gpio.c:469
+[0m
+[0;33m0x4008315b: gpio_intr_service at /Users/duane/Code/Github/esp-idf/components/driver/gpio/gpio.c:491
+[0m
+[0;33m0x40082eb5: _xt_lowint1 at /Users/duane/Code/Github/esp-idf/components/xtensa/xtensa_vectors.S:1236
+[0m
+[0;33m0x400dcd21: vPortEnterCritical at /Users/duane/Code/Github/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:584 (discriminator 2)
+ (inlined by) esp_task_wdt_reset at /Users/duane/Code/Github/esp-idf/components/esp_system/task_wdt/task_wdt.c:778 (discriminator 2)
+[0m
+[0;33m0x400dcd77: idle_hook_cb at /Users/duane/Code/Github/esp-idf/components/esp_system/task_wdt/task_wdt.c:490
+[0m
+[0;33m0x400d2fbe: esp_vApplicationIdleHook at /Users/duane/Code/Github/esp-idf/components/esp_system/freertos_hooks.c:47 (discriminator 1)
+[0m
+[0;33m0x4017ca13: prvIdleTask at /Users/duane/Code/Github/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:4058
+[0m
+[0;33m0x4008850b: xt_utils_compare_and_set at /Users/duane/Code/Github/esp-idf/components/xtensa/include/xt_utils.h:215
+ (inlined by) esp_cpu_compare_and_set at /Users/duane/Code/Github/esp-idf/components/esp_hw_support/cpu.c:483
+[0m
+[0;33m0x400014fd: strlen in ROM
+[0m
+[0;33m0x4000150d: strlen in ROM
+[0m
+[0;33m0x40088508: esp_cpu_compare_and_set at /Users/duane/Code/Github/esp-idf/components/esp_hw_support/cpu.c:451
+[0m
+[0;33m0x40089861: spinlock_acquire at /Users/duane/Code/Github/esp-idf/components/esp_hw_support/include/spinlock.h:130
+ (inlined by) xPortEnterCriticalTimeout at /Users/duane/Code/Github/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:501
+[0m
+[0;33m0x4008a471: vPortEnterCritical at /Users/duane/Code/Github/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:584
+ (inlined by) xTaskIncrementTickOtherCores at /Users/duane/Code/Github/esp-idf/components/freertos/esp_additions/freertos_tasks_c_additions.h:100
+[0m
+[0;33m0x400899ec: xPortSysTickHandler at /Users/duane/Code/Github/esp-idf/components/freertos/port_systick.c:228
+[0m
+[0;33m0x40089555: _frxt_timer_int at /Users/duane/Code/Github/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:343
+[0m
+[0;33m0x40082ebe: _xt_lowint1 at /Users/duane/Code/Github/esp-idf/components/xtensa/xtensa_vectors.S:1236
+[0m
+[0;33m0x400d66c2: uart_ll_get_txfifo_len at /Users/duane/Code/Github/esp-idf/components/hal/esp32/include/hal/uart_ll.h:332
+ (inlined by) uart_tx_char at /Users/duane/Code/Github/esp-idf/components/vfs/vfs_uart.c:163
+[0m
+[0;33m0x400d72a6: uart_write at /Users/duane/Code/Github/esp-idf/components/vfs/vfs_uart.c:216
+ (inlined by) uart_write at /Users/duane/Code/Github/esp-idf/components/vfs/vfs_uart.c:199
+[0m
+[0;33m0x400d64ef: console_write at /Users/duane/Code/Github/esp-idf/components/vfs/vfs_console.c:73
+[0m
+[0;33m0x400d618d: esp_vfs_write at /Users/duane/Code/Github/esp-idf/components/vfs/vfs.c:445 (discriminator 4)
+[0m
+[0;33m0x4000bd83: _write_r in ROM
+[0m
+[0;33m0x4000117d: __swrite in ROM
+[0m
+[0;33m0x400592fe: __sflush_r in ROM
+[0m
+[0;33m0x4005937a: _fflush_r in ROM
+[0m
+[0;33m0x40153c7b: __sfvwrite_r at /Users/brnomac003/.gitlab-runner/builds/qR2TxTby/0/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/fvwrite.c:251
+[0m
+[0;33m0x40168dcf: __sprint_r at /Users/brnomac003/.gitlab-runner/builds/qR2TxTby/0/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/vfprintf.c:429
+ (inlined by) __sprint_r at /Users/brnomac003/.gitlab-runner/builds/qR2TxTby/0/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/vfprintf.c:399
+[0m
+[0;33m0x40160b36: _vfprintf_r at /Users/brnomac003/.gitlab-runner/builds/qR2TxTby/0/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1777 (discriminator 1)
+[0m
+[0;33m0x40160ca1: vprintf at /Users/brnomac003/.gitlab-runner/builds/qR2TxTby/0/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/vprintf.c:34 (discriminator 5)
+[0m
+[0;33m0x4017de2d: esp_log_writev at /Users/duane/Code/Github/esp-idf/components/log/log.c:215
+[0m
+[0;33m0x4008b951: esp_log_write at /Users/duane/Code/Github/esp-idf/components/log/log.c:225
+[0m
+[0;33m0x400d7da2: Amplifier::handleDisplayThread() at /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/amplifier.cpp:114 (discriminator 13)
+[0m
+[0;33m0x400d73d5: startDisplayThread(void*) at /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/main.cpp:20
+[0m
+[0m
