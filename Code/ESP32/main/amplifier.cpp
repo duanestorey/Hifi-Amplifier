@@ -83,6 +83,8 @@ Amplifier::init() {
 
     mTimerID = mTimer.setTimer( 15000, mAmplifierQueue, true );
 
+    taskDelayInMs( 500 );
+
     mLCD = new LCD( 0x27, &mI2C );
     mMicroprocessorTemp = new TMP100( 0x48, &mI2C );
     mChannelSel = new ChannelSel_AX2358( 0x4a, &mI2C );
@@ -140,28 +142,28 @@ Amplifier::updateDisplay() {
 
     switch( state.mState ) {
         case AmplifierState::STATE_INIT:
-            sprintf( s, "Starting" );
+            sprintf( s, "%-12s", "Starting");
             break;
         case AmplifierState::STATE_PLAYING:
-            sprintf( s, "Playing" );
+            sprintf( s, "%-12s%7.1fC", "Playing", mMicroprocessorTemp->readTemperature() );
             break;
         case AmplifierState::STATE_MUTED:
-            sprintf( s, "Muted" );
+            sprintf( s, "%-12s", "Muted" );
             break;
         case AmplifierState::STATE_SLEEPING:
-            sprintf( s, "Sleeping" );
+            sprintf( s, "%-12s", "Sleeping" );
             break;
         case AmplifierState::STATE_UPDATING:
-            sprintf( s, "Updating" );
+            sprintf( s, "%-12s", "Updating" );
             break;
         case AmplifierState::STATE_ERROR_MINOR:
-            sprintf( s, "Minor Error" );
+            sprintf( s, "%-12s", "Minor Error" );
             break;
         case AmplifierState::STATE_ERROR_MAJOR:
-            sprintf( s, "Major Error" );
+            sprintf( s, "%-12s", "Major Error" );
             break;
     }
-    mLCD->writeLine( 1, std::string( s ) );
+    mLCD->writeLine( 1, s );
 
     char rate[12] = {0};
     if ( state.mAudioType == AmplifierState::AUDIO_ANALOG ) {
@@ -432,7 +434,7 @@ Amplifier::handleAudioThread() {
     gpio_set_level( PIN_LED_ACTIVE, 1 );
 
     // Activate power
-    vTaskDelay( 2000 / portTICK_PERIOD_MS );
+    vTaskDelay( 1500 / portTICK_PERIOD_MS );
     gpio_set_level( PIN_RELAY, 1 );
 
     // Set to playing status
@@ -441,8 +443,6 @@ Amplifier::handleAudioThread() {
     Message msg;
     while( true ) {
         while ( mAudioQueue.waitForMessage( msg, 10 ) ) {
-  //          AMP_DEBUG_I( "Processing Audio Queue Message" );
-
             switch( msg.mMessageType ) {
                 case Message::MSG_VOLUME_SET:
                     AMP_DEBUG_SI( "Setting pending audio volume to " << msg.mParam );

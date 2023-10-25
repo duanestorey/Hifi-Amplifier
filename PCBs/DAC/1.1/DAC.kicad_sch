@@ -1777,7 +1777,7 @@
     (property "Reference" "D1" (at 270.129 141.7954 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Value" "YELLOW" (at 270.129 144.3354 90)
+    (property "Value" "BLUE" (at 270.129 144.3354 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Footprint" "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" (at 266.7 141.478 0)

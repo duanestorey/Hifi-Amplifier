@@ -992,10 +992,10 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "PGND" (shape input) (at 180.34 124.46 0) (fields_autoplaced)
+  (global_label "PGND" (shape input) (at 185.547 57.15 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 21d635c6-1489-4769-a5b1-fb6a093d64a4)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 187.8936 124.3806 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 193.1006 57.0706 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -1013,10 +1013,10 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "VP" (shape input) (at 180.34 121.92 0) (fields_autoplaced)
+  (global_label "VP" (shape input) (at 185.547 54.61 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 39c4ad85-265f-435d-9a41-05165598be18)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 185.1117 121.9994 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 190.3187 54.6894 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -1076,17 +1076,17 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "VM" (shape input) (at 180.34 127 0) (fields_autoplaced)
+  (global_label "VM" (shape input) (at 185.547 59.69 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 58516013-6d8a-4f25-b77f-32911d815448)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 185.2931 127.0794 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 190.5001 59.7694 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "INPUTGND" (shape input) (at 146.812 69.342 0) (fields_autoplaced)
+  (global_label "INPUTGND" (shape input) (at 140.208 23.114 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 597e099d-f7cc-4eba-8a60-aef08de5d9fd)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 158.5989 69.2626 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 151.9949 23.0346 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -1160,10 +1160,10 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "CH1GND" (shape input) (at 146.812 66.802 0) (fields_autoplaced)
+  (global_label "CH1GND" (shape input) (at 140.208 20.574 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid aae05eef-7f9f-48cd-adb8-fbbb0feafa60)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 156.9056 66.7226 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 150.3016 20.4946 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -1202,10 +1202,10 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "CH1-OUT" (shape input) (at 175.26 93.98 0) (fields_autoplaced)
+  (global_label "CH1-OUT" (shape input) (at 180.467 26.67 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid c722db3c-e8ce-4dfe-905e-b57817a6cfc0)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 186.6841 93.9006 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 191.8911 26.5906 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -1258,10 +1258,10 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "PGND" (shape input) (at 175.26 91.44 0) (fields_autoplaced)
+  (global_label "PGND" (shape input) (at 180.467 24.13 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid fb5cfb7d-8c65-41c4-a187-0017daa440be)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 182.8136 91.3606 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 188.0206 24.0506 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -1273,24 +1273,24 @@
     )
   )
 
-  (symbol (lib_id "Connector:Conn_01x03_Male") (at 175.26 124.46 0) (unit 1)
+  (symbol (lib_id "Connector:Conn_01x03_Male") (at 180.467 57.15 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 0b34203e-46dd-4dff-aa49-b6f6ef436026)
-    (property "Reference" "J9" (at 175.895 116.84 0)
+    (property "Reference" "J9" (at 181.102 49.53 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "Conn_01x03_Male" (at 175.895 119.38 0)
+    (property "Value" "Conn_01x03_Male" (at 181.102 52.07 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Connector_JST:JST_VH_B3P-VH-B_1x03_P3.96mm_Vertical" (at 175.26 124.46 0)
+    (property "Footprint" "Connector_JST:JST_VH_B3P-VH-B_1x03_P3.96mm_Vertical" (at 180.467 57.15 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 175.26 124.46 0)
+    (property "Datasheet" "~" (at 180.467 57.15 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 62961abc-9c6a-4e9e-b446-6beee94a34f1))
-    (pin "2" (uuid 356a8edd-60e8-4f77-adcb-770731f69ec4))
-    (pin "3" (uuid 9acc1c23-9b16-4a35-aa47-7518d34fb133))
+    (pin "1" (uuid 3a744492-0ed6-41ef-b605-1518da919bf6))
+    (pin "2" (uuid 3f2678c1-834e-478f-9f1b-6883d441587d))
+    (pin "3" (uuid e80b1bb7-693a-4f82-8930-cde6b40404cc))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"
@@ -1341,8 +1341,8 @@
     (property "Datasheet" "~" (at 100.33 143.51 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 68342c65-b86a-4466-b5b4-05d6ed19fae8))
-    (pin "2" (uuid a2b64d7f-6061-49e9-a4f9-b7be159114ba))
+    (pin "1" (uuid 563a7b8c-9068-466c-8046-8193f568ee8c))
+    (pin "2" (uuid bf2e2fab-f510-4b23-a3af-270299441768))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"
@@ -1352,19 +1352,19 @@
     )
   )
 
-  (symbol (lib_id "Mechanical:MountingHole") (at 49.53 62.23 0) (unit 1)
+  (symbol (lib_id "Mechanical:MountingHole") (at 44.323 23.241 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 14211922-300f-43ff-b369-d1f3a3d07358)
-    (property "Reference" "H4" (at 52.07 60.9599 0)
+    (property "Reference" "H4" (at 46.863 21.9709 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "MountingHole" (at 52.07 63.4999 0)
+    (property "Value" "MountingHole" (at 46.863 24.5109 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "MountingHole:MountingHole_3mm" (at 49.53 62.23 0)
+    (property "Footprint" "MountingHole:MountingHole_3mm" (at 44.323 23.241 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 49.53 62.23 0)
+    (property "Datasheet" "~" (at 44.323 23.241 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
@@ -1405,10 +1405,10 @@
   (symbol (lib_id "Device:C_Polarized_Small") (at 90.17 181.61 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1cb93e9c-e954-4446-809e-c46cb4825004)
-    (property "Reference" "Ci1" (at 92.71 179.7938 0)
+    (property "Reference" "Ci1" (at 92.71 179.7939 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "1000U 35V" (at 92.71 182.3338 0)
+    (property "Value" "1000U 50V" (at 92.71 182.3339 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Capacitor_THT:CP_Radial_D16.0mm_P7.50mm" (at 90.17 181.61 0)
@@ -1417,8 +1417,8 @@
     (property "Datasheet" "~" (at 90.17 181.61 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid ff88504c-0042-4c2c-a64e-a925706b407a))
-    (pin "2" (uuid b9581658-6cae-4a1b-953a-980ad6cd205c))
+    (pin "1" (uuid aa87727d-0883-4c83-a2df-da6a973841a5))
+    (pin "2" (uuid 4acac337-f979-40dd-8259-f404a28f512a))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"
@@ -1443,8 +1443,8 @@
     (property "Datasheet" "~" (at 135.89 113.03 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 100ae8ba-2c39-4e20-ac9a-4dbeb1db6fee))
-    (pin "2" (uuid f021df2e-b375-45b3-81a1-8bb3bd9d1b8c))
+    (pin "1" (uuid 4814d79a-0ecd-4936-8a64-f9a098aecafa))
+    (pin "2" (uuid 9864fc47-a4f2-4b5e-8428-0395043435a9))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"
@@ -1469,8 +1469,8 @@
     (property "Datasheet" "~" (at 114.3 156.972 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 1ad3541d-691e-4cb0-939e-d1ce795ea01e))
-    (pin "2" (uuid 72f56c0d-2f5b-48fc-9dfa-74c1ab8ad470))
+    (pin "1" (uuid fce78d47-7f73-4216-bf18-d2eb0c798f13))
+    (pin "2" (uuid 29b4c113-45da-4677-8127-498762369ad3))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"
@@ -1521,8 +1521,8 @@
     (property "Datasheet" "~" (at 63.5 132.08 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 6076500f-92fa-4af8-a8af-14c17a3a21fd))
-    (pin "2" (uuid 2ceb8cb6-425b-4965-939d-20c331125cf6))
+    (pin "1" (uuid f49e3685-6754-436e-9c50-f6a90ea87b67))
+    (pin "2" (uuid 54ccb911-f1f9-4c28-947b-cc1f6d89ee75))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"
@@ -1547,8 +1547,8 @@
     (property "Datasheet" "~" (at 90.17 172.72 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid d7c45490-7555-4060-bc25-1b28285e26c5))
-    (pin "2" (uuid 284461c6-dde4-4a5b-b787-05382447b0f5))
+    (pin "1" (uuid aedf40aa-3dd1-4762-a149-c4435058e8dd))
+    (pin "2" (uuid 280f3c19-f067-4a1a-b777-38d4bff0d151))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"
@@ -1573,8 +1573,8 @@
     (property "Datasheet" "~" (at 55.372 99.06 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 53fa71df-12a4-4bb2-aab4-22edb8f3b544))
-    (pin "2" (uuid adfad94d-f962-4dd9-bec6-e9261cdeb951))
+    (pin "1" (uuid b62d9787-e01f-40d7-818f-60cfda9c79b2))
+    (pin "2" (uuid 81b2b23e-6d92-4215-8741-6f96c873ebf5))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"
@@ -1584,19 +1584,19 @@
     )
   )
 
-  (symbol (lib_id "Mechanical:MountingHole") (at 33.02 72.39 0) (unit 1)
+  (symbol (lib_id "Mechanical:MountingHole") (at 27.813 33.401 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 55a41e46-3a19-40c5-9bb8-f97676aa932d)
-    (property "Reference" "H3" (at 35.56 71.1199 0)
+    (property "Reference" "H3" (at 30.353 32.1309 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "MountingHole" (at 35.56 73.6599 0)
+    (property "Value" "MountingHole" (at 30.353 34.6709 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "MountingHole:MountingHole_3mm" (at 33.02 72.39 0)
+    (property "Footprint" "MountingHole:MountingHole_3mm" (at 27.813 33.401 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 33.02 72.39 0)
+    (property "Datasheet" "~" (at 27.813 33.401 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
@@ -1623,8 +1623,8 @@
     (property "Datasheet" "~" (at 116.84 167.64 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 3427f5a3-69b1-4ec2-99b7-f04d900ac428))
-    (pin "2" (uuid 7acf21c5-927a-47cb-98b1-d3004e17ea9d))
+    (pin "1" (uuid b5d4dd5e-be5a-483a-8473-d054629a3676))
+    (pin "2" (uuid 635b1168-0d6a-4549-82f8-9bd18c8ade7a))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"
@@ -1686,19 +1686,19 @@
     )
   )
 
-  (symbol (lib_id "Mechanical:MountingHole") (at 41.91 68.58 0) (unit 1)
+  (symbol (lib_id "Mechanical:MountingHole") (at 36.703 29.591 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 6d6a5d3d-171c-4f15-81f6-afe2401e139a)
-    (property "Reference" "H1" (at 44.45 67.3099 0)
+    (property "Reference" "H1" (at 39.243 28.3209 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "MountingHole" (at 44.45 69.8499 0)
+    (property "Value" "MountingHole" (at 39.243 30.8609 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "MountingHole:MountingHole_3mm" (at 41.91 68.58 0)
+    (property "Footprint" "MountingHole:MountingHole_3mm" (at 36.703 29.591 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 41.91 68.58 0)
+    (property "Datasheet" "~" (at 36.703 29.591 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
@@ -1777,8 +1777,8 @@
     (property "Datasheet" "~" (at 61.849 105.41 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 5a794c1d-25f4-4cb2-8237-f0846cf101cd))
-    (pin "2" (uuid ea3e99e5-b676-4038-804a-74d7adbb3af2))
+    (pin "1" (uuid aea9acfe-b040-410a-be7d-f60debcabf53))
+    (pin "2" (uuid 02de3db8-3de1-405a-aa04-880e91d04dea))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"
@@ -1803,8 +1803,8 @@
     (property "Datasheet" "~" (at 101.6 167.64 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 113c0342-5929-4ad2-a756-394de594cbe5))
-    (pin "2" (uuid dc63ced6-44b0-49ae-9e2f-0eb6d6b432dd))
+    (pin "1" (uuid d7c7e552-3a71-48e2-a8ed-5e16e9b94b82))
+    (pin "2" (uuid e7100ab1-68c0-446e-8df7-77c7440a12f1))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"
@@ -1814,19 +1814,19 @@
     )
   )
 
-  (symbol (lib_id "Connector:Conn_01x02_Male") (at 141.732 66.802 0) (unit 1)
+  (symbol (lib_id "Connector:Conn_01x02_Male") (at 135.128 20.574 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7d6ca822-8d0f-46b1-a3e3-e842420a2e46)
-    (property "Reference" "J2" (at 142.367 61.722 0)
+    (property "Reference" "J2" (at 135.763 15.494 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "Conn_01x02_Male" (at 142.367 64.262 0)
+    (property "Value" "Conn_01x02_Male" (at 135.763 18.034 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" (at 141.732 66.802 0)
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" (at 135.128 20.574 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 141.732 66.802 0)
+    (property "Datasheet" "~" (at 135.128 20.574 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid aeb0ed61-27bc-461a-a0c6-faec8ab64c47))
@@ -1840,19 +1840,19 @@
     )
   )
 
-  (symbol (lib_id "Mechanical:MountingHole") (at 58.42 60.96 0) (unit 1)
+  (symbol (lib_id "Mechanical:MountingHole") (at 53.213 21.971 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 7ffe8f21-2ad2-4061-9f55-c668595cea3b)
-    (property "Reference" "H2" (at 60.96 59.6899 0)
+    (property "Reference" "H2" (at 55.753 20.7009 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "MountingHole" (at 60.96 62.2299 0)
+    (property "Value" "MountingHole" (at 55.753 23.2409 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "MountingHole:MountingHole_3mm" (at 58.42 60.96 0)
+    (property "Footprint" "MountingHole:MountingHole_3mm" (at 53.213 21.971 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 58.42 60.96 0)
+    (property "Datasheet" "~" (at 53.213 21.971 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
@@ -1864,23 +1864,23 @@
     )
   )
 
-  (symbol (lib_id "Connector:Conn_01x02_Male") (at 170.18 91.44 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+  (symbol (lib_id "Connector:Conn_01x02_Male") (at 175.387 24.13 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
     (uuid 806c4e37-12d3-43b9-9249-d717ca61dd7f)
-    (property "Reference" "J8" (at 170.815 86.36 0)
+    (property "Reference" "J8" (at 176.022 19.05 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "Conn_01x02_Male" (at 170.815 88.9 0)
+    (property "Value" "Conn_01x02_Male" (at 176.022 21.59 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Connector_JST:JST_VH_B2P-VH_1x02_P3.96mm_Vertical" (at 170.18 91.44 0)
+    (property "Footprint" "Connector_JST:JST_VH_B2P-VH_1x02_P3.96mm_Vertical" (at 175.387 24.13 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 170.18 91.44 0)
+    (property "Datasheet" "~" (at 175.387 24.13 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 246e5045-cad5-4af1-ba27-40283b33bbb2))
-    (pin "2" (uuid abfeed5f-c9d6-4956-82ae-be693d6c7f26))
+    (pin "1" (uuid 12903a48-8dba-47cc-9f21-7b3bac4c99de))
+    (pin "2" (uuid 9bcf1359-fd0a-4e6f-983d-979107759863))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"
@@ -1922,7 +1922,7 @@
     (property "Reference" "C3" (at 99.7839 77.47 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "33U 50V" (at 99.7839 80.01 90)
+    (property "Value" "22U 50V" (at 99.7839 80.01 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm" (at 100.33 83.82 0)
@@ -1931,8 +1931,8 @@
     (property "Datasheet" "~" (at 100.33 83.82 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 00452c88-0e6b-441e-8170-f9b93435f72e))
-    (pin "2" (uuid 482477de-2cd6-46d8-9e36-307825f08d15))
+    (pin "1" (uuid 30ceae1e-02ae-4c54-a711-73587a0c81c4))
+    (pin "2" (uuid ed4b7844-f1b7-490d-8173-1df93a14a856))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"
@@ -2009,8 +2009,8 @@
     (property "Datasheet" "~" (at 135.89 121.92 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 3afc8a4b-5f7b-454c-8979-32d4534f8e37))
-    (pin "2" (uuid 78720e8f-12ca-4ff1-9649-7ea9b7499667))
+    (pin "1" (uuid 46b6fdd3-62d7-434a-9ef2-7a33096f621f))
+    (pin "2" (uuid 4926227c-75f4-4ffb-a98c-6fc667707f68))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"
@@ -2021,12 +2021,12 @@
   )
 
   (symbol (lib_id "Amplifier_Audio:LM3886") (at 99.06 106.68 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (in_bom yes) (on_board yes) (dnp no)
     (uuid b01a72d4-df75-42de-94b0-5dc3fef1af67)
-    (property "Reference" "U3" (at 109.22 101.981 0)
+    (property "Reference" "U3" (at 108.458 108.458 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "LM3886" (at 109.22 104.521 0)
+    (property "Value" "LM3886" (at 108.712 110.617 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Package_TO_SOT_THT:TO-220-11_P3.4x5.08mm_StaggerOdd_Lead4.85mm_Vertical" (at 99.06 106.68 0)
@@ -2035,17 +2035,17 @@
     (property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm3886.pdf" (at 99.06 106.68 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 309f0722-8109-4c93-9ca1-608c05b233f0))
-    (pin "10" (uuid d28dd1d3-b399-4a6a-8b88-5792cd50912c))
-    (pin "11" (uuid e30fa19f-85dc-4900-a8e8-1eac1c69d98b))
-    (pin "2" (uuid 32fbbd47-a624-4070-b241-c059fec62b13))
-    (pin "3" (uuid 499b7f06-a278-472d-b9ba-d75e1e8ff9d4))
-    (pin "4" (uuid 67274141-b367-4fe9-8fb5-57b249882143))
-    (pin "5" (uuid a32a3094-7bc7-4916-8a99-0af86b65e6c2))
-    (pin "6" (uuid 7d0a2a1c-0a6e-4097-8470-a03759954643))
-    (pin "7" (uuid 0c24e629-8646-4ce6-af31-4f03b8599ef2))
-    (pin "8" (uuid 303a86f2-c5a8-47be-ab00-e1af6e5140ce))
-    (pin "9" (uuid 255c7d44-d984-42a3-a372-746094a32547))
+    (pin "1" (uuid 06af5bcf-e255-42df-927e-28958ead647b))
+    (pin "10" (uuid 33c4c553-cbb4-42fc-8dd3-84af4f4edc1e))
+    (pin "11" (uuid c00ee2d0-3e1e-49d5-a311-7484cbcdc5da))
+    (pin "2" (uuid 4c7c6dc6-fa3e-4384-a350-6fc806d85b0f))
+    (pin "3" (uuid 7b790674-bce7-457d-918c-ea2dde8bacfe))
+    (pin "4" (uuid e4f3aa11-4047-4e3b-a167-0fb218b62853))
+    (pin "5" (uuid c8b6c867-f937-4890-9b34-1759519bcb6f))
+    (pin "6" (uuid 09600713-2684-4de7-96ab-2b5e69f9af65))
+    (pin "7" (uuid b8a622dc-0f1b-4b51-a62f-a0098080f78b))
+    (pin "8" (uuid 44830038-0d7c-4bc9-b6f3-55d042458572))
+    (pin "9" (uuid 5df97d2f-14b7-4650-871b-0916c599e106))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"
@@ -2056,12 +2056,12 @@
   )
 
   (symbol (lib_id "Device:C_Polarized_Small") (at 113.284 100.33 180) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (in_bom yes) (on_board yes) (dnp no)
     (uuid bb2e9b72-5b80-4953-9786-1d968f9d9bfc)
     (property "Reference" "Cm1" (at 116.078 99.606 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Value" "47U 50V" (at 116.078 102.146 0)
+    (property "Value" "47U 50V" (at 102.743 100.584 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Footprint" "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm" (at 113.284 100.33 0)
@@ -2070,8 +2070,8 @@
     (property "Datasheet" "~" (at 113.284 100.33 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 46f9c69f-c106-4726-b0ad-e53f98a0b508))
-    (pin "2" (uuid 4b28127c-9cf0-4097-b797-d0357234e88c))
+    (pin "1" (uuid 39c2d5df-d025-4851-b067-5f19d2de380d))
+    (pin "2" (uuid 6672b90b-3f60-41ac-8482-24fa8b247cf2))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"
@@ -2122,8 +2122,8 @@
     (property "Datasheet" "~" (at 100.33 93.98 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid aa9329e8-d62a-4f3d-b23d-b1611c38064a))
-    (pin "2" (uuid 1ee3b8ff-89ef-4a3c-86e5-7197401fdf39))
+    (pin "1" (uuid 918a655e-31d7-4a6d-8e50-62925b460fe4))
+    (pin "2" (uuid deedf365-6334-4ad9-8573-be8b5086c69b))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"
@@ -2148,8 +2148,8 @@
     (property "Datasheet" "~" (at 119.38 97.79 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid fb8694f5-5a25-47fc-90c1-b5074c00dd0c))
-    (pin "2" (uuid b33cdd7c-fb5e-4ae1-b9c5-666f9751ee76))
+    (pin "1" (uuid ff25ce18-eaa3-4aaa-a85e-06975f477d30))
+    (pin "2" (uuid 6a8e3b73-4554-408f-b6fa-29acdf42dec1))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"
@@ -2200,8 +2200,8 @@
     (property "Datasheet" "~" (at 77.47 99.06 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 4acba214-68c4-4346-8020-0c26b655547d))
-    (pin "2" (uuid 3cdfb4ee-91a6-4d57-ad76-70166d805ce0))
+    (pin "1" (uuid e9f27254-af86-4406-bf36-ec0b3e43cd07))
+    (pin "2" (uuid 02105872-bad2-4eb2-bc1b-f209b0cc578a))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"
@@ -2253,8 +2253,8 @@
     (property "Datasheet" "~" (at 100.33 123.19 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid e0d3381b-20c7-4530-bbb7-f9a34ce65c49))
-    (pin "2" (uuid 9ba16c1a-daec-42fd-87b1-4d91bf42a90f))
+    (pin "1" (uuid d6ee93a4-8b38-4613-8272-f9b0ace259a3))
+    (pin "2" (uuid 50d4e619-2ce6-4c7a-a8de-4c9eda6ebcb6))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"
@@ -2270,7 +2270,7 @@
     (property "Reference" "C8" (at 100.8761 127 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "33U 50V" (at 100.8761 129.54 90)
+    (property "Value" "22U 50V" (at 100.8761 129.54 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm" (at 100.33 133.35 0)
@@ -2279,8 +2279,8 @@
     (property "Datasheet" "~" (at 100.33 133.35 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 39cee80e-1c76-4e4a-9e1f-afbbf4e73ba7))
-    (pin "2" (uuid bddf44d9-2be1-41d6-b49b-9d78a64ccfd0))
+    (pin "1" (uuid 36fa46ea-9e00-421b-8c68-a61c325b0eae))
+    (pin "2" (uuid a524e8bf-9025-4083-a14e-52a86ea63f3f))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"
@@ -2305,8 +2305,8 @@
     (property "Datasheet" "~" (at 80.01 107.95 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 61096a89-fe26-44db-96a4-0a54048284d2))
-    (pin "2" (uuid 45512e00-5785-4bda-8bae-cb9464388794))
+    (pin "1" (uuid 93fcc46d-6780-4aab-884a-f00d9b89643b))
+    (pin "2" (uuid 033f68e6-7b92-40d0-83da-4a6b21f4bf85))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"
@@ -2331,8 +2331,8 @@
     (property "Datasheet" "~" (at 100.33 73.66 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 80f66c5d-dda9-454a-9d34-88f590655c76))
-    (pin "2" (uuid 0c5ce856-a514-4cfc-a17d-0323f62d44d9))
+    (pin "1" (uuid 5e939008-6a40-42d9-bdf0-feb143159f6c))
+    (pin "2" (uuid b99f0df3-f05f-4f9c-9f10-bc342cf35cc1))
     (instances
       (project "PowerAmp"
         (path "/3c813242-0bb0-4b40-b182-4d859f541e6b"

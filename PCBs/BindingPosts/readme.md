@@ -5,6 +5,7 @@
 ## Version History
 
 - 1.0: Initial Release
+- 1.1: First attempt at speaker protection relays
 
 ## Speciality Components
 

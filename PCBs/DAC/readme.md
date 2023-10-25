@@ -13,6 +13,13 @@ This PCB is based on the 8 channel Burr Brown PCM1681 IC.  It converts the I2S s
 ## Version History
 
 - 1.0: Initial Release
+- 1.1: Improved Routing
+
+## To Do:
+
+- 1.2: 
+    * Add missing address selection pin
+    * Impedence match I2S lines
 
 ## Speciality Components
 
