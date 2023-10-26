@@ -1,0 +1,6 @@
+[0;33m--- idf_monitor on /dev/cu.usbserial-A50285BI 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40081120: call_start_cpu1 at /Users/duane/Code/Github/esp-idf/components/esp_system/port/cpu_start.c:178
+[0m
+[0;33mWarning: checksum mismatch between flashed and built applications. Checksum of built application is 1f89512a45b37a7d7e69536bd060ae19eb2d17bb4863aa4d08cf536cd8655139[0m
+[0m

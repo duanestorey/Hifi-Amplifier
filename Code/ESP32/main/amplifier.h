@@ -12,6 +12,7 @@
 #include "lcd.h"
 #include "dac.h"
 #include "channelsel.h"
+#include "dolby-sta310.h"
 
 #include "tmp100.h"
 #include "encoder.h"
@@ -58,6 +59,7 @@ protected:
 
     DAC *mDAC;
     ChannelSel *mChannelSel;
+    Dolby_STA310 *mDolbyDecoder;
 
     TMP100 *mMicroprocessorTemp;
 

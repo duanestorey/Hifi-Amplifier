@@ -27,7 +27,7 @@
 #include "channelsel-ax2358.h"
 
 Amplifier::Amplifier() : mWifiEnabled( false ), mWifiConnectionAttempts( 0 ), mUpdatingFromNTP( false ), mPoweredOn( true ), mDisplayQueue( 3 ), mTimerID( 0 ), mReconnectTimerID( 0 ), mLCD( 0 ),
-    mDAC( 0 ), mChannelSel( 0 ), mMicroprocessorTemp( 0 ), mVolumeEncoder( 15, 13, true ), mInputEncoder( 4, 16, false ), mAudioTimerID( 0 ), mPendingVolumeChange( false ), mPendingVolume( 0 ) {
+    mDAC( 0 ), mChannelSel( 0 ), mDolbyDecoder( 0 ), mMicroprocessorTemp( 0 ), mVolumeEncoder( 15, 13, true ), mInputEncoder( 4, 16, false ), mAudioTimerID( 0 ), mPendingVolumeChange( false ), mPendingVolume( 0 ) {
 }
 
 void 
@@ -81,6 +81,10 @@ Amplifier::init() {
 
     configurePins();
 
+    gpio_set_level( PIN_DECODER_RESET, 1 );
+
+    taskDelayInMs( 1000 );
+
     mTimerID = mTimer.setTimer( 15000, mAmplifierQueue, true );
 
     taskDelayInMs( 500 );
@@ -88,8 +92,21 @@ Amplifier::init() {
     mLCD = new LCD( 0x27, &mI2C );
     mMicroprocessorTemp = new TMP100( 0x48, &mI2C );
     mChannelSel = new ChannelSel_AX2358( 0x4a, &mI2C );
-
     mDAC = new DAC_PCM1681( 0x4c, &mI2C ); 
+    mDolbyDecoder = new Dolby_STA310( 0x5c, &mI2C );
+    mDolbyDecoder->init();
+    mDolbyDecoder->mute( true );
+    //mDolbyDecoder->init();
+
+    taskDelayInMs( 500 );
+
+    // 0x5c is Dolby
+
+    // DAC should be 0x4c or 0x4d
+
+    mI2C.scanBus();
+
+    
    
     mAudioTimerID = mTimer.setTimer( 200, mAudioQueue, true );
 }
@@ -216,7 +233,8 @@ Amplifier::updateDisplay() {
             sprintf( input, "%12s%-8s", "Vinyl", audioType );
             break;
         case AmplifierState::INPUT_6CH:
-            mLCD->writeLine( 3, "SPDIF" );
+           // mLCD->writeLine( 3, "SPDIF" );
+            sprintf( input, "%12s%-8s", "SPDIF", audioType );
             break;
     }
 
@@ -411,14 +429,13 @@ Amplifier::handleAudioThread() {
 
     // Channel Selector is now muted - need to umuted when audio is ready to go
     mChannelSel->init();
-    
 
     AMP_DEBUG_I( "Starting DAC initialization" );
     mDAC->init();
     mDAC->setFormat( DAC::FORMAT_SONY );
 
     // Should eventually be able to set this higher as hopefully channel selector will handle volume
-    mDAC->setVolume( 50 );
+    mDAC->setVolume( 100 );
 
     // Initial volume, 0-79
     AmplifierState state = getCurrentState();
@@ -432,6 +449,9 @@ Amplifier::handleAudioThread() {
     AMP_DEBUG_I( "Channel selector un-muted" );
 
     gpio_set_level( PIN_LED_ACTIVE, 1 );
+
+    mDolbyDecoder->mute( false );
+    mDAC->enable( true );
 
     // Activate power
     vTaskDelay( 1500 / portTICK_PERIOD_MS );

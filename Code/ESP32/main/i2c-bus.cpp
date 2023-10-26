@@ -9,7 +9,7 @@
 #define I2C_MASTER_NUM              0    
 #define I2C_MASTER_SDA_IO   21
 #define I2C_MASTER_SCL_IO   22
-#define I2C_MASTER_FREQ_HZ  50000
+#define I2C_MASTER_FREQ_HZ  100000
 
 #define I2C_WRITE_REQ       0
 #define I2C_READ_REQ        0
@@ -31,23 +31,25 @@ I2CBUS::I2CBUS() {
    // i2c_set_timeout( I2C_NUM_0,0xFFFFF );
 
     //i2c_set_timeout( I2C_NUM_0, I2C_MS_TO_WAIT / portTICK_PERIOD_MS );
-
-
-int devices_found = 0;
-for(int address = 1; address < 127; address++) {
-	// create and execute the command link
-	i2c_cmd_handle_t cmd = i2c_cmd_link_create();
-	i2c_master_start(cmd);
-	i2c_master_write_byte(cmd, (address << 1) | I2C_MASTER_WRITE, true);
-	i2c_master_stop(cmd);
-	if(i2c_master_cmd_begin(I2C_NUM_0, cmd, 1000 / portTICK_PERIOD_MS) == ESP_OK) {
-		printf("-> found device with address 0x%02x\r\n", address);
-		devices_found++;
-	}
-	i2c_cmd_link_delete(cmd);
 }
-if(devices_found == 0) printf("\r\n-> no devices found\r\n");
-printf("\r\n...scan completed!\r\n");
+
+void 
+I2CBUS::scanBus() {
+    int devices_found = 0;
+    for(int address = 1; address < 127; address++) {
+        // create and execute the command link
+        i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+        i2c_master_start(cmd);
+        i2c_master_write_byte(cmd, (address << 1) | I2C_MASTER_WRITE, true);
+        i2c_master_stop(cmd);
+        if(i2c_master_cmd_begin(I2C_NUM_0, cmd, 1000 / portTICK_PERIOD_MS) == ESP_OK) {
+            printf("-> found device with address 0x%02x\r\n", address);
+            devices_found++;
+        }
+        i2c_cmd_link_delete(cmd);
+    }
+    if(devices_found == 0) printf("\r\n-> no devices found\r\n");
+    printf("\r\n...scan completed!\r\n");
 }
 
 bool
