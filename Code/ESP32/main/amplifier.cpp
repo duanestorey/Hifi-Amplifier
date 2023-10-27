@@ -81,26 +81,26 @@ Amplifier::init() {
 
     configurePins();
 
+    gpio_set_level( PIN_DECODER_RESET, 0 );
+
+    taskDelayInMs( 100 );
+
     gpio_set_level( PIN_DECODER_RESET, 1 );
 
-    taskDelayInMs( 1000 );
+    taskDelayInMs( 250 );
 
     mTimerID = mTimer.setTimer( 15000, mAmplifierQueue, true );
-
-    taskDelayInMs( 500 );
 
     mLCD = new LCD( 0x27, &mI2C );
     mMicroprocessorTemp = new TMP100( 0x48, &mI2C );
     mChannelSel = new ChannelSel_AX2358( 0x4a, &mI2C );
     mDAC = new DAC_PCM1681( 0x4c, &mI2C ); 
-    mDolbyDecoder = new Dolby_STA310( 0x5c, &mI2C );
-    mDolbyDecoder->init();
-    mDolbyDecoder->mute( true );
-    //mDolbyDecoder->init();
+    mDolbyDecoder = new Dolby_STA310( 0x60, &mI2C );
 
-    taskDelayInMs( 500 );
 
-    // 0x5c is Dolby
+  //  taskDelayInMs( 100 );
+
+    // 0x5c is Dolby or 60?
 
     // DAC should be 0x4c or 0x4d
 
@@ -230,11 +230,11 @@ Amplifier::updateDisplay() {
             sprintf( input, "%-12s%8s", "Game", audioType );
             break;
         case AmplifierState::INPUT_STEREO_4:
-            sprintf( input, "%12s%-8s", "Vinyl", audioType );
+            sprintf( input, "%-12s%8s", "Vinyl", audioType );
             break;
         case AmplifierState::INPUT_6CH:
            // mLCD->writeLine( 3, "SPDIF" );
-            sprintf( input, "%12s%-8s", "SPDIF", audioType );
+            sprintf( input, "%-12s%8s", "SPDIF", audioType );
             break;
     }
 
@@ -401,6 +401,7 @@ Amplifier::handleAmplifierThread() {
 void 
 Amplifier::handleDecoderIRQ() {
     AMP_DEBUG_I( "Decoder Interrupt" );  
+    mDolbyDecoder->handleInterrupt();
 }
 
 void
@@ -425,21 +426,37 @@ Amplifier::handleAudioThread() {
     AMP_DEBUG_I( "Starting Audio Thread" );
 
     AMP_DEBUG_I( "Decoder set into active mode" );       
-    gpio_set_level( PIN_DECODER_RESET, 0 );
+
+    gpio_set_level( PIN_RELAY, 1 );
+
+    vTaskDelay( 1000 / portTICK_PERIOD_MS );
+
+    mDolbyDecoder->init();
+    mDolbyDecoder->mute( false );
+    mDolbyDecoder->run();
+    mDolbyDecoder->play( true );
 
     // Channel Selector is now muted - need to umuted when audio is ready to go
     mChannelSel->init();
 
     AMP_DEBUG_I( "Starting DAC initialization" );
     mDAC->init();
-    mDAC->setFormat( DAC::FORMAT_SONY );
+
+    mDAC->enable( true );
+
+     mDAC->setFormat( DAC::FORMAT_I2S );
+  // mDAC->setFormat( 0 );
 
     // Should eventually be able to set this higher as hopefully channel selector will handle volume
     mDAC->setVolume( 100 );
 
     // Initial volume, 0-79
     AmplifierState state = getCurrentState();
+
+    AMP_DEBUG_I( "Setting involumeput" );
     mChannelSel->setVolume( state.mCurrentVolume );
+
+    AMP_DEBUG_I( "Setting input" );
     mChannelSel->setInput( state.mInput );
 
     asyncUpdateDisplay();
@@ -450,12 +467,10 @@ Amplifier::handleAudioThread() {
 
     gpio_set_level( PIN_LED_ACTIVE, 1 );
 
-    mDolbyDecoder->mute( false );
-    mDAC->enable( true );
-
+   
     // Activate power
     vTaskDelay( 1500 / portTICK_PERIOD_MS );
-    gpio_set_level( PIN_RELAY, 1 );
+    
 
     // Set to playing status
     changeAmplifierState( AmplifierState::STATE_PLAYING );
@@ -490,6 +505,8 @@ Amplifier::handleAudioThread() {
                     break;
             }
         } 
+
+     //   mDolbyDecoder->checkForInterrupt();
     } 
 }
 
@@ -809,8 +826,9 @@ Amplifier::configurePins() {
     gpio_set_level( PIN_DECODER_RESET, 0 );
 
     // Setting up decoder
-    configureOnePin( PIN_DECODER_IRQ, GPIO_INTR_NEGEDGE, GPIO_MODE_INPUT, GPIO_PULLDOWN_ENABLE, GPIO_PULLUP_ENABLE );
+    configureOnePin( PIN_DECODER_IRQ, GPIO_INTR_DISABLE, GPIO_MODE_INPUT, GPIO_PULLDOWN_DISABLE, GPIO_PULLUP_ENABLE );
     gpio_isr_handler_add( PIN_DECODER_IRQ, Decoder_ISR, this );
+    gpio_set_intr_type( PIN_DECODER_IRQ, GPIO_INTR_NEGEDGE );
 }
 
 void 

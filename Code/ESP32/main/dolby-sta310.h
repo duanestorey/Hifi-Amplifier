@@ -52,6 +52,7 @@ public:
 		CLOCK_CMD = 0x3a,
 		HEAD_4 = 0x42,
 		HEAD_3 = 0x43,
+        SYNC_STATUS = 0x40,
 		PACKET_LOCK = 0x4f,
 		ID_EN = 0x50,
 		ID = 0x51,
@@ -81,6 +82,8 @@ public:
     void mute( bool enable = true );
 	void run();
 	void play( bool enable = true );
+    void handleInterrupt();
+    void checkForInterrupt();
 protected:
     uint8_t mAddr;
     I2CBUS *mBus;

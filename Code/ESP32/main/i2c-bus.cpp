@@ -80,7 +80,7 @@ bool
 I2CBUS::readRegisterByte( uint8_t address, uint8_t reg, uint8_t &data  ) {
     esp_err_t err = i2c_master_write_read_device( I2C_NUM_0, address, &reg, 1, &data, 1, I2C_MS_TO_WAIT / portTICK_PERIOD_MS );
     if ( err != ESP_OK ) {
-        AMP_DEBUG_SW( "Issue while sending I2C data to address " << (int)address );
+        AMP_DEBUG_SW( "Issue while reading I2C data from address " << (int)address );
     }
 
     return ( err == ESP_OK );

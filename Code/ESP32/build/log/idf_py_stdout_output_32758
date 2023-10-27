@@ -1,0 +1,443 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x36 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7136
+load:0x40078000,len:15780
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3884
+entry 0x40080650
+[0;32mI (31) boot: ESP-IDF v5.2-dev-2708-g3640dc86bb-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 17 2023 21:03:35[0m
+[0;32mI (33) boot: Multicore bootloader[0m
+[0;32mI (38) boot: chip revision: v3.0[0m
+[0;32mI (41) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (46) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (51) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (55) boot: Enabling RNG early entropy source...[0m
+[0;32mI (61) boot: Partition Table:[0m
+[0;32mI (64) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (71) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (79) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (86) boot:  2 phy_init         RF data          01 01 0000f000 00002000[0m
+[0;32mI (94) boot:  3 factory          factory app      00 00 00020000 002625a0[0m
+[0;32mI (101) boot: End of partition table[0m
+[0;32mI (106) boot: Defaulting to factory image[0m
+[0;32mI (110) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=33520h (210208) map[0m
+[0;32mI (162) esp_image: segment 1: paddr=00053548 vaddr=3ffbdb60 size=04f5ch ( 20316) load[0m
+[0;32mI (167) esp_image: segment 2: paddr=000584ac vaddr=40080000 size=07b6ch ( 31596) load[0m
+[0;32mI (176) esp_image: segment 3: paddr=00060020 vaddr=400d0020 size=b2f14h (732948) map[0m
+[0;32mI (327) esp_image: segment 4: paddr=00112f3c vaddr=40087b6c size=07e48h ( 32328) load[0m
+[0;32mI (345) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (345) boot: Disabling RNG early entropy source...[0m
+[0;32mI (356) cpu_start: Multicore app[0m
+[0;32mI (356) cpu_start: Pro cpu up.[0m
+[0;32mI (357) cpu_start: Starting app cpu, entry point is 0x40081120[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (374) cpu_start: Pro cpu start user code[0m
+[0;32mI (374) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (374) cpu_start: Application information:[0m
+[0;32mI (379) cpu_start: Project name:     hifi-amp[0m
+[0;32mI (384) cpu_start: App version:      6092b50-dirty[0m
+[0;32mI (390) cpu_start: Compile time:     Oct 26 2023 16:18:44[0m
+[0;32mI (396) cpu_start: ELF file SHA256:  c244e3cfc...[0m
+[0;32mI (401) cpu_start: ESP-IDF:          v5.2-dev-2708-g3640dc86bb-dirty[0m
+[0;32mI (408) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (413) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (418) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (423) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (430) heap_init: At 3FFAE6E0 len 0000F480 (61 KiB): DRAM[0m
+[0;32mI (436) heap_init: At 3FFC81A8 len 00017E58 (95 KiB): DRAM[0m
+[0;32mI (442) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (448) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (455) heap_init: At 4008F9B4 len 0001064C (65 KiB): IRAM[0m
+[0;32mI (463) spi_flash: detected chip: generic[0m
+[0;32mI (466) spi_flash: flash io: dio[0m
+[0;33mW (470) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (481) coexist: coex firmware version: 80b0d89[0m
+[0;32mI (486) app_start: Starting scheduler on CPU0[0m
+[0;32mI (491[0;32mI (492) app_start: Starting scheduler on CPU1[0m
+) main_task: Started on CPU0[0m
+[0;32mI (501) main_task: Calling app_main()[0m
+[0;32mI (504) I2CBUS::I2CBUS(): Stargting I2C bus[0m
+[0;32mI (539) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (540) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (547) gpio: GPIO[23]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (556) gpio: GPIO[27]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (565) gpio: GPIO[19]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (575) gpio: GPIO[12]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (584) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (593) gpio: GPIO[13]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (603) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (612) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (621) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (630) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (640) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (649) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (658) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 1| Intr:2 [0m
+[0;32mI (1670) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 15000 and ID 1 futureTime 16176 currentTime 1179[0m
+[0;32mI (2172) void Dolby_STA310::softReset(): Performing soft reset[0m
+[0;32mI (2174) void Dolby_STA310::softReset(): Initalized[0m
+[0;32mI (2175) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (2182) void Dolby_STA310::softReset(): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (2189) void Dolby_STA310::init(): Starting Dolby Play Routines[0m
+[0;32mI (2196) void Dolby_STA310::configureAudioPLL(): Configuring audio pll[0m
+[0;32mI (2203) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (2211) void Dolby_STA310::configureSync(): Configuring sync[0m
+[0;32mI (2219) void Dolby_STA310::configureSPDIF(): Configuring SPDIF[0m
+[0;32mI (2225) void Dolby_STA310::configurePCMOUT(): Configuring PCMOUT[0m
+[0;32mI (2231) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (2238) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (2247) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (2250) void Dolby_STA310::run(): Attempting to run[0m
+-> found device with address 0x27
+-> found device with address 0x48
+-> found device with address 0x4a
+-> found device with address 0x4c
+-> found device with address 0x60
+
+...scan completed!
+[0;32mI (2383) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 200 and ID 2 futureTime 2092 currentTime 1892[0m
+[0;32mI (2388) void Amplifier::handleTimerThread(): Starting Timer Thread on Core 0[0m
+[0;32mI (2395) void Amplifier::handleDisplayThread(): Starting Display Thread[0m
+[0;32mI (2402) void LCD::begin(): Beginning LCD Setup[0m
+[0;32mI (2408) void Amplifier::handleAudioThread(): Starting Audio Thread[0m
+[0;32mI (2414) void Amplifier::handleAudioThread(): Decoder set into active mode[0m
+[0;32mI (2415) void Amplifier::handleAmplifierThread(): Starting Amplifier Thread on Core 0[0m
+[0;32mI (2423) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 196[0m
+[0;32mI (2416) void Amplifier::handleRadioThread(): Starting Radio Thread on Core 0[0m
+[0;32mI (2441) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 193[0m
+I (2453) wifi:wifi driver task: 3ffbd8d0, prio:23, stack:6656, core=0
+[0;32mI (2459) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 194[0m
+[0;32mI (2474) void Amplifier::handleAudioThread(): Starting DAC initialization[0m
+[0;32mI (2481) virtual void DAC_PCM1681::init(): Starting PCM1681 DAC[0m
+I (2482) wifi:wifi firmware version: 341633f
+[0;32mI (2491) void Amplifier::handleAudioThread(): Setting involumeput[0m
+I (2491) wifi:wifi certification version: v7.0
+[0;32mI (2499) void Amplifier::handleAudioThread(): Setting input[0m
+I (2502) wifi:config NVS flash: enabled
+[0;32mI (2510) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 207[0m
+I (2512) wifi:config nano formating: disabled
+[0;32mI (2523) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 254[0m
+I (2526) wifi:Init data frame dynamic rx buffer num: 32
+[0;32mI (2536) void Amplifier::handleAudioThread(): Channel selector un-muted[0m
+I (2541) wifi:Init management frame dynamic rx buffer num: 32
+I (2553) wifi:Init management short buffer num: 32
+I (2558) wifi:Init dynamic tx buffer num: 32
+I (2562) wifi:Init static rx buffer size: 1600
+I (2566) wifi:Init static rx buffer num: 10
+I (2570) wifi:Init dynamic rx buffer num: 32
+[0;32mI (2575) wifi_init: rx ba win: 6[0m
+[0;32mI (2578) wifi_init: tcpip mbox: 32[0m
+[0;32mI (2582) wifi_init: udp mbox: 6[0m
+[0;32mI (2586) wifi_init: tcp mbox: 6[0m
+[0;32mI (2589) wifi_init: tcp tx win: 5744[0m
+[0;32mI (2594) wifi_init: tcp rx win: 5744[0m
+[0;32mI (2598) wifi_init: tcp mss: 1440[0m
+[0;32mI (2602) wifi_init: LWIP IRAM OP enabled[0m
+[0;32mI (2610) phy_init: phy_version 4771,450c73b,Aug 16 2023,11:03:10[0m
+I (2701) wifi:mode : sta (c4:de:e2:1b:1a:b8)
+I (2702) wifi:enable tsf
+[0;32mI (2703) void Amplifier::attemptWifiConnect(): Attempting to connect Wifi[0m
+[0;32mI (2709) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (2713) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+I (2717) wifi:[0;32mI (2720) void Amplifier::handleWifiCallback(int32_t): Wifi Starting Up[0m
+new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+I (2735) wifi:state: init -> auth (b0)
+[0;32mI (2908) void LCD::begin(): LCD Backlight Setup[0m
+[0;32mI (2946) void LCD::begin(): LCD Setup Done[0m
+[0;32mI (2946) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2948) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (2956) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (4049) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (4053) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4054) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (4061) void Dolby_STA310::handleInterrupt(): Attempting to handle interrupt[0m
+[0;32mI (4071) void Dolby_STA310::handleInterrupt(): ...interrupt registeres are 0 0[0m
+[0;32mI (4077) void Dolby_STA310::handleInterrupt(): Interrupt processed[0m
+[0;32mI (4083) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4092) void Amplifier::handleAmplifierThread(): Input Button Pressed[0m
+[0;32mI (4099) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4108) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (4114) void Dolby_STA310::handleInterrupt(): Attempting to handle interrupt[0m
+[0;32mI (4123) void Dolby_STA310::handleInterrupt(): ...interrupt registeres are 0 0[0m
+[0;32mI (4130) void Dolby_STA310::handleInterrupt(): Interrupt processed[0m
+[0;32mI (4168) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+I (4645) wifi:state: auth -> assoc (0)
+I (4681) wifi:Association refused temporarily, comeback time 1024 (TUs)
+I (5731) wifi:state: assoc -> assoc (0)
+I (6731) wifi:state: assoc -> init (200)
+I (6732) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+[0;32mI (6734) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (6738) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (6746) void Amplifier::handleWifiCallback(int32_t): Wifi Disconnected[0m
+[0;32mI (6753) void Amplifier::handleWifiCallback(int32_t): Setting Reconnection Timer[0m
+[0;32mI (6762) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 10000 and ID 3 futureTime 16270 currentTime 6271[0m
+[0;32mI (6774) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (6820) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (16680) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (16682) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (16685) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 27.875[0m
+[0;32mI (16780) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (16780) void Amplifier::handleRadioThread(): In Reconnection Timer Event[0m
+[0;32mI (16784) void Amplifier::attemptWifiConnect(): Attempting to connect Wifi[0m
+I (16810) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+I (16812) wifi:state: init -> auth (b0)
+I (18725) wifi:state: auth -> assoc (0)
+I (18734) wifi:state: assoc -> run (10)
+I (18762) wifi:connected with The Grey Havens, aid = 2, channel 1, BW20, bssid = 62:22:32:15:cf:15
+I (18763) wifi:security: WPA3-SAE, phy: bgn, rssi: -51
+I (18771) wifi:pm start, type: 1
+
+[0;32mI (18776) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (18776) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (18784) void Amplifier::handleWifiCallback(int32_t): Wifi Connection Established[0m
+I (18792) wifi:[0;32mI (18793) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+AP's beacon interval = 102400 us, DTIM period = 1
+I (18815) wifi:<ba-add>idx:0 (ifx:0, 62:22:32:15:cf:15), tid:0, ssn:1, winSize:64
+[0;32mI (18841) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (19778) esp_netif_handlers: sta ip: 192.168.1.196, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (19780) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (19786) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (19794) void Amplifier::handleWifiCallback(int32_t): Wifi Received IP Address[0m
+[0;32mI (19802) void Amplifier::updateTimeFromNTP(): Attemping To Update Time From NTP Server[0m
+[0;32mI (24506) void NTP_Callback(timeval*): Received NTP Callback[0m
+[0;32mI (24513) void Amplifier::handleRadioThread(): The current date/time is: Thu Oct 26 18:01:05 2023[0m
+[0;32mI (29533) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (29533) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (29534) void Amplifier::handleAudioThread(): Setting pending audio volume to 54[0m
+[0;32mI (29579) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (29600) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 54[0m
+[0;32mI (29611) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (29612) void Amplifier::handleAudioThread(): Setting pending audio volume to 53[0m
+[0;32mI (29655) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (29656) void Amplifier::handleAudioThread(): Setting pending audio volume to 52[0m
+[0;32mI (29688) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (29708) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (29709) void Amplifier::handleAudioThread(): Setting pending audio volume to 51[0m
+[0;32mI (29725) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (29747) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (29748) void Amplifier::handleAudioThread(): Setting pending audio volume to 50[0m
+[0;32mI (29791) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (29800) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 50[0m
+[0;32mI (29802) void Amplifier::handleAudioThread(): Setting pending audio volume to 49[0m
+[0;32mI (29831) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (29834) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (29834) void Amplifier::handleAudioThread(): Setting pending audio volume to 48[0m
+[0;32mI (29866) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (29877) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (29877) void Amplifier::handleAudioThread(): Setting pending audio volume to 47[0m
+[0;32mI (29904) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (29914) void Amplifier::handleAudioThread(): Setting pending audio volume to 46[0m
+[0;32mI (29986) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (30000) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 46[0m
+[0;32mI (30025) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (30132) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (30171) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (30278) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (30316) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (30749) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (30749) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (30750) void Amplifier::handleAudioThread(): Setting pending audio volume to 45[0m
+[0;32mI (30793) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (30800) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 45[0m
+[0;32mI (30802) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (30808) void Amplifier::handleAudioThread(): Setting pending audio volume to 44[0m
+[0;32mI (30863) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (30864) void Amplifier::handleAudioThread(): Setting pending audio volume to 43[0m
+[0;32mI (30902) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (30912) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (30913) void Amplifier::handleAudioThread(): Setting pending audio volume to 42[0m
+[0;32mI (30940) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (30989) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (30991) void Amplifier::handleAudioThread(): Setting pending audio volume to 41[0m
+[0;32mI (31000) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 41[0m
+[0;32mI (31051) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (31090) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (31197) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (31235) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (31343) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (31380) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (31561) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (31561) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (31562) void Amplifier::handleAudioThread(): Setting pending audio volume to 42[0m
+[0;32mI (31587) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (31588) void Amplifier::handleAudioThread(): Setting pending audio volume to 43[0m
+[0;32mI (31600) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 43[0m
+[0;32mI (31607) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (31608) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (31612) void Amplifier::handleAudioThread(): Setting pending audio volume to 44[0m
+[0;32mI (31623) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (31636) void Amplifier::handleAudioThread(): Setting pending audio volume to 45[0m
+[0;32mI (31637) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (31662) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (31662) void Amplifier::handleAudioThread(): Setting pending audio volume to 46[0m
+[0;32mI (31672) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (31672) void Amplifier::handleAudioThread(): Setting pending audio volume to 47[0m
+[0;32mI (31687) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (31687) void Amplifier::handleAudioThread(): Setting pending audio volume to 48[0m
+[0;32mI (31696) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (31710) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 27.875[0m
+[0;32mI (31718) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (31729) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (31730) void Amplifier::handleAudioThread(): Setting pending audio volume to 49[0m
+[0;32mI (31772) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (31800) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 49[0m
+[0;32mI (31880) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (31919) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (31928) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (31929) void Amplifier::handleAudioThread(): Setting pending audio volume to 50[0m
+[0;32mI (31957) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (31967) void Amplifier::handleAudioThread(): Setting pending audio volume to 51[0m
+[0;32mI (31986) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (31997) void Amplifier::handleAudioThread(): Setting pending audio volume to 52[0m
+[0;32mI (32000) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 52[0m
+[0;32mI (32012) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (32023) void Amplifier::handleAudioThread(): Setting pending audio volume to 53[0m
+[0;32mI (32030) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (32039) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (32040) void Amplifier::handleAudioThread(): Setting pending audio volume to 54[0m
+[0;32mI (32067) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (32176) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (32200) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 54[0m
+[0;32mI (32216) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (32275) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (32275) void Amplifier::handleAudioThread(): Setting pending audio volume to 55[0m
+[0;32mI (32308) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (32318) void Amplifier::handleAudioThread(): Setting pending audio volume to 56[0m
+[0;32mI (32323) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (32340) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (32341) void Amplifier::handleAudioThread(): Setting pending audio volume to 57[0m
+[0;32mI (32361) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (32366) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (32377) void Amplifier::handleAudioThread(): Setting pending audio volume to 58[0m
+[0;32mI (32400) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 58[0m
+[0;32mI (32471) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (32509) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (32616) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (32654) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (32743) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (32744) void Amplifier::handleAudioThread(): Setting pending audio volume to 59[0m
+[0;32mI (32761) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (32799) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (32800) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 59[0m
+[0;32mI (32801) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (32814) void Amplifier::handleAudioThread(): Setting pending audio volume to 60[0m
+[0;32mI (32878) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (32880) void Amplifier::handleAudioThread(): Setting pending audio volume to 61[0m
+[0;32mI (32908) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (32947) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (33000) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 61[0m
+[0;32mI (33055) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (33093) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (33201) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (33240) virtual float TMP100::readTemperature(): Temperature is 27.9375[0m
+[0;32mI (33289) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (33291) void Amplifier::handleAudioThread(): Setting pending audio volume to 62[0m
+[0;32mI (33315) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (33316) void Amplifier::handleAudioThread(): Setting pending audio volume to 63[0m
+[0;32mI (33349) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (33357) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (33358) void Amplifier::handleAudioThread(): Setting pending audio volume to 64[0m
+[0;32mI (33388) virtual float TMP100::readTemperature(): Temperature is 27.9375[0m
+[0;32mI (33400) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 64[0m
+[0;32mI (33421) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (33422) void Amplifier::handleAudioThread(): Setting pending audio volume to 65[0m
+[0;32mI (33496) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (33533) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (33600) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 65[0m
+[0;32mI (33641) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (33680) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (33732) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (33734) void Amplifier::handleAudioThread(): Setting pending audio volume to 66[0m
+[0;32mI (33788) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (33790) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (33794) void Amplifier::handleAudioThread(): Setting pending audio volume to 67[0m
+[0;32mI (33803) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 67[0m
+[0;32mI (33826) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (33935) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (33939) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (33941) void Amplifier::handleAudioThread(): Setting pending audio volume to 68[0m
+[0;32mI (33976) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (34000) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 68[0m
+[0;32mI (34014) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (34015) void Amplifier::handleAudioThread(): Setting pending audio volume to 69[0m
+[0;32mI (34085) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (34123) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (34200) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 69[0m
+[0;32mI (34231) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (34270) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (34377) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (34415) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (35958) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35958) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (35959) void Amplifier::handleAudioThread(): Setting pending audio volume to 70[0m
+[0;32mI (35982) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (35983) void Amplifier::handleAudioThread(): Setting pending audio volume to 71[0m
+[0;32mI (36001) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 71[0m
+[0;32mI (36003) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (36009) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36016) void Amplifier::handleAudioThread(): Setting pending audio volume to 72[0m
+[0;32mI (36037) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36038) void Amplifier::handleAudioThread(): Setting pending audio volume to 73[0m
+[0;32mI (36058) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36068) void Amplifier::handleAudioThread(): Setting pending audio volume to 74[0m
+[0;32mI (36075) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36085) void Amplifier::handleAudioThread(): Setting pending audio volume to 75[0m
+[0;32mI (36095) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36106) void Amplifier::handleAudioThread(): Setting pending audio volume to 76[0m
+[0;32mI (36115) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (36135) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (36136) void Amplifier::handleAudioThread(): Setting pending audio volume to 77[0m
+[0;32mI (36152) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (36200) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 77[0m
+[0;32mI (36262) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (36300) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (36408) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (36446) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (36553) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (36591) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (38702) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38702) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (38703) void Amplifier::handleAudioThread(): Setting pending audio volume to 76[0m
+[0;32mI (38745) virtual float TMP100::readTemperature(): Temperature is 27.9375[0m
+[0;32mI (38800) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 76[0m
+[0;32mI (38802) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38807) void Amplifier::handleAudioThread(): Setting pending audio volume to 75[0m
+[0;32mI (38852) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38853) void Amplifier::handleAudioThread(): Setting pending audio volume to 74[0m
+[0;32mI (38853) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (38904) virtual float TMP100::readTemperature(): Temperature is 27.9375[0m
+[0;32mI (38907) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38910) void Amplifier::handleAudioThread(): Setting pending audio volume to 73[0m
+[0;32mI (38942) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (38943) void Amplifier::handleAudioThread(): Setting pending audio volume to 72[0m
+[0;32mI (38998) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (39001) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 72[0m
+[0;32mI (39009) void Amplifier::handleAudioThread(): Setting pending audio volume to 71[0m
+[0;32mI (39015) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (39059) virtual float TMP100::readTemperature(): Temperature is 27.9375[0m
+[0;32mI (39061) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (39064) void Amplifier::handleAudioThread(): Setting pending audio volume to 70[0m
+[0;32mI (39167) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (39201) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 70[0m
+[0;32mI (39206) virtual float TMP100::readTemperature(): Temperature is 27.9375[0m
+[0;32mI (39314) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (39352) virtual float TMP100::readTemperature(): Temperature is 27.9375[0m
+[0;32mI (39459) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (39498) virtual float TMP100::readTemperature(): Temperature is 27.9375[0m
+[0;32mI (40246) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (40246) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (40247) void Amplifier::handleAudioThread(): Setting pending audio volume to 69[0m
+[0;32mI (40289) virtual float TMP100::readTemperature(): Temperature is 27.9375[0m
+[0;32mI (40320) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (40321) void Amplifier::handleAudioThread(): Setting pending audio volume to 68[0m
+[0;32mI (40398) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (40401) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 68[0m
+[0;32mI (40438) virtual float TMP100::readTemperature(): Temperature is 27.9375[0m
+[0;32mI (46680) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (46683) virtual float TMP100::readTemperature(): Temperature is 27.875[0m
+[0;32mI (46685) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 27.875[0m

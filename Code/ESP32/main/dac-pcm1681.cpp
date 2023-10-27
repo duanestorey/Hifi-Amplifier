@@ -49,7 +49,7 @@ DAC_PCM1681::setFormat( uint8_t format ) {
 	}
 
 	mI2C->writeRegisterByte( mAddress, PCM1681_REG_FORMAT, value );
-	//mI2C->writeRegisterByte( mAddress, PCM1681_REG_OVER, 1 );
+	mI2C->writeRegisterByte( mAddress, PCM1681_REG_OVER, 1 );
 
 
     // Set wide over-sampling bit and slow roll-off filters
@@ -112,3 +112,4 @@ DAC_PCM1681::setVolume( int volume ) {
 	setChannelVolume( CENTER, volume );
 	setChannelVolume( SUBWOOFER, volume );
 }
+
