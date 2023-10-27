@@ -171,7 +171,11 @@ Amplifier::updateDisplay() {
     if ( state.mAudioType == AmplifierState::AUDIO_ANALOG ) {
         strcpy( rate, "" );
     } else {
-        sprintf( rate, "%lukHz", state.mSamplingRate / 1000 );
+        if ( state.mSamplingRate == 44100 ) {
+            strcpy( rate, "44.1kHz" );
+        } else {
+            sprintf( rate, "%lukHz", state.mSamplingRate / 1000 );
+        }
     }
 
     switch( state.mAudioType ) {
@@ -386,7 +390,7 @@ Amplifier::handleAmplifierThread() {
 void 
 Amplifier::handleDecoderIRQ() {
     AMP_DEBUG_I( "Decoder Interrupt" );  
-    mDolbyDecoder->handleInterrupt();
+    mDolbyDecoder->handleInterrupt( mAudioQueue );
 }
 
 void
@@ -500,7 +504,8 @@ Amplifier::handleAudioThread() {
                     state = getCurrentState();
                     if ( state.mInput == AmplifierState::INPUT_6CH && msg.mParam != AmplifierState::INPUT_6CH ) {
                         // We are in Dolby, but moving away, so we need to shut down the digital audio
-                    } else if ( state.mInput == AmplifierState::INPUT_6CH && msg.mParam != AmplifierState::INPUT_6CH ) {
+                        stopDigitalAudio();
+                    } else if ( state.mInput != AmplifierState::INPUT_6CH && msg.mParam == AmplifierState::INPUT_6CH ) {
                         // We need to start up the Dolby digital decoder
                         startDigitalAudio();
                     }
@@ -518,6 +523,15 @@ Amplifier::handleAudioThread() {
                         }
                     }
                     
+                    break;
+                case Message::MSG_AUDIO_SAMPLING_RATE_CHANGE:
+                    {
+                        ScopedLock lock( mStateMutex );
+
+                        mState.mSamplingRate = msg.mParam;
+                    }
+
+                    asyncUpdateDisplay();
                     break;
                 default:
                     break;

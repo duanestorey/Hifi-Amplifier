@@ -2,6 +2,7 @@
 #define __DOLBY_STA310_H__
 
 #include "i2c-bus.h"
+#include "queue.h"
 
 class Dolby_STA310 {
 public:
@@ -27,7 +28,7 @@ public:
 		TBD = 128
 	} INT2S;
 
-    	enum {
+    enum {
 		IDENT = 0x01,
 		SOFTVER = 0x71,
 		FREQ = 0x05,
@@ -48,11 +49,12 @@ public:
 		PCM_CONF = 0x55,
 		SOFT_MUTE = 0x73,
 		BREAKPOINT = 0x2b,
-		HDR_ERROR = 0x42,
 		CLOCK_CMD = 0x3a,
-		HEAD_4 = 0x42,
-		HEAD_3 = 0x43,
         SYNC_STATUS = 0x40,
+        HEAD_4 = 0x42,
+		HEAD_3 = 0x43,
+        HEADLEN_1 = 0x44,
+        HEADLEN_2 = 0x45,
 		PACKET_LOCK = 0x4f,
 		ID_EN = 0x50,
 		ID = 0x51,
@@ -82,7 +84,7 @@ public:
     void mute( bool enable = true );
 	void run();
 	void play( bool enable = true );
-    void handleInterrupt();
+    void handleInterrupt( Queue &queue );
     void checkForInterrupt();
     void setAttenuation( uint8_t db = 0 );
 

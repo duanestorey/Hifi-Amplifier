@@ -1,6 +1,7 @@
 #include "dolby-sta310.h"
 #include "debug.h"
 #include "pins.h"
+#include "message.h"
 
 Dolby_STA310::Dolby_STA310( uint8_t addr, I2CBUS *bus ) : mAddr( addr ), mBus( bus ), mInitialized( false ), mRunning( false ), mMuted( true ), mPlaying( false ) {
 
@@ -19,7 +20,7 @@ Dolby_STA310::startDolby() {
         AMP_DEBUG_I( "Starting Dolby Play Routines" );
 
         configureAudioPLL();
-        configureInterrupts();
+        configureInterrupts( true );
         configureSync();
         configureSPDIF();
         configurePCMOUT();
@@ -160,7 +161,13 @@ Dolby_STA310::configureAudioPLL() {
 void
 Dolby_STA310::configureInterrupts( bool enableHDR  ){
     AMP_DEBUG_I( "Configuring interrupts" );
-    mBus->writeRegisterByte( mAddr, Dolby_STA310::INT1, Dolby_STA310::ERR | Dolby_STA310::SFR );
+
+    uint8_t interrupts = Dolby_STA310::ERR | Dolby_STA310::SFR;
+    if ( enableHDR ) {
+        interrupts = interrupts | Dolby_STA310::HDR;
+    }
+
+    mBus->writeRegisterByte( mAddr, Dolby_STA310::INT1, interrupts );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::INT2, Dolby_STA310::RST | Dolby_STA310::LCK );
 }
 
@@ -257,7 +264,7 @@ Dolby_STA310::checkForInterrupt() {
 }
 
 void 
-Dolby_STA310::handleInterrupt() {
+Dolby_STA310::handleInterrupt( Queue &queue ) {
     AMP_DEBUG_I( "Attempting to handle interrupt" );
     uint8_t result1 = 0;
     uint8_t result2 = 0;
@@ -283,7 +290,21 @@ Dolby_STA310::handleInterrupt() {
         mBus->readRegisterByte( mAddr, Dolby_STA310::HEAD_3, head3 );
         mBus->readRegisterByte( mAddr, Dolby_STA310::HEAD_4, head4 );
 
-        AMP_DEBUG_SI(".......head was " << (int)head3 << " " << (int)head4; );
+        uint8_t freq;
+        mBus->readRegisterByte( mAddr, Dolby_STA310::FREQ, freq );
+
+        AMP_DEBUG_SI(".......head was " << (int)head3 << " " << (int)head4 <<  " " << (int)freq; );
+
+        unsigned int samplingRate = 0;
+        switch( freq ) {
+            case 0:
+                samplingRate = 48000;
+                break;
+
+        }
+
+        queue.add( Message::MSG_AUDIO_SAMPLING_RATE_CHANGE, samplingRate );
+        configureInterrupts( false );
     }
 
     if ( result1 & Dolby_STA310::SFR ) {
@@ -304,7 +325,7 @@ Dolby_STA310::handleInterrupt() {
         uint8_t status;
         mBus->readRegisterByte( mAddr, Dolby_STA310::SYNC_STATUS, status );
 
-         AMP_DEBUG_SI( "..... SYNC status is " << (int)status );
+        AMP_DEBUG_SI( "..... SYNC status is " << (int)status );
     }
 
     if ( ( result2 & RST ) | ( result2 & LCK )  ) {
@@ -318,7 +339,7 @@ Dolby_STA310::handleInterrupt() {
         AMP_DEBUG_SI( "...STream/Decode set to " << (int)stream << " " << (int)decode );
 
          softReset();
-         configureInterrupts();
+         configureInterrupts( true );
          enableAudioPLL();
          configureAudioPLL();
 

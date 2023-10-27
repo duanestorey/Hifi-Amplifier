@@ -26,7 +26,8 @@ public:
         MSG_INPUT_UP,
         MSG_INPUT_DOWN,
         MSG_INPUT_SET,
-        MSG_INPUT_BUTTON_PRESS
+        MSG_INPUT_BUTTON_PRESS,
+        MSG_AUDIO_SAMPLING_RATE_CHANGE
     };
 
     Message( MessageType t ) : mMessageType( t ), mParam( 0 ) {}
