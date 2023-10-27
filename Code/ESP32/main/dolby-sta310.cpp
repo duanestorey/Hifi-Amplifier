@@ -172,7 +172,7 @@ Dolby_STA310::configurePCMOUT() {
     // 3 is precision, must be 24 bit
     // 8 is SONY
     // 32 is not right padded   
-   mBus->writeRegisterByte( mAddr, Dolby_STA310::PCM_CONF, 3 + 32 + 8 );
+   mBus->writeRegisterByte( mAddr, Dolby_STA310::PCM_CONF, 3 + 8 + 32 );
 }
 
 void 

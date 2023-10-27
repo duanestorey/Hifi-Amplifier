@@ -444,7 +444,7 @@ Amplifier::handleAudioThread() {
 
     mDAC->enable( true );
 
-     mDAC->setFormat( DAC::FORMAT_I2S );
+     mDAC->setFormat( DAC::FORMAT_SONY );
   // mDAC->setFormat( 0 );
 
     // Should eventually be able to set this higher as hopefully channel selector will handle volume
@@ -466,12 +466,10 @@ Amplifier::handleAudioThread() {
     AMP_DEBUG_I( "Channel selector un-muted" );
 
     gpio_set_level( PIN_LED_ACTIVE, 1 );
-
    
     // Activate power
     vTaskDelay( 1500 / portTICK_PERIOD_MS );
     
-
     // Set to playing status
     changeAmplifierState( AmplifierState::STATE_PLAYING );
 

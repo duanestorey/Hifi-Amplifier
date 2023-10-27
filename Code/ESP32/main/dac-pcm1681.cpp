@@ -4,8 +4,10 @@
 #define PCM1681_REG_MUTE	7
 #define PCM1681_REG_ENABLE	8
 #define PCM1681_REG_FORMAT	9
+#define PCM1681_REG_RESET 	10
 #define PCM1681_REG_OVER	12
 #define PCM1681_REG_DAMS	13
+
 
 #include "tmp100.h"
 
@@ -18,9 +20,12 @@ DAC_PCM1681::~DAC_PCM1681() {
 void 
 DAC_PCM1681::init() {
     AMP_DEBUG_I( "Starting PCM1681 DAC" );   
+	mI2C->writeRegisterByte( mAddress, PCM1681_REG_RESET, 128 );
+
+	vTaskDelay( 100 / portTICK_PERIOD_MS );
 
     // Set wide over-sampling bit and sharp roll-off filters
-    mI2C->writeRegisterByte( mAddress, PCM1681_REG_OVER, 128 );
+    mI2C->writeRegisterByte( mAddress, PCM1681_REG_OVER, 0 );
 
     // Set wide volume range, 0-63, 0.5db
     mI2C->writeRegisterByte( mAddress, PCM1681_REG_DAMS, 128 );
@@ -49,11 +54,10 @@ DAC_PCM1681::setFormat( uint8_t format ) {
 	}
 
 	mI2C->writeRegisterByte( mAddress, PCM1681_REG_FORMAT, value );
-	mI2C->writeRegisterByte( mAddress, PCM1681_REG_OVER, 1 );
 
 
     // Set wide over-sampling bit and slow roll-off filters
-    // mI2C->writeRegisterByte( mAddress, PCM1681_REG_OVER, 128 | 0xf );    
+	//mI2C->writeRegisterByte( mAddress, PCM1681_REG_OVER, 128 | 0xf );    
 
     // Set narrow over-sampling bit and slow roll-off filters
     // mI2C->writeRegisterByte( mAddress, PCM1681_REG_OVER, 0xf );     
