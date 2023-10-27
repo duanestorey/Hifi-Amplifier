@@ -52,7 +52,7 @@ DAC_PCM1681::setFormat( uint8_t format ) {
 	}
 
 	mDevice->writeRegister( PCM1681_REG_FORMAT, value );
-	mDevice->writeRegister( PCM1681_REG_OVER, 1 );
+	//mDevice->writeRegister( PCM1681_REG_OVER, 1 );
 }
 
 void

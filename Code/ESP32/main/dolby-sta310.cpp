@@ -131,7 +131,21 @@ Dolby_STA310::configureAudioPLL() {
    // mBus->writeRegisterByte( mAddr, Dolby_STA310::PLL_CTRL, 22 );
 
     // 22 works on my system
-    //Bus->writeRegisterByte( mAddr, Dolby_STA310::PLL_CTRL, 30 );
+    //mBus->writeRegisterByte( mAddr, Dolby_STA310::PLL_CTRL, 30 );
+
+    /*
+   mBus->writeRegisterByte( mAddr, 182, 52 );
+   mBus->writeRegisterByte( mAddr, 183, 236 );
+   mBus->writeRegisterByte( mAddr, 184, 2 );
+   mBus->writeRegisterByte( mAddr, 185, 9 );
+   mBus->writeRegisterByte( mAddr, 186, 1 );
+   mBus->writeRegisterByte( mAddr, 187, 3 );
+   mBus->writeRegisterByte( mAddr, 188, 9 );
+   mBus->writeRegisterByte( mAddr, 189, 2 );
+   mBus->writeRegisterByte( mAddr, 190, 9 );
+   mBus->writeRegisterByte( mAddr, 191, 1 );
+   */
+
      mBus->writeRegisterByte( mAddr, Dolby_STA310::PLL_CTRL, 22 );
 }
 
@@ -169,10 +183,29 @@ Dolby_STA310::configurePCMOUT() {
     mBus->writeRegisterByte( mAddr, Dolby_STA310::PCM_DIV, 1 );
    // mBus->writeRegisterByte( mAddr, Dolby_STA310::PCM_CONF, 3 + 8 + 32 );
 
+
+   // Configure FRACL coefficient for 256x192 khz write_host_reg(182, 52);
+// Configure FRACH coefficient for 256x192 khz write_host_reg(183, 236)
+// Configure X coefficient for 256x192 khz write_host_reg(184, 2);
+// Configure M coefficient for 256x192 khz write_host_reg(185, 9);
+// Configure N coefficient for 256x192 khz write_host_reg(186, 1);
+// Configure FRACL coefficient for 256x176.4 khz write_host_reg(187, 3);
+// Configure FRACH coefficient for 256x176.4 khz write_host_reg(188, 9)
+// Configure X coefficient for 256x176.4 khz write_host_reg(189, 2);
+// Configure M coefficient for 256x176.4 khz write_host_reg(190, 9);
+// Configure N coefficient for 256x176.4 khz write_host_reg(191, 1);
+// Configure PCMCLK pad in output, use audio pll // SysClk from System PLL divided by 2 write_host_reg(18, 26);
+
+
     // 3 is precision, must be 24 bit
     // 8 is SONY
     // 32 is not right padded   
-   mBus->writeRegisterByte( mAddr, Dolby_STA310::PCM_CONF, 3 + 8 + 32 );
+    // Looks like {d23-d0}{8*0}
+    mBus->writeRegisterByte( mAddr, Dolby_STA310::PCM_CONF, 3 + 8 + 32 );
+    //mBus->writeRegisterByte( mAddr, Dolby_STA310::PCM_CONF, 3 + 8  + 32 );
+    //mBus->writeRegisterByte( mAddr, Dolby_STA310::PCM_CONF, 3 + 8  + 32 );
+    //mBus->writeRegisterByte( mAddr, Dolby_STA310::PCM_CONF, 3  );
+    //mBus->writeRegisterByte( mAddr, Dolby_STA310::PCM_CONF, 3  + 32 );
 }
 
 void 
@@ -204,8 +237,8 @@ Dolby_STA310::configureDecoder() {
     //mBus->writeRegisterByte( mAddr, Dolby_STA310::DECODE_SEL, 7 );
 
     // PCM
-    //mBus->writeRegisterByte( mAddr, Dolby_STA310::STREAM_SEL, 3 );
-    //mBus->writeRegisterByte( mAddr, Dolby_STA310::DECODE_SEL, 3 );
+   // mBus->writeRegisterByte( mAddr, Dolby_STA310::STREAM_SEL, 3 );
+   // mBus->writeRegisterByte( mAddr, Dolby_STA310::DECODE_SEL, 3 );
 }
 
 void 
@@ -279,6 +312,7 @@ Dolby_STA310::handleInterrupt() {
          softReset();
          configureInterrupts();
          enableAudioPLL();
+         configureAudioPLL();
 
          mute( false );
          run();

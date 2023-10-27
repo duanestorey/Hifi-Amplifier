@@ -425,11 +425,13 @@ void
 Amplifier::handleAudioThread() {
     AMP_DEBUG_I( "Starting Audio Thread" );
 
-    AMP_DEBUG_I( "Decoder set into active mode" );       
+    AMP_DEBUG_I( "Decoder set into active mode" );   
+
+     vTaskDelay( 1000 / portTICK_PERIOD_MS );    
 
     gpio_set_level( PIN_RELAY, 1 );
 
-    vTaskDelay( 1000 / portTICK_PERIOD_MS );
+    vTaskDelay( 200 / portTICK_PERIOD_MS );
 
     mDolbyDecoder->init();
     mDolbyDecoder->mute( false );
@@ -438,14 +440,17 @@ Amplifier::handleAudioThread() {
 
     // Channel Selector is now muted - need to umuted when audio is ready to go
     mChannelSel->init();
+    mChannelSel->mute( true );
 
     AMP_DEBUG_I( "Starting DAC initialization" );
     mDAC->init();
 
     mDAC->enable( true );
 
-     mDAC->setFormat( DAC::FORMAT_SONY );
-  // mDAC->setFormat( 0 );
+    mDAC->setFormat( DAC::FORMAT_SONY );
+    // Right justified 24 bit
+    //mDAC->setFormat( 4 );
+    //mDAC->setFormat( 4 );
 
     // Should eventually be able to set this higher as hopefully channel selector will handle volume
     mDAC->setVolume( 100 );
@@ -468,7 +473,7 @@ Amplifier::handleAudioThread() {
     gpio_set_level( PIN_LED_ACTIVE, 1 );
    
     // Activate power
-    vTaskDelay( 1500 / portTICK_PERIOD_MS );
+    vTaskDelay( 100 / portTICK_PERIOD_MS );
     
     // Set to playing status
     changeAmplifierState( AmplifierState::STATE_PLAYING );

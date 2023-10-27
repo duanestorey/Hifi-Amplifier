@@ -25,7 +25,7 @@ DAC_PCM1681::init() {
 	vTaskDelay( 100 / portTICK_PERIOD_MS );
 
     // Set wide over-sampling bit and sharp roll-off filters
-    mI2C->writeRegisterByte( mAddress, PCM1681_REG_OVER, 0 );
+    mI2C->writeRegisterByte( mAddress, PCM1681_REG_OVER, 128 );
 
     // Set wide volume range, 0-63, 0.5db
     mI2C->writeRegisterByte( mAddress, PCM1681_REG_DAMS, 128 );
@@ -51,6 +51,8 @@ DAC_PCM1681::setFormat( uint8_t format ) {
 		value = 5;
 	} else if ( format == FORMAT_I2S ) {
 		value = 4;
+	} else {
+		value = format;
 	}
 
 	mI2C->writeRegisterByte( mAddress, PCM1681_REG_FORMAT, value );
