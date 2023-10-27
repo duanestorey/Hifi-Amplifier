@@ -407,12 +407,35 @@ Amplifier::handleVolumeButtonPress(  uint8_t param ) {
 }
 
 void 
+Amplifier::startDigitalAudio() {
+    mDolbyDecoder->startDolby(); 
+
+    // Dolby Decoder is muted, but running, so it's outputting zeros and a clock to the DAC
+    mDAC->init();
+    mDAC->setFormat( DAC::FORMAT_SONY );
+    mDAC->setVolume( 100 );
+    mDAC->enable( true );
+
+    mDolbyDecoder->play( true );
+
+    vTaskDelay( 250 / portTICK_PERIOD_MS );
+}
+
+void 
+Amplifier::stopDigitalAudio() {
+    mDAC->enable( false );
+    mDolbyDecoder->stopDolby();
+}
+
+void 
 Amplifier::handleAudioThread() {
     AMP_DEBUG_I( "Starting Audio Thread" );
 
     gpio_set_level( PIN_DECODER_RESET, 1 );
 
     taskDelayInMs( 100 );
+
+    mDolbyDecoder->init();
 
     // Channel Selector is now muted - need to umuted when audio is ready to go
     mChannelSel->init();
@@ -423,20 +446,7 @@ Amplifier::handleAudioThread() {
     vTaskDelay( 1000 / portTICK_PERIOD_MS );
 
     AMP_DEBUG_I( "Decoder set into active mode" );   
-
-    mDolbyDecoder->init();
-    mDolbyDecoder->mute( false );
-
-    mDAC->init();
-    mDAC->setFormat( DAC::FORMAT_SONY );
-    mDAC->setVolume( 100 );
-    mDAC->enable( true );
-
-    mDolbyDecoder->run();
-
    // mDolbyDecoder->setAttenuation( 3 );
-
-    mI2C.scanBus();
 
      // Initial volume, 0-79
     AmplifierState state = getCurrentState();
@@ -446,10 +456,13 @@ Amplifier::handleAudioThread() {
 
     AMP_DEBUG_I( "Setting input" );
     mChannelSel->setInput( state.mInput );   
+    if ( state.mInput == AmplifierState::INPUT_6CH ) {
+        startDigitalAudio();
+    }
+
+    mI2C.scanBus();
 
     asyncUpdateDisplay();
-
-    mDolbyDecoder->play( true );
 
     mChannelSel->mute( false );
 
@@ -483,6 +496,15 @@ Amplifier::handleAudioThread() {
                     break;
                 case Message::MSG_INPUT_SET:
                     AMP_DEBUG_SI( "Setting audio input to " << msg.mParam );
+
+                    state = getCurrentState();
+                    if ( state.mInput == AmplifierState::INPUT_6CH && msg.mParam != AmplifierState::INPUT_6CH ) {
+                        // We are in Dolby, but moving away, so we need to shut down the digital audio
+                    } else if ( state.mInput == AmplifierState::INPUT_6CH && msg.mParam != AmplifierState::INPUT_6CH ) {
+                        // We need to start up the Dolby digital decoder
+                        startDigitalAudio();
+                    }
+                    
                     mChannelSel->setInput( msg.mParam );
 
                     break;

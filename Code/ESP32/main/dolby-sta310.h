@@ -85,6 +85,9 @@ public:
     void handleInterrupt();
     void checkForInterrupt();
     void setAttenuation( uint8_t db = 0 );
+
+    void startDolby();
+    void stopDolby();
 protected:
     uint8_t mAddr;
     I2CBUS *mBus;

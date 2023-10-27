@@ -8,10 +8,13 @@ Dolby_STA310::Dolby_STA310( uint8_t addr, I2CBUS *bus ) : mAddr( addr ), mBus( b
 
 void
 Dolby_STA310::init() {
-    mInitialized = false;
-    mRunning = false;
 
+}
+
+void 
+Dolby_STA310::startDolby() {
     softReset();
+
     if ( mInitialized ) {
         AMP_DEBUG_I( "Starting Dolby Play Routines" );
 
@@ -26,7 +29,23 @@ Dolby_STA310::init() {
         mute( false );
         run();
 
-        mInitialized = true;
+        mRunning = true;
+    }    
+}
+
+void 
+Dolby_STA310::stopDolby() {
+    if ( mRunning ) {
+        mBus->writeRegisterByte( mAddr, Dolby_STA310::SOFT_MUTE, 1 );
+
+        vTaskDelay( 10 / portTICK_PERIOD_MS );
+
+        softReset();
+
+        mRunning = false;
+        mInitialized = false;
+        mMuted = false;
+        mPlaying = false;
     }
 }
 

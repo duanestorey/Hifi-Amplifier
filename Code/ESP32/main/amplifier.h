@@ -93,6 +93,8 @@ private:
     void handleDecoderIRQ();
 
     void changeAmplifierState( uint8_t newState );
+    void startDigitalAudio();
+    void stopDigitalAudio();
 
     Mutex mStateMutex;
 
