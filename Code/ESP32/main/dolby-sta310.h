@@ -84,6 +84,7 @@ public:
 	void play( bool enable = true );
     void handleInterrupt();
     void checkForInterrupt();
+    void setAttenuation( uint8_t db = 0 );
 protected:
     uint8_t mAddr;
     I2CBUS *mBus;

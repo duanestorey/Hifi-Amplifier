@@ -83,11 +83,7 @@ Amplifier::init() {
 
     gpio_set_level( PIN_DECODER_RESET, 0 );
 
-    taskDelayInMs( 100 );
-
-    gpio_set_level( PIN_DECODER_RESET, 1 );
-
-    taskDelayInMs( 250 );
+    taskDelayInMs( 20 );
 
     mTimerID = mTimer.setTimer( 15000, mAmplifierQueue, true );
 
@@ -97,17 +93,6 @@ Amplifier::init() {
     mDAC = new DAC_PCM1681( 0x4c, &mI2C ); 
     mDolbyDecoder = new Dolby_STA310( 0x60, &mI2C );
 
-
-  //  taskDelayInMs( 100 );
-
-    // 0x5c is Dolby or 60?
-
-    // DAC should be 0x4c or 0x4d
-
-    mI2C.scanBus();
-
-    
-   
     mAudioTimerID = mTimer.setTimer( 200, mAudioQueue, true );
 }
 
@@ -425,48 +410,56 @@ void
 Amplifier::handleAudioThread() {
     AMP_DEBUG_I( "Starting Audio Thread" );
 
-    AMP_DEBUG_I( "Decoder set into active mode" );   
+    gpio_set_level( PIN_DECODER_RESET, 1 );
 
-     vTaskDelay( 1000 / portTICK_PERIOD_MS );    
-
-    gpio_set_level( PIN_RELAY, 1 );
-
-    vTaskDelay( 200 / portTICK_PERIOD_MS );
-
-    mDolbyDecoder->init();
-    mDolbyDecoder->mute( false );
-    mDolbyDecoder->run();
-    mDolbyDecoder->play( true );
+    taskDelayInMs( 100 );
 
     // Channel Selector is now muted - need to umuted when audio is ready to go
     mChannelSel->init();
     mChannelSel->mute( true );
 
-    AMP_DEBUG_I( "Starting DAC initialization" );
-    mDAC->init();
+    gpio_set_level( PIN_RELAY, 1 );
 
+    vTaskDelay( 1000 / portTICK_PERIOD_MS );
+
+    AMP_DEBUG_I( "Decoder set into active mode" );   
+
+    mDolbyDecoder->init();
+    mDolbyDecoder->mute( false );
+
+    mDAC->init();
+    mDAC->setFormat( DAC::FORMAT_SONY );
+    mDAC->setVolume( 100 );
     mDAC->enable( true );
 
-    mDAC->setFormat( DAC::FORMAT_SONY );
-    // Right justified 24 bit
-    //mDAC->setFormat( 4 );
-    //mDAC->setFormat( 4 );
+    mDolbyDecoder->run();
 
-    // Should eventually be able to set this higher as hopefully channel selector will handle volume
-    mDAC->setVolume( 100 );
+   // mDolbyDecoder->setAttenuation( 3 );
 
-    // Initial volume, 0-79
+    mI2C.scanBus();
+
+     // Initial volume, 0-79
     AmplifierState state = getCurrentState();
 
     AMP_DEBUG_I( "Setting involumeput" );
     mChannelSel->setVolume( state.mCurrentVolume );
 
     AMP_DEBUG_I( "Setting input" );
-    mChannelSel->setInput( state.mInput );
+    mChannelSel->setInput( state.mInput );   
 
     asyncUpdateDisplay();
-    
+
+    mDolbyDecoder->play( true );
+
     mChannelSel->mute( false );
+
+    AMP_DEBUG_I( "Starting DAC initialization" );
+
+    // Right justified 24 bit
+    //mDAC->setFormat( 4 );
+    //mDAC->setFormat( 4 );
+
+    // Should eventually be able to set this higher as hopefully channel selector will handle volume
 
     AMP_DEBUG_I( "Channel selector un-muted" );
 

@@ -75,8 +75,6 @@ Dolby_STA310::softReset() {
 
     mBus->writeRegisterByte( mAddr, Dolby_STA310::CLOCK_CMD, 0 );
 
-   // 
-
     int attempts = 0;
     	while ( attempts < 20 && !mInitialized ) {
 		// We need to check for the device to say it's ready
@@ -110,6 +108,25 @@ Dolby_STA310::softReset() {
 }
 
 void 
+Dolby_STA310::setAttenuation( uint8_t db ) {
+    // Not working
+    mBus->writeRegisterByte( mAddr, 0x4E, db );
+    mBus->writeRegisterByte( mAddr, 0x63, db );
+    mBus->writeRegisterByte( mAddr, 0x67, 0 );
+ 
+    uint8_t result = 0;
+    while ( true ) {
+        mBus->readRegisterByte( mAddr, 0x67, result );
+        
+        if ( result == 4 ) {
+            break;
+        } else {
+            vTaskDelay( 10 / portTICK_PERIOD_MS );
+        }
+    }
+}
+
+void 
 Dolby_STA310::enableAudioPLL(){
     AMP_DEBUG_I( "Enabling audio PLL" );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::ENABLE_PLL, 1 );
@@ -118,35 +135,7 @@ Dolby_STA310::enableAudioPLL(){
 void
 Dolby_STA310::configureAudioPLL() {
     AMP_DEBUG_I( "Configuring audio pll" );
-
-    // Use internal clock
-   // mBus->writeRegisterByte( mAddr, Dolby_STA310::PLL_CTRL, 26 );
-
-    // Use SPDIF Clock
-   // mBus->writeRegisterByte( mAddr, Dolby_STA310::PLL_CTRL, 30 );
-
-    // Use SPDIF clock
-   // mBus->writeRegisterByte( mAddr, Dolby_STA310::PLL_CTRL, 30 );
-
-   // mBus->writeRegisterByte( mAddr, Dolby_STA310::PLL_CTRL, 22 );
-
-    // 22 works on my system
-    //mBus->writeRegisterByte( mAddr, Dolby_STA310::PLL_CTRL, 30 );
-
-    /*
-   mBus->writeRegisterByte( mAddr, 182, 52 );
-   mBus->writeRegisterByte( mAddr, 183, 236 );
-   mBus->writeRegisterByte( mAddr, 184, 2 );
-   mBus->writeRegisterByte( mAddr, 185, 9 );
-   mBus->writeRegisterByte( mAddr, 186, 1 );
-   mBus->writeRegisterByte( mAddr, 187, 3 );
-   mBus->writeRegisterByte( mAddr, 188, 9 );
-   mBus->writeRegisterByte( mAddr, 189, 2 );
-   mBus->writeRegisterByte( mAddr, 190, 9 );
-   mBus->writeRegisterByte( mAddr, 191, 1 );
-   */
-
-     mBus->writeRegisterByte( mAddr, Dolby_STA310::PLL_CTRL, 22 );
+    mBus->writeRegisterByte( mAddr, Dolby_STA310::PLL_CTRL, 22 );
 }
 
 void
