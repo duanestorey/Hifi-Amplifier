@@ -51,6 +51,7 @@ public:
     virtual void mute( bool mute );
     virtual bool setChannelVolume( uint8_t channel, uint8_t volume );
     virtual void muteChannel( uint8_t channel, bool mute );
+    virtual void setEnhancement( bool enhancementOn );
 protected:
     uint8_t mAddress;
     I2CBUS *mI2C;

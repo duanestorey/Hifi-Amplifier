@@ -1,0 +1,881 @@
+[0;32mI (13) boot: ESP-IDF v5.2-dev-2708-g3640dc86bb-dirty 2nd stage bootloader[0m
+[0;32mI (14) boot: compile time Oct 17 2023 21:03:35[0m
+[0;32mI (15) boot: Multicore bootloader[0m
+[0;32mI (19) boot: chip revision: v3.0[0m
+[0;32mI (23) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (27) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (32) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (36) boot: Enabling RNG early entropy source...[0m
+[0;32mI (42) boot: Partition Table:[0m
+[0;32mI (45) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (53) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (60) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (68) boot:  2 phy_init         RF data          01 01 0000f000 00002000[0m
+[0;32mI (75) boot:  3 factory          factory app      00 00 00020000 002625a0[0m
+[0;32mI (83) boot: End of partition table[0m
+[0;32mI (87) boot: Defaulting to factory image[0m
+[0;32mI (91) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=336a0h (210592) map[0m
+[0;32mI (143) esp_image: segment 1: paddr=000536c8 vaddr=3ffbdb60 size=04f5ch ( 20316) load[0m
+[0;32mI (148) esp_image: segment 2: paddr=0005862c vaddr=40080000 size=079ech ( 31212) load[0m
+[0;32mI (157) esp_image: segment 3: paddr=00060020 vaddr=400d0020 size=b3398h (734104) map[0m
+[0;32mI (309) esp_image: segment 4: paddr=001133c0 vaddr=400879ec size=07fc8h ( 32712) load[0m
+[0;32mI (326) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (326) boot: Disabling RNG early entropy source...[0m
+[0;32mI (338) cpu_start: Multicore app[0m
+[0;32mI (338) cpu_start: Pro cpu up.[0m
+[0;32mI (338) cpu_start: Starting app cpu, entry point is 0x40081120[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (356) cpu_start: Pro cpu start user code[0m
+[0;32mI (356) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (356) cpu_start: Application information:[0m
+[0;32mI (361) cpu_start: Project name:     hifi-amp[0m
+[0;32mI (366) cpu_start: App version:      5d83b01-dirty[0m
+[0;32mI (371) cpu_start: Compile time:     Oct 27 2023 21:19:31[0m
+[0;32mI (377) cpu_start: ELF file SHA256:  4e52183f7...[0m
+[0;32mI (383) cpu_start: ESP-IDF:          v5.2-dev-2708-g3640dc86bb-dirty[0m
+[0;32mI (390) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (394) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (399) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (404) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (411) heap_init: At 3FFAE6E0 len 0000F480 (61 KiB): DRAM[0m
+[0;32mI (417) heap_init: At 3FFC81A8 len 00017E58 (95 KiB): DRAM[0m
+[0;32mI (423) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (430) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (436) heap_init: At 4008F9B4 len 0001064C (65 KiB): IRAM[0m
+[0;32mI (444) spi_flash: detected chip: generic[0m
+[0;32mI (447) spi_flash: flash io: dio[0m
+[0;33mW (452) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (462) coexist: coex firmware version: 80b0d89[0m
+[0;32mI (468) app_start: Starting scheduler on CPU0[0m
+[0;32mI (47[0;32mI (473) app_start: Starting scheduler on CPU1[0m
+2) main_task: Started on CPU0[0m
+[0;32mI (482) main_task: Calling app_main()[0m
+[0;32mI (485) I2CBUS::I2CBUS(): Stargting I2C bus[0m
+[0;32mI (519) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (520) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (528) gpio: GPIO[23]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (537) gpio: GPIO[27]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (546) gpio: GPIO[19]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (556) gpio: GPIO[12]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (565) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (574) gpio: GPIO[13]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (583) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (593) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (602) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (611) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (620) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (630) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (639) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (671) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 15000 and ID 1 futureTime 15196 currentTime 199[0m
+[0;32mI (674) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 100 and ID 2 futureTime 302 currentTime 202[0m
+[0;32mI (686) void Amplifier::handleTimerThread(): Starting Timer Thread on Core 0[0m
+[0;32mI (694) void Amplifier::handleAudioThread(): Starting Audio Thread[0m
+[0;32mI (693) void Amplifier::handleDisplayThread(): Starting Display Thread[0m
+[0;32mI (701) void Amplifier::handleAmplifierThread(): Starting Amplifier Thread on Core 0[0m
+[0;32mI (708) void LCD::begin(): Beginning LCD Setup[0m
+[0;32mI (701) void Amplifier::handleRadioThread(): Starting Radio Thread on Core 0[0m
+I (733) wifi:wifi driver task: 3ffcfa14, prio:23, stack:6656, core=0
+I (753) wifi:wifi firmware version: 341633f
+I (753) wifi:wifi certification version: v7.0
+I (753) wifi:config NVS flash: enabled
+I (753) wifi:config nano formating: disabled
+I (758) wifi:Init data frame dynamic rx buffer num: 32
+I (762) wifi:Init management frame dynamic rx buffer num: 32
+I (768) wifi:Init management short buffer num: 32
+I (772) wifi:Init dynamic tx buffer num: 32
+I (776) wifi:Init static rx buffer size: 1600
+I (780) wifi:Init static rx buffer num: 10
+I (784) wifi:Init dynamic rx buffer num: 32
+[0;32mI (789) wifi_init: rx ba win: 6[0m
+[0;32mI (792) wifi_init: tcpip mbox: 32[0m
+[0;32mI (796) wifi_init: udp mbox: 6[0m
+[0;32mI (799) wifi_init: tcp mbox: 6[0m
+[0;32mI (801) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 196[0m
+[0;32mI (804) wifi_init: tcp tx win: 5744[0m
+[0;32mI (814) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 193[0m
+[0;32mI (818) wifi_init: tcp rx win: 5744[0m
+[0;32mI (827) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 194[0m
+[0;32mI (831) wifi_init: tcp mss: 1440[0m
+[0;32mI (841) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 255[0m
+[0;32mI (845) wifi_init: LWIP IRAM OP enabled[0m
+[0;32mI (854) void Amplifier::handleAudioThread(): Relay active[0m
+[0;32mI (863) phy_init: phy_version 4771,450c73b,Aug 16 2023,11:03:10[0m
+[0;32mI (869) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (879) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (885) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (896) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 0[0m
+[0;32mI (902) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+I (956) wifi:mode : sta (c4:de:e2:1b:1a:b8)
+I (958) wifi:enable tsf
+[0;32mI (958) void Amplifier::attemptWifiConnect(): Attempting to connect Wifi[0m
+[0;32mI (964) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (967) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+I (971) wifi:[0;32mI (975) void Amplifier::handleWifiCallback(int32_t): Wifi Starting Up[0m
+new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+I (989) wifi:state: init -> auth (b0)
+[0;32mI (1222) void LCD::begin(): LCD Backlight Setup[0m
+[0;32mI (1262) void LCD::begin(): LCD Setup Done[0m
+[0;32mI (1262) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1264) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (1864) void Amplifier::handleAudioThread(): Decoder set into active mode[0m
+[0;32mI (1865) void Amplifier::handleAudioThread(): Setting involumeput[0m
+[0;32mI (1869) void Amplifier::handleAudioThread(): Setting input[0m
+[0;32mI (1875) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 207[0m
+[0;32mI (1884) void Dolby_STA310::softReset(): Performing soft reset[0m
+[0;32mI (1893) void Dolby_STA310::softReset(): Initalized[0m
+[0;32mI (1896) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (1903) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (1911) void Dolby_STA310::softReset(): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (1918) void Dolby_STA310::startDolby(): Starting Dolby Play Routines[0m
+[0;32mI (1925) void Dolby_STA310::configureAudioPLL(): Configuring audio pll[0m
+[0;32mI (1932) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (1940) void Dolby_STA310::configureSync(): Configuring sync[0m
+[0;32mI (1948) void Dolby_STA310::configureSPDIF(): Configuring SPDIF[0m
+[0;32mI (1954) void Dolby_STA310::configurePCMOUT(): Configuring PCMOUT[0m
+[0;32mI (1960) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (1967) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (1976) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (1979) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (1985) virtual void DAC_PCM1681::init(): Starting PCM1681 DAC[0m
+[0;32mI (2095) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (2326) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2326) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (2330) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (2340) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (2347) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (2354) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (2360) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (2369) void Dolby_STA310::softReset(): Performing soft reset[0m
+[0;32mI (2376) void Dolby_STA310::softReset(): Initalized[0m
+[0;32mI (2380) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (2387) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (2395) void Dolby_STA310::softReset(): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (2402) void Dolby_STA310::configureAudioPLL(): Configuring audio pll[0m
+[0;32mI (2409) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (2417) void Dolby_STA310::configureSync(): Configuring sync[0m
+[0;32mI (2424) void Dolby_STA310::configureSPDIF(): Configuring SPDIF[0m
+[0;32mI (2431) void Dolby_STA310::configurePCMOUT(): Configuring PCMOUT[0m
+[0;32mI (2441) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (2445) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (2451) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (2457) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (2463) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (2469) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2478) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (2484) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (2494) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 8[0m
+[0;32mI (2501) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (2508) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+-> found device with address 0x27
+-> found device with address 0x48
+-> found device with address 0x4a
+-> found device with address 0x4c
+-> found device with address 0x60
+
+...scan completed!
+[0;32mI (2554) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (2556) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 254[0m
+[0;32mI (2563) void Amplifier::handleAudioThread(): Starting DAC initialization[0m
+[0;32mI (2570) void Amplifier::handleAudioThread(): Channel selector un-muted[0m
+[0;32mI (2705) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (2742) virtual float TMP100::readTemperature(): Temperature is 29[0m
+I (3251) wifi:state: auth -> assoc (0)
+I (3262) wifi:state: assoc -> run (10)
+I (3330) wifi:connected with The Grey Havens, aid = 3, channel 1, BW20, bssid = 62:22:32:15:cf:15
+I (3331) wifi:security: WPA3-SAE, phy: bgn, rssi: -61
+I (3338) wifi:pm start, type: 1
+
+[0;32mI (3343) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (3344) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (3352) void Amplifier::handleWifiCallback(int32_t): Wifi Connection Established[0m
+[0;32mI (3360) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+I (3382) wifi:<ba-add>idx:0 (ifx:0, 62:22:32:15:cf:15), tid:0, ssn:1, winSize:64
+[0;32mI (3409) virtual float TMP100::readTemperature(): Temperature is 28.9375[0m
+I (3420) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (4345) esp_netif_handlers: sta ip: 192.168.1.196, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (4348) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (4353) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (4361) void Amplifier::handleWifiCallback(int32_t): Wifi Received IP Address[0m
+[0;32mI (4369) void Amplifier::updateTimeFromNTP(): Attemping To Update Time From NTP Server[0m
+[0;32mI (7346) void NTP_Callback(timeval*): Received NTP Callback[0m
+[0;32mI (7354) void Amplifier::handleRadioThread(): The current date/time is: Sun Oct 29 19:34:23 2023[0m
+[0;32mI (13) boot: ESP-IDF v5.2-dev-2708-g3640dc86bb-dirty 2nd stage bootloader[0m
+[0;32mI (14) boot: compile time Oct 17 2023 21:03:35[0m
+[0;32mI (15) boot: Multicore bootloader[0m
+[0;32mI (19) boot: chip revision: v3.0[0m
+[0;32mI (23) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (27) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (32) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (36) boot: Enabling RNG early entropy source...[0m
+[0;32mI (42) boot: Partition Table:[0m
+[0;32mI (45) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (53) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (60) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (68) boot:  2 phy_init         RF data          01 01 0000f000 00002000[0m
+[0;32mI (75) boot:  3 factory          factory app      00 00 00020000 002625a0[0m
+[0;32mI (83) boot: End of partition table[0m
+[0;32mI (87) boot: Defaulting to factory image[0m
+[0;32mI (91) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=336a0h (210592) map[0m
+[0;32mI (143) esp_image: segment 1: paddr=000536c8 vaddr=3ffbdb60 size=04f5ch ( 20316) load[0m
+[0;32mI (148) esp_image: segment 2: paddr=0005862c vaddr=40080000 size=079ech ( 31212) load[0m
+[0;32mI (157) esp_image: segment 3: paddr=00060020 vaddr=400d0020 size=b3398h (734104) map[0m
+[0;32mI (309) esp_image: segment 4: paddr=001133c0 vaddr=400879ec size=07fc8h ( 32712) load[0m
+[0;32mI (326) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (326) boot: Disabling RNG early entropy source...[0m
+[0;32mI (338) cpu_start: Multicore app[0m
+[0;32mI (338) cpu_start: Pro cpu up.[0m
+[0;32mI (338) cpu_start: Starting app cpu, entry point is 0x40081120[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (356) cpu_start: Pro cpu start user code[0m
+[0;32mI (356) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (356) cpu_start: Application information:[0m
+[0;32mI (361) cpu_start: Project name:     hifi-amp[0m
+[0;32mI (366) cpu_start: App version:      5d83b01-dirty[0m
+[0;32mI (371) cpu_start: Compile time:     Oct 27 2023 21:19:31[0m
+[0;32mI (377) cpu_start: ELF file SHA256:  4e52183f7...[0m
+[0;32mI (383) cpu_start: ESP-IDF:          v5.2-dev-2708-g3640dc86bb-dirty[0m
+[0;32mI (390) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (394) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (399) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (404) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (411) heap_init: At 3FFAE6E0 len 0000F480 (61 KiB): DRAM[0m
+[0;32mI (417) heap_init: At 3FFC81A8 len 00017E58 (95 KiB): DRAM[0m
+[0;32mI (423) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (430) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (436) heap_init: At 4008F9B4 len 0001064C (65 KiB): IRAM[0m
+[0;32mI (444) spi_flash: detected chip: generic[0m
+[0;32mI (447) spi_flash: flash io: dio[0m
+[0;33mW (452) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (462) coexist: coex firmware version: 80b0d89[0m
+[0;32mI (468) app_start: Starting scheduler on CPU0[0m
+[0;32mI (47[0;32mI (473) app_start: Starting scheduler on CPU1[0m
+2) main_task: Started on CPU0[0m
+[0;32mI (482) main_task: Calling app_main()[0m
+[0;32mI (485) I2CBUS::I2CBUS(): Stargting I2C bus[0m
+[0;32mI (519) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (520) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (528) gpio: GPIO[23]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (537) gpio: GPIO[27]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (546) gpio: GPIO[19]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (556) gpio: GPIO[12]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (565) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (574) gpio: GPIO[13]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (583) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (593) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (602) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (611) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (620) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (630) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (639) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (671) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 15000 and ID 1 futureTime 15196 currentTime 199[0m
+[0;32mI (674) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 100 and ID 2 futureTime 302 currentTime 202[0m
+[0;32mI (686) void Amplifier::handleTimerThread(): Starting Timer Thread on Core 0[0m
+[0;32mI (694) void Amplifier::handleAudioThread(): Starting Audio Thread[0m
+[0;32mI (693) void Amplifier::handleDisplayThread(): Starting Display Thread[0m
+[0;32mI (701) void Amplifier::handleAmplifierThread(): Starting Amplifier Thread on Core 0[0m
+[0;32mI (708) void LCD::begin(): Beginning LCD Setup[0m
+[0;32mI (701) void Amplifier::handleRadioThread(): Starting Radio Thread on Core 0[0m
+I (733) wifi:wifi driver task: 3ffcfa14, prio:23, stack:6656, core=0
+I (753) wifi:wifi firmware version: 341633f
+I (753) wifi:wifi certification version: v7.0
+I (753) wifi:config NVS flash: enabled
+I (753) wifi:config nano formating: disabled
+I (758) wifi:Init data frame dynamic rx buffer num: 32
+I (762) wifi:Init management frame dynamic rx buffer num: 32
+I (768) wifi:Init management short buffer num: 32
+I (772) wifi:Init dynamic tx buffer num: 32
+I (776) wifi:Init static rx buffer size: 1600
+I (780) wifi:Init static rx buffer num: 10
+I (784) wifi:Init dynamic rx buffer num: 32
+[0;32mI (789) wifi_init: rx ba win: 6[0m
+[0;32mI (792) wifi_init: tcpip mbox: 32[0m
+[0;32mI (796) wifi_init: udp mbox: 6[0m
+[0;32mI (799) wifi_init: tcp mbox: 6[0m
+[0;32mI (801) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 196[0m
+[0;32mI (804) wifi_init: tcp tx win: 5744[0m
+[0;32mI (814) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 193[0m
+[0;32mI (818) wifi_init: tcp rx win: 5744[0m
+[0;32mI (827) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 194[0m
+[0;32mI (831) wifi_init: tcp mss: 1440[0m
+[0;32mI (841) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 255[0m
+[0;32mI (845) wifi_init: LWIP IRAM OP enabled[0m
+[0;32mI (854) void Amplifier::handleAudioThread(): Relay active[0m
+[0;32mI (863) phy_init: phy_version 4771,450c73b,Aug 16 2023,11:03:10[0m
+[0;32mI (869) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (879) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (885) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (895) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 0[0m
+[0;32mI (902) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (909) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (918) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (924) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (934) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 0[0m
+[0;32mI (941) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+I (957) wifi:mode : sta (c4:de:e2:1b:1a:b8)
+I (959) wifi:enable tsf
+[0;32mI (959) void Amplifier::attemptWifiConnect(): Attempting to connect Wifi[0m
+[0;32mI (965) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (969) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+I (974) wifi:[0;32mI (977) void Amplifier::handleWifiCallback(int32_t): Wifi Starting Up[0m
+new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+I (991) wifi:state: init -> auth (b0)
+[0;32mI (1221) void LCD::begin(): LCD Backlight Setup[0m
+[0;32mI (1261) void LCD::begin(): LCD Setup Done[0m
+[0;32mI (1262) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1264) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (1865) void Amplifier::handleAudioThread(): Decoder set into active mode[0m
+[0;32mI (1865) void Amplifier::handleAudioThread(): Setting involumeput[0m
+[0;32mI (1869) void Amplifier::handleAudioThread(): Setting input[0m
+[0;32mI (1875) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 207[0m
+[0;32mI (1884) void Dolby_STA310::softReset(): Performing soft reset[0m
+[0;32mI (1892) void Dolby_STA310::softReset(): Initalized[0m
+[0;32mI (1896) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (1904) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (1911) void Dolby_STA310::softReset(): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (1918) void Dolby_STA310::startDolby(): Starting Dolby Play Routines[0m
+[0;32mI (1925) void Dolby_STA310::configureAudioPLL(): Configuring audio pll[0m
+[0;32mI (1932) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (1940) void Dolby_STA310::configureSync(): Configuring sync[0m
+[0;32mI (1948) void Dolby_STA310::configureSPDIF(): Configuring SPDIF[0m
+[0;32mI (1954) void Dolby_STA310::configurePCMOUT(): Configuring PCMOUT[0m
+[0;32mI (1961) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (1967) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (1976) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (1980) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (1985) virtual void DAC_PCM1681::init(): Starting PCM1681 DAC[0m
+[0;32mI (2095) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (2326) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2326) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (2330) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (2340) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (2347) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (2354) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (2360) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (2369) void Dolby_STA310::softReset(): Performing soft reset[0m
+[0;32mI (2376) void Dolby_STA310::softReset(): Initalized[0m
+[0;32mI (2380) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (2387) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (2395) void Dolby_STA310::softReset(): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (2402) void Dolby_STA310::configureAudioPLL(): Configuring audio pll[0m
+[0;32mI (2409) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (2417) void Dolby_STA310::configureSync(): Configuring sync[0m
+[0;32mI (2424) void Dolby_STA310::configureSPDIF(): Configuring SPDIF[0m
+[0;32mI (2431) void Dolby_STA310::configurePCMOUT(): Configuring PCMOUT[0m
+[0;32mI (2441) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (2445) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (2451) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (2457) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (2463) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (2469) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2478) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (2484) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (2494) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 9[0m
+[0;32mI (2501) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (2509) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (2516) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (2522) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (2529) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (2536) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2544) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (2551) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (2561) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (2568) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (2575) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (2582) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (2589) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (2596) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2604) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (2611) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (2621) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (2628) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (2635) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (2642) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (2649) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (2656) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2664) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (2671) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (2681) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (2688) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (2695) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (2702) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (2709) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (2716) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2724) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (2731) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (2741) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (2748) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (2755) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (2762) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (2769) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (2776) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2784) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (2791) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (2801) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (2808) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (2815) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (2822) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (2828) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (2836) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2844) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (2851) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (2861) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (2868) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (2875) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (2882) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (2888) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (2896) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2904) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (2911) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (2921) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (2928) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (2935) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (2942) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (2948) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (2956) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2964) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (2971) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (2981) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (2988) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (2995) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (3002) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (3008) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (3016) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3024) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (3031) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (3041) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (3048) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (3055) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (3062) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (3068) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (3076) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3084) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (3091) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (3101) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (3108) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (3115) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (3122) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (3128) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (3136) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3144) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (3151) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (3161) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (3168) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (3175) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (3182) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (3188) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (3196) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3204) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (3211) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (3221) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (3228) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (3236) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+-> found device with address 0x27
+[0;32mI (3242) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (3252) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+-> found device with address 0x48
+[0;32mI (3259) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+-> found device with address 0x4a
+[0;32mI (3270) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+-> found device with address 0x4c
+[0;32mI (3280) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+-> found device with address 0x60
+[0;32mI (3293) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+
+...scan completed!
+[0;32mI (3303) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (3306) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (3313) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (3306) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 254[0m
+[0;32mI (3328) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (3344) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (3337) void Amplifier::handleAudioThread(): Starting DAC initialization[0m
+[0;32mI (3351) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3359) void Amplifier::handleAudioThread(): Channel selector un-muted[0m
+[0;32mI (3367) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (3381) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (3391) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (3398) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (3405) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (3412) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (3419) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (3426) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3434) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (3441) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (3451) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (3458) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (3465) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (3472) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (3475) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (3479) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (3494) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3502) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (3509) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (3519) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (3525) virtual float TMP100::readTemperature(): Temperature is 28.9375[0m
+[0;32mI (3526) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (3541) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (3548) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (3554) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (3561) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3570) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (3576) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (3586) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (3593) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (3600) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (3607) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (3614) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (3621) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3630) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (3636) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (3646) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (3653) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (3661) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (3667) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (3674) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (3681) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3690) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (3696) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (3706) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (3713) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (3720) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (3727) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (3734) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (3741) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3750) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (3756) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (3766) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (3773) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (3780) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (3787) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (3794) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (3801) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3810) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (3816) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (3826) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (3833) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (3840) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (3847) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (3854) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (3861) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3870) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (3876) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (3886) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (3893) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (3900) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (3907) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (3914) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (3921) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3930) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (3936) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (3946) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (3953) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (3960) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (3967) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (3974) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (3981) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (3990) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (3996) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (4006) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (4013) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (4020) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (4027) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (4034) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (4041) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4050) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (4056) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (4066) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (4073) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (4080) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (4087) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (4094) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (4101) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4110) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (4116) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (4126) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (4133) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (4140) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (4147) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (4154) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (4161) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4170) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (4176) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (4186) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (4193) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (4200) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (4207) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (4214) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (4221) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4230) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (4236) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (4246) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (4253) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (4260) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (4267) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (4274) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (4281) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4289) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (4296) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (4306) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (4313) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (4320) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (4327) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (4334) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (4341) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4349) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (4356) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (4366) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (4373) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (4380) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (4387) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (4394) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (4401) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4409) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (4416) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (4426) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (4433) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (4440) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (4447) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (4454) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (4461) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4469) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (4476) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (4486) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (4493) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (4500) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (4507) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (4514) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (4521) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4529) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (4536) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (4546) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (4553) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (4560) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (4567) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (4574) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (4581) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4589) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (4596) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (4606) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (4613) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (4620) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (4627) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (4634) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (4641) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4649) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (4656) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (4666) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (4673) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (4680) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (4687) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (4694) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (4701) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4709) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (4716) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (4726) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (4733) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (4740) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (4747) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (4754) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (4761) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4769) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (4776) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (4786) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (4793) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (4800) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (4807) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (4814) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (4821) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4829) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (4836) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (4846) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (4853) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (4860) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (4867) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (4874) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (4881) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4889) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (4896) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (4906) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (4913) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (4920) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (4927) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (4934) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (4941) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (4949) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (4956) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (4966) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (4973) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (4980) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (4987) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (4994) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (5001) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5009) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (5016) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (5025) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (5033) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (5040) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (5047) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (5053) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (5061) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5070) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (5076) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (5086) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (5093) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (5100) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (5107) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (5113) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (5121) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5129) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (5136) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (5145) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (5153) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (5160) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (5167) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (5173) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (5181) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5189) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (5196) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (5206) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (5213) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (5220) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+I (5224) wifi:[0;32mI (5227) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+state: auth -> init (200)[0;32mI (5235) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+
+[0;32mI (5244) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+I (5245) wifi:[0;32mI (5253) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1[0;32mI (5260) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+
+[0;32mI (5276) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (5276) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (5282) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (5290) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (5298) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (5305) void Amplifier::handleWifiCallback(int32_t): Wifi Disconnected[0m
+[0;32mI (5312) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (5319) void Amplifier::handleWifiCallback(int32_t): Setting Reconnection Timer[0m
+[0;32mI (5326) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (5335) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 10000 and ID 3 futureTime 14863 currentTime 4863[0m
+[0;32mI (5341) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5355) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (5363) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (5377) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (5387) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (5394) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (5402) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (5409) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (5415) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (5410) virtual float TMP100::readTemperature(): Temperature is 28.9375[0m
+[0;32mI (5422) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5438) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (5445) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (5455) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (5462) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (5470) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (5476) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (5482) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (5490) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5498) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (5505) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (5515) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (5522) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (5529) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (5536) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (5542) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (5550) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5558) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (5565) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (5574) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (5582) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (5589) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (5596) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (5602) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (5610) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5618) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (5625) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (5634) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (5642) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (5649) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (5656) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (5662) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (5670) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5678) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (5685) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (5694) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (5702) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (5709) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (5716) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (5722) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (5731) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5738) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (5745) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (5754) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (5762) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (5769) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (5776) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (5782) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (5790) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5798) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (5805) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (5814) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (5822) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (5829) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (5836) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (5842) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (5850) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5858) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (5865) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (5874) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (5881) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (5889) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (5896) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (5902) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (5910) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5918) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (5925) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (5934) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (5942) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (5949) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (5956) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (5962) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (5970) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (5978) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (5985) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (5994) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (6001) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (6009) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (6016) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (6022) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (6030) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6038) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (6045) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (6054) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (6061) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (6069) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (6076) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (6082) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (6090) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6098) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (6104) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (6114) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (6121) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (6129) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (6136) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (6142) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (6150) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6158) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (6164) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (6174) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (6181) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (6189) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (6196) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (6202) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (6210) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6218) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (6224) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (6234) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 32 1[0m
+[0;32mI (6241) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (6249) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 0[0m
+[0;32mI (6256) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (6262) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (6270) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (6278) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m

@@ -90,6 +90,8 @@ public:
 
     void startDolby();
     void stopDolby();
+
+    void tick();
 protected:
     uint8_t mAddr;
     I2CBUS *mBus;

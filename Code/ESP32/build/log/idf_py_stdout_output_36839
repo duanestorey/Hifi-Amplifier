@@ -1,0 +1,265 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x36 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7136
+load:0x40078000,len:15780
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3884
+entry 0x40080650
+[0;32mI (31) boot: ESP-IDF v5.2-dev-2708-g3640dc86bb-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 17 2023 21:03:35[0m
+[0;32mI (33) boot: Multicore bootloader[0m
+[0;32mI (38) boot: chip revision: v3.0[0m
+[0;32mI (41) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (46) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (51) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (55) boot: Enabling RNG early entropy source...[0m
+[0;32mI (61) boot: Partition Table:[0m
+[0;32mI (64) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (71) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (79) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (86) boot:  2 phy_init         RF data          01 01 0000f000 00002000[0m
+[0;32mI (94) boot:  3 factory          factory app      00 00 00020000 002625a0[0m
+[0;32mI (101) boot: End of partition table[0m
+[0;32mI (106) boot: Defaulting to factory image[0m
+[0;32mI (110) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=33600h (210432) map[0m
+[0;32mI (162) esp_image: segment 1: paddr=00053628 vaddr=3ffbdb60 size=04f5ch ( 20316) load[0m
+[0;32mI (167) esp_image: segment 2: paddr=0005858c vaddr=40080000 size=07a8ch ( 31372) load[0m
+[0;32mI (176) esp_image: segment 3: paddr=00060020 vaddr=400d0020 size=b322ch (733740) map[0m
+[0;32mI (328) esp_image: segment 4: paddr=00113254 vaddr=40087a8c size=07f28h ( 32552) load[0m
+[0;32mI (345) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (345) boot: Disabling RNG early entropy source...[0m
+[0;32mI (356) cpu_start: Multicore app[0m
+[0;32mI (357) cpu_start: Pro cpu up.[0m
+[0;32mI (357) cpu_start: Starting app cpu, entry point is 0x40081120[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (375) cpu_start: Pro cpu start user code[0m
+[0;32mI (375) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (375) cpu_start: Application information:[0m
+[0;32mI (379) cpu_start: Project name:     hifi-amp[0m
+[0;32mI (384) cpu_start: App version:      5d83b01-dirty[0m
+[0;32mI (390) cpu_start: Compile time:     Oct 27 2023 21:19:31[0m
+[0;32mI (396) cpu_start: ELF file SHA256:  3bf87fda5...[0m
+[0;32mI (401) cpu_start: ESP-IDF:          v5.2-dev-2708-g3640dc86bb-dirty[0m
+[0;32mI (408) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (413) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (418) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (423) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (430) heap_init: At 3FFAE6E0 len 0000F480 (61 KiB): DRAM[0m
+[0;32mI (436) heap_init: At 3FFC81A8 len 00017E58 (95 KiB): DRAM[0m
+[0;32mI (442) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (449) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (455) heap_init: At 4008F9B4 len 0001064C (65 KiB): IRAM[0m
+[0;32mI (463) spi_flash: detected chip: generic[0m
+[0;32mI (466) spi_flash: flash io: dio[0m
+[0;33mW (470) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (481) coexist: coex firmware version: 80b0d89[0m
+[0;32mI (486) app_start: Starting scheduler on CPU0[0m
+[0;32mI (49[0;32mI (492) app_start: Starting scheduler on CPU1[0m
+1) main_task: Started on CPU0[0m
+[0;32mI (501) main_task: Calling app_main()[0m
+[0;32mI (504) I2CBUS::I2CBUS(): Stargting I2C bus[0m
+[0;32mI (539) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (540) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (547) gpio: GPIO[23]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (556) gpio: GPIO[27]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (565) gpio: GPIO[19]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (575) gpio: GPIO[12]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (584) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (593) gpio: GPIO[13]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (603) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (612) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (621) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (630) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (640) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (649) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (658) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (690) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 15000 and ID 1 futureTime 15196 currentTime 199[0m
+[0;32mI (693) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 200 and ID 2 futureTime 402 currentTime 202[0m
+[0;32mI (705) void Amplifier::handleTimerThread(): Starting Timer Thread on Core 0[0m
+[0;32mI (712) void Amplifier::handleDisplayThread(): Starting Display Thread[0m
+[0;32mI (719) void LCD::begin(): Beginning LCD Setup[0m
+[0;32mI (725) void Amplifier::handleAudioThread(): Starting Audio Thread[0m
+[0;32mI (732) void Amplifier::handleAmplifierThread(): Starting Amplifier Thread on Core 0[0m
+[0;32mI (733) void Amplifier::handleRadioThread(): Starting Radio Thread on Core 1[0m
+I (752) wifi:wifi driver task: 3ffcfa14, prio:23, stack:6656, core=0
+I (771) wifi:wifi firmware version: 341633f
+I (772) wifi:wifi certification version: v7.0
+I (772) wifi:config NVS flash: enabled
+I (772) wifi:config nano formating: disabled
+I (777) wifi:Init data frame dynamic rx buffer num: 32
+I (781) wifi:Init management frame dynamic rx buffer num: 32
+I (786) wifi:Init management short buffer num: 32
+I (791) wifi:Init dynamic tx buffer num: 32
+I (795) wifi:Init static rx buffer size: 1600
+I (799) wifi:Init static rx buffer num: 10
+I (803) wifi:Init dynamic rx buffer num: 32
+[0;32mI (808) wifi_init: rx ba win: 6[0m
+[0;32mI (810) wifi_init: tcpip mbox: 32[0m
+[0;32mI (814) wifi_init: udp mbox: 6[0m
+[0;32mI (818) wifi_init: tcp mbox: 6[0m
+[0;32mI (822) wifi_init: tcp tx win: 5744[0m
+[0;32mI (826) wifi_init: tcp rx win: 5744[0m
+[0;32mI (830) wifi_init: tcp mss: 1440[0m
+[0;32mI (832) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 196[0m
+[0;32mI (835) wifi_init: LWIP IRAM OP enabled[0m
+[0;32mI (845) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 193[0m
+[0;32mI (852) phy_init: phy_version 4771,450c73b,Aug 16 2023,11:03:10[0m
+[0;32mI (859) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 194[0m
+[0;32mI (875) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 255[0m
+I (950) wifi:mode : sta (c4:de:e2:1b:1a:b8)
+I (951) wifi:enable tsf
+[0;32mI (952) void Amplifier::attemptWifiConnect(): Attempting to connect Wifi[0m
+[0;32mI (957) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (961) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+I (966) wifi:[0;32mI (968) void Amplifier::handleWifiCallback(int32_t): Wifi Starting Up[0m
+new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+I (983) wifi:state: init -> auth (b0)
+[0;32mI (1225) void LCD::begin(): LCD Backlight Setup[0m
+[0;32mI (1265) void LCD::begin(): LCD Setup Done[0m
+[0;32mI (1266) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1268) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (1884) void Amplifier::handleAudioThread(): Decoder set into active mode[0m
+[0;32mI (1885) void Amplifier::handleAudioThread(): Setting involumeput[0m
+[0;32mI (1888) void Amplifier::handleAudioThread(): Setting input[0m
+[0;32mI (1895) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 207[0m
+[0;32mI (1904) void Dolby_STA310::softReset(): Performing soft reset[0m
+[0;32mI (1912) void Dolby_STA310::softReset(): Initalized[0m
+[0;32mI (1916) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (1924) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (1931) void Dolby_STA310::softReset(): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (1938) void Dolby_STA310::startDolby(): Starting Dolby Play Routines[0m
+[0;32mI (1945) void Dolby_STA310::configureAudioPLL(): Configuring audio pll[0m
+[0;32mI (1952) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (1960) void Dolby_STA310::configureSync(): Configuring sync[0m
+[0;32mI (1968) void Dolby_STA310::configureSPDIF(): Configuring SPDIF[0m
+[0;32mI (1974) void Dolby_STA310::configurePCMOUT(): Configuring PCMOUT[0m
+[0;32mI (1981) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (1987) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (1996) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (1999) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (2005) virtual void DAC_PCM1681::init(): Starting PCM1681 DAC[0m
+[0;32mI (2047) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (2047) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (2051) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (2061) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 35 6[0m
+[0;32mI (2068) void Dolby_STA310::handleInterrupt(Queue&): ...HDR set[0m
+[0;32mI (2076) void Dolby_STA310::handleInterrupt(Queue&): .......head was 1 0 0[0m
+[0;32mI (2082) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (2091) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (2115) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+-> found device with address 0x27
+-> found device with address 0x48
+-> found device with address 0x4a
+-> found device with address 0x4c
+-> found device with address 0x60
+
+...scan completed!
+[0;32mI (2405) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (2407) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 254[0m
+[0;32mI (2414) void Amplifier::handleAudioThread(): Starting DAC initialization[0m
+[0;32mI (2421) void Amplifier::handleAudioThread(): Channel selector un-muted[0m
+[0;32mI (2557) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (2594) virtual float TMP100::readTemperature(): Temperature is 23.25[0m
+[0;32mI (2694) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (2730) virtual float TMP100::readTemperature(): Temperature is 23.25[0m
+I (3197) wifi:state: auth -> assoc (0)
+I (3258) wifi:state: assoc -> run (10)
+I (3285) wifi:connected with The Grey Havens, aid = 5, channel 1, BW20, bssid = 26:5a:4c:99:c4:26
+I (3286) wifi:security: WPA3-SAE, phy: bgn, rssi: -45
+I (3294) wifi:pm start, type: 1
+
+I (3298) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (3304) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (3305) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (3313) void Amplifier::handleWifiCallback(int32_t): Wifi Connection Established[0m
+[0;32mI (3321) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (3368) virtual float TMP100::readTemperature(): Temperature is 23.25[0m
+[0;32mI (4303) esp_netif_handlers: sta ip: 192.168.1.196, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (4304) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (4309) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (4317) void Amplifier::handleWifiCallback(int32_t): Wifi Received IP Address[0m
+[0;32mI (4325) void Amplifier::updateTimeFromNTP(): Attemping To Update Time From NTP Server[0m
+I (5357) wifi:<ba-add>idx:0 (ifx:0, 26:5a:4c:99:c4:26), tid:5, ssn:4, winSize:64
+I (5420) wifi:<ba-add>idx:1 (ifx:0, 26:5a:4c:99:c4:26), tid:0, ssn:1, winSize:64
+[0;32mI (5426) void NTP_Callback(timeval*): Received NTP Callback[0m
+[0;32mI (5428) void Amplifier::handleRadioThread(): The current date/time is: Sat Oct 28 08:18:48 2023[0m
+[0;32mI (9727) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (9728) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (9731) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (9743) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 38 14[0m
+[0;32mI (9749) void Dolby_STA310::handleInterrupt(Queue&): ...error condition[0m
+[0;32mI (9757) void Dolby_STA310::handleInterrupt(Queue&): ..... error was ![0m
+[0;32mI (9763) void Dolby_STA310::handleInterrupt(Queue&): ...HDR set[0m
+[0;32mI (9772) void Dolby_STA310::handleInterrupt(Queue&): .......head was 1 0 0[0m
+[0;32mI (9777) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (9777) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (9786) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (9831) virtual float TMP100::readTemperature(): Temperature is 23.25[0m
+[0;32mI (13407) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (13408) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (13412) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (13422) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 38 6[0m
+[0;32mI (13429) void Dolby_STA310::handleInterrupt(Queue&): ...error condition[0m
+[0;32mI (13437) void Dolby_STA310::handleInterrupt(Queue&): ..... error was ![0m
+[0;32mI (13443) void Dolby_STA310::handleInterrupt(Queue&): ...HDR set[0m
+[0;32mI (13452) void Dolby_STA310::handleInterrupt(Queue&): .......head was 1 0 0[0m
+[0;32mI (13458) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (13459) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (13466) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (13512) virtual float TMP100::readTemperature(): Temperature is 23.25[0m
+[0;32mI (15698) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15701) virtual float TMP100::readTemperature(): Temperature is 23.3125[0m
+[0;32mI (15703) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 23.3125[0m
+[0;32mI (30699) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (30702) virtual float TMP100::readTemperature(): Temperature is 23.375[0m
+[0;32mI (30704) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 23.375[0m
+[0;32mI (45706) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (45709) virtual float TMP100::readTemperature(): Temperature is 23.4375[0m
+[0;32mI (45711) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 23.4375[0m
+[0;32mI (60688) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (60690) virtual float TMP100::readTemperature(): Temperature is 23.5625[0m
+[0;32mI (60693) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 23.5625[0m
+[0;32mI (75689) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (75692) virtual float TMP100::readTemperature(): Temperature is 23.6875[0m
+[0;32mI (75694) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 23.6875[0m
+[0;32mI (90691) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (90694) virtual float TMP100::readTemperature(): Temperature is 23.75[0m
+[0;32mI (90696) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 23.75[0m
+[0;32mI (105694) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (105697) virtual float TMP100::readTemperature(): Temperature is 23.875[0m
+[0;32mI (105701) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 23.875[0m
+[0;32mI (120698) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (120701) virtual float TMP100::readTemperature(): Temperature is 23.9375[0m
+[0;32mI (120704) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 23.9375[0m
+[0;32mI (135701) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (135705) virtual float TMP100::readTemperature(): Temperature is 24.0625[0m
+[0;32mI (135708) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 24.0625[0m
+[0;32mI (150702) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (150705) virtual float TMP100::readTemperature(): Temperature is 24.125[0m
+[0;32mI (150707) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 24.125[0m
+[0;32mI (165687) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (165690) virtual float TMP100::readTemperature(): Temperature is 24.1875[0m
+[0;32mI (165693) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 24.1875[0m
+[0;32mI (180690) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (180693) virtual float TMP100::readTemperature(): Temperature is 24.25[0m
+[0;32mI (180695) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 24.25[0m
+[0;32mI (195693) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (195696) virtual float TMP100::readTemperature(): Temperature is 24.3125[0m
+[0;32mI (195698) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 24.3125[0m
+[0;32mI (210695) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (210698) virtual float TMP100::readTemperature(): Temperature is 24.375[0m
+[0;32mI (210700) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 24.375[0m
+[0;32mI (225698) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (225700) virtual float TMP100::readTemperature(): Temperature is 24.4375[0m
+[0;32mI (225703) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 24.4375[0m
+[0;32mI (240704) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (240707) virtual float TMP100::readTemperature(): Temperature is 24.5[0m
+[0;32mI (240709) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 24.5[0m
+[0;32mI (255706) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (255709) virtual float TMP100::readTemperature(): Temperature is 24.5625[0m
+[0;32mI (255711) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 24.5625[0m

@@ -25,11 +25,19 @@ ChannelSel_AX2358::init() {
     // Set the volume levels to 20 to start
     setVolume( mVolume );
 
-    // Enable surround enhancement
-    writeChipValue( AX2358_SURR_ENH_OFF ); 
-
     // Enable 6db reduction for combined channels
     writeChipValue( AX2358_MIX_6DB_ON );
+}
+
+void 
+ChannelSel_AX2358::setEnhancement( bool enhancementOn ) {
+    if ( enhancementOn ) {
+        // Enable surround enhancement
+        writeChipValue( AX2358_SURR_ENH_ON ); 
+    } else {
+        // Enable surround enhancement
+        writeChipValue( AX2358_SURR_ENH_OFF ); 
+    }
 }
 
 void 

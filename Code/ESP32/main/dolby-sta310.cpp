@@ -13,6 +13,11 @@ Dolby_STA310::init() {
 }
 
 void 
+Dolby_STA310::tick() {
+
+}   
+
+void 
 Dolby_STA310::startDolby() {
     softReset();
 
@@ -39,7 +44,7 @@ Dolby_STA310::stopDolby() {
     if ( mRunning ) {
         mBus->writeRegisterByte( mAddr, Dolby_STA310::SOFT_MUTE, 1 );
 
-        vTaskDelay( 10 / portTICK_PERIOD_MS );
+        vTaskDelay( 100 / portTICK_PERIOD_MS );
 
         softReset();
 
@@ -87,6 +92,11 @@ Dolby_STA310::play( bool enable ) {
 void 
 Dolby_STA310::softReset() {
     AMP_DEBUG_I( "Performing soft reset" );
+    mInitialized = false;
+    mRunning = false;
+    mMuted = false;
+    mPlaying = false;
+
     mBus->writeRegisterByte( mAddr, Dolby_STA310::SOFT_MUTE, 1 );
 
     mBus->writeRegisterByte( mAddr, Dolby_STA310::SOFT_RESET, 1 );
@@ -155,6 +165,9 @@ Dolby_STA310::enableAudioPLL(){
 void
 Dolby_STA310::configureAudioPLL() {
     AMP_DEBUG_I( "Configuring audio pll" );
+    // 22 is only one that works
+
+    //mBus->writeRegisterByte( mAddr, Dolby_STA310::PLL_CTRL, 22 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::PLL_CTRL, 22 );
 }
 
@@ -168,14 +181,14 @@ Dolby_STA310::configureInterrupts( bool enableHDR  ){
     }
 
     mBus->writeRegisterByte( mAddr, Dolby_STA310::INT1, interrupts );
-    mBus->writeRegisterByte( mAddr, Dolby_STA310::INT2, Dolby_STA310::RST | Dolby_STA310::LCK );
+    mBus->writeRegisterByte( mAddr, Dolby_STA310::INT2, Dolby_STA310::RST | Dolby_STA310::LCK  | Dolby_STA310::FIO | Dolby_STA310::PCM );
 }
 
 void
 Dolby_STA310::configureSync() {
     AMP_DEBUG_I( "Configuring sync" );
-    mBus->writeRegisterByte( mAddr, Dolby_STA310::PACKET_LOCK, 0 );
-    mBus->writeRegisterByte( mAddr, Dolby_STA310::SYNC_LOCK, 0 );
+    mBus->writeRegisterByte( mAddr, Dolby_STA310::PACKET_LOCK, 1 );
+    mBus->writeRegisterByte( mAddr, Dolby_STA310::SYNC_LOCK, 3 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::ID_EN, 0 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::ID, 0 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::ID_EXT, 0 );
@@ -226,15 +239,19 @@ Dolby_STA310::configurePCMOUT() {
 void 
 Dolby_STA310::configureAC3() {
     AMP_DEBUG_I( "Configuring AC3" );
+    // Turn off subwoofer, turn back on later
     mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_DECODE_LFE, 1 );
+// %^^^^^^
+
+
     mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_COMP_MOD, 2 );
-    mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_HDR, 0 );
-    mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_LDR, 0 );
+    mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_HDR, 0x0 );
+    mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_LDR, 0x0 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_RPC, 0 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_KARAOKE, 0 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_DUALMODE, 0 );
-    mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_DOWNMIX, 7 );
-    mBus->writeRegisterByte( mAddr, Dolby_STA310::OCFG, 2 + 64 );
+    mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_DOWNMIX, 2 );
+    mBus->writeRegisterByte( mAddr, Dolby_STA310::OCFG, 3 /* + 64 */ );
 }
 
 void 
@@ -290,10 +307,12 @@ Dolby_STA310::handleInterrupt( Queue &queue ) {
         mBus->readRegisterByte( mAddr, Dolby_STA310::HEAD_3, head3 );
         mBus->readRegisterByte( mAddr, Dolby_STA310::HEAD_4, head4 );
 
-        uint8_t freq;
+        uint8_t dtype = head3 & 0x1f;
+
+         uint8_t freq;
         mBus->readRegisterByte( mAddr, Dolby_STA310::FREQ, freq );
 
-        AMP_DEBUG_SI(".......head was " << (int)head3 << " " << (int)head4 <<  " " << (int)freq; );
+        AMP_DEBUG_SI(".......head was " << (int)head3 << " " << (int)head4 <<  " " << (int)freq << " " << (int)dtype );
 
         unsigned int samplingRate = 0;
         switch( freq ) {
@@ -308,7 +327,10 @@ Dolby_STA310::handleInterrupt( Queue &queue ) {
     }
 
     if ( result1 & Dolby_STA310::SFR ) {
-        AMP_DEBUG_I( "...SFR set" );
+        uint8_t freq;
+        mBus->readRegisterByte( mAddr, Dolby_STA310::FREQ, freq );
+
+        AMP_DEBUG_SI( "...SFR set "  << (int)freq );
     }
 
     if ( result2 & LCK ) {
@@ -328,23 +350,55 @@ Dolby_STA310::handleInterrupt( Queue &queue ) {
         AMP_DEBUG_SI( "..... SYNC status is " << (int)status );
     }
 
-    if ( ( result2 & RST ) | ( result2 & LCK )  ) {
-         AMP_DEBUG_I( "Need to reset decoder" ); 
+    bool forceReset = false;
+    if ( result2 & Dolby_STA310::FIO  ) {
+         AMP_DEBUG_I( "...FIO set" ); 
+    }
+
+    if ( result2 & Dolby_STA310::PCM ) {
+        AMP_DEBUG_I( "...PCM set" ); 
+    }
+
+    if ( ( result2 & RST ) | ( result2 & LCK ) | forceReset ) {
+        AMP_DEBUG_I( "Need to reset decoder" ); 
+
+     //   mNeedsReset = true;
+       // mTickCount = 0;
 
         uint8_t stream;
         uint8_t decode;
+
         mBus->readRegisterByte( mAddr, Dolby_STA310::STREAM_SEL, stream );
         mBus->readRegisterByte( mAddr, Dolby_STA310::DECODE_SEL, decode );
 
+        softReset();
+
+        configureInterrupts( true );
+  
+        if ( stream == 3 ) {
+           // mBus->writeRegisterByte( mAddr, Dolby_STA310::STREAM_SEL, stream );
+           // mBus->writeRegisterByte( mAddr, Dolby_STA310::DECODE_SEL, decode );
+            //mBus->writeRegisterByte( mAddr, Dolby_STA310::PLL_CTRL, 30 );
+
+    /*
+            mBus->writeRegisterByte( mAddr, 0x05, 1 );
+            mBus->writeRegisterByte( mAddr, 0x6F, 0 );
+            mBus->writeRegisterByte( mAddr, 0xa8, 1 );
+            mBus->writeRegisterByte( mAddr, 0xa9, 0 );
+            */
+
+        } else {
+          //  mBus->writeRegisterByte( mAddr, Dolby_STA310::STREAM_SEL, 5 );
+         //   mBus->writeRegisterByte( mAddr, Dolby_STA310::DECODE_SEL, 0 );
+
+
+            configureAC3();
+        }
+
         AMP_DEBUG_SI( "...STream/Decode set to " << (int)stream << " " << (int)decode );
 
-         softReset();
-         configureInterrupts( true );
-         enableAudioPLL();
-         configureAudioPLL();
-
-         mute( false );
-         run();
+        mute( false );
+        run();
         play( true );
     }
 

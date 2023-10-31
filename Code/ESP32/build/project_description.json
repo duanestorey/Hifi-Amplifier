@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "hifi-amp",
-    "project_version":    "3de1f37-dirty",
+    "project_version":    "5d83b01-dirty",
     "project_path":       "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32",
     "idf_path":           "/Users/duane/Code/Github/esp-idf",
     "build_dir":          "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build",
@@ -1450,7 +1450,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/main/libmain.a",
-            "sources": [ "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/main.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/amplifier.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/wifi.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/timer.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/mutex.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/queue.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/bluetooth.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/i2c-bus.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/lcd.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/channelsel-ax2358.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/tmp100.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/encoder.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dolby-sta310.cpp" ],
+            "sources": [ "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/main.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/amplifier.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/wifi.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/timer.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/mutex.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/queue.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/bluetooth.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/i2c-bus.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/lcd.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dac-pcm1681.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/channelsel-ax2358.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/tmp100.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/encoder.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/dolby-sta310.cpp", "/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/button.cpp" ],
             "include_dirs": []
         },
         "max1704x": {

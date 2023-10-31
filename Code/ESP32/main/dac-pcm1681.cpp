@@ -29,19 +29,6 @@ DAC_PCM1681::init() {
 
     // Set wide volume range, 0-63, 0.5db
     mI2C->writeRegisterByte( mAddress, PCM1681_REG_DAMS, 128 );
-
-	/*
-
-	mI2C->writeRegisterByte( addr, 1, 0x60);
-
-	AMP_DEBUG_I( "Trying to read from temperature sensor" );
-
-	uint8_t data[2];
-	mI2C->readRegisterBytes( addr, 0, 2, data );
-	uint16_t ss = ((((uint16_t)data[0]) << 8) + data[1])>>4;
-	float f = ss / 16.0;
-	*/
-	
 }
 
 void 
@@ -55,14 +42,7 @@ DAC_PCM1681::setFormat( uint8_t format ) {
 		value = format;
 	}
 
-	mI2C->writeRegisterByte( mAddress, PCM1681_REG_FORMAT, value );
-
-
-    // Set wide over-sampling bit and slow roll-off filters
-	//mI2C->writeRegisterByte( mAddress, PCM1681_REG_OVER, 128 | 0xf );    
-
-    // Set narrow over-sampling bit and slow roll-off filters
-    // mI2C->writeRegisterByte( mAddress, PCM1681_REG_OVER, 0xf );     
+	mI2C->writeRegisterByte( mAddress, PCM1681_REG_FORMAT, value );  
 }
 
 void 

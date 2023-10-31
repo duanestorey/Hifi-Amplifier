@@ -1,0 +1,272 @@
+[0;32mI (13) boot: ESP-IDF v5.2-dev-2708-g3640dc86bb-dirty 2nd stage bootloader[0m
+[0;32mI (13) boot: compile time Oct 17 2023 21:03:35[0m
+[0;32mI (15) boot: Multicore bootloader[0m
+[0;32mI (19) boot: chip revision: v3.0[0m
+[0;32mI (23) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (27) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (32) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (36) boot: Enabling RNG early entropy source...[0m
+[0;32mI (42) boot: Partition Table:[0m
+[0;32mI (45) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (53) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (60) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (68) boot:  2 phy_init         RF data          01 01 0000f000 00002000[0m
+[0;32mI (75) boot:  3 factory          factory app      00 00 00020000 002625a0[0m
+[0;32mI (83) boot: End of partition table[0m
+[0;32mI (87) boot: Defaulting to factory image[0m
+[0;32mI (91) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=336c0h (210624) map[0m
+[0;32mI (143) esp_image: segment 1: paddr=000536e8 vaddr=3ffbdb60 size=04f5ch ( 20316) load[0m
+[0;32mI (148) esp_image: segment 2: paddr=0005864c vaddr=40080000 size=079cch ( 31180) load[0m
+[0;32mI (157) esp_image: segment 3: paddr=00060020 vaddr=400d0020 size=b34b0h (734384) map[0m
+[0;32mI (309) esp_image: segment 4: paddr=001134d8 vaddr=400879cc size=07fe8h ( 32744) load[0m
+[0;32mI (326) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (326) boot: Disabling RNG early entropy source...[0m
+[0;32mI (338) cpu_start: Multicore app[0m
+[0;32mI (338) cpu_start: Pro cpu up.[0m
+[0;32mI (338) cpu_start: Starting app cpu, entry point is 0x40081120[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (356) cpu_start: Pro cpu start user code[0m
+[0;32mI (356) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (356) cpu_start: Application information:[0m
+[0;32mI (361) cpu_start: Project name:     hifi-amp[0m
+[0;32mI (366) cpu_start: App version:      5d83b01-dirty[0m
+[0;32mI (371) cpu_start: Compile time:     Oct 27 2023 21:19:31[0m
+[0;32mI (377) cpu_start: ELF file SHA256:  1d4ab1e60...[0m
+[0;32mI (383) cpu_start: ESP-IDF:          v5.2-dev-2708-g3640dc86bb-dirty[0m
+[0;32mI (390) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (394) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (399) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (404) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (411) heap_init: At 3FFAE6E0 len 0000F480 (61 KiB): DRAM[0m
+[0;32mI (417) heap_init: At 3FFC81A8 len 00017E58 (95 KiB): DRAM[0m
+[0;32mI (423) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (430) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (436) heap_init: At 4008F9B4 len 0001064C (65 KiB): IRAM[0m
+[0;32mI (444) spi_flash: detected chip: generic[0m
+[0;32mI (447) spi_flash: flash io: dio[0m
+[0;33mW (452) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (462) coexist: coex firmware version: 80b0d89[0m
+[0;32mI (468) app_start: Starting scheduler on CPU0[0m
+[0;32mI (47[0;32mI (473) app_start: Starting scheduler on CPU1[0m
+2) main_task: Started on CPU0[0m
+[0;32mI (482) main_task: Calling app_main()[0m
+[0;32mI (485) I2CBUS::I2CBUS(): Stargting I2C bus[0m
+[0;32mI (519) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (520) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (528) gpio: GPIO[23]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (537) gpio: GPIO[27]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (546) gpio: GPIO[19]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (555) gpio: GPIO[12]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (565) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (574) gpio: GPIO[13]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (583) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (593) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (602) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (611) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:1 [0m
+[0;32mI (620) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (630) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (639) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (671) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 15000 and ID 1 futureTime 15196 currentTime 199[0m
+[0;32mI (674) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 100 and ID 2 futureTime 302 currentTime 202[0m
+[0;32mI (686) void Amplifier::handleTimerThread(): Starting Timer Thread on Core 0[0m
+[0;32mI (693) void Amplifier::handleDisplayThread(): Starting Display Thread[0m
+[0;32mI (700) void LCD::begin(): Beginning LCD Setup[0m
+[0;32mI (706) void Amplifier::handleAudioThread(): Starting Audio Thread[0m
+[0;32mI (713) void Amplifier::handleAmplifierThread(): Starting Amplifier Thread on Core 0[0m
+[0;32mI (714) void Amplifier::handleRadioThread(): Starting Radio Thread on Core 1[0m
+I (733) wifi:wifi driver task: 3ffcfa68, prio:23, stack:6656, core=0
+I (752) wifi:wifi firmware version: 341633f
+I (753) wifi:wifi certification version: v7.0
+I (753) wifi:config NVS flash: enabled
+I (753) wifi:config nano formating: disabled
+I (758) wifi:Init data frame dynamic rx buffer num: 32
+I (762) wifi:Init management frame dynamic rx buffer num: 32
+I (767) wifi:Init management short buffer num: 32
+I (772) wifi:Init dynamic tx buffer num: 32
+I (776) wifi:Init static rx buffer size: 1600
+I (780) wifi:Init static rx buffer num: 10
+I (784) wifi:Init dynamic rx buffer num: 32
+[0;32mI (789) wifi_init: rx ba win: 6[0m
+[0;32mI (791) wifi_init: tcpip mbox: 32[0m
+[0;32mI (795) wifi_init: udp mbox: 6[0m
+[0;32mI (799) wifi_init: tcp mbox: 6[0m
+[0;32mI (803) wifi_init: tcp tx win: 5744[0m
+[0;32mI (807) wifi_init: tcp rx win: 5744[0m
+[0;32mI (811) wifi_init: tcp mss: 1440[0m
+[0;32mI (813) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 196[0m
+[0;32mI (816) wifi_init: LWIP IRAM OP enabled[0m
+[0;32mI (826) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 193[0m
+[0;32mI (833) phy_init: phy_version 4771,450c73b,Aug 16 2023,11:03:10[0m
+[0;32mI (840) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 194[0m
+[0;32mI (857) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 255[0m
+[0;32mI (865) void Amplifier::handleAudioThread(): Relay active[0m
+I (930) wifi:mode : sta (c4:de:e2:1b:1a:b8)
+I (932) wifi:enable tsf
+[0;32mI (932) void Amplifier::attemptWifiConnect(): Attempting to connect Wifi[0m
+[0;32mI (938) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (941) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (949) void Amplifier::handleWifiCallback(int32_t): Wifi Starting Up[0m
+I (963) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+I (965) wifi:state: init -> auth (b0)
+I (986) wifi:state: auth -> assoc (0)
+I (1046) wifi:state: assoc -> run (10)
+I (1061) wifi:<ba-add>idx:0 (ifx:0, 24:5a:4c:99:c4:26), tid:5, ssn:0, winSize:64
+I (1074) wifi:connected with The Grey Havens, aid = 4, channel 1, BW20, bssid = 24:5a:4c:99:c4:26
+I (1075) wifi:security: WPA2-PSK, phy: bgn, rssi: -48
+I (1082) wifi:pm start, type: 1
+
+[0;32mI (1087) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (1088) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (1096) void Amplifier::handleWifiCallback(int32_t): Wifi Connection Established[0m
+I (1142) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (1206) void LCD::begin(): LCD Backlight Setup[0m
+[0;32mI (1245) void LCD::begin(): LCD Setup Done[0m
+[0;32mI (1246) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (1246) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (1248) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (1871) void Amplifier::handleAudioThread(): Decoder set into active mode[0m
+[0;32mI (1871) void Amplifier::handleAudioThread(): Setting involumeput[0m
+[0;32mI (1875) void Amplifier::handleAudioThread(): Setting input[0m
+[0;32mI (1882) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 203[0m
+-> found device with address 0x27
+-> found device with address 0x48
+-> found device with address 0x4a
+-> found device with address 0x60
+
+...scan completed!
+[0;32mI (1928) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (1929) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 254[0m
+[0;32mI (1937) void Amplifier::handleAudioThread(): Starting DAC initialization[0m
+[0;32mI (1944) void Amplifier::handleAudioThread(): Channel selector un-muted[0m
+[0;32mI (2072) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (2091) esp_netif_handlers: sta ip: 192.168.1.196, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (2093) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (2098) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (2106) void Amplifier::handleWifiCallback(int32_t): Wifi Received IP Address[0m
+[0;32mI (2113) virtual float TMP100::readTemperature(): Temperature is 27.25[0m
+[0;32mI (2115) void Amplifier::updateTimeFromNTP(): Attemping To Update Time From NTP Server[0m
+[0;32mI (4323) void NTP_Callback(timeval*): Received NTP Callback[0m
+I (4323) wifi:<ba-add>idx:1 (ifx:0, 24:5a:4c:99:c4:26), tid:0, ssn:1, winSize:64
+[0;32mI (4326) void Amplifier::handleRadioThread(): The current date/time is: Tue Oct 31 17:37:27 2023[0m
+[0;32mI (8803) void Button::tick(): Waiting..4[0m
+[0;32mI (8814) void Button::tick(): Waiting..15[0m
+[0;32mI (8825) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (8826) void Amplifier::handleAmplifierThread(): Button pressed! 17[0m
+[0;32mI (8829) void Amplifier::handleInputButtonPress(): Input button pressed[0m
+[0;32mI (15683) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (15686) virtual float TMP100::readTemperature(): Temperature is 27.1875[0m
+[0;32mI (15688) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 27.1875[0m
+[0;32mI (22038) void Button::tick(): Waiting..9[0m
+[0;32mI (22049) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22049) void Amplifier::handleAmplifierThread(): Button released! 17[0m
+[0;32mI (22293) void Button::tick(): Waiting..8[0m
+[0;32mI (22304) void Button::tick(): Waiting..19[0m
+[0;32mI (22314) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22314) void Amplifier::handleAmplifierThread(): Button pressed! 17[0m
+[0;32mI (22318) void Amplifier::handleInputButtonPress(): Input button pressed[0m
+[0;32mI (22396) void Button::tick(): Waiting..4[0m
+[0;32mI (22407) void Button::tick(): Waiting..15[0m
+[0;32mI (22417) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (22417) void Amplifier::handleAmplifierThread(): Button released! 17[0m
+[0;32mI (23131) void Button::tick(): Waiting..2[0m
+[0;32mI (23142) void Button::tick(): Waiting..13[0m
+[0;32mI (23152) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23152) void Amplifier::handleAmplifierThread(): Button pressed! 17[0m
+[0;32mI (23156) void Amplifier::handleInputButtonPress(): Input button pressed[0m
+[0;32mI (23233) void Button::tick(): Waiting..3[0m
+[0;32mI (23244) void Button::tick(): Waiting..14[0m
+[0;32mI (23254) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (23254) void Amplifier::handleAmplifierThread(): Button released! 17[0m
+[0;32mI (24208) void Button::tick(): Waiting..1[0m
+[0;32mI (24220) void Button::tick(): Waiting..13[0m
+[0;32mI (24230) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24230) void Amplifier::handleAmplifierThread(): Button pressed! 17[0m
+[0;32mI (24234) void Amplifier::handleInputButtonPress(): Input button pressed[0m
+[0;32mI (24832) void Button::tick(): Waiting..1[0m
+[0;32mI (24843) void Button::tick(): Waiting..12[0m
+[0;32mI (24853) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (24853) void Amplifier::handleAmplifierThread(): Button released! 17[0m
+[0;32mI (25537) void Button::tick(): Waiting..8[0m
+[0;32mI (25548) void Button::tick(): Waiting..19[0m
+[0;32mI (25558) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (25558) void Amplifier::handleAmplifierThread(): Button pressed! 17[0m
+[0;32mI (25562) void Amplifier::handleInputButtonPress(): Input button pressed[0m
+[0;32mI (27080) void Button::tick(): Waiting..6[0m
+[0;32mI (27091) void Button::tick(): Waiting..17[0m
+[0;32mI (27101) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27101) void Amplifier::handleAmplifierThread(): Button released! 17[0m
+[0;32mI (27855) void Button::tick(): Waiting..5[0m
+[0;32mI (27866) void Button::tick(): Waiting..16[0m
+[0;32mI (27876) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (27877) void Amplifier::handleAmplifierThread(): Button pressed! 17[0m
+[0;32mI (27881) void Amplifier::handleInputButtonPress(): Input button pressed[0m
+[0;32mI (28098) void Button::tick(): Waiting..8[0m
+[0;32mI (28109) void Button::tick(): Waiting..19[0m
+[0;32mI (28119) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28119) void Amplifier::handleAmplifierThread(): Button released! 17[0m
+[0;32mI (28856) void Button::tick(): Waiting..10[0m
+[0;32mI (28867) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (28867) void Amplifier::handleAmplifierThread(): Button pressed! 17[0m
+[0;32mI (28871) void Amplifier::handleInputButtonPress(): Input button pressed[0m
+[0;32mI (29109) void Button::tick(): Waiting..8[0m
+[0;32mI (29120) void Button::tick(): Waiting..19[0m
+[0;32mI (29130) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (29130) void Amplifier::handleAmplifierThread(): Button released! 17[0m
+[0;32mI (30034) void Button::tick(): Waiting..4[0m
+[0;32mI (30045) void Button::tick(): Waiting..15[0m
+[0;32mI (30055) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (30055) void Amplifier::handleAmplifierThread(): Button pressed! 17[0m
+[0;32mI (30059) void Amplifier::handleInputButtonPress(): Input button pressed[0m
+[0;32mI (30187) void Button::tick(): Waiting..0[0m
+[0;32mI (30198) void Button::tick(): Waiting..11[0m
+[0;32mI (30208) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (30208) void Amplifier::handleAmplifierThread(): Button released! 17[0m
+[0;32mI (30686) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (30689) virtual float TMP100::readTemperature(): Temperature is 27.1875[0m
+[0;32mI (30691) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 27.1875[0m
+[0;32mI (30780) void Button::tick(): Waiting..9[0m
+[0;32mI (30791) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (30791) void Amplifier::handleAmplifierThread(): Button pressed! 17[0m
+[0;32mI (30795) void Amplifier::handleInputButtonPress(): Input button pressed[0m
+[0;32mI (30974) void Button::tick(): Waiting..9[0m
+[0;32mI (30985) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (30985) void Amplifier::handleAmplifierThread(): Button released! 17[0m
+[0;32mI (45671) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (45674) virtual float TMP100::readTemperature(): Temperature is 27.1875[0m
+[0;32mI (45676) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 27.1875[0m
+[0;32mI (54083) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (54084) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (54084) void Amplifier::handleAudioThread(): Setting pending audio volume to 44[0m
+[0;32mI (54128) virtual float TMP100::readTemperature(): Temperature is 27.125[0m
+[0;32mI (54174) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 44[0m
+[0;32mI (55302) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (55303) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (55303) void Amplifier::handleAudioThread(): Setting pending audio volume to 43[0m
+[0;32mI (55348) virtual float TMP100::readTemperature(): Temperature is 27.1875[0m
+[0;32mI (55375) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 43[0m
+[0;32mI (60675) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (60678) virtual float TMP100::readTemperature(): Temperature is 27.125[0m
+[0;32mI (60680) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 27.125[0m
+[0;32mI (71030) void Button::tick(): Waiting..5[0m
+[0;32mI (71041) void Button::tick(): Waiting..16[0m
+[0;32mI (71051) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (71051) void Amplifier::handleAmplifierThread(): Button pressed! 17[0m
+[0;32mI (71055) void Amplifier::handleInputButtonPress(): Input button pressed[0m
+[0;32mI (73675) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (73676) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (73676) void Amplifier::handleAudioThread(): Setting pending audio volume to 42[0m
+[0;32mI (73690) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 42[0m
+[0;32mI (73720) virtual float TMP100::readTemperature(): Temperature is 27.125[0m
+[0;32mI (73844) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (73845) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (73845) void Amplifier::handleAudioThread(): Setting pending audio volume to 41[0m
+[0;32mI (73877) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 41[0m
+[0;32mI (73889) virtual float TMP100::readTemperature(): Temperature is 27.125[0m
+[0;32mI (74051) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (74052) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (74052) void Amplifier::handleAudioThread(): Setting pending audio volume to 42[0m
+[0;32mI (74077) void Amplifier::handleAudioThread(): Actually setting pending audio volume to 42[0m
+[0;32mI (74095) virtual float TMP100::readTemperature(): Temperature is 27.125[0m
+[0;32mI (75679) void Amplifier::handleAmplifierThread(): Processing Amplifier Queue Message[0m
+[0;32mI (75681) virtual float TMP100::readTemperature(): Temperature is 27.125[0m
+[0;32mI (75684) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 27.125[0m

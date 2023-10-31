@@ -16,6 +16,7 @@
 
 #include "tmp100.h"
 #include "encoder.h"
+#include "button.h"
 
 class Amplifier {
 public:
@@ -31,8 +32,10 @@ public:
     void _handleDecoderISR();
     void _handlePowerButtonISR();
     void _handleVolumeButtonISR();
+    void _handleVolumeButtonEncoderISR();
     void _handleInputButtonISR();
     void _handleInputButtonEncoderISR();
+
 
     AmplifierState getCurrentState();
 protected:
@@ -51,6 +54,7 @@ protected:
     Queue mAmplifierQueue;
 
     uint32_t mTimerID;
+    uint32_t mButtonTimerID;
     uint32_t mReconnectTimerID;
 
     AmplifierState mState;
@@ -69,6 +73,10 @@ protected:
     uint32_t mAudioTimerID;
     bool mPendingVolumeChange;
     uint32_t mPendingVolume;
+
+    Button *mPowerButton;
+    Button *mVolumeButton;
+    Button *mInputButton;
 
 private:
     void configurePins();
@@ -89,7 +97,7 @@ private:
     void setupPWM();
     void handlePowerButtonPress();
     void handleInputButtonPress();
-    void handleVolumeButtonPress( uint8_t param );
+    void handleVolumeButtonPress();
     void handleDecoderIRQ();
 
     void changeAmplifierState( uint8_t newState );

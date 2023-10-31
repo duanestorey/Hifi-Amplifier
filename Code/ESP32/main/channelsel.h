@@ -30,6 +30,7 @@ public:
     virtual bool setChannelVolume( uint8_t channel, uint8_t volume ) = 0;
     virtual void mute( bool mute ) = 0;
     virtual void muteChannel( uint8_t channel, bool mute ) = 0;
+    virtual void setEnhancement( bool enhancementOn ) = 0;
 };
 
 #endif
