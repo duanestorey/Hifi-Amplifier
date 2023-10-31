@@ -450,8 +450,10 @@ Amplifier::startDigitalAudio() {
     // Dolby Decoder is muted, but running, so it's outputting zeros and a clock to the DAC
     mDAC->init();
     mDAC->setFormat( DAC::FORMAT_SONY );
-    mDAC->setVolume( 100 );
+    mDAC->setVolume( 128 );
     mDAC->enable( true );
+
+    mDolbyDecoder->setAttenuation( 0 );
 
     mDolbyDecoder->play( true );
 
@@ -485,7 +487,6 @@ Amplifier::handleAudioThread() {
     mDolbyDecoder->init();
 
     AMP_DEBUG_I( "Decoder set into active mode" );   
-   // mDolbyDecoder->setAttenuation( 3 );
 
      // Initial volume, 0-79
     AmplifierState state = getCurrentState();

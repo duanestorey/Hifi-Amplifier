@@ -245,13 +245,13 @@ Dolby_STA310::configureAC3() {
 
 
     mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_COMP_MOD, 2 );
-    mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_HDR, 0x0 );
-    mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_LDR, 0x0 );
+    mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_HDR, 0x10 );
+    mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_LDR, 0x10 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_RPC, 0 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_KARAOKE, 0 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_DUALMODE, 0 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_DOWNMIX, 2 );
-    mBus->writeRegisterByte( mAddr, Dolby_STA310::OCFG, 3 /* + 64 */ );
+    mBus->writeRegisterByte( mAddr, Dolby_STA310::OCFG, 2 );
 }
 
 void 
