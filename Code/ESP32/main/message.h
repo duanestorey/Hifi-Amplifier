@@ -14,6 +14,8 @@ public:
         MSG_WIFI_INIT,
         MSG_WIFI_CONNECTED,
         MSG_AUDIO_SET_ENHANCEMENT,
+        MSG_AUDIO_SHUTDOWN,
+        MSG_AUDIO_RESTART,
         MSG_VOLUME_UP,
         MSG_VOLUME_DOWN,
         MSG_VOLUME_SET,
@@ -27,7 +29,9 @@ public:
         MSG_INPUT_BUTTON_PRESS,
         MSG_AUDIO_SAMPLING_RATE_CHANGE,
         MSG_BUTTON_PRESSED,
-        MSG_BUTTON_RELEASED
+        MSG_BUTTON_RELEASED,
+        MSG_POWEROFF,
+        MSG_POWERON
     };
 
     Message( MessageType t ) : mMessageType( t ), mParam( 0 ) {}

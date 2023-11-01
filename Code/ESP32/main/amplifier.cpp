@@ -21,14 +21,14 @@
 #include "esp_netif_sntp.h"
 #include "esp_sntp.h"
 
-#include "esp_bt.h"
 #include "sdkconfig.h"
 #include "dac-pcm1681.h"
 #include "channelsel-ax2358.h"
 #include "button.h"
+#include "http-server.h"
 
 Amplifier::Amplifier() : mWifiEnabled( false ), mWifiConnectionAttempts( 0 ), mUpdatingFromNTP( false ), mPoweredOn( true ), mDisplayQueue( 3 ), mTimerID( 0 ), mButtonTimerID( 0 ), mReconnectTimerID( 0 ), mLCD( 0 ),
-    mDAC( 0 ), mChannelSel( 0 ), mDolbyDecoder( 0 ), mMicroprocessorTemp( 0 ), mVolumeEncoder( 15, 13, true ), mInputEncoder( 4, 16, false ), mAudioTimerID( 0 ), mPendingVolumeChange( false ), mPendingVolume( 0 ),
+    mDAC( 0 ), mChannelSel( 0 ), mDolbyDecoder( 0 ), mWebServer( 0 ), mMicroprocessorTemp( 0 ), mVolumeEncoder( 15, 13, true ), mInputEncoder( 4, 16, false ), mAudioTimerID( 0 ), mPendingVolumeChange( false ), mPendingVolume( 0 ),
     mPowerButton( 0 ), mVolumeButton( 0 ), mInputButton( 0 ) {
 }
 
@@ -71,8 +71,12 @@ Amplifier::updateConnectedStatus( bool connected, bool doActualUpdate ) {
 
     if ( connected ) {
         gpio_set_level( PIN_LED_CONNECTED, 1 );
+
+        mWebServer->start();
     } else {
         gpio_set_level( PIN_LED_CONNECTED, 0 );
+
+        mWebServer->stop();
     }
 
 }
@@ -102,6 +106,8 @@ Amplifier::init() {
     mPowerButton = new Button( PIN_BUTTON_POWER, &mAmplifierQueue );
     mVolumeButton = new Button( PIN_BUTTON_VOLUME, &mAmplifierQueue );
     mInputButton = new Button( PIN_BUTTON_INPUT, &mAmplifierQueue );
+
+    mWebServer = new HTTP_Server( &mAmplifierQueue );
 }
 
 void 
@@ -274,6 +280,18 @@ Amplifier::handleAmplifierThread() {
            // AMP_DEBUG_I( "Processing Amplifier Queue Message" );
 
             switch( msg.mMessageType ) {
+                case Message::MSG_POWEROFF:
+                    gpio_set_level( PIN_RELAY, 0 );
+                    mLCD->enableBacklight( false );
+                    mAudioQueue.add( Message::MSG_AUDIO_SHUTDOWN );
+                    break;
+                case Message::MSG_POWERON:
+                    mLCD->enableBacklight( true );
+                    gpio_set_level( PIN_RELAY, 1 );
+                    taskDelayInMs( 1000 );
+
+                    mAudioQueue.add( Message::MSG_AUDIO_RESTART );
+                    break;
                 case Message::MSG_DISPLAY_SHOULD_UPDATE:
                     // need to update the display
                     break;
@@ -450,10 +468,12 @@ Amplifier::startDigitalAudio() {
     // Dolby Decoder is muted, but running, so it's outputting zeros and a clock to the DAC
     mDAC->init();
     mDAC->setFormat( DAC::FORMAT_SONY );
+
+    // Max volume
     mDAC->setVolume( 128 );
     mDAC->enable( true );
 
-    mDolbyDecoder->setAttenuation( 0 );
+   // mDolbyDecoder->setAttenuation( 0 );
 
     mDolbyDecoder->play( true );
 
@@ -532,6 +552,22 @@ Amplifier::handleAudioThread() {
     while( true ) {
         while ( mAudioQueue.waitForMessage( msg, 5 ) ) {
             switch( msg.mMessageType ) {
+                case Message::MSG_AUDIO_RESTART:
+                    {
+                        AmplifierState state = getCurrentState();
+                        if ( state.mInput == AmplifierState::INPUT_6CH ) {
+                            startDigitalAudio();
+                        }
+                    }
+                    break;
+                case Message::MSG_AUDIO_SHUTDOWN:
+                    {
+                        AmplifierState state = getCurrentState();
+                        if ( state.mInput == AmplifierState::INPUT_6CH ) {
+                            stopDigitalAudio();
+                        }
+                    }
+                    break;
                 case Message::MSG_VOLUME_SET:
                     AMP_DEBUG_SI( "Setting pending audio volume to " << msg.mParam );
                     mPendingVolumeChange = true;

@@ -4,7 +4,6 @@
 #include "pins.h"
 #include "timer.h"
 #include "queue.h"
-#include "bluetooth.h"
 
 #include "state.h"
 #include "mutex.h"
@@ -17,6 +16,7 @@
 #include "tmp100.h"
 #include "encoder.h"
 #include "button.h"
+#include "http-server.h"
 
 class Amplifier {
 public:
@@ -26,6 +26,7 @@ public:
     void handleAudioThread();
     void handleRadioThread();
     void handleAmplifierThread();
+
     void handleTimerThread();
 
     void _handleWifiCallback( int32_t event_id );
@@ -64,6 +65,7 @@ protected:
     DAC *mDAC;
     ChannelSel *mChannelSel;
     Dolby_STA310 *mDolbyDecoder;
+    HTTP_Server *mWebServer;
 
     TMP100 *mMicroprocessorTemp;
 

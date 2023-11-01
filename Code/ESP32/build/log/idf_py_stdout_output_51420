@@ -1,0 +1,287 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x36 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7136
+load:0x40078000,len:15780
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3884
+entry 0x40080650
+[0;32mI (31) boot: ESP-IDF v5.2-dev-2708-g3640dc86bb-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Oct 31 2023 21:54:24[0m
+[0;32mI (33) boot: Multicore bootloader[0m
+[0;32mI (38) boot: chip revision: v3.0[0m
+[0;32mI (41) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (46) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (51) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (55) boot: Enabling RNG early entropy source...[0m
+[0;32mI (61) boot: Partition Table:[0m
+[0;32mI (64) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (71) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (79) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (86) boot:  2 phy_init         RF data          01 01 0000f000 00002000[0m
+[0;32mI (94) boot:  3 factory          factory app      00 00 00020000 00400000[0m
+[0;32mI (101) boot:  4 ota_1            OTA app          00 11 00520000 00400000[0m
+[0;32mI (109) boot:  5 ota_2            OTA app          00 12 00920000 00400000[0m
+[0;32mI (116) boot:  6 files            Unknown data     01 82 00d20000 00019000[0m
+[0;32mI (124) boot: End of partition table[0m
+[0;32mI (128) boot: Defaulting to factory image[0m
+[0;32mI (133) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=35e48h (220744) map[0m
+[0;32mI (187) esp_image: segment 1: paddr=00055e70 vaddr=3ffb0000 size=0371ch ( 14108) load[0m
+[0;32mI (191) esp_image: segment 2: paddr=00059594 vaddr=40080000 size=06a84h ( 27268) load[0m
+[0;32mI (200) esp_image: segment 3: paddr=00060020 vaddr=400d0020 size=be070h (778352) map[0m
+[0;32mI (362) esp_image: segment 4: paddr=0011e098 vaddr=40086a84 size=07each ( 32428) load[0m
+[0;32mI (378) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (378) boot: Disabling RNG early entropy source...[0m
+[0;32mI (389) cpu_start: Multicore app[0m
+[0;32mI (390) cpu_start: Pro cpu up.[0m
+[0;32mI (390) cpu_start: Starting app cpu, entry point is 0x40081110[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (408) cpu_start: Pro cpu start user code[0m
+[0;32mI (408) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (408) cpu_start: Application information:[0m
+[0;32mI (412) cpu_start: Project name:     hifi-amp[0m
+[0;32mI (418) cpu_start: App version:      b7e3cab-dirty[0m
+[0;32mI (423) cpu_start: Compile time:     Oct 31 2023 21:54:23[0m
+[0;32mI (429) cpu_start: ELF file SHA256:  7226309a3...[0m
+[0;32mI (434) cpu_start: ESP-IDF:          v5.2-dev-2708-g3640dc86bb-dirty[0m
+[0;32mI (441) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (446) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (451) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (456) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (463) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (469) heap_init: At 3FFB8DD8 len 00027228 (156 KiB): DRAM[0m
+[0;32mI (475) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (482) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (488) heap_init: At 4008E930 len 000116D0 (69 KiB): IRAM[0m
+[0;32mI (496) spi_flash: detected chip: generic[0m
+[0;32mI (499) spi_flash: flash io: dio[0m
+[0;33mW (503) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (514) app_start: Starting scheduler on CPU0[0m
+[0;32mI (520) app_start: Starting scheduler on CPU1[0m
+[0;32mI (519) main_task: Started on CPU0[0m
+[0;32mI (529) main_task: Calling app_main()[0m
+[0;32mI (532) I2CBUS::I2CBUS(): Stargting I2C bus[0m
+[0;32mI (567) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (568) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (575) gpio: GPIO[23]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (584) gpio: GPIO[27]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (594) gpio: GPIO[19]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (603) gpio: GPIO[12]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (612) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (621) gpio: GPIO[13]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (631) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (640) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (649) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (658) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (668) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (677) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (686) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (718) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 15000 and ID 1 futureTime 15196 currentTime 199[0m
+[0;32mI (721) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 5 and ID 2 futureTime 207 currentTime 202[0m
+[0;32mI (734) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 100 and ID 3 futureTime 314 currentTime 215[0m
+[0;32mI (746) void Amplifier::handleDisplayThread(): Starting Display Thread[0m
+[0;32mI (747) void Amplifier::handleTimerThread(): Starting Timer Thread on Core 1[0m
+[0;32mI (752) void LCD::begin(): Beginning LCD Setup[0m
+[0;32mI (761) void Amplifier::handleAmplifierThread(): Starting Amplifier Thread on Core 0[0m
+[0;32mI (761) void Amplifier::handleAudioThread(): Starting Audio Thread[0m
+[0;32mI (762) void Amplifier::handleRadioThread(): Starting Radio Thread on Core 0[0m
+I (794) wifi:wifi driver task: 3ffce08c, prio:23, stack:6656, core=0
+I (813) wifi:wifi firmware version: 341633f
+I (813) wifi:wifi certification version: v7.0
+I (814) wifi:config NVS flash: enabled
+I (814) wifi:config nano formating: disabled
+I (818) wifi:Init data frame dynamic rx buffer num: 32
+I (823) wifi:Init management frame dynamic rx buffer num: 32
+I (828) wifi:Init management short buffer num: 32
+I (832) wifi:Init dynamic tx buffer num: 32
+I (837) wifi:Init static rx buffer size: 1600
+I (841) wifi:Init static rx buffer num: 10
+I (844) wifi:Init dynamic rx buffer num: 32
+[0;32mI (849) wifi_init: rx ba win: 6[0m
+[0;32mI (852) wifi_init: tcpip mbox: 32[0m
+[0;32mI (856) wifi_init: udp mbox: 6[0m
+[0;32mI (860) wifi_init: tcp mbox: 6[0m
+[0;32mI (863) wifi_init: tcp tx win: 5744[0m
+[0;32mI (868) wifi_init: tcp rx win: 5744[0m
+[0;32mI (872) wifi_init: tcp mss: 1440[0m
+[0;32mI (876) wifi_init: LWIP IRAM OP enabled[0m
+[0;32mI (882) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 196[0m
+[0;32mI (885) phy_init: phy_version 4771,450c73b,Aug 16 2023,11:03:10[0m
+[0;32mI (892) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 194[0m
+[0;32mI (907) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 255[0m
+[0;32mI (915) void Amplifier::handleAudioThread(): Relay active[0m
+[0;32mI (926) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (928) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (938) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 0[0m
+[0;32mI (945) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (952) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (958) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (968) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 0[0m
+[0;32mI (975) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+I (980) wifi:mode : sta (c4:de:e2:1b:1a:b8)[0;32mI (982) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+
+[0;32mI (992) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+I (993) wifi:enable tsf
+[0;32mI (1002) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 0[0m
+[0;32mI (1007) void Amplifier::attemptWifiConnect(): Attempting to connect Wifi[0m
+[0;32mI (1012) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (1022) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+I (1032) wifi:[0;32mI (1026) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1[0;32mI (1042) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+
+[0;32mI (1034) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+I (1056) wifi:[0;32mI (1056) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 0[0m
+state: init -> auth (b0)[0;32mI (1072) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+
+[0;32mI (1063) void Amplifier::handleWifiCallback(int32_t): Wifi Starting Up[0m
+I (1087) wifi:state: auth -> assoc (0)
+I (1162) wifi:state: assoc -> run (10)
+I (1173) wifi:<ba-add>idx:0 (ifx:0, 24:5a:4c:99:c4:26), tid:5, ssn:0, winSize:64
+I (1207) wifi:connected with The Grey Havens, aid = 4, channel 1, BW20, bssid = 24:5a:4c:99:c4:26
+I (1208) wifi:security: WPA2-PSK, phy: bgn, rssi: -47
+I (1215) wifi:pm start, type: 1
+
+[0;32mI (1220) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (1221) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (1229) void Amplifier::handleWifiCallback(int32_t): Wifi Connection Established[0m
+[0;32mI (1241) void HTTP_Server::start(): Web server started[0m
+[0;32mI (1258) void HTTP_Server::start(): .. file system mounted[0m
+[0;32mI (1266) void LCD::begin(): LCD Backlight Setup[0m
+I (1275) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (1304) void LCD::begin(): LCD Setup Done[0m
+[0;32mI (1304) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (1304) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+I (1765) wifi:<ba-add>idx:1 (ifx:0, 24:5a:4c:99:c4:26), tid:0, ssn:0, winSize:64
+[0;32mI (1921) void Amplifier::handleAudioThread(): Decoder set into active mode[0m
+[0;32mI (1921) void Amplifier::handleAudioThread(): Setting involumeput[0m
+[0;32mI (1926) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 193[0m
+[0;32mI (1934) void Amplifier::handleAudioThread(): Setting input[0m
+[0;32mI (1941) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 207[0m
+[0;32mI (1950) void Dolby_STA310::softReset(): Performing soft reset[0m
+[0;32mI (1958) void Dolby_STA310::softReset(): Initalized[0m
+[0;32mI (1962) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (1969) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (1976) void Dolby_STA310::softReset(): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (1983) void Dolby_STA310::startDolby(): Starting Dolby Play Routines[0m
+[0;32mI (1991) void Dolby_STA310::configureAudioPLL(): Configuring audio pll[0m
+[0;32mI (1998) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (2006) void Dolby_STA310::configureSync(): Configuring sync[0m
+[0;32mI (2014) void Dolby_STA310::configureSPDIF(): Configuring SPDIF[0m
+[0;32mI (2020) void Dolby_STA310::configurePCMOUT(): Configuring PCMOUT[0m
+[0;32mI (2026) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (2033) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (2042) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (2045) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (2051) virtual void DAC_PCM1681::init(): Starting PCM1681 DAC[0m
+[0;32mI (2161) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (2186) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (2187) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (2193) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 35 6[0m
+[0;32mI (2199) void Dolby_STA310::handleInterrupt(Queue&): ...HDR set[0m
+[0;32mI (2208) void Dolby_STA310::handleInterrupt(Queue&): .......head was 1 0 0 1[0m
+[0;32mI (2213) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (2223) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (2224) esp_netif_handlers: sta ip: 192.168.1.200, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (2228) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (2237) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (2244) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (2251) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (2262) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 34 7[0m
+[0;32mI (2276) void Dolby_STA310::handleInterrupt(Queue&): ...HDR set[0m
+[0;32mI (2269) void Amplifier::handleWifiCallback(int32_t): Wifi Received IP Address[0m
+[0;32mI (2285) void Dolby_STA310::handleInterrupt(Queue&): .......head was 1 0 0 1[0m
+[0;32mI (2292) void Amplifier::updateTimeFromNTP(): Attemping To Update Time From NTP Server[0m
+[0;32mI (2308) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (2316) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (2323) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 2[0m
+[0;32mI (2329) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (2336) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (2343) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (2350) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (2359) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 34 7[0m
+[0;32mI (2366) void Dolby_STA310::handleInterrupt(Queue&): ...HDR set[0m
+[0;32mI (2375) void Dolby_STA310::handleInterrupt(Queue&): .......head was 1 0 0 1[0m
+[0;32mI (2391) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (2392) void Dolby_STA310::handleInterrupt(Queue&): ...SYN set[0m
+[0;32mI (2397) void Dolby_STA310::handleInterrupt(Queue&): ..... SYNC status is 2[0m
+[0;32mI (2403) void Dolby_STA310::handleInterrupt(Queue&): ...PCM set[0m
+[0;32mI (2409) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+-> found device with address 0x27
+-> found device with address 0x48
+-> found device with address 0x4a
+-> found device with address 0x4c
+-> found device with address 0x60
+
+...scan completed!
+[0;32mI (2444) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (2445) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 254[0m
+[0;32mI (2454) void Amplifier::handleAudioThread(): Starting DAC initialization[0m
+[0;32mI (2462) void Amplifier::handleAudioThread(): Channel selector un-muted[0m
+[0;32mI (2577) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (2614) virtual float TMP100::readTemperature(): Temperature is 28.375[0m
+[0;32mI (2714) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (2750) virtual float TMP100::readTemperature(): Temperature is 28.375[0m
+[0;32mI (4169) void NTP_Callback(timeval*): Received NTP Callback[0m
+[0;32mI (4173) void Amplifier::handleRadioThread(): The current date/time is: Tue Oct 31 22:09:59 2023[0m
+[0;33mW (13200) httpd_uri: httpd_uri: URI '/ipp/print' not found[0m
+[0;33mW (13200) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (15723) virtual float TMP100::readTemperature(): Temperature is 28.375[0m
+[0;32mI (15725) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.375[0m
+[0;33mW (23317) httpd_uri: httpd_uri: URI '/ipp/print' not found[0m
+[0;33mW (23318) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (30719) virtual float TMP100::readTemperature(): Temperature is 28.375[0m
+[0;32mI (30720) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.375[0m
+[0;33mW (33454) httpd_uri: httpd_uri: URI '/ipp/print' not found[0m
+[0;33mW (33454) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;33mW (43614) httpd_uri: httpd_uri: URI '/ipp/print' not found[0m
+[0;33mW (43615) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (45718) virtual float TMP100::readTemperature(): Temperature is 28.375[0m
+[0;32mI (45722) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.375[0m
+[0;33mW (53734) httpd_uri: httpd_uri: URI '/ipp/print' not found[0m
+[0;33mW (53734) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (60718) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (60719) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;33mW (63867) httpd_uri: httpd_uri: URI '/ipp/print' not found[0m
+[0;33mW (63868) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;33mW (74026) httpd_uri: httpd_uri: URI '/ipp/print' not found[0m
+[0;33mW (74027) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (75721) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (75722) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;33mW (84143) httpd_uri: httpd_uri: URI '/ipp/print' not found[0m
+[0;33mW (84144) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (90718) virtual float TMP100::readTemperature(): Temperature is 28.375[0m
+[0;32mI (90719) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.375[0m
+[0;33mW (94283) httpd_uri: httpd_uri: URI '/ipp/print' not found[0m
+[0;33mW (94284) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;33mW (104419) httpd_uri: httpd_uri: URI '/ipp/print' not found[0m
+[0;33mW (104420) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (105722) virtual float TMP100::readTemperature(): Temperature is 28.375[0m
+[0;32mI (105724) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.375[0m
+[0;33mW (114567) httpd_uri: httpd_uri: URI '/ipp/print' not found[0m
+[0;33mW (114567) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (120719) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (120720) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;33mW (124691) httpd_uri: httpd_uri: URI '/ipp/print' not found[0m
+[0;33mW (124692) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;33mW (134868) httpd_uri: httpd_uri: URI '/ipp/print' not found[0m
+[0;33mW (134869) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (135721) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (135722) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;33mW (144981) httpd_uri: httpd_uri: URI '/ipp/print' not found[0m
+[0;33mW (144981) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (150719) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (150720) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;33mW (155125) httpd_uri: httpd_uri: URI '/ipp/print' not found[0m
+[0;33mW (155126) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;33mW (165271) httpd_uri: httpd_uri: URI '/ipp/print' not found[0m
+[0;33mW (165272) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (165721) virtual float TMP100::readTemperature(): Temperature is 28.3125[0m
+[0;32mI (165722) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.3125[0m
+[0;33mW (175395) httpd_uri: httpd_uri: URI '/ipp/print' not found[0m
+[0;33mW (175397) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (180719) virtual float TMP100::readTemperature(): Temperature is 28.375[0m
+[0;32mI (180720) void Amplifier::handleAmplifierThread(): In Periodic Timer Event, Temp is 28.375[0m

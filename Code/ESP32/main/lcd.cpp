@@ -28,19 +28,13 @@ void
 LCD::enableBacklight( bool enable ) {
 	uint8_t value = 0;
 	if ( enable ) {
-		value = 0x08;
-		mI2C->writeBytes( mAddr, &value, 1 );
+		mBacklight = BACKLIGHT_ON;
+		command( LCD_COMMAND_DISPLAYCONTROL | 0x04 );
+		
 	} else {
-		mI2C->writeBytes( mAddr, &value, 1 );
+		mBacklight = false;
+		command( LCD_COMMAND_DISPLAYCONTROL );
 	}
-
-	value = ~value;
-	if ( enable ) {
-        value = 0x08;
-        mI2C->writeBytes( mAddr, &value, 1 );
-    } else {
-        mI2C->writeBytes( mAddr, &value, 1 );
-    }
 
 	vTaskDelay( 10 / portTICK_PERIOD_MS );
 }

@@ -65,8 +65,8 @@ MEMORY
      in heap at runtime. However due to static ROM memory usage at this 176KB mark, the
      additional static memory temporarily cannot be used.
   */
-  dram0_0_seg (RW) : org = 0x3FFB0000 + 0xdb5c,
-                                     len = 0x2c200 - 0xdb5c
+  dram0_0_seg (RW) : org = 0x3FFB0000 + 0,
+                                     len = 0x2c200 - 0
   /* Flash mapped constant data */
   drom0_0_seg (R) : org = 0x3F400020, len = 0x400000-0x20
   /* (See iram0_2_seg for meaning of 0x20 offset in the above.) */

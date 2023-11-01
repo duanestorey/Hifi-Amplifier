@@ -250,7 +250,7 @@ Dolby_STA310::configureAC3() {
     mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_RPC, 0 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_KARAOKE, 0 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_DUALMODE, 0 );
-    mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_DOWNMIX, 2 );
+    mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_DOWNMIX, 4 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::OCFG, 2 );
 }
 

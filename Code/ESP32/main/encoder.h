@@ -10,8 +10,6 @@
 #include "nvs_flash.h"
 #include "esp_netif_sntp.h"
 #include "esp_sntp.h"
-
-#include "esp_bt.h"
 #include "sdkconfig.h"
 
 typedef enum {

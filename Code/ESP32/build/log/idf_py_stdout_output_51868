@@ -1,0 +1,26 @@
+[1/12] cd /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/main && /Users/duane/.espressif/python_env/idf5.2_py3.9_env/bin/python /Users/duane/Code/Github/esp-idf/components/spiffs/spiffsgen.py 0x19000 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/html /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/files.bin --page-size=256 --obj-name-len=32 --meta-len=4 --use-magic --use-magic-len
+[2/12] Performing build step for 'bootloader'
+[1/1] cd /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader/esp-idf/esptool_py && /Users/duane/.espressif/python_env/idf5.2_py3.9_env/bin/python /Users/duane/Code/Github/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader/bootloader.bin
+Bootloader binary size 0x68f0 bytes. 0x710 bytes (6%) free.
+[3/12] No install step for 'bootloader'
+[4/12] Completed 'bootloader'
+[5/12] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/http-server.cpp.obj
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/http-server.cpp: In member function 'void HTTP_Server::start()':
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/http-server.cpp:46:33: warning: missing initializer for member 'httpd_uri::method' [-Wmissing-field-initializers]
+   46 |         httpd_uri_t uri_get = {0};
+      |                                 ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/http-server.cpp:46:33: warning: missing initializer for member 'httpd_uri::handler' [-Wmissing-field-initializers]
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/http-server.cpp:46:33: warning: missing initializer for member 'httpd_uri::user_ctx' [-Wmissing-field-initializers]
+[6/12] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/main.cpp.obj
+[7/12] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/amplifier.cpp.obj
+[8/12] Linking C static library esp-idf/main/libmain.a
+[9/12] Generating ld/sections.ld
+[10/12] Linking CXX executable hifi-amp.elf
+[11/12] Generating binary image from built executable
+esptool.py v4.7.dev1
+Creating esp32 image...
+Merged 26 ELF sections
+Successfully created esp32 image.
+Generated /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/hifi-amp.bin
+[12/12] cd /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/esptool_py && /Users/duane/.espressif/python_env/idf5.2_py3.9_env/bin/python /Users/duane/Code/Github/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/partition_table/partition-table.bin /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/hifi-amp.bin
+hifi-amp.bin binary size 0x1062f0 bytes. Smallest app partition is 0x400000 bytes. 0x2f9d10 bytes (74%) free.

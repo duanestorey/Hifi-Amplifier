@@ -3,4 +3,8 @@
 nvs,      data, nvs,     0x9000,  0x4000,
 otadata,  data, ota,     0xd000,  0x2000,
 phy_init, data, phy,     0xf000,  0x2000,
-factory,  app,  factory, 0x20000,  2500000,
+factory,  app,  factory, 0x20000, 4M,
+ota_1,    app,  ota_1,   0x520000, 4M,
+ota_2,    app,  ota_2,   0x920000, 4M,
+files,    data, spiffs,  0xd20000, 100K
+

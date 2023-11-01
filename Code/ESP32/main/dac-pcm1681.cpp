@@ -8,7 +8,6 @@
 #define PCM1681_REG_OVER	12
 #define PCM1681_REG_DAMS	13
 
-
 #include "tmp100.h"
 
 DAC_PCM1681::DAC_PCM1681( uint8_t address, I2CBUS *bus ) : mAddress( address ), mI2C( bus ), mEnabled( false ) {

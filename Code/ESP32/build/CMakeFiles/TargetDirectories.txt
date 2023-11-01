@@ -384,7 +384,6 @@
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/esp_wifi/CMakeFiles/install.dir
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/esp_wifi/CMakeFiles/install/local.dir
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/esp_wifi/CMakeFiles/install/strip.dir
-/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/bt/CMakeFiles/__idf_bt.dir
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/bt/CMakeFiles/edit_cache.dir
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/bt/CMakeFiles/rebuild_cache.dir
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/bt/CMakeFiles/list_install_components.dir
@@ -623,6 +622,9 @@
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/wifi_provisioning/CMakeFiles/install/local.dir
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/wifi_provisioning/CMakeFiles/install/strip.dir
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/main/CMakeFiles/__idf_main.dir
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/main/CMakeFiles/spiffs_files_bin.dir
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/main/CMakeFiles/files-flash.dir
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/main/CMakeFiles/encrypted-files-flash.dir
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/main/CMakeFiles/edit_cache.dir
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/main/CMakeFiles/rebuild_cache.dir
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/main/CMakeFiles/list_install_components.dir
