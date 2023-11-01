@@ -91,7 +91,7 @@ private:
     void updateTimeFromNTP();
     void handleWifiCallback( int32_t event_id );
 
-    void updateInput( uint8_t input, bool doActualUpdate = true );
+    void updateInput( uint8_t newInput );
     void updateConnectedStatus( bool connected, bool doActualUpdate = true );
 
     void updateDisplay();

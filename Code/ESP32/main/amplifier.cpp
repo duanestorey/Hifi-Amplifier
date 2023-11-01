@@ -9,6 +9,7 @@
 #include "freertos/task.h"
 #include "freertos/event_groups.h"
 
+
 #include "esp_system.h"
 #include "esp_log.h"
 #include "driver/ledc.h"
@@ -26,6 +27,11 @@
 #include "channelsel-ax2358.h"
 #include "button.h"
 #include "http-server.h"
+
+#include "esp_netif_ip_addr.h"
+#include "esp_mac.h"
+#include "netdb.h"
+#include "mdns.h"
 
 Amplifier::Amplifier() : mWifiEnabled( false ), mWifiConnectionAttempts( 0 ), mUpdatingFromNTP( false ), mPoweredOn( true ), mDisplayQueue( 3 ), mTimerID( 0 ), mButtonTimerID( 0 ), mReconnectTimerID( 0 ), mLCD( 0 ),
     mDAC( 0 ), mChannelSel( 0 ), mDolbyDecoder( 0 ), mWebServer( 0 ), mMicroprocessorTemp( 0 ), mVolumeEncoder( 15, 13, true ), mInputEncoder( 4, 16, false ), mAudioTimerID( 0 ), mPendingVolumeChange( false ), mPendingVolume( 0 ),
@@ -45,20 +51,6 @@ Amplifier::getCurrentState() {
 }
 
 void 
-Amplifier::updateInput( uint8_t input, bool doActualUpdate ) {
-    {
-        ScopedLock lock( mStateMutex );
-        mState.mInput = input;
-    }
-
-    mChannelSel->setInput( input );
-
-    if ( doActualUpdate ) {
-        asyncUpdateDisplay();
-    }
-}
-
-void 
 Amplifier::updateConnectedStatus( bool connected, bool doActualUpdate ) {
     {
         ScopedLock lock( mStateMutex );
@@ -72,7 +64,20 @@ Amplifier::updateConnectedStatus( bool connected, bool doActualUpdate ) {
     if ( connected ) {
         gpio_set_level( PIN_LED_CONNECTED, 1 );
 
-        mWebServer->start();
+   
+        esp_err_t err = mdns_init();
+        if (err) {
+            printf("MDNS Init failed: %d\n", err);
+            return;
+        }
+
+        //set hostname
+        mdns_hostname_set( "amp" ) ;
+
+        mdns_instance_name_set( "Hifi Audio Amplifier" );
+        mdns_service_add(NULL, "_http", "_tcp", 80, NULL, 0);
+
+       // mWebServer->start();
     } else {
         gpio_set_level( PIN_LED_CONNECTED, 0 );
 
@@ -197,9 +202,9 @@ Amplifier::updateDisplay() {
         case AmplifierState::AUDIO_ANALOG:
 
             if ( state.mEnhancement ) {
-                strcpy( left, "ANALOG/ENH" );
+                strcpy( left, "Analog/Enh" );
             }  else {
-                strcpy( left, "ANALOG" );
+                strcpy( left, "Analog" );
             }
             sprintf( s, "%-10s%10s", left, rate );
             break;
@@ -270,6 +275,24 @@ Amplifier::handleTimerThread() {
     } 
 }
 
+void
+Amplifier::updateInput( uint8_t newInput ) {
+    {
+        ScopedLock lock( mStateMutex );
+
+        mState.mInput = newInput;  
+        if ( newInput == AmplifierState::INPUT_6CH ) {
+            mState.mAudioType = AmplifierState::AUDIO_DOLBY;
+        } else {
+            mState.mAudioType = AmplifierState::AUDIO_ANALOG;
+        }  
+    }
+
+    mAudioQueue.add( Message::MSG_INPUT_SET, mState.mInput );
+
+    asyncUpdateDisplay();
+}
+
 void 
 Amplifier::handleAmplifierThread() {
     AMP_DEBUG_SI( "Starting Amplifier Thread on Core " << xPortGetCoreID() );
@@ -315,26 +338,36 @@ Amplifier::handleAmplifierThread() {
                     {
                         ScopedLock lock( mStateMutex );
 
-                        if ( mState.mCurrentVolume < 79 ) {
-                            mState.mCurrentVolume++;
+                        uint8_t increase = msg.mParam;
+                        if ( increase == 0 ) increase = 1;
 
-                            asyncUpdateDisplay();
-
-                            mAudioQueue.add( Message::MSG_VOLUME_SET, mState.mCurrentVolume );
+                        if ( ( mState.mCurrentVolume + increase ) > 79 ) {
+                            mState.mCurrentVolume = 79;
+                        } else {
+                            mState.mCurrentVolume = mState.mCurrentVolume + increase;
                         }
+                        
+                        asyncUpdateDisplay();
+
+                        mAudioQueue.add( Message::MSG_VOLUME_SET, mState.mCurrentVolume );
                     }
                     break;
                 case Message::MSG_VOLUME_DOWN:
                     {
                         ScopedLock lock( mStateMutex );
 
-                        if ( mState.mCurrentVolume > 0 ) {
-                            mState.mCurrentVolume--;
+                        uint8_t decrease = msg.mParam;
+                        if ( decrease == 0 ) decrease = 1;
 
-                            asyncUpdateDisplay();
-
-                            mAudioQueue.add( Message::MSG_VOLUME_SET, mState.mCurrentVolume );
+                        if ( mState.mCurrentVolume <= decrease ) {
+                            mState.mCurrentVolume = 0;
+                        } else {
+                            mState.mCurrentVolume = mState.mCurrentVolume - decrease;
                         }
+
+                        asyncUpdateDisplay();
+
+                        mAudioQueue.add( Message::MSG_VOLUME_SET, mState.mCurrentVolume );
                     }  
                     break;
                 case Message::MSG_INPUT_UP:
@@ -343,67 +376,52 @@ Amplifier::handleAmplifierThread() {
 
                         switch( mState.mInput ) {
                             case AmplifierState::INPUT_STEREO_1:
-                                mState.mInput = AmplifierState::INPUT_STEREO_2;
-                                mState.mAudioType = AmplifierState::AUDIO_ANALOG;
+                                updateInput( AmplifierState::INPUT_STEREO_2 );
                                 break;
                             case AmplifierState::INPUT_STEREO_2:
-                                mState.mInput = AmplifierState::INPUT_STEREO_3;
-                                mState.mAudioType = AmplifierState::AUDIO_ANALOG;
+                                updateInput( AmplifierState::INPUT_STEREO_3 );
                                 break;
                             case AmplifierState::INPUT_STEREO_3:
-                                mState.mInput = AmplifierState::INPUT_STEREO_4;
-                                mState.mAudioType = AmplifierState::AUDIO_ANALOG;
+                                updateInput( AmplifierState::INPUT_STEREO_4 );
                                 break;
                             case AmplifierState::INPUT_STEREO_4:
-                                mState.mInput = AmplifierState::INPUT_6CH;
-                                mState.mAudioType = AmplifierState::AUDIO_DOLBY;
+                                updateInput( AmplifierState::INPUT_6CH );
                                 break;
                             case AmplifierState::INPUT_6CH:
-                                mState.mInput = AmplifierState::INPUT_STEREO_1;
-                                mState.mAudioType = AmplifierState::AUDIO_ANALOG;
+                                updateInput( AmplifierState::INPUT_STEREO_1 );
                                 break;
                             default:
                                 break;
                         }
-
-                        asyncUpdateDisplay();
-
-                        mAudioQueue.add( Message::MSG_INPUT_SET, mState.mInput );
                     }
                     break;
                 case Message::MSG_INPUT_DOWN:
                     {
                         ScopedLock lock( mStateMutex );
-                        
+
                         switch( mState.mInput ) {
                             case AmplifierState::INPUT_STEREO_1:
-                                mState.mInput = AmplifierState::INPUT_6CH;
-                                mState.mAudioType = AmplifierState::AUDIO_DOLBY;
+                                updateInput( AmplifierState::INPUT_6CH );
                                 break;
                             case AmplifierState::INPUT_STEREO_2:
-                                mState.mInput = AmplifierState::INPUT_STEREO_1;
-                                mState.mAudioType = AmplifierState::AUDIO_ANALOG;
+                                updateInput( AmplifierState::INPUT_STEREO_1 );
                                 break;
                             case AmplifierState::INPUT_STEREO_3:
-                                mState.mInput = AmplifierState::INPUT_STEREO_2;
-                                mState.mAudioType = AmplifierState::AUDIO_ANALOG;
+                                updateInput( AmplifierState::INPUT_STEREO_2 );
                                 break;
                             case AmplifierState::INPUT_STEREO_4:
-                                mState.mInput = AmplifierState::INPUT_STEREO_3;
-                                mState.mAudioType = AmplifierState::AUDIO_ANALOG;
+                                updateInput( AmplifierState::INPUT_STEREO_3 );
                                 break;
                             case AmplifierState::INPUT_6CH:
-                                mState.mInput = AmplifierState::INPUT_STEREO_4;
-                                mState.mAudioType = AmplifierState::AUDIO_ANALOG;
+                                updateInput( AmplifierState::INPUT_STEREO_4 );
                                 break;
                             default:
                                 break;
                         }
-
-                        asyncUpdateDisplay();
-
-                        mAudioQueue.add( Message::MSG_INPUT_SET, mState.mInput );
                     }       
+                    break;
+                case Message::MSG_INPUT_SET:
+                    updateInput( msg.mParam );
                     break;
                 case Message::MSG_BUTTON_PRESSED:
                     AMP_DEBUG_SI(  "Button pressed! " << msg.mParam );
@@ -463,6 +481,10 @@ Amplifier::handleVolumeButtonPress() {
 
 void 
 Amplifier::startDigitalAudio() {
+    //gpio_set_level( PIN_DECODER_RESET, 1 );
+
+    vTaskDelay( 100 / portTICK_PERIOD_MS );
+
     mDolbyDecoder->startDolby(); 
 
     // Dolby Decoder is muted, but running, so it's outputting zeros and a clock to the DAC
@@ -473,8 +495,6 @@ Amplifier::startDigitalAudio() {
     mDAC->setVolume( 128 );
     mDAC->enable( true );
 
-   // mDolbyDecoder->setAttenuation( 0 );
-
     mDolbyDecoder->play( true );
 
     vTaskDelay( 250 / portTICK_PERIOD_MS );
@@ -484,6 +504,8 @@ void
 Amplifier::stopDigitalAudio() {
     mDAC->enable( false );
     mDolbyDecoder->stopDolby();
+
+   // gpio_set_level( PIN_DECODER_RESET, 0 );
 }
 
 void 
@@ -901,6 +923,7 @@ Amplifier::setupPWM() {
 
 void
 Amplifier::configurePins() {
+    AMP_DEBUG_I( "Configuring pins" );
     gpio_install_isr_service( 0 );
 
     // Configure LEDs

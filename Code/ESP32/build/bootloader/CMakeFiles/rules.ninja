@@ -136,7 +136,7 @@ rule C_STATIC_LIBRARY_LINKER____idf_spi_flash_
 #############################################
 # Rule for compiling C files.
 
-rule C_COMPILER____idf_esp_bootloader_format_unscanned_
+rule C_COMPILER____idf_esp_app_format_unscanned_
   depfile = $DEP_FILE
   deps = gcc
   command = ${LAUNCHER}${CODE_CHECK}/Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -146,7 +146,7 @@ rule C_COMPILER____idf_esp_bootloader_format_unscanned_
 #############################################
 # Rule for linking C static library.
 
-rule C_STATIC_LIBRARY_LINKER____idf_esp_bootloader_format_
+rule C_STATIC_LIBRARY_LINKER____idf_esp_app_format_
   command = $PRE_LINK && /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E rm -f $TARGET_FILE && /Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/xtensa-esp32-elf-ar qc $TARGET_FILE $LINK_FLAGS $in && /Users/duane/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/xtensa-esp32-elf-ranlib $TARGET_FILE && /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -E touch $TARGET_FILE && $POST_BUILD
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT

@@ -4,7 +4,6 @@
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/driver/libdriver.a
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/esp_pm/libesp_pm.a
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/mbedtls/libmbedtls.a
-/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/esp_bootloader_format/libesp_bootloader_format.a
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/esp_app_format/libesp_app_format.a
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/bootloader_support/libbootloader_support.a
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/esp_partition/libesp_partition.a
@@ -57,10 +56,10 @@
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/fatfs/libfatfs.a
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/json/libjson.a
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/mqtt/libmqtt.a
-/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/nvs_sec_provider/libnvs_sec_provider.a
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/perfmon/libperfmon.a
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/spiffs/libspiffs.a
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/espressif__mdns/libespressif__mdns.a
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/main/libmain.a
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/i2cdev/libi2cdev.a
 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/ads111x/libads111x.a

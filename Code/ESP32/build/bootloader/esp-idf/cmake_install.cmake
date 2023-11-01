@@ -69,11 +69,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader/esp-idf/esp_bootloader_format/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
   include("/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader/esp-idf/esp_app_format/cmake_install.cmake")
 endif()
 

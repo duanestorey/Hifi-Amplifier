@@ -1,0 +1,112 @@
+[1/13] cd /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/main && /Users/duane/.espressif/python_env/idf5.1_py3.9_env/bin/python /Users/duane/Code/Github/esp-idf/components/spiffs/spiffsgen.py 0x19000 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/html /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/files.bin --page-size=256 --obj-name-len=32 --meta-len=4 --use-magic --use-magic-len
+[2/13] Performing build step for 'bootloader'
+[1/1] cd /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader/esp-idf/esptool_py && /Users/duane/.espressif/python_env/idf5.1_py3.9_env/bin/python /Users/duane/Code/Github/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader/bootloader.bin
+Bootloader binary size 0x6800 bytes. 0x800 bytes (7%) free.
+[3/13] No install step for 'bootloader'
+[4/13] Completed 'bootloader'
+[5/13] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/main.cpp.obj
+[6/13] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/http-server.cpp.obj
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/http-server.cpp: In member function 'void HTTP_Server::start()':
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/http-server.cpp:194:33: warning: missing initializer for member 'httpd_uri::method' [-Wmissing-field-initializers]
+  194 |         httpd_uri_t uri_get = {0};
+      |                                 ^
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/http-server.cpp:194:33: warning: missing initializer for member 'httpd_uri::handler' [-Wmissing-field-initializers]
+/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/main/http-server.cpp:194:33: warning: missing initializer for member 'httpd_uri::user_ctx' [-Wmissing-field-initializers]
+[7/13] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/amplifier.cpp.obj
+[8/13] Linking C static library esp-idf/main/libmain.a
+[9/13] Generating ld/sections.ld
+[10/13] Linking CXX executable hifi-amp.elf
+[11/13] Generating binary image from built executable
+esptool.py v4.7.dev2
+Creating esp32 image...
+Merged 27 ELF sections
+Successfully created esp32 image.
+Generated /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/hifi-amp.bin
+[12/13] cd /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/esptool_py && /Users/duane/.espressif/python_env/idf5.1_py3.9_env/bin/python /Users/duane/Code/Github/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/partition_table/partition-table.bin /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/hifi-amp.bin
+hifi-amp.bin binary size 0x10c110 bytes. Smallest app partition is 0x400000 bytes. 0x2f3ef0 bytes (74%) free.
+[12/13] cd /Users/duane/Code/Github/esp-idf/components/esptool_py && /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -D IDF_PATH=/Users/duane/Code/Github/esp-idf -D "SERIAL_TOOL=/Users/duane/.espressif/python_env/idf5.1_py3.9_env/bin/python;;/Users/duane/Code/Github/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build -P /Users/duane/Code/Github/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/cu.usbserial-A50285BI -b 1500000 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size detect 0x1000 bootloader/bootloader.bin 0x20000 hifi-amp.bin 0x8000 partition_table/partition-table.bin 0xd000 ota_data_initial.bin 0xd20000 files.bin
+esptool.py v4.7.dev2
+Serial port /dev/cu.usbserial-A50285BI
+Connecting....
+Chip is ESP32-D0WD-V3 (revision v3.0)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: c4:de:e2:1b:1a:b8
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 1500000
+Changed.
+Configuring flash size...
+Auto-detected Flash size: 16MB
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00020000 to 0x0012cfff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Flash will be erased from 0x0000d000 to 0x0000efff...
+Flash will be erased from 0x00d20000 to 0x00d38fff...
+Compressed 26624 bytes to 16667...
+Writing at 0x00001000... (50 %)
+Writing at 0x0000768a... (100 %)
+Wrote 26624 bytes (16667 compressed) at 0x00001000 in 0.6 seconds (effective 358.8 kbit/s)...
+Hash of data verified.
+Compressed 1098000 bytes to 684047...
+Writing at 0x00020000... (2 %)
+Writing at 0x0002c5d8... (4 %)
+Writing at 0x00036f27... (7 %)
+Writing at 0x0003ba2d... (9 %)
+Writing at 0x00043790... (11 %)
+Writing at 0x00057274... (14 %)
+Writing at 0x0005d483... (16 %)
+Writing at 0x00062f50... (19 %)
+Writing at 0x00067fe5... (21 %)
+Writing at 0x0006d749... (23 %)
+Writing at 0x0007250b... (26 %)
+Writing at 0x000776b3... (28 %)
+Writing at 0x0007cb9a... (30 %)
+Writing at 0x000819ff... (33 %)
+Writing at 0x00086a69... (35 %)
+Writing at 0x0008bf40... (38 %)
+Writing at 0x0009161f... (40 %)
+Writing at 0x00096b90... (42 %)
+Writing at 0x0009bd62... (45 %)
+Writing at 0x000a1299... (47 %)
+Writing at 0x000a6562... (50 %)
+Writing at 0x000abc37... (52 %)
+Writing at 0x000b12b6... (54 %)
+Writing at 0x000b6e00... (57 %)
+Writing at 0x000bc16b... (59 %)
+Writing at 0x000c1027... (61 %)
+Writing at 0x000c6005... (64 %)
+Writing at 0x000cb7aa... (66 %)
+Writing at 0x000d14bb... (69 %)
+Writing at 0x000d82f6... (71 %)
+Writing at 0x000df778... (73 %)
+Writing at 0x000e8811... (76 %)
+Writing at 0x000ef3d5... (78 %)
+Writing at 0x000f4c8a... (80 %)
+Writing at 0x000faefa... (83 %)
+Writing at 0x0010306a... (85 %)
+Writing at 0x0010b27d... (88 %)
+Writing at 0x00112f26... (90 %)
+Writing at 0x0011804f... (92 %)
+Writing at 0x0011d31f... (95 %)
+Writing at 0x001225bc... (97 %)
+Writing at 0x00128040... (100 %)
+Wrote 1098000 bytes (684047 compressed) at 0x00020000 in 10.3 seconds (effective 856.6 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 155...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (155 compressed) at 0x00008000 in 0.1 seconds (effective 384.8 kbit/s)...
+Hash of data verified.
+Compressed 8192 bytes to 31...
+Writing at 0x0000d000... (100 %)
+Wrote 8192 bytes (31 compressed) at 0x0000d000 in 0.1 seconds (effective 512.9 kbit/s)...
+Hash of data verified.
+Compressed 102400 bytes to 1087...
+Writing at 0x00d20000... (100 %)
+Wrote 102400 bytes (1087 compressed) at 0x00d20000 in 0.8 seconds (effective 964.7 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

@@ -248,13 +248,10 @@ IDF_TARGET:STRING=esp32
 IDF_TOOLCHAIN:STRING=gcc
 
 //No help, variable specified on the command line.
-IGNORE_EXTRA_COMPONENT:UNINITIALIZED=
-
-//No help, variable specified on the command line.
 PROJECT_SOURCE_DIR:UNINITIALIZED=/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32
 
 //No help, variable specified on the command line.
-PYTHON:UNINITIALIZED=/Users/duane/.espressif/python_env/idf5.2_py3.9_env/bin/python
+PYTHON:UNINITIALIZED=/Users/duane/.espressif/python_env/idf5.1_py3.9_env/bin/python
 
 //No help, variable specified on the command line.
 PYTHON_DEPS_CHECKED:UNINITIALIZED=1
@@ -394,7 +391,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=23
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=22
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

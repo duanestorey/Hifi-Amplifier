@@ -100,7 +100,7 @@ protected:
     bool mMuted;
     bool mPlaying;
 private:
-	void softReset();
+	void softReset( bool output = true );
 	void enableAudioPLL();
 	void configureAudioPLL();
 	void configureInterrupts( bool enableHDR = false );

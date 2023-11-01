@@ -286,10 +286,10 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 //Disable package configuration, target export and installation
 DISABLE_PACKAGE_CONFIG_AND_INSTALL:BOOL=ON
 
-//Build mbed TLS programs.
+//Build Mbed TLS programs.
 ENABLE_PROGRAMS:BOOL=
 
-//Build mbed TLS tests.
+//Build Mbed TLS tests.
 ENABLE_TESTING:BOOL=
 
 //No help, variable specified on the command line.
@@ -307,20 +307,35 @@ IDF_TARGET:STRING=esp32
 //IDF Build Toolchain Type
 IDF_TOOLCHAIN:STRING=gcc
 
-//Install mbed TLS headers.
+//Install Mbed TLS headers.
 INSTALL_MBEDTLS_HEADERS:BOOL=ON
 
-//Explicitly link mbed TLS library to pthread.
+//Explicitly link Mbed TLS library to pthread.
 LINK_WITH_PTHREAD:BOOL=OFF
 
-//Explicitly link mbed TLS library to trusted_storage.
+//Explicitly link Mbed TLS library to trusted_storage.
 LINK_WITH_TRUSTED_STORAGE:BOOL=OFF
+
+//Mbed TLS config file (overrides default).
+MBEDTLS_CONFIG_FILE:FILEPATH=
 
 //Compiler warnings treated as errors
 MBEDTLS_FATAL_WARNINGS:BOOL=ON
 
+//Mbed TLS user config file (appended to default).
+MBEDTLS_USER_CONFIG_FILE:FILEPATH=
+
+//Value Computed by CMake
+Mbed TLS_BINARY_DIR:STATIC=/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/mbedtls/mbedtls
+
+//Value Computed by CMake
+Mbed TLS_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Mbed TLS_SOURCE_DIR:STATIC=/Users/duane/Code/Github/esp-idf/components/mbedtls/mbedtls
+
 //No help, variable specified on the command line.
-PYTHON:UNINITIALIZED=/Users/duane/.espressif/python_env/idf5.2_py3.9_env/bin/python
+PYTHON:UNINITIALIZED=/Users/duane/.espressif/python_env/idf5.1_py3.9_env/bin/python
 
 //No help, variable specified on the command line.
 PYTHON_DEPS_CHECKED:UNINITIALIZED=1
@@ -328,10 +343,10 @@ PYTHON_DEPS_CHECKED:UNINITIALIZED=1
 //Allow unsafe builds. These builds ARE NOT SECURE.
 UNSAFE_BUILD:BOOL=OFF
 
-//Build mbed TLS shared library.
+//Build Mbed TLS shared library.
 USE_SHARED_MBEDTLS_LIBRARY:BOOL=OFF
 
-//Build mbed TLS static library.
+//Build Mbed TLS static library.
 USE_STATIC_MBEDTLS_LIBRARY:BOOL=ON
 
 //Value Computed by CMake
@@ -343,6 +358,9 @@ esp-idf_IS_TOP_LEVEL:STATIC=OFF
 //Value Computed by CMake
 esp-idf_SOURCE_DIR:STATIC=/Users/duane/Code/Github/esp-idf
 
+//Dependencies for the target
+everest_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_newlib;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_xtensa;
+
 //Value Computed by CMake
 hifi-amp_BINARY_DIR:STATIC=/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build
 
@@ -352,23 +370,17 @@ hifi-amp_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 hifi-amp_SOURCE_DIR:STATIC=/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32
 
-//Value Computed by CMake
-mbed TLS_BINARY_DIR:STATIC=/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/mbedtls/mbedtls
-
-//Value Computed by CMake
-mbed TLS_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-mbed TLS_SOURCE_DIR:STATIC=/Users/duane/Code/Github/esp-idf/components/mbedtls/mbedtls
-
 //Dependencies for the target
-mbedcrypto_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_newlib;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_xtensa;
+mbedcrypto_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_newlib;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_xtensa;general;everest;general;p256m;
 
 //Dependencies for the target
 mbedtls_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_newlib;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_xtensa;general;mbedx509;
 
 //Dependencies for the target
 mbedx509_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_newlib;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_xtensa;general;mbedcrypto;
+
+//Dependencies for the target
+p256m_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_newlib;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_xtensa;
 
 
 ########################
@@ -516,7 +528,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=174
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=175
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -566,7 +578,7 @@ C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS:INTERNAL=1
 //Details about finding Git
 FIND_PACKAGE_MESSAGE_DETAILS_Git:INTERNAL=[/usr/bin/git][v2.39.3 (Apple Git-145)()]
 //Details about finding Python3
-FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/Users/duane/.espressif/python_env/idf5.2_py3.9_env/bin/python][cfound components: Interpreter ][v3.9.6()]
+FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/Users/duane/.espressif/python_env/idf5.1_py3.9_env/bin/python][cfound components: Interpreter ][v3.9.6()]
 //ADVANCED property for variable: GIT_EXECUTABLE
 GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 //Have include stddef.h
@@ -585,10 +597,10 @@ _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
 _Python3_Compiler_REASON_FAILURE:INTERNAL=
 //Development reason failure
 _Python3_Development_REASON_FAILURE:INTERNAL=
-_Python3_EXECUTABLE:INTERNAL=/Users/duane/.espressif/python_env/idf5.2_py3.9_env/bin/python
+_Python3_EXECUTABLE:INTERNAL=/Users/duane/.espressif/python_env/idf5.1_py3.9_env/bin/python
 //Python3 Properties
-_Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;9;6;32;64;;;abi3;/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9;/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9;/Users/duane/.espressif/python_env/idf5.2_py3.9_env/lib/python3.9/site-packages;/Users/duane/.espressif/python_env/idf5.2_py3.9_env/lib/python3.9/site-packages
-_Python3_INTERPRETER_SIGNATURE:INTERNAL=6a89f7f44b0e146213a87615d9bf147a
+_Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;9;6;32;64;;;abi3;/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9;/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9;/Users/duane/.espressif/python_env/idf5.1_py3.9_env/lib/python3.9/site-packages;/Users/duane/.espressif/python_env/idf5.1_py3.9_env/lib/python3.9/site-packages
+_Python3_INTERPRETER_SIGNATURE:INTERNAL=2acac0d82af87ac2cf3f5cb4ae86d447
 //NumPy reason failure
 _Python3_NumPy_REASON_FAILURE:INTERNAL=
 

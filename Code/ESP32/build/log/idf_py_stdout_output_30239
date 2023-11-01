@@ -1,8 +1,0 @@
-[1/11] Performing build step for 'bootloader'
-[1/1] cd /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader/esp-idf/esptool_py && /Users/duane/.espressif/python_env/idf5.2_py3.9_env/bin/python /Users/duane/Code/Github/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader/bootloader.bin
-Bootloader binary size 0x68f0 bytes. 0x710 bytes (6%) free.
-[2/11] No install step for 'bootloader'
-[3/11] Completed 'bootloader'
-[4/11] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/dolby-sta310.cpp.obj
-[5/11] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/amplifier.cpp.obj
-[6/11] Linking C static library esp-idf/main/libmain.a

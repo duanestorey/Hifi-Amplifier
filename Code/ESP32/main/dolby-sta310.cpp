@@ -44,9 +44,9 @@ Dolby_STA310::stopDolby() {
     if ( mRunning ) {
         mBus->writeRegisterByte( mAddr, Dolby_STA310::SOFT_MUTE, 1 );
 
-        vTaskDelay( 100 / portTICK_PERIOD_MS );
+        softReset( false );
 
-        softReset();
+        vTaskDelay( 100 / portTICK_PERIOD_MS );
 
         mRunning = false;
         mInitialized = false;
@@ -90,7 +90,7 @@ Dolby_STA310::play( bool enable ) {
 }
 
 void 
-Dolby_STA310::softReset() {
+Dolby_STA310::softReset( bool output ) {
     AMP_DEBUG_I( "Performing soft reset" );
     mInitialized = false;
     mRunning = false;
@@ -117,8 +117,11 @@ Dolby_STA310::softReset() {
 
             AMP_DEBUG_I( "Initalized" );
 
-            enableAudioPLL();
-            mute( true );
+            if ( output ) {
+                enableAudioPLL();
+                mute( true );
+            }
+        
             
 		} else {
 			attempts++;
@@ -245,13 +248,13 @@ Dolby_STA310::configureAC3() {
 
 
     mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_COMP_MOD, 2 );
-    mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_HDR, 0x10 );
-    mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_LDR, 0x10 );
+    mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_HDR, 0x0 );
+    mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_LDR, 0x0 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_RPC, 0 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_KARAOKE, 0 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_DUALMODE, 0 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_DOWNMIX, 4 );
-    mBus->writeRegisterByte( mAddr, Dolby_STA310::OCFG, 2 );
+    mBus->writeRegisterByte( mAddr, Dolby_STA310::OCFG, 2 + 64 );
 }
 
 void 

@@ -1,0 +1,26 @@
+[1/5] cd /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/esptool_py && /Users/duane/.espressif/python_env/idf5.1_py3.9_env/bin/python /Users/duane/Code/Github/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/partition_table/partition-table.bin /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/hifi-amp.bin
+hifi-amp.bin binary size 0x105e00 bytes. Smallest app partition is 0x400000 bytes. 0x2fa200 bytes (74%) free.
+[2/5] cd /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/main && /Users/duane/.espressif/python_env/idf5.1_py3.9_env/bin/python /Users/duane/Code/Github/esp-idf/components/spiffs/spiffsgen.py 0x19000 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/html /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/files.bin --page-size=256 --obj-name-len=32 --meta-len=4 --use-magic --use-magic-len
+[3/5] Performing build step for 'bootloader'
+[0/1] Re-running CMake...
+-- Building ESP-IDF components for target esp32
+-- Project sdkconfig file /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/sdkconfig
+Compiler supported targets: xtensa-esp32-elf
+
+-- Adding linker script /Users/duane/Code/Github/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- App "bootloader" version: v5.1.1-686-gb6a66b7d8c
+-- Adding linker script /Users/duane/Code/Github/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /Users/duane/Code/Github/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /Users/duane/Code/Github/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /Users/duane/Code/Github/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script /Users/duane/Code/Github/esp-idf/components/bootloader/subproject/main/ld/esp32/bootloader.ld
+-- Adding linker script /Users/duane/Code/Github/esp-idf/components/bootloader/subproject/main/ld/esp32/bootloader.rom.ld
+-- Components: bootloader bootloader_support efuse esp_app_format esp_common esp_hw_support esp_rom esp_system esptool_py freertos hal log main micro-ecc newlib partition_table soc spi_flash xtensa
+-- Component paths: /Users/duane/Code/Github/esp-idf/components/bootloader /Users/duane/Code/Github/esp-idf/components/bootloader_support /Users/duane/Code/Github/esp-idf/components/efuse /Users/duane/Code/Github/esp-idf/components/esp_app_format /Users/duane/Code/Github/esp-idf/components/esp_common /Users/duane/Code/Github/esp-idf/components/esp_hw_support /Users/duane/Code/Github/esp-idf/components/esp_rom /Users/duane/Code/Github/esp-idf/components/esp_system /Users/duane/Code/Github/esp-idf/components/esptool_py /Users/duane/Code/Github/esp-idf/components/freertos /Users/duane/Code/Github/esp-idf/components/hal /Users/duane/Code/Github/esp-idf/components/log /Users/duane/Code/Github/esp-idf/components/bootloader/subproject/main /Users/duane/Code/Github/esp-idf/components/bootloader/subproject/components/micro-ecc /Users/duane/Code/Github/esp-idf/components/newlib /Users/duane/Code/Github/esp-idf/components/partition_table /Users/duane/Code/Github/esp-idf/components/soc /Users/duane/Code/Github/esp-idf/components/spi_flash /Users/duane/Code/Github/esp-idf/components/xtensa
+-- Configuring done (1.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader
+[1/1] cd /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader/esp-idf/esptool_py && /Users/duane/.espressif/python_env/idf5.1_py3.9_env/bin/python /Users/duane/Code/Github/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader/bootloader.bin
+Bootloader binary size 0x6800 bytes. 0x800 bytes (7%) free.
+[4/5] No install step for 'bootloader'
+[5/5] Completed 'bootloader'

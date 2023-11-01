@@ -1,11 +1,48 @@
 <html>
 	<head>
+		<meta charset="UTF-8">
+   		<meta name="viewport" content="width=device-width">
+		<link rel="apple-touch-icon" href="https://duanestorey77.s3-us-west-2.amazonaws.com/amp-icon.png">
 		<style type="text/css">
-			body { background: black; color: white; text-align: center; padding-top: 10px; }
+			body { font-size: 10pt; margin-top: 30px; background: black; color: white; text-align: left; padding-top: 10px; font-family: Lucida Grande; }
+			a.button { display: inline-block; color: white; padding: 15px 1.5%; margin: 1%; text-decoration: none; text-transform: uppercase; width: 43%; background: #22304e; border: 1px solid darkgrey; }
+			hr { max-width: 50% }
+			h3 { text-transform: uppercase; color: white; font-size: 10pt; text-align: left; padding-bottom: 5px; padding-left: 1.5%; margin-bottom: 5px; margin-left: 0px; }
+		
+
+			a.button:hover {
+				background: #ddd;
+				color: black;
+			}
+			#main {
+				padding: 10px; 
+			}
 		</style>
-		<title>Hey</title>
+		<title>Amp.Local</title>
 	</head>
 	<body>
-		<h1>Amplifier</h1>
+
+		<div id="main">
+				<h3>Power</h3>
+					<a class="button" href="/poweroff">Off</a>
+					<a class="button" href="/poweron">On</a>
+
+				<h3>Volume</h3>
+					<a class="button" href="/volumedown">-1 dB</a>
+					<a class="button" href="/volumedown5">-5 dB</a>
+					
+					<a class="button" href="/volumeup">+1 dB</a>
+					<a class="button" href="/volumeup5">+5 dB</a>
+
+
+				<h3>Input</h3>
+
+				<a class="button" href="/input_6ch">6CH</a>
+				<a class="button" href="/input_tv">TV</a>
+				<a class="button" href="/input_streamer">Streamer</a>
+				<a class="button" href="/input_game">Game</a>
+				<a class="button" href="/input_vinyl">Vinyl</a></td>
+	
+		</div>
 	</body>
 </html>

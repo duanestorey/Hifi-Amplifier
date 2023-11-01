@@ -69,11 +69,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/esp_bootloader_format/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
   include("/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/esp_app_format/cmake_install.cmake")
 endif()
 
@@ -379,11 +374,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/nvs_sec_provider/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
   include("/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/openthread/cmake_install.cmake")
 endif()
 
@@ -410,6 +400,11 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/wifi_provisioning/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/espressif__mdns/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
