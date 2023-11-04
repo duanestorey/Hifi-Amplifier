@@ -77,7 +77,7 @@ Amplifier::updateConnectedStatus( bool connected, bool doActualUpdate ) {
         mdns_instance_name_set( "Hifi Audio Amplifier" );
         mdns_service_add(NULL, "_http", "_tcp", 80, NULL, 0);
 
-       // mWebServer->start();
+        mWebServer->start();
     } else {
         gpio_set_level( PIN_LED_CONNECTED, 0 );
 
@@ -152,7 +152,7 @@ Amplifier::updateDisplay() {
     char s[32];
     char d[14];
 
-    sprintf( d, "Vol %ddB", ( state.mCurrentVolume - 79 ) );
+    sprintf( d, "Vol %ddB", ( -state.mCurrentAttenuation ) );
 
     if ( state.mConnected ) {
         sprintf( s, "%-12s%8s", d, "Wifi" );
@@ -277,6 +277,7 @@ Amplifier::handleTimerThread() {
 
 void
 Amplifier::updateInput( uint8_t newInput ) {
+    AMP_DEBUG_SI( "Trying to set input to " << newInput );
     {
         ScopedLock lock( mStateMutex );
 
@@ -341,15 +342,15 @@ Amplifier::handleAmplifierThread() {
                         uint8_t increase = msg.mParam;
                         if ( increase == 0 ) increase = 1;
 
-                        if ( ( mState.mCurrentVolume + increase ) > 79 ) {
-                            mState.mCurrentVolume = 79;
+                        if ( ( mState.mCurrentAttenuation - increase ) > 0 ) {
+                            mState.mCurrentAttenuation = mState.mCurrentAttenuation - increase;
                         } else {
-                            mState.mCurrentVolume = mState.mCurrentVolume + increase;
+                            mState.mCurrentAttenuation = 0;
                         }
                         
                         asyncUpdateDisplay();
 
-                        mAudioQueue.add( Message::MSG_VOLUME_SET, mState.mCurrentVolume );
+                        mAudioQueue.add( Message::MSG_VOLUME_SET, mState.mCurrentAttenuation );
                     }
                     break;
                 case Message::MSG_VOLUME_DOWN:
@@ -359,66 +360,58 @@ Amplifier::handleAmplifierThread() {
                         uint8_t decrease = msg.mParam;
                         if ( decrease == 0 ) decrease = 1;
 
-                        if ( mState.mCurrentVolume <= decrease ) {
-                            mState.mCurrentVolume = 0;
+                        if ( ( mState.mCurrentAttenuation + decrease ) <= 79 ) {
+                            mState.mCurrentAttenuation = mState.mCurrentAttenuation + decrease;
                         } else {
-                            mState.mCurrentVolume = mState.mCurrentVolume - decrease;
+                            mState.mCurrentAttenuation = 79;
                         }
 
                         asyncUpdateDisplay();
 
-                        mAudioQueue.add( Message::MSG_VOLUME_SET, mState.mCurrentVolume );
+                        mAudioQueue.add( Message::MSG_VOLUME_SET, mState.mCurrentAttenuation );
                     }  
                     break;
                 case Message::MSG_INPUT_UP:
-                    {
-                        ScopedLock lock( mStateMutex );
-
-                        switch( mState.mInput ) {
-                            case AmplifierState::INPUT_STEREO_1:
-                                updateInput( AmplifierState::INPUT_STEREO_2 );
-                                break;
-                            case AmplifierState::INPUT_STEREO_2:
-                                updateInput( AmplifierState::INPUT_STEREO_3 );
-                                break;
-                            case AmplifierState::INPUT_STEREO_3:
-                                updateInput( AmplifierState::INPUT_STEREO_4 );
-                                break;
-                            case AmplifierState::INPUT_STEREO_4:
-                                updateInput( AmplifierState::INPUT_6CH );
-                                break;
-                            case AmplifierState::INPUT_6CH:
-                                updateInput( AmplifierState::INPUT_STEREO_1 );
-                                break;
-                            default:
-                                break;
-                        }
+                    switch( mState.mInput ) {
+                        case AmplifierState::INPUT_STEREO_1:
+                            updateInput( AmplifierState::INPUT_STEREO_2 );
+                            break;
+                        case AmplifierState::INPUT_STEREO_2:
+                            updateInput( AmplifierState::INPUT_STEREO_3 );
+                            break;
+                        case AmplifierState::INPUT_STEREO_3:
+                            updateInput( AmplifierState::INPUT_STEREO_4 );
+                            break;
+                        case AmplifierState::INPUT_STEREO_4:
+                            updateInput( AmplifierState::INPUT_6CH );
+                            break;
+                        case AmplifierState::INPUT_6CH:
+                            updateInput( AmplifierState::INPUT_STEREO_1 );
+                            break;
+                        default:
+                            break;
                     }
                     break;
                 case Message::MSG_INPUT_DOWN:
-                    {
-                        ScopedLock lock( mStateMutex );
-
-                        switch( mState.mInput ) {
-                            case AmplifierState::INPUT_STEREO_1:
-                                updateInput( AmplifierState::INPUT_6CH );
-                                break;
-                            case AmplifierState::INPUT_STEREO_2:
-                                updateInput( AmplifierState::INPUT_STEREO_1 );
-                                break;
-                            case AmplifierState::INPUT_STEREO_3:
-                                updateInput( AmplifierState::INPUT_STEREO_2 );
-                                break;
-                            case AmplifierState::INPUT_STEREO_4:
-                                updateInput( AmplifierState::INPUT_STEREO_3 );
-                                break;
-                            case AmplifierState::INPUT_6CH:
-                                updateInput( AmplifierState::INPUT_STEREO_4 );
-                                break;
-                            default:
-                                break;
-                        }
-                    }       
+                    switch( mState.mInput ) {
+                        case AmplifierState::INPUT_STEREO_1:
+                            updateInput( AmplifierState::INPUT_6CH );
+                            break;
+                        case AmplifierState::INPUT_STEREO_2:
+                            updateInput( AmplifierState::INPUT_STEREO_1 );
+                            break;
+                        case AmplifierState::INPUT_STEREO_3:
+                            updateInput( AmplifierState::INPUT_STEREO_2 );
+                            break;
+                        case AmplifierState::INPUT_STEREO_4:
+                            updateInput( AmplifierState::INPUT_STEREO_3 );
+                            break;
+                        case AmplifierState::INPUT_6CH:
+                            updateInput( AmplifierState::INPUT_STEREO_4 );
+                            break;
+                        default:
+                            break;
+                    }     
                     break;
                 case Message::MSG_INPUT_SET:
                     updateInput( msg.mParam );
@@ -492,7 +485,7 @@ Amplifier::startDigitalAudio() {
     mDAC->setFormat( DAC::FORMAT_SONY );
 
     // Max volume
-    mDAC->setVolume( 128 );
+    mDAC->setAttenuation( 0 );
     mDAC->enable( true );
 
     mDolbyDecoder->play( true );
@@ -534,8 +527,7 @@ Amplifier::handleAudioThread() {
     AmplifierState state = getCurrentState();
 
     AMP_DEBUG_I( "Setting involumeput" );
-    mChannelSel->setVolume( state.mCurrentVolume );
-
+    mChannelSel->setAttenuation( state.mCurrentAttenuation );
     mChannelSel->setEnhancement( state.mEnhancement );
 
     AMP_DEBUG_I( "Setting input" );
@@ -615,7 +607,7 @@ Amplifier::handleAudioThread() {
                 case Message::MSG_TIMER: 
                     if ( mPendingVolumeChange ) {
                         AMP_DEBUG_SI( "Actually setting pending audio volume to " << mPendingVolume );
-                        bool result = mChannelSel->setVolume( mPendingVolume );
+                        bool result = mChannelSel->setAttenuation( mPendingVolume );
                         if ( result ) {
                             // if it failed, we will try again shortly
                             mPendingVolumeChange = false;

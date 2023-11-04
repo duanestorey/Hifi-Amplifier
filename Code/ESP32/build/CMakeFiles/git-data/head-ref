@@ -1,1 +1,57 @@
-9c91836a6c40c0fe06de17dfc3132599b645e1a9
+5591a3ab3298b685f609266da33ef64046f44ecc 4850c82d68b36e80f32f3e44787d150bea2e40f0 Duane Storey <duanestorey@gmail.com> 1694982184 +0200	commit: Checking in AC relay
+4850c82d68b36e80f32f3e44787d150bea2e40f0 c790cf609f132ace9b6b11491cac31400eb0462b Duane Storey <duanestorey@gmail.com> 1694982277 +0200	pull -v --progress --no-rebase origin refs/heads/main: Fast-forward
+c790cf609f132ace9b6b11491cac31400eb0462b fb2bb1144906603643a2344788e3d369e68b506e Duane Storey <duanestorey@gmail.com> 1696349067 +0200	commit: Updating Main Project
+fb2bb1144906603643a2344788e3d369e68b506e 4e02342b48b6bc4b2c41b8bc7f4830cc3843ee79 Duane Storey <duanestorey@gmail.com> 1696349276 +0200	commit: Removing DS_Store
+4e02342b48b6bc4b2c41b8bc7f4830cc3843ee79 0d8f10de1e23972a3162607b63b5e56c54384100 Duane Storey <duanestorey@gmail.com> 1696349286 +0200	pull -v --progress --no-rebase origin refs/heads/main: Merge made by the 'ort' strategy.
+0d8f10de1e23972a3162607b63b5e56c54384100 779346651f6f3edf248913e658cfc74c5337a3d2 Duane Storey <duanestorey@gmail.com> 1696349755 +0200	commit: ADding screenshot
+779346651f6f3edf248913e658cfc74c5337a3d2 1bac56ee7a4bef0b225d5218f71e8bacddff1881 Duane Storey <duanestorey@gmail.com> 1696349759 +0200	pull -v --progress --no-rebase origin refs/heads/main: Merge made by the 'ort' strategy.
+1bac56ee7a4bef0b225d5218f71e8bacddff1881 73bfe190313a97d9f9c5170456590687e13d2836 Duane Storey <duanestorey@gmail.com> 1696350150 +0200	commit: Screenshot
+73bfe190313a97d9f9c5170456590687e13d2836 280f34401c3fb8657a356513307e463199c9085c Duane Storey <duanestorey@gmail.com> 1696350153 +0200	pull -v --progress --no-rebase origin refs/heads/main: Merge made by the 'ort' strategy.
+280f34401c3fb8657a356513307e463199c9085c fa0303cba4a0c9c91336f13ccc2a5b8a2ef07f69 Duane Storey <duanestorey@gmail.com> 1696350333 +0200	commit: dding sreenshot
+fa0303cba4a0c9c91336f13ccc2a5b8a2ef07f69 d7a6557cd68d61edd5e73de10ed1b1c08ab78e02 Duane Storey <duanestorey@gmail.com> 1696350342 +0200	pull -v --progress --no-rebase origin refs/heads/main: Merge made by the 'ort' strategy.
+d7a6557cd68d61edd5e73de10ed1b1c08ab78e02 efbd533f54683ddd5740d5e2157b3f03b9681bd2 Duane Storey <duanestorey@gmail.com> 1696350545 +0200	commit: Updates
+efbd533f54683ddd5740d5e2157b3f03b9681bd2 ead49c47ba0595aae60e4055ef5f4d870faa02ed Duane Storey <duanestorey@gmail.com> 1696350619 +0200	commit: Adding base images
+ead49c47ba0595aae60e4055ef5f4d870faa02ed 8366f500cdde2c8162b7fca7311aa2b80ba89ba7 Duane Storey <duanestorey@gmail.com> 1696351015 +0200	commit: Adding images
+8366f500cdde2c8162b7fca7311aa2b80ba89ba7 fbe92d26bb47a9b5fff039d4ec48c3f6a540d5d6 Duane Storey <duanestorey@gmail.com> 1696351327 +0200	commit: Updates
+fbe92d26bb47a9b5fff039d4ec48c3f6a540d5d6 b011a7dd2cc55c5524c077f2177aa9b913d9c3d2 Duane Storey <duanestorey@gmail.com> 1696351421 +0200	commit: Updates
+b011a7dd2cc55c5524c077f2177aa9b913d9c3d2 b31ca4b98226525235c85e38e20716e0dfae3ec1 Duane Storey <duanestorey@gmail.com> 1696351509 +0200	commit: Updated ESP32
+b31ca4b98226525235c85e38e20716e0dfae3ec1 b34aa22d9295e5fd24261349c4edc59e513a25a6 Duane Storey <duanestorey@gmail.com> 1696354620 +0200	commit: Updates
+b34aa22d9295e5fd24261349c4edc59e513a25a6 30ebab4140da985ed443498b670c1c11c4c22df0 Duane Storey <duanestorey@gmail.com> 1696354798 +0200	commit: Updates
+30ebab4140da985ed443498b670c1c11c4c22df0 42f30a987d5545ee65204f4d0374a67057f114b8 Duane Storey <duanestorey@gmail.com> 1696354982 +0200	commit: Updates
+42f30a987d5545ee65204f4d0374a67057f114b8 76391cf5be5490d8854177a3e80a8b081f621273 Duane Storey <duanestorey@gmail.com> 1696355222 +0200	commit: PCB updates
+76391cf5be5490d8854177a3e80a8b081f621273 0027ced359775aaf7d8d373108486d5d13fdce13 Duane Storey <duanestorey@gmail.com> 1696355455 +0200	commit: Updates
+0027ced359775aaf7d8d373108486d5d13fdce13 4552709eb9ba2f618f7c55b80fe81cd1680a654e Duane Storey <duanestorey@gmail.com> 1696355771 +0200	commit: Microprocessor
+4552709eb9ba2f618f7c55b80fe81cd1680a654e ebf696e67622cbc59b172ecfaf0a3c901d3fe928 Duane Storey <duanestorey@gmail.com> 1696355981 +0200	commit: Updates
+ebf696e67622cbc59b172ecfaf0a3c901d3fe928 7ca9df83cf7c370c3fe60979901f26885e032c0e Duane Storey <duanestorey@gmail.com> 1696356793 +0200	commit: Updates for all readmes
+7ca9df83cf7c370c3fe60979901f26885e032c0e 5407618318949eacee686e4cb0596e85e42b679d Duane Storey <duanestorey@gmail.com> 1696356801 +0200	pull -v --progress --no-rebase origin refs/heads/main: Merge made by the 'ort' strategy.
+5407618318949eacee686e4cb0596e85e42b679d e54c1845b1cdcb6d457582f4f26a7812bc8eccf5 Duane Storey <duanestorey@gmail.com> 1696362469 +0200	commit: Updates
+e54c1845b1cdcb6d457582f4f26a7812bc8eccf5 608be1c686e7cc42281d0d7d8563b9d28987a57f Duane Storey <duanestorey@gmail.com> 1696408475 +0200	commit: Updates
+608be1c686e7cc42281d0d7d8563b9d28987a57f e95773ff61c07dfafff2c20cd41a8bb41423de43 Duane Storey <duanestorey@gmail.com> 1696408483 +0200	commit: Updates
+e95773ff61c07dfafff2c20cd41a8bb41423de43 190460347b475cc0350c71d5f226482bd5adb5f3 Duane Storey <duanestorey@gmail.com> 1696408495 +0200	commit: Updates
+190460347b475cc0350c71d5f226482bd5adb5f3 8fc290cc1971e19934dd9022327e332933b7a58d Duane Storey <duanestorey@gmail.com> 1696408500 +0200	pull -v --progress --no-rebase origin refs/heads/main: Merge made by the 'ort' strategy.
+8fc290cc1971e19934dd9022327e332933b7a58d e36d798604bc31460bbbd5a2f8dec48432a02845 Duane Storey <duanestorey@gmail.com> 1696410180 +0200	commit: Removing gerbers and backups
+e36d798604bc31460bbbd5a2f8dec48432a02845 046fb58b87065a9ae0089e5436894d8ed2684ad5 Duane Storey <duanestorey@gmail.com> 1696410396 +0200	commit: Updating file structure
+046fb58b87065a9ae0089e5436894d8ed2684ad5 06e766919b8d815b1e0bd1d48149e34c03558e6f Duane Storey <duanestorey@gmail.com> 1696411107 +0200	commit: KiCAD 7 updates
+06e766919b8d815b1e0bd1d48149e34c03558e6f c3be4d11d8ae6d94810d8097e4fb88714fd0c04e Duane Storey <duanestorey@gmail.com> 1696421560 +0200	commit: Updated
+c3be4d11d8ae6d94810d8097e4fb88714fd0c04e ef3757debcd7228c65d241aa1d38a67a0b3f4280 Duane Storey <duanestorey@gmail.com> 1696421607 +0200	commit: Updates
+ef3757debcd7228c65d241aa1d38a67a0b3f4280 c0604548becfa5143a3cfc10155bf5f485d0f15b Duane Storey <duanestorey@gmail.com> 1696421813 +0200	commit: Updates
+c0604548becfa5143a3cfc10155bf5f485d0f15b 7e915cd1f44409c40ddc3b2aa59a61247eb24f5d Duane Storey <duanestorey@gmail.com> 1696422890 +0200	commit: Updates
+7e915cd1f44409c40ddc3b2aa59a61247eb24f5d 1e02a5b6e0278c50f29a2ff01b20598cee0f5488 Duane Storey <duanestorey@gmail.com> 1696422899 +0200	pull -v --progress --no-rebase origin refs/heads/main: Merge made by the 'ort' strategy.
+1e02a5b6e0278c50f29a2ff01b20598cee0f5488 dda8fe17b970ac3e4bdcdf5d52d069214e763399 Duane Storey <duanestorey@gmail.com> 1697566642 +0200	commit: Major updates
+dda8fe17b970ac3e4bdcdf5d52d069214e763399 cf1fe4eedc535f12ee3d6b202b164477b29b3bb5 Duane Storey <duanestorey@gmail.com> 1697566685 +0200	commit: Test
+cf1fe4eedc535f12ee3d6b202b164477b29b3bb5 5af0bcc71084c659d0f430b823998be0e2947837 Duane Storey <duanestorey@gmail.com> 1697566690 +0200	pull -v --progress --no-rebase origin refs/heads/main: Merge made by the 'ort' strategy.
+5af0bcc71084c659d0f430b823998be0e2947837 e24beaf9a6b21cb42dbb864ace0be91c603734a1 Duane Storey <duanestorey@gmail.com> 1697907817 +0200	commit: Major updates
+e24beaf9a6b21cb42dbb864ace0be91c603734a1 5494ac12ec52e6eaae3c2c4afb59d2f78b3516de Duane Storey <duanestorey@gmail.com> 1697907820 +0200	pull -v --progress --no-rebase origin refs/heads/main: Merge made by the 'ort' strategy.
+5494ac12ec52e6eaae3c2c4afb59d2f78b3516de 7adc7a0ace00f583da8827442cc3a3d57008da9e Duane Storey <duanestorey@gmail.com> 1697909578 +0200	commit: Adding 5.1 vs 2.1 speaker mode
+7adc7a0ace00f583da8827442cc3a3d57008da9e d710a21f35d6385c48e3c67e745d875130531a6d Duane Storey <duanestorey@gmail.com> 1698225998 +0200	commit: Updates
+d710a21f35d6385c48e3c67e745d875130531a6d 6092b501e52deabc083ae62253840d4b507f9f89 Duane Storey <duanestorey@gmail.com> 1698329899 +0200	commit: Dolby Working
+6092b501e52deabc083ae62253840d4b507f9f89 ccab0a6544cefdd17b5a47242bdf6bc5eb8c864b Duane Storey <duanestorey@gmail.com> 1698398376 +0200	commit: Have some sound, doesn’t sound great though
+ccab0a6544cefdd17b5a47242bdf6bc5eb8c864b e0f58f3976f8bb49a2bed9b5470b759e8242d0dc Duane Storey <duanestorey@gmail.com> 1698399203 +0200	commit: Kind of works
+e0f58f3976f8bb49a2bed9b5470b759e8242d0dc b3227a99a8bb990087ad0b625fa83be25aabc64a Duane Storey <duanestorey@gmail.com> 1698426720 +0200	commit: Dolby mostly working
+b3227a99a8bb990087ad0b625fa83be25aabc64a 5ef398dca2c4265ff50592e18760f2e91bfd1ac4 Duane Storey <duanestorey@gmail.com> 1698431278 +0200	commit: Updates for dolby digital
+5ef398dca2c4265ff50592e18760f2e91bfd1ac4 3de1f37a54b43d04cc4925d18214e76059695495 Duane Storey <duanestorey@gmail.com> 1698432387 +0200	commit: Stop and start routines for dolby digital
+3de1f37a54b43d04cc4925d18214e76059695495 5d83b01555f8c4c4fa63f78642bd53b1ca43134a Duane Storey <duanestorey@gmail.com> 1698434300 +0200	commit: Updates
+5d83b01555f8c4c4fa63f78642bd53b1ca43134a c085f56f5b0c510b518f2052f71c2c1f6619a878 Duane Storey <duanestorey@gmail.com> 1698774143 +0100	commit: Added button debounce code
+c085f56f5b0c510b518f2052f71c2c1f6619a878 b7e3cab346f8367dea5a109565490debcb4f065c Duane Storey <duanestorey@gmail.com> 1698776106 +0100	commit: Audio improvements
+b7e3cab346f8367dea5a109565490debcb4f065c 9c91836a6c40c0fe06de17dfc3132599b645e1a9 Duane Storey <duanestorey@gmail.com> 1698830196 +0100	commit: Updates
+9c91836a6c40c0fe06de17dfc3132599b645e1a9 613cb52d5647ccfa70b168455e07c83889af1c30 Duane Storey <duanestorey@gmail.com> 1698867246 +0100	commit: Adding code

@@ -1,0 +1,94 @@
+[1/6] cd /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/esptool_py && /Users/duane/.espressif/python_env/idf5.1_py3.9_env/bin/python /Users/duane/Code/Github/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/partition_table/partition-table.bin /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/hifi-amp.bin
+hifi-amp.bin binary size 0x10c220 bytes. Smallest app partition is 0x400000 bytes. 0x2f3de0 bytes (74%) free.
+[2/6] cd /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/main && /Users/duane/.espressif/python_env/idf5.1_py3.9_env/bin/python /Users/duane/Code/Github/esp-idf/components/spiffs/spiffsgen.py 0x19000 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/html /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/files.bin --page-size=256 --obj-name-len=32 --meta-len=4 --use-magic --use-magic-len
+[3/6] Performing build step for 'bootloader'
+[1/1] cd /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader/esp-idf/esptool_py && /Users/duane/.espressif/python_env/idf5.1_py3.9_env/bin/python /Users/duane/Code/Github/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader/bootloader.bin
+Bootloader binary size 0x6800 bytes. 0x800 bytes (7%) free.
+[4/6] No install step for 'bootloader'
+[5/6] Completed 'bootloader'
+[5/6] cd /Users/duane/Code/Github/esp-idf/components/esptool_py && /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -D IDF_PATH=/Users/duane/Code/Github/esp-idf -D "SERIAL_TOOL=/Users/duane/.espressif/python_env/idf5.1_py3.9_env/bin/python;;/Users/duane/Code/Github/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build -P /Users/duane/Code/Github/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/cu.usbserial-A50285BI -b 1500000 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size detect 0x1000 bootloader/bootloader.bin 0x20000 hifi-amp.bin 0x8000 partition_table/partition-table.bin 0xd000 ota_data_initial.bin 0xd20000 files.bin
+esptool.py v4.7.dev2
+Serial port /dev/cu.usbserial-A50285BI
+Connecting.....
+Chip is ESP32-D0WD-V3 (revision v3.0)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: c4:de:e2:1b:1a:b8
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 1500000
+Changed.
+Configuring flash size...
+Auto-detected Flash size: 16MB
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00020000 to 0x0012cfff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Flash will be erased from 0x0000d000 to 0x0000efff...
+Flash will be erased from 0x00d20000 to 0x00d38fff...
+Compressed 26624 bytes to 16667...
+Writing at 0x00001000... (50 %)
+Writing at 0x0000768a... (100 %)
+Wrote 26624 bytes (16667 compressed) at 0x00001000 in 0.6 seconds (effective 378.9 kbit/s)...
+Hash of data verified.
+Compressed 1098272 bytes to 684046...
+Writing at 0x00020000... (2 %)
+Writing at 0x0002c5ec... (4 %)
+Writing at 0x00036f92... (7 %)
+Writing at 0x0003ba9e... (9 %)
+Writing at 0x00043818... (11 %)
+Writing at 0x0005730c... (14 %)
+Writing at 0x0005d512... (16 %)
+Writing at 0x0006302b... (19 %)
+Writing at 0x000680ca... (21 %)
+Writing at 0x0006d836... (23 %)
+Writing at 0x000725f6... (26 %)
+Writing at 0x000777ad... (28 %)
+Writing at 0x0007cc88... (30 %)
+Writing at 0x00081ae2... (33 %)
+Writing at 0x00086b80... (35 %)
+Writing at 0x0008c05b... (38 %)
+Writing at 0x0009176d... (40 %)
+Writing at 0x00096cad... (42 %)
+Writing at 0x0009bed9... (45 %)
+Writing at 0x000a13c4... (47 %)
+Writing at 0x000a6676... (50 %)
+Writing at 0x000abd53... (52 %)
+Writing at 0x000b13d5... (54 %)
+Writing at 0x000b6f33... (57 %)
+Writing at 0x000bc27e... (59 %)
+Writing at 0x000c114f... (61 %)
+Writing at 0x000c6120... (64 %)
+Writing at 0x000cb8e4... (66 %)
+Writing at 0x000d15e2... (69 %)
+Writing at 0x000d83fd... (71 %)
+Writing at 0x000df894... (73 %)
+Writing at 0x000e899b... (76 %)
+Writing at 0x000ef503... (78 %)
+Writing at 0x000f4dad... (80 %)
+Writing at 0x000fb021... (83 %)
+Writing at 0x0010317c... (85 %)
+Writing at 0x0010b381... (88 %)
+Writing at 0x0011303d... (90 %)
+Writing at 0x00118154... (92 %)
+Writing at 0x0011d442... (95 %)
+Writing at 0x001226c4... (97 %)
+Writing at 0x00128137... (100 %)
+Wrote 1098272 bytes (684046 compressed) at 0x00020000 in 10.3 seconds (effective 854.1 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 155...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (155 compressed) at 0x00008000 in 0.1 seconds (effective 387.2 kbit/s)...
+Hash of data verified.
+Compressed 8192 bytes to 31...
+Writing at 0x0000d000... (100 %)
+Wrote 8192 bytes (31 compressed) at 0x0000d000 in 0.1 seconds (effective 508.0 kbit/s)...
+Hash of data verified.
+Compressed 102400 bytes to 1088...
+Writing at 0x00d20000... (100 %)
+Wrote 102400 bytes (1088 compressed) at 0x00d20000 in 0.8 seconds (effective 983.5 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

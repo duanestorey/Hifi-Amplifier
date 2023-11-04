@@ -27,11 +27,8 @@ public:
     virtual void setFormat( uint8_t format ) = 0;
     virtual void enable( bool state ) = 0;
 
-	// volume is 0 to 128, where 0 is lowest and 128 is highest
-	virtual void setChannelVolume( int channel, int volume ) = 0;
-
-	// sets the volume on all channels
-	virtual void setVolume( int volume ) = 0;
+	virtual void setChannelAttenuation( int channel, int att ) = 0;
+	virtual void setAttenuation( int att ) = 0;
 };
 
 #endif

@@ -1,6 +1,8 @@
 #include "channelsel-ax2358.h"
 #include "debug.h"
 
+#define AX2358_MAX_VOL      79
+
 
 
 void 
@@ -23,7 +25,7 @@ ChannelSel_AX2358::init() {
   //  mute( true );
 
     // Set the volume levels to 20 to start
-    setVolume( mVolume );
+    setAttenuation( mVolume );
 
     // Enable 6db reduction for combined channels
     writeChipValue( AX2358_MIX_6DB_ON );
@@ -102,16 +104,19 @@ ChannelSel_AX2358::muteChannel( uint8_t channel, bool mute ) {
 }
 
 bool
-ChannelSel_AX2358::setVolume( uint8_t volume ) {
-    setChannelVolume( ChannelSel::CHANNEL_ALL, volume );
+ChannelSel_AX2358::setAttenuation( uint8_t att ) {
+    setChannelAttenuation( ChannelSel::CHANNEL_ALL, att );
 
     return true;
 }
 
 bool 
-ChannelSel_AX2358::setChannelVolume( uint8_t channel, uint8_t volume ) {
-    if ( volume > 79 ) {
-        volume = 79;
+ChannelSel_AX2358::setChannelAttenuation( uint8_t channel, uint8_t att ) {
+    uint8_t volume = AX2358_MAX_VOL;
+    if ( att > volume ) {
+        volume = 0;
+    } else {
+        volume = volume - att;
     }
 
     uint8_t negVol = 79-volume; 

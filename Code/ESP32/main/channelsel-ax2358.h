@@ -47,11 +47,12 @@ public:
     ChannelSel_AX2358( uint8_t addr, I2CBUS *bus ) : mAddress( addr ), mI2C ( bus ), mVolume( 20 ) {}
     virtual void init();
     virtual void setInput( uint8_t input );
-    virtual bool setVolume( uint8_t volume );
     virtual void mute( bool mute );
-    virtual bool setChannelVolume( uint8_t channel, uint8_t volume );
     virtual void muteChannel( uint8_t channel, bool mute );
     virtual void setEnhancement( bool enhancementOn );
+
+    virtual bool setAttenuation( uint8_t att );
+    virtual bool setChannelAttenuation(  uint8_t channel, uint8_t att );
 protected:
     uint8_t mAddress;
     I2CBUS *mI2C;

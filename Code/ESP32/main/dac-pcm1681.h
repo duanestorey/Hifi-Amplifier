@@ -15,11 +15,8 @@ public:
     virtual void setFormat( uint8_t format );
     virtual void enable( bool state );
 
-	// volume is 0 to 63, where 0 is lowest and 63 is highest
-	virtual void setChannelVolume( int channel, int volume );
-
-	// sets the volume on all channels
-	virtual void setVolume( int volume );
+	virtual void setChannelAttenuation( int channel, int att );
+	virtual void setAttenuation( int att );
 protected:
     uint8_t mAddress;
     I2CBUS *mI2C;

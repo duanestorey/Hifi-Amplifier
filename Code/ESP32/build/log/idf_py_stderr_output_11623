@@ -1,0 +1,3 @@
+Compiler supported targets: xtensa-esp32-elf
+
+Including esp_timer in color

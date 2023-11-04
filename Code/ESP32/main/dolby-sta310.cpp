@@ -253,8 +253,8 @@ Dolby_STA310::configureAC3() {
     mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_RPC, 0 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_KARAOKE, 0 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_DUALMODE, 0 );
-    mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_DOWNMIX, 4 );
-    mBus->writeRegisterByte( mAddr, Dolby_STA310::OCFG, 2 + 64 );
+    mBus->writeRegisterByte( mAddr, Dolby_STA310::AC3_DOWNMIX, 2 );
+    mBus->writeRegisterByte( mAddr, Dolby_STA310::OCFG, 2 );
 }
 
 void 
@@ -263,17 +263,6 @@ Dolby_STA310::configureDecoder() {
     // Dolby
     mBus->writeRegisterByte( mAddr, Dolby_STA310::STREAM_SEL, 5 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::DECODE_SEL, 0 );
-    //mBus->writeRegisterByte( mAddr, Dolby_STA310::STREAM_SEL, 3 );
-   // mBus->writeRegisterByte( mAddr, Dolby_STA310::DECODE_SEL, 0 );
-    //mBus->writeRegisterByte( mAddr, Dolby_STA310::DECODE_SEL, 0 );
-
-    // Beep
-    //mBus->writeRegisterByte( mAddr, Dolby_STA310::STREAM_SEL, 3 );
-    //mBus->writeRegisterByte( mAddr, Dolby_STA310::DECODE_SEL, 7 );
-
-    // PCM
-   // mBus->writeRegisterByte( mAddr, Dolby_STA310::STREAM_SEL, 3 );
-   // mBus->writeRegisterByte( mAddr, Dolby_STA310::DECODE_SEL, 3 );
 }
 
 void 
@@ -365,9 +354,6 @@ Dolby_STA310::handleInterrupt( Queue &queue ) {
     if ( ( result2 & RST ) | ( result2 & LCK ) | forceReset ) {
         AMP_DEBUG_I( "Need to reset decoder" ); 
 
-     //   mNeedsReset = true;
-       // mTickCount = 0;
-
         uint8_t stream;
         uint8_t decode;
 
@@ -379,29 +365,19 @@ Dolby_STA310::handleInterrupt( Queue &queue ) {
         configureInterrupts( true );
   
         if ( stream == 3 ) {
-           // mBus->writeRegisterByte( mAddr, Dolby_STA310::STREAM_SEL, stream );
-           // mBus->writeRegisterByte( mAddr, Dolby_STA310::DECODE_SEL, decode );
-            //mBus->writeRegisterByte( mAddr, Dolby_STA310::PLL_CTRL, 30 );
+            // This means we've crapped out
+            // let's force going to 5, 0
+            configureDecoder();
+        } 
 
-    /*
-            mBus->writeRegisterByte( mAddr, 0x05, 1 );
-            mBus->writeRegisterByte( mAddr, 0x6F, 0 );
-            mBus->writeRegisterByte( mAddr, 0xa8, 1 );
-            mBus->writeRegisterByte( mAddr, 0xa9, 0 );
-            */
-
-        } else {
-          //  mBus->writeRegisterByte( mAddr, Dolby_STA310::STREAM_SEL, 5 );
-         //   mBus->writeRegisterByte( mAddr, Dolby_STA310::DECODE_SEL, 0 );
-
-
-            configureAC3();
-        }
+        configureAC3();
 
         AMP_DEBUG_SI( "...STream/Decode set to " << (int)stream << " " << (int)decode );
 
         mute( false );
         run();
+
+        // Maybe defer this until we have a valid header?
         play( true );
     }
 

@@ -56,7 +56,7 @@ DAC_PCM1681::enable( bool state ) {
 }
 
 void 
-DAC_PCM1681::setChannelVolume( int channel, int volume ) {
+DAC_PCM1681::setChannelAttenuation( int channel, int att ) {
 	uint8_t reg = 0;
 	switch( channel ) {
 		case FRONT_LEFT:
@@ -79,22 +79,24 @@ DAC_PCM1681::setChannelVolume( int channel, int volume ) {
 			break;
 	}
 
+	uint8_t level = 0xff;
+
 	// Clamp the volume to the upper limit
-	if ( volume > 127 ) {
-		volume = 127;
+	if ( att > 127 ) {
+		att = 127;
 	}
 
-	uint8_t volumeLevel = volume + 128;
-	mI2C->writeRegisterByte( mAddress, reg, volumeLevel );
+	level = level - att;
+	mI2C->writeRegisterByte( mAddress, reg, level );
 }
 
 void 
-DAC_PCM1681::setVolume( int volume ) {
-	setChannelVolume( FRONT_LEFT, volume );
-	setChannelVolume( FRONT_RIGHT, volume );
-	setChannelVolume( REAR_LEFT, volume );
-	setChannelVolume( REAR_RIGHT, volume );
-	setChannelVolume( CENTER, volume );
-	setChannelVolume( SUBWOOFER, volume );
+DAC_PCM1681::setAttenuation( int att ) {
+	setChannelAttenuation( FRONT_LEFT, att );
+	setChannelAttenuation( FRONT_RIGHT, att );
+	setChannelAttenuation( REAR_LEFT, att );
+	setChannelAttenuation( REAR_RIGHT, att );
+	setChannelAttenuation( CENTER, att );
+	setChannelAttenuation( SUBWOOFER, att );
 }
 

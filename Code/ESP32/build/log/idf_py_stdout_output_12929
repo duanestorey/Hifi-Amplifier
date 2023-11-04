@@ -1,0 +1,104 @@
+[1/11] cd /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/main && /Users/duane/.espressif/python_env/idf5.1_py3.9_env/bin/python /Users/duane/Code/Github/esp-idf/components/spiffs/spiffsgen.py 0x19000 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/html /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/files.bin --page-size=256 --obj-name-len=32 --meta-len=4 --use-magic --use-magic-len
+[2/11] Performing build step for 'bootloader'
+[1/1] cd /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader/esp-idf/esptool_py && /Users/duane/.espressif/python_env/idf5.1_py3.9_env/bin/python /Users/duane/Code/Github/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader/bootloader.bin
+Bootloader binary size 0x6800 bytes. 0x800 bytes (7%) free.
+[3/11] No install step for 'bootloader'
+[4/11] Completed 'bootloader'
+[5/11] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/dolby-sta310.cpp.obj
+[6/11] Linking C static library esp-idf/main/libmain.a
+[7/11] Generating ld/sections.ld
+[8/11] Linking CXX executable hifi-amp.elf
+[9/11] Generating binary image from built executable
+esptool.py v4.7.dev2
+Creating esp32 image...
+Merged 27 ELF sections
+Successfully created esp32 image.
+Generated /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/hifi-amp.bin
+[10/11] cd /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/esp-idf/esptool_py && /Users/duane/.espressif/python_env/idf5.1_py3.9_env/bin/python /Users/duane/Code/Github/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/partition_table/partition-table.bin /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/hifi-amp.bin
+hifi-amp.bin binary size 0x10c210 bytes. Smallest app partition is 0x400000 bytes. 0x2f3df0 bytes (74%) free.
+[10/11] cd /Users/duane/Code/Github/esp-idf/components/esptool_py && /opt/homebrew/Cellar/cmake/3.27.4/bin/cmake -D IDF_PATH=/Users/duane/Code/Github/esp-idf -D "SERIAL_TOOL=/Users/duane/.espressif/python_env/idf5.1_py3.9_env/bin/python;;/Users/duane/Code/Github/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build -P /Users/duane/Code/Github/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/cu.usbserial-A50285BI -b 1500000 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size detect 0x1000 bootloader/bootloader.bin 0x20000 hifi-amp.bin 0x8000 partition_table/partition-table.bin 0xd000 ota_data_initial.bin 0xd20000 files.bin
+esptool.py v4.7.dev2
+Serial port /dev/cu.usbserial-A50285BI
+Connecting....
+Chip is ESP32-D0WD-V3 (revision v3.0)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: c4:de:e2:1b:1a:b8
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 1500000
+Changed.
+Configuring flash size...
+Auto-detected Flash size: 16MB
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00020000 to 0x0012cfff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Flash will be erased from 0x0000d000 to 0x0000efff...
+Flash will be erased from 0x00d20000 to 0x00d38fff...
+Compressed 26624 bytes to 16667...
+Writing at 0x00001000... (50 %)
+Writing at 0x0000768a... (100 %)
+Wrote 26624 bytes (16667 compressed) at 0x00001000 in 0.6 seconds (effective 359.4 kbit/s)...
+Hash of data verified.
+Compressed 1098256 bytes to 684084...
+Writing at 0x00020000... (2 %)
+Writing at 0x0002c5e1... (4 %)
+Writing at 0x00036f8f... (7 %)
+Writing at 0x0003baa4... (9 %)
+Writing at 0x00043803... (11 %)
+Writing at 0x00057002... (14 %)
+Writing at 0x0005d4f7... (16 %)
+Writing at 0x0006300d... (19 %)
+Writing at 0x000680a0... (21 %)
+Writing at 0x0006d81d... (23 %)
+Writing at 0x000725d5... (26 %)
+Writing at 0x00077787... (28 %)
+Writing at 0x0007cc6d... (30 %)
+Writing at 0x00081acc... (33 %)
+Writing at 0x00086b61... (35 %)
+Writing at 0x0008c022... (38 %)
+Writing at 0x00091727... (40 %)
+Writing at 0x00096c77... (42 %)
+Writing at 0x0009be85... (45 %)
+Writing at 0x000a1379... (47 %)
+Writing at 0x000a663c... (50 %)
+Writing at 0x000abd14... (52 %)
+Writing at 0x000b1398... (54 %)
+Writing at 0x000b6ef5... (57 %)
+Writing at 0x000bc246... (59 %)
+Writing at 0x000c1105... (61 %)
+Writing at 0x000c60e4... (64 %)
+Writing at 0x000cb89f... (66 %)
+Writing at 0x000d1599... (69 %)
+Writing at 0x000d83c7... (71 %)
+Writing at 0x000df853... (73 %)
+Writing at 0x000e8947... (76 %)
+Writing at 0x000ef4c0... (78 %)
+Writing at 0x000f4d6b... (80 %)
+Writing at 0x000fafd9... (83 %)
+Writing at 0x00103142... (85 %)
+Writing at 0x0010b34a... (88 %)
+Writing at 0x00113006... (90 %)
+Writing at 0x0011811f... (92 %)
+Writing at 0x0011d409... (95 %)
+Writing at 0x00122691... (97 %)
+Writing at 0x001280dd... (100 %)
+Wrote 1098256 bytes (684084 compressed) at 0x00020000 in 10.2 seconds (effective 858.1 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 155...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (155 compressed) at 0x00008000 in 0.1 seconds (effective 380.5 kbit/s)...
+Hash of data verified.
+Compressed 8192 bytes to 31...
+Writing at 0x0000d000... (100 %)
+Wrote 8192 bytes (31 compressed) at 0x0000d000 in 0.1 seconds (effective 457.5 kbit/s)...
+Hash of data verified.
+Compressed 102400 bytes to 1088...
+Writing at 0x00d20000... (100 %)
+Wrote 102400 bytes (1088 compressed) at 0x00d20000 in 0.8 seconds (effective 965.1 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
