@@ -498,6 +498,10 @@
       {
         "netclass": "3V3",
         "pattern": "OPGND"
+      },
+      {
+        "netclass": "5V",
+        "pattern": "PGND"
       }
     ]
   },

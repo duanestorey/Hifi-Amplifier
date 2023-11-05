@@ -32,7 +32,7 @@ Button::tick() {
                     unpressed();
                 } else {
                     // Keep waiting
-                        AMP_DEBUG_SI( "Waiting.." << totalMs );
+                        AMP_DEBUG_I( "Waiting..%lu", totalMs );
                 }
             } else {
                 // failed debounce
@@ -45,7 +45,7 @@ Button::tick() {
                     pressed();
                 } else {
                     // Keep waiting
-                    AMP_DEBUG_SI( "Waiting.." << totalMs );
+                    AMP_DEBUG_I( "Waiting..%lu", totalMs );
                 }  
             } else {
                 stopThinking();

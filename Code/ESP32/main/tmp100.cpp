@@ -13,7 +13,7 @@ TMP100::readTemperature() {
 	uint16_t ss = ((((uint16_t)data[0]) << 8) + data[1])>>4;
 	float f = ss / 16.0;
 
-	AMP_DEBUG_SI( "Temperature is " << f );
+	AMP_DEBUG_I( "Temperature is %0.2f", f );
 
     return f;
 }

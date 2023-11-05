@@ -73,6 +73,7 @@ protected:
     Encoder mInputEncoder;
 
     uint32_t mAudioTimerID;
+    uint32_t mDolbyTimerID;
     bool mPendingVolumeChange;
     uint32_t mPendingVolume;
 

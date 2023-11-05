@@ -23,7 +23,7 @@ Timer::setTimer( uint32_t timeout, Queue &queue, bool recurring ) {
 
     mCurrentEventID++;
 
-    AMP_DEBUG_SI( "Setting new time with timeout " << timeout << " and ID " << timerInfo.mEventID << " futureTime " << futureTime << " currentTime " << getCurrentTimeInMS() );
+    AMP_DEBUG_I( "Setting new time with timeout %lu and ID %lu, futureTime %lu, currentTime %lu", timeout, timerInfo.mEventID , futureTime, getCurrentTimeInMS() );
 
     return timerInfo.mEventID;
 }

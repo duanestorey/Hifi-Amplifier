@@ -13,7 +13,7 @@ ChannelSel_AX2358::writeChipValue( uint8_t value ) {
 
     mI2C->writeBytes( mAddress, &value, 1 );
 
-    AMP_DEBUG_SI( "Writing two bytes data to CHANNELSEL " << (int)value );
+    AMP_DEBUG_I( "Writing two bytes data to CHANNELSEL %d", (int)value );
 }
 
 void 

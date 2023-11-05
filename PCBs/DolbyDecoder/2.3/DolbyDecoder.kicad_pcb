@@ -4059,7 +4059,7 @@
     (property "ki_keywords" "capacitor cap")
     (path "/e64d30ce-b159-4267-8b54-ab07e7d462cb")
     (attr smd)
-    (fp_text reference "C50" (at -3.3 0 unlocked) (layer "F.SilkS")
+    (fp_text reference "C50" (at -3.525 0 unlocked) (layer "F.SilkS")
         (effects (font (size 0.7 0.7) (thickness 0.1)))
       (tstamp 116bed16-e353-4c8f-adac-a3dec8cb8e59)
     )

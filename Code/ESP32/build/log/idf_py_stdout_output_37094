@@ -1,0 +1,623 @@
+�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x36 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7096
+load:0x40078000,len:15584
+load:0x40080400,len:4
+ho 8 tail 4 room 4
+load:0x40080404,len:3876
+entry 0x4008064c
+[0;32mI (31) boot: ESP-IDF v5.1.1-686-gb6a66b7d8c 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov  1 2023 13:01:35[0m
+[0;32mI (33) boot: Multicore bootloader[0m
+[0;32mI (37) boot: chip revision: v3.0[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (45) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (50) boot.esp32: SPI Flash Size : 16MB[0m
+[0;32mI (54) boot: Enabling RNG early entropy source...[0m
+[0;32mI (60) boot: Partition Table:[0m
+[0;32mI (63) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (71) boot:  0 nvs              WiFi data        01 02 00009000 00004000[0m
+[0;32mI (78) boot:  1 otadata          OTA data         01 00 0000d000 00002000[0m
+[0;32mI (86) boot:  2 phy_init         RF data          01 01 0000f000 00002000[0m
+[0;32mI (93) boot:  3 factory          factory app      00 00 00020000 00400000[0m
+[0;32mI (100) boot:  4 ota_1            OTA app          00 11 00520000 00400000[0m
+[0;32mI (108) boot:  5 ota_2            OTA app          00 12 00920000 00400000[0m
+[0;32mI (116) boot:  6 files            Unknown data     01 82 00d20000 00019000[0m
+[0;32mI (123) boot: End of partition table[0m
+[0;32mI (127) boot: Defaulting to factory image[0m
+[0;32mI (132) esp_image: segment 0: paddr=00020020 vaddr=3f400020 size=34f70h (216944) map[0m
+[0;32mI (185) esp_image: segment 1: paddr=00054f98 vaddr=3ffb0000 size=03ac8h ( 15048) load[0m
+[0;32mI (189) esp_image: segment 2: paddr=00058a68 vaddr=40080000 size=075b0h ( 30128) load[0m
+[0;32mI (199) esp_image: segment 3: paddr=00060020 vaddr=400d0020 size=c4e08h (806408) map[0m
+[0;32mI (366) esp_image: segment 4: paddr=00124e30 vaddr=400875b0 size=073e4h ( 29668) load[0m
+[0;32mI (381) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (381) boot: Disabling RNG early entropy source...[0m
+[0;32mI (393) cpu_start: Multicore app[0m
+[0;32mI (393) cpu_start: Pro cpu up.[0m
+[0;32mI (393) cpu_start: Starting app cpu, entry point is 0x40081290[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (411) cpu_start: Pro cpu start user code[0m
+[0;32mI (411) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (411) cpu_start: Application information:[0m
+[0;32mI (416) cpu_start: Project name:     hifi-amp[0m
+[0;32mI (421) cpu_start: App version:      8bffe9e-dirty[0m
+[0;32mI (426) cpu_start: Compile time:     Nov  4 2023 09:38:02[0m
+[0;32mI (433) cpu_start: ELF file SHA256:  258c90a9...[0m
+[0;32mI (438) cpu_start: ESP-IDF:          v5.1.1-686-gb6a66b7d8c[0m
+[0;32mI (444) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (449) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (454) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (459) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (466) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (472) heap_init: At 3FFB9900 len 00026700 (153 KiB): DRAM[0m
+[0;32mI (478) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (484) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (491) heap_init: At 4008E994 len 0001166C (69 KiB): IRAM[0m
+[0;32mI (499) spi_flash: detected chip: generic[0m
+[0;32mI (501) spi_flash: flash io: dio[0m
+[0;32mI (507) app_start: Starting scheduler on CPU0[0m
+[0;32mI (512) app_start: Starting scheduler on CPU1[0m
+[0;32mI (511) main_task: Started on CPU0[0m
+[0;32mI (521) main_task: Calling app_main()[0m
+[0;32mI (524) I2CBUS::I2CBUS(): Stargting I2C bus[0m
+[0;32mI (558) void Amplifier::configurePins(): Configuring pins[0m
+[0;32mI (559) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (563) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (572) gpio: GPIO[23]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (581) gpio: GPIO[27]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (590) gpio: GPIO[19]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (600) gpio: GPIO[12]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (609) gpio: GPIO[15]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (618) gpio: GPIO[13]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (627) gpio: GPIO[17]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (637) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (646) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (655) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:3 [0m
+[0;32mI (665) gpio: GPIO[2]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (674) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 1| Intr:0 [0m
+[0;32mI (683) gpio: GPIO[18]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (715) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 15000 and ID 1 futureTime 15201 currentTime 204[0m
+[0;32mI (718) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 5 and ID 2 futureTime 211 currentTime 207[0m
+[0;32mI (730) uint32_t Timer::setTimer(uint32_t, Queue&, bool): Setting new time with timeout 100 and ID 3 futureTime 319 currentTime 219[0m
+[0;32mI (742) void Amplifier::handleTimerThread(): Starting Timer Thread on Core 0[0m
+[0;32mI (750) void Amplifier::handleDisplayThread(): Starting Display Thread[0m
+[0;32mI (757) void LCD::begin(): Beginning LCD Setup[0m
+[0;32mI (762) void Amplifier::handleAudioThread(): Starting Audio Thread[0m
+[0;32mI (769) void Amplifier::handleAmplifierThread(): Starting Amplifier Thread on Core 0[0m
+[0;32mI (771) void Amplifier::handleRadioThread(): Starting Radio Thread on Core 1[0m
+I (789) wifi:wifi driver task: 3ffcec40, prio:23, stack:6656, core=0
+I (809) wifi:wifi firmware version: 0bd9738
+I (810) wifi:wifi certification version: v7.0
+I (810) wifi:config NVS flash: enabled
+I (810) wifi:config nano formating: disabled
+I (815) wifi:Init data frame dynamic rx buffer num: 32
+I (819) wifi:Init static rx mgmt buffer num: 5
+I (823) wifi:Init management short buffer num: 32
+I (828) wifi:Init dynamic tx buffer num: 32
+I (832) wifi:Init static rx buffer size: 1600
+I (836) wifi:Init static rx buffer num: 10
+I (840) wifi:Init dynamic rx buffer num: 32
+[0;32mI (845) wifi_init: rx ba win: 6[0m
+[0;32mI (847) wifi_init: tcpip mbox: 32[0m
+[0;32mI (851) wifi_init: udp mbox: 6[0m
+[0;32mI (855) wifi_init: tcp mbox: 6[0m
+[0;32mI (859) wifi_init: tcp tx win: 5744[0m
+[0;32mI (863) wifi_init: tcp rx win: 5744[0m
+[0;32mI (867) wifi_init: tcp mss: 1440[0m
+[0;32mI (870) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 196[0m
+[0;32mI (872) wifi_init: LWIP IRAM OP enabled[0m
+[0;32mI (882) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 194[0m
+[0;32mI (890) phy_init: phy_version 4780,16b31a7,Sep 22 2023,20:42:16[0m
+[0;32mI (896) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 255[0m
+[0;32mI (912) void Amplifier::handleAudioThread(): Relay active[0m
+I (985) wifi:mode : sta (c4:de:e2:1b:1a:b8)
+I (986) wifi:enable tsf
+[0;32mI (987) void Amplifier::attemptWifiConnect(): Attempting to connect Wifi[0m
+[0;32mI (993) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (996) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (1004) void Amplifier::handleWifiCallback(int32_t): Wifi Starting Up[0m
+I (1004) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1
+I (1019) wifi:state: init -> auth (b0)
+I (1034) wifi:state: auth -> assoc (0)
+I (1090) wifi:state: assoc -> run (10)
+W (1098) wifi:[ADDBA]rx delba, code:39, delete tid:0
+W (1099) wifi:[ADDBA]rx delba, code:39, delete tid:0
+W (1099) wifi:[ADDBA]rx delba, code:39, delete tid:5
+I (1107) wifi:<ba-add>idx:0 (ifx:0, 24:5a:4c:99:c4:26), tid:5, ssn:42, winSize:64
+I (1119) wifi:connected with The Grey Havens, aid = 9, channel 11, BW20, bssid = 24:5a:4c:99:c4:26
+I (1120) wifi:security: WPA2-PSK, phy: bgn, rssi: -50
+I (1129) wifi:pm start, type: 1
+
+I (1132) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+[0;32mI (1136) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (1140) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (1148) void Amplifier::handleWifiCallback(int32_t): Wifi Connection Established[0m
+[0;32mI (1171) void HTTP_Server::start(): Web server started[0m
+[0;32mI (1184) void HTTP_Server::start(): .. file system mounted[0m
+[0;32mI (1262) void LCD::begin(): LCD Backlight Setup[0m
+[0;32mI (1298) void LCD::begin(): LCD Setup Done[0m
+[0;32mI (1298) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (1298) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (1917) void Amplifier::handleAudioThread(): Decoder set into active mode[0m
+[0;32mI (1917) void Amplifier::handleAudioThread(): Setting involumeput[0m
+[0;32mI (1922) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 193[0m
+[0;32mI (1930) void Amplifier::handleAudioThread(): Setting input[0m
+[0;32mI (1938) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 207[0m
+[0;32mI (2046) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (2048) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (2049) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (2055) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (2063) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (2070) void Dolby_STA310::startDolby(): Starting Dolby Play Routines[0m
+[0;32mI (2077) void Dolby_STA310::configureAudioPLL(): Configuring audio pll[0m
+[0;32mI (2084) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (2093) void Dolby_STA310::configureSync(): Configuring sync[0m
+[0;32mI (2100) void Dolby_STA310::configureSPDIF(): Configuring SPDIF[0m
+[0;32mI (2106) void Dolby_STA310::configurePCMOUT(): Configuring PCMOUT[0m
+[0;32mI (2113) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (2119) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (2128) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (2131) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (2137) virtual void DAC_PCM1681::init(): Starting PCM1681 DAC[0m
+[0;32mI (2139) esp_netif_handlers: sta ip: 192.168.1.200, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (2153) void Amplifier::handleRadioThread(): Processing Radio Queue Message[0m
+[0;32mI (2160) void Amplifier::handleWifiCallback(int32_t): Processing Wifi Callback[0m
+[0;32mI (2167) void Amplifier::handleWifiCallback(int32_t): Wifi Received IP Address[0m
+[0;32mI (2175) void Amplifier::updateTimeFromNTP(): Attemping To Update Time From NTP Server[0m
+[0;32mI (2249) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (2509) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (2509) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+-> found device with address 0x27
+[0;32mI (2515) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+-> found device with address 0x48
+[0;32mI (2525) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+-> found device with address 0x4a
+[0;32mI (2534) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+-> found device with address 0x4c
+[0;32mI (2544) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+-> found device with address 0x60
+[0;32mI (2556) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (2567) void Dolby_STA310::softReset(bool): Initalized[0m
+
+...scan completed!
+[0;32mI (2571) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (2574) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (2581) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (2574) void ChannelSel_AX2358::writeChipValue(uint8_t): Writing two bytes data to CHANNELSEL 254[0m
+[0;32mI (2596) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (2603) void Amplifier::handleAudioThread(): Starting DAC initialization[0m
+[0;32mI (2612) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (2620) void Amplifier::handleAudioThread(): Channel selector un-muted[0m
+[0;32mI (2628) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (2642) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (2652) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (2656) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (2663) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (2669) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (2675) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (2745) void Amplifier::handleDisplayThread(): Processing Display Queue Message[0m
+[0;32mI (2787) virtual float TMP100::readTemperature(): Temperature is 28.875[0m
+I (3026) wifi:<ba-add>idx:1 (ifx:0, 24:5a:4c:99:c4:26), tid:0, ssn:4016, winSize:64
+[0;32mI (3040) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (3041) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (3047) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (3053) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (3060) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (3066) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (3075) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (3083) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (3087) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (3094) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (3101) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (3108) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (3117) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (3124) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (3133) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (3138) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (3144) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (3150) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (3156) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (3521) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (3522) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (3527) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (3534) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (3540) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (3547) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (3556) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (3563) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (3567) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (3575) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (3582) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (3589) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (3598) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (3605) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (3614) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (3619) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (3625) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (3631) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (3637) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (4002) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (4003) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (4009) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (4015) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (4022) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (4028) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (4037) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (4045) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (4049) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (4056) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (4063) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (4071) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (4079) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (4086) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (4095) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (4100) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (4106) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (4112) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (4118) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;33mW (4368) httpd_uri: httpd_uri: URI '/ipp/print' not found[0m
+[0;33mW (4368) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (4483) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (4484) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (4490) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (4496) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (4503) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (4509) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (4518) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (4526) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (4530) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (4537) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (4545) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (4552) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (4560) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (4567) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (4576) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (4581) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (4587) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (4593) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (4600) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (4964) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (4965) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (4970) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (4977) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (4983) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (4990) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (4999) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (5006) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (5010) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (5018) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (5025) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (5032) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (5041) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (5048) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (5057) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (5062) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (5068) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (5074) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (5080) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (5445) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (5446) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (5451) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (5458) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (5464) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (5471) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (5480) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (5487) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (5491) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (5499) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (5506) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (5514) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (5522) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (5529) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (5538) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (5543) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (5549) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (5555) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (5560) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (5926) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (5927) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (5932) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (5939) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (5945) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (5952) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (5961) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (5968) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (5972) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (5980) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (5987) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (5994) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (6003) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (6010) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (6019) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (6024) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (6030) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (6036) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (6042) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (6407) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (6408) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (6413) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (6420) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (6426) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (6433) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (6442) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (6450) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (6453) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (6461) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (6468) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (6475) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (6484) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (6491) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (6500) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (6505) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (6511) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (6517) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (6523) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (6888) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (6889) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (6894) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (6901) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (6907) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (6914) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (6923) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (6930) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (6934) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (6942) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (6949) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (6956) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (6965) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (6972) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (6981) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (6986) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (6992) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (6998) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (7004) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (7369) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (7370) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (7375) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (7382) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (7388) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (7395) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (7404) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (7411) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (7415) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (7423) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (7430) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (7437) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (7446) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (7453) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (7462) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (7467) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (7473) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (7479) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (7485) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (7851) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (7852) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (7857) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (7864) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (7870) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (7877) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (7886) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (7893) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (7897) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (7905) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (7912) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (7919) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (7928) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (7935) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (7944) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (7949) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (7955) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (7961) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (7967) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (8332) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (8333) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (8338) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (8345) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (8351) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (8358) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (8367) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (8374) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (8378) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (8386) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (8393) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (8400) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (8409) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (8416) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (8425) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (8430) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (8436) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (8442) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (8448) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (8813) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (8814) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (8819) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (8826) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (8832) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (8839) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (8848) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (8855) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (8859) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (8867) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (8874) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (8881) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (8890) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (8897) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (8907) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (8911) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (8917) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (8923) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (8929) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (9294) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (9295) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (9300) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (9307) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (9313) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (9320) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (9329) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (9336) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (9340) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (9348) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (9355) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (9362) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (9371) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (9378) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (9387) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (9392) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (9398) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (9404) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (9410) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (9775) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (9776) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (9781) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (9788) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (9794) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (9801) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (9810) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (9817) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (9821) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (9829) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (9836) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (9843) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (9852) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (9859) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (9868) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (9873) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (9879) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (9885) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (9891) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (10256) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (10257) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (10262) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (10269) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (10276) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (10282) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (10291) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (10299) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (10303) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (10311) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (10318) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (10325) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (10335) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (10341) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (10351) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (10355) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (10361) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (10367) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (10373) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (10739) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (10739) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (10745) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (10752) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (10758) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (10765) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (10774) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (10781) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (10785) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (10793) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (10800) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (10808) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (10816) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (10823) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (10832) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (10837) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (10844) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (10850) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (10856) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (11221) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (11222) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (11227) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (11234) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (11241) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (11247) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (11256) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (11264) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (11268) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (11276) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (11283) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (11290) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (11299) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (11306) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (11315) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (11320) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (11326) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (11332) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (11338) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (11703) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (11704) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (11709) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (11716) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (11723) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (11729) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (11738) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (11746) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (11750) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (11758) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (11765) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (11772) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (11781) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (11788) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (11797) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (11802) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (11808) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (11814) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (11820) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (12185) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (12186) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (12192) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (12198) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (12205) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (12211) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (12220) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (12228) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (12232) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (12240) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (12247) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (12254) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (12263) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (12270) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (12279) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (12284) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (12290) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (12296) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (12302) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (12667) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (12668) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (12673) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (12680) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (12687) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (12693) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (12702) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (12710) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (12714) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (12722) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (12729) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (12736) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (12745) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (12752) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (12761) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (12766) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (12772) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (12778) void Dolby_STA310::play(bool): Setting PLAY to 1[0m
+[0;32mI (12784) void Dolby_STA310::handleInterrupt(Queue&): Interrupt processed[0m
+[0;32mI (13149) void Amplifier::handleDecoderIRQ(): Decoder Interrupt[0m
+[0;32mI (13150) void Dolby_STA310::handleInterrupt(Queue&): Attempting to handle interrupt[0m
+[0;32mI (13155) void Dolby_STA310::handleInterrupt(Queue&): ...interrupt registeres are 0 24[0m
+[0;32mI (13162) void Dolby_STA310::handleInterrupt(Queue&): ...RST set[0m
+[0;32mI (13169) void Dolby_STA310::handleInterrupt(Queue&): ...FIO set[0m
+[0;32mI (13175) void Dolby_STA310::handleInterrupt(Queue&): Need to reset decoder[0m
+[0;32mI (13184) void Dolby_STA310::softReset(bool): Performing soft reset[0m
+[0;32mI (13192) void Dolby_STA310::softReset(bool): Initalized[0m
+[0;32mI (13196) void Dolby_STA310::enableAudioPLL(): Enabling audio PLL[0m
+[0;32mI (13204) void Dolby_STA310::mute(bool): Setting mute to 1[0m
+[0;32mI (13211) void Dolby_STA310::softReset(bool): Dolby is initialized, IDENT and VER are 49 - 20[0m
+[0;32mI (13218) void Dolby_STA310::configureInterrupts(bool): Configuring interrupts[0m
+[0;32mI (13227) void Dolby_STA310::configureDecoder(): Configuring Decoder[0m
+[0;32mI (13234) void Dolby_STA310::configureAC3(): Configuring AC3[0m
+[0;32mI (13243) void Dolby_STA310::handleInterrupt(Queue&): ...STream/Decode set to 3 3[0m
+[0;32mI (13248) void Dolby_STA310::mute(bool): Setting mute to 0[0m
+[0;32mI (13254) void Dolby_STA310::run(): Attempting to run[0m
+[0;32mI (13260) void Dolby_STA310::play(bool): Setting PLAY to 1[0m

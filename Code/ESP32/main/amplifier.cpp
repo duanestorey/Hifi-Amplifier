@@ -34,7 +34,7 @@
 #include "mdns.h"
 
 Amplifier::Amplifier() : mWifiEnabled( false ), mWifiConnectionAttempts( 0 ), mUpdatingFromNTP( false ), mPoweredOn( true ), mDisplayQueue( 3 ), mTimerID( 0 ), mButtonTimerID( 0 ), mReconnectTimerID( 0 ), mLCD( 0 ),
-    mDAC( 0 ), mChannelSel( 0 ), mDolbyDecoder( 0 ), mWebServer( 0 ), mMicroprocessorTemp( 0 ), mVolumeEncoder( 15, 13, true ), mInputEncoder( 4, 16, false ), mAudioTimerID( 0 ), mPendingVolumeChange( false ), mPendingVolume( 0 ),
+    mDAC( 0 ), mChannelSel( 0 ), mDolbyDecoder( 0 ), mWebServer( 0 ), mMicroprocessorTemp( 0 ), mVolumeEncoder( 15, 13, true ), mInputEncoder( 4, 16, false ), mAudioTimerID( 0 ), mDolbyTimerID( 0 ), mPendingVolumeChange( false ), mPendingVolume( 0 ),
     mPowerButton( 0 ), mVolumeButton( 0 ), mInputButton( 0 ) {
 }
 
@@ -106,6 +106,7 @@ Amplifier::init() {
     mDolbyDecoder = new Dolby_STA310( 0x60, &mI2C );
 
     mAudioTimerID = mTimer.setTimer( 100, mAudioQueue, true );
+    mDolbyTimerID = mTimer.setTimer( 1000, mAudioQueue, true );
 
     // Set up buttons
     mPowerButton = new Button( PIN_BUTTON_POWER, &mAmplifierQueue );
@@ -268,7 +269,7 @@ Amplifier::changeAmplifierState( uint8_t newState ) {
 
 void 
 Amplifier::handleTimerThread() {
-    AMP_DEBUG_SI( "Starting Timer Thread on Core " << xPortGetCoreID() );
+    AMP_DEBUG_I( "Starting Timer Thread on Core %d", xPortGetCoreID() );
     while( true ) {
         mTimer.processTick();
         taskDelayInMs( 5 );
@@ -277,7 +278,7 @@ Amplifier::handleTimerThread() {
 
 void
 Amplifier::updateInput( uint8_t newInput ) {
-    AMP_DEBUG_SI( "Trying to set input to " << newInput );
+    AMP_DEBUG_I( "Trying to set input to %d", newInput );
     {
         ScopedLock lock( mStateMutex );
 
@@ -296,7 +297,7 @@ Amplifier::updateInput( uint8_t newInput ) {
 
 void 
 Amplifier::handleAmplifierThread() {
-    AMP_DEBUG_SI( "Starting Amplifier Thread on Core " << xPortGetCoreID() );
+    AMP_DEBUG_I( "Starting Amplifier Thread on Core %lu",( uint32_t )xPortGetCoreID() );
 
     Message msg;
     while( true ) {
@@ -325,7 +326,7 @@ Amplifier::handleAmplifierThread() {
                     break;
                 case Message::MSG_TIMER:
                     if ( msg.mParam == mTimerID ) {
-                        AMP_DEBUG_SI( "In Periodic Timer Event, Temp is " << mMicroprocessorTemp->readTemperature() );
+                        AMP_DEBUG_I( "In Periodic Timer Event, Temp is %0.2f", mMicroprocessorTemp->readTemperature() );
                     } else if ( msg.mParam == mButtonTimerID ) {
                         mVolumeButton->tick();
                         mInputButton->tick();
@@ -417,7 +418,7 @@ Amplifier::handleAmplifierThread() {
                     updateInput( msg.mParam );
                     break;
                 case Message::MSG_BUTTON_PRESSED:
-                    AMP_DEBUG_SI(  "Button pressed! " << msg.mParam );
+                    AMP_DEBUG_I(  "Button pressed! %lu", msg.mParam );
                     switch( msg.mParam ) {
                         case PIN_BUTTON_POWER:
                             handlePowerButtonPress();
@@ -433,7 +434,7 @@ Amplifier::handleAmplifierThread() {
                     }
                     break;  
                 case Message::MSG_BUTTON_RELEASED:
-                    AMP_DEBUG_SI(  "Button released! " << msg.mParam );    
+                    AMP_DEBUG_I(  "Button released! %lu", msg.mParam );    
                     break;          
                 default:
                     break;
@@ -560,8 +561,6 @@ Amplifier::handleAudioThread() {
     // Set to playing status
     changeAmplifierState( AmplifierState::STATE_PLAYING );
 
-   // mAudioTimer = mTimer.setTimer( 100, mAudioQueue, true );
-
     Message msg;
     while( true ) {
         while ( mAudioQueue.waitForMessage( msg, 5 ) ) {
@@ -583,13 +582,13 @@ Amplifier::handleAudioThread() {
                     }
                     break;
                 case Message::MSG_VOLUME_SET:
-                    AMP_DEBUG_SI( "Setting pending audio volume to " << msg.mParam );
+                    AMP_DEBUG_I( "Setting pending audio volume to %lu", msg.mParam );
                     mPendingVolumeChange = true;
                     mPendingVolume = msg.mParam;
                     
                     break;
                 case Message::MSG_INPUT_SET:
-                    AMP_DEBUG_SI( "Setting audio input to " << msg.mParam );
+                    AMP_DEBUG_I( "Setting audio input to %lu", msg.mParam );
 
                     if ( msg.mParam != AmplifierState::INPUT_6CH ) {
                         // We are in Dolby, but moving away, so we need to shut down the digital audio
@@ -605,13 +604,17 @@ Amplifier::handleAudioThread() {
 
                     break;
                 case Message::MSG_TIMER: 
-                    if ( mPendingVolumeChange ) {
-                        AMP_DEBUG_SI( "Actually setting pending audio volume to " << mPendingVolume );
-                        bool result = mChannelSel->setAttenuation( mPendingVolume );
-                        if ( result ) {
-                            // if it failed, we will try again shortly
-                            mPendingVolumeChange = false;
+                    if ( msg.mParam == mAudioTimerID ) {
+                        if ( mPendingVolumeChange ) {
+                            AMP_DEBUG_I( "Actually setting pending audio volume to %lu", mPendingVolume );
+                            bool result = mChannelSel->setAttenuation( mPendingVolume );
+                            if ( result ) {
+                                // if it failed, we will try again shortly
+                                mPendingVolumeChange = false;
+                            }
                         }
+                    } else if ( msg.mParam == mDolbyTimerID ) {
+                      //  mDolbyDecoder->tick();
                     }
                     
                     break;
@@ -625,7 +628,7 @@ Amplifier::handleAudioThread() {
                     asyncUpdateDisplay();
                     break;
                 case Message::MSG_AUDIO_SET_ENHANCEMENT:
-                    AMP_DEBUG_SI( "Actually setting enhancement to  " << msg.mParam );
+                    AMP_DEBUG_I( "Actually setting enhancement to %lu", msg.mParam );
                     mChannelSel->setEnhancement( msg.mParam );
                     
                     asyncUpdateDisplay();
@@ -704,7 +707,7 @@ Amplifier::setupWifi() {
     wifi_config_t wifi_config;
     memset( &wifi_config, 0, sizeof( wifi_config ) );
 
-    strcpy( (char*)wifi_config.sta.ssid, (char*)"The Grey Havens" );
+    strcpy( (char*)wifi_config.sta.ssid, (char*)"The Grey Havens (LR)" );
     strcpy( (char*)wifi_config.sta.password, (char*)"brazil1234!" );
 
     esp_wifi_set_mode(WIFI_MODE_STA);
@@ -741,7 +744,7 @@ Amplifier::attemptWifiConnect() {
 
 void
 Amplifier::handleRadioThread() {
-    AMP_DEBUG_SI( "Starting Radio Thread on Core " << xPortGetCoreID() );
+    AMP_DEBUG_I( "Starting Radio Thread on Core %lu", (uint32_t)xPortGetCoreID() );
 
     setupWifi();
     attemptWifiConnect();
@@ -760,7 +763,7 @@ Amplifier::handleRadioThread() {
                 localtime_r(&now, &timeinfo);
                 strftime(strftime_buf, sizeof(strftime_buf), "%c", &timeinfo);
                 
-                AMP_DEBUG_SI("The current date/time is: " << strftime_buf  );  
+                AMP_DEBUG_I("The current date/time is: %s", strftime_buf  );  
 
                 esp_netif_sntp_deinit();
             }
@@ -783,7 +786,7 @@ Amplifier::handleRadioThread() {
                     } else if ( msg.mParam == mTimerID ) {
                         AMP_DEBUG_I( "In Periodic Timer Event" );
                     } else {
-                        AMP_DEBUG_SI( "Unknown timer event " << msg.mParam );
+                        AMP_DEBUG_I( "Unknown timer event %lu", msg.mParam );
                     }
                    
                     break;
