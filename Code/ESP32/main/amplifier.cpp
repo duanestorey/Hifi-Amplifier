@@ -483,7 +483,7 @@ Amplifier::startDigitalAudio() {
 
     // Dolby Decoder is muted, but running, so it's outputting zeros and a clock to the DAC
     mDAC->init();
-    mDAC->setFormat( DAC::FORMAT_SONY );
+    mDAC->setFormat( DAC::FORMAT_I2S );
 
     // Max volume
     mDAC->setAttenuation( 0 );

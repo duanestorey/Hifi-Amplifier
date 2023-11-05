@@ -227,7 +227,9 @@ Dolby_STA310::configurePCMOUT() {
     // 8 is SONY
     // 32 is not right padded   
     // Looks like {d23-d0}{8*0}
-    mBus->writeRegisterByte( mAddr, Dolby_STA310::PCM_CONF, 3 + 8 + 32 );
+    // 3 + 8 + 32 = FORMAT_SONY for DAC
+    // 3 = FORMAT_I2S
+    mBus->writeRegisterByte( mAddr, Dolby_STA310::PCM_CONF, 3 + 32 );
 }
 
 void 
