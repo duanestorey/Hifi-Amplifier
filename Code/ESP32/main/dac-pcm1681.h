@@ -17,6 +17,7 @@ public:
 
 	virtual void setChannelAttenuation( int channel, int att );
 	virtual void setAttenuation( int att );
+    virtual void setPrecision( uint8_t precision );
 protected:
     uint8_t mAddress;
     I2CBUS *mI2C;

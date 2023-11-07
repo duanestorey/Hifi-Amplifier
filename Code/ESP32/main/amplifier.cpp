@@ -96,8 +96,29 @@ Amplifier::init() {
 
     taskDelayInMs( 20 );
 
-    mTimerID = mTimer.setTimer( 15000, mAmplifierQueue, true );
+    mTimerID = mTimer.setTimer( 60000, mAmplifierQueue, true );
     mButtonTimerID = mTimer.setTimer( 5, mAmplifierQueue, true );
+
+    // I2C current map
+    /*
+        Current
+        -------
+        LCD                             0x27
+        Channel Selector AX2358         0x4a
+        PCM 1681 DAC                    0x4c
+        Microprocessor Temp Sensor      0x48   
+        Dolby Decoder STA310            0x60 
+
+        Future  
+        -------
+        CS8416                          0x10
+        Dolby Temp Sensor               0x49 
+        PCM 5142 FL/FR                  0x4c
+        PCM 5142 C/Sw                   0x4d
+        PCM 5142 LR/RR                  0x4e
+        PCM 5142 CS8416                 0x4f
+
+    */
 
     mLCD = new LCD( 0x27, &mI2C );
     mMicroprocessorTemp = new TMP100( 0x48, &mI2C );
@@ -106,7 +127,6 @@ Amplifier::init() {
     mDolbyDecoder = new Dolby_STA310( 0x60, &mI2C );
 
     mAudioTimerID = mTimer.setTimer( 100, mAudioQueue, true );
-    mDolbyTimerID = mTimer.setTimer( 1000, mAudioQueue, true );
 
     // Set up buttons
     mPowerButton = new Button( PIN_BUTTON_POWER, &mAmplifierQueue );
@@ -327,6 +347,7 @@ Amplifier::handleAmplifierThread() {
                 case Message::MSG_TIMER:
                     if ( msg.mParam == mTimerID ) {
                         AMP_DEBUG_I( "In Periodic Timer Event, Temp is %0.2f", mMicroprocessorTemp->readTemperature() );
+                        asyncUpdateDisplay();
                     } else if ( msg.mParam == mButtonTimerID ) {
                         mVolumeButton->tick();
                         mInputButton->tick();
@@ -482,6 +503,8 @@ Amplifier::startDigitalAudio() {
     mDolbyDecoder->startDolby(); 
 
     // Dolby Decoder is muted, but running, so it's outputting zeros and a clock to the DAC
+    AMP_DEBUG_I( "Starting DAC initialization" );
+
     mDAC->init();
     mDAC->setFormat( DAC::FORMAT_I2S );
 
@@ -498,8 +521,6 @@ void
 Amplifier::stopDigitalAudio() {
     mDAC->enable( false );
     mDolbyDecoder->stopDolby();
-
-   // gpio_set_level( PIN_DECODER_RESET, 0 );
 }
 
 void 
@@ -542,19 +563,8 @@ Amplifier::handleAudioThread() {
     asyncUpdateDisplay();
 
     mChannelSel->mute( false );
-
-    AMP_DEBUG_I( "Starting DAC initialization" );
-
-    // Right justified 24 bit
-    //mDAC->setFormat( 4 );
-    //mDAC->setFormat( 4 );
-
-    // Should eventually be able to set this higher as hopefully channel selector will handle volume
-
     AMP_DEBUG_I( "Channel selector un-muted" );
 
-    gpio_set_level( PIN_LED_ACTIVE, 1 );
-   
     // Activate power
     vTaskDelay( 100 / portTICK_PERIOD_MS );
     

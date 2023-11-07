@@ -21,13 +21,15 @@ public:
         SERVER_INPUT_STREAMER,
         SERVER_INPUT_TV,
         SERVER_INPUT_VINYL,
-        SERVER_INPUT_GAME
+        SERVER_INPUT_GAME,
+        SERVER_NOT_FOUND
     };
 
     void start();
     void stop();
 
     esp_err_t handleResponse( uint8_t requestType, httpd_req_t *req );
+    
 protected:
     Queue *mQueue;
     httpd_handle_t mServerHandle;

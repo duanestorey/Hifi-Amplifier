@@ -100,3 +100,8 @@ DAC_PCM1681::setAttenuation( int att ) {
 	setChannelAttenuation( SUBWOOFER, att );
 }
 
+void 
+DAC_PCM1681::setPrecision( uint8_t precision ) {
+
+}
+

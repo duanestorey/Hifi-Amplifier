@@ -21,6 +21,7 @@
 #include "state.h"
 
 #define HTTPD_307 "307 Temporary Redirect"
+#define HTTPD_404 "404 Not Found"
 
 HTTP_Server::HTTP_Server( Queue *queue ) : mQueue( queue ), mServerHandle( 0 ) {
 
@@ -97,6 +98,11 @@ esp_err_t input_game( httpd_req_t *req )
 {
     HTTP_Server *server = (HTTP_Server *)req->user_ctx;
     return server->handleResponse( HTTP_Server::SERVER_INPUT_GAME, req );
+}
+
+esp_err_t http_404( httpd_req_t *req ) {
+    HTTP_Server *server = (HTTP_Server *)req->user_ctx;
+    return server->handleResponse( HTTP_Server::SERVER_NOT_FOUND, req );
 }
 
 
@@ -238,6 +244,31 @@ HTTP_Server::start() {
 
         uri_get.uri = "/input_game";
         uri_get.handler = input_game;
+        httpd_register_uri_handler( mServerHandle, &uri_get );
+
+        uri_get.uri = "/ipp/print";
+        uri_get.method = HTTP_POST;
+        uri_get.handler = http_404;
+        httpd_register_uri_handler( mServerHandle, &uri_get );
+
+        uri_get.uri = "/ipp/print";
+        uri_get.method = HTTP_GET;
+        uri_get.handler = http_404;
+        httpd_register_uri_handler( mServerHandle, &uri_get );
+
+        uri_get.uri = "/ipp/print";
+        uri_get.method = HTTP_HEAD;
+        uri_get.handler = http_404;
+        httpd_register_uri_handler( mServerHandle, &uri_get );
+
+        uri_get.uri = "/*";
+        uri_get.method = HTTP_GET;
+        uri_get.handler = http_404;
+        httpd_register_uri_handler( mServerHandle, &uri_get );
+
+        uri_get.uri = "/*";
+        uri_get.method = HTTP_POST;
+        uri_get.handler = http_404;
         httpd_register_uri_handler( mServerHandle, &uri_get );
                 
         esp_vfs_spiffs_conf_t conf = {

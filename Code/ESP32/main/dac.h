@@ -19,6 +19,12 @@ public:
 		FORMAT_I2S = 1
 	} FORMAT;
 
+	enum {
+		PRECISION_16_BIT = 0,
+		PRECISION_24_BIT = 1,
+		PRECISION_32_BIT = 2
+	} PRECISION;
+
     virtual ~DAC() {}
 
 	// the name for this DAC
@@ -26,6 +32,7 @@ public:
 	virtual void init() = 0;
     virtual void setFormat( uint8_t format ) = 0;
     virtual void enable( bool state ) = 0;
+	virtual void setPrecision( uint8_t precision ) = 0;
 
 	virtual void setChannelAttenuation( int channel, int att ) = 0;
 	virtual void setAttenuation( int att ) = 0;
