@@ -1,13 +1,13 @@
 # Target labels
  bootloader
 # Source files and their labels
-/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/CMakeFiles/bootloader
-/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/CMakeFiles/bootloader.rule
-/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/CMakeFiles/bootloader-complete.rule
-/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
-/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
-/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
-/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
-/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
-/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
-/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
+/Users/duane/Code/personal/projects/hifi-amplifier/Code/ESP32/build/CMakeFiles/bootloader
+/Users/duane/Code/personal/projects/hifi-amplifier/Code/ESP32/build/CMakeFiles/bootloader.rule
+/Users/duane/Code/personal/projects/hifi-amplifier/Code/ESP32/build/CMakeFiles/bootloader-complete.rule
+/Users/duane/Code/personal/projects/hifi-amplifier/Code/ESP32/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/Users/duane/Code/personal/projects/hifi-amplifier/Code/ESP32/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/Users/duane/Code/personal/projects/hifi-amplifier/Code/ESP32/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/Users/duane/Code/personal/projects/hifi-amplifier/Code/ESP32/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/Users/duane/Code/personal/projects/hifi-amplifier/Code/ESP32/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/Users/duane/Code/personal/projects/hifi-amplifier/Code/ESP32/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/Users/duane/Code/personal/projects/hifi-amplifier/Code/ESP32/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

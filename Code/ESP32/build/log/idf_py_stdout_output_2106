@@ -1,8 +1,0 @@
-[0/1] Re-running CMake...
--- Building ESP-IDF components for target esp32
-Processing 2 dependencies:
-[1/2] espressif/mdns (1.2.1)
-[2/2] idf (5.1.1)
--- Configuring incomplete, errors occurred!
-FAILED: build.ninja 
-/opt/homebrew/Cellar/cmake/3.27.4/bin/cmake --regenerate-during-build -S/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32 -B/Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/build

@@ -11,12 +11,12 @@
 #include "lcd.h"
 #include "dac.h"
 #include "channelsel.h"
-#include "dolby-sta310.h"
 
 #include "tmp100.h"
 #include "encoder.h"
 #include "button.h"
 #include "http-server.h"
+#include "cs8416.h"
 
 class Amplifier {
 public:
@@ -36,7 +36,6 @@ public:
     void _handleVolumeButtonEncoderISR();
     void _handleInputButtonISR();
     void _handleInputButtonEncoderISR();
-
 
     AmplifierState getCurrentState();
 protected:
@@ -64,8 +63,8 @@ protected:
 
     DAC *mDAC;
     ChannelSel *mChannelSel;
-    Dolby_STA310 *mDolbyDecoder;
     HTTP_Server *mWebServer;
+    CS8416 *mSPDIF;
 
     TMP100 *mMicroprocessorTemp;
 
@@ -73,7 +72,6 @@ protected:
     Encoder mInputEncoder;
 
     uint32_t mAudioTimerID;
-    uint32_t mDolbyTimerID;
     bool mPendingVolumeChange;
     uint32_t mPendingVolume;
 

@@ -180,6 +180,7 @@ Dolby_STA310::configureAudioPLL() {
     AMP_DEBUG_I( "Configuring audio pll" );
     // 22 is only one that works
 
+   // mBus->writeRegisterByte( mAddr, Dolby_STA310::PLL_CTRL, 30 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::PLL_CTRL, 22 );
 }
 
@@ -252,6 +253,9 @@ void
 Dolby_STA310::configureDecoder() {
     AMP_DEBUG_I( "Configuring Decoder" );
     // Dolby
+    //mBus->writeRegisterByte( mAddr, Dolby_STA310::STREAM_SEL, 5 );
+   // mBus->writeRegisterByte( mAddr, Dolby_STA310::DECODE_SEL, 0 );
+
     mBus->writeRegisterByte( mAddr, Dolby_STA310::STREAM_SEL, 5 );
     mBus->writeRegisterByte( mAddr, Dolby_STA310::DECODE_SEL, 0 );
 }
@@ -358,11 +362,11 @@ Dolby_STA310::handleInterrupt( Queue &queue ) {
         if ( stream == 3 ) {
             // This means we've crapped out
             // let's force going to 5, 0
-            configureDecoder();
+           // configureDecoder();
         }  else {
-           
+            configureAC3();
         }
-         configureAC3();
+       
 
         AMP_DEBUG_I( "...STream/Decode set to %d %d", (int)stream, (int)decode );
 

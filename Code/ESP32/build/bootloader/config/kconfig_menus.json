@@ -633,8 +633,8 @@
         "children": [],
         "depends_on": null,
         "help": null,
-        "id": "SOC_CPU_WATCHPOINT_SIZE",
-        "name": "SOC_CPU_WATCHPOINT_SIZE",
+        "id": "SOC_CPU_WATCHPOINT_MAX_REGION_SIZE",
+        "name": "SOC_CPU_WATCHPOINT_MAX_REGION_SIZE",
         "range": null,
         "title": null,
         "type": "int"
@@ -698,6 +698,26 @@
         "range": null,
         "title": null,
         "type": "hex"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_GPIO_IN_RANGE_MAX",
+        "name": "SOC_GPIO_IN_RANGE_MAX",
+        "range": null,
+        "title": null,
+        "type": "int"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "SOC_GPIO_OUT_RANGE_MAX",
+        "name": "SOC_GPIO_OUT_RANGE_MAX",
+        "range": null,
+        "title": null,
+        "type": "int"
     },
     {
         "children": [],
@@ -2590,24 +2610,72 @@
                 "type": "int"
             },
             {
-                "children": [],
-                "depends_on": "IDF_TARGET_ESP32 && (ESPTOOLPY_FLASHMODE_QIO || ESPTOOLPY_FLASHMODE_QOUT)",
-                "help": "This setting is only used if the SPI flash pins have been overridden by setting the eFuses\nSPI_PAD_CONFIG_xxx, and the SPI flash mode is QIO or QOUT.\n\nWhen this is the case, the eFuse config only defines 3 of the 4 Quad I/O data pins. The WP pin (aka\nESP32 pin \"SD_DATA_3\" or SPI flash pin \"IO2\") is not specified in eFuse. The same pin is also used\nfor external SPIRAM if it is enabled.\n\nIf this config item is set to N (default), the correct WP pin will be automatically used for any\nEspressif chip or module with integrated flash. If a custom setting is needed, set this config item to\nY and specify the GPIO number connected to the WP.",
-                "id": "BOOTLOADER_SPI_CUSTOM_WP_PIN",
-                "name": "BOOTLOADER_SPI_CUSTOM_WP_PIN",
-                "range": null,
-                "title": "Use custom SPI Flash WP Pin when flash pins set in eFuse (read help)",
-                "type": "bool"
-            },
-            {
-                "children": [],
-                "depends_on": "IDF_TARGET_ESP32 && (ESPTOOLPY_FLASHMODE_QIO || ESPTOOLPY_FLASHMODE_QOUT)",
-                "help": "The option \"Use custom SPI Flash WP Pin\" must be set or this value is ignored\n\nIf burning a customized set of SPI flash pins in eFuse and using QIO or QOUT mode for flash, set this\nvalue to the GPIO number of the SPI flash WP pin.",
-                "id": "BOOTLOADER_SPI_WP_PIN",
-                "name": "BOOTLOADER_SPI_WP_PIN",
-                "range": null,
-                "title": "Custom SPI Flash WP Pin",
-                "type": "int"
+                "children": [
+                    {
+                        "children": [],
+                        "depends_on": "IDF_TARGET_ESP32 && (ESPTOOLPY_FLASHMODE_QIO || ESPTOOLPY_FLASHMODE_QOUT)",
+                        "help": "This setting is only used if the SPI flash pins have been overridden by setting the eFuses\nSPI_PAD_CONFIG_xxx, and the SPI flash mode is QIO or QOUT.\n\nWhen this is the case, the eFuse config only defines 3 of the 4 Quad I/O data pins. The WP pin (aka\nESP32 pin \"SD_DATA_3\" or SPI flash pin \"IO2\") is not specified in eFuse. The same pin is also used\nfor external SPIRAM if it is enabled.\n\nIf this config item is set to N (default), the correct WP pin will be automatically used for any\nEspressif chip or module with integrated flash. If a custom setting is needed, set this config item to\nY and specify the GPIO number connected to the WP.",
+                        "id": "BOOTLOADER_SPI_CUSTOM_WP_PIN",
+                        "name": "BOOTLOADER_SPI_CUSTOM_WP_PIN",
+                        "range": null,
+                        "title": "Use custom SPI Flash WP Pin when flash pins set in eFuse (read help)",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "IDF_TARGET_ESP32 && (ESPTOOLPY_FLASHMODE_QIO || ESPTOOLPY_FLASHMODE_QOUT)",
+                        "help": "The option \"Use custom SPI Flash WP Pin\" must be set or this value is ignored\n\nIf burning a customized set of SPI flash pins in eFuse and using QIO or QOUT mode for flash, set this\nvalue to the GPIO number of the SPI flash WP pin.",
+                        "id": "BOOTLOADER_SPI_WP_PIN",
+                        "name": "BOOTLOADER_SPI_WP_PIN",
+                        "range": null,
+                        "title": "Custom SPI Flash WP Pin",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "This will force 2nd bootloader to be loaded by DOUT mode, and will restore Dummy Cycle setting by\nresetting the Flash",
+                        "id": "BOOTLOADER_FLASH_DC_AWARE",
+                        "name": "BOOTLOADER_FLASH_DC_AWARE",
+                        "range": null,
+                        "title": "Allow app adjust Dummy Cycle bits in SPI Flash for higher frequency (READ HELP FIRST)",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "Perform the startup flow recommended by XMC. Please consult XMC for the details of this flow.\nXMC chips will be forbidden to be used, when this option is disabled.\n\nDON'T DISABLE THIS UNLESS YOU KNOW WHAT YOU ARE DOING.\n\ncomment \"Features below require specific hardware (READ DOCS FIRST!)\"",
+                        "id": "BOOTLOADER_FLASH_XMC_SUPPORT",
+                        "name": "BOOTLOADER_FLASH_XMC_SUPPORT",
+                        "range": null,
+                        "title": "Enable the support for flash chips of XMC (READ DOCS FIRST)",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "This is a helper config for 32bits address flash. Invisible for users.",
+                        "id": "BOOTLOADER_FLASH_32BIT_ADDR",
+                        "name": "BOOTLOADER_FLASH_32BIT_ADDR",
+                        "range": null,
+                        "title": null,
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "BOOTLOADER_CACHE_32BIT_ADDR_OCTAL_FLASH",
+                        "name": "BOOTLOADER_CACHE_32BIT_ADDR_OCTAL_FLASH",
+                        "range": null,
+                        "title": null,
+                        "type": "bool"
+                    }
+                ],
+                "depends_on": null,
+                "id": "bootloader-config-serial-flash-configurations",
+                "title": "Serial Flash Configurations",
+                "type": "menu"
             },
             {
                 "children": [
@@ -2912,6 +2980,16 @@
                     {
                         "children": [],
                         "depends_on": "BOOTLOADER_CUSTOM_RESERVE_RTC",
+                        "help": "This option allows the customer to use the legacy bootloader behavior when the\nRTC FAST memory CRC calculation takes place. When this option is enabled, the\nallocated user custom data will be taken into account in the CRC calculcation.\nThis means that any change to the custom data would need a CRC update to prevent\nthe bootloader from marking this data as corrupted.\nIf this option is disabled, the custom data will not be taken into account when\ncalculating the RTC FAST memory CRC. The user custom data can be changed freely,\nwithout the need to update the CRC.\nTHIS OPTION MUST BE THE SAME FOR BOTH THE BOOTLOADER AND THE APPLICATION BUILDS.",
+                        "id": "BOOTLOADER_CUSTOM_RESERVE_RTC_IN_CRC",
+                        "name": "BOOTLOADER_CUSTOM_RESERVE_RTC_IN_CRC",
+                        "range": null,
+                        "title": "Include custom memory in the CRC calculation",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "BOOTLOADER_CUSTOM_RESERVE_RTC",
                         "help": "This option reserves in RTC FAST memory the area for custom purposes.\nIf you want to create your own bootloader and save more information\nin this area of memory, you can increase it. It must be a multiple of 4 bytes.\nThis area (rtc_retain_mem_t) is reserved and has access from the bootloader and an application.",
                         "id": "BOOTLOADER_CUSTOM_RESERVE_RTC_SIZE",
                         "name": "BOOTLOADER_CUSTOM_RESERVE_RTC_SIZE",
@@ -2936,16 +3014,6 @@
                 "name": "BOOTLOADER_RESERVE_RTC_MEM",
                 "range": null,
                 "title": null,
-                "type": "bool"
-            },
-            {
-                "children": [],
-                "depends_on": null,
-                "help": "Perform the startup flow recommended by XMC. Please consult XMC for the details of this flow.\nXMC chips will be forbidden to be used, when this option is disabled.\n\nDON'T DISABLE THIS UNLESS YOU KNOW WHAT YOU ARE DOING.",
-                "id": "BOOTLOADER_FLASH_XMC_SUPPORT",
-                "name": "BOOTLOADER_FLASH_XMC_SUPPORT",
-                "range": null,
-                "title": "Enable the support for flash chips of XMC (READ HELP FIRST)",
                 "type": "bool"
             }
         ],
@@ -3509,6 +3577,16 @@
             },
             {
                 "children": [],
+                "depends_on": "SECURE_FLASH_ENC_ENABLED && !SECURE_FLASH_REQUIRE_ALREADY_ENABLED",
+                "help": "If set, optimise encryption time for the partition of type APP,\nby only encrypting the app image that is present in the partition,\ninstead of the whole partition.\nThe image length used for encryption is derived from the image metadata, which\nincludes the size of the app image, checksum, hash and also the signature sector\nwhen secure boot is enabled.\n\nIf not set (default), the whole partition of type APP would be encrypted,\nwhich increases the encryption time but might be useful if there\nis any custom data appended to the firmware image.",
+                "id": "SECURE_FLASH_ENCRYPT_ONLY_IMAGE_LEN_IN_APP_PART",
+                "name": "SECURE_FLASH_ENCRYPT_ONLY_IMAGE_LEN_IN_APP_PART",
+                "range": null,
+                "title": "Encrypt only the app image that is present in the partition of type app",
+                "type": "bool"
+            },
+            {
+                "children": [],
                 "depends_on": "SECURE_FLASH_ENC_ENABLED",
                 "help": "If set (default), in an app during startup code,\nthere is a check of the flash encryption eFuse bit is on\n(as the bootloader should already have set it).\nThe app requires this bit is on to continue work otherwise abort.\n\nIf not set, the app does not care if the flash encryption eFuse bit is set or not.",
                 "id": "SECURE_FLASH_CHECK_ENC_EN_IN_APP",
@@ -3798,7 +3876,7 @@
             {
                 "children": [],
                 "depends_on": "IDF_TARGET_ESP32S3 && !APP_BUILD_TYPE_PURE_RAM_APP",
-                "help": "This config option helps decide whether flash is Quad or Octal, but please note some limitations:\n\n1. If the flash chip is an Octal one, even if one of \"QIO\", \"QOUT\", \"DIO\", \"DOUT\" options is\n   selected in `ESPTOOLPY_FLASHMODE`, our code will automatically change the\n   mode to \"OPI\" and the sample mode will be STR.\n2. If the flash chip is a Quad one, even if \"OPI\" is selected in `ESPTOOLPY_FLASHMODE`, our code will\n   automatically change the mode to \"DIO\".\n3. Please do not rely on this option when you are pretty sure that you are using Octal flash,\n   please enable `ESPTOOLPY_OCT_FLASH` option, then you can choose `DTR` sample mode\n   in `ESPTOOLPY_FLASH_SAMPLE_MODE`. Otherwise, only `STR` mode is available.\n4. Enabling this feature reduces available internal RAM size (around 900 bytes).\n   If your IRAM space is insufficient and you're aware of your flash type,\n   disable this option and select corresponding flash type options.",
+                "help": "This config option helps decide whether flash is Quad or Octal, but please note some limitations:\n\n1. If the flash chip is an Octal one, even if one of \"QIO\", \"QOUT\", \"DIO\", \"DOUT\" options is\n   selected in `ESPTOOLPY_FLASHMODE`, our code will automatically change the\n   mode to \"OPI\" and the sample mode will be STR.\n2. If the flash chip is a Quad one, even if \"OPI\" is selected in `ESPTOOLPY_FLASHMODE`, our code will\n   automatically change the mode to \"DIO\".\n3. This option is mainly to improve the out-of-box experience of developers. It doesn't guarantee\n   the feature-complete. Some code still rely on `ESPTOOLPY_OCT_FLASH`. Please do not rely on this option\n   when you are pretty sure that you are using Octal flash.\n   In this case, please enable `ESPTOOLPY_OCT_FLASH` option, then you can choose `DTR` sample mode\n   in `ESPTOOLPY_FLASH_SAMPLE_MODE`. Otherwise, only `STR` mode is available.\n4. Enabling this feature reduces available internal RAM size (around 900 bytes).\n   If your IRAM space is insufficient and you're aware of your flash type,\n   disable this option and select corresponding flash type options.",
                 "id": "ESPTOOLPY_FLASH_MODE_AUTO_DETECT",
                 "name": "ESPTOOLPY_FLASH_MODE_AUTO_DETECT",
                 "range": null,
@@ -3909,12 +3987,12 @@
                 "children": [
                     {
                         "children": [],
-                        "depends_on": "SOC_MEMSPI_SRC_FREQ_120M && (ESPTOOLPY_FLASH_SAMPLE_MODE_STR || IDF_EXPERIMENTAL_FEATURES) && <choice ESPTOOLPY_FLASHFREQ>",
-                        "help": "- Flash 120 MHz SDR mode is stable.\n- Flash 120 MHz DDR mode is an experimental feature, it works when\n  the temperature is stable.\n\n    Risks:\n        If your chip powers on at a certain temperature, then after the temperature\n        increases or decreases by approximately 20 Celsius degrees (depending on the\n        chip), the program will crash randomly.",
+                        "depends_on": "SOC_MEMSPI_SRC_FREQ_120M && (SPI_FLASH_HPM_ON || ESPTOOLPY_OCT_FLASH) && (ESPTOOLPY_FLASH_SAMPLE_MODE_STR || IDF_EXPERIMENTAL_FEATURES) && <choice ESPTOOLPY_FLASHFREQ>",
+                        "help": "- Optional feature for QSPI Flash. Read docs and enable `CONFIG_SPI_FLASH_HPM_ENA` first!\n- Flash 120 MHz SDR mode is stable.\n- Flash 120 MHz DDR mode is an experimental feature, it works when\n  the temperature is stable.\n\n    Risks:\n        If your chip powers on at a certain temperature, then after the temperature\n        increases or decreases by approximately 20 Celsius degrees (depending on the\n        chip), the program will crash randomly.",
                         "id": "ESPTOOLPY_FLASHFREQ_120M",
                         "name": "ESPTOOLPY_FLASHFREQ_120M",
                         "range": null,
-                        "title": "120 MHz",
+                        "title": "120 MHz (READ DOCS FIRST)",
                         "type": "bool"
                     },
                     {
@@ -5101,6 +5179,16 @@
                                 "range": null,
                                 "title": "Ignore MAC CRC error (not recommended)",
                                 "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "When this configuration is enabled, the user can invoke `esp_read_mac` to obtain the desired type of\nMAC using a custom MAC as the base MAC.",
+                                "id": "ESP_MAC_USE_CUSTOM_MAC_AS_BASE_MAC",
+                                "name": "ESP_MAC_USE_CUSTOM_MAC_AS_BASE_MAC",
+                                "range": null,
+                                "title": "Enable using custom mac as base mac",
+                                "type": "bool"
                             }
                         ],
                         "depends_on": null,
@@ -5172,16 +5260,26 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "IDF_TARGET_ESP32 || IDF_TARGET_ESP32S3",
-                                "help": "When the chip exits deep sleep, the CPU and the flash chip are powered on\nat the same time. CPU will run deep sleep stub first, and then\nproceed to load code from flash. Some flash chips need sufficient\ntime to pass between power on and first read operation. By default,\nwithout any extra delay, this time is approximately 900us, although\nsome flash chip types need more than that.\n\nBy default extra delay is set to 2000us. When optimizing startup time\nfor applications which require it, this value may be reduced.\n\nIf you are seeing \"flash read err, 1000\" message printed to the\nconsole after deep sleep reset, try increasing this value.",
-                                "id": "ESP_SLEEP_DEEP_SLEEP_WAKEUP_DELAY",
-                                "name": "ESP_SLEEP_DEEP_SLEEP_WAKEUP_DELAY",
+                                "depends_on": null,
+                                "help": "When the chip exits sleep, the CPU and the flash chip are powered on at the same time.\nCPU will run rom code (deepsleep) or ram code (lightsleep) first, and then load or execute\ncode from flash.\n\nSome flash chips need sufficient time to pass between power on and first read operation.\nBy default, without any extra delay, this time is approximately 900us, although\nsome flash chip types need more than that.\n\n(!!! Please adjust this value according to the Data Sheet of SPI Flash used in your project.)\nIn Flash Data Sheet, the parameters that define the Flash ready timing after power-up (minimum\ntime from Vcc(min) to CS activeare) usually named tVSL in ELECTRICAL CHARACTERISTICS chapter,\nand the configuration value here should be:\nESP_SLEEP_WAIT_FLASH_READY_EXTRA_DELAY = tVSL - 900\n\nFor esp32 and esp32s3, the default extra delay is set to 2000us. When optimizing startup time\nfor applications which require it, this value may be reduced.\n\nIf you are seeing \"flash read err, 1000\" message printed to the console after deep sleep reset\non esp32, or triggered RTC_WDT/LP_WDT after lightsleep wakeup, try increasing this value.\n(For esp32, the delay will be executed in both deep sleep and light sleep wake up flow.\nFor chips after esp32, the delay will be executed only in light sleep flow, the delay\ncontrolled by the EFUSE_FLASH_TPUW in ROM will be executed in deepsleep wake up flow.)",
+                                "id": "ESP_SLEEP_WAIT_FLASH_READY_EXTRA_DELAY",
+                                "name": "ESP_SLEEP_WAIT_FLASH_READY_EXTRA_DELAY",
                                 "range": [
                                     0,
                                     5000
                                 ],
-                                "title": "Extra delay in deep sleep wake stub (in us)",
+                                "title": "Extra delay (in us) after flash powerdown sleep wakeup to wait flash ready",
                                 "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "Enable esp sleep debug.",
+                                "id": "ESP_SLEEP_DEBUG",
+                                "name": "ESP_SLEEP_DEBUG",
+                                "range": null,
+                                "title": "esp sleep debug",
+                                "type": "bool"
                             },
                             {
                                 "children": [],
@@ -5192,29 +5290,31 @@
                                 "range": null,
                                 "title": "Allow to enable internal pull-up/downs for the Deep-Sleep wakeup IOs",
                                 "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "FREERTOS_USE_TICKLESS_IDLE",
+                                "help": "If enabled, it allows user to register sleep event callbacks. It is primarily designed for internal\ndevelopers and customers can use PM_LIGHT_SLEEP_CALLBACKS as an alternative.\n\nNOTE: These callbacks are executed from the IDLE task context hence you cannot have any blocking calls\nin your callbacks.\n\nNOTE: Enabling these callbacks may change sleep duration calculations based on time spent in\ncallback and hence it is highly recommended to keep them as short as possible.",
+                                "id": "ESP_SLEEP_EVENT_CALLBACKS",
+                                "name": "ESP_SLEEP_EVENT_CALLBACKS",
+                                "range": null,
+                                "title": "Enable registration of sleep event callbacks",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "Enabling it will check the cache safety of the code before the flash power is ready after\nlight sleep wakeup, and check PM_SLP_IRAM_OPT related code cache safety. This option is\nonly for code quality inspection. Enabling it will increase the time overhead of entering\nand exiting sleep. It is not recommended to enable it in the release version.",
+                                "id": "ESP_SLEEP_CACHE_SAFE_ASSERTION",
+                                "name": "ESP_SLEEP_CACHE_SAFE_ASSERTION",
+                                "range": null,
+                                "title": "Check the cache safety of the sleep wakeup code in sleep process",
+                                "type": "bool"
                             }
                         ],
                         "depends_on": null,
                         "id": "component-config-hardware-settings-sleep-config",
                         "title": "Sleep Config",
-                        "type": "menu"
-                    },
-                    {
-                        "children": [
-                            {
-                                "children": [],
-                                "depends_on": "IDF_TARGET_ESP32C3",
-                                "help": "Its not able to stall ESP32C3 systimer in sleep.\nTo fix related RTOS TICK issue, select it to disable related systimer during sleep.\nTODO: IDF-7036",
-                                "id": "ESP_SLEEP_SYSTIMER_STALL_WORKAROUND",
-                                "name": "ESP_SLEEP_SYSTIMER_STALL_WORKAROUND",
-                                "range": null,
-                                "title": "ESP32C3 SYSTIMER Stall Issue Workaround",
-                                "type": "bool"
-                            }
-                        ],
-                        "depends_on": null,
-                        "id": "component-config-hardware-settings-esp_sleep_workaround",
-                        "title": "ESP_SLEEP_WORKAROUND",
                         "type": "menu"
                     },
                     {
@@ -6573,6 +6673,16 @@
                         "range": null,
                         "title": null,
                         "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "IDF_TARGET_ESP32C2 || IDF_TARGET_ESP32S3 || IDF_TARGET_ESP32C6 || IDF_TARGET_ESP32H2",
+                        "help": "This configuration helps to address an BBPLL inaccurate issue when boot from certain bootloader version,\nwhich may increase about the boot-up time by about 200 us. Disable this when your bootloader is built with\nESP-IDF version v5.2 and above.",
+                        "id": "ESP_SYSTEM_BBPLL_RECALIB",
+                        "name": "ESP_SYSTEM_BBPLL_RECALIB",
+                        "range": null,
+                        "title": "Re-calibration BBPLL at startup",
+                        "type": "bool"
                     }
                 ],
                 "depends_on": null,
@@ -7389,6 +7499,16 @@
                         "range": null,
                         "title": null,
                         "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "Enable this option to apply the countermeasure for ECDSA signature operation\nThis countermeasure masks the real ECDSA sign operation\nunder dummy sign operations to add randomness in the generated power signature.",
+                        "id": "HAL_ECDSA_GEN_SIG_CM",
+                        "name": "HAL_ECDSA_GEN_SIG_CM",
+                        "range": null,
+                        "title": "Enable countermeasure for ECDSA signature generation",
+                        "type": "bool"
                     }
                 ],
                 "depends_on": null,
@@ -7824,6 +7944,170 @@
                         "children": [
                             {
                                 "children": [],
+                                "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
+                                "help": "When this option is selected, the patch will be enabled for XMC.\nFollow the recommended flow by XMC for better stability.\n\nDO NOT DISABLE UNLESS YOU KNOW WHAT YOU ARE DOING.",
+                                "id": "SPI_FLASH_BROWNOUT_RESET_XMC",
+                                "name": "SPI_FLASH_BROWNOUT_RESET_XMC",
+                                "range": null,
+                                "title": "Enable sending reset when brownout for XMC flash chips",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
+                                "help": "When brownout happens during flash erase/write operations,\nsend reset command to stop the flash operations to improve stability.",
+                                "id": "SPI_FLASH_BROWNOUT_RESET",
+                                "name": "SPI_FLASH_BROWNOUT_RESET",
+                                "range": null,
+                                "title": null,
+                                "type": "bool"
+                            }
+                        ],
+                        "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
+                        "id": "component-config-main-flash-configuration-spi-flash-behavior-when-brownout",
+                        "title": "SPI Flash behavior when brownout",
+                        "type": "menu"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
+                                "help": "This is a helper config for HPM. Invisible for users.",
+                                "id": "SPI_FLASH_UNDER_HIGH_FREQ",
+                                "name": "SPI_FLASH_UNDER_HIGH_FREQ",
+                                "range": null,
+                                "title": null,
+                                "type": "bool"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice SPI_FLASH_HPM>",
+                                        "help": null,
+                                        "id": "SPI_FLASH_HPM_ENA",
+                                        "name": "SPI_FLASH_HPM_ENA",
+                                        "range": null,
+                                        "title": "Enable",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice SPI_FLASH_HPM>",
+                                        "help": null,
+                                        "id": "SPI_FLASH_HPM_AUTO",
+                                        "name": "SPI_FLASH_HPM_AUTO",
+                                        "range": null,
+                                        "title": "Auto (Not recommended)",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice SPI_FLASH_HPM>",
+                                        "help": null,
+                                        "id": "SPI_FLASH_HPM_DIS",
+                                        "name": "SPI_FLASH_HPM_DIS",
+                                        "range": null,
+                                        "title": "Disabled",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": "IDF_TARGET_ESP32S3 && !ESPTOOLPY_OCT_FLASH && !APP_BUILD_TYPE_PURE_RAM_APP",
+                                "help": "Whether the High Performance Mode of Flash is enabled. As an optional feature, user needs to manually\nenable this option as a confirmation. To be back-compatible with earlier IDF version, this option is\nautomatically enabled with warning when Flash running > 80Mhz.",
+                                "id": "component-config-main-flash-configuration-optional-and-experimental-features-read-docs-first--high-performance-mode-read-docs-first-80mhz-",
+                                "name": "SPI_FLASH_HPM",
+                                "title": "High Performance Mode (READ DOCS FIRST, > 80MHz)",
+                                "type": "choice"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
+                                "help": "This option is invisible, and will be selected automatically\nwhen ``ESPTOOLPY_FLASHFREQ_120M`` is selected.",
+                                "id": "SPI_FLASH_HPM_ON",
+                                "name": "SPI_FLASH_HPM_ON",
+                                "range": null,
+                                "title": null,
+                                "type": "bool"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice SPI_FLASH_HPM_DC>",
+                                        "help": null,
+                                        "id": "SPI_FLASH_HPM_DC_AUTO",
+                                        "name": "SPI_FLASH_HPM_DC_AUTO",
+                                        "range": null,
+                                        "title": "Auto (Enable when bootloader support enabled (BOOTLOADER_FLASH_DC_AWARE))",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "<choice SPI_FLASH_HPM_DC>",
+                                        "help": null,
+                                        "id": "SPI_FLASH_HPM_DC_DISABLE",
+                                        "name": "SPI_FLASH_HPM_DC_DISABLE",
+                                        "range": null,
+                                        "title": "Disable (READ DOCS FIRST)",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": "SPI_FLASH_HPM_ON && !APP_BUILD_TYPE_PURE_RAM_APP",
+                                "help": "This feature needs your bootloader to be compiled DC-aware (BOOTLOADER_FLASH_DC_AWARE=y). Otherwise the\nchip will not be able to boot after a reset.",
+                                "id": "component-config-main-flash-configuration-optional-and-experimental-features-read-docs-first--support-hpm-using-dc-read-docs-first-",
+                                "name": "SPI_FLASH_HPM_DC",
+                                "title": "Support HPM using DC (READ DOCS FIRST)",
+                                "type": "choice"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
+                                "help": "This is a helper config for HPM. Whether HPM-DC is enabled is also determined by bootloader.\nInvisible for users.",
+                                "id": "SPI_FLASH_HPM_DC_ON",
+                                "name": "SPI_FLASH_HPM_DC_ON",
+                                "range": null,
+                                "title": null,
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "IDF_TARGET_ESP32C3 && !SPI_FLASH_ROM_IMPL && !APP_BUILD_TYPE_PURE_RAM_APP",
+                                "help": "This option is disabled by default because it is supported only\nfor specific flash chips and for specific Espressif chips.\nTo evaluate if you can use this feature refer to\n`Optional Features for Flash` > `Auto Suspend & Resume` of the `ESP-IDF Programming Guide`.\n\nCAUTION: If you want to OTA to an app with this feature turned on, please make\nsure the bootloader has the support for it. (later than IDF v4.3)\n\nIf you are using an official Espressif module, please contact Espressif Business support\nto check if the module has the flash that support this feature installed.\nAlso refer to `Concurrency Constraints for Flash on SPI1` > `Flash Auto Suspend Feature`\nbefore enabling this option.",
+                                "id": "SPI_FLASH_AUTO_SUSPEND",
+                                "name": "SPI_FLASH_AUTO_SUSPEND",
+                                "range": null,
+                                "title": "Auto suspend long erase/write operations (READ DOCS FIRST)",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
+                                "help": "XMC-C series is regarded as not qualified for the Suspend feature, since its specification\nhas a tRS >= 1ms restriction. We strongly do not suggest using it for the Suspend feature.\nHowever, if your product in field has enabled this feature, you may still enable this\nconfig option to keep the legacy behavior.\n\nFor new users, DO NOT enable this config.",
+                                "id": "SPI_FLASH_FORCE_ENABLE_XMC_C_SUSPEND",
+                                "name": "SPI_FLASH_FORCE_ENABLE_XMC_C_SUSPEND",
+                                "range": null,
+                                "title": "Enable XMC-C series flash chip suspend feature anyway",
+                                "type": "bool"
+                            }
+                        ],
+                        "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
+                        "id": "component-config-main-flash-configuration-optional-and-experimental-features-read-docs-first-",
+                        "title": "Optional and Experimental Features (READ DOCS FIRST)",
+                        "type": "menu"
+                    }
+                ],
+                "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
+                "id": "component-config-main-flash-configuration",
+                "title": "Main Flash configuration",
+                "type": "menu"
+            },
+            {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
                                 "depends_on": "SPI_FLASH_VERIFY_WRITE && !APP_BUILD_TYPE_PURE_RAM_APP",
                                 "help": "If this option is enabled, if SPI flash write verification fails then a log error line\nwill be written with the address, expected & actual values. This can be useful when\ndebugging hardware SPI flash problems.",
                                 "id": "SPI_FLASH_LOG_FAILED_WRITE",
@@ -7965,21 +8249,11 @@
                             }
                         ],
                         "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
-                        "help": "This allows to yield the CPUs between erase commands.\nPrevents starvation of other tasks.\nPlease use this configuration together with ``SPI_FLASH_ERASE_YIELD_DURATION_MS`` and\n``SPI_FLASH_ERASE_YIELD_TICKS`` after carefully checking flash datasheet to avoid a\nwatchdog timeout.\nFor more information, please check `SPI Flash API` reference documenation\nunder section `OS Function`.",
+                        "help": "This allows to yield the CPUs between erase commands.\nPrevents starvation of other tasks.\nPlease use this configuration together with ``SPI_FLASH_ERASE_YIELD_DURATION_MS`` and\n``SPI_FLASH_ERASE_YIELD_TICKS`` after carefully checking flash datasheet to avoid a\nwatchdog timeout.\nFor more information, please check `SPI Flash API` reference documentation\nunder section `OS Function`.",
                         "id": "SPI_FLASH_YIELD_DURING_ERASE",
                         "name": "SPI_FLASH_YIELD_DURING_ERASE",
                         "range": null,
                         "title": "Enables yield operation during flash erase",
-                        "type": "bool"
-                    },
-                    {
-                        "children": [],
-                        "depends_on": "IDF_TARGET_ESP32C3 && !SPI_FLASH_ROM_IMPL && !APP_BUILD_TYPE_PURE_RAM_APP",
-                        "help": "This option is default n before ESP32-C3, because it needs bootloader support.\n\nCAUTION: If you want to OTA to an app with this feature turned on, please make\nsure the bootloader has the support for it. (later than IDF v4.3)\n\nAuto-suspend feature only supported by XMC chip.\nIf you are using an official module, please contact Espressif Business support.\nAlso reading auto suspend part in `SPI Flash API` document before you enable this function.",
-                        "id": "SPI_FLASH_AUTO_SUSPEND",
-                        "name": "SPI_FLASH_AUTO_SUSPEND",
-                        "range": null,
-                        "title": "Auto suspend long erase/write operations (READ DOCS FIRST)",
                         "type": "bool"
                     },
                     {
@@ -8024,34 +8298,6 @@
                         "range": null,
                         "title": "Override default chip driver list",
                         "type": "bool"
-                    },
-                    {
-                        "children": [
-                            {
-                                "children": [],
-                                "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
-                                "help": "When this option is selected, the patch will be enabled for XMC.\nFollow the recommended flow by XMC for better stability.\n\nDO NOT DISABLE UNLESS YOU KNOW WHAT YOU ARE DOING.",
-                                "id": "SPI_FLASH_BROWNOUT_RESET_XMC",
-                                "name": "SPI_FLASH_BROWNOUT_RESET_XMC",
-                                "range": null,
-                                "title": "Enable sending reset when brownout for XMC flash chips",
-                                "type": "bool"
-                            },
-                            {
-                                "children": [],
-                                "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
-                                "help": "When brownout happens during flash erase/write operations,\nsend reset command to stop the flash operations to improve stability.",
-                                "id": "SPI_FLASH_BROWNOUT_RESET",
-                                "name": "SPI_FLASH_BROWNOUT_RESET",
-                                "range": null,
-                                "title": null,
-                                "type": "bool"
-                            }
-                        ],
-                        "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
-                        "id": "component-config-spi-flash-driver-spi-flash-behavior-when-brownout",
-                        "title": "SPI Flash behavior when brownout",
-                        "type": "menu"
                     },
                     {
                         "children": [
@@ -8189,16 +8435,6 @@
                         "name": "SPI_FLASH_ENABLE_ENCRYPTED_READ_WRITE",
                         "range": null,
                         "title": "Enable encrypted partition read/write operations",
-                        "type": "bool"
-                    },
-                    {
-                        "children": [],
-                        "depends_on": "!APP_BUILD_TYPE_PURE_RAM_APP",
-                        "help": "This option is invisible, and will be selected automatically\nwhen ``ESPTOOLPY_FLASHFREQ_120M`` is selected.",
-                        "id": "SPI_FLASH_HPM_ENABLE",
-                        "name": "SPI_FLASH_HPM_ENABLE",
-                        "range": null,
-                        "title": null,
                         "type": "bool"
                     }
                 ],

@@ -23,7 +23,8 @@
 #include "esp_sntp.h"
 
 #include "sdkconfig.h"
-#include "dac-pcm1681.h"
+#include "dac-pcm5142.h"
+#include "cs8416.h"
 #include "channelsel-ax2358.h"
 #include "button.h"
 #include "http-server.h"
@@ -34,7 +35,7 @@
 #include "mdns.h"
 
 Amplifier::Amplifier() : mWifiEnabled( false ), mWifiConnectionAttempts( 0 ), mUpdatingFromNTP( false ), mPoweredOn( true ), mDisplayQueue( 3 ), mTimerID( 0 ), mButtonTimerID( 0 ), mReconnectTimerID( 0 ), mLCD( 0 ),
-    mDAC( 0 ), mChannelSel( 0 ), mDolbyDecoder( 0 ), mWebServer( 0 ), mMicroprocessorTemp( 0 ), mVolumeEncoder( 15, 13, true ), mInputEncoder( 4, 16, false ), mAudioTimerID( 0 ), mDolbyTimerID( 0 ), mPendingVolumeChange( false ), mPendingVolume( 0 ),
+    mDAC( 0 ), mChannelSel( 0 ), mWebServer( 0 ), mSPDIF( 0 ), mMicroprocessorTemp( 0 ), mVolumeEncoder( 15, 13, true ), mInputEncoder( 4, 16, false ), mAudioTimerID( 0 ), mPendingVolumeChange( false ), mPendingVolume( 0 ),
     mPowerButton( 0 ), mVolumeButton( 0 ), mInputButton( 0 ) {
 }
 
@@ -64,7 +65,6 @@ Amplifier::updateConnectedStatus( bool connected, bool doActualUpdate ) {
     if ( connected ) {
         gpio_set_level( PIN_LED_CONNECTED, 1 );
 
-   
         esp_err_t err = mdns_init();
         if (err) {
             printf("MDNS Init failed: %d\n", err);
@@ -92,7 +92,6 @@ Amplifier::init() {
 
     configurePins();
 
-    gpio_set_level( PIN_DECODER_RESET, 0 );
 
     taskDelayInMs( 20 );
 
@@ -123,8 +122,14 @@ Amplifier::init() {
     mLCD = new LCD( 0x27, &mI2C );
     mMicroprocessorTemp = new TMP100( 0x48, &mI2C );
     mChannelSel = new ChannelSel_AX2358( 0x4a, &mI2C );
-    mDAC = new DAC_PCM1681( 0x4c, &mI2C ); 
-    mDolbyDecoder = new Dolby_STA310( 0x60, &mI2C );
+   // mDAC = new DAC_PCM1681( 0x4c, &mI2C ); 
+   // mDAC = new DAC_PCM1681( 0x5c, &mI2C ); 
+
+    mDAC = new DAC_PCM5142( 0x4c, &mI2C );
+
+    // change the address
+    mSPDIF = new CS8416( 0x50, &mI2C );
+
 
     mAudioTimerID = mTimer.setTimer( 100, mAudioQueue, true );
 
@@ -221,7 +226,6 @@ Amplifier::updateDisplay() {
     char left[11] = {0};
     switch( state.mAudioType ) {
         case AmplifierState::AUDIO_ANALOG:
-
             if ( state.mEnhancement ) {
                 strcpy( left, "Analog/Enh" );
             }  else {
@@ -238,6 +242,9 @@ Amplifier::updateDisplay() {
         case AmplifierState::AUDIO_PCM:
             sprintf( s, "%-10s%10s", "PCM", rate );
             break;
+        case AmplifierState::AUDIO_DIGITAL:
+            sprintf( s, "%-10s%10s", "Digital", rate );
+            break;
     }
     mLCD->writeLine( 2, std::string( s ) );
 
@@ -249,9 +256,6 @@ Amplifier::updateDisplay() {
             break;
         case AmplifierState::AUDIO_2_DOT_1:
             strcpy( audioType, "2.1" );
-            break;
-        case AmplifierState::AUDIO_5_DOT_1:
-            strcpy( audioType, "5.1" );
             break;
     }
 
@@ -265,13 +269,15 @@ Amplifier::updateDisplay() {
         case AmplifierState::INPUT_STEREO_3:
             sprintf( input, "%-12s%8s", "Game", audioType );
             break;
-        case AmplifierState::INPUT_STEREO_4:
-            sprintf( input, "%-12s%8s", "Vinyl", audioType );
-            break;
-        case AmplifierState::INPUT_6CH:
-           // mLCD->writeLine( 3, "SPDIF" );
-            sprintf( input, "%-12s%8s", "Coaxial", audioType );
-            break;
+        case AmplifierState::INPUT_SPDIF_1:
+            sprintf( input, "%-12s%8s", "HDMI", audioType );
+            break;    
+        case AmplifierState::INPUT_SPDIF_2:
+            sprintf( input, "%-12s%8s", "Blueray", audioType );
+            break;    
+        case AmplifierState::INPUT_SPDIF_3:
+            sprintf( input, "%-12s%8s", "SPDIF", audioType );
+            break;           
     }
 
     mLCD->writeLine( 3, input );
@@ -303,11 +309,11 @@ Amplifier::updateInput( uint8_t newInput ) {
         ScopedLock lock( mStateMutex );
 
         mState.mInput = newInput;  
-        if ( newInput == AmplifierState::INPUT_6CH ) {
-            mState.mAudioType = AmplifierState::AUDIO_DOLBY;
+        if ( newInput == AmplifierState::INPUT_SPDIF_1 || newInput == AmplifierState::INPUT_SPDIF_2 || newInput == AmplifierState::INPUT_SPDIF_3 ) {
+            mState.mAudioType = AmplifierState::AUDIO_DIGITAL;
         } else {
             mState.mAudioType = AmplifierState::AUDIO_ANALOG;
-        }  
+        }
     }
 
     mAudioQueue.add( Message::MSG_INPUT_SET, mState.mInput );
@@ -402,14 +408,22 @@ Amplifier::handleAmplifierThread() {
                             updateInput( AmplifierState::INPUT_STEREO_3 );
                             break;
                         case AmplifierState::INPUT_STEREO_3:
-                            updateInput( AmplifierState::INPUT_STEREO_4 );
+                            updateInput( AmplifierState::INPUT_SPDIF_1 );
                             break;
-                        case AmplifierState::INPUT_STEREO_4:
-                            updateInput( AmplifierState::INPUT_6CH );
-                            break;
+                        case AmplifierState::INPUT_SPDIF_1:
+                            updateInput( AmplifierState::INPUT_SPDIF_2 );
+                            break;  
+                        case AmplifierState::INPUT_SPDIF_2:
+                            updateInput( AmplifierState::INPUT_SPDIF_3 );
+                            break;   
+                        case AmplifierState::INPUT_SPDIF_3:
+                            updateInput( AmplifierState::INPUT_STEREO_1 );
+                            break;     
+                        /*
                         case AmplifierState::INPUT_6CH:
                             updateInput( AmplifierState::INPUT_STEREO_1 );
                             break;
+                        */
                         default:
                             break;
                     }
@@ -417,7 +431,7 @@ Amplifier::handleAmplifierThread() {
                 case Message::MSG_INPUT_DOWN:
                     switch( mState.mInput ) {
                         case AmplifierState::INPUT_STEREO_1:
-                            updateInput( AmplifierState::INPUT_6CH );
+                            updateInput( AmplifierState::INPUT_SPDIF_3 );
                             break;
                         case AmplifierState::INPUT_STEREO_2:
                             updateInput( AmplifierState::INPUT_STEREO_1 );
@@ -425,12 +439,20 @@ Amplifier::handleAmplifierThread() {
                         case AmplifierState::INPUT_STEREO_3:
                             updateInput( AmplifierState::INPUT_STEREO_2 );
                             break;
-                        case AmplifierState::INPUT_STEREO_4:
+                        case AmplifierState::INPUT_SPDIF_1:
                             updateInput( AmplifierState::INPUT_STEREO_3 );
                             break;
+                        case AmplifierState::INPUT_SPDIF_2:
+                            updateInput( AmplifierState::INPUT_SPDIF_1 );
+                            break;  
+                        case AmplifierState::INPUT_SPDIF_3:
+                            updateInput( AmplifierState::INPUT_SPDIF_2 );
+                            break;          
+                        /*
                         case AmplifierState::INPUT_6CH:
                             updateInput( AmplifierState::INPUT_STEREO_4 );
                             break;
+                        */
                         default:
                             break;
                     }     
@@ -467,7 +489,7 @@ Amplifier::handleAmplifierThread() {
 void 
 Amplifier::handleDecoderIRQ() {
     AMP_DEBUG_I( "Decoder Interrupt" );  
-    mDolbyDecoder->handleInterrupt( mAudioQueue );
+  //  mDolbyDecoder->handleInterrupt( mAudioQueue );
 }
 
 void
@@ -496,38 +518,45 @@ Amplifier::handleVolumeButtonPress() {
 
 void 
 Amplifier::startDigitalAudio() {
-    //gpio_set_level( PIN_DECODER_RESET, 1 );
-
     vTaskDelay( 100 / portTICK_PERIOD_MS );
 
-    mDolbyDecoder->startDolby(); 
-
     // Dolby Decoder is muted, but running, so it's outputting zeros and a clock to the DAC
-    AMP_DEBUG_I( "Starting DAC initialization" );
+    AMP_DEBUG_I( "Starting SPDIF/DAC initialization" );
+
+    // enable CS8416
+    gpio_set_level( PIN_CS8416_RESET, 1 );
+    taskDelayInMs( 2 );
+
+    // Initialize SPDIF stream, but don't run
+    mSPDIF->init();
 
     mDAC->init();
     mDAC->setFormat( DAC::FORMAT_I2S );
-
-    // Max volume
     mDAC->setAttenuation( 0 );
     mDAC->enable( true );
 
-    mDolbyDecoder->play( true );
+    mSPDIF->run();
 
     vTaskDelay( 250 / portTICK_PERIOD_MS );
 }
 
 void 
 Amplifier::stopDigitalAudio() {
+    AMP_DEBUG_I( "Stopping SPDIF/DAC" );
+
     mDAC->enable( false );
-    mDolbyDecoder->stopDolby();
+    mSPDIF->run( false );
+
+    // disable CS8416
+    gpio_set_level( PIN_CS8416_RESET, 0 );
 }
 
 void 
 Amplifier::handleAudioThread() {
     AMP_DEBUG_I( "Starting Audio Thread" );
 
-    gpio_set_level( PIN_DECODER_RESET, 1 );
+    // enable reset of the CS8416
+    gpio_set_level( PIN_CS8416_RESET, 0 );
 
     taskDelayInMs( 100 );
 
@@ -541,7 +570,7 @@ Amplifier::handleAudioThread() {
 
     vTaskDelay( 1000 / portTICK_PERIOD_MS );
 
-    mDolbyDecoder->init();
+   // mDolbyDecoder->init();
 
     AMP_DEBUG_I( "Decoder set into active mode" );   
 
@@ -549,16 +578,25 @@ Amplifier::handleAudioThread() {
     AmplifierState state = getCurrentState();
 
     AMP_DEBUG_I( "Setting involumeput" );
+
     mChannelSel->setAttenuation( state.mCurrentAttenuation );
     mChannelSel->setEnhancement( state.mEnhancement );
 
     AMP_DEBUG_I( "Setting input" );
     mChannelSel->setInput( state.mInput );   
-    if ( state.mInput == AmplifierState::INPUT_6CH ) {
+    if ( state.mInput == AmplifierState::INPUT_SPDIF_1 || state.mInput == AmplifierState::INPUT_SPDIF_2 || state.mInput == AmplifierState::INPUT_SPDIF_3 ) {
         startDigitalAudio();
     }
 
+    // enable reset of the CS8416
+    // hack for now to get I2C address of CS8416
+    gpio_set_level( PIN_CS8416_RESET, 1 );
+    taskDelayInMs( 10 );
+
     mI2C.scanBus();
+
+    gpio_set_level( PIN_CS8416_RESET, 0 );
+    taskDelayInMs( 10 );
 
     asyncUpdateDisplay();
 
@@ -578,7 +616,7 @@ Amplifier::handleAudioThread() {
                 case Message::MSG_AUDIO_RESTART:
                     {
                         AmplifierState state = getCurrentState();
-                        if ( state.mInput == AmplifierState::INPUT_6CH ) {
+                        if ( state.mInput == AmplifierState::INPUT_SPDIF_1 || state.mInput == AmplifierState::INPUT_SPDIF_2 || state.mInput == AmplifierState::INPUT_SPDIF_3 ) {
                             startDigitalAudio();
                         }
                     }
@@ -586,7 +624,7 @@ Amplifier::handleAudioThread() {
                 case Message::MSG_AUDIO_SHUTDOWN:
                     {
                         AmplifierState state = getCurrentState();
-                        if ( state.mInput == AmplifierState::INPUT_6CH ) {
+                        if ( state.mInput == AmplifierState::INPUT_SPDIF_1 || state.mInput == AmplifierState::INPUT_SPDIF_2 || state.mInput == AmplifierState::INPUT_SPDIF_3 ) {
                             stopDigitalAudio();
                         }
                     }
@@ -600,18 +638,22 @@ Amplifier::handleAudioThread() {
                 case Message::MSG_INPUT_SET:
                     AMP_DEBUG_I( "Setting audio input to %lu", msg.mParam );
 
-                    if ( msg.mParam != AmplifierState::INPUT_6CH ) {
+                    if ( msg.mParam != AmplifierState::INPUT_SPDIF_1 && msg.mParam != AmplifierState::INPUT_SPDIF_2 && msg.mParam != AmplifierState::INPUT_SPDIF_3 ) {
                         // We are in Dolby, but moving away, so we need to shut down the digital audio
-                        AMP_DEBUG_I( "Stopping Dolby" );
+                        AMP_DEBUG_I( "Stopping Digital Audio" );
                         stopDigitalAudio();
-                    } else if ( msg.mParam == AmplifierState::INPUT_6CH ) {
+
+                        // set it to proper value
+                        mChannelSel->setInput( msg.mParam );
+                    } else if ( msg.mParam == AmplifierState::INPUT_SPDIF_1 || msg.mParam == AmplifierState::INPUT_SPDIF_2 || msg.mParam == AmplifierState::INPUT_SPDIF_3  ) {
                         // We need to start up the Dolby digital decoder
-                        AMP_DEBUG_I( "Starting Dolby" );
+                        AMP_DEBUG_I( "Starting Digital Audio" );
                         startDigitalAudio();
+
+                        // All SPDIF goes into the stereo 1 input for now
+                        mChannelSel->setInput( ChannelSel::INPUT_STEREO_1 );
                     }
                     
-                    mChannelSel->setInput( msg.mParam );
-
                     break;
                 case Message::MSG_TIMER: 
                     if ( msg.mParam == mAudioTimerID ) {
@@ -623,15 +665,12 @@ Amplifier::handleAudioThread() {
                                 mPendingVolumeChange = false;
                             }
                         }
-                    } else if ( msg.mParam == mDolbyTimerID ) {
-                      //  mDolbyDecoder->tick();
-                    }
+                    } 
                     
                     break;
                 case Message::MSG_AUDIO_SAMPLING_RATE_CHANGE:
                     {
                         ScopedLock lock( mStateMutex );
-
                         mState.mSamplingRate = msg.mParam;
                     }
 
@@ -977,6 +1016,10 @@ Amplifier::configurePins() {
     // Decoder reset
     configureOnePin( PIN_DECODER_RESET, GPIO_INTR_DISABLE, GPIO_MODE_OUTPUT, GPIO_PULLDOWN_ENABLE, GPIO_PULLUP_DISABLE );
     gpio_set_level( PIN_DECODER_RESET, 0 );
+
+    // SPDIF reset
+    configureOnePin( PIN_CS8416_RESET, GPIO_INTR_DISABLE, GPIO_MODE_OUTPUT, GPIO_PULLDOWN_ENABLE, GPIO_PULLUP_DISABLE );
+    gpio_set_level( PIN_CS8416_RESET, 0 );
 
     // Setting up decoder
     configureOnePin( PIN_DECODER_IRQ, GPIO_INTR_DISABLE, GPIO_MODE_INPUT, GPIO_PULLDOWN_DISABLE, GPIO_PULLUP_ENABLE );

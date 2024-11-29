@@ -7,22 +7,24 @@
 
 class AmplifierState {
 public:
-    AmplifierState() : mAudioType( AUDIO_DOLBY ), mState( STATE_INIT ), mInput( INPUT_6CH ), mSpeakerConfig( AUDIO_5_DOT_1 ), mCurrentAttenuation( 30 ), mSamplingRate( 48000 ), mConnected( false ), mEnhancement( false ) {}
+    AmplifierState() : mAudioType( AUDIO_ANALOG ), mState( STATE_INIT ), mInput( INPUT_STEREO_1 ), mSpeakerConfig( AUDIO_2_DOT_1 ), mCurrentAttenuation( 30 ), mSamplingRate( 48000 ), mConnected( false ), mEnhancement( false ) {}
 
     enum {
         INPUT_UNDEFINED = 0,
-        INPUT_STEREO_1 = ChannelSel::INPUT_STEREO_1,
-        INPUT_STEREO_2 = ChannelSel::INPUT_STEREO_2,
-        INPUT_STEREO_3 = ChannelSel::INPUT_STEREO_3,
-        INPUT_STEREO_4 = ChannelSel::INPUT_STEREO_4,
-        INPUT_6CH = ChannelSel::INPUT_6CH,
+        INPUT_STEREO_1 = ChannelSel::INPUT_STEREO_2,
+        INPUT_STEREO_2 = ChannelSel::INPUT_STEREO_3,
+        INPUT_STEREO_3 = ChannelSel::INPUT_STEREO_4,
+        INPUT_SPDIF_1,
+        INPUT_SPDIF_2,
+        INPUT_SPDIF_3,
     };
 
     enum {
         AUDIO_ANALOG,
         AUDIO_PCM,
         AUDIO_DOLBY,
-        AUDIO_DTS
+        AUDIO_DTS,
+        AUDIO_DIGITAL
     } mAudioType;
 
     enum {
@@ -37,8 +39,7 @@ public:
 
     enum {
         AUDIO_2_CH,
-        AUDIO_2_DOT_1,
-        AUDIO_5_DOT_1,
+        AUDIO_2_DOT_1
     };
 
     // Volume goes from 0-79

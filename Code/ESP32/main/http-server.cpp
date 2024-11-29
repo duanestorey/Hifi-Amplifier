@@ -69,7 +69,6 @@ esp_err_t volume_down5( httpd_req_t *req )
     return server->handleResponse( HTTP_Server::SERVER_VOLUME_DOWN_5, req );
 }
 
-
 esp_err_t input_6ch( httpd_req_t *req )
 {
     HTTP_Server *server = (HTTP_Server *)req->user_ctx;
@@ -151,7 +150,7 @@ HTTP_Server::handleResponse( uint8_t requestType, httpd_req_t *req ) {
             return httpd_resp_send(req, NULL, 0 );
             break;  
         case HTTP_Server::SERVER_INPUT_6CH:
-            mQueue->add( Message::MSG_INPUT_SET, AmplifierState::INPUT_6CH );
+            mQueue->add( Message::MSG_INPUT_SET, AmplifierState::INPUT_STEREO_1 );
             httpd_resp_set_status( req, HTTPD_307 );
             httpd_resp_set_hdr( req, "Location", "/");
             return httpd_resp_send(req, NULL, 0 );
@@ -175,7 +174,7 @@ HTTP_Server::handleResponse( uint8_t requestType, httpd_req_t *req ) {
             return httpd_resp_send(req, NULL, 0 );
             break;      
         case HTTP_Server::SERVER_INPUT_VINYL:
-            mQueue->add( Message::MSG_INPUT_SET, AmplifierState::INPUT_STEREO_4 );
+            mQueue->add( Message::MSG_INPUT_SET, AmplifierState::INPUT_STEREO_1 );
             httpd_resp_set_status( req, HTTPD_307 );
             httpd_resp_set_hdr( req, "Location", "/");
             return httpd_resp_send(req, NULL, 0 );

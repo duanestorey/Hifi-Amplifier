@@ -3,8 +3,6 @@
 
 #define AX2358_MAX_VOL      79
 
-
-
 void 
 ChannelSel_AX2358::writeChipValue( uint8_t value ) {
     uint8_t data[2];

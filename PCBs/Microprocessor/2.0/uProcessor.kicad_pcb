@@ -5519,6 +5519,8 @@
     )
   )
 
+  (gr_line (start 107.1 43.7) (end 163 43.7)
+    (stroke (width 0.2) (type default)) (layer "F.Cu") (tstamp 593325ba-ed3f-4b79-b89f-7d3488b4bfc4))
   (gr_line (start 162 139) (end 107 139)
     (stroke (width 0.1) (type solid)) (layer "Edge.Cuts") (tstamp 4872fbbc-1bb7-4867-abf6-e0b1007bd0a6))
   (gr_line (start 162 44) (end 107 44)

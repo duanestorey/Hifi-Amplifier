@@ -1,4 +1,4 @@
-# Install script for directory: /Users/duane/Code/Github/Hifi-Amplifier/Code/ESP32/managed_components/espressif__mdns
+# Install script for directory: /Users/duane/Code/personal/projects/hifi-amplifier/Code/ESP32/managed_components/espressif__mdns
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
