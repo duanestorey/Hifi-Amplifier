@@ -1,22 +1,40 @@
 #include "dac-pcm5142.h"
 #include "debug.h"
 
-DAC_PCM5142::DAC_PCM5142( uint8_t address, I2CBUS *bus ) : mAddress( address ), mI2C( bus ), mCurrentPage( 255 ), mPrecision( DAC::PRECISION_24_BIT ), mFormat( DAC::FORMAT_I2S ) {
+DAC_PCM5142::DAC_PCM5142( uint8_t address, I2CBUS *bus ) : mAddress( address ), mI2C( bus ), mCurrentPage( 255 ), mPrecision( DAC::PRECISION_24_BIT ), 
+    mFormat( DAC::FORMAT_I2S ), mDetectedSamplingRate( 0 ), mDetectedClkRatio( 0 ) {
 }
 
 DAC_PCM5142::~DAC_PCM5142() {
 }
 
+void
+DAC_PCM5142::reset() {
+    mCurrentPage = 255;
+    switchToPage( 0 );
+
+    // enter standby mode
+    mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_PAGE_STANDBY, 16 );
+
+    // reset all registers
+    mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_PAGE_RESET, 0x11 );
+
+    mCurrentPage = 255;
+}
 
 void 
 DAC_PCM5142::init() {
     AMP_DEBUG_I( "Initializing" );
-    
+
+    reset();
+
     switchToPage( 0 );
-    mCurrentPage = 0;
 
     // switch from 8x interpolation to 16x, and enable double speed
-    mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_INT_SPEED, 0 | 0 );
+    mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_INT_SPEED, 16 | 1 );
+
+    // set auto clock to on
+    mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_AUTO_CLOCK, 0 );
 
     setFormat( FORMAT_I2S );
 
@@ -57,7 +75,17 @@ DAC_PCM5142::setFormat( uint8_t format ) {
             mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_FORMAT, 16 | precisionValue );
             break;
     }
-    
+}
+
+void
+DAC_PCM5142::detectAudio() {
+    switchToPage( 0 );
+
+    uint8_t audioInfo = 0;
+    mI2C->readRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_GAIN_CTRL, audioInfo );
+
+    mDetectedClkRatio = audioInfo & 0x0f;
+    mDetectedSamplingRate = ( ( audioInfo & 0x70 ) >> 3 );
 }
 
 void 
@@ -66,9 +94,12 @@ DAC_PCM5142::enable( bool state ) {
     switchToPage( 0 );
 
     if ( state ) {
-            mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_PAGE_STANDBY, 0 );
+        mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_PAGE_STANDBY, 0 );
+
+        // let's see if we can figure out the audio
+        detectAudio();
     } else {
-            mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_PAGE_STANDBY, 16 );
+        mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_PAGE_STANDBY, 16 );
     }
 }
 
@@ -79,12 +110,13 @@ DAC_PCM5142::setChannelAttenuation( int channel, int att ) {
     // mute is      0b11111111
     switchToPage( 0 );
 
-    uint16_t value = ((uint16_t)att) * 2;
+    // value can only go up to 79
+    uint8_t value = ((uint16_t)att) * 2;
     if ( value > 206 ) {
         value = 206;
     }
 
-    value = value + 0b00110000;
+    value = 0b00110000 + value;
     if ( channel == DAC::FRONT_LEFT ) {
         mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_VOL_LEFT, value );
     } else if ( channel == DAC::FRONT_RIGHT ) {
@@ -103,6 +135,7 @@ DAC_PCM5142::switchToPage( uint8_t page ) {
     if ( mCurrentPage != page ) {
          AMP_DEBUG_I( "Setting page to %d", (int)page );
          mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_PAGE_SELECT, page );
+
          mCurrentPage = page;
     }
 }

@@ -45,6 +45,7 @@ protected:
     bool mWifiConnectionAttempts;
     bool mUpdatingFromNTP;
     bool mPoweredOn;
+    bool mDigitalAudioStarted;
 
     Timer mTimer;
 
@@ -104,6 +105,8 @@ private:
     void changeAmplifierState( uint8_t newState );
     void startDigitalAudio();
     void stopDigitalAudio();
+
+    void activateButtonLight( bool activate = true );
 
     Mutex mStateMutex;
 

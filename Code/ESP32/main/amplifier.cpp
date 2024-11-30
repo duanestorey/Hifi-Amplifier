@@ -34,7 +34,9 @@
 #include "netdb.h"
 #include "mdns.h"
 
-Amplifier::Amplifier() : mWifiEnabled( false ), mWifiConnectionAttempts( 0 ), mUpdatingFromNTP( false ), mPoweredOn( true ), mDisplayQueue( 3 ), mTimerID( 0 ), mButtonTimerID( 0 ), mReconnectTimerID( 0 ), mLCD( 0 ),
+#include "ir-receiver.h"
+
+Amplifier::Amplifier() : mWifiEnabled( false ), mWifiConnectionAttempts( 0 ), mUpdatingFromNTP( false ), mPoweredOn( true ), mDigitalAudioStarted( false ), mDisplayQueue( 3 ), mTimerID( 0 ), mButtonTimerID( 0 ), mReconnectTimerID( 0 ), mLCD( 0 ),
     mDAC( 0 ), mChannelSel( 0 ), mWebServer( 0 ), mSPDIF( 0 ), mMicroprocessorTemp( 0 ), mVolumeEncoder( 15, 13, true ), mInputEncoder( 4, 16, false ), mAudioTimerID( 0 ), mPendingVolumeChange( false ), mPendingVolume( 0 ),
     mPowerButton( 0 ), mVolumeButton( 0 ), mInputButton( 0 ) {
 }
@@ -47,6 +49,7 @@ Amplifier::taskDelayInMs( uint32_t ms ) {
 AmplifierState 
 Amplifier::getCurrentState() {
     ScopedLock lock( mStateMutex );
+
     AmplifierState stateCopy = mState;
     return stateCopy;
 }
@@ -63,7 +66,6 @@ Amplifier::updateConnectedStatus( bool connected, bool doActualUpdate ) {
     }   
 
     if ( connected ) {
-        gpio_set_level( PIN_LED_CONNECTED, 1 );
 
         esp_err_t err = mdns_init();
         if (err) {
@@ -79,8 +81,6 @@ Amplifier::updateConnectedStatus( bool connected, bool doActualUpdate ) {
 
         mWebServer->start();
     } else {
-        gpio_set_level( PIN_LED_CONNECTED, 0 );
-
         mWebServer->stop();
     }
 
@@ -91,9 +91,11 @@ Amplifier::init() {
     nvs_flash_init(); 
 
     configurePins();
+    setupPWM();
 
+    taskDelayInMs( 10 );
 
-    taskDelayInMs( 20 );
+    activateButtonLight( true );
 
     mTimerID = mTimer.setTimer( 60000, mAmplifierQueue, true );
     mButtonTimerID = mTimer.setTimer( 5, mAmplifierQueue, true );
@@ -104,32 +106,30 @@ Amplifier::init() {
         -------
         LCD                             0x27
         Channel Selector AX2358         0x4a
-        PCM 1681 DAC                    0x4c
         Microprocessor Temp Sensor      0x48   
+
+        PCM 5142 FL/FR                  0x4c
+        CS8416                          0x16
+
+        Deprecated
+        ------------
         Dolby Decoder STA310            0x60 
+        PCM 1681 DAC                    0x4c
 
         Future  
         -------
-        CS8416                          0x10
-        Dolby Temp Sensor               0x49 
-        PCM 5142 FL/FR                  0x4c
-        PCM 5142 C/Sw                   0x4d
-        PCM 5142 LR/RR                  0x4e
-        PCM 5142 CS8416                 0x4f
 
     */
 
     mLCD = new LCD( 0x27, &mI2C );
     mMicroprocessorTemp = new TMP100( 0x48, &mI2C );
     mChannelSel = new ChannelSel_AX2358( 0x4a, &mI2C );
-   // mDAC = new DAC_PCM1681( 0x4c, &mI2C ); 
-   // mDAC = new DAC_PCM1681( 0x5c, &mI2C ); 
 
+    // PCM5142
     mDAC = new DAC_PCM5142( 0x4c, &mI2C );
 
-    // change the address
-    mSPDIF = new CS8416( 0x50, &mI2C );
-
+    // CS8416
+    mSPDIF = new CS8416( 0x16, &mI2C );
 
     mAudioTimerID = mTimer.setTimer( 100, mAudioQueue, true );
 
@@ -212,15 +212,11 @@ Amplifier::updateDisplay() {
     }
     mLCD->writeLine( 1, s );
 
-    char rate[12] = {0};
+    char rate[15] = {0};
     if ( state.mAudioType == AmplifierState::AUDIO_ANALOG ) {
         strcpy( rate, "" );
-    } else {
-        if ( state.mSamplingRate == 44100 ) {
-            strcpy( rate, "44.1kHz" );
-        } else {
-            sprintf( rate, "%lukHz", state.mSamplingRate / 1000 );
-        }
+    } else if ( state.mAudioType == AmplifierState::AUDIO_DIGITAL ) {
+        sprintf( rate, "%luk/%d", state.mSamplingRate / 1000, state.mBitDepth );
     }
 
     char left[11] = {0};
@@ -252,7 +248,7 @@ Amplifier::updateDisplay() {
     char audioType[10];
     switch( state.mSpeakerConfig ) {
         case AmplifierState::AUDIO_2_CH:
-            sprintf( audioType, "Stereo" );
+            sprintf( audioType, "2.0" );
             break;
         case AmplifierState::AUDIO_2_DOT_1:
             strcpy( audioType, "2.1" );
@@ -264,10 +260,10 @@ Amplifier::updateDisplay() {
             sprintf( input, "%-12s%8s", "TV", audioType );
             break;
         case AmplifierState::INPUT_STEREO_2:
-            sprintf( input, "%-12s%8s", "Streamer", audioType );
+            sprintf( input, "%-12s%8s", "Game", audioType );
             break;
         case AmplifierState::INPUT_STEREO_3:
-            sprintf( input, "%-12s%8s", "Game", audioType );
+            sprintf( input, "%-12s%8s", "Vinyl", audioType );
             break;
         case AmplifierState::INPUT_SPDIF_1:
             sprintf( input, "%-12s%8s", "HDMI", audioType );
@@ -332,16 +328,26 @@ Amplifier::handleAmplifierThread() {
 
             switch( msg.mMessageType ) {
                 case Message::MSG_POWEROFF:
+                    activateButtonLight( false );
+
+                    mPoweredOn = false;
+
                     gpio_set_level( PIN_RELAY, 0 );
                     mLCD->enableBacklight( false );
                     mAudioQueue.add( Message::MSG_AUDIO_SHUTDOWN );
+
                     break;
                 case Message::MSG_POWERON:
+                    activateButtonLight( true ); 
+
+                    mPoweredOn = true;
+
                     mLCD->enableBacklight( true );
                     gpio_set_level( PIN_RELAY, 1 );
                     taskDelayInMs( 1000 );
 
                     mAudioQueue.add( Message::MSG_AUDIO_RESTART );
+                    
                     break;
                 case Message::MSG_DISPLAY_SHOULD_UPDATE:
                     // need to update the display
@@ -495,6 +501,12 @@ Amplifier::handleDecoderIRQ() {
 void
 Amplifier::handlePowerButtonPress() {
     AMP_DEBUG_I( "Power button pressed" );
+
+    if ( mPoweredOn ) {
+        mAmplifierQueue.add( Message::MSG_POWEROFF );
+    } else {
+        mAmplifierQueue.add( Message::MSG_POWERON );
+    }
 }
 
 void 
@@ -518,14 +530,14 @@ Amplifier::handleVolumeButtonPress() {
 
 void 
 Amplifier::startDigitalAudio() {
-    vTaskDelay( 100 / portTICK_PERIOD_MS );
+    taskDelayInMs( 10 );
 
     // Dolby Decoder is muted, but running, so it's outputting zeros and a clock to the DAC
     AMP_DEBUG_I( "Starting SPDIF/DAC initialization" );
 
     // enable CS8416
     gpio_set_level( PIN_CS8416_RESET, 1 );
-    taskDelayInMs( 2 );
+    taskDelayInMs( 1 );
 
     // Initialize SPDIF stream, but don't run
     mSPDIF->init();
@@ -537,7 +549,9 @@ Amplifier::startDigitalAudio() {
 
     mSPDIF->run();
 
-    vTaskDelay( 250 / portTICK_PERIOD_MS );
+    taskDelayInMs( 10 );
+
+    mDigitalAudioStarted = true;
 }
 
 void 
@@ -549,6 +563,8 @@ Amplifier::stopDigitalAudio() {
 
     // disable CS8416
     gpio_set_level( PIN_CS8416_RESET, 0 );
+
+    mDigitalAudioStarted = false;
 }
 
 void 
@@ -558,7 +574,7 @@ Amplifier::handleAudioThread() {
     // enable reset of the CS8416
     gpio_set_level( PIN_CS8416_RESET, 0 );
 
-    taskDelayInMs( 100 );
+    taskDelayInMs( 10 );
 
     // Channel Selector is now muted - need to umuted when audio is ready to go
     mChannelSel->init();
@@ -568,9 +584,7 @@ Amplifier::handleAudioThread() {
 
     gpio_set_level( PIN_RELAY, 1 );
 
-    vTaskDelay( 1000 / portTICK_PERIOD_MS );
-
-   // mDolbyDecoder->init();
+    taskDelayInMs( 500 );
 
     AMP_DEBUG_I( "Decoder set into active mode" );   
 
@@ -602,9 +616,6 @@ Amplifier::handleAudioThread() {
 
     mChannelSel->mute( false );
     AMP_DEBUG_I( "Channel selector un-muted" );
-
-    // Activate power
-    vTaskDelay( 100 / portTICK_PERIOD_MS );
     
     // Set to playing status
     changeAmplifierState( AmplifierState::STATE_PLAYING );
@@ -657,12 +668,39 @@ Amplifier::handleAudioThread() {
                     break;
                 case Message::MSG_TIMER: 
                     if ( msg.mParam == mAudioTimerID ) {
+                        // we are on the audio timer thread
                         if ( mPendingVolumeChange ) {
                             AMP_DEBUG_I( "Actually setting pending audio volume to %lu", mPendingVolume );
                             bool result = mChannelSel->setAttenuation( mPendingVolume );
                             if ( result ) {
                                 // if it failed, we will try again shortly
                                 mPendingVolumeChange = false;
+                            }
+                        }
+
+                        if ( mDigitalAudioStarted && false ) {
+                            // let's scan the SPDIF and see what the sampling rate is
+                            if ( mSPDIF->hasLoopLock() ) {
+                                bool changed = false;
+
+                                AmplifierState state = getCurrentState();
+                                uint16_t samplingRate = mSPDIF->getSamplingRate();
+
+                                if ( samplingRate != state.mSamplingRate ) {
+                                    state.mSamplingRate = samplingRate;
+                                    changed = true;
+                                }
+
+                                uint16_t bitDepth = mSPDIF->getBitDepth();
+                                if ( bitDepth != state.mBitDepth ) {
+                                    state.mBitDepth = bitDepth;
+                                    changed = true;
+                                }
+
+                                // update the display from the display thread
+                                if ( changed ) {
+                                     asyncUpdateDisplay();
+                                }
                             }
                         }
                     } 
@@ -788,7 +826,10 @@ Amplifier::attemptWifiConnect() {
     AMP_DEBUG_I( "Attempting to connect Wifi" );
 
     mWifiConnectionAttempts = 0;
+
+    AMP_DEBUG_I( "Calling wifi connect" );
     esp_wifi_connect();
+    AMP_DEBUG_I( "Wifi connect done" );
 }
 
 void
@@ -942,27 +983,46 @@ Amplifier::setupPWM() {
     backlight_config.clk_cfg            = LEDC_USE_REF_TICK;
 
     ledc_channel_config_t ledc_channel = {};
-    ledc_channel.gpio_num   = 2;
+    ledc_channel.gpio_num   = PIN_LED_FRONT_STANDBY;
     ledc_channel.speed_mode = LEDC_HIGH_SPEED_MODE;
     ledc_channel.channel    = LEDC_CHANNEL_0;
     ledc_channel.intr_type  = LEDC_INTR_DISABLE;
     ledc_channel.timer_sel  = LEDC_TIMER_0;
     ledc_channel.duty       = 0;
     ledc_channel.hpoint     = 0;
-    ledc_channel.flags.output_invert = 1;
+    ledc_channel.flags.output_invert = 0;
 
     ledc_timer_config( &backlight_config );
     ledc_channel_config( &ledc_channel );
     
-    ledc_set_duty( LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_0, 500 );
+    ledc_set_duty( LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_0, 50 );
 	ledc_update_duty( LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_0 );
 
-    ledc_channel.channel = LEDC_CHANNEL_1;
-    ledc_channel.gpio_num   = 23;
+    ledc_channel.gpio_num   = PIN_LED_ACTIVE;
+    ledc_channel.speed_mode = LEDC_HIGH_SPEED_MODE;
+    ledc_channel.channel    = LEDC_CHANNEL_1;
+    ledc_channel.intr_type  = LEDC_INTR_DISABLE;
+    ledc_channel.timer_sel  = LEDC_TIMER_0;
+    ledc_channel.duty       = 0;
+    ledc_channel.hpoint     = 0;
+    ledc_channel.flags.output_invert = 0;
+
     ledc_channel_config( &ledc_channel );
 
-    ledc_set_duty( LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_1, 500 );
-	ledc_update_duty( LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_1 );
+   // ledc_set_duty( LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_1, 1023 );
+	//ledc_update_duty( LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_1 );
+}
+
+void 
+Amplifier::activateButtonLight( bool activate ) {
+    if ( activate ) {
+        ledc_set_duty( LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_1, 1023 );
+	    ledc_update_duty( LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_1 );
+    } else {
+        ledc_set_duty( LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_1, 0 );
+	    ledc_update_duty( LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_1 );
+    }
+
 }
 
 void
@@ -971,17 +1031,16 @@ Amplifier::configurePins() {
     gpio_install_isr_service( 0 );
 
     // Configure LEDs
-    configureOnePin( PIN_LED_ACTIVE, GPIO_INTR_DISABLE, GPIO_MODE_OUTPUT, GPIO_PULLDOWN_ENABLE, GPIO_PULLUP_DISABLE );
-    gpio_set_level( PIN_LED_ACTIVE, 0 );
+   // configureOnePin( PIN_LED_ACTIVE, GPIO_INTR_DISABLE, GPIO_MODE_OUTPUT, GPIO_PULLDOWN_ENABLE, GPIO_PULLUP_DISABLE );
     
     // The standby power LED indicator
-    configureOnePin( PIN_LED_FRONT_STANDBY, GPIO_INTR_DISABLE, GPIO_MODE_OUTPUT, GPIO_PULLDOWN_ENABLE, GPIO_PULLUP_DISABLE );
-    gpio_set_level( PIN_LED_FRONT_STANDBY, 1 );
+ //   configureOnePin( PIN_LED_FRONT_STANDBY, GPIO_INTR_DISABLE, GPIO_MODE_OUTPUT, GPIO_PULLDOWN_DISABLE, GPIO_PULLUP_DISABLE );
 
-    configureOnePin( PIN_LED_FRONT_POWER, GPIO_INTR_DISABLE, GPIO_MODE_OUTPUT, GPIO_PULLDOWN_ENABLE, GPIO_PULLUP_DISABLE );
+    AMP_DEBUG_I( "Activating standby" );
+   // gpio_set_level( PIN_LED_FRONT_STANDBY, 1 );
 
-    configureOnePin( PIN_LED_CONNECTED, GPIO_INTR_DISABLE, GPIO_MODE_OUTPUT, GPIO_PULLDOWN_ENABLE, GPIO_PULLUP_DISABLE );
-    gpio_set_level( PIN_LED_CONNECTED, 0 );
+    configureOnePin( PIN_LED_FRONT_POWER, GPIO_INTR_DISABLE, GPIO_MODE_OUTPUT, GPIO_PULLDOWN_DISABLE, GPIO_PULLUP_DISABLE );
+    gpio_set_level( PIN_LED_FRONT_POWER, 1 );
 
     // Configure Output Triggers
     configureOnePin( PIN_RELAY, GPIO_INTR_DISABLE, GPIO_MODE_OUTPUT, GPIO_PULLDOWN_ENABLE, GPIO_PULLUP_DISABLE );
@@ -1029,6 +1088,7 @@ Amplifier::configurePins() {
 
 void 
 Amplifier::configureOnePin( PIN pin, gpio_int_type_t interrupts, gpio_mode_t mode, gpio_pulldown_t pulldown, gpio_pullup_t pullup ) {
+
     uint_fast32_t mask = ( ((uint_fast32_t)1) << ( uint_fast32_t ) pin );
     gpio_config_t io_conf;
 

@@ -8,12 +8,16 @@ class DAC_PCM5142 : public DAC {
 public:
     enum {
         PCM5142_PAGE_SELECT = 0,
+        PCM5142_PAGE_RESET = 1,
         PCM5142_PAGE_STANDBY = 2,
         PCM5142_REG_INT_SPEED = 34,
+        PCM5142_REG_AUTO_CLOCK = 37,
         PCM5142_REG_FORMAT = 40,
         PCM5142_REG_VOL_LEFT = 61,
-        PCM5142_REG_VOL_RIGHT = 62
-        
+        PCM5142_REG_VOL_RIGHT = 62,
+        PCM5142_REG_AUDIO_INFO = 91,
+        PCM5142_REG_STATUS = 94,
+        PCM5142_REG_SPEED_MONITOR = 115
     } PCM5142_PAGE_1;
 
     enum {
@@ -40,8 +44,13 @@ protected:
     uint8_t mCurrentPage;
     uint8_t mPrecision;
     uint8_t mFormat;
+
+    uint32_t mDetectedSamplingRate;
+    uint16_t mDetectedClkRatio;
 private:
     void switchToPage( uint8_t page );
+    void reset();
+    void detectAudio();
 };
 
 #endif

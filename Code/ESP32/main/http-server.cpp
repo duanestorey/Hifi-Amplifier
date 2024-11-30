@@ -69,10 +69,16 @@ esp_err_t volume_down5( httpd_req_t *req )
     return server->handleResponse( HTTP_Server::SERVER_VOLUME_DOWN_5, req );
 }
 
-esp_err_t input_6ch( httpd_req_t *req )
+esp_err_t input_hdmi( httpd_req_t *req )
 {
     HTTP_Server *server = (HTTP_Server *)req->user_ctx;
-    return server->handleResponse( HTTP_Server::SERVER_INPUT_6CH, req );
+    return server->handleResponse( HTTP_Server::SERVER_INPUT_HDMI, req );
+}
+
+esp_err_t input_blueray( httpd_req_t *req )
+{
+    HTTP_Server *server = (HTTP_Server *)req->user_ctx;
+    return server->handleResponse( HTTP_Server::SERVER_INPUT_BLUERAY, req );
 }
 
 esp_err_t input_streamer( httpd_req_t *req )
@@ -149,12 +155,18 @@ HTTP_Server::handleResponse( uint8_t requestType, httpd_req_t *req ) {
             httpd_resp_set_hdr( req, "Location", "/");
             return httpd_resp_send(req, NULL, 0 );
             break;  
-        case HTTP_Server::SERVER_INPUT_6CH:
-            mQueue->add( Message::MSG_INPUT_SET, AmplifierState::INPUT_STEREO_1 );
+        case HTTP_Server::SERVER_INPUT_HDMI:
+            mQueue->add( Message::MSG_INPUT_SET, AmplifierState::INPUT_SPDIF_1 );
             httpd_resp_set_status( req, HTTPD_307 );
             httpd_resp_set_hdr( req, "Location", "/");
             return httpd_resp_send(req, NULL, 0 );
             break;  
+        case HTTP_Server::SERVER_INPUT_BLUERAY:
+            mQueue->add( Message::MSG_INPUT_SET, AmplifierState::INPUT_SPDIF_2 );
+            httpd_resp_set_status( req, HTTPD_307 );
+            httpd_resp_set_hdr( req, "Location", "/");
+            return httpd_resp_send(req, NULL, 0 );
+            break;      
         case HTTP_Server::SERVER_INPUT_TV:
             mQueue->add( Message::MSG_INPUT_SET, AmplifierState::INPUT_STEREO_1 );
             httpd_resp_set_status( req, HTTPD_307 );
@@ -162,19 +174,19 @@ HTTP_Server::handleResponse( uint8_t requestType, httpd_req_t *req ) {
             return httpd_resp_send(req, NULL, 0 );
             break;   
         case HTTP_Server::SERVER_INPUT_STREAMER:
-            mQueue->add( Message::MSG_INPUT_SET, AmplifierState::INPUT_STEREO_2 );
+            mQueue->add( Message::MSG_INPUT_SET, AmplifierState::INPUT_SPDIF_3 );
             httpd_resp_set_status( req, HTTPD_307 );
             httpd_resp_set_hdr( req, "Location", "/");
             return httpd_resp_send(req, NULL, 0 );
             break; 
         case HTTP_Server::SERVER_INPUT_GAME:
-            mQueue->add( Message::MSG_INPUT_SET, AmplifierState::INPUT_STEREO_3 );
+            mQueue->add( Message::MSG_INPUT_SET, AmplifierState::INPUT_STEREO_2 );
             httpd_resp_set_status( req, HTTPD_307 );
             httpd_resp_set_hdr( req, "Location", "/");
             return httpd_resp_send(req, NULL, 0 );
             break;      
         case HTTP_Server::SERVER_INPUT_VINYL:
-            mQueue->add( Message::MSG_INPUT_SET, AmplifierState::INPUT_STEREO_1 );
+            mQueue->add( Message::MSG_INPUT_SET, AmplifierState::INPUT_STEREO_3 );
             httpd_resp_set_status( req, HTTPD_307 );
             httpd_resp_set_hdr( req, "Location", "/");
             return httpd_resp_send(req, NULL, 0 );
@@ -213,7 +225,7 @@ HTTP_Server::start() {
         uri_get.handler = volume_up;
         httpd_register_uri_handler( mServerHandle, &uri_get );
 
-         uri_get.uri = "/volumedown";
+        uri_get.uri = "/volumedown";
         uri_get.handler = volume_down;
         httpd_register_uri_handler( mServerHandle, &uri_get );
 
@@ -225,8 +237,12 @@ HTTP_Server::start() {
         uri_get.handler = volume_down5;
         httpd_register_uri_handler( mServerHandle, &uri_get );
 
-        uri_get.uri = "/input_6ch";
-        uri_get.handler = input_6ch;
+        uri_get.uri = "/input_hdmi";
+        uri_get.handler = input_hdmi;
+        httpd_register_uri_handler( mServerHandle, &uri_get );
+
+        uri_get.uri = "/input_blueray";
+        uri_get.handler = input_blueray;
         httpd_register_uri_handler( mServerHandle, &uri_get );
 
         uri_get.uri = "/input_streamer";
@@ -284,7 +300,7 @@ HTTP_Server::start() {
 
             FILE *f = fopen( "/spiffs/index.html", "rt" );
             if ( f ) {
-                char s[1024];
+                char s[ 2048 ];
 
                 while ( !feof( f ) ) {
                     fgets( s, 1024, f );

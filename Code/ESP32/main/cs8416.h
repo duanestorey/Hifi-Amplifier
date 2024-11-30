@@ -21,6 +21,8 @@ public:
         ADDR_RECEIVER_ERROR = 0x0c,
         ADDR_INTERRUPT_STATUS = 0x0d,
         ADDR_CLOCK_RATIO = 0x18,
+        ADDR_CHANNEL_A_BYTE_3 = 0x1c,
+        ADDR_CHANNEL_A_BYTE_4 = 0x1d,
         ADDR_ID_VERSION = 0x7f
     } I2C_ADDR;
 
@@ -37,7 +39,7 @@ public:
         SPDIF_FORMAT_DTS_CD =   0b00001000
     } SPDIF_FORMATS;
 
-    CS8416( uint8_t address, I2CBUS *bus ) : mAddress( address ), mBus( bus ), mRunning( false ), mInput( SPDIF_INPUT_1 ), mCurrentFormat( 0 ) {}
+    CS8416( uint8_t address, I2CBUS *bus ) : mAddress( address ), mBus( bus ), mRunning( false ), mInput( SPDIF_INPUT_1 ), mCurrentFormat( 0 ), mChipVersion( 0 ) {}
 
     void init();
     void run( bool enabled = true );
@@ -51,6 +53,10 @@ public:
     bool hasLoopLock();
     bool isValidPcm();
     bool isValidStream();
+
+    uint8_t getVersion();
+    uint32_t getSamplingRate();
+    uint8_t getBitDepth();
 private:
     void updateRunCommand();
 protected:
@@ -59,6 +65,7 @@ protected:
     bool mRunning;
     uint8_t mInput;
     uint8_t mCurrentFormat;
+    uint8_t mChipVersion;
 };
 
 #endif

@@ -3,8 +3,11 @@
 
 void 
 CS8416::init() {
-    // set higher update rate phase detector for sigma delta DAC
-    mBus->writeRegisterByte( mAddress, CS8416::ADDR_CONTROL_0, 8 );
+    mChipVersion = getVersion();
+
+    // set higher update rate phase detector for sigma delta DAC, and truncation
+    // this won't work for > 96kHz, should disable PDUR for that
+    mBus->writeRegisterByte( mAddress, CS8416::ADDR_CONTROL_0, 8 | 4 );
 
     // no auto clock switching, no muted zeros, active high interrupts, error switch to zeros,
     // master clock is 256*fs
@@ -56,6 +59,87 @@ CS8416::run( bool enable ) {
     mRunning = enable;
 
     updateRunCommand();
+}
+
+uint8_t 
+CS8416::getBitDepth() {
+    uint8_t value = 0;
+    mBus->readRegisterByte( mAddress, CS8416::ADDR_CHANNEL_A_BYTE_4, value );
+
+    if ( value & 0x01 ) {
+        // max is 24 bit
+        switch( ( value & 0x0e ) >> 3 ) {
+            case 1:
+                return 23;
+            case 2:
+                return 22;
+            case 3:
+                return 21;
+            case 4:
+                return 20;
+            case 5:
+                return 24;
+            default:    
+                // unknown
+                return 0;
+        }
+    } else {
+        // max is 20 bit
+        switch( ( value & 0x0e ) >> 3 ) {
+              case 1:
+                return 19;
+            case 2:
+                return 18;
+            case 3:
+                return 17;
+            case 4:
+                return 16;
+            case 5:
+                return 20;
+            default:    
+                // unknown
+                return 0;      
+        }
+    }
+}
+
+
+uint32_t 
+CS8416::getSamplingRate() {
+    uint8_t value = 0;
+    mBus->readRegisterByte( mAddress, CS8416::ADDR_CHANNEL_A_BYTE_3, value );
+    switch( value & 0x0f ) {
+        case 0:
+            return 44100;
+        case 1:
+            return 88200;
+        case 2:
+            return 22050;
+        case 3:
+            return 176400;
+        case 4:
+            return 48000;
+        case 5:
+            return 96000;
+        case 6:
+            return 24000;
+        case 7:
+            return 192000;
+        case 9:
+            return 768000;
+        case 12:
+            return 32000;
+        default:
+            return 0;
+    }
+}
+
+uint8_t 
+CS8416::getVersion() {
+    uint8_t version = 0;
+    mBus->readRegisterByte( mAddress, CS8416::ADDR_ID_VERSION, version );
+
+    return ( version & 0x0f );
 }
 
 uint8_t 

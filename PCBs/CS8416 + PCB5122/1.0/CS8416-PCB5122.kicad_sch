@@ -5202,7 +5202,7 @@
     (property "Reference" "C5" (at 326.8916 115.062 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Value" "10u" (at 329.4316 115.062 0)
+    (property "Value" "0R" (at 329.4316 115.062 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" (at 328.168 117.602 0)
