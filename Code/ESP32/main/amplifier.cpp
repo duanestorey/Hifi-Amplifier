@@ -34,8 +34,6 @@
 #include "netdb.h"
 #include "mdns.h"
 
-#include "ir-receiver.h"
-
 Amplifier::Amplifier() : mWifiEnabled( false ), mWifiConnectionAttempts( 0 ), mUpdatingFromNTP( false ), mPoweredOn( true ), mDigitalAudioStarted( false ), mDisplayQueue( 3 ), mTimerID( 0 ), mButtonTimerID( 0 ), mReconnectTimerID( 0 ), mLCD( 0 ),
     mDAC( 0 ), mChannelSel( 0 ), mWebServer( 0 ), mSPDIF( 0 ), mMicroprocessorTemp( 0 ), mVolumeEncoder( 15, 13, true ), mInputEncoder( 4, 16, false ), mAudioTimerID( 0 ), mPendingVolumeChange( false ), mPendingVolume( 0 ),
     mPowerButton( 0 ), mVolumeButton( 0 ), mInputButton( 0 ) {
@@ -1009,14 +1007,14 @@ Amplifier::setupPWM() {
 
     ledc_channel_config( &ledc_channel );
 
-   // ledc_set_duty( LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_1, 1023 );
-	//ledc_update_duty( LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_1 );
+    ledc_set_duty( LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_1, 1023 );
+	ledc_update_duty( LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_1 );
 }
 
 void 
 Amplifier::activateButtonLight( bool activate ) {
     if ( activate ) {
-        ledc_set_duty( LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_1, 1023 );
+        ledc_set_duty( LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_1, 700 );
 	    ledc_update_duty( LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_1 );
     } else {
         ledc_set_duty( LEDC_HIGH_SPEED_MODE, LEDC_CHANNEL_1, 0 );
@@ -1088,7 +1086,6 @@ Amplifier::configurePins() {
 
 void 
 Amplifier::configureOnePin( PIN pin, gpio_int_type_t interrupts, gpio_mode_t mode, gpio_pulldown_t pulldown, gpio_pullup_t pullup ) {
-
     uint_fast32_t mask = ( ((uint_fast32_t)1) << ( uint_fast32_t ) pin );
     gpio_config_t io_conf;
 

@@ -82,6 +82,8 @@ IR_Receiver::handleInterrupt() {
                 if ( mBitsReceived == 32 ) {
                     // done
                     mState = STATE_IDLE;
+
+                    AMP_DEBUG_INT_I( "Command received %08X", mBitsReceived );
                 }
             }
             break;
