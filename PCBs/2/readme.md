@@ -13,4 +13,4 @@
 
 #### Microprocessor
 
-- Added connector for IR diode
+- Added connector for IR diode [IR Receiver](https://www.conrad.com/en/p/tru-components-os-0038-n-ir-receiver-non-standard-axial-lead-38-khz-5-8-mm-940-nm-35-1567234.html?srsltid=AfmBOooULA3z41DL8Pl4VzeSBMj5sArhngCSZTbEgrS--_IQduufNs6r#productDownloads)
