@@ -31,7 +31,8 @@ public:
         MSG_BUTTON_PRESSED,
         MSG_BUTTON_RELEASED,
         MSG_POWEROFF,
-        MSG_POWERON
+        MSG_POWERON,
+        MSG_IR_CODE_RECEIVER
     };
 
     Message( MessageType t ) : mMessageType( t ), mParam( 0 ) {}

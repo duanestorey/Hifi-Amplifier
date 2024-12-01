@@ -48,7 +48,6 @@ void
 Timer::processTick() {
     std::list<TimerInfo> toDispatch;
 
-
     // Hold the lock while we assemble a list of all the dispatches
     {   
         ScopedLock lock( mMutex );
@@ -63,7 +62,9 @@ Timer::processTick() {
                 toDispatch.push_back( timerInfo );
 
                 if ( !timerInfo.mRecurring ) {
-                    mTimers.erase( i++ );
+                    TimerMap::iterator toErase = i;
+                    i++;
+                    mTimers.erase( toErase );
                 } else {
                     timerInfo.mEventTime += timerInfo.mTimeout;
                     ++i;

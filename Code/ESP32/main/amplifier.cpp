@@ -84,6 +84,47 @@ Amplifier::updateConnectedStatus( bool connected, bool doActualUpdate ) {
 
 }
 
+void
+Amplifier::_handleIRInterrupt( const rmt_rx_done_event_data_t *edata ) {
+    AMP_DEBUG_INT_I( "Received IR" );
+    mAmplifierQueue.add( Message::MSG_IR_CODE_RECEIVER, (uint32_t)edata );
+}
+
+bool
+rmt_rx_done_callback( rmt_channel_handle_t rx_chan, const rmt_rx_done_event_data_t *edata, void *user_ctx ) {
+    (( Amplifier *)user_ctx)->_handleIRInterrupt( edata );
+    return false;
+}
+
+void 
+Amplifier::setupRemoteReceiver() {
+    AMP_DEBUG_I( "Setting up IR receiver" );
+
+    mIRChannel = NULL;
+
+    rmt_rx_channel_config_t rx_chan_config;
+    memset( &rx_chan_config, 0, sizeof( rx_chan_config ) );
+
+    rx_chan_config.clk_src = RMT_CLK_SRC_DEFAULT;   // select source clock
+    rx_chan_config.resolution_hz = 1 * 1000 * 1000; // 1 MHz tick resolution, i.e., 1 tick = 1 µs
+    rx_chan_config.mem_block_symbols = 64;          // memory block size, 64 * 4 = 256 Bytes
+    rx_chan_config.gpio_num = GPIO_NUM_26;              // GPIO number
+    rx_chan_config.flags.invert_in = false;        // do not invert input signal
+    rx_chan_config.flags.with_dma = false;          // do not need DMA backend
+
+    ESP_ERROR_CHECK( rmt_new_rx_channel( &rx_chan_config, &mIRChannel ) );   
+
+    rmt_rx_event_callbacks_t cbs = {
+                .on_recv_done = rmt_rx_done_callback
+            }; 
+
+    ESP_ERROR_CHECK( rmt_rx_register_event_callbacks( mIRChannel, &cbs, this ) );
+
+    rmt_enable( mIRChannel );
+
+    doActualRemoteReceive();
+}
+
 void 
 Amplifier::init() {
     nvs_flash_init(); 
@@ -137,6 +178,8 @@ Amplifier::init() {
     mInputButton = new Button( PIN_BUTTON_INPUT, &mAmplifierQueue );
 
     mWebServer = new HTTP_Server( &mAmplifierQueue );
+
+    setupRemoteReceiver();
 }
 
 void 
@@ -287,11 +330,13 @@ Amplifier::changeAmplifierState( uint8_t newState ) {
     asyncUpdateDisplay();
 }
 
+
 void 
 Amplifier::handleTimerThread() {
     AMP_DEBUG_I( "Starting Timer Thread on Core %d", xPortGetCoreID() );
     while( true ) {
         mTimer.processTick();
+
         taskDelayInMs( 5 );
     } 
 }
@@ -316,6 +361,35 @@ Amplifier::updateInput( uint8_t newInput ) {
 }
 
 void 
+Amplifier::doActualRemoteReceive() {       
+    rmt_receive_config_t receive_config = {
+        .signal_range_min_ns = 1250,     // the shortest duration for NEC signal is 560 µs, 1250 ns < 560 µs, valid signal is not treated as noise
+        .signal_range_max_ns = 12000000, // the longest duration for NEC signal is 9000 µs, 12000000 ns > 9000 µs, the receive does not stop early
+    };
+
+    rmt_receive( mIRChannel, &mIRBuffer[ 0 ], sizeof( mIRBuffer ), &receive_config );               
+}
+
+void 
+Amplifier::_handleNecRemoteCommand( uint8_t address, uint8_t command ) {
+    AMP_DEBUG_I( "Handling NEC Remote addr-command [%d %d]", address, command );
+    switch( address ) {
+        case 4:
+            switch( command ) {
+                case 2: 
+                    // volume up
+                    mAmplifierQueue.add( Message::MSG_VOLUME_UP );
+                    break;
+                case 3:
+                    // volume down
+                    mAmplifierQueue.add( Message::MSG_VOLUME_DOWN );
+                    break;
+            }
+            break;
+    }
+}
+
+void 
 Amplifier::handleAmplifierThread() {
     AMP_DEBUG_I( "Starting Amplifier Thread on Core %lu",( uint32_t )xPortGetCoreID() );
 
@@ -325,6 +399,43 @@ Amplifier::handleAmplifierThread() {
            // AMP_DEBUG_I( "Processing Amplifier Queue Message" );
 
             switch( msg.mMessageType ) {
+                case Message::MSG_IR_CODE_RECEIVER:  
+                    {
+                        const rmt_rx_done_event_data_t *edata = (rmt_rx_done_event_data_t *)msg.mParam;
+                        if ( edata->num_symbols == 34 ) {
+                            uint8_t data[4] = {0};
+                            uint8_t pos = 0;
+
+                            for ( uint8_t i = 0; i < 4 ; i++ ) {
+                                for( uint8_t x = 0 ; x < 8; x++ ) {
+                                   // AMP_DEBUG_I( "%02d 0: ", edata->received_symbols[ pos + 1 ].duration0 );
+                                   // AMP_DEBUG_I( "%02d 1: ", edata->received_symbols[ pos + 1 ].duration1 );
+
+                                    if ( edata->received_symbols[ pos + 1 ].duration1 > 700 ) {
+                                        // 1
+                                        data[ i ] = ( data[ i ] >> 1 ) | 0x80;
+                                    } else {
+                                        // 0
+                                        data[ i ] = data [ i ] >> 1;
+                                    }
+                                    pos++;
+                                }
+                            }
+
+                            AMP_DEBUG_I( "Decoded %#02x %#02x %#02x %#02x", data[ 0 ], data[ 1 ] , data[ 2 ], data[ 3 ] );
+                            AMP_DEBUG_I( "Decoded %#02x %#02x %#02x %#02x", data[ 0 ], (uint8_t)~data[ 1 ] , data[ 2 ], (uint8_t)~data[ 3 ] );
+
+                            if ( data[ 0 ] == (uint8_t)~data[ 1 ] && data[ 2 ] == (uint8_t)~data[ 3 ] ) {
+                                AMP_DEBUG_I( "Valid address %0x, valid command %0x", data[ 0 ], data[ 2 ] );
+
+                                _handleNecRemoteCommand( data[ 0 ], data[ 2 ] );
+                            }
+                        }
+
+                        AMP_DEBUG_I( "IR remote control code received [%d]", edata->num_symbols );
+                        doActualRemoteReceive();
+                    }
+                    break;
                 case Message::MSG_POWEROFF:
                     activateButtonLight( false );
 

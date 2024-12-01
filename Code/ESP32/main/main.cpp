@@ -55,7 +55,7 @@ extern "C" void app_main(void)
         "Timer Thread",
         10000,
         (void *)amp,
-        3,
+        2,
         NULL
     );   
 
@@ -82,7 +82,7 @@ extern "C" void app_main(void)
         "Radio Thread",
         10000,
         (void *)amp,
-        1,
+        2,
         NULL
     ); 
 
