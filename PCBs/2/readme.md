@@ -10,3 +10,7 @@
 - Small signal relay for swithing between filtered from channels or not
 - New SPDIF board with more inputs
 - Separate DAC Board or make it a HAT
+
+#### Microprocessor
+
+- Added connector for IR diode

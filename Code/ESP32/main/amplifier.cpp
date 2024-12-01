@@ -86,7 +86,6 @@ Amplifier::updateConnectedStatus( bool connected, bool doActualUpdate ) {
 
 void
 Amplifier::_handleIRInterrupt( const rmt_rx_done_event_data_t *edata ) {
-    AMP_DEBUG_INT_I( "Received IR" );
     mAmplifierQueue.add( Message::MSG_IR_CODE_RECEIVER, (uint32_t)edata );
 }
 
@@ -654,11 +653,17 @@ Amplifier::startDigitalAudio() {
     mDAC->init();
     mDAC->setFormat( DAC::FORMAT_I2S );
     mDAC->setAttenuation( 0 );
-    mDAC->enable( true );
 
+    // set the proper input channel
+    AmplifierState state = getCurrentState();
+    mSPDIF->setInput( state.mInput );
+
+    // start decoding
     mSPDIF->run();
 
     taskDelayInMs( 10 );
+
+    mDAC->enable( true );
 
     mDigitalAudioStarted = true;
 }
