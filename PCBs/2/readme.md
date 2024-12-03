@@ -13,4 +13,15 @@
 
 #### Microprocessor
 
-- Added connector for IR diode [IR Receiver](https://www.conrad.com/en/p/tru-components-os-0038-n-ir-receiver-non-standard-axial-lead-38-khz-5-8-mm-940-nm-35-1567234.html?srsltid=AfmBOooULA3z41DL8Pl4VzeSBMj5sArhngCSZTbEgrS--_IQduufNs6r#productDownloads)
+- TODO: Add connector for IR diode [IR Receiver](https://www.conrad.com/en/p/tru-components-os-0038-n-ir-receiver-non-standard-axial-lead-38-khz-5-8-mm-940-nm-35-1567234.html?srsltid=AfmBOooULA3z41DL8Pl4VzeSBMj5sArhngCSZTbEgrS--_IQduufNs6r#productDownloads)
+- TODO: Add GPIO board as a HAT
+
+#### SPDIF / DAC
+
+- TODO: Split into separate boards, via a HAT probably
+
+#### SPDIF
+
+- TODO: ADded more inputs
+- TODO: Maybe add isolation transformers
+- TODO: Change ground plane so SPDIF ground doesn't interfere with analog DAC ground

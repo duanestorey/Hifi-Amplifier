@@ -7,8 +7,8 @@
 
 class AmplifierState {
 public:
-    AmplifierState() : mAudioType( AUDIO_ANALOG ), mState( STATE_INIT ), mInput( INPUT_STEREO_1 ), mSpeakerConfig( AUDIO_2_DOT_1 ), mCurrentAttenuation( 30 ), 
-        mSamplingRate( 48000 ), mBitDepth( 16 ), mConnected( false ), mEnhancement( false ) {}
+    AmplifierState() : mAudioType( AUDIO_DIGITAL ), mState( STATE_INIT ), mInput( INPUT_SPDIF_1 ), mSpeakerConfig( AUDIO_2_DOT_1 ), mCurrentAttenuation( 30 ), 
+        mSamplingRate( 48000 ), mBitDepth( 24 ), mConnected( false ), mEnhancement( false ) {}
 
     enum {
         INPUT_UNDEFINED = 0,

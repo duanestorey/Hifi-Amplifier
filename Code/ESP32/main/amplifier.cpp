@@ -35,7 +35,7 @@
 #include "mdns.h"
 
 Amplifier::Amplifier() : mWifiEnabled( false ), mWifiConnectionAttempts( 0 ), mUpdatingFromNTP( false ), mPoweredOn( true ), mDigitalAudioStarted( false ), mDisplayQueue( 3 ), mTimerID( 0 ), mButtonTimerID( 0 ), mReconnectTimerID( 0 ), mLCD( 0 ),
-    mDAC( 0 ), mChannelSel( 0 ), mWebServer( 0 ), mSPDIF( 0 ), mMicroprocessorTemp( 0 ), mVolumeEncoder( 15, 13, true ), mInputEncoder( 4, 16, false ), mAudioTimerID( 0 ), mPendingVolumeChange( false ), mPendingVolume( 0 ),
+    mDAC( 0 ), mChannelSel( 0 ), mWebServer( 0 ), mSPDIF( 0 ), mMicroprocessorTemp( 0 ), mVolumeEncoder( 15, 13, true ), mInputEncoder( 4, 16, false ), mAudioTimerID( 0 ), mSpdifTimerID( 0 ), mPendingVolumeChange( false ), mPendingVolume( 0 ),
     mPowerButton( 0 ), mVolumeButton( 0 ), mInputButton( 0 ) {
 }
 
@@ -147,7 +147,7 @@ Amplifier::init() {
         Microprocessor Temp Sensor      0x48   
 
         PCM 5142 FL/FR                  0x4c
-        CS8416                          0x16
+        CS8416                          0x10
 
         Deprecated
         ------------
@@ -167,7 +167,7 @@ Amplifier::init() {
     mDAC = new DAC_PCM5142( 0x4c, &mI2C );
 
     // CS8416
-    mSPDIF = new CS8416( 0x16, &mI2C );
+    mSPDIF = new CS8416( 0x10, &mI2C );
 
     mAudioTimerID = mTimer.setTimer( 100, mAudioQueue, true );
 
@@ -645,24 +645,32 @@ Amplifier::startDigitalAudio() {
 
     // enable CS8416
     gpio_set_level( PIN_CS8416_RESET, 1 );
-    taskDelayInMs( 1 );
+    taskDelayInMs( 10 );
+
+    mSpdifTimerID = mTimer.setTimer( 1000, mAudioQueue, true );
 
     // Initialize SPDIF stream, but don't run
+
+    AMP_DEBUG_I( "Starting SPDIF initialization" );
+
     mSPDIF->init();
 
+    AMP_DEBUG_I( "Starting DAC" );
     mDAC->init();
     mDAC->setFormat( DAC::FORMAT_I2S );
-    mDAC->setAttenuation( 0 );
+   // mDAC->setAttenuation( 0 );
 
     // set the proper input channel
     AmplifierState state = getCurrentState();
     mSPDIF->setInput( state.mInput );
 
+    AMP_DEBUG_I( "Telling SPDIF to run" );
     // start decoding
     mSPDIF->run();
 
     taskDelayInMs( 10 );
 
+    AMP_DEBUG_I( "Enabling the DAC" );
     mDAC->enable( true );
 
     mDigitalAudioStarted = true;
@@ -671,6 +679,9 @@ Amplifier::startDigitalAudio() {
 void 
 Amplifier::stopDigitalAudio() {
     AMP_DEBUG_I( "Stopping SPDIF/DAC" );
+
+    mTimer.cancelTimer( mSpdifTimerID );
+    mSpdifTimerID = 0;
 
     mDAC->enable( false );
     mSPDIF->run( false );
@@ -711,20 +722,17 @@ Amplifier::handleAudioThread() {
     mChannelSel->setEnhancement( state.mEnhancement );
 
     AMP_DEBUG_I( "Setting input" );
-    mChannelSel->setInput( state.mInput );   
+  
     if ( state.mInput == AmplifierState::INPUT_SPDIF_1 || state.mInput == AmplifierState::INPUT_SPDIF_2 || state.mInput == AmplifierState::INPUT_SPDIF_3 ) {
+        mSPDIF->setInput( state.mInput );
+        mChannelSel->setInput( ChannelSel::INPUT_STEREO_1 ); 
+
         startDigitalAudio();
+    } else {
+        mChannelSel->setInput( state.mInput ); 
     }
 
-    // enable reset of the CS8416
-    // hack for now to get I2C address of CS8416
-    gpio_set_level( PIN_CS8416_RESET, 1 );
-    taskDelayInMs( 10 );
-
     mI2C.scanBus();
-
-    gpio_set_level( PIN_CS8416_RESET, 0 );
-    taskDelayInMs( 10 );
 
     asyncUpdateDisplay();
 
@@ -773,6 +781,8 @@ Amplifier::handleAudioThread() {
                     } else if ( msg.mParam == AmplifierState::INPUT_SPDIF_1 || msg.mParam == AmplifierState::INPUT_SPDIF_2 || msg.mParam == AmplifierState::INPUT_SPDIF_3  ) {
                         // We need to start up the Dolby digital decoder
                         AMP_DEBUG_I( "Starting Digital Audio" );
+                        mSPDIF->setInput( msg.mParam );
+                        
                         startDigitalAudio();
 
                         // All SPDIF goes into the stereo 1 input for now
@@ -781,7 +791,45 @@ Amplifier::handleAudioThread() {
                     
                     break;
                 case Message::MSG_TIMER: 
-                    if ( msg.mParam == mAudioTimerID ) {
+                    if ( msg.mParam == mSpdifTimerID ) {
+                          if ( mDigitalAudioStarted  ) {
+                            AMP_DEBUG_I( "Evalaluating SPDIF stream to see what it is" );
+
+                            // let's scan the SPDIF and see what the sampling rate is
+                            if ( mSPDIF->hasLoopLock() ) {
+                                AMP_DEBUG_I( "Has loop lock" );
+
+                                bool changed = false;
+
+                                AmplifierState state = getCurrentState();
+                                uint16_t samplingRate = mSPDIF->getSamplingRate();
+                                uint16_t bitDepth = mSPDIF->getBitDepth();
+
+                                {
+                                    ScopedLock lock( mStateMutex );    
+
+                                    AMP_DEBUG_I( "Sampling rate is [%d]", samplingRate );
+                                    if ( samplingRate != state.mSamplingRate ) {
+                                        mState.mSamplingRate = samplingRate;
+                                        changed = true;
+                                    }
+
+                                   
+                                    AMP_DEBUG_I( "Bit depth is [%d]", bitDepth );
+                                    if ( bitDepth != state.mBitDepth ) {
+                                    
+                                        mState.mBitDepth = bitDepth;
+                                        changed = true;
+                                    }
+                                }
+
+                                // update the display from the display thread
+                                if ( changed ) {
+                                    asyncUpdateDisplay();
+                                }
+                            }
+                        }                  
+                    } else if ( msg.mParam == mAudioTimerID ) {
                         // we are on the audio timer thread
                         if ( mPendingVolumeChange ) {
                             AMP_DEBUG_I( "Actually setting pending audio volume to %lu", mPendingVolume );
@@ -789,32 +837,6 @@ Amplifier::handleAudioThread() {
                             if ( result ) {
                                 // if it failed, we will try again shortly
                                 mPendingVolumeChange = false;
-                            }
-                        }
-
-                        if ( mDigitalAudioStarted && false ) {
-                            // let's scan the SPDIF and see what the sampling rate is
-                            if ( mSPDIF->hasLoopLock() ) {
-                                bool changed = false;
-
-                                AmplifierState state = getCurrentState();
-                                uint16_t samplingRate = mSPDIF->getSamplingRate();
-
-                                if ( samplingRate != state.mSamplingRate ) {
-                                    state.mSamplingRate = samplingRate;
-                                    changed = true;
-                                }
-
-                                uint16_t bitDepth = mSPDIF->getBitDepth();
-                                if ( bitDepth != state.mBitDepth ) {
-                                    state.mBitDepth = bitDepth;
-                                    changed = true;
-                                }
-
-                                // update the display from the display thread
-                                if ( changed ) {
-                                     asyncUpdateDisplay();
-                                }
                             }
                         }
                     } 

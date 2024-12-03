@@ -1,5 +1,6 @@
 #include "cs8416.h"
 #include "debug.h"
+#include "state.h"
 
 void 
 CS8416::init() {
@@ -7,7 +8,7 @@ CS8416::init() {
 
     // set higher update rate phase detector for sigma delta DAC, and truncation
     // this won't work for > 96kHz, should disable PDUR for that
-    mBus->writeRegisterByte( mAddress, CS8416::ADDR_CONTROL_0, 8 | 4 );
+    mBus->writeRegisterByte( mAddress, CS8416::ADDR_CONTROL_0, 8 );
 
     // no auto clock switching, no muted zeros, active high interrupts, error switch to zeros,
     // master clock is 256*fs
@@ -19,7 +20,7 @@ CS8416::init() {
     // GPIO1 is non-audio detection, GPIO2 is GND
     mBus->writeRegisterByte( mAddress, CS8416::ADDR_CONTROL_3, ( 0b1001 << 4 ) | 0b0000 );
 
-    // output as a I2S master, 24 bit audio, left justified data, 128*fs
+    // output as a I2S master, 24 bit audio, left justified data, 128*fs was 0b11000000 
     mBus->writeRegisterByte( mAddress, CS8416::ADDR_SERIAL_DATA_FORMAT, 0b11000000 );
 
     // Error mask - give us information about PLL locking, PCM validity, and confidence
@@ -28,8 +29,18 @@ CS8416::init() {
 
 void 
 CS8416::setInput( uint8_t input ) {
-    if ( input == CS8416::SPDIF_INPUT_1 || input == CS8416::SPDIF_INPUT_2 || input == CS8416::SPDIF_INPUT_3 ) {
-        mInput = input;
+    if ( input == AmplifierState::INPUT_SPDIF_1 || input == AmplifierState::INPUT_SPDIF_2 || input == AmplifierState::INPUT_SPDIF_2 ) {
+        switch( input) {
+            case AmplifierState::INPUT_SPDIF_1:
+                mInput = CS8416::SPDIF_INPUT_1;
+                break;
+            case AmplifierState::INPUT_SPDIF_2:
+                mInput = CS8416::SPDIF_INPUT_2;
+                break;
+            case AmplifierState::INPUT_SPDIF_3:
+                mInput = CS8416::SPDIF_INPUT_3;
+                break;
+        }
 
         // update input via control register
         updateRunCommand();
@@ -68,14 +79,14 @@ CS8416::getBitDepth() {
 
     if ( value & 0x01 ) {
         // max is 24 bit
-        switch( ( value & 0x0e ) >> 3 ) {
-            case 1:
+        switch( ( value & 0x0e ) >> 1 ) {
+            case 4:
                 return 23;
             case 2:
                 return 22;
-            case 3:
+            case 6:
                 return 21;
-            case 4:
+            case 1:
                 return 20;
             case 5:
                 return 24;
@@ -85,14 +96,14 @@ CS8416::getBitDepth() {
         }
     } else {
         // max is 20 bit
-        switch( ( value & 0x0e ) >> 3 ) {
-              case 1:
+        switch( ( value & 0x0e ) >> 1 ) {
+            case 4:
                 return 19;
             case 2:
                 return 18;
-            case 3:
+            case 6:
                 return 17;
-            case 4:
+            case 1:
                 return 16;
             case 5:
                 return 20;
@@ -111,24 +122,24 @@ CS8416::getSamplingRate() {
     switch( value & 0x0f ) {
         case 0:
             return 44100;
-        case 1:
-            return 88200;
         case 2:
-            return 22050;
-        case 3:
-            return 176400;
-        case 4:
             return 48000;
+        case 3:
+            return 32000;
+        case 4:
+            return 22050;
         case 5:
-            return 96000;
+            return 0;
         case 6:
             return 24000;
-        case 7:
-            return 192000;
         case 9:
             return 768000;
+        case 10:
+            return 96000;
         case 12:
             return 32000;
+        case 14:
+            return 192000;    
         default:
             return 0;
     }

@@ -53,12 +53,15 @@ DAC_PCM5142::setFormat( uint8_t format ) {
     uint8_t precisionValue = 0;
     switch ( mPrecision ) {
         case DAC::PRECISION_16_BIT:
+            AMP_DEBUG_I( "Starting DAC to 16 BIT" );
             precisionValue = 0b00;
             break;
         case DAC::PRECISION_24_BIT:
+            AMP_DEBUG_I( "Starting DAC to 24 BIT" );
             precisionValue = 0b10;
             break;
         case DAC::PRECISION_32_BIT:
+            AMP_DEBUG_I( "Starting DAC to 32 BIT" );
             precisionValue = 0b11;
             break;
         default:
@@ -68,6 +71,7 @@ DAC_PCM5142::setFormat( uint8_t format ) {
     switch( format ) {
         case DAC::FORMAT_I2S:
             // set I2S with 24 bits
+            AMP_DEBUG_I( "Setting DAC format to I2S" );
             mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_FORMAT, 16 | precisionValue );
             mFormat = format;
             break;

@@ -1,0 +1,7 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+C1,C_Rect_L18.0mm_W5.0mm_P15.00mm_FKS3_FKP3,1,100n,
+D1,Diode_Bridge_19.0x19.0x6.8mm_P12.7mm,1,GBJ2510-F,
+"H1, H2, H3, H4",MountingHole_3.2mm_M3,4,MountingHole,
+J1,JST_VH_B2P-VH-B_1x02_P3.96mm_Vertical,1,Conn_01x02_Male,
+"J2, J3, J4, J5","TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",4,Conn_01x02_Male,
+R1,R_Axial_Power_L25.0mm_W9.0mm_P27.94mm,1,10R 5W,
