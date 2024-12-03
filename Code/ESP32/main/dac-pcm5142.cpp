@@ -1,7 +1,7 @@
 #include "dac-pcm5142.h"
 #include "debug.h"
 
-DAC_PCM5142::DAC_PCM5142( uint8_t address, I2CBUS *bus ) : mAddress( address ), mI2C( bus ), mCurrentPage( 255 ), mPrecision( DAC::PRECISION_24_BIT ), 
+DAC_PCM5142::DAC_PCM5142( uint8_t address, I2CBUS *bus ) : mAddress( address ), mI2C( bus ), mCurrentPage( 255 ), mPrecision( DAC::PRECISION_16_BIT ), 
     mFormat( DAC::FORMAT_I2S ), mDetectedSamplingRate( 0 ), mDetectedClkRatio( 0 ) {
 }
 
@@ -19,6 +19,8 @@ DAC_PCM5142::reset() {
     // reset all registers
     mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_PAGE_RESET, 0x11 );
 
+    mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_PAGE_STANDBY, 0 );
+
     mCurrentPage = 255;
 }
 
@@ -31,16 +33,16 @@ DAC_PCM5142::init() {
     switchToPage( 0 );
 
     // switch from 8x interpolation to 16x, and enable double speed
-    mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_INT_SPEED, 16 | 1 );
+    mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_INT_SPEED, 1 );
 
     // set auto clock to on
     mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_AUTO_CLOCK, 0 );
 
-    setFormat( FORMAT_I2S );
+    setFormat( FORMAT_LEFT_JUSTIFIED );
 
     // set left and right gain to -6dB
     switchToPage( 1 );
-    mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_GAIN_CTRL, 16 | 1 );
+    //mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_GAIN_CTRL, 16 | 1 );
     
 }
 
@@ -72,11 +74,17 @@ DAC_PCM5142::setFormat( uint8_t format ) {
         case DAC::FORMAT_I2S:
             // set I2S with 24 bits
             AMP_DEBUG_I( "Setting DAC format to I2S" );
-            mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_FORMAT, 16 | precisionValue );
+            mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_FORMAT, precisionValue );
             mFormat = format;
             break;
+        case DAC::FORMAT_LEFT_JUSTIFIED:    
+            AMP_DEBUG_I( "Setting DAC format to Left Justified" );
+            mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_FORMAT, 32 + 16 + precisionValue );
+            mFormat = format;
+            break;
+            break;
         default:
-            mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_FORMAT, 16 | precisionValue );
+            mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_FORMAT, precisionValue );
             break;
     }
 }
@@ -113,6 +121,7 @@ DAC_PCM5142::setChannelAttenuation( int channel, int att ) {
     // -103 db is   0b11111110 103db
     // mute is      0b11111111
     switchToPage( 0 );
+    AMP_DEBUG_I( "Setting channel attenuation" );
 
     // value can only go up to 79
     uint8_t value = ((uint16_t)att) * 2;

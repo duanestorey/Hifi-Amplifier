@@ -16,7 +16,8 @@ public:
 
 	enum {
 		FORMAT_SONY = 0,
-		FORMAT_I2S = 1
+		FORMAT_I2S = 1,
+		FORMAT_LEFT_JUSTIFIED = 2
 	} FORMAT;
 
 	enum {
