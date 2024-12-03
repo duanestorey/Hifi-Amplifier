@@ -8,11 +8,11 @@ CS8416::init() {
 
     // set higher update rate phase detector for sigma delta DAC, and truncation
     // this won't work for > 96kHz, should disable PDUR for that
-    mBus->writeRegisterByte( mAddress, CS8416::ADDR_CONTROL_0, 8 | 4 );
+    mBus->writeRegisterByte( mAddress, CS8416::ADDR_CONTROL_0, SPDIF_PDUR | SPDIF_TRUNK );
 
     // no auto clock switching, no muted zeros, active high interrupts, error switch to zeros,
     // master clock is 256*fs
-    mBus->writeRegisterByte( mAddress, CS8416::ADDR_CONTROL_1, 4 );
+    mBus->writeRegisterByte( mAddress, CS8416::ADDR_CONTROL_1, SPDIF_ERROR_ZERO );
 
     // DETCI?, de-emphasis off (turn it on after?), GPIO0 is sample rate
     mBus->writeRegisterByte( mAddress, CS8416::ADDR_CONTROL_2, 8 );
@@ -21,7 +21,12 @@ CS8416::init() {
     mBus->writeRegisterByte( mAddress, CS8416::ADDR_CONTROL_3, ( 0b1001 << 4 ) | 0b0000 );
 
     // output as a I2S master, 24 bit audio, left justified data, 128*fs was 0b11000000 
-    mBus->writeRegisterByte( mAddress, CS8416::ADDR_SERIAL_DATA_FORMAT, 0b10000000 );
+
+    // Left justified
+    mBus->writeRegisterByte( mAddress, CS8416::ADDR_SERIAL_DATA_FORMAT, 0b11000000 );
+
+    // I2S 
+    ///mBus->writeRegisterByte( mAddress, CS8416::ADDR_SERIAL_DATA_FORMAT, 0b11000101 );
 
     // Error mask - give us information about PLL locking, PCM validity, and confidence
     mBus->writeRegisterByte( mAddress, CS8416::ADDR_RECEIVER_ERROR_MASK, 0b00011100 );
@@ -51,7 +56,7 @@ void
 CS8416::updateRunCommand() {
     if ( mRunning ) {
         // enable running, add input selection
-        uint8_t control = 0b10000000 | ( mInput << 3 );
+        uint8_t control = SPDIF_RUN | ( mInput << 3 );
         mBus->writeRegisterByte( mAddress, CS8416::ADDR_CONTROL_4, control );
     } else {
         // disable running, add input selection
@@ -76,6 +81,7 @@ uint8_t
 CS8416::getBitDepth() {
     uint8_t value = 0;
     mBus->readRegisterByte( mAddress, CS8416::ADDR_CHANNEL_A_BYTE_4, value );
+    AMP_DEBUG_I( "SPDIF raw channel 4 data is %#02x", value );
 
     if ( value & 0x01 ) {
         // max is 24 bit
@@ -175,6 +181,13 @@ CS8416::isSilence() {
     getFormat();
 
     return ( mCurrentFormat & 2 );
+}
+
+uint8_t
+CS8416::getErrorInfo() {
+    uint8_t status = 0;
+    mBus->readRegisterByte( mAddress, CS8416::ADDR_RECEIVER_ERROR, status );
+    return status; 
 }
 
 bool 

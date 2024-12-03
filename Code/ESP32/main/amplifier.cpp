@@ -136,7 +136,7 @@ Amplifier::init() {
     activateButtonLight( true );
 
     mTimerID = mTimer.setTimer( 60000, mAmplifierQueue, true );
-    mButtonTimerID = mTimer.setTimer( 5, mAmplifierQueue, true );
+    mButtonTimerID = mTimer.setTimer( 10, mAmplifierQueue, true );
 
     // I2C current map
     /*
@@ -169,7 +169,7 @@ Amplifier::init() {
     // CS8416
     mSPDIF = new CS8416( 0x10, &mI2C );
 
-    mAudioTimerID = mTimer.setTimer( 100, mAudioQueue, true );
+    mAudioTimerID = mTimer.setTimer( 1000, mAudioQueue, true );
 
     // Set up buttons
     mPowerButton = new Button( PIN_BUTTON_POWER, &mAmplifierQueue );
@@ -336,7 +336,7 @@ Amplifier::handleTimerThread() {
     while( true ) {
         mTimer.processTick();
 
-        taskDelayInMs( 5 );
+        taskDelayInMs( 10 );
     } 
 }
 
@@ -658,7 +658,7 @@ Amplifier::startDigitalAudio() {
     AMP_DEBUG_I( "Starting DAC" );
     mDAC->init();
     //mDAC->setFormat( DAC::FORMAT_I2S );
-   // mDAC->setAttenuation( 0 );
+    // mDAC->setAttenuation( 0 );
 
     // set the proper input channel
     AmplifierState state = getCurrentState();
@@ -793,11 +793,9 @@ Amplifier::handleAudioThread() {
                 case Message::MSG_TIMER: 
                     if ( msg.mParam == mSpdifTimerID ) {
                           if ( mDigitalAudioStarted  ) {
-                            AMP_DEBUG_I( "Evalaluating SPDIF stream to see what it is" );
-
                             // let's scan the SPDIF and see what the sampling rate is
                             if ( mSPDIF->hasLoopLock() ) {
-                                AMP_DEBUG_I( "Has loop lock" );
+                                AMP_DEBUG_I( "Has loop lock, free memory is %lu", esp_get_free_heap_size() );
 
                                 bool changed = false;
 
@@ -827,6 +825,8 @@ Amplifier::handleAudioThread() {
                                 if ( changed ) {
                                     asyncUpdateDisplay();
                                 }
+                            } else {
+                                AMP_DEBUG_I( "SPDIF has lost sync, error byte is [%#02x]", mSPDIF->getErrorInfo() );
                             }
                         }                  
                     } else if ( msg.mParam == mAudioTimerID ) {

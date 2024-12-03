@@ -45,21 +45,20 @@ Timer::getCurrentTimeInMS() const {
 }
 
 void
-Timer::processTick() {
-    std::list<TimerInfo> toDispatch;
-
+Timer::processTick() {  
     // Hold the lock while we assemble a list of all the dispatches
     {   
         ScopedLock lock( mMutex );
 
       //  AMP_DEBUG_SI( "Processing timer tick " << mTimers.size() << " " << toDispatch.size() );
 
-        uint32_t currentTime = getCurrentTimeInMS();
         for ( TimerMap::iterator i = mTimers.begin(); i != mTimers.end(); ) {
             TimerInfo &timerInfo = i->second;
 
+            uint32_t currentTime = getCurrentTimeInMS();
+
             if ( currentTime >= timerInfo.mEventTime ) {
-                toDispatch.push_back( timerInfo );
+                mDispatchList.push_back( timerInfo );
 
                 if ( !timerInfo.mRecurring ) {
                     TimerMap::iterator toErase = i;
@@ -76,11 +75,11 @@ Timer::processTick() {
     }
 
     // Lock is released, so can call setTimer from other task
-    for ( std::list<TimerInfo>::iterator i = toDispatch.begin(); i != toDispatch.end(); i++ ) {
+    for ( TimerList::iterator i = mDispatchList.begin(); i != mDispatchList.end(); i++ ) {
         TimerInfo &timerInfo = *i;
-
-     //   AMP_DEBUG_SI( "Dispatching timer event " << timerInfo.mEventID );
 
         timerInfo.mQueue->add( Message::MSG_TIMER, timerInfo.mEventID );
     }
+
+    mDispatchList.clear();
 }

@@ -1,8 +1,8 @@
 #include "dac-pcm5142.h"
 #include "debug.h"
 
-DAC_PCM5142::DAC_PCM5142( uint8_t address, I2CBUS *bus ) : mAddress( address ), mI2C( bus ), mCurrentPage( 255 ), mPrecision( DAC::PRECISION_16_BIT ), 
-    mFormat( DAC::FORMAT_I2S ), mDetectedSamplingRate( 0 ), mDetectedClkRatio( 0 ) {
+DAC_PCM5142::DAC_PCM5142( uint8_t address, I2CBUS *bus ) : mAddress( address ), mI2C( bus ), mCurrentPage( 255 ), mPrecision( DAC::PRECISION_24_BIT ), 
+    mFormat( DAC::FORMAT_LEFT_JUSTIFIED ), mDetectedSamplingRate( 0 ), mDetectedClkRatio( 0 ) {
 }
 
 DAC_PCM5142::~DAC_PCM5142() {
@@ -33,16 +33,16 @@ DAC_PCM5142::init() {
     switchToPage( 0 );
 
     // switch from 8x interpolation to 16x, and enable double speed
-    mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_INT_SPEED, 1 );
+    mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_INT_SPEED, 0 | 16 );
+
+    setFormat( FORMAT_LEFT_JUSTIFIED );
 
     // set auto clock to on
     mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_AUTO_CLOCK, 0 );
 
-    setFormat( FORMAT_LEFT_JUSTIFIED );
-
     // set left and right gain to -6dB
     switchToPage( 1 );
-    //mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_GAIN_CTRL, 16 | 1 );
+    mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_GAIN_CTRL, 16 | 1 );
     
 }
 

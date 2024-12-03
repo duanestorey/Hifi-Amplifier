@@ -3,6 +3,12 @@
 
 #include "i2c-bus.h"
 
+#define SPDIF_TRUNK         4
+#define SPDIF_PDUR          8
+#define SPDIF_FSWCLK        64
+#define SPDIF_RUN           0b10000000
+#define SPDIF_ERROR_ZERO    4
+
 class CS8416 {
 public:
     enum {
@@ -53,6 +59,8 @@ public:
     bool hasLoopLock();
     bool isValidPcm();
     bool isValidStream();
+
+    uint8_t getErrorInfo();
 
     uint8_t getVersion();
     uint32_t getSamplingRate();

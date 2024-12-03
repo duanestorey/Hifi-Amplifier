@@ -10,6 +10,7 @@
 
 #include <stack>
 #include <map>
+#include <list>
 
 class TimerObserver;
 
@@ -24,6 +25,7 @@ struct TimerInfo {
 };
 
 typedef std::map< uint32_t, TimerInfo > TimerMap;
+typedef std::list<TimerInfo> TimerList;
 
 class Timer {
 public:
@@ -36,6 +38,7 @@ public:
 protected:
     uint32_t mCurrentEventID;
     TimerMap mTimers;
+    TimerList mDispatchList;
     Mutex mMutex;
 private:
     uint32_t getCurrentTimeInMS() const;

@@ -19,6 +19,7 @@
 #### SPDIF / DAC
 
 - TODO: Split into separate boards, via a HAT probably
+- TODO: Possibly change SPDIF connectors to screw terminals
 
 #### SPDIF
 

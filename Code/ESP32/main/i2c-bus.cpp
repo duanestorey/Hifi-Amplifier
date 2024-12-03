@@ -109,6 +109,8 @@ I2CBUS::readRegisterByte( uint8_t address, uint8_t reg, uint8_t &data  ) {
         AMP_DEBUG_W( "Issue while readig I2C data at address %d",(int)address );
     }
 
+    i2c_cmd_link_delete(cmd);
+
     return ( err == ESP_OK );
 }
 
