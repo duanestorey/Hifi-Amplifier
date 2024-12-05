@@ -1,0 +1,10 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+C1,1206,1,10U,
+C2,0805,1,10N,
+"H1, H2, H3, H4",MountingHole_3.2mm_M3,4,MountingHole,
+"J1, J10, J11, J12, J13, J14, J15, J16, J2, J5, J6, J7, J8, J9",JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical,14,Conn_01x02_Pin,
+J17,JST_PH_B5B-PH-K_1x05_P2.00mm_Vertical,1,Conn_01x05_Pin,
+J3,JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal,1,Conn_01x02_Pin,
+J4,JST_PH_B2B-PH-SM4-TB_1x02-1MP_P2.00mm_Vertical,1,Conn_01x02_Pin,
+R2,0603,1,4.7K,
+U1,SSOP-28_5.3x10.2mm_P0.65mm,1,MCP23017_SS,
