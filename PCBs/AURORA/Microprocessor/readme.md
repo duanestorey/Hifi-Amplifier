@@ -1,4 +1,4 @@
-<img src="screenshot.png" width="50%">
+<img src="screenshot.png?v=2" width="50%">
 
 # Microprocessor Board
 
