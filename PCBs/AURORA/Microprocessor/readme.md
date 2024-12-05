@@ -2,7 +2,7 @@
 
 # Microprocessor Board
 
-The heart of the amplifier is this microprocessor board based on the ESP32 WROOM 32 IC.
+The heart of the amplifier is this microprocessor board based on the ESP32 WROOM 32 IC. Now supports a HAT.
 
 ## Version History
 
