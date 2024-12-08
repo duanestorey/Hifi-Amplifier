@@ -81,7 +81,6 @@ Amplifier::updateConnectedStatus( bool connected, bool doActualUpdate ) {
     } else {
         mWebServer->stop();
     }
-
 }
 
 void
@@ -256,7 +255,11 @@ Amplifier::updateDisplay() {
     if ( state.mAudioType == AmplifierState::AUDIO_ANALOG ) {
         strcpy( rate, "" );
     } else if ( state.mAudioType == AmplifierState::AUDIO_DIGITAL ) {
-        sprintf( rate, "%luk/%d", state.mSamplingRate / 1000, state.mBitDepth );
+        if ( state.mSamplingRate == 44100 ) {
+            sprintf( rate, "44.1k/%d", state.mBitDepth );
+        } else {
+            sprintf( rate, "%luk/%d", state.mSamplingRate / 1000, state.mBitDepth );
+        }   
     }
 
     char left[11] = {0};
@@ -657,7 +660,7 @@ Amplifier::startDigitalAudio() {
 
     AMP_DEBUG_I( "Starting DAC" );
     mDAC->init();
-    mDAC->setFormat( DAC::FORMAT_I2S );
+    //mDAC->setFormat( DAC::FORMAT_I2S );
     // mDAC->setAttenuation( 0 );
 
     // set the proper input channel

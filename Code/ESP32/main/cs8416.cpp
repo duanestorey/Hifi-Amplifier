@@ -8,7 +8,7 @@ CS8416::init() {
 
     // set higher update rate phase detector for sigma delta DAC, and truncation
     // this won't work for > 96kHz, should disable PDUR for that
-    mBus->writeRegisterByte( mAddress, CS8416::ADDR_CONTROL_0, SPDIF_PDUR | SPDIF_TRUNK );
+    mBus->writeRegisterByte( mAddress, CS8416::ADDR_CONTROL_0, SPDIF_PDUR );
 
     // no auto clock switching, no muted zeros, active high interrupts, error switch to zeros,
     // master clock is 256*fs

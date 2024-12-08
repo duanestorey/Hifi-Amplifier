@@ -3935,28 +3935,6 @@
 			)
 		)
 	)
-	(global_label "RIGHT_IN"
-		(shape input)
-		(at 41.275 41.91 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "4a99929d-9d20-4fb7-99ca-c9d7baa51b41")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 52.606 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "LEFT_IN"
 		(shape input)
 		(at 187.96 157.48 180)
@@ -4047,6 +4025,28 @@
 	)
 	(global_label "AGND"
 		(shape input)
+		(at 232.41 60.96 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5e9ed29d-b2ca-4ae3-a9de-aaad0164c7c8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 240.3543 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "AGND"
+		(shape input)
 		(at 39.37 99.314 90)
 		(fields_autoplaced yes)
 		(effects
@@ -4080,6 +4080,28 @@
 		(uuid "655e5399-266f-4975-a280-cf40003c5f29")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 341.4281 36.957 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LEFT_IN"
+		(shape input)
+		(at 71.12 29.21 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "68710e02-d4d7-4e88-ab46-0b05146ec663")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 81.2414 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4199,6 +4221,50 @@
 			)
 		)
 	)
+	(global_label "RIGHT_IN"
+		(shape input)
+		(at 71.12 34.29 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8e793c07-903b-4586-addf-3c38d873c835")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 82.451 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "AGND"
+		(shape input)
+		(at 71.12 31.75 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "911c064a-baf8-46f6-aa82-702ea33b58ee")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 79.0643 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "AGND"
 		(shape input)
 		(at 165.1 82.296 270)
@@ -4217,6 +4283,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "RIGHT_OUT"
+		(shape input)
+		(at 232.41 63.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "951cac8d-c643-4a90-9631-a45b4446620d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 245.4343 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -4353,28 +4441,6 @@
 			)
 		)
 	)
-	(global_label "LEFT_IN"
-		(shape input)
-		(at 40.894 32.639 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c2466f8f-8e99-4d59-979d-9eac4f81575b")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 51.0154 32.639 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "AGND"
 		(shape input)
 		(at 233.045 40.894 0)
@@ -4485,28 +4551,6 @@
 			)
 		)
 	)
-	(global_label "AGND"
-		(shape input)
-		(at 41.275 39.37 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "d83a1727-4940-4ba6-b730-121b7678c62e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 49.2193 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "RIGHT_OUT"
 		(shape input)
 		(at 233.045 43.434 0)
@@ -4520,28 +4564,6 @@
 		(uuid "e016dd08-2842-41eb-b9cd-ebe97c5dc3b5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 246.0693 43.434 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "AGND"
-		(shape input)
-		(at 40.894 30.099 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "e0cb634e-02c9-4617-a74b-0d2ba9aaba35")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 48.8383 30.099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4679,6 +4701,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LEFT_OUT"
+		(shape input)
+		(at 232.41 58.42 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "fe018ad7-78f1-482f-94b5-aec95c3fbd5c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 244.2247 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -5224,6 +5268,77 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:Conn_01x03_Pin")
+		(at 227.33 60.96 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "31fdb76c-8474-4c9c-8b5c-cab0550b11a5")
+		(property "Reference" "J7"
+			(at 227.965 53.467 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x03_Pin"
+			(at 227.965 56.007 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical"
+			(at 227.33 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 227.33 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 227.33 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3c1d18eb-4d2b-4947-ba27-9c19823bd6ca")
+		)
+		(pin "2"
+			(uuid "9ca9bcfd-5a90-4b0f-bef5-2f0a6c5073d6")
+		)
+		(pin "3"
+			(uuid "a9b3cfb6-910f-4b35-b916-67d7ca35bfef")
+		)
+		(instances
+			(project "Subwoofer"
+				(path "/ad933f83-dd94-4dcc-b4f2-96fd54138c43"
+					(reference "J7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:Transformer_Audio")
 		(at 287.782 38.354 0)
 		(unit 1)
@@ -5362,6 +5477,77 @@
 			(project "Subwoofer"
 				(path "/ad933f83-dd94-4dcc-b4f2-96fd54138c43"
 					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x03_Pin")
+		(at 66.04 31.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4040a472-7142-4779-9be9-83b5485980a4")
+		(property "Reference" "J10"
+			(at 66.675 24.257 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x03_Pin"
+			(at 66.675 26.797 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_PH_B3B-PH-K_1x03_P2.00mm_Vertical"
+			(at 66.04 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 66.04 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 66.04 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "23034884-c860-4645-a663-617362252276")
+		)
+		(pin "2"
+			(uuid "9353f4ef-92c6-4502-a95f-b0cf479affb8")
+		)
+		(pin "3"
+			(uuid "fef7d32f-63f7-4433-9b56-4493d39c3065")
+		)
+		(instances
+			(project "Subwoofer"
+				(path "/ad933f83-dd94-4dcc-b4f2-96fd54138c43"
+					(reference "J10")
 					(unit 1)
 				)
 			)
@@ -7518,74 +7704,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_01x02_Pin")
-		(at 35.814 30.099 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c3ff32f3-937e-4340-9211-d517ecfada99")
-		(property "Reference" "J7"
-			(at 36.449 24.765 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Conn_01x02_Pin"
-			(at 36.449 27.305 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical"
-			(at 35.814 30.099 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 35.814 30.099 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 35.814 30.099 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "38e3bd42-a210-4158-8421-8033cb645a21")
-		)
-		(pin "2"
-			(uuid "4a04baa6-25af-437d-8b66-ad3239d62255")
-		)
-		(instances
-			(project "Subwoofer"
-				(path "/ad933f83-dd94-4dcc-b4f2-96fd54138c43"
-					(reference "J7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R_Small")
 		(at 231.14 191.77 0)
 		(unit 1)
@@ -9090,74 +9208,6 @@
 			(project "Subwoofer"
 				(path "/ad933f83-dd94-4dcc-b4f2-96fd54138c43"
 					(reference "D2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_01x02_Pin")
-		(at 36.195 39.37 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fcfd6f5c-7cbb-4f82-8b43-ae7fdaca39e5")
-		(property "Reference" "J9"
-			(at 36.83 34.036 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Conn_01x02_Pin"
-			(at 36.83 36.576 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical"
-			(at 36.195 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 36.195 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 36.195 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "027a78fe-f345-43aa-b92b-d89c85a65337")
-		)
-		(pin "2"
-			(uuid "4bb88488-1a08-42c6-8a50-75bffffe5f22")
-		)
-		(instances
-			(project "Subwoofer"
-				(path "/ad933f83-dd94-4dcc-b4f2-96fd54138c43"
-					(reference "J9")
 					(unit 1)
 				)
 			)

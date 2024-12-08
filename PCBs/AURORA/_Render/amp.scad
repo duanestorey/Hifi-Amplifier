@@ -17,7 +17,6 @@ difference() {
 }
 
 
-
 // new channel left (blue)
 translate( [ 15, depth - margin_lr - 115, 10 ] ) {
   translate( [ 40, 2.5, 0 ] ) {
