@@ -29,9 +29,10 @@ DAC_PCM5142::init() {
     AMP_DEBUG_I( "Initializing" );
 
     reset();
+    switchToPage( 0 );
 
     // switch from 8x interpolation to 16x, and enable double speed
-    mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_INT_SPEED, 0 | 16 );
+    //mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_INT_SPEED, 0 | 16 );
 
     // set auto clock to on
     mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_REG_AUTO_CLOCK, 0 );
@@ -141,12 +142,10 @@ DAC_PCM5142::setAttenuation( int att ) {
 
 void 
 DAC_PCM5142::switchToPage( uint8_t page ) {
-    if ( mCurrentPage != page ) {
-         AMP_DEBUG_I( "Setting page to %d", (int)page );
-         mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_PAGE_SELECT, page );
+    AMP_DEBUG_I( "Setting page to %d", (int)page );
+    mI2C->writeRegisterByte( mAddress, DAC_PCM5142::PCM5142_PAGE_SELECT, page );
 
-         mCurrentPage = page;
-    }
+    mCurrentPage = page;
 }
 
 void 

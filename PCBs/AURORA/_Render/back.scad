@@ -19,7 +19,10 @@ subwoofer_input_x = 30;
 spdif_input_x = 60;
 xlr_input_x = 230;
 rca_input_x = 110;
+usb_input_x = 410;
 
+reset_size = 4;
+usb_size = 10;
 xlr_size = 12;
 rca_size = 4;
 xlr_radius = 12;
@@ -164,6 +167,20 @@ difference() {
     translate( [ rca_input_x + rca_dist*4, 1, y2 ] ) { 
         rotate( [ 90, 0, 0] ) {
             cylinder( 2, rca_size, rca_size );
+        }
+    } 
+    
+    // usb
+    translate( [ usb_input_x, 1, y2 ] ) { 
+        rotate( [ 90, 0, 0] ) {
+            cylinder( 2, usb_size, usb_size );
+        }
+    } 
+    
+    // reset
+    translate( [ usb_input_x, 1, y1 ] ) { 
+        rotate( [ 90, 0, 0] ) {
+            cylinder( 2, reset_size, reset_size );
         }
     } 
 }

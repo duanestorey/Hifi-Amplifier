@@ -16,16 +16,19 @@ difference() {
 
 // Column One 
 
-// adau
+// PCM5142/ADC
 translate( [ margin_lr, 220 + margin_lr - 10, 10 ] ) {
   color( "black" )
   cube( [ 85, 55, 4 ] );   
 }
+
+/*
 // DAC (orange)
 translate( [ margin_lr, margin_lr + 220, 30 ] ) {
   color( "orange" )
   cube( [ 75, 45, 4 ] );   
 }
+*/
 
 // ADC board (violet)
 translate( [ margin_lr, 150 + margin_lr - 10, 10 ] ) {

@@ -660,8 +660,8 @@ Amplifier::startDigitalAudio() {
 
     AMP_DEBUG_I( "Starting DAC" );
     mDAC->init();
-    //mDAC->setFormat( DAC::FORMAT_I2S );
-    // mDAC->setAttenuation( 0 );
+    mDAC->setFormat( DAC::FORMAT_I2S );
+    mDAC->setAttenuation( 0 );
 
     // set the proper input channel
     AmplifierState state = getCurrentState();

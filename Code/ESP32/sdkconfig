@@ -386,6 +386,18 @@ CONFIG_PARTITION_TABLE_MD5=y
 # end of Partition Table
 
 #
+# Aurora
+#
+CONFIG_AURORA_OWNER_NAME="none"
+CONFIG_CS8416=y
+# CONFIG_WM8805 is not set
+CONFIG_PCM51XX=y
+# CONFIG_BITS_16 is not set
+CONFIG_BITS_24=y
+CONFIG_AURORA_PCM_51X2_ADDR=0xa0
+# end of Aurora
+
+#
 # Example Configuration
 #
 CONFIG_ESP_WIFI_SSID="The Grey Havens"

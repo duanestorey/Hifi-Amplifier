@@ -1,4 +1,53 @@
 # put here your custom config value
+menu "Aurora"
+    config AURORA_OWNER_NAME
+        string "Owner name"
+        default "none"
+        help
+            Enter the name of the amplifier owner
+
+    choice AURORA_SPDIF_TYPE
+        bool "SPDIF receiver IC"
+        default CS8416
+        help 
+            Choose the SPDIF receiver type
+
+        config CS8416
+            bool "CS8416"
+        config WM8805
+            bool "WM8805"
+    endchoice
+
+    choice AURORA_SPDIF_DAC_TYPE
+        bool "Post SPDIF DAC receiver IC"
+        default PCM51XX
+        help 
+            Choose the SPDIF receiver type
+
+        config PCM51XX
+            bool "PCM51XX"
+    endchoice
+
+    choice AURORA_SPDIF_BIT_DEPTH
+        bool "SPDIF & DAC bit depth"
+        default BITS_24
+        help 
+            Choose the SPDIF/DAC bit depth
+        depends on CS8416
+
+        config BITS_16
+            bool "16 bits"
+        config BITS_24
+            bool "24 bits"
+    endchoice
+
+    config AURORA_PCM_51X2_ADDR
+        hex "I2C address"
+        default "0xa0"
+        depends on PCM51XX
+endmenu
+
+
 menu "Example Configuration"
 config ESP_WIFI_SSID
     string "WiFi SSID"

@@ -4913,6 +4913,114 @@
             {
                 "children": [],
                 "depends_on": null,
+                "help": "Enter the name of the amplifier owner",
+                "id": "AURORA_OWNER_NAME",
+                "name": "AURORA_OWNER_NAME",
+                "range": null,
+                "title": "Owner name",
+                "type": "string"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depends_on": "<choice AURORA_SPDIF_TYPE>",
+                        "help": null,
+                        "id": "CS8416",
+                        "name": "CS8416",
+                        "range": null,
+                        "title": "CS8416",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "<choice AURORA_SPDIF_TYPE>",
+                        "help": null,
+                        "id": "WM8805",
+                        "name": "WM8805",
+                        "range": null,
+                        "title": "WM8805",
+                        "type": "bool"
+                    }
+                ],
+                "depends_on": null,
+                "help": "Choose the SPDIF receiver type",
+                "id": "aurora-spdif-receiver-ic",
+                "name": "AURORA_SPDIF_TYPE",
+                "title": "SPDIF receiver IC",
+                "type": "choice"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depends_on": "<choice AURORA_SPDIF_DAC_TYPE>",
+                        "help": null,
+                        "id": "PCM51XX",
+                        "name": "PCM51XX",
+                        "range": null,
+                        "title": "PCM51XX",
+                        "type": "bool"
+                    }
+                ],
+                "depends_on": null,
+                "help": "Choose the SPDIF receiver type",
+                "id": "aurora-post-spdif-dac-receiver-ic",
+                "name": "AURORA_SPDIF_DAC_TYPE",
+                "title": "Post SPDIF DAC receiver IC",
+                "type": "choice"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depends_on": "<choice AURORA_SPDIF_BIT_DEPTH>",
+                        "help": null,
+                        "id": "BITS_16",
+                        "name": "BITS_16",
+                        "range": null,
+                        "title": "16 bits",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "<choice AURORA_SPDIF_BIT_DEPTH>",
+                        "help": null,
+                        "id": "BITS_24",
+                        "name": "BITS_24",
+                        "range": null,
+                        "title": "24 bits",
+                        "type": "bool"
+                    }
+                ],
+                "depends_on": "CS8416",
+                "help": "Choose the SPDIF/DAC bit depth",
+                "id": "aurora-spdif-dac-bit-depth",
+                "name": "AURORA_SPDIF_BIT_DEPTH",
+                "title": "SPDIF & DAC bit depth",
+                "type": "choice"
+            },
+            {
+                "children": [],
+                "depends_on": "PCM51XX",
+                "help": null,
+                "id": "AURORA_PCM_51X2_ADDR",
+                "name": "AURORA_PCM_51X2_ADDR",
+                "range": null,
+                "title": "I2C address",
+                "type": "hex"
+            }
+        ],
+        "depends_on": null,
+        "id": "aurora",
+        "title": "Aurora",
+        "type": "menu"
+    },
+    {
+        "children": [
+            {
+                "children": [],
+                "depends_on": null,
                 "help": "SSID (network name) for the example to connect to.",
                 "id": "ESP_WIFI_SSID",
                 "name": "ESP_WIFI_SSID",

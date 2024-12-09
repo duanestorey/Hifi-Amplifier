@@ -26,7 +26,7 @@ CS8416::init() {
     //mBus->writeRegisterByte( mAddress, CS8416::ADDR_SERIAL_DATA_FORMAT, 0b11000000 );
 
     // I2S 
-    mBus->writeRegisterByte( mAddress, CS8416::ADDR_SERIAL_DATA_FORMAT, 0b11000101 );
+    mBus->writeRegisterByte( mAddress, CS8416::ADDR_SERIAL_DATA_FORMAT, 0b10000101 );
 
     // Error mask - give us information about PLL locking, PCM validity, and confidence
     mBus->writeRegisterByte( mAddress, CS8416::ADDR_RECEIVER_ERROR_MASK, 0b00011100 );
