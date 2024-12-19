@@ -7,15 +7,15 @@
 #define I2C_MASTER_TX_BUF_DISABLE   0                          /*!< I2C master doesn't need buffer */
 #define I2C_MASTER_RX_BUF_DISABLE   0  
 #define I2C_MASTER_NUM              0    
-#define I2C_MASTER_SDA_IO   21
-#define I2C_MASTER_SCL_IO   22
-#define I2C_MASTER_FREQ_HZ  100000
+#define I2C_MASTER_SDA_IO           21
+#define I2C_MASTER_SCL_IO           22
+#define I2C_MASTER_FREQ_HZ          100000
 
-#define I2C_WRITE_REQ       0
-#define I2C_READ_REQ        0
+#define I2C_WRITE_REQ               0
+#define I2C_READ_REQ                0
 
-#define ACK_VAL                            0x0         
-#define NACK_VAL                           0x1             
+#define ACK_VAL                     0x0         
+#define NACK_VAL                    0x1             
 
 I2CBUS::I2CBUS() {  
     AMP_DEBUG_I( "Stargting I2C bus" );
@@ -30,10 +30,6 @@ I2CBUS::I2CBUS() {
 
     esp_err_t err = i2c_param_config( I2C_NUM_0, &conf );
     ESP_ERROR_CHECK( i2c_driver_install( I2C_NUM_0, I2C_MODE_MASTER, 0, 0, 0) );
-
-   // i2c_set_timeout( I2C_NUM_0,0xFFFFF );
-
-    //i2c_set_timeout( I2C_NUM_0, I2C_MS_TO_WAIT / portTICK_PERIOD_MS );
 }
 
 void 

@@ -16,22 +16,21 @@ difference() {
 
 // Column One 
 
-// PCM5142/ADC
+// PCM5142/DAC
 translate( [ margin_lr, 220 + margin_lr - 10, 10 ] ) {
   color( "black" )
   cube( [ 85, 55, 4 ] );   
 }
 
-/*
-// DAC (orange)
-translate( [ margin_lr, margin_lr + 220, 30 ] ) {
-  color( "orange" )
-  cube( [ 75, 45, 4 ] );   
-}
-*/
-
-// ADC board (violet)
+// DSP
 translate( [ margin_lr, 150 + margin_lr - 10, 10 ] ) {
+  color( "orange" )
+  cube( [ 85, 55, 4 ] );   
+}
+
+
+// I2S board (violet)
+translate( [ margin_lr, margin_lr + 70, 30 ] ) {
   color( "violet" )
   cube( [ 85, 55, 4 ] );   
 }
@@ -58,16 +57,25 @@ translate( [ margin_lr, margin_lr, 10 ] ) {
   cube( [ 85, 55, 4 ] );   
 }
 
+
+
 // Column Two
 
 // vinyl (RED)
-translate( [ 120, margin_lr + 210, 10 ] ) {
+translate( [ 120, margin_lr + 70, 10 ] ) {
   color( "red" )
   cube( [ 85, 55, 4 ] );   
 }
 
+// ADC board (indigo)
+translate( [ 120, margin_lr + 70, 30 ] ) {
+  color( "indigo" )
+  cube( [ 85, 55, 4 ] );   
+}
+
+
 // inputs (grey)
-translate( [ 120, margin_lr + 210, 30 ] ) {
+translate( [ 120, margin_lr + 210, 10 ] ) {
   color( "grey" )
   cube( [ 85, 55, 4 ] );   
 }
@@ -79,13 +87,13 @@ translate( [ 120, margin_lr + 140, 10 ] ) {
 }
 
 // GPIO extender (blue)
-translate( [ margin_lr + 100, margin_lr + 70, 10 ] ) {
+translate( [ margin_lr + 100, margin_lr, 30 ] ) {
   color( "#000080" )
   cube( [ 85, 55, 4 ] );   
 }
 
 // FTDI (purple)
-translate( [ 120, margin_lr, 10 ] ) {
+translate( [ margin_lr + 100, margin_lr, 10 ] ) {
   color( "purple" )
   cube( [ 85, 55, 4 ] );   
 }

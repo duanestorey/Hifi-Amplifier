@@ -23,10 +23,10 @@ CS8416::init() {
     // output as a I2S master, 24 bit audio, left justified data, 128*fs was 0b11000000 
 
     // Left justified
-    //mBus->writeRegisterByte( mAddress, CS8416::ADDR_SERIAL_DATA_FORMAT, 0b11000000 );
+    //mBus->writeRegisterByte( mAddress, CS8416::ADDR_SERIAL_DATA_FORMAT, SPDIF_MASTER | SPDIF_FORMAT_LJ );
 
     // I2S 
-    mBus->writeRegisterByte( mAddress, CS8416::ADDR_SERIAL_DATA_FORMAT, 0b10000101 );
+    mBus->writeRegisterByte( mAddress, CS8416::ADDR_SERIAL_DATA_FORMAT, SPDIF_MASTER | SPDIF_FORMAT_I2S );
 
     // Error mask - give us information about PLL locking, PCM validity, and confidence
     mBus->writeRegisterByte( mAddress, CS8416::ADDR_RECEIVER_ERROR_MASK, 0b00011100 );

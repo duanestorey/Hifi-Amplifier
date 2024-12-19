@@ -52,6 +52,7 @@ difference() {
             cylinder( 2, xlr_size, xlr_size );
         }
     }
+    
      translate( [ xlr_input_x + 50, 1, y2  ] ) { 
         rotate( [ 90, 0, 0] ) {
             cylinder( 2, xlr_size, xlr_size );
