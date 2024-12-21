@@ -2,12 +2,6 @@
 
 ### Project Style Guide
 
-#### LEDs
-
-All LEDs should be set to have a default current of 3ma for consistent brightness. Here are the guidelines for colours and for what current limiting resistor is required.
-
-    3V digital - 
-
 ### Power Monitors
 
 There are several INA260 power meters.  
@@ -23,6 +17,25 @@ There are several INA260 power meters.
 
 1) Microprocessor board, address GND/GND
 2) Digital/Analog PSU, address GND/3V
+
+### LED lights and resistors
+
+The following voltages and LED colours should be used for consistency. In general, all LEDs are set at 2ma of current are 0603 size.
+
+#### Digital Voltages
+
+3.3V - Blue, set to ~2ma using 150R 
+5.0V - Red, set to ~2ma using 1.3K
+
+#### Analog Voltages
+
++3.3V - Yellow, set to ~2ma using 620R
++9.5V - Yellow, set to ~2ma using 3.6K
+-9.5V - Blue, set to ~2ma using 3.3K
++34V - Yellow, set to ~2ma using 16K
+-34V - Blue, set to ~2ma using 16K
+Positive DC - Yellow, set to 2ma
+Negative DC - Blue, set to 2ma
 
 ### Design Goals
 - Switch amplifier to LM4766, 2 boards, 4 channels

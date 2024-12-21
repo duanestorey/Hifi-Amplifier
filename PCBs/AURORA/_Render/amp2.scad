@@ -29,11 +29,13 @@ translate( [ margin_lr, 150 + margin_lr - 10, 10 ] ) {
 }
 
 
+/*
 // I2S board (violet)
 translate( [ margin_lr, margin_lr + 70, 30 ] ) {
   color( "violet" )
   cube( [ 85, 55, 4 ] );   
 }
+*/
 
 
 /*
